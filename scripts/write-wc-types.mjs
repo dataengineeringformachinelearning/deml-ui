@@ -16,7 +16,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = path.join(root, "dist", "web-components");
 const names = listPackageable();
 
-const body = ["/* AUTO-GENERATED — deml web component types */", ""];
+const body = ["/* AUTO-GENERATED — deml-ui web component types */", ""];
 
 for (const name of names) {
   const cls = toClassName(name);

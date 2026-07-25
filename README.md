@@ -1,8 +1,8 @@
-# deml
+# deml-ui
 
-HTML/CSS component library with dual package builds — **Web Components** + **Angular** — and Storybook docs that auto-update as you style components.
+DEML’s component library: HTML/CSS sources with dual package builds (**Web Components** + **Angular**) and Storybook docs that stay in sync as you style components.
 
-Design source of truth: `components/<name>/<name>.html` + `<name>.css` ([Untitled UI](https://www.untitledui.com/react/docs/introduction)–style ownership). Generators produce Custom Elements and Angular standalone wrappers so you can restyle first, then ship as a package.
+**Source of truth:** `components/<name>/<name>.html` + `<name>.css`. Generators produce Custom Elements and Angular standalone wrappers so you can restyle first, then ship as a package.
 
 ## Quick start
 
@@ -25,7 +25,7 @@ Editing `components/**` or tokens hot-updates Storybook. Adding/removing a compo
 | `npm run build` | Full library package → `dist/` |
 | `npm run build:styles` | Tokens + component CSS |
 | `npm run build:wc` | Custom Elements ESM + IIFE (CDN) |
-| `npm run build:html` | Raw HTML/CSS copy/paste pack |
+| `npm run build:html` | Raw HTML/CSS pack for local reuse |
 | `npm run build:angular` | Angular library (`ng-packagr`) |
 | `npm run dev` | Vite demo site |
 
@@ -58,7 +58,7 @@ vercel.json            # Storybook static deploy
 
 Set `"package": false` for Storybook-only demos. Defaults skip `gallery`, `megaform`, and CSS-only `form-field`.
 
-Packaged tags are `deml-<name>` (e.g. `deml-button`).
+Packaged custom element tags are `deml-<name>` (e.g. `deml-button`).
 
 ## Consume the package
 
@@ -67,43 +67,43 @@ After `npm run build` (or once published to npm):
 ### Styles (any stack)
 
 ```js
-import "deml/styles.css";   // tokens + all components
+import "deml-ui/styles.css";   // tokens + all components
 // or
-import "deml/tokens.css";   // tokens only
+import "deml-ui/tokens.css";   // tokens only
 ```
 
 ### Web Components / CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/deml/dist/styles/deml.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/deml/dist/web-components/deml.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/deml-ui/dist/styles/deml-ui.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/deml-ui/dist/web-components/deml-ui.js"></script>
 <deml-button></deml-button>
 ```
 
 ```js
-import "deml/styles.css";
-import "deml"; // side-effect: defineAll()
+import "deml-ui/styles.css";
+import "deml-ui"; // side-effect: defineAll()
 ```
 
-IIFE: `dist/web-components/deml.iife.js` (global `Deml`).
+IIFE: `dist/web-components/deml-ui.iife.js` (global `DemlUi`).
 
 ### Angular
 
 ```ts
-import { DemlButton } from "deml/angular";
+import { DemlButton } from "deml-ui/angular";
 // styles once in angular.json or global styles:
-// "node_modules/deml/dist/styles/deml.css"
+// "node_modules/deml-ui/dist/styles/deml-ui.css"
 ```
 
 ```html
 <deml-button />
 ```
 
-Peer deps: `@angular/core` / `@angular/common` ≥ 19 (optional if you only use WC).
+Peer deps: `@angular/core` / `@angular/common` ≥ 19 (optional if you only use Web Components).
 
-### Copy/paste HTML
+### Raw HTML/CSS
 
-Raw fragments: `dist/html/<name>/` (same as `components/`).
+Fragments for local reuse: `dist/html/<name>/` (same layout as `components/`).
 
 ## Storybook → Vercel
 
@@ -112,7 +112,7 @@ Raw fragments: `dist/html/<name>/` (same as `components/`).
 - **Build command:** `npm run build-storybook`
 - **Output:** `storybook-static`
 
-Connect the GitHub repo in the Vercel dashboard. Every push to `main` deploys docs; PRs get preview URLs.
+Connect the GitHub repo (`dataengineeringformachinelearning/deml-ui`) in the Vercel dashboard. Every push to `main` deploys docs; PRs get preview URLs.
 
 ## CI
 
@@ -137,12 +137,16 @@ Tokens live in `styles/tokens.css`. Shared form chrome: `components/form-field/f
 
 | Path | Use |
 |------|-----|
-| `dist/styles/deml.css` | Full stylesheet |
+| `dist/styles/deml-ui.css` | Full stylesheet |
 | `dist/styles/tokens.css` | Tokens only |
-| `dist/web-components/deml.js` | ESM custom elements |
-| `dist/web-components/deml.iife.js` | Script-tag / CDN |
+| `dist/web-components/deml-ui.js` | ESM custom elements |
+| `dist/web-components/deml-ui.iife.js` | Script-tag / CDN |
 | `dist/angular/` | Angular library |
-| `dist/html/` | Copy/paste sources |
+| `dist/html/` | Raw HTML/CSS sources |
+
+## Repository
+
+https://github.com/dataengineeringformachinelearning/deml-ui
 
 ## License
 

@@ -136,7 +136,7 @@ ${names
   .map((n) => `import { define${toPascalCase(n)} } from "./${n}.js";`)
   .join("\n")}
 
-/** Register every deml custom element (idempotent). */
+/** Register every deml-ui custom element (idempotent). */
 export function defineAll(): void {
 ${defineCalls.join("\n")}
 }
@@ -167,7 +167,7 @@ fs.writeFileSync(
   `/* AUTO-GENERATED — do not edit */
 ${names.map((n) => `import { ${toClassName(n)} } from "./${n}";`).join("\n")}
 
-/** Array of all standalone deml Angular components (for convenience imports). */
+/** Array of all standalone deml-ui Angular components (for convenience imports). */
 export const DEML_COMPONENTS = [
 ${classNames.map((c) => `  ${c},`).join("\n")}
 ] as const;

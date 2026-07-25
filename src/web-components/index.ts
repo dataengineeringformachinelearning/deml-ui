@@ -1,5 +1,5 @@
 /**
- * deml web components entry.
+ * deml-ui web components entry.
  * Registers all custom elements and re-exports generated classes.
  */
 import { defineAll } from "../../generated/web-components/registry.js";

@@ -68,7 +68,7 @@ import { defineTextarea } from "./textarea.js";
 import { defineUnorderedList } from "./unordered-list.js";
 import { defineVideo } from "./video.js";
 
-/** Register every deml custom element (idempotent). */
+/** Register every deml-ui custom element (idempotent). */
 export function defineAll(): void {
   defineArticle();
   defineAside();

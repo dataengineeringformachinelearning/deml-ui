@@ -2,7 +2,7 @@
    Demo / Storybook shell — tokens, reset, page layout
    Component styles: components/<name>/<name>.css
    (bundled via components/components.css)
-   Package consumers: import deml/styles.css or deml/tokens.css
+   Package consumers: import deml-ui/styles.css or deml-ui/tokens.css
    ========================================================= */
 
 @import url("./styles/tokens.css");

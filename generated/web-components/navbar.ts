@@ -9,7 +9,7 @@ export class DemlNavbar extends HTMLElement {
     if (!this.hasChildNodes()) {
       this.innerHTML = `<nav class="navbar" aria-label="Primary">
   <div class="navbar__inner">
-    <a class="navbar__brand" href="/">deml</a>
+    <a class="navbar__brand" href="/">deml-ui</a>
 
     <ul class="navbar__links">
       <li><a href="#components">Components</a></li>

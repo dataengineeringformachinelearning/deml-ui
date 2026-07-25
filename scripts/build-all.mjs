@@ -27,4 +27,4 @@ run(process.execPath, ["scripts/write-wc-types.mjs"]);
 run(process.execPath, ["scripts/build-html.mjs"]);
 run(process.execPath, ["scripts/build-angular.mjs"]);
 
-console.log("\n✓ deml library build complete → dist/\n");
+console.log("\n✓ deml-ui library build complete → dist/\n");

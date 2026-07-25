@@ -68,7 +68,7 @@ import { DemlTextarea } from "./textarea";
 import { DemlUnorderedList } from "./unordered-list";
 import { DemlVideo } from "./video";
 
-/** Array of all standalone deml Angular components (for convenience imports). */
+/** Array of all standalone deml-ui Angular components (for convenience imports). */
 export const DEML_COMPONENTS = [
   DemlArticle,
   DemlAside,

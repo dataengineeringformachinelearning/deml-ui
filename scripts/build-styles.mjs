@@ -42,6 +42,6 @@ const tokensSrc = path.join(root, "styles", "tokens.css");
 const librarySrc = path.join(root, "styles", "library.css");
 
 fs.copyFileSync(tokensSrc, path.join(outDir, "tokens.css"));
-fs.writeFileSync(path.join(outDir, "deml.css"), bundleCss(librarySrc));
+fs.writeFileSync(path.join(outDir, "deml-ui.css"), bundleCss(librarySrc));
 
-console.log("Wrote dist/styles/tokens.css + dist/styles/deml.css");
+console.log("Wrote dist/styles/tokens.css + dist/styles/deml-ui.css");

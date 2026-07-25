@@ -11,10 +11,12 @@ export default defineConfig({
     cssCodeSplit: false,
     lib: {
       entry: resolve(__dirname, "src/web-components/index.ts"),
-      name: "Deml",
+      name: "DemlUi",
       formats: ["es", "iife"],
       fileName: (format) =>
-        format === "es" ? "web-components/deml.js" : "web-components/deml.iife.js",
+        format === "es"
+          ? "web-components/deml-ui.js"
+          : "web-components/deml-ui.iife.js",
     },
     rollupOptions: {
       output: {

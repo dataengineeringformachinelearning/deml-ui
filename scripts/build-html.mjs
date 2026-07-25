@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Copy raw HTML/CSS components into dist/html for copy/paste ownership.
+ * Copy raw HTML/CSS components into dist/html for local reuse.
  */
 import fs from "node:fs";
 import path from "node:path";

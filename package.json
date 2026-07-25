@@ -1,28 +1,28 @@
 {
-  "name": "deml",
+  "name": "deml-ui",
   "version": "1.0.0",
-  "description": "deml — HTML/CSS component library with Angular + Web Component builds (Untitled UI–style ownership).",
+  "description": "deml-ui — DEML component library with HTML/CSS sources, Web Components, and Angular builds.",
   "type": "module",
   "sideEffects": [
     "*.css",
-    "./dist/web-components/deml.js",
-    "./dist/web-components/deml.iife.js",
+    "./dist/web-components/deml-ui.js",
+    "./dist/web-components/deml-ui.iife.js",
     "./src/web-components/index.ts"
   ],
-  "main": "./dist/web-components/deml.js",
-  "module": "./dist/web-components/deml.js",
+  "main": "./dist/web-components/deml-ui.js",
+  "module": "./dist/web-components/deml-ui.js",
   "types": "./dist/web-components/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/web-components/index.d.ts",
-      "import": "./dist/web-components/deml.js",
-      "default": "./dist/web-components/deml.js"
+      "import": "./dist/web-components/deml-ui.js",
+      "default": "./dist/web-components/deml-ui.js"
     },
-    "./styles.css": "./dist/styles/deml.css",
+    "./styles.css": "./dist/styles/deml-ui.css",
     "./tokens.css": "./dist/styles/tokens.css",
     "./angular": {
       "types": "./dist/angular/index.d.ts",
-      "default": "./dist/angular/fesm2022/deml.mjs"
+      "default": "./dist/angular/fesm2022/deml-ui.mjs"
     },
     "./html/*": "./dist/html/*"
   },
@@ -47,7 +47,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dataengineeringformachinelearning/deml.git"
+    "url": "git+https://github.com/dataengineeringformachinelearning/deml-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dataengineeringformachinelearning/deml-ui/issues"
   },
   "keywords": [
     "design-system",
@@ -57,13 +60,14 @@
     "angular",
     "html",
     "css",
-    "storybook"
+    "storybook",
+    "deml"
   ],
   "license": "ISC",
   "engines": {
     "node": ">=20"
   },
-  "homepage": "https://github.com/dataengineeringformachinelearning/deml#readme",
+  "homepage": "https://github.com/dataengineeringformachinelearning/deml-ui#readme",
   "peerDependencies": {
     "@angular/common": ">=19.0.0",
     "@angular/core": ">=19.0.0"

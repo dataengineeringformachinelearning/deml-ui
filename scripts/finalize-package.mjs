@@ -16,16 +16,16 @@ if (!fs.existsSync(angularPkgPath)) {
 }
 
 const pkg = {
-  name: "deml-angular",
+  name: "deml-ui-angular",
   version: JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"))
     .version,
-  description: "Angular entry for deml (use import from 'deml/angular')",
-  module: "fesm2022/deml.mjs",
+  description: "Angular entry for deml-ui (use import from 'deml-ui/angular')",
+  module: "fesm2022/deml-ui.mjs",
   typings: "index.d.ts",
   exports: {
     ".": {
       types: "./index.d.ts",
-      default: "./fesm2022/deml.mjs",
+      default: "./fesm2022/deml-ui.mjs",
     },
   },
   sideEffects: false,
