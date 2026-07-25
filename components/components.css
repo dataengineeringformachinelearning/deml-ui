@@ -1,0 +1,6 @@
+/* Component styles barrel
+   Convention: components/<name>/<name>.html + <name>.css
+   When you add a component, import its stylesheet here.
+*/
+
+@import url("./navbar/navbar.css");
