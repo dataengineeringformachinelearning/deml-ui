@@ -1,0 +1,16 @@
+/* Component: Forms & inputs
+   Markup: components/forms/forms.html
+*/
+
+label {
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  margin: 0.25rem 0.35rem 0.25rem 0;
+}

@@ -1,0 +1,29 @@
+/* Component: Gallery
+   Markup: components/gallery/gallery.html
+   Shared docs helpers for component demos
+*/
+
+main section {
+  margin: 0 0 var(--space-lg);
+  padding: var(--space-md) 0 0;
+  border-top: 1px solid var(--line);
+}
+
+main section > h2 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.demo {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1rem 1.1rem;
+  margin: var(--space-sm) 0;
+}
+
+.demo + .demo {
+  margin-top: var(--space-sm);
+}

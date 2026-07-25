@@ -1,0 +1,30 @@
+<!--
+  Component: Interactive
+  Path: components/interactive/interactive.html
+  Styles: components/interactive/interactive.css
+-->
+<section id="interactive">
+  <h2>Interactive</h2>
+  <div class="demo">
+    <details open>
+      <summary>Details / summary (open)</summary>
+      <p>Expandable disclosure content.</p>
+    </details>
+    <details>
+      <summary>Another disclosure</summary>
+      <p>Hidden until opened.</p>
+    </details>
+  </div>
+
+  <div class="demo">
+    <button type="button" id="open-dialog">Open dialog</button>
+    <dialog id="demo-dialog">
+      <form method="dialog">
+        <h3>Dialog</h3>
+        <p>Native modal dialog element.</p>
+        <button value="cancel">Close</button>
+        <button value="confirm">Confirm</button>
+      </form>
+    </dialog>
+  </div>
+</section>

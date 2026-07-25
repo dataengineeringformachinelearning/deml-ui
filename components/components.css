@@ -3,4 +3,17 @@
    When you add a component, import its stylesheet here.
 */
 
+@import url("./skip-link/skip-link.css");
+@import url("./site-header/site-header.css");
 @import url("./navbar/navbar.css");
+@import url("./gallery/gallery.css");
+@import url("./document/document.css");
+@import url("./headings/headings.css");
+@import url("./text/text.css");
+@import url("./lists/lists.css");
+@import url("./tables/tables.css");
+@import url("./media/media.css");
+@import url("./forms/forms.css");
+@import url("./interactive/interactive.css");
+@import url("./scripting/scripting.css");
+@import url("./site-footer/site-footer.css");

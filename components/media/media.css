@@ -1,0 +1,13 @@
+/* Component: Media & embedded content
+   Markup: components/media/media.html
+*/
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}

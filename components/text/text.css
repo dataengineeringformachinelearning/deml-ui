@@ -1,0 +1,9 @@
+/* Component: Text content
+   Markup: components/text/text.html
+*/
+
+pre {
+  overflow: auto;
+  background: #f0ebe3;
+  padding: 0.75rem 1rem;
+}
