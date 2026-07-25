@@ -13,6 +13,7 @@
   --surface: #fffdf9;
   --content-width: 920px;
   --gutter: 1rem;
+  --demo-padding: 1.25rem;
   --space-sm: 0.75rem;
   --space-md: 1.25rem;
   --space-lg: 2.5rem;
@@ -51,6 +52,7 @@ a {
 }
 
 main {
-  width: min(var(--content-width), calc(100% - 2 * var(--gutter)));
-  margin-inline: auto;
+  width: 100%;
+  margin: 0;
+  padding-inline: var(--gutter);
 }

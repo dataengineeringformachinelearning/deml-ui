@@ -2,15 +2,18 @@
    Markup: components/forms/forms.html
 */
 
-label {
+.component--forms {
+}
+
+.component--forms label {
   display: inline-block;
   margin: 0.25rem 0.5rem 0.25rem 0;
 }
 
-input,
-select,
-textarea,
-button {
+.component--forms input,
+.component--forms select,
+.component--forms textarea,
+.component--forms button {
   font: inherit;
   margin: 0.25rem 0.35rem 0.25rem 0;
 }

@@ -3,72 +3,55 @@
   Path: components/forms/forms.html
   Styles: components/forms/forms.css
 -->
-<section id="forms">
+<section id="forms" class="component component--forms">
   <h2>Forms &amp; inputs</h2>
   <div class="demo">
     <form action="#" method="post" enctype="multipart/form-data">
       <fieldset>
         <legend>Account</legend>
-
         <label for="name">Name</label>
         <input id="name" name="name" type="text" placeholder="Name" autocomplete="name" required>
-
         <label for="email">Email</label>
         <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
-
         <label for="password">Password</label>
         <input id="password" name="password" type="password" placeholder="Password" autocomplete="new-password">
-
         <label for="tel">Phone</label>
         <input id="tel" name="tel" type="tel" placeholder="+1 555 0100">
-
         <label for="url">Website</label>
         <input id="url" name="url" type="url" placeholder="https://example.com">
-
         <label for="search-input">Search</label>
         <input id="search-input" name="search" type="search" placeholder="Search…">
       </fieldset>
-
       <fieldset>
         <legend>Numbers &amp; ranges</legend>
         <label for="number">Number</label>
         <input id="number" name="number" type="number" min="0" max="100" step="1" value="10">
-
         <label for="range">Range</label>
         <input id="range" name="range" type="range" min="0" max="100" value="40">
-
         <label for="color">Color</label>
         <input id="color" name="color" type="color" value="#0b5fff">
       </fieldset>
-
       <fieldset>
         <legend>Dates &amp; time</legend>
         <label for="date">Date</label>
         <input id="date" name="date" type="date">
-
         <label for="time">Time</label>
         <input id="time" name="time" type="time">
-
         <label for="datetime-local">Datetime local</label>
         <input id="datetime-local" name="datetime-local" type="datetime-local">
-
         <label for="month">Month</label>
         <input id="month" name="month" type="month">
-
         <label for="week">Week</label>
         <input id="week" name="week" type="week">
       </fieldset>
-
       <fieldset>
         <legend>Choices</legend>
         <label><input type="checkbox" name="features" value="news"> Newsletter</label>
         <label><input type="checkbox" name="features" value="updates" checked> Updates</label>
-
         <label><input type="radio" name="plan" value="free" checked> Free</label>
         <label><input type="radio" name="plan" value="pro"> Pro</label>
         <label><input type="radio" name="plan" value="team"> Team</label>
       </fieldset>
-
       <fieldset>
         <legend>Select &amp; datalist</legend>
         <label for="country">Country</label>
@@ -82,7 +65,6 @@
             <option value="de">Germany</option>
           </optgroup>
         </select>
-
         <label for="browser">Browser</label>
         <input id="browser" name="browser" list="browsers" placeholder="Pick or type">
         <datalist id="browsers">
@@ -92,22 +74,18 @@
           <option value="Edge"></option>
         </datalist>
       </fieldset>
-
       <fieldset>
         <legend>Files &amp; hidden</legend>
         <label for="file">File</label>
         <input id="file" name="file" type="file" accept="image/*,.pdf">
-
         <input type="hidden" name="csrf" value="demo-token">
         <input type="image" src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Image submit" width="32" height="32">
       </fieldset>
-
       <fieldset>
         <legend>Message</legend>
         <label for="message">Textarea</label>
         <textarea id="message" name="message" rows="4" cols="40" placeholder="Message"></textarea>
       </fieldset>
-
       <fieldset>
         <legend>Output controls</legend>
         <label for="a">A</label>
@@ -115,14 +93,11 @@
         <label for="b">B</label>
         <input id="b" type="number" value="3">
         <output id="sum" name="sum" for="a b">5</output>
-
         <label for="progress">Progress</label>
         <progress id="progress" value="70" max="100">70%</progress>
-
         <label for="meter">Meter</label>
         <meter id="meter" min="0" max="100" low="30" high="70" optimum="80" value="65">65</meter>
       </fieldset>
-
       <p>
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>

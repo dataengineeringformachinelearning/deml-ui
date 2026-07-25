@@ -4,17 +4,30 @@ HTML/CSS startpoint for a copy/paste component library ([Untitled UI](https://ww
 
 ## Run
 
-Serve over HTTP (includes use `fetch`):
+Serve over HTTP (includes use `fetch`). Prefer live reload while editing:
+
+```bash
+npx live-server --port=3000
+```
+
+Or with BrowserSync:
+
+```bash
+npx browser-sync start --server --files "**/*.{html,css,js}"
+```
+
+Static only (no reload):
 
 ```bash
 npx serve .
 ```
 
+
 ## Layout
 
 - `index.html` — page composition (`data-include` fragments)
 - `styles.css` — tokens, reset, shell
-- `components/<name>/` — `<name>.html` + `<name>.css`
+- `components/<name>/` — one section each; style via `.component--<name>`
 - `components/components.css` — `@import` barrel
 - `components/load.js` / `demos.js` — includes + demo wiring
 - `log.md` — changelog

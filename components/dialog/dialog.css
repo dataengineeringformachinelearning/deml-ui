@@ -1,0 +1,16 @@
+/* Component: Dialog
+   Markup: components/dialog/dialog.html
+*/
+
+.component--dialog {
+}
+
+.component--dialog dialog {
+  border: 1px solid var(--line);
+  padding: var(--space-md);
+  max-width: 28rem;
+}
+
+.component--dialog dialog::backdrop {
+  background: rgba(28, 27, 25, 0.35);
+}

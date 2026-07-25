@@ -18,9 +18,11 @@ main section > h2 {
 }
 
 .demo {
+  width: 100%;
+  box-sizing: border-box;
   background: var(--surface);
   border: 1px solid var(--line);
-  padding: 1rem 1.1rem;
+  padding: var(--demo-padding);
   margin: var(--space-sm) 0;
 }
 
