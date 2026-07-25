@@ -1,0 +1,221 @@
+/* =========================================================
+   Layout starter
+   ========================================================= */
+
+:root {
+  --bg: #f7f5f1;
+  --ink: #1c1b19;
+  --muted: #5c5852;
+  --line: #d6d0c6;
+  --accent: #0b5fff;
+  --surface: #fffdf9;
+  --content-width: 920px;
+  --gutter: 1rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2.5rem;
+  --space-xl: 3rem;
+  --font-sans: "Avenir Next", "Segoe UI", sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #efe7d8 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #e4ece8 0%, transparent 50%),
+    var(--bg);
+  line-height: 1.55;
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* =========================================================
+   Page shell
+   ========================================================= */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ink);
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  left: var(--gutter);
+  top: var(--gutter);
+}
+
+.site-header,
+.site-nav,
+main,
+.site-footer {
+  width: min(var(--content-width), calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: var(--space-xl) 0 1.5rem;
+}
+
+.site-header h1 {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1.05;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.site-header p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 40ch;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  background: color-mix(in srgb, var(--bg) 88%, white);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-sm) 0;
+  z-index: 5;
+  margin-bottom: 2rem;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.site-footer {
+  padding: 2rem 0 var(--space-xl);
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   Content sections
+   ========================================================= */
+
+main section {
+  margin: 0 0 var(--space-lg);
+  padding: var(--space-md) 0 0;
+  border-top: 1px solid var(--line);
+}
+
+main section > h2 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.demo {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1rem 1.1rem;
+  margin: var(--space-sm) 0;
+}
+
+.demo + .demo {
+  margin-top: var(--space-sm);
+}
+
+.layout-aside {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .layout-aside {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* =========================================================
+   Elements
+   ========================================================= */
+
+label {
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  margin: 0.25rem 0.35rem 0.25rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+}
+
+th {
+  background: #f0ebe3;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+pre {
+  overflow: auto;
+  background: #f0ebe3;
+  padding: 0.75rem 1rem;
+}
+
+dialog {
+  border: 1px solid var(--line);
+  padding: var(--space-md);
+  max-width: 28rem;
+}
+
+dialog::backdrop {
+  background: rgba(28, 27, 25, 0.35);
+}
