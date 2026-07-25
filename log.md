@@ -16,3 +16,4 @@
 - 2026-07-25: Secure includes — ES module `load.js` (same-origin + `components/` only); site via `npm run dev` (Vite).
 - 2026-07-25: **Library foundation** — dual build (Web Components + Angular), tokens in `styles/tokens.css`, `npm run sync` generators, `npm run build` → `dist/`, Storybook a11y + theme toolbar, `vercel.json` (Storybook deploy), GitHub Actions CI.
 - 2026-07-25: **Rename to deml-ui** — package/repo identity for the dedicated UI library; removed external product references from docs.
+- 2026-07-25: **Storybook full essentials** — docs/autodocs, a11y, themes, viewport, backgrounds, measure/outline, highlight, actions, controls, links, branded manager, Introduction MDX, density toolbar.

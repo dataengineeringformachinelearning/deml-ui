@@ -10,7 +10,22 @@
   #storybook-root > .story-root {
     display: block;
     width: 100%;
-    padding: var(--gutter, 1rem);
+    padding: var(--story-padding, var(--gutter, 1rem));
     box-sizing: border-box;
+  }
+
+  /* Density toolbar feedback */
+  #storybook-root > .story-root[data-density="compact"] {
+    --story-padding: 0.5rem;
+  }
+
+  #storybook-root > .story-root[data-density="spacious"] {
+    --story-padding: 2rem;
+  }
+
+  /* Outline-friendly focus visibility in canvas */
+  #storybook-root :focus-visible {
+    outline: 2px solid var(--accent, #5C2A5A);
+    outline-offset: 2px;
   }
 </style>

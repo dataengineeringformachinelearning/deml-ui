@@ -1,5 +1,5 @@
 /**
- * Shared Storybook render helpers.
+ * Shared Storybook render + play helpers.
  * HTML is loaded via import.meta.glob so Vite HMR updates stories when
  * components/<name>/<name>.html changes.
  */
@@ -29,6 +29,7 @@ function wireOutputSum(root, aSel, bSel, sumSel) {
   };
   a.addEventListener("input", updateSum);
   b.addEventListener("input", updateSum);
+  updateSum();
 }
 
 /** Lightweight demo wiring for interactive stories (mirrors components/demos.js). */
@@ -66,9 +67,25 @@ function initStoryDemos(root) {
 export function renderComponent(name) {
   const root = document.createElement("div");
   root.className = "story-root";
+  root.dataset.component = name;
   root.innerHTML = getHtml(name);
   queueMicrotask(() => initStoryDemos(root));
   return root;
+}
+
+/**
+ * Storybook play function helper — runs after paint so demos are interactive
+ * and a11y checks see the hydrated DOM.
+ */
+export async function playComponent(name, canvasElement) {
+  const root =
+    canvasElement?.querySelector?.(`.story-root[data-component="${name}"]`) ||
+    canvasElement?.querySelector?.(".story-root") ||
+    canvasElement;
+  if (!root) return;
+  // Yield to microtasks from renderComponent
+  await Promise.resolve();
+  initStoryDemos(root);
 }
 
 export function toExportName(kebab) {
@@ -77,3 +94,5 @@ export function toExportName(kebab) {
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join("");
 }
+
+export { getHtml };

@@ -15,6 +15,23 @@ npm run build       # styles + WC + html pack + Angular → dist/
 
 Editing `components/**` or tokens hot-updates Storybook. Adding/removing a component folder regenerates stories and wrappers (`npm run sync`).
 
+### Storybook features (enabled)
+
+| Feature | Notes |
+|---------|--------|
+| **Docs / Autodocs** | MDX intro + per-component Docs tabs with HTML source |
+| **A11y** | axe checks (WCAG 2 A/AA + best practices) in the panel |
+| **Theme** | Light/dark via `data-theme` toolbar |
+| **Viewport** | Device presets + deml content/narrow widths |
+| **Backgrounds** | Page / surface / brand token colors |
+| **Measure & Outline** | Spacing and box outlines in the toolbar |
+| **Highlight** | Element highlight for inspection |
+| **Controls** | Expanded controls panel |
+| **Actions** | Logs click / submit / change / input / toggle / close |
+| **Density** | Compact / comfortable / spacious canvas padding |
+| **Links** | Cross-story navigation addon |
+| **Branded manager** | deml-ui theme (Geist + violet) |
+
 ## Scripts
 
 | Command | Purpose |

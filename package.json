@@ -87,6 +87,8 @@
     "@angular/core": "^19.2.14",
     "@storybook/addon-a11y": "^10.5.4",
     "@storybook/addon-docs": "^10.5.4",
+    "@storybook/addon-links": "^10.5.4",
+    "@storybook/addon-themes": "^10.5.4",
     "@storybook/html-vite": "^10.5.4",
     "ng-packagr": "^19.2.2",
     "rxjs": "^7.8.2",

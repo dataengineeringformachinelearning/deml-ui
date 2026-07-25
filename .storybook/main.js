@@ -13,7 +13,6 @@ function demlSyncPlugin() {
       let timer = null;
       const schedule = (file) => {
         if (!file.startsWith(componentsRoot)) return;
-        // HTML add/remove or new folder → full sync; CSS edits HMR via imports
         const isHtml = file.endsWith(".html");
         const isMeta = file.endsWith("meta.json");
         if (!isHtml && !isMeta) return;
@@ -39,11 +38,38 @@ function demlSyncPlugin() {
 
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
-  stories: ["../stories/**/*.stories.@(js|mjs)"],
-  addons: ["@storybook/addon-docs", "@storybook/addon-a11y"],
+  stories: [
+    "../stories/**/*.mdx",
+    "../stories/**/*.stories.@(js|mjs|ts|tsx)",
+  ],
+  staticDirs: ["../public"],
+  addons: [
+    "@storybook/addon-docs",
+    "@storybook/addon-a11y",
+    "@storybook/addon-links",
+    "@storybook/addon-themes",
+  ],
   framework: {
     name: "@storybook/html-vite",
     options: {},
+  },
+  // Storybook 10 essentials are on by default — keep every feature enabled
+  features: {
+    actions: true,
+    backgrounds: true,
+    controls: true,
+    highlight: true,
+    measure: true,
+    outline: true,
+    toolbars: true,
+    viewport: true,
+  },
+  docs: {
+    autodocs: "tag",
+    defaultName: "Docs",
+  },
+  core: {
+    disableTelemetry: true,
   },
   async viteFinal(config) {
     config.plugins = [...(config.plugins ?? []), demlSyncPlugin()];

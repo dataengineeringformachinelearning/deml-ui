@@ -1,0 +1,48 @@
+import { Meta, Markdown } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+# deml-ui
+
+DEML’s component library — HTML/CSS sources with dual builds (Web Components + Angular).
+
+## How to use this Storybook
+
+| Feature | Where |
+|--------|--------|
+| **Canvas** | Live component preview |
+| **Docs** | Auto-generated docs + source (Autodocs) |
+| **Theme** | Toolbar — light / dark (`data-theme`) |
+| **Viewport** | Toolbar — phone, tablet, desktop, deml widths |
+| **Backgrounds** | Toolbar — page, surface, brand colors |
+| **Measure** | Toolbar — inspect spacing |
+| **Outline** | Toolbar — show element outlines |
+| **Density** | Toolbar — compact / comfortable / spacious padding |
+| **A11y** | Panel — axe accessibility checks |
+| **Controls** | Panel — story parameters when available |
+| **Actions** | Panel — logged DOM events (click, submit, …) |
+
+## Source of truth
+
+Components live in `components/<name>/`:
+
+- `<name>.html` — markup (demo chrome + reusable content in `.demo`)
+- `<name>.css` — styles under `.component--<name>` or BEM roots
+
+Edit CSS/HTML → Storybook hot-reloads. Add/remove a folder → stories regenerate (`npm run sync`).
+
+## Sidebar
+
+1. **Shell** — page chrome (header, navbar, footer, …)
+2. **Forms** — inputs, buttons, choices, megaform
+3. **Components** — content elements (article, table, media, …)
+
+## Package builds
+
+```bash
+npm run storybook        # this UI
+npm run build            # styles + web components + Angular → dist/
+npm run build-storybook  # static site (Vercel → ui.deml.app)
+```
+
+Custom elements use the `deml-*` tag prefix (e.g. `deml-button`).
