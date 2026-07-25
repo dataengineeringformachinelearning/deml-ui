@@ -33,7 +33,45 @@
 @import url("./svg/svg.css");
 @import url("./canvas/canvas.css");
 @import url("./math/math.css");
-@import url("./forms/forms.css");
+
+/* Forms — shared + atomic controls + megaform */
+@import url("./form-field/form-field.css");
+@import url("./input-text/input-text.css");
+@import url("./input-email/input-email.css");
+@import url("./input-password/input-password.css");
+@import url("./input-tel/input-tel.css");
+@import url("./input-url/input-url.css");
+@import url("./input-search/input-search.css");
+@import url("./input-number/input-number.css");
+@import url("./input-range/input-range.css");
+@import url("./input-color/input-color.css");
+@import url("./input-date/input-date.css");
+@import url("./input-time/input-time.css");
+@import url("./input-datetime-local/input-datetime-local.css");
+@import url("./input-month/input-month.css");
+@import url("./input-week/input-week.css");
+@import url("./checkbox-newsletter/checkbox-newsletter.css");
+@import url("./checkbox-updates/checkbox-updates.css");
+@import url("./radio-free/radio-free.css");
+@import url("./radio-pro/radio-pro.css");
+@import url("./radio-team/radio-team.css");
+@import url("./select/select.css");
+@import url("./datalist/datalist.css");
+@import url("./input-file/input-file.css");
+@import url("./input-hidden/input-hidden.css");
+@import url("./input-image/input-image.css");
+@import url("./textarea/textarea.css");
+@import url("./output/output.css");
+@import url("./progress/progress.css");
+@import url("./meter/meter.css");
+@import url("./button-submit/button-submit.css");
+@import url("./button-reset/button-reset.css");
+@import url("./button/button.css");
+@import url("./input-submit/input-submit.css");
+@import url("./input-reset/input-reset.css");
+@import url("./input-button/input-button.css");
+@import url("./megaform/megaform.css");
+
 @import url("./details/details.css");
 @import url("./dialog/dialog.css");
 @import url("./noscript/noscript.css");

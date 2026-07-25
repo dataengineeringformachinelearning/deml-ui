@@ -1,0 +1,33 @@
+/* Shared form control styles
+   Used by atomic form components + megaform
+*/
+
+.form-field label,
+.component--megaform label {
+  display: inline-block;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea,
+.form-field button,
+.component--megaform input,
+.component--megaform select,
+.component--megaform textarea,
+.component--megaform button {
+  font: inherit;
+  margin: 0.25rem 0.35rem 0.25rem 0;
+}
+
+.component--megaform fieldset {
+  margin: 0 0 1rem;
+  border: 1px solid var(--border);
+  padding: var(--demo-padding);
+}
+
+.component--megaform legend {
+  font-family: var(--font-family);
+  font-weight: 500;
+  padding: 0 0.35rem;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "deml",
+  "version": "1.0.0",
+  "description": "HTML/CSS startpoint for a copy/paste component library (Untitled UI–style ownership).",
+  "type": "module",
+  "scripts": {
+    "storybook:gen": "node scripts/generate-stories.mjs",
+    "storybook": "npm run storybook:gen && storybook dev -p 6006",
+    "build-storybook": "npm run storybook:gen && storybook build",
+    "start": "npx live-server --port=3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dataengineeringformachinelearning/deml.git"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/dataengineeringformachinelearning/deml#readme",
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.5.4",
+    "@storybook/html-vite": "^10.5.4",
+    "storybook": "^10.5.4",
+    "vite": "^8.1.5"
+  }
+}

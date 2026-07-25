@@ -4,24 +4,22 @@ HTML/CSS startpoint for a copy/paste component library ([Untitled UI](https://ww
 
 ## Run
 
-Serve over HTTP (includes use `fetch`). Prefer live reload while editing:
+**Storybook** (component browser with HMR for HTML/CSS):
+
+```bash
+npm install
+npm run storybook
+```
+
+Open [http://localhost:6006](http://localhost:6006). Editing `components/**` or `styles.css` hot-updates the preview. Adding/removing a component folder regenerates stories automatically.
+
+**Site** over HTTP (includes use `fetch`):
 
 ```bash
 npx live-server --port=3000
 ```
 
-Or with BrowserSync:
-
-```bash
-npx browser-sync start --server --files "**/*.{html,css,js}"
-```
-
-Static only (no reload):
-
-```bash
-npx serve .
-```
-
+Or BrowserSync / static `npx serve .` — see older notes if needed.
 
 ## Layout
 
@@ -29,6 +27,8 @@ npx serve .
 - `styles.css` — tokens, reset, shell
 - `components/<name>/` — one section each; style via `.component--<name>`
 - `components/components.css` — `@import` barrel
+- `stories/` — Storybook stories (auto-generated)
+- `.storybook/` — Storybook config
 - `components/load.js` / `demos.js` — includes + demo wiring
 - `log.md` — changelog
 
@@ -37,3 +37,4 @@ npx serve .
 1. Create `components/<name>/<name>.html` and `<name>.css`
 2. `@import` the CSS in `components/components.css`
 3. Add a `data-include` in `index.html` (and gallery entry if useful)
+4. Storybook picks it up on save (or run `npm run storybook:gen`)
