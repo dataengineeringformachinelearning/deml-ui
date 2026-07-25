@@ -2,70 +2,17 @@
 /**
  * Generates stories/*.stories.js from components/* folders.
  * HTML/CSS content HMR via import.meta.glob + preview CSS imports.
- * Re-run when you add or remove a component folder (npm run storybook does this).
  */
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import {
+  root,
+  listComponents,
+  categorize,
+  toPascalCase,
+} from "./lib/components.mjs";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(__dirname, "..");
-const componentsDir = path.join(root, "components");
 const storiesDir = path.join(root, "stories");
-
-const SHELL = [
-  "skip-link",
-  "site-header",
-  "navbar",
-  "gallery",
-  "site-footer",
-];
-
-/** Form atoms + composition (order used in Forms stories). */
-const FORMS_ORDER = [
-  "input-text",
-  "input-email",
-  "input-password",
-  "input-tel",
-  "input-url",
-  "input-search",
-  "input-number",
-  "input-range",
-  "input-color",
-  "input-date",
-  "input-time",
-  "input-datetime-local",
-  "input-month",
-  "input-week",
-  "checkbox-newsletter",
-  "checkbox-updates",
-  "radio-free",
-  "radio-pro",
-  "radio-team",
-  "select",
-  "datalist",
-  "input-file",
-  "input-hidden",
-  "input-image",
-  "textarea",
-  "output",
-  "progress",
-  "meter",
-  "button-submit",
-  "button-reset",
-  "button",
-  "input-submit",
-  "input-reset",
-  "input-button",
-  "megaform",
-];
-
-function exportName(kebab) {
-  return kebab
-    .split("-")
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join("");
-}
 
 function writeStoriesFile(fileName, title, names) {
   const lines = [
@@ -81,7 +28,7 @@ function writeStoriesFile(fileName, title, names) {
 
   for (const name of names) {
     lines.push(
-      `export const ${exportName(name)} = {`,
+      `export const ${toPascalCase(name)} = {`,
       `  name: ${JSON.stringify(name)},`,
       `  render: () => renderComponent(${JSON.stringify(name)}),`,
       `  parameters: {`,
@@ -92,25 +39,12 @@ function writeStoriesFile(fileName, title, names) {
     );
   }
 
-  const outFile = path.join(storiesDir, fileName);
-  fs.writeFileSync(outFile, lines.join("\n"));
+  fs.writeFileSync(path.join(storiesDir, fileName), lines.join("\n"));
   return names.length;
 }
 
-const names = fs
-  .readdirSync(componentsDir, { withFileTypes: true })
-  .filter((d) => d.isDirectory())
-  .map((d) => d.name)
-  .filter((name) =>
-    fs.existsSync(path.join(componentsDir, name, `${name}.html`))
-  );
-
-const formSet = new Set(FORMS_ORDER);
-const shellNames = SHELL.filter((n) => names.includes(n));
-const formNames = FORMS_ORDER.filter((n) => names.includes(n));
-const componentNames = names
-  .filter((n) => !SHELL.includes(n) && !formSet.has(n))
-  .sort((a, b) => a.localeCompare(b));
+const names = listComponents();
+const { shellNames, formNames, componentNames } = categorize(names);
 
 fs.mkdirSync(storiesDir, { recursive: true });
 

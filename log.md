@@ -14,3 +14,4 @@
 - 2026-07-25: Forms split — atomic inputs/buttons/choices + `megaform` composition; shared `form-field` styles.
 - 2026-07-25: `.gitignore` — ignore `node_modules`, Storybook build, generated stories, env, caches.
 - 2026-07-25: Secure includes — ES module `load.js` (same-origin + `components/` only); site via `npm run dev` (Vite).
+- 2026-07-25: **Library foundation** — dual build (Web Components + Angular), tokens in `styles/tokens.css`, `npm run sync` generators, `npm run build` → `dist/`, Storybook a11y + theme toolbar, `vercel.json` (Storybook deploy), GitHub Actions CI.
