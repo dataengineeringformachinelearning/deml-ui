@@ -4,22 +4,20 @@ HTML/CSS startpoint for a copy/paste component library ([Untitled UI](https://ww
 
 ## Run
 
-**Storybook** (component browser with HMR for HTML/CSS):
-
 ```bash
 npm install
+npm run dev
+```
+
+Site: [http://localhost:3000](http://localhost:3000) (Vite — HMR for CSS/JS).
+
+**Storybook** (component browser):
+
+```bash
 npm run storybook
 ```
 
 Open [http://localhost:6006](http://localhost:6006). Editing `components/**` or `styles.css` hot-updates the preview. Adding/removing a component folder regenerates stories automatically.
-
-**Site** over HTTP (includes use `fetch`):
-
-```bash
-npx live-server --port=3000
-```
-
-Or BrowserSync / static `npx serve .` — see older notes if needed.
 
 ## Layout
 
@@ -27,9 +25,9 @@ Or BrowserSync / static `npx serve .` — see older notes if needed.
 - `styles.css` — tokens, reset, shell
 - `components/<name>/` — one section each; style via `.component--<name>`
 - `components/components.css` — `@import` barrel
+- `components/load.js` — secure ES module includes (same-origin, `components/` only)
 - `stories/` — Storybook stories (auto-generated)
 - `.storybook/` — Storybook config
-- `components/load.js` / `demos.js` — includes + demo wiring
 - `log.md` — changelog
 
 ## Add a component

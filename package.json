@@ -4,10 +4,11 @@
   "description": "HTML/CSS startpoint for a copy/paste component library (Untitled UI–style ownership).",
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "start": "vite",
     "storybook:gen": "node scripts/generate-stories.mjs",
     "storybook": "npm run storybook:gen && storybook dev -p 6006",
-    "build-storybook": "npm run storybook:gen && storybook build",
-    "start": "npx live-server --port=3000"
+    "build-storybook": "npm run storybook:gen && storybook build"
   },
   "repository": {
     "type": "git",

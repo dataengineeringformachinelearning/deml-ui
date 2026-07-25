@@ -13,3 +13,4 @@
 - 2026-07-25: Storybook — HTML/Vite (`npm run storybook`); stories from components with HMR.
 - 2026-07-25: Forms split — atomic inputs/buttons/choices + `megaform` composition; shared `form-field` styles.
 - 2026-07-25: `.gitignore` — ignore `node_modules`, Storybook build, generated stories, env, caches.
+- 2026-07-25: Secure includes — ES module `load.js` (same-origin + `components/` only); site via `npm run dev` (Vite).

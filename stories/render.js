@@ -23,11 +23,12 @@ function wireOutputSum(root, aSel, bSel, sumSel) {
   const a = root.querySelector(aSel);
   const b = root.querySelector(bSel);
   const sum = root.querySelector(sumSel);
+  if (!a || !b || !sum) return;
   const updateSum = () => {
-    if (a && b && sum) sum.value = Number(a.value) + Number(b.value);
+    sum.value = String(Number(a.value) + Number(b.value));
   };
-  a?.addEventListener("input", updateSum);
-  b?.addEventListener("input", updateSum);
+  a.addEventListener("input", updateSum);
+  b.addEventListener("input", updateSum);
 }
 
 /** Lightweight demo wiring for interactive stories (mirrors components/demos.js). */
