@@ -39,7 +39,7 @@ function initStoryDemos(root) {
     ctx.fillStyle = "#5C2A5A";
     ctx.fillRect(20, 20, 160, 60);
     ctx.fillStyle = "#fff";
-    ctx.font = "16px Roboto, sans-serif";
+    ctx.font = "16px Geist, system-ui, sans-serif";
     ctx.fillText("Canvas", 75, 55);
   }
 

@@ -9,7 +9,7 @@
 - 2026-07-25: Demo layout — full-width `main`/`.demo`; equal inset via `--demo-padding`.
 - 2026-07-25: README — minimal docs; Run section adds `live-server` / BrowserSync hot reload.
 - 2026-07-25: Color scheme — violet/twilight tokens + dark mode (`data-theme="dark"` / `.dark`).
-- 2026-07-25: Roboto — Google Fonts `preconnect` + link; `--font-family` for all UI.
+- 2026-07-25: Geist Sans — Google Fonts `preconnect` + link; `--font-family` for all UI.
 - 2026-07-25: Storybook — HTML/Vite (`npm run storybook`); stories from components with HMR.
 - 2026-07-25: Forms split — atomic inputs/buttons/choices + `megaform` composition; shared `form-field` styles.
 - 2026-07-25: `.gitignore` — ignore `node_modules`, Storybook build, generated stories, env, caches.
