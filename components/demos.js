@@ -6,7 +6,7 @@ function initDemos() {
   const canvas = document.getElementById("demo-canvas");
   if (canvas?.getContext) {
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#0b5fff";
+    ctx.fillStyle = "#5C2A5A";
     ctx.fillRect(20, 20, 160, 60);
     ctx.fillStyle = "#fff";
     ctx.font = "16px sans-serif";

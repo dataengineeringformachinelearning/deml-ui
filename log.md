@@ -8,3 +8,4 @@
 - 2026-07-25: Split boilerplate — one component per section (`.component--name`); forms/headings/embed-object kept as natural groups.
 - 2026-07-25: Demo layout — full-width `main`/`.demo`; equal inset via `--demo-padding`.
 - 2026-07-25: README — minimal docs; Run section adds `live-server` / BrowserSync hot reload.
+- 2026-07-25: Color scheme — violet/twilight tokens + dark mode (`data-theme="dark"` / `.dark`).

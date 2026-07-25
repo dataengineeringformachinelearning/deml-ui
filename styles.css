@@ -5,12 +5,34 @@
    ========================================================= */
 
 :root {
-  --bg: #f7f5f1;
-  --ink: #1c1b19;
-  --muted: #5c5852;
-  --line: #d6d0c6;
-  --accent: #0b5fff;
-  --surface: #fffdf9;
+  /* Core */
+  --white: #F7F8FA;
+  --black: #0C0C0D;
+  --violet: #5C2A5A;
+  --violet-soft: #8B5A8C;
+
+  /* Supporting */
+  --twilight: #9BB8C9;
+  --water: #7A92A3;
+  --charcoal: #2A2E32;
+  --dusk: #D4C1C9;
+
+  /* Semantic */
+  --bg-primary: var(--white);
+  --bg-secondary: #EEF1F4;
+  --text-primary: var(--black);
+  --text-secondary: #4A5560;
+  --accent: var(--violet);
+  --accent-hover: var(--violet-soft);
+  --border: #D1D8DE;
+
+  /* Aliases used by components */
+  --bg: var(--bg-primary);
+  --ink: var(--text-primary);
+  --muted: var(--text-secondary);
+  --line: var(--border);
+  --surface: var(--bg-secondary);
+
   --content-width: 920px;
   --gutter: 1rem;
   --demo-padding: 1.25rem;
@@ -18,8 +40,21 @@
   --space-md: 1.25rem;
   --space-lg: 2.5rem;
   --space-xl: 3rem;
-  --font-sans: "Avenir Next", "Segoe UI", sans-serif;
-  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-family: "Roboto", system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-family);
+  --font-serif: var(--font-family);
+}
+
+/* Dark mode */
+[data-theme="dark"],
+.dark {
+  --bg-primary: var(--charcoal);
+  --bg-secondary: #1A1D21;
+  --text-primary: var(--white);
+  --text-secondary: #A0AAB4;
+  --accent: #9B6B99;
+  --accent-hover: #B88BB6;
+  --border: #3A4048;
 }
 
 *,
@@ -30,12 +65,12 @@
 
 body {
   margin: 0;
-  font-family: var(--font-serif);
-  color: var(--ink);
+  font-family: var(--font-family);
+  color: var(--text-primary);
   background:
-    radial-gradient(1200px 600px at 10% -10%, #efe7d8 0%, transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, #e4ece8 0%, transparent 50%),
-    var(--bg);
+    radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--dusk) 55%, transparent) 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, color-mix(in srgb, var(--twilight) 45%, transparent) 0%, transparent 50%),
+    var(--bg-primary);
   line-height: 1.55;
 }
 
@@ -49,6 +84,11 @@ svg {
 
 a {
   color: var(--accent);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent-hover);
 }
 
 main {
