@@ -1,4 +1,6 @@
 # deml-ui
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdataengineeringformachinelearning%2Fdeml-ui.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdataengineeringformachinelearning%2Fdeml-ui?ref=badge_shield)
+
 
 DEML’s component library: HTML/CSS sources with dual package builds (**Web Components** + **Angular**) and Storybook docs that stay in sync as you style components.
 
@@ -168,3 +170,6 @@ https://github.com/dataengineeringformachinelearning/deml-ui
 ## License
 
 ISC
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdataengineeringformachinelearning%2Fdeml-ui.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdataengineeringformachinelearning%2Fdeml-ui?ref=badge_large)
