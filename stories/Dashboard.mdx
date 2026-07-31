@@ -1,0 +1,37 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import * as AppLayout from "./shell/app-layout.stories.js";
+import * as PageHeader from "./shell/page-header.stories.js";
+import * as MetricCard from "./data/metric-card.stories.js";
+import * as ChartPanel from "./data/chart-panel.stories.js";
+import * as Table from "./data/table.stories.js";
+import * as Tabs from "./overlays/tabs.stories.js";
+import * as Callout from "./feedback/callout.stories.js";
+
+<Meta title="Dashboard/Overview" />
+
+# Dashboard composition
+
+Reference composition for a product dashboard. Each block is a barebones deml-ui component — style the BEM roots, keep the anatomy.
+
+## Shell
+
+<Canvas of={AppLayout.Default} />
+<Canvas of={PageHeader.Default} />
+
+## Metrics & charts
+
+<Canvas of={MetricCard.Default} />
+<Canvas of={ChartPanel.Default} />
+
+## Table & tabs
+
+<Canvas of={Table.Default} />
+<Canvas of={Tabs.Default} />
+
+## Feedback
+
+<Canvas of={Callout.Default} />
+
+Compose routes as:
+
+`app-layout` → `page-header` → `panel-grid` of `metric-card` → `chart-panel` / `table` → `tabs` for detail.

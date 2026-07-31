@@ -1,0 +1,28 @@
+/* Component: Chart Panel
+   Markup: components/chart-panel/chart-panel.html
+   Barebones structure — customize freely.
+*/
+
+.component--chart-panel .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.chart-panel {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  min-height: 12rem;
+}
+.chart-panel__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+.chart-panel__header h3 { margin: 0; font-size: 1rem; }
+.chart-panel__value { margin: 0; font-size: 1.5rem; font-weight: 600; }

@@ -1,0 +1,22 @@
+/* Component: Status Badge
+   Markup: components/status-badge/status-badge.html
+   Barebones structure — customize freely.
+*/
+
+.component--status-badge .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+}
+.status-badge__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--ink);
+}

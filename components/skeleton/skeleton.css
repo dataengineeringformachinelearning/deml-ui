@@ -1,0 +1,26 @@
+/* Component: Skeleton
+   Markup: components/skeleton/skeleton.html
+   Barebones structure — customize freely.
+*/
+
+.component--skeleton .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.skeleton {
+  display: grid;
+  gap: var(--space-sm);
+}
+.skeleton__line,
+.skeleton__block {
+  display: block;
+  height: 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.skeleton__line--short { width: 45%; }
+.skeleton__line--medium { width: 65%; }
+.skeleton__line--long { width: 80%; }
+.skeleton__block { height: 4rem; width: 100%; }

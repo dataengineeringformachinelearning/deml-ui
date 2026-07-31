@@ -1,0 +1,18 @@
+/* Component: Page Back Link
+   Markup: components/page-back-link/page-back-link.html
+   Barebones structure — customize freely.
+*/
+
+.component--page-back-link .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.page-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: inherit;
+  text-decoration: none;
+}
+.page-back-link:hover { text-decoration: underline; }

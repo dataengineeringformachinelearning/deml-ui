@@ -1,0 +1,22 @@
+/* Component: Metric Card
+   Markup: components/metric-card/metric-card.html
+   Barebones structure — customize freely.
+*/
+
+.component--metric-card .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.metric-card {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  min-width: 0;
+}
+.metric-card__label { margin: 0; color: var(--muted); font-size: 0.875rem; }
+.metric-card__value { margin: 0; font-size: 1.75rem; font-weight: 600; line-height: 1.1; }
+.metric-card__trend { margin: 0; font-size: 0.875rem; color: var(--muted); }

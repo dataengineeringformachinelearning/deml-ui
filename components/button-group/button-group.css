@@ -1,0 +1,20 @@
+/* Component: Button Group
+   Markup: components/button-group/button-group.html
+   Barebones structure — customize freely.
+*/
+
+.component--button-group .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.button-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.button-group button {
+  border-radius: 0;
+  margin-inline-start: -1px;
+}
+.button-group button:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+.button-group button:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }

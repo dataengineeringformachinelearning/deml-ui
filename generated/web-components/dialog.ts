@@ -7,13 +7,15 @@ export class DemlDialog extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<button type="button" id="open-dialog">Open dialog</button>
-    <dialog id="demo-dialog">
+      this.innerHTML = `<button type="button" class="button" data-deml-open-dialog>Open dialog</button>
+    <dialog class="dialog" id="demo-dialog">
       <form method="dialog">
         <h3>Dialog</h3>
-        <p>Native modal dialog element.</p>
-        <button value="cancel">Close</button>
-        <button value="confirm">Confirm</button>
+        <p>Native modal dialog for focused tasks.</p>
+        <div class="cluster">
+          <button type="submit" class="button" value="cancel">Close</button>
+          <button type="submit" class="button" data-variant="primary" value="confirm">Confirm</button>
+        </div>
       </form>
     </dialog>`;
     }

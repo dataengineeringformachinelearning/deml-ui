@@ -1,6 +1,36 @@
 /* Component: Button
    Markup: components/button/button.html
+   Barebones structure — customize freely.
 */
 
-.component--button {
+.component--button .demo {
+  display: grid;
+  gap: var(--space-md);
 }
+
+.button,
+.component--button button,
+.button-group button {
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: inherit;
+  cursor: pointer;
+}
+.button[data-variant="primary"] {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.button[data-variant="ghost"] {
+  background: transparent;
+  border-color: transparent;
+}
+.button:disabled { opacity: 0.5; cursor: not-allowed; }

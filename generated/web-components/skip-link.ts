@@ -7,7 +7,8 @@ export class DemlSkipLink extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<a class="skip-link" href="#main">Skip to content</a>`;
+      this.innerHTML = `<a class="skip-link" href="#main">Skip to content</a>
+    <p id="main">Focus the skip link (Tab) to reveal it — first focusable control on real pages.</p>`;
     }
   }
 }

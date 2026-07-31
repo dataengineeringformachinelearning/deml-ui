@@ -1,0 +1,40 @@
+/* Component: App Header
+   Markup: components/app-header/app-header.html
+   Barebones structure — customize freely.
+*/
+
+.component--app-header .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+}
+.app-header__brand {
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+.app-header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  flex: 1;
+}
+.app-header__nav a {
+  text-decoration: none;
+  color: inherit;
+}
+.app-header__actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-inline-start: auto;
+}

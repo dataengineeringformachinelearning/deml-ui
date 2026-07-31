@@ -1,0 +1,23 @@
+/* Component: Chart Empty State
+   Markup: components/chart-empty-state/chart-empty-state.html
+   Barebones structure — customize freely.
+*/
+
+.component--chart-empty-state .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.chart-empty-state {
+  display: grid;
+  place-items: center;
+  gap: var(--space-sm);
+  min-height: 10rem;
+  padding: var(--space-lg);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-md);
+  text-align: center;
+  color: var(--muted);
+}
+.chart-empty-state__title { margin: 0; color: var(--ink); font-weight: 600; }
+.chart-empty-state__description { margin: 0; }

@@ -1,33 +1,28 @@
-/* Shared form control styles
-   Used by atomic form components + megaform
+/* Shared form control baseline
+   Used by form atoms; not a packaged component.
 */
 
-.form-field label,
-.component--megaform label {
-  display: inline-block;
-  margin: 0.25rem 0.5rem 0.25rem 0;
+.form-field label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
 }
 
 .form-field input,
 .form-field select,
 .form-field textarea,
-.form-field button,
-.component--megaform input,
-.component--megaform select,
-.component--megaform textarea,
-.component--megaform button {
+.form-field button {
   font: inherit;
-  margin: 0.25rem 0.35rem 0.25rem 0;
 }
 
-.component--megaform fieldset {
-  margin: 0 0 1rem;
-  border: 1px solid var(--border);
-  padding: var(--demo-padding);
-}
-
-.component--megaform legend {
-  font-family: var(--font-family);
-  font-weight: 500;
-  padding: 0 0.35rem;
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: inherit;
 }

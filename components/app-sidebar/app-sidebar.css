@@ -1,0 +1,36 @@
+/* Component: App Sidebar
+   Markup: components/app-sidebar/app-sidebar.html
+   Barebones structure — customize freely.
+*/
+
+.component--app-sidebar .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.app-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  min-width: 14rem;
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.app-sidebar__brand { font-weight: 600; margin: 0; }
+.app-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.app-sidebar__nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+.app-sidebar__nav a[aria-current="page"] {
+  background: var(--bg);
+  border: 1px solid var(--line);
+}

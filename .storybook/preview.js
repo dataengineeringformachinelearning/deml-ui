@@ -73,7 +73,18 @@ const preview = {
     options: {
       storySort: {
         method: "alphabetical",
-        order: ["Introduction", "Shell", "Forms", "Components", "*"],
+        order: [
+          "Introduction",
+          "Dashboard",
+          "Shell",
+          "Layout",
+          "Forms",
+          "Feedback",
+          "Data",
+          "Overlays",
+          "Components",
+          "*",
+        ],
       },
     },
 

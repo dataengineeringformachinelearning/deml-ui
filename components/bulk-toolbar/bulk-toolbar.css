@@ -1,0 +1,31 @@
+/* Component: Bulk Toolbar
+   Markup: components/bulk-toolbar/bulk-toolbar.html
+   Barebones structure — customize freely.
+*/
+
+.component--bulk-toolbar .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.bulk-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.bulk-toolbar__count { font-weight: 600; margin-inline-end: auto; }
+.bulk-toolbar button {
+  font: inherit;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+  color: inherit;
+}

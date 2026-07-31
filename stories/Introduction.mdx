@@ -1,48 +1,78 @@
-import { Meta, Markdown } from "@storybook/addon-docs/blocks";
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Introduction" />
 
 # deml-ui
 
-DEML’s component library — HTML/CSS sources with dual builds (Web Components + Angular).
+Barebones, working HTML/CSS components for building dashboard applications — with dual package builds (**Web Components** + **Angular**).
+
+Style first in Storybook. Ship via `npm run build`.
 
 ## How to use this Storybook
 
 | Feature | Where |
 |--------|--------|
 | **Canvas** | Live component preview |
-| **Docs** | Auto-generated docs + source (Autodocs) |
+| **Docs** | Autodocs + packaged HTML source (`.demo` fragment) |
 | **Theme** | Toolbar — light / dark (`data-theme`) |
 | **Viewport** | Toolbar — phone, tablet, desktop, deml widths |
-| **Backgrounds** | Toolbar — page, surface, brand colors |
-| **Measure** | Toolbar — inspect spacing |
-| **Outline** | Toolbar — show element outlines |
-| **Density** | Toolbar — compact / comfortable / spacious padding |
-| **A11y** | Panel — axe accessibility checks |
-| **Controls** | Panel — story parameters when available |
-| **Actions** | Panel — logged DOM events (click, submit, …) |
+| **Backgrounds** | Toolbar — page / surface / charcoal |
+| **Measure / Outline** | Toolbar — spacing & box inspection |
+| **Density** | Toolbar — compact / comfortable / spacious |
+| **A11y** | Panel — axe (WCAG 2 A/AA + best practices) |
+| **Actions** | Panel — click / submit / change / input |
 
 ## Source of truth
 
-Components live in `components/<name>/`:
+`components/<name>/`:
 
-- `<name>.html` — markup (demo chrome + reusable content in `.demo`)
-- `<name>.css` — styles under `.component--<name>` or BEM roots
+- `<name>.html` — Storybook chrome + reusable markup in `.demo`
+- `<name>.css` — barebones structure under BEM roots (`.card`, `.tabs`, …)
 
-Edit CSS/HTML → Storybook hot-reloads. Add/remove a folder → stories regenerate (`npm run sync`).
+Edit → hot reload. Add/remove a folder → `npm run sync` regenerates stories + wrappers.
 
 ## Sidebar
 
-1. **Shell** — page chrome (header, navbar, footer, …)
-2. **Forms** — inputs, buttons, choices, megaform
-3. **Components** — content elements (article, table, media, …)
+1. **Dashboard** — composition example
+2. **Shell** — app chrome, page headers, navigation
+3. **Layout** — stack, grid, panels, spacing recipes
+4. **Forms** — fields, inputs, buttons, switches
+5. **Feedback** — badges, callouts, toasts, loaders
+6. **Data** — cards, metrics, tables, charts
+7. **Overlays** — dialogs, sheets, tabs, menus
 
 ## Package builds
 
 ```bash
 npm run storybook        # this UI
 npm run build            # styles + web components + Angular → dist/
-npm run build-storybook  # static site (Vercel → ui.deml.app)
+npm run build-storybook  # static site
 ```
 
-Custom elements use the `deml-*` tag prefix (e.g. `deml-button`).
+Custom elements use the `deml-*` tag prefix (e.g. `<deml-button>`).
+
+## Angular
+
+Two layers ship from `deml-ui/angular`:
+
+| Layer | What it is |
+|-------|------------|
+| **Markup wrappers** | Standalone components generated from each `.demo` fragment — style with package CSS |
+| **Headless primitives** | Unstyled behavior (Signals + WAI-ARIA) — compose parts, apply your own classes |
+
+Headless kit (composition-first):
+
+| Primitive | Import | Parts |
+|-----------|--------|-------|
+| Tabs | `DEML_TABS_IMPORTS` | `demlTabList`, `demlTab`, `demlTabPanel` |
+| Dialog | `DEML_DIALOG_IMPORTS` | panel / title / description / close |
+| Disclosure | `DEML_DISCLOSURE_IMPORTS` | button / panel |
+| Combobox | `DEML_COMBOBOX_IMPORTS` | label / input / button / options |
+| Menu | `DEML_MENU_IMPORTS` | button / items / item |
+
+```ts
+import { DEML_TABS_IMPORTS, DEML_DIALOG_IMPORTS } from "deml-ui/angular";
+```
+
+Shared API: `[(open)]` / `[(value)]`, `(change)`, `(opened)` / `(closed)`, `data-state`.  
+Full examples: repo `src/angular/headless/USAGE.md` · conventions: `CONVENTIONS.md`.

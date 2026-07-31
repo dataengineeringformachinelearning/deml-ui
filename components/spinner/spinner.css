@@ -1,0 +1,29 @@
+/* Component: Spinner
+   Markup: components/spinner/spinner.html
+   Barebones structure — customize freely.
+*/
+
+.component--spinner .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner__visual {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--line);
+  border-block-start-color: var(--ink);
+  border-radius: 999px;
+  animation: deml-spin 0.7s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .spinner__visual { animation: none; border-color: var(--ink); }
+}
+@keyframes deml-spin {
+  to { transform: rotate(360deg); }
+}

@@ -7,7 +7,10 @@ export class DemlButton extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<button type="button">Button</button>`;
+      this.innerHTML = `<button type="button" class="button" data-variant="primary">Primary</button>
+    <button type="button" class="button">Default</button>
+    <button type="button" class="button" data-variant="ghost">Ghost</button>
+    <button type="button" class="button" disabled>Disabled</button>`;
     }
   }
 }

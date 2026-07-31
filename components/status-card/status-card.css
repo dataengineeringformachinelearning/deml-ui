@@ -1,0 +1,27 @@
+/* Component: Status Card
+   Markup: components/status-card/status-card.html
+   Barebones structure — customize freely.
+*/
+
+.component--status-card .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.status-card {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+}
+.status-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+.status-card__title { margin: 0; font-size: 1rem; }
+.status-card__description,
+.status-card__uptime { margin: 0; color: var(--muted); font-size: 0.875rem; }

@@ -1,0 +1,21 @@
+/* Component: Help Panel
+   Markup: components/help-panel/help-panel.html
+   Barebones structure — customize freely.
+*/
+
+.component--help-panel .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.help-panel {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  max-width: 22rem;
+}
+.help-panel h3 { margin: 0; font-size: 1rem; }
+.help-panel p { margin: 0; color: var(--muted); }

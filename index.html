@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HTML element reference — every common HTML component in one page.">
-  <meta name="keywords" content="html, elements, reference, components">
-  <meta name="author" content="deml-ui">
+  <meta name="description" content="deml-ui — barebones dashboard component reference">
   <meta name="theme-color" content="#5C2A5A">
-  <title>HTML Element Reference</title>
+  <title>deml-ui — Component reference</title>
   <base href="./">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>H</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>D</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,95 +15,58 @@
   <link rel="stylesheet" href="components/components.css">
 </head>
 <body>
-  <!--
-    Page composition — each block is a component fragment.
-    Convention: components/<name>/<name>.html + <name>.css
-    Serve over HTTP so data-include can fetch (e.g. npx serve).
-  -->
   <div data-include="components/skip-link/skip-link.html"></div>
-  <div data-include="components/site-header/site-header.html"></div>
-  <div data-include="components/navbar/navbar.html"></div>
+  <div data-include="components/app-header/app-header.html"></div>
 
-  <main id="main">
-    <div data-include="components/gallery/gallery.html"></div>
+  <main id="main" class="page-shell">
+    <div class="page-shell__inner">
+      <header class="page-header">
+        <div class="page-header__text">
+          <h1 class="page-header__title">deml-ui</h1>
+          <p class="page-header__subtitle">Barebones, working HTML/CSS for dashboard apps — Web Components + Angular. Prefer Storybook for the full catalog.</p>
+        </div>
+        <div class="page-header__actions">
+          <a class="button" href="/storybook/">Open Storybook</a>
+        </div>
+      </header>
 
-    <div data-include="components/article/article.html"></div>
-    <div data-include="components/aside/aside.html"></div>
-    <div data-include="components/search/search.html"></div>
+      <section class="section">
+        <header class="section__header">
+          <h2 class="section__title">Shell</h2>
+          <p class="section__description">App chrome and page anatomy.</p>
+        </header>
+        <div data-include="components/app-layout/app-layout.html"></div>
+        <div data-include="components/page-header/page-header.html"></div>
+        <div data-include="components/sidebar-nav/sidebar-nav.html"></div>
+      </section>
 
-    <div data-include="components/headings/headings.html"></div>
+      <section class="section">
+        <header class="section__header">
+          <h2 class="section__title">Data</h2>
+          <p class="section__description">Surfaces you compose into dashboards.</p>
+        </header>
+        <div class="panel-grid">
+          <div data-include="components/metric-card/metric-card.html"></div>
+          <div data-include="components/card/card.html"></div>
+        </div>
+        <div data-include="components/table/table.html"></div>
+        <div data-include="components/chart-panel/chart-panel.html"></div>
+      </section>
 
-    <div data-include="components/paragraph/paragraph.html"></div>
-    <div data-include="components/bidirectional/bidirectional.html"></div>
-    <div data-include="components/blockquote/blockquote.html"></div>
-    <div data-include="components/pre/pre.html"></div>
-    <div data-include="components/edits/edits.html"></div>
-    <div data-include="components/ruby/ruby.html"></div>
-
-    <div data-include="components/unordered-list/unordered-list.html"></div>
-    <div data-include="components/ordered-list/ordered-list.html"></div>
-    <div data-include="components/description-list/description-list.html"></div>
-    <div data-include="components/menu/menu.html"></div>
-
-    <div data-include="components/table/table.html"></div>
-
-    <div data-include="components/image/image.html"></div>
-    <div data-include="components/picture/picture.html"></div>
-    <div data-include="components/image-map/image-map.html"></div>
-    <div data-include="components/audio/audio.html"></div>
-    <div data-include="components/video/video.html"></div>
-    <div data-include="components/iframe/iframe.html"></div>
-    <div data-include="components/embed-object/embed-object.html"></div>
-    <div data-include="components/svg/svg.html"></div>
-    <div data-include="components/canvas/canvas.html"></div>
-    <div data-include="components/math/math.html"></div>
-
-    <div data-include="components/input-text/input-text.html"></div>
-    <div data-include="components/input-email/input-email.html"></div>
-    <div data-include="components/input-password/input-password.html"></div>
-    <div data-include="components/input-tel/input-tel.html"></div>
-    <div data-include="components/input-url/input-url.html"></div>
-    <div data-include="components/input-search/input-search.html"></div>
-    <div data-include="components/input-number/input-number.html"></div>
-    <div data-include="components/input-range/input-range.html"></div>
-    <div data-include="components/input-color/input-color.html"></div>
-    <div data-include="components/input-date/input-date.html"></div>
-    <div data-include="components/input-time/input-time.html"></div>
-    <div data-include="components/input-datetime-local/input-datetime-local.html"></div>
-    <div data-include="components/input-month/input-month.html"></div>
-    <div data-include="components/input-week/input-week.html"></div>
-    <div data-include="components/checkbox-newsletter/checkbox-newsletter.html"></div>
-    <div data-include="components/checkbox-updates/checkbox-updates.html"></div>
-    <div data-include="components/radio-free/radio-free.html"></div>
-    <div data-include="components/radio-pro/radio-pro.html"></div>
-    <div data-include="components/radio-team/radio-team.html"></div>
-    <div data-include="components/select/select.html"></div>
-    <div data-include="components/datalist/datalist.html"></div>
-    <div data-include="components/input-file/input-file.html"></div>
-    <div data-include="components/input-hidden/input-hidden.html"></div>
-    <div data-include="components/input-image/input-image.html"></div>
-    <div data-include="components/textarea/textarea.html"></div>
-    <div data-include="components/output/output.html"></div>
-    <div data-include="components/progress/progress.html"></div>
-    <div data-include="components/meter/meter.html"></div>
-    <div data-include="components/button-submit/button-submit.html"></div>
-    <div data-include="components/button-reset/button-reset.html"></div>
-    <div data-include="components/button/button.html"></div>
-    <div data-include="components/input-submit/input-submit.html"></div>
-    <div data-include="components/input-reset/input-reset.html"></div>
-    <div data-include="components/input-button/input-button.html"></div>
-    <div data-include="components/megaform/megaform.html"></div>
-
-    <div data-include="components/details/details.html"></div>
-    <div data-include="components/dialog/dialog.html"></div>
-
-    <div data-include="components/noscript/noscript.html"></div>
-    <div data-include="components/template/template.html"></div>
-    <div data-include="components/slot/slot.html"></div>
+      <section class="section">
+        <header class="section__header">
+          <h2 class="section__title">Forms & feedback</h2>
+        </header>
+        <div data-include="components/field/field.html"></div>
+        <div data-include="components/button/button.html"></div>
+        <div data-include="components/callout/callout.html"></div>
+        <div data-include="components/tabs/tabs.html"></div>
+        <div data-include="components/dialog/dialog.html"></div>
+      </section>
+    </div>
   </main>
 
-  <div data-include="components/site-footer/site-footer.html"></div>
-
+  <div data-include="components/app-footer/app-footer.html"></div>
   <script type="module" src="components/load.js"></script>
 </body>
 </html>

@@ -1,6 +1,27 @@
-/* Component: Number input
+/* Component: Input Number
    Markup: components/input-number/input-number.html
+   Barebones structure — customize freely.
 */
 
-.component--input-number {
+.component--input-number .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--input-number label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+.component--input-number input,
+.component--input-number select,
+.component--input-number textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: inherit;
 }

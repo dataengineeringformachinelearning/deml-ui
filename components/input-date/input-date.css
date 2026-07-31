@@ -1,6 +1,27 @@
-/* Component: Date input
+/* Component: Input Date
    Markup: components/input-date/input-date.html
+   Barebones structure — customize freely.
 */
 
-.component--input-date {
+.component--input-date .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--input-date label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+.component--input-date input,
+.component--input-date select,
+.component--input-date textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: inherit;
 }

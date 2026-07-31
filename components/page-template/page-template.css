@@ -1,0 +1,26 @@
+/* Component: Page Template
+   Markup: components/page-template/page-template.html
+   Barebones structure — customize freely.
+*/
+
+.component--page-template .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.page-template {
+  display: grid;
+  gap: var(--space-md);
+}
+.page-template__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+.page-template__header h1 { margin: 0; font-size: 1.5rem; }
+.page-template__content,
+.page-template__footer {
+  min-width: 0;
+}

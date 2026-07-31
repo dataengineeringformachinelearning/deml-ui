@@ -17,7 +17,8 @@ import {
 } from "./lib/components.mjs";
 
 const genWcDir = path.join(root, "generated", "web-components");
-const genNgDir = path.join(root, "generated", "angular");
+/** Angular markup dumps live next to headless so ng-packagr has one tree. */
+const genNgDir = path.join(root, "src", "angular", "markup");
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -26,6 +27,7 @@ function ensureDir(dir) {
 function clearTs(dir) {
   if (!fs.existsSync(dir)) return;
   for (const file of fs.readdirSync(dir)) {
+    // Only clear flat generated dumps — never touch nested packages.
     if (file.endsWith(".ts")) fs.unlinkSync(path.join(dir, file));
   }
 }
@@ -58,6 +60,7 @@ export default ${className};
 
 function writeNg(name, template, className, tagName) {
   // Use JSON string + innerHTML so raw HTML ({}, @, etc.) never hits Angular's template parser.
+  // Constructor DI — avoid field inject() for safer cross-package bundles.
   const json = JSON.stringify(template);
   return `/* AUTO-GENERATED from components/${name}/${name}.html — do not edit */
 import {
@@ -65,7 +68,6 @@ import {
   ElementRef,
   OnInit,
   ViewEncapsulation,
-  inject,
 } from "@angular/core";
 
 const DEML_TEMPLATE = ${json};
@@ -77,7 +79,7 @@ const DEML_TEMPLATE = ${json};
   encapsulation: ViewEncapsulation.None,
 })
 export class ${className} implements OnInit {
-  private readonly host = inject(ElementRef<HTMLElement>);
+  constructor(private readonly host: ElementRef<HTMLElement>) {}
 
   ngOnInit(): void {
     const el = this.host.nativeElement;
@@ -94,10 +96,17 @@ ensureDir(genNgDir);
 clearTs(genWcDir);
 clearTs(genNgDir);
 
+/**
+ * These have real headless Angular implementations under src/angular/headless/.
+ * Still emit Web Component HTML dumps; skip dump-style Angular wrappers.
+ */
+const HEADLESS_ANGULAR = new Set(["tabs", "dialog", "disclosure"]);
+
 const names = listPackageable();
 const exportsWc = [];
 const exportsNg = [];
 const defineCalls = [];
+const angularDumpNames = [];
 
 for (const name of names) {
   const htmlPath = path.join(componentsDir, name, `${name}.html`);
@@ -119,16 +128,21 @@ for (const name of names) {
     path.join(genWcDir, `${name}.ts`),
     writeWc(name, template, className, tagName)
   );
+  exportsWc.push(
+    `export { ${className}, define${pascal} } from "./${name}.js";`
+  );
+  defineCalls.push(`  define${pascal}();`);
+
+  if (HEADLESS_ANGULAR.has(name)) {
+    continue;
+  }
+
   fs.writeFileSync(
     path.join(genNgDir, `${name}.ts`),
     writeNg(name, template, className, tagName)
   );
-
-  exportsWc.push(
-    `export { ${className}, define${pascal} } from "./${name}.js";`
-  );
   exportsNg.push(`export { ${className} } from "./${name}";`);
-  defineCalls.push(`  define${pascal}();`);
+  angularDumpNames.push(name);
 }
 
 const registry = `/* AUTO-GENERATED — do not edit */
@@ -157,23 +171,23 @@ fs.writeFileSync(
   path.join(genNgDir, "public-api.ts"),
   `/* AUTO-GENERATED — do not edit */
 ${exportsNg.join("\n")}
-export { DEML_COMPONENTS } from "./all-components";
+export { DEML_MARKUP_COMPONENTS } from "./all-components";
 `
 );
 
-const classNames = names.map((n) => toClassName(n));
+const classNames = angularDumpNames.map((n) => toClassName(n));
 fs.writeFileSync(
   path.join(genNgDir, "all-components.ts"),
   `/* AUTO-GENERATED — do not edit */
-${names.map((n) => `import { ${toClassName(n)} } from "./${n}";`).join("\n")}
+${angularDumpNames.map((n) => `import { ${toClassName(n)} } from "./${n}";`).join("\n")}
 
-/** Array of all standalone deml-ui Angular components (for convenience imports). */
-export const DEML_COMPONENTS = [
+/** Markup-dump Angular wrappers only (headless lives in src/angular/headless). */
+export const DEML_MARKUP_COMPONENTS = [
 ${classNames.map((c) => `  ${c},`).join("\n")}
 ] as const;
 `
 );
 
 console.log(
-  `Generated ${names.length} web components + Angular wrappers → generated/`
+  `Generated ${names.length} web components + ${angularDumpNames.length} Angular dumps (+ headless) → generated/`
 );

@@ -1,0 +1,20 @@
+<!--
+  Component: Autocomplete
+  Path: components/autocomplete/autocomplete.html
+  Styles: components/autocomplete/autocomplete.css
+  Source: structural shell from deml Viking-UI (unstyled)
+-->
+<section id="autocomplete" class="component component--autocomplete form-field">
+  <h2>Autocomplete</h2>
+  <div class="demo">
+    <div class="autocomplete">
+      <label for="autocomplete-input">Fruit</label>
+      <input id="autocomplete-input" type="text" name="fruit" autocomplete="off" aria-autocomplete="list" aria-controls="autocomplete-list" aria-expanded="true" />
+      <ul id="autocomplete-list" class="autocomplete__list" role="listbox">
+        <li role="option" aria-selected="true">Apple</li>
+        <li role="option">Apricot</li>
+        <li role="option">Avocado</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+/* Component: Form Section
+   Markup: components/form-section/form-section.html
+   Barebones structure — customize freely.
+*/
+
+.component--form-section .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.form-section {
+  display: grid;
+  gap: var(--space-md);
+  max-width: 42rem;
+}
+.form-section__title { margin: 0; font-size: 1.125rem; }
+.form-section__description { margin: 0; color: var(--muted); }
+.form-section__body {
+  display: grid;
+  gap: var(--space-md);
+}
+.form-section__body label {
+  display: grid;
+  gap: var(--space-sm);
+}

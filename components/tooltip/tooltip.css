@@ -1,0 +1,30 @@
+/* Component: Tooltip
+   Markup: components/tooltip/tooltip.html
+   Barebones structure — customize freely.
+*/
+
+.component--tooltip .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.tooltip-trigger {
+  font: inherit;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  cursor: pointer;
+  color: inherit;
+}
+.tooltip {
+  display: inline-block;
+  margin-inline-start: var(--space-sm);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 0.75rem;
+}

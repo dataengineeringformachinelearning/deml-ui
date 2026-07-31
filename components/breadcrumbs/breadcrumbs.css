@@ -1,0 +1,25 @@
+/* Component: Breadcrumbs
+   Markup: components/breadcrumbs/breadcrumbs.html
+   Barebones structure — customize freely.
+*/
+
+.component--breadcrumbs .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+}
+.breadcrumbs__list li:not(:last-child)::after {
+  content: "/";
+  margin-inline-start: var(--space-sm);
+  color: var(--muted);
+}
+.breadcrumbs a { color: inherit; }

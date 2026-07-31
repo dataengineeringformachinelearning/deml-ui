@@ -1,6 +1,27 @@
-/* Component: Search input
+/* Component: Input Search
    Markup: components/input-search/input-search.html
+   Barebones structure — customize freely.
 */
 
-.component--input-search {
+.component--input-search .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--input-search label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+.component--input-search input,
+.component--input-search select,
+.component--input-search textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: inherit;
 }

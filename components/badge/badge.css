@@ -1,0 +1,22 @@
+/* Component: Badge
+   Markup: components/badge/badge.html
+   Barebones structure — customize freely.
+*/
+
+.component--badge .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 1.5rem;
+  padding: 0 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--surface);
+}

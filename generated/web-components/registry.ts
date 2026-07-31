@@ -1,212 +1,275 @@
 /* AUTO-GENERATED — do not edit */
-import { defineArticle } from "./article.js";
-import { defineAside } from "./aside.js";
-import { defineAudio } from "./audio.js";
-import { defineBidirectional } from "./bidirectional.js";
-import { defineBlockquote } from "./blockquote.js";
+import { defineAccordion } from "./accordion.js";
+import { defineActivityList } from "./activity-list.js";
+import { defineAppFooter } from "./app-footer.js";
+import { defineAppHeader } from "./app-header.js";
+import { defineAppLayout } from "./app-layout.js";
+import { defineAppSidebar } from "./app-sidebar.js";
+import { defineAutocomplete } from "./autocomplete.js";
+import { defineAvatar } from "./avatar.js";
+import { defineBadge } from "./badge.js";
+import { defineBox } from "./box.js";
+import { defineBrand } from "./brand.js";
+import { defineBreadcrumbs } from "./breadcrumbs.js";
+import { defineBulkToolbar } from "./bulk-toolbar.js";
 import { defineButton } from "./button.js";
-import { defineButtonReset } from "./button-reset.js";
-import { defineButtonSubmit } from "./button-submit.js";
-import { defineCanvas } from "./canvas.js";
-import { defineCheckboxNewsletter } from "./checkbox-newsletter.js";
-import { defineCheckboxUpdates } from "./checkbox-updates.js";
-import { defineDatalist } from "./datalist.js";
-import { defineDescriptionList } from "./description-list.js";
-import { defineDetails } from "./details.js";
+import { defineButtonGroup } from "./button-group.js";
+import { defineCallout } from "./callout.js";
+import { defineCard } from "./card.js";
+import { defineChart } from "./chart.js";
+import { defineChartEmptyState } from "./chart-empty-state.js";
+import { defineChartPanel } from "./chart-panel.js";
+import { defineCheckbox } from "./checkbox.js";
+import { defineCluster } from "./cluster.js";
+import { defineCommand } from "./command.js";
+import { defineConfirmDialog } from "./confirm-dialog.js";
+import { defineContainer } from "./container.js";
+import { defineContentLayout } from "./content-layout.js";
 import { defineDialog } from "./dialog.js";
-import { defineEdits } from "./edits.js";
-import { defineEmbedObject } from "./embed-object.js";
-import { defineHeadings } from "./headings.js";
-import { defineIframe } from "./iframe.js";
-import { defineImage } from "./image.js";
-import { defineImageMap } from "./image-map.js";
-import { defineInputButton } from "./input-button.js";
-import { defineInputColor } from "./input-color.js";
+import { defineDisclosure } from "./disclosure.js";
+import { defineDropdown } from "./dropdown.js";
+import { defineEmptyState } from "./empty-state.js";
+import { defineErrorState } from "./error-state.js";
+import { defineField } from "./field.js";
+import { defineFileUpload } from "./file-upload.js";
+import { defineFlashbar } from "./flashbar.js";
+import { defineFormGrid } from "./form-grid.js";
+import { defineFormSection } from "./form-section.js";
+import { defineGrid } from "./grid.js";
+import { defineHelpPanel } from "./help-panel.js";
+import { defineHudPanel } from "./hud-panel.js";
+import { defineIcon } from "./icon.js";
 import { defineInputDate } from "./input-date.js";
-import { defineInputDatetimeLocal } from "./input-datetime-local.js";
 import { defineInputEmail } from "./input-email.js";
-import { defineInputFile } from "./input-file.js";
-import { defineInputHidden } from "./input-hidden.js";
-import { defineInputImage } from "./input-image.js";
-import { defineInputMonth } from "./input-month.js";
 import { defineInputNumber } from "./input-number.js";
 import { defineInputPassword } from "./input-password.js";
 import { defineInputRange } from "./input-range.js";
-import { defineInputReset } from "./input-reset.js";
 import { defineInputSearch } from "./input-search.js";
-import { defineInputSubmit } from "./input-submit.js";
-import { defineInputTel } from "./input-tel.js";
 import { defineInputText } from "./input-text.js";
 import { defineInputTime } from "./input-time.js";
-import { defineInputUrl } from "./input-url.js";
-import { defineInputWeek } from "./input-week.js";
-import { defineMath } from "./math.js";
-import { defineMenu } from "./menu.js";
-import { defineMeter } from "./meter.js";
-import { defineNavbar } from "./navbar.js";
-import { defineNoscript } from "./noscript.js";
-import { defineOrderedList } from "./ordered-list.js";
-import { defineOutput } from "./output.js";
-import { defineParagraph } from "./paragraph.js";
-import { definePicture } from "./picture.js";
-import { definePre } from "./pre.js";
+import { defineKbd } from "./kbd.js";
+import { defineLabel } from "./label.js";
+import { defineLoadingOverlay } from "./loading-overlay.js";
+import { defineMetricCard } from "./metric-card.js";
+import { defineNavigationMenu } from "./navigation-menu.js";
+import { definePageBackLink } from "./page-back-link.js";
+import { definePageHeader } from "./page-header.js";
+import { definePageShell } from "./page-shell.js";
+import { definePageTemplate } from "./page-template.js";
+import { definePagination } from "./pagination.js";
+import { definePanelGrid } from "./panel-grid.js";
+import { definePopover } from "./popover.js";
+import { defineProfile } from "./profile.js";
 import { defineProgress } from "./progress.js";
-import { defineRadioFree } from "./radio-free.js";
-import { defineRadioPro } from "./radio-pro.js";
-import { defineRadioTeam } from "./radio-team.js";
-import { defineRuby } from "./ruby.js";
-import { defineSearch } from "./search.js";
+import { definePropertyFilter } from "./property-filter.js";
+import { defineRadioGroup } from "./radio-group.js";
+import { defineScrollArea } from "./scroll-area.js";
+import { defineSection } from "./section.js";
+import { defineSectionTemplate } from "./section-template.js";
 import { defineSelect } from "./select.js";
-import { defineSiteFooter } from "./site-footer.js";
-import { defineSiteHeader } from "./site-header.js";
+import { defineSeparator } from "./separator.js";
+import { defineSheet } from "./sheet.js";
+import { defineSidebarNav } from "./sidebar-nav.js";
+import { defineSkeleton } from "./skeleton.js";
 import { defineSkipLink } from "./skip-link.js";
-import { defineSlot } from "./slot.js";
-import { defineSvg } from "./svg.js";
+import { defineSpinner } from "./spinner.js";
+import { defineSplitPanel } from "./split-panel.js";
+import { defineStack } from "./stack.js";
+import { defineStatusBadge } from "./status-badge.js";
+import { defineStatusCard } from "./status-card.js";
+import { defineStatusPill } from "./status-pill.js";
+import { defineSwitch } from "./switch.js";
 import { defineTable } from "./table.js";
-import { defineTemplate } from "./template.js";
+import { defineTabs } from "./tabs.js";
 import { defineTextarea } from "./textarea.js";
-import { defineUnorderedList } from "./unordered-list.js";
-import { defineVideo } from "./video.js";
+import { defineThemeToggle } from "./theme-toggle.js";
+import { defineTimeline } from "./timeline.js";
+import { defineToast } from "./toast.js";
+import { defineToggle } from "./toggle.js";
+import { defineTooltip } from "./tooltip.js";
+import { defineWizard } from "./wizard.js";
 
 /** Register every deml-ui custom element (idempotent). */
 export function defineAll(): void {
-  defineArticle();
-  defineAside();
-  defineAudio();
-  defineBidirectional();
-  defineBlockquote();
+  defineAccordion();
+  defineActivityList();
+  defineAppFooter();
+  defineAppHeader();
+  defineAppLayout();
+  defineAppSidebar();
+  defineAutocomplete();
+  defineAvatar();
+  defineBadge();
+  defineBox();
+  defineBrand();
+  defineBreadcrumbs();
+  defineBulkToolbar();
   defineButton();
-  defineButtonReset();
-  defineButtonSubmit();
-  defineCanvas();
-  defineCheckboxNewsletter();
-  defineCheckboxUpdates();
-  defineDatalist();
-  defineDescriptionList();
-  defineDetails();
+  defineButtonGroup();
+  defineCallout();
+  defineCard();
+  defineChart();
+  defineChartEmptyState();
+  defineChartPanel();
+  defineCheckbox();
+  defineCluster();
+  defineCommand();
+  defineConfirmDialog();
+  defineContainer();
+  defineContentLayout();
   defineDialog();
-  defineEdits();
-  defineEmbedObject();
-  defineHeadings();
-  defineIframe();
-  defineImage();
-  defineImageMap();
-  defineInputButton();
-  defineInputColor();
+  defineDisclosure();
+  defineDropdown();
+  defineEmptyState();
+  defineErrorState();
+  defineField();
+  defineFileUpload();
+  defineFlashbar();
+  defineFormGrid();
+  defineFormSection();
+  defineGrid();
+  defineHelpPanel();
+  defineHudPanel();
+  defineIcon();
   defineInputDate();
-  defineInputDatetimeLocal();
   defineInputEmail();
-  defineInputFile();
-  defineInputHidden();
-  defineInputImage();
-  defineInputMonth();
   defineInputNumber();
   defineInputPassword();
   defineInputRange();
-  defineInputReset();
   defineInputSearch();
-  defineInputSubmit();
-  defineInputTel();
   defineInputText();
   defineInputTime();
-  defineInputUrl();
-  defineInputWeek();
-  defineMath();
-  defineMenu();
-  defineMeter();
-  defineNavbar();
-  defineNoscript();
-  defineOrderedList();
-  defineOutput();
-  defineParagraph();
-  definePicture();
-  definePre();
+  defineKbd();
+  defineLabel();
+  defineLoadingOverlay();
+  defineMetricCard();
+  defineNavigationMenu();
+  definePageBackLink();
+  definePageHeader();
+  definePageShell();
+  definePageTemplate();
+  definePagination();
+  definePanelGrid();
+  definePopover();
+  defineProfile();
   defineProgress();
-  defineRadioFree();
-  defineRadioPro();
-  defineRadioTeam();
-  defineRuby();
-  defineSearch();
+  definePropertyFilter();
+  defineRadioGroup();
+  defineScrollArea();
+  defineSection();
+  defineSectionTemplate();
   defineSelect();
-  defineSiteFooter();
-  defineSiteHeader();
+  defineSeparator();
+  defineSheet();
+  defineSidebarNav();
+  defineSkeleton();
   defineSkipLink();
-  defineSlot();
-  defineSvg();
+  defineSpinner();
+  defineSplitPanel();
+  defineStack();
+  defineStatusBadge();
+  defineStatusCard();
+  defineStatusPill();
+  defineSwitch();
   defineTable();
-  defineTemplate();
+  defineTabs();
   defineTextarea();
-  defineUnorderedList();
-  defineVideo();
+  defineThemeToggle();
+  defineTimeline();
+  defineToast();
+  defineToggle();
+  defineTooltip();
+  defineWizard();
 }
 
 export const componentNames = [
-  "article",
-  "aside",
-  "audio",
-  "bidirectional",
-  "blockquote",
+  "accordion",
+  "activity-list",
+  "app-footer",
+  "app-header",
+  "app-layout",
+  "app-sidebar",
+  "autocomplete",
+  "avatar",
+  "badge",
+  "box",
+  "brand",
+  "breadcrumbs",
+  "bulk-toolbar",
   "button",
-  "button-reset",
-  "button-submit",
-  "canvas",
-  "checkbox-newsletter",
-  "checkbox-updates",
-  "datalist",
-  "description-list",
-  "details",
+  "button-group",
+  "callout",
+  "card",
+  "chart",
+  "chart-empty-state",
+  "chart-panel",
+  "checkbox",
+  "cluster",
+  "command",
+  "confirm-dialog",
+  "container",
+  "content-layout",
   "dialog",
-  "edits",
-  "embed-object",
-  "headings",
-  "iframe",
-  "image",
-  "image-map",
-  "input-button",
-  "input-color",
+  "disclosure",
+  "dropdown",
+  "empty-state",
+  "error-state",
+  "field",
+  "file-upload",
+  "flashbar",
+  "form-grid",
+  "form-section",
+  "grid",
+  "help-panel",
+  "hud-panel",
+  "icon",
   "input-date",
-  "input-datetime-local",
   "input-email",
-  "input-file",
-  "input-hidden",
-  "input-image",
-  "input-month",
   "input-number",
   "input-password",
   "input-range",
-  "input-reset",
   "input-search",
-  "input-submit",
-  "input-tel",
   "input-text",
   "input-time",
-  "input-url",
-  "input-week",
-  "math",
-  "menu",
-  "meter",
-  "navbar",
-  "noscript",
-  "ordered-list",
-  "output",
-  "paragraph",
-  "picture",
-  "pre",
+  "kbd",
+  "label",
+  "loading-overlay",
+  "metric-card",
+  "navigation-menu",
+  "page-back-link",
+  "page-header",
+  "page-shell",
+  "page-template",
+  "pagination",
+  "panel-grid",
+  "popover",
+  "profile",
   "progress",
-  "radio-free",
-  "radio-pro",
-  "radio-team",
-  "ruby",
-  "search",
+  "property-filter",
+  "radio-group",
+  "scroll-area",
+  "section",
+  "section-template",
   "select",
-  "site-footer",
-  "site-header",
+  "separator",
+  "sheet",
+  "sidebar-nav",
+  "skeleton",
   "skip-link",
-  "slot",
-  "svg",
+  "spinner",
+  "split-panel",
+  "stack",
+  "status-badge",
+  "status-card",
+  "status-pill",
+  "switch",
   "table",
-  "template",
+  "tabs",
   "textarea",
-  "unordered-list",
-  "video"
+  "theme-toggle",
+  "timeline",
+  "toast",
+  "toggle",
+  "tooltip",
+  "wizard"
 ] as const;

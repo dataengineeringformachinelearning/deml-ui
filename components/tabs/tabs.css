@@ -1,0 +1,9 @@
+/* Component: Tabs
+   Markup: components/tabs/tabs.html
+   Headless — zero default visual styles.
+   Style .tabs / [data-state] / [aria-selected] in your app.
+*/
+
+.component--tabs .demo {
+  /* Storybook demo frame only */
+}

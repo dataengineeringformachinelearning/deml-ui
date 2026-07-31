@@ -1,16 +1,9 @@
 /* Component: Dialog
    Markup: components/dialog/dialog.html
+   Headless — zero default visual styles.
+   Style dialog / ::backdrop in your app.
 */
 
-.component--dialog {
-}
-
-.component--dialog dialog {
-  border: 1px solid var(--line);
-  padding: var(--space-md);
-  max-width: 28rem;
-}
-
-.component--dialog dialog::backdrop {
-  background: rgba(28, 27, 25, 0.35);
+.component--dialog .demo {
+  /* Storybook demo frame only */
 }

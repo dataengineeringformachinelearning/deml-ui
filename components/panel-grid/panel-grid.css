@@ -1,0 +1,25 @@
+/* Component: Panel Grid
+   Markup: components/panel-grid/panel-grid.html
+   Barebones structure — customize freely.
+*/
+
+.component--panel-grid .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.panel-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  align-items: stretch;
+}
+.panel-grid__item {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  min-height: 8rem;
+}

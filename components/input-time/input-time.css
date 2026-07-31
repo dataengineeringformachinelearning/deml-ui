@@ -1,6 +1,27 @@
-/* Component: Time input
+/* Component: Input Time
    Markup: components/input-time/input-time.html
+   Barebones structure — customize freely.
 */
 
-.component--input-time {
+.component--input-time .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--input-time label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+.component--input-time input,
+.component--input-time select,
+.component--input-time textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: inherit;
 }

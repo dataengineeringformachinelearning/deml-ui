@@ -1,0 +1,17 @@
+/* Component: Checkbox
+   Markup: components/checkbox/checkbox.html
+   Barebones structure — customize freely.
+*/
+
+.component--checkbox .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  cursor: pointer;
+}
+.checkbox input { margin-block-start: 0.2rem; }

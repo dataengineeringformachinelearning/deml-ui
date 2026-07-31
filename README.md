@@ -1,169 +1,157 @@
 # deml-ui
 
-DEML’s component library: HTML/CSS sources with dual package builds (**Web Components** + **Angular**) and Storybook docs that stay in sync as you style components.
+Barebones, working HTML/CSS components for building dashboard applications — with dual package builds (**Web Components** + **Angular**).
 
-**Source of truth:** `components/<name>/<name>.html` + `<name>.css`. Generators produce Custom Elements and Angular standalone wrappers so you can restyle first, then ship as a package.
+Style first in Storybook. Ship via `npm run build`.
+
+**Source of truth:** `components/<name>/<name>.html` + `<name>.css`. Generators produce Custom Elements and Angular standalone wrappers. Headless Angular primitives live under `src/angular/headless/`.
 
 ## Quick start
 
 ```bash
 npm install
+npm run sync        # regenerate CSS barrel, CE/Angular, stories
 npm run storybook   # design browser → http://localhost:6006
-npm run dev         # element reference site → http://localhost:3000
+npm run dev         # curated reference site → http://localhost:3000
 npm run build       # styles + WC + html pack + Angular → dist/
 ```
 
-Editing `components/**` or tokens hot-updates Storybook. Adding/removing a component folder regenerates stories and wrappers (`npm run sync`).
+Editing `components/**` hot-updates Storybook. Adding/removing a folder regenerates stories and wrappers.
 
-### Storybook features (enabled)
+### How to use this Storybook
 
-| Feature | Notes |
-|---------|--------|
-| **Docs / Autodocs** | MDX intro + per-component Docs tabs with HTML source |
-| **A11y** | axe checks (WCAG 2 A/AA + best practices) in the panel |
-| **Theme** | Light/dark via `data-theme` toolbar |
-| **Viewport** | Device presets + deml content/narrow widths |
-| **Backgrounds** | Page / surface / brand token colors |
-| **Measure & Outline** | Spacing and box outlines in the toolbar |
-| **Highlight** | Element highlight for inspection |
-| **Controls** | Expanded controls panel |
-| **Actions** | Logs click / submit / change / input / toggle / close |
-| **Density** | Compact / comfortable / spacious canvas padding |
-| **Links** | Cross-story navigation addon |
-| **Branded manager** | deml-ui theme (Geist + violet) |
+| Feature | Where |
+|--------|--------|
+| **Canvas** | Live component preview |
+| **Docs** | Autodocs + packaged HTML source (`.demo` fragment) |
+| **Theme** | Toolbar — light / dark (`data-theme`) |
+| **Viewport** | Toolbar — phone, tablet, desktop, deml widths |
+| **Backgrounds** | Toolbar — page / surface / charcoal |
+| **Measure / Outline** | Toolbar — spacing & box inspection |
+| **Density** | Toolbar — compact / comfortable / spacious |
+| **A11y** | Panel — axe (WCAG 2 A/AA + best practices) |
+| **Actions** | Panel — click / submit / change / input |
 
-## Scripts
+### Sidebar
+
+1. **Dashboard** — composition example
+2. **Shell** — app chrome, page headers, navigation
+3. **Layout** — stack, grid, panels, spacing recipes
+4. **Forms** — fields, inputs, buttons, switches
+5. **Feedback** — badges, callouts, toasts, loaders
+6. **Data** — cards, metrics, tables, charts
+7. **Overlays** — dialogs, sheets, tabs, menus
+
+## Package builds
+
+```bash
+npm run storybook        # this UI
+npm run build            # styles + web components + Angular → dist/
+npm run build-storybook  # static site
+```
 
 | Command | Purpose |
-|---------|---------|
-| `npm run sync` | Regenerate CSS barrel, CE/Angular sources, Storybook stories |
-| `npm run storybook` | Sync + Storybook dev (HMR) |
-| `npm run build-storybook` | Static Storybook → `storybook-static/` (Vercel) |
+|---------|--------|
+| `npm run sync` | CSS barrel + CE/Angular wrappers + Storybook stories |
+| `npm run storybook` | Sync + Storybook dev |
+| `npm run build-storybook` | Static Storybook → `storybook-static/` |
 | `npm run build` | Full library package → `dist/` |
-| `npm run build:styles` | Tokens + component CSS |
-| `npm run build:wc` | Custom Elements ESM + IIFE (CDN) |
-| `npm run build:html` | Raw HTML/CSS pack for local reuse |
-| `npm run build:angular` | Angular library (`ng-packagr`) |
-| `npm run dev` | Vite demo site |
+| `npm run dev` | Vite reference site |
+
+Custom elements use the `deml-*` tag prefix (e.g. `<deml-button>`).
 
 ## Layout
 
 ```
-components/<name>/     # SOURCE OF TRUTH — style here
-styles/tokens.css      # design tokens
-styles/library.css     # package CSS entry (tokens + components)
-src/web-components/    # CE browser entry
-src/angular/           # Angular public API
-generated/             # AUTO: CE + Angular wrappers (commit; re-run sync)
-stories/               # AUTO Storybook stories
-scripts/               # generators + build
-.storybook/            # Storybook config
-.github/workflows/ci.yml
-vercel.json            # Storybook static deploy
+components/<name>/          # SOURCE OF TRUTH — style here
+styles/tokens.css           # design tokens
+styles/library.css          # package CSS entry
+src/web-components/         # CE browser entry
+src/angular/                # Angular public API (markup + headless)
+src/angular/headless/       # Headless primitives (hand-authored)
+generated/                  # AUTO: CE + Angular markup wrappers (re-run sync)
+stories/                    # Introduction + Dashboard MDX; *.stories.js auto
+scripts/                    # generators + build
+.storybook/                 # Storybook 10 (HTML + Vite)
 ```
 
 ## Add a component
 
 1. Create `components/<name>/<name>.html` and `<name>.css`
-2. Put reusable markup inside `.demo` (section chrome stays for Storybook only)
-3. Run `npm run sync` (or start Storybook — it syncs on folder changes)
-4. Optional `components/<name>/meta.json`:
+2. Put reusable markup inside `.demo` (section chrome is Storybook-only)
+3. Add the name to the right group in `scripts/lib/components.mjs` → `CATEGORIES`
+4. Run `npm run sync`
+5. Optional `meta.json`: `{ "package": true, "tag": "deml-my-thing" }`
 
-```json
-{ "package": true, "tag": "deml-my-thing", "category": "content" }
+Style BEM roots (`.card`, `.button`, `.tabs`, …) — not only `.component--name`.
+
+Packaged tags are `deml-<name>` (e.g. `deml-button`).
+
+## Headless Angular
+
+Unstyled, accessible primitives with Signals — behavior only, you own CSS.
+Composition-first (root + parts). Shared models: `[(open)]` / `[(value)]`, `(change)`, `(opened)` / `(closed)`, `data-state`.
+
+| Primitive | Import | Parts |
+|-----------|--------|-------|
+| Tabs | `DEML_TABS_IMPORTS` | `demlTabList`, `demlTab`, `demlTabPanel` |
+| Dialog | `DEML_DIALOG_IMPORTS` | panel / title / description / close |
+| Disclosure | `DEML_DISCLOSURE_IMPORTS` | button / panel |
+| Combobox | `DEML_COMBOBOX_IMPORTS` | label / input / button / options |
+| Menu | `DEML_MENU_IMPORTS` | button / items / item |
+
+```ts
+import { DEML_COMBOBOX_IMPORTS } from "deml-ui/angular";
 ```
 
-Set `"package": false` for Storybook-only demos. Defaults skip `gallery`, `megaform`, and CSS-only `form-field`.
+See [`USAGE.md`](src/angular/headless/USAGE.md) and [`CONVENTIONS.md`](src/angular/headless/CONVENTIONS.md).
 
-Packaged custom element tags are `deml-<name>` (e.g. `deml-button`).
+## Inventory (dashboard kit)
+
+Curated for app/dashboard composition — not an HTML element encyclopedia.
+
+| Group | Examples |
+|-------|----------|
+| **Shell** | `app-layout`, `app-header`, `app-sidebar`, `page-header`, `sidebar-nav`, `breadcrumbs` |
+| **Layout** | `stack`, `grid`, `panel-grid`, `form-grid`, `section`, `container`, `split-panel` |
+| **Forms** | `field`, `button`, `input-*`, `select`, `checkbox`, `radio-group`, `switch`, `file-upload` |
+| **Feedback** | `badge`, `callout`, `toast`, `empty-state`, `skeleton`, `spinner` |
+| **Data** | `card`, `metric-card`, `table`, `chart-panel`, `pagination`, `activity-list` |
+| **Overlays** | `dialog`, `sheet`, `tabs`, `accordion`, `dropdown`, `command`, `wizard` |
+
+`form-field` is shared CSS only (not packaged as a custom element).
 
 ## Consume the package
 
-After `npm run build` (or once published to npm):
-
-### Styles (any stack)
-
-```js
-import "deml-ui/styles.css";   // tokens + all components
-// or
-import "deml-ui/tokens.css";   // tokens only
-```
-
-### Web Components / CDN
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/deml-ui/dist/styles/deml-ui.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/deml-ui/dist/web-components/deml-ui.js"></script>
-<deml-button></deml-button>
-```
-
 ```js
 import "deml-ui/styles.css";
-import "deml-ui"; // side-effect: defineAll()
+import "deml-ui"; // defineAll()
 ```
-
-IIFE: `dist/web-components/deml-ui.iife.js` (global `DemlUi`).
-
-### Angular
 
 ```ts
 import { DemlButton } from "deml-ui/angular";
-// styles once in angular.json or global styles:
-// "node_modules/deml-ui/dist/styles/deml-ui.css"
 ```
 
 ```html
-<deml-button />
+<deml-button></deml-button>
 ```
 
-Peer deps: `@angular/core` / `@angular/common` ≥ 19 (optional if you only use Web Components).
-
-### Raw HTML/CSS
-
-Fragments for local reuse: `dist/html/<name>/` (same layout as `components/`).
-
-## Storybook → Vercel
-
-`vercel.json` builds Storybook only:
-
-- **Build command:** `npm run build-storybook`
-- **Output:** `storybook-static`
-
-Connect the GitHub repo (`dataengineeringformachinelearning/deml-ui`) in the Vercel dashboard. Every push to `main` deploys docs; PRs get preview URLs.
-
-## CI
-
-GitHub Actions (`.github/workflows/ci.yml`) on push/PR to `main`:
-
-1. `npm ci`
-2. `npm run sync`
-3. `npm run build`
-4. `npm run build-storybook`
-5. Upload `dist` + `storybook-static` artifacts
+Peer deps: `@angular/core` / `@angular/common` ≥ 19 (optional for WC-only).
 
 ## Styling workflow
 
-1. Open Storybook
-2. Edit `components/<name>/<name>.css` (and HTML structure if needed)
-3. Use the **Theme** toolbar for light/dark (`data-theme`)
-4. When ready: `npm run build` and consume from `dist/` or publish
+1. Open Storybook → pick a component
+2. Edit `components/<name>/<name>.css` (structure is already visible)
+3. Use Theme / Viewport / A11y panels
+4. Compose pages from Shell + Layout + Data primitives
+5. `npm run build` when ready
 
-Tokens live in `styles/tokens.css`. Shared form chrome: `components/form-field/form-field.css`.
+Tokens: `styles/tokens.css`. Prefer token variables (`--space-*`, `--line`, `--surface`) over raw hex in component CSS.
 
-## Package outputs
+## CI / Vercel
 
-| Path | Use |
-|------|-----|
-| `dist/styles/deml-ui.css` | Full stylesheet |
-| `dist/styles/tokens.css` | Tokens only |
-| `dist/web-components/deml-ui.js` | ESM custom elements |
-| `dist/web-components/deml-ui.iife.js` | Script-tag / CDN |
-| `dist/angular/` | Angular library |
-| `dist/html/` | Raw HTML/CSS sources |
-
-## Repository
-
-https://github.com/dataengineeringformachinelearning/deml-ui
+- CI: `npm ci` → `sync` → `build` → `build-storybook`
+- Vercel: Storybook static (`build-storybook` → `storybook-static`)
 
 ## License
 

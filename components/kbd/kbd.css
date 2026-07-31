@@ -1,0 +1,22 @@
+/* Component: Kbd
+   Markup: components/kbd/kbd.html
+   Barebones structure — customize freely.
+*/
+
+.component--kbd .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+  padding: 0 0.4rem;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font: inherit;
+  font-size: 0.75rem;
+}

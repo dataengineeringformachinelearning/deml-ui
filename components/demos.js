@@ -1,45 +1,43 @@
 /**
- * Demo wiring for canvas / dialog / template / output controls.
+ * Demo wiring for the Vite reference site (index.html).
+ * Storybook uses stories/render.js (same patterns).
  */
 
-function wireOutputSum(root, aSel, bSel, sumSel) {
-  const a = root.querySelector(aSel);
-  const b = root.querySelector(bSel);
-  const sum = root.querySelector(sumSel);
-  if (!a || !b || !sum) return;
-
-  const update = () => {
-    sum.value = String(Number(a.value) + Number(b.value));
-  };
-  a.addEventListener("input", update);
-  b.addEventListener("input", update);
-}
-
 export function initDemos(root = document) {
-  const canvas = root.querySelector("#demo-canvas");
-  if (canvas?.getContext) {
-    const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#5C2A5A";
-    ctx.fillRect(20, 20, 160, 60);
-    ctx.fillStyle = "#fff";
-    ctx.font = "16px Geist, system-ui, sans-serif";
-    ctx.fillText("Canvas", 75, 55);
-  }
-
-  const dialog = root.querySelector("#demo-dialog");
-  root.querySelector("#open-dialog")?.addEventListener("click", () => {
-    dialog?.showModal();
+  const dialog = root.querySelector("dialog.dialog, #demo-dialog");
+  root.querySelectorAll("[data-deml-open-dialog], #open-dialog").forEach((btn) => {
+    btn.addEventListener("click", () => dialog?.showModal?.());
   });
 
-  const template = root.querySelector("#card-template");
-  const mount = root.querySelector("#template-mount");
-  if (template && mount && !mount.hasChildNodes()) {
-    const clone = template.content.cloneNode(true);
-    clone.querySelector("h3").textContent = "From <template>";
-    clone.querySelector("p").textContent = "Cloned into the page with JavaScript.";
-    mount.appendChild(clone);
-  }
+  const confirm = root.querySelector("dialog.confirm-dialog");
+  root.querySelectorAll("[data-deml-open-confirm]").forEach((btn) => {
+    btn.addEventListener("click", () => confirm?.showModal?.());
+  });
 
-  wireOutputSum(root, "#output-a", "#output-b", "#output-sum");
-  wireOutputSum(root, "#mega-a", "#mega-b", "#mega-sum");
+  root.querySelectorAll('[role="tablist"]').forEach((tablist) => {
+    const scope = tablist.closest(".tabs") || root;
+    const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+    const panels = tabs.map((tab) =>
+      scope.querySelector(`#${CSS.escape(tab.getAttribute("aria-controls") || "")}`)
+    );
+    const activate = (index) => {
+      tabs.forEach((tab, i) => {
+        const selected = i === index;
+        tab.setAttribute("aria-selected", selected ? "true" : "false");
+        tab.tabIndex = selected ? 0 : -1;
+        if (panels[i]) panels[i].hidden = !selected;
+      });
+    };
+    tabs.forEach((tab, i) => tab.addEventListener("click", () => activate(i)));
+  });
+
+  root.querySelectorAll(".theme-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const el = document.documentElement;
+      const next = el.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      el.setAttribute("data-theme", next);
+      el.classList.toggle("dark", next === "dark");
+      btn.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
+    });
+  });
 }

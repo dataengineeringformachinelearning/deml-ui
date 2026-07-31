@@ -1,0 +1,15 @@
+/* Component: Stack
+   Markup: components/stack/stack.html
+   Barebones structure — customize freely.
+*/
+
+.component--stack .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}

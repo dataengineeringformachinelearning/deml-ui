@@ -1,0 +1,21 @@
+<!--
+  Component: Confirm Dialog
+  Path: components/confirm-dialog/confirm-dialog.html
+  Styles: components/confirm-dialog/confirm-dialog.css
+-->
+<section id="confirm-dialog" class="component component--confirm-dialog">
+  <h2>Confirm Dialog</h2>
+  <div class="demo">
+    <button type="button" class="button" data-deml-open-confirm>Delete item</button>
+    <dialog class="confirm-dialog">
+      <form method="dialog">
+        <h3 class="confirm-dialog__title">Confirm action</h3>
+        <p class="confirm-dialog__body">This cannot be undone.</p>
+        <div class="confirm-dialog__actions">
+          <button type="submit" class="button" value="cancel">Cancel</button>
+          <button type="submit" class="button" data-variant="primary" value="confirm">Confirm</button>
+        </div>
+      </form>
+    </dialog>
+  </div>
+</section>

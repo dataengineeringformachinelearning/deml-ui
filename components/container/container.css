@@ -1,0 +1,20 @@
+/* Component: Container
+   Markup: components/container/container.html
+   Barebones structure — customize freely.
+*/
+
+.component--container .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.container {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+}
+.container__title { margin: 0; font-size: 1.125rem; }
+.container__description { margin: var(--space-sm) 0 0; color: var(--muted); }

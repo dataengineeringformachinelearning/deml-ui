@@ -1,6 +1,27 @@
-/* Component: Email input
+/* Component: Input Email
    Markup: components/input-email/input-email.html
+   Barebones structure — customize freely.
 */
 
-.component--input-email {
+.component--input-email .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--input-email label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+.component--input-email input,
+.component--input-email select,
+.component--input-email textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: inherit;
 }

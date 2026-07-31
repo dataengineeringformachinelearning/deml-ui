@@ -1,0 +1,54 @@
+/* Component: Sidebar Nav
+   Markup: components/sidebar-nav/sidebar-nav.html
+   Barebones structure — customize freely.
+*/
+
+.component--sidebar-nav .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: var(--space-sm);
+  min-width: 14rem;
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+}
+.sidebar-nav__header {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.sidebar-nav__list,
+.sidebar-nav__list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+.sidebar-nav a,
+.sidebar-nav button {
+  display: block;
+  width: 100%;
+  text-align: start;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+}
+.sidebar-nav a[aria-current="page"] {
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.sidebar-nav ul { padding-inline-start: var(--space-md); }

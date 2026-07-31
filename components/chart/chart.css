@@ -1,0 +1,13 @@
+/* Component: Chart
+   Markup: components/chart/chart.html
+   Barebones structure — customize freely.
+*/
+
+.component--chart .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.chart-figure { margin: 0; display: grid; gap: var(--space-sm); }
+.chart { display: block; width: 100%; height: auto; color: var(--ink); }
+.chart-figure figcaption { color: var(--muted); font-size: 0.875rem; }

@@ -1,0 +1,19 @@
+<!--
+  Component: Command
+  Path: components/command/command.html
+  Styles: components/command/command.css
+  Source: structural shell from deml Viking-UI (unstyled)
+-->
+<section id="command" class="component component--command">
+  <h2>Command</h2>
+  <div class="demo">
+    <div class="command" role="dialog" aria-modal="true" aria-label="Command palette">
+      <input class="command__input" type="search" placeholder="Type a command…" aria-controls="command-list" />
+      <ul id="command-list" class="command__list" role="listbox">
+        <li role="option" aria-selected="true">Go to dashboard</li>
+        <li role="option">Open settings</li>
+        <li role="option">Sign out</li>
+      </ul>
+    </div>
+  </div>
+</section>

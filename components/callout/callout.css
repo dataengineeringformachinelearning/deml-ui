@@ -1,0 +1,29 @@
+/* Component: Callout
+   Markup: components/callout/callout.html
+   Barebones structure — customize freely.
+*/
+
+.component--callout .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.callout {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.callout__heading { margin: 0 0 var(--space-sm); font-weight: 600; }
+.callout__text { margin: 0; }
+.callout__close {
+  margin-inline-start: auto;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
