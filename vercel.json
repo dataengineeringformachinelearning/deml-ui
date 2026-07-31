@@ -4,5 +4,14 @@
   "outputDirectory": "storybook-static",
   "installCommand": "npm ci",
   "framework": null,
-  "cleanUrls": true
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ]
 }
