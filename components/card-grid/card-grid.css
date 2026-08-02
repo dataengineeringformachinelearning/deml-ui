@@ -1,0 +1,18 @@
+/* Component: card-grid — from deml new-from-the-start */
+
+.component--card-grid .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* Card grid — equal-height tiles; gutters from shared --tile-gap */
+
+:host ::ng-deep > * {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  align-self: stretch;
+}
+
+@media screen and (min-width: 800px) {
+  }

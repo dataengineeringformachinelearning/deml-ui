@@ -1,0 +1,48 @@
+/* Component: section-header — from deml new-from-the-start */
+
+.component--section-header .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* Section header — tracked eyebrow + bold display on the 8px grid */
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.section-header-eyebrow {
+  margin: 0 0 var(--space-1);
+}
+
+.section-header-heading {
+  margin: 0;
+}
+
+.section-header-lede {
+  margin: var(--space-1) 0 0;
+  max-width: var(--reading-width);
+}
+
+:host([data-tone='card']) .section-header-heading,
+:host([data-tone='card']) .section-header-heading.type-display {
+  color: var(--color-card-text);
+}
+
+:host([data-tone='card']) .section-header-lede,
+:host([data-tone='card']) .section-header-lede.type-intro {
+  color: var(--color-card-text-secondary);
+}
+
+:host([data-tone='card']) .section-header-eyebrow,
+:host([data-tone='card']) .section-header-eyebrow.type-eyebrow {
+  color: var(--color-primary);
+}
+
+@media screen and (min-width: 800px) {
+  }

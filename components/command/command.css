@@ -13,7 +13,7 @@
   gap: 0;
   max-width: 28rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--bg);
   overflow: hidden;
 }
@@ -36,7 +36,7 @@
 }
 .command__list [role="option"] {
   padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   cursor: pointer;
 }
 .command__list [aria-selected="true"] {

@@ -7,10 +7,10 @@ export class DemlMetricCard extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<article class="metric-card" role="group" aria-label="Active users">
-      <p class="metric-card__label">Active users</p>
-      <p class="metric-card__value">1,284</p>
-      <p class="metric-card__trend">+12% vs last week</p>
+      this.innerHTML = `<article class="stat-card metric-card">
+      <p class="stat-card__label metric-card__label">Sessions</p>
+      <p class="stat-card__value metric-card__value">1.2k</p>
+      <p class="stat-card__delta metric-card__trend">+4.2%</p>
     </article>`;
     }
   }

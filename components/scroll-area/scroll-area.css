@@ -13,6 +13,6 @@
   overflow: auto;
   padding: var(--space-md);
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--bg);
 }

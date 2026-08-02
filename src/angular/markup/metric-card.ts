@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<article class=\"metric-card\" role=\"group\" aria-label=\"Active users\">\n      <p class=\"metric-card__label\">Active users</p>\n      <p class=\"metric-card__value\">1,284</p>\n      <p class=\"metric-card__trend\">+12% vs last week</p>\n    </article>";
+const DEML_TEMPLATE = "<article class=\"stat-card metric-card\">\n      <p class=\"stat-card__label metric-card__label\">Sessions</p>\n      <p class=\"stat-card__value metric-card__value\">1.2k</p>\n      <p class=\"stat-card__delta metric-card__trend\">+4.2%</p>\n    </article>";
 
 @Component({
   selector: "deml-metric-card",

@@ -5,9 +5,13 @@ import { DemlAppFooter } from "./app-footer";
 import { DemlAppHeader } from "./app-header";
 import { DemlAppLayout } from "./app-layout";
 import { DemlAppSidebar } from "./app-sidebar";
+import { DemlAreaChart } from "./area-chart";
+import { DemlArticle } from "./article";
 import { DemlAutocomplete } from "./autocomplete";
 import { DemlAvatar } from "./avatar";
 import { DemlBadge } from "./badge";
+import { DemlBanner } from "./banner";
+import { DemlBarChart } from "./bar-chart";
 import { DemlBox } from "./box";
 import { DemlBrand } from "./brand";
 import { DemlBreadcrumbs } from "./breadcrumbs";
@@ -16,15 +20,19 @@ import { DemlButton } from "./button";
 import { DemlButtonGroup } from "./button-group";
 import { DemlCallout } from "./callout";
 import { DemlCard } from "./card";
+import { DemlCardGrid } from "./card-grid";
 import { DemlChart } from "./chart";
+import { DemlChartCard } from "./chart-card";
 import { DemlChartEmptyState } from "./chart-empty-state";
 import { DemlChartPanel } from "./chart-panel";
 import { DemlCheckbox } from "./checkbox";
+import { DemlCheckboxField } from "./checkbox-field";
 import { DemlCluster } from "./cluster";
 import { DemlCommand } from "./command";
 import { DemlConfirmDialog } from "./confirm-dialog";
 import { DemlContainer } from "./container";
 import { DemlContentLayout } from "./content-layout";
+import { DemlDashboardGrid } from "./dashboard-grid";
 import { DemlDropdown } from "./dropdown";
 import { DemlEmptyState } from "./empty-state";
 import { DemlErrorState } from "./error-state";
@@ -32,6 +40,7 @@ import { DemlField } from "./field";
 import { DemlFileUpload } from "./file-upload";
 import { DemlFlashbar } from "./flashbar";
 import { DemlFormGrid } from "./form-grid";
+import { DemlFormPanel } from "./form-panel";
 import { DemlFormSection } from "./form-section";
 import { DemlGrid } from "./grid";
 import { DemlHelpPanel } from "./help-panel";
@@ -49,9 +58,14 @@ import { DemlKbd } from "./kbd";
 import { DemlLabel } from "./label";
 import { DemlLoadingOverlay } from "./loading-overlay";
 import { DemlMetricCard } from "./metric-card";
+import { DemlMetricList } from "./metric-list";
+import { DemlMicrocard } from "./microcard";
+import { DemlMicrocardGrid } from "./microcard-grid";
+import { DemlNavbar } from "./navbar";
 import { DemlNavigationMenu } from "./navigation-menu";
 import { DemlPageBackLink } from "./page-back-link";
 import { DemlPageHeader } from "./page-header";
+import { DemlPageSection } from "./page-section";
 import { DemlPageShell } from "./page-shell";
 import { DemlPageTemplate } from "./page-template";
 import { DemlPagination } from "./pagination";
@@ -63,6 +77,7 @@ import { DemlPropertyFilter } from "./property-filter";
 import { DemlRadioGroup } from "./radio-group";
 import { DemlScrollArea } from "./scroll-area";
 import { DemlSection } from "./section";
+import { DemlSectionHeader } from "./section-header";
 import { DemlSectionTemplate } from "./section-template";
 import { DemlSelect } from "./select";
 import { DemlSeparator } from "./separator";
@@ -73,11 +88,13 @@ import { DemlSkipLink } from "./skip-link";
 import { DemlSpinner } from "./spinner";
 import { DemlSplitPanel } from "./split-panel";
 import { DemlStack } from "./stack";
+import { DemlStatCard } from "./stat-card";
 import { DemlStatusBadge } from "./status-badge";
 import { DemlStatusCard } from "./status-card";
 import { DemlStatusPill } from "./status-pill";
 import { DemlSwitch } from "./switch";
 import { DemlTable } from "./table";
+import { DemlTextField } from "./text-field";
 import { DemlTextarea } from "./textarea";
 import { DemlThemeToggle } from "./theme-toggle";
 import { DemlTimeline } from "./timeline";
@@ -94,9 +111,13 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlAppHeader,
   DemlAppLayout,
   DemlAppSidebar,
+  DemlAreaChart,
+  DemlArticle,
   DemlAutocomplete,
   DemlAvatar,
   DemlBadge,
+  DemlBanner,
+  DemlBarChart,
   DemlBox,
   DemlBrand,
   DemlBreadcrumbs,
@@ -105,15 +126,19 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlButtonGroup,
   DemlCallout,
   DemlCard,
+  DemlCardGrid,
   DemlChart,
+  DemlChartCard,
   DemlChartEmptyState,
   DemlChartPanel,
   DemlCheckbox,
+  DemlCheckboxField,
   DemlCluster,
   DemlCommand,
   DemlConfirmDialog,
   DemlContainer,
   DemlContentLayout,
+  DemlDashboardGrid,
   DemlDropdown,
   DemlEmptyState,
   DemlErrorState,
@@ -121,6 +146,7 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlFileUpload,
   DemlFlashbar,
   DemlFormGrid,
+  DemlFormPanel,
   DemlFormSection,
   DemlGrid,
   DemlHelpPanel,
@@ -138,9 +164,14 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlLabel,
   DemlLoadingOverlay,
   DemlMetricCard,
+  DemlMetricList,
+  DemlMicrocard,
+  DemlMicrocardGrid,
+  DemlNavbar,
   DemlNavigationMenu,
   DemlPageBackLink,
   DemlPageHeader,
+  DemlPageSection,
   DemlPageShell,
   DemlPageTemplate,
   DemlPagination,
@@ -152,6 +183,7 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlRadioGroup,
   DemlScrollArea,
   DemlSection,
+  DemlSectionHeader,
   DemlSectionTemplate,
   DemlSelect,
   DemlSeparator,
@@ -162,11 +194,13 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlSpinner,
   DemlSplitPanel,
   DemlStack,
+  DemlStatCard,
   DemlStatusBadge,
   DemlStatusCard,
   DemlStatusPill,
   DemlSwitch,
   DemlTable,
+  DemlTextField,
   DemlTextarea,
   DemlThemeToggle,
   DemlTimeline,

@@ -16,7 +16,7 @@
 .skeleton__block {
   display: block;
   height: 0.75rem;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--surface);
   border: 1px solid var(--line);
 }

@@ -15,7 +15,7 @@
   min-width: 14rem;
   padding: var(--space-md);
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--surface);
 }
 .app-sidebar__brand { font-weight: 600; margin: 0; }
@@ -28,7 +28,7 @@
   text-decoration: none;
   color: inherit;
   padding: var(--space-sm);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
 }
 .app-sidebar__nav a[aria-current="page"] {
   background: var(--bg);

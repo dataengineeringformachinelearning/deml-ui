@@ -10,7 +10,7 @@
 
 .radio-group {
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   padding: var(--space-md);
   display: grid;
   gap: var(--space-sm);

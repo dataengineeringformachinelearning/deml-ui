@@ -1,3 +1,4 @@
-/* Full library stylesheet for package consumers (tokens + components) */
+/* Full library stylesheet for package consumers (tokens + base + components) */
 @import url("./tokens.css");
+@import url("./base.css");
 @import url("../components/components.css");

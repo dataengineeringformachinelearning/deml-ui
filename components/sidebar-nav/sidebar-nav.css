@@ -14,7 +14,7 @@
   min-width: 14rem;
   padding: var(--space-md);
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--bg);
 }
 .sidebar-nav__header {
@@ -43,7 +43,7 @@
   background: transparent;
   border: 0;
   padding: var(--space-sm);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   cursor: pointer;
   text-decoration: none;
 }

@@ -15,7 +15,7 @@
   gap: var(--space-sm);
   padding: var(--space-sm) var(--space-md);
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--surface);
 }
 .bulk-toolbar__count { font-weight: 600; margin-inline-end: auto; }
@@ -24,7 +24,7 @@
   min-height: 2.5rem;
   padding: 0.35rem 0.75rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--bg);
   cursor: pointer;
   color: inherit;

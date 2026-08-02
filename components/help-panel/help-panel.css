@@ -13,7 +13,7 @@
   gap: var(--space-sm);
   padding: var(--space-md);
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--surface);
   max-width: 22rem;
 }

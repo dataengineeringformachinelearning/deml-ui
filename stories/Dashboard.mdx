@@ -1,37 +1,36 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import * as Navbar from "./components/navbar.stories.js";
 import * as AppLayout from "./shell/app-layout.stories.js";
 import * as PageHeader from "./shell/page-header.stories.js";
+import * as SectionHeader from "./components/section-header.stories.js";
 import * as MetricCard from "./data/metric-card.stories.js";
 import * as ChartPanel from "./data/chart-panel.stories.js";
-import * as Table from "./data/table.stories.js";
-import * as Tabs from "./overlays/tabs.stories.js";
-import * as Callout from "./feedback/callout.stories.js";
+import * as StatCard from "./components/stat-card.stories.js";
+import * as Banner from "./components/banner.stories.js";
 
 <Meta title="Dashboard" />
 
 # Dashboard composition
 
-Reference composition for a product dashboard. Each block is a barebones deml-ui component — style the BEM roots, keep the anatomy.
+Reference composition for the DEML product shell using the **new-from-the-start** warm-ash look.
 
 ## Shell
 
+<Canvas of={Navbar.Default} />
 <Canvas of={AppLayout.Default} />
 <Canvas of={PageHeader.Default} />
 
+## Catalog sections
+
+<Canvas of={Banner.Default} />
+<Canvas of={SectionHeader.Default} />
+
 ## Metrics & charts
 
+<Canvas of={StatCard.Default} />
 <Canvas of={MetricCard.Default} />
 <Canvas of={ChartPanel.Default} />
 
-## Table & tabs
-
-<Canvas of={Table.Default} />
-<Canvas of={Tabs.Default} />
-
-## Feedback
-
-<Canvas of={Callout.Default} />
-
 Compose routes as:
 
-`app-layout` → `page-header` → `panel-grid` of `metric-card` → `chart-panel` / `table` → `tabs` for detail.
+`navbar` → `page-section` → `section-header` → `dashboard-grid` of `stat-card` / `chart-card` → supporting `banner`.
