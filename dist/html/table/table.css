@@ -1,0 +1,29 @@
+/* Component: Table
+   Markup: components/table/table.html
+   Barebones structure — customize freely.
+*/
+
+.component--table .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--table table,
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font: inherit;
+}
+.component--table th,
+.component--table td,
+th, td {
+  padding: var(--space-sm) var(--space-md);
+  border-block-end: 1px solid var(--line);
+  text-align: start;
+}
+.component--table caption,
+caption {
+  text-align: start;
+  padding-block-end: var(--space-sm);
+  color: var(--muted);
+}

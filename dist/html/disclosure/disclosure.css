@@ -1,0 +1,9 @@
+/* Component: Disclosure
+   Markup: components/disclosure/disclosure.html
+   Headless — zero default visual styles.
+   Style .disclosure__* / [data-state] in your app.
+*/
+
+.component--disclosure .demo {
+  /* Storybook demo frame only */
+}

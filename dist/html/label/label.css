@@ -1,0 +1,15 @@
+/* Component: Label
+   Markup: components/label/label.html
+   Barebones structure — customize freely.
+*/
+
+.component--label .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.label {
+  display: inline-block;
+  font-weight: 500;
+  margin-block-end: var(--space-sm);
+}

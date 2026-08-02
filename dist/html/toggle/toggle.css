@@ -1,0 +1,27 @@
+/* Component: Toggle
+   Markup: components/toggle/toggle.html
+   Barebones structure — customize freely.
+*/
+
+.component--toggle .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.toggle-group {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  overflow: hidden;
+}
+.toggle {
+  font: inherit;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 0;
+  background: var(--bg);
+  color: inherit;
+  cursor: pointer;
+}
+.toggle + .toggle { border-inline-start: 1px solid var(--line); }
+.toggle[aria-pressed="true"] { background: var(--surface); font-weight: 600; }

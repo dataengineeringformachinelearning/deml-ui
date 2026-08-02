@@ -1,0 +1,41 @@
+/* Component: Field
+   Markup: components/field/field.html
+   Barebones structure — customize freely.
+*/
+
+.component--field .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+.field__label-wrap {
+  display: grid;
+  gap: var(--space-sm);
+}
+.field__label { font-weight: 500; }
+.field__required { margin-inline-start: 0.15rem; }
+.field__description,
+.field__error {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.field__error { color: var(--ink); }
+.field__control,
+.field input,
+.field select,
+.field textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  color: inherit;
+}

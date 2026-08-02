@@ -1,0 +1,38 @@
+/* Component: Pagination
+   Markup: components/pagination/pagination.html
+   Barebones structure — customize freely.
+*/
+
+.component--pagination .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.pagination__pages {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pagination button {
+  font: inherit;
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  color: inherit;
+  cursor: pointer;
+}
+.pagination button[aria-current="page"] {
+  background: var(--surface);
+  font-weight: 600;
+}

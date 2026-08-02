@@ -1,0 +1,1 @@
+{"version":3,"file":"section-template.d.ts","sourceRoot":"","sources":["../../../src/angular/markup/section-template.ts"],"names":[],"mappings":"AACA,OAAO,EAEL,UAAU,EACV,MAAM,EAEP,MAAM,eAAe,CAAC;;AAIvB,qBAMa,mBAAoB,YAAW,MAAM;IACpC,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU,CAAC,WAAW,CAAC;IAE1D,QAAQ,IAAI,IAAI;yCAHL,mBAAmB;2CAAnB,mBAAmB;CAS/B"}

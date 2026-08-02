@@ -1,0 +1,47 @@
+/* Component: button-group — ported from deml new-from-the-start */
+
+.component--button-group .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* Button group — host is the flex shell (mobile-first) */
+
+:host(.place-end) {
+  justify-content: flex-end;
+}
+
+:host(.place-start) {
+  justify-content: flex-start;
+}
+
+:host(.place-center) {
+  justify-content: center;
+}
+
+:host([data-layout='row']) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+:host([data-layout='column']) {
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+:host > * {
+  flex: 0 0 auto;
+}
+
+@media screen and (min-width: 800px) {
+  :host([data-layout='responsive']) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: max-content;
+  }
+}

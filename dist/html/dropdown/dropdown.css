@@ -1,0 +1,48 @@
+/* Component: Dropdown
+   Markup: components/dropdown/dropdown.html
+   Barebones structure — customize freely.
+*/
+
+.component--dropdown .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.dropdown { position: relative; display: inline-block; }
+.dropdown__trigger {
+  font: inherit;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  cursor: pointer;
+  color: inherit;
+}
+.dropdown__menu {
+  position: absolute;
+  inset-block-start: calc(100% + 0.25rem);
+  inset-inline-start: 0;
+  min-width: 10rem;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+.dropdown__menu[hidden] { display: none; }
+.dropdown__menu button {
+  display: block;
+  width: 100%;
+  text-align: start;
+  font: inherit;
+  padding: var(--space-sm);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 0;
+  color: inherit;
+}
+.dropdown__menu button:hover { background: var(--surface); }

@@ -1,0 +1,1 @@
+{"version":3,"file":"dialog-description.d.ts","sourceRoot":"","sources":["../../../../src/angular/headless/dialog/dialog-description.ts"],"names":[],"mappings":"AAAA,OAAO,EAAa,SAAS,EAAU,MAAM,eAAe,CAAC;;AAI7D;;;;;;;GAOG;AACH,qBAMa,qBAAsB,YAAW,SAAS;IACrD,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAuB;IAC9C,QAAQ,CAAC,EAAE,SAAqC;;IAMhD,WAAW,IAAI,IAAI;yCARR,qBAAqB;2CAArB,qBAAqB;CAWjC"}

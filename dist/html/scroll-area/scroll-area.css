@@ -1,0 +1,18 @@
+/* Component: Scroll Area
+   Markup: components/scroll-area/scroll-area.html
+   Barebones structure — customize freely.
+*/
+
+.component--scroll-area .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.scroll-area {
+  max-height: 10rem;
+  overflow: auto;
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+}

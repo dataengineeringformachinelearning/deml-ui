@@ -1,0 +1,1 @@
+{"version":3,"file":"article.d.ts","sourceRoot":"","sources":["../../../src/angular/markup/article.ts"],"names":[],"mappings":"AACA,OAAO,EAEL,UAAU,EACV,MAAM,EAEP,MAAM,eAAe,CAAC;;AAIvB,qBAMa,WAAY,YAAW,MAAM;IAC5B,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU,CAAC,WAAW,CAAC;IAE1D,QAAQ,IAAI,IAAI;yCAHL,WAAW;2CAAX,WAAW;CASvB"}

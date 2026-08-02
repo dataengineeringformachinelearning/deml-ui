@@ -1,0 +1,23 @@
+/* Component: Empty State
+   Markup: components/empty-state/empty-state.html
+   Barebones structure — customize freely.
+*/
+
+.component--empty-state .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.empty-state {
+  display: grid;
+  gap: var(--space-sm);
+  place-items: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  border: 1px dashed var(--line);
+  border-radius: 0;
+}
+.empty-state__eyebrow { margin: 0; color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.empty-state__title { margin: 0; font-size: 1.125rem; font-weight: 600; }
+.empty-state__description { margin: 0; color: var(--muted); max-width: 28rem; }
+.empty-state__actions { margin-block-start: var(--space-sm); display: flex; gap: var(--space-sm); }

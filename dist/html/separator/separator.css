@@ -1,0 +1,24 @@
+/* Component: Separator
+   Markup: components/separator/separator.html
+   Barebones structure — customize freely.
+*/
+
+.component--separator .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.separator {
+  border: 0;
+  border-block-start: 1px solid var(--line);
+  margin: var(--space-md) 0;
+}
+.separator--vertical {
+  display: inline-block;
+  width: 1px;
+  height: 1.5rem;
+  border: 0;
+  background: var(--line);
+  margin-inline: var(--space-sm);
+  vertical-align: middle;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"table.d.ts","sourceRoot":"","sources":["../../../src/angular/markup/table.ts"],"names":[],"mappings":"AACA,OAAO,EAEL,UAAU,EACV,MAAM,EAEP,MAAM,eAAe,CAAC;;AAIvB,qBAMa,SAAU,YAAW,MAAM;IAC1B,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU,CAAC,WAAW,CAAC;IAE1D,QAAQ,IAAI,IAAI;yCAHL,SAAS;2CAAT,SAAS;CASrB"}

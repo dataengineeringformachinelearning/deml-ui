@@ -1,0 +1,14 @@
+/* Component: container — ported from deml new-from-the-start */
+
+.component--container .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* Container — host is the padded shell (mobile-first) */
+
+@media screen and (min-width: 800px) {
+  }
+
+@media screen and (min-width: 1200px) {
+  }

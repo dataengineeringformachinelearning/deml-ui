@@ -1,0 +1,27 @@
+/* Component: Select
+   Markup: components/select/select.html
+   Barebones structure — customize freely.
+*/
+
+.component--select .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--select label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+.component--select input,
+.component--select select,
+.component--select textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  color: inherit;
+}

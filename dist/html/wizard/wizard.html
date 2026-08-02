@@ -1,0 +1,28 @@
+<!--
+  Component: Wizard
+  Path: components/wizard/wizard.html
+  Styles: components/wizard/wizard.css
+  Source: structural shell from deml Viking-UI (unstyled)
+-->
+<section id="wizard" class="component component--wizard">
+  <h2>Wizard</h2>
+  <div class="demo">
+    <div class="wizard" role="dialog" aria-labelledby="wizard-title">
+      <header class="wizard__header">
+        <h3 id="wizard-title">Setup wizard</h3>
+        <ol class="wizard__steps">
+          <li aria-current="step">Account</li>
+          <li>Preferences</li>
+          <li>Confirm</li>
+        </ol>
+      </header>
+      <div class="wizard__body">
+        <p>Step content goes here.</p>
+      </div>
+      <footer class="wizard__footer">
+        <button type="button">Back</button>
+        <button type="button">Next</button>
+      </footer>
+    </div>
+  </div>
+</section>

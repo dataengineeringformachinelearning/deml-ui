@@ -1,0 +1,20 @@
+/* Component: Section Template
+   Markup: components/section-template/section-template.html
+   Barebones structure — customize freely.
+*/
+
+.component--section-template .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.section-template { display: grid; gap: var(--space-md); }
+.section-template__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+.section-template__title { margin: 0; font-size: 1.25rem; }
+.section-template__description { margin: var(--space-sm) 0 0; color: var(--muted); }
+.section-template__divider { border: 0; border-block-start: 1px solid var(--line); margin: 0; }

@@ -1,0 +1,20 @@
+/* Component: Loading Overlay
+   Markup: components/loading-overlay/loading-overlay.html
+   Barebones structure — customize freely.
+*/
+
+.component--loading-overlay .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.loading-overlay {
+  display: grid;
+  place-items: center;
+  min-height: 10rem;
+  padding: var(--space-lg);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+}
+.loading-overlay__message { margin: 0; color: var(--muted); }

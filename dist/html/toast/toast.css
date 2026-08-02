@@ -1,0 +1,32 @@
+/* Component: Toast
+   Markup: components/toast/toast.html
+   Barebones structure — customize freely.
+*/
+
+.component--toast .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.toast {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-sm) var(--space-md);
+  max-width: 24rem;
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 8%, transparent);
+}
+.toast__title { margin: 0; font-weight: 600; grid-column: 1; }
+.toast__description { margin: 0; color: var(--muted); grid-column: 1; }
+.toast__close {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}

@@ -1,0 +1,28 @@
+/* Component: Accordion
+   Markup: components/accordion/accordion.html
+   Barebones structure — customize freely.
+*/
+
+.component--accordion .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.accordion {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+.accordion__item + .accordion__item {
+  border-block-start: 1px solid var(--line);
+}
+.accordion__trigger {
+  cursor: pointer;
+  padding: var(--space-md);
+  font-weight: 500;
+}
+.accordion__panel {
+  padding: 0 var(--space-md) var(--space-md);
+  color: var(--muted);
+}

@@ -1,0 +1,41 @@
+/* Component: Autocomplete
+   Markup: components/autocomplete/autocomplete.html
+   Barebones structure — customize freely.
+*/
+
+.component--autocomplete .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.autocomplete {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+  position: relative;
+}
+.autocomplete input {
+  font: inherit;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  color: inherit;
+}
+.autocomplete__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+}
+.autocomplete__list [role="option"] {
+  padding: var(--space-sm);
+  border-radius: 0;
+  cursor: pointer;
+}
+.autocomplete__list [aria-selected="true"] {
+  background: var(--surface);
+}

@@ -1,0 +1,12 @@
+/* Component: Icon
+   Markup: components/icon/icon.html
+   Barebones structure — customize freely.
+*/
+
+.component--icon .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.icon { display: inline-block; vertical-align: middle; color: inherit; }
+.icon-label { margin-inline-start: var(--space-sm); }

@@ -1,0 +1,16 @@
+/* Component: Content Layout
+   Markup: components/content-layout/content-layout.html
+   Barebones structure — customize freely.
+*/
+
+.component--content-layout .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.content-layout {
+  display: grid;
+  gap: var(--space-md);
+}
+.content-layout__breadcrumbs { color: var(--muted); font-size: 0.875rem; }
+.content-layout__header h1 { margin: 0; font-size: 1.5rem; }

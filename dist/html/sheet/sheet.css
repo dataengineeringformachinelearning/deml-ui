@@ -1,0 +1,41 @@
+/* Component: Sheet
+   Markup: components/sheet/sheet.html
+   Barebones structure — customize freely.
+*/
+
+.component--sheet .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.sheet {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: min(24rem, 100%);
+  min-height: 16rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+}
+.sheet[hidden] { display: none; }
+.sheet__header,
+.sheet__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-block-end: 1px solid var(--line);
+}
+.sheet__footer {
+  border-block-end: 0;
+  border-block-start: 1px solid var(--line);
+  justify-content: flex-end;
+}
+.sheet__body { padding: var(--space-md); }
+.sheet__close {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}

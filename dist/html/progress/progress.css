@@ -1,0 +1,15 @@
+/* Component: Progress
+   Markup: components/progress/progress.html
+   Barebones structure — customize freely.
+*/
+
+.component--progress .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--progress progress,
+progress {
+  width: min(100%, 20rem);
+  height: 0.75rem;
+}

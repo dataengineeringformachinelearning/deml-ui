@@ -1,0 +1,19 @@
+/* Component: Hud Panel
+   Markup: components/hud-panel/hud-panel.html
+   Barebones structure — customize freely.
+*/
+
+.component--hud-panel .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.hud-panel {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+}
+.hud-panel__header h3 { margin: 0; font-size: 1rem; }

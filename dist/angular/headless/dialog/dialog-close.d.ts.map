@@ -1,0 +1,1 @@
+{"version":3,"file":"dialog-close.d.ts","sourceRoot":"","sources":["../../../../src/angular/headless/dialog/dialog-close.ts"],"names":[],"mappings":";AAGA;;;;;;;;GAQG;AACH,qBAOa,eAAe;IAC1B,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAuB;IAC9C,OAAO,CAAC,QAAQ,CAAC,EAAE,CAAmC;IAEtD,QAAQ,CAAC,QAAQ,gBAC8C;IAE/D,OAAO,IAAI,IAAI;yCAPJ,eAAe;2CAAf,eAAe;CAU3B"}

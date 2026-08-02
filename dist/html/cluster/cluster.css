@@ -1,0 +1,16 @@
+/* Component: Cluster
+   Markup: components/cluster/cluster.html
+   Barebones structure — customize freely.
+*/
+
+.component--cluster .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}

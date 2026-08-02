@@ -1,0 +1,27 @@
+/* Component: Textarea
+   Markup: components/textarea/textarea.html
+   Barebones structure — customize freely.
+*/
+
+.component--textarea .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.component--textarea label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+.component--textarea input,
+.component--textarea select,
+.component--textarea textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  color: inherit;
+}

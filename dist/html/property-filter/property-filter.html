@@ -1,0 +1,20 @@
+<!--
+  Component: Property Filter
+  Path: components/property-filter/property-filter.html
+  Styles: components/property-filter/property-filter.css
+  Source: structural shell from deml Viking-UI (unstyled)
+-->
+<section id="property-filter" class="component component--property-filter">
+  <h2>Property Filter</h2>
+  <div class="demo">
+    <div class="property-filter">
+      <label for="property-filter-input">Filter</label>
+      <div class="property-filter__control">
+        <ul class="property-filter__tokens" aria-label="Active filters">
+          <li class="property-filter__token">status = active <button type="button" aria-label="Remove">×</button></li>
+        </ul>
+        <input id="property-filter-input" type="search" placeholder="Filter properties…" />
+      </div>
+    </div>
+  </div>
+</section>

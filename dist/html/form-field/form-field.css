@@ -1,0 +1,28 @@
+/* Shared form control baseline
+   Used by form atoms; not a packaged component.
+*/
+
+.form-field label {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 28rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea,
+.form-field button {
+  font: inherit;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  color: inherit;
+}

@@ -1,0 +1,9 @@
+/* Component: Dialog
+   Markup: components/dialog/dialog.html
+   Headless — zero default visual styles.
+   Style dialog / ::backdrop in your app.
+*/
+
+.component--dialog .demo {
+  /* Storybook demo frame only */
+}

@@ -1,0 +1,13 @@
+/* Component: Section
+   Markup: components/section/section.html
+   Barebones structure — customize freely.
+*/
+
+.component--section .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.section { display: grid; gap: var(--space-md); }
+.section__title { margin: 0; font-size: 1.25rem; }
+.section__description { margin: 0; color: var(--muted); max-width: 40rem; }

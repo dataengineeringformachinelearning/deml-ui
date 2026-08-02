@@ -1,0 +1,1 @@
+{"version":3,"file":"page-section.d.ts","sourceRoot":"","sources":["../../../src/angular/markup/page-section.ts"],"names":[],"mappings":"AACA,OAAO,EAEL,UAAU,EACV,MAAM,EAEP,MAAM,eAAe,CAAC;;AAIvB,qBAMa,eAAgB,YAAW,MAAM;IAChC,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU,CAAC,WAAW,CAAC;IAE1D,QAAQ,IAAI,IAAI;yCAHL,eAAe;2CAAf,eAAe;CAS3B"}

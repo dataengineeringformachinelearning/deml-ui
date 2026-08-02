@@ -1,0 +1,23 @@
+/* Component: Timeline
+   Markup: components/timeline/timeline.html
+   Barebones structure — customize freely.
+*/
+
+.component--timeline .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-md);
+  border-inline-start: 2px solid var(--line);
+  padding-inline-start: var(--space-md);
+}
+.timeline__item { display: grid; gap: 0.15rem; }
+.timeline__item time { color: var(--muted); font-size: 0.875rem; }
+.timeline__title { margin: 0; font-weight: 600; }
+.timeline__description { margin: 0; color: var(--muted); }

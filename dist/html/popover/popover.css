@@ -1,0 +1,35 @@
+/* Component: Popover
+   Markup: components/popover/popover.html
+   Barebones structure — customize freely.
+*/
+
+.component--popover .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.popover { position: relative; display: inline-block; }
+.popover__trigger {
+  font: inherit;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  cursor: pointer;
+  color: inherit;
+}
+.popover__panel {
+  position: absolute;
+  inset-block-start: calc(100% + 0.35rem);
+  inset-inline-start: 0;
+  min-width: 14rem;
+  padding: var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  z-index: 10;
+  display: grid;
+  gap: var(--space-sm);
+}
+.popover__panel[hidden] { display: none; }

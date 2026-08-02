@@ -42,7 +42,7 @@
     "build:html": "node scripts/build-html.mjs",
     "build:angular": "node scripts/build-angular.mjs",
     "build": "node scripts/build-all.mjs",
-    "prepare": "npm run build",
+    "prepare": "node scripts/prepare.mjs",
     "prepublishOnly": "npm run build",
     "typecheck": "tsc --noEmit -p tsconfig.json"
   },

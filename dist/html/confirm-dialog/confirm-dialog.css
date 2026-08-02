@@ -1,0 +1,28 @@
+/* Component: Confirm Dialog
+   Markup: components/confirm-dialog/confirm-dialog.html
+   Barebones structure — customize freely.
+*/
+
+.component--confirm-dialog .demo {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.confirm-dialog {
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: var(--space-md);
+  background: var(--bg);
+  color: inherit;
+  max-width: min(24rem, calc(100vw - 2rem));
+}
+.confirm-dialog::backdrop {
+  background: color-mix(in srgb, var(--ink) 40%, transparent);
+}
+.confirm-dialog__title { margin: 0 0 var(--space-sm); }
+.confirm-dialog__body { margin: 0 0 var(--space-md); color: var(--muted); }
+.confirm-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+}
