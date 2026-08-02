@@ -1,7 +1,4 @@
-/* Component: App Header
-   Markup: components/app-header/app-header.html
-   Barebones structure — customize freely.
-*/
+/* Component: App Header — new-from-the-start shell */
 
 .component--app-header .demo {
   display: grid;
@@ -12,29 +9,58 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: var(--bg);
+  gap: var(--space-2);
+  padding: var(--space-2);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-primary) 18%, var(--color-surface)) 0%,
+    var(--color-surface) 100%
+  );
+  border-bottom: var(--border-width) solid var(--color-border);
 }
+
 .app-header__brand {
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hit-target);
+  padding: 0 var(--space-2);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
   text-decoration: none;
-  color: inherit;
+  color: var(--color-highlight);
 }
+
 .app-header__nav {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  gap: var(--space-4);
   flex: 1;
+  align-items: center;
+  justify-content: center;
 }
+
 .app-header__nav a {
+  min-height: var(--hit-target);
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-intro);
   text-decoration: none;
-  color: inherit;
+  color: var(--color-text);
 }
+
+.app-header__nav a:hover,
+.app-header__nav a.is-active {
+  color: var(--color-highlight);
+}
+
 .app-header__actions {
   display: flex;
-  gap: var(--space-sm);
+  gap: var(--space-2);
   margin-inline-start: auto;
+  align-items: center;
 }

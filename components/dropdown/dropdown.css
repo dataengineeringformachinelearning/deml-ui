@@ -14,7 +14,7 @@
   min-height: 2.75rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--bg);
   cursor: pointer;
   color: inherit;
@@ -28,7 +28,7 @@
   padding: 0.25rem;
   list-style: none;
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--bg);
   z-index: 10;
 }
@@ -42,7 +42,7 @@
   border: 0;
   background: transparent;
   cursor: pointer;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   color: inherit;
 }
 .dropdown__menu button:hover { background: var(--surface); }

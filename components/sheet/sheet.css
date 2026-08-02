@@ -14,7 +14,7 @@
   width: min(24rem, 100%);
   min-height: 16rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--bg);
 }
 .sheet[hidden] { display: none; }

@@ -19,7 +19,7 @@
   inset-inline-start: var(--space-sm);
   inset-block-start: var(--space-sm);
   padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--bg);
   border: 1px solid var(--line);
   z-index: 1000;

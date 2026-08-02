@@ -15,7 +15,7 @@
   text-align: center;
   padding: var(--space-xl) var(--space-md);
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   background: var(--bg);
 }
 .error-state__title { margin: 0; font-size: 1.125rem; font-weight: 600; }

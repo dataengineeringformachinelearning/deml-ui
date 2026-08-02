@@ -1,7 +1,4 @@
-/* Component: App Layout
-   Markup: components/app-layout/app-layout.html
-   Barebones structure — customize freely.
-*/
+/* Component: App Layout — catalog shell */
 
 .component--app-layout .demo {
   display: grid;
@@ -9,40 +6,55 @@
 }
 
 .app-layout {
-  display: grid;
-  grid-template-columns: minmax(12rem, 16rem) 1fr minmax(0, 18rem);
-  min-height: 20rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
+
+.app-layout__header {
+  flex: 0 0 auto;
+}
+
+.app-layout__body {
+  display: grid;
+  grid-template-columns: minmax(12rem, 16rem) 1fr;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 .app-layout__nav,
 .app-layout__tools {
-  padding: var(--space-md);
-  background: var(--surface);
-  border-inline-end: 1px solid var(--line);
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border-inline-end: var(--border-width) solid var(--color-border);
 }
+
 .app-layout__tools {
   border-inline-end: 0;
-  border-inline-start: 1px solid var(--line);
+  border-inline-start: var(--border-width) solid var(--color-border);
 }
+
 .app-layout__main {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  background: var(--color-bg);
 }
-.app-layout__header {
-  padding: var(--space-sm) var(--space-md);
-  border-block-end: 1px solid var(--line);
-}
+
 .app-layout__content {
-  padding: var(--space-md);
+  padding: 0;
   flex: 1;
 }
+
 @media (max-width: 48rem) {
-  .app-layout {
+  .app-layout__body {
     grid-template-columns: 1fr;
   }
-  .app-layout__tools { display: none; }
+
+  .app-layout__nav,
+  .app-layout__tools {
+    display: none;
+  }
 }

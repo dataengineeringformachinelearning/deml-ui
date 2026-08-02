@@ -11,7 +11,7 @@
 .toggle-group {
   display: inline-flex;
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   overflow: hidden;
 }
 .toggle {

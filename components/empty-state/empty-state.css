@@ -15,7 +15,7 @@
   text-align: center;
   padding: var(--space-xl) var(--space-md);
   border: 1px dashed var(--line);
-  border-radius: var(--radius-md);
+  border-radius: 0;
 }
 .empty-state__eyebrow { margin: 0; color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .empty-state__title { margin: 0; font-size: 1.125rem; font-weight: 600; }

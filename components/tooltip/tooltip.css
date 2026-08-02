@@ -13,7 +13,7 @@
   min-height: 2.75rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--bg);
   cursor: pointer;
   color: inherit;
@@ -23,7 +23,7 @@
   margin-inline-start: var(--space-sm);
   padding: 0.25rem 0.5rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--ink);
   color: var(--bg);
   font-size: 0.75rem;

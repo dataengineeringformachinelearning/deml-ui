@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<button type=\"button\" class=\"button\" data-variant=\"primary\">Primary</button>\n    <button type=\"button\" class=\"button\">Default</button>\n    <button type=\"button\" class=\"button\" data-variant=\"ghost\">Ghost</button>\n    <button type=\"button\" class=\"button\" disabled>Disabled</button>";
+const DEML_TEMPLATE = "<button type=\"button\" class=\"button button--primary\">Primary</button>\n    <button type=\"button\" class=\"button button--secondary\">Secondary</button>\n    <button type=\"button\" class=\"button button--accent\">Accent</button>\n    <button type=\"button\" class=\"button button--primary button--pill\">Pill</button>\n    <button type=\"button\" class=\"button button--primary\" disabled>Disabled</button>";
 
 @Component({
   selector: "deml-button",

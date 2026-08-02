@@ -27,7 +27,7 @@
   min-width: 2.5rem;
   padding: 0.35rem 0.75rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--bg);
   color: inherit;
   cursor: pointer;

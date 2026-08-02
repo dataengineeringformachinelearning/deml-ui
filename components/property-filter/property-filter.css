@@ -20,7 +20,7 @@
   align-items: center;
   padding: var(--space-sm);
   border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   background: var(--bg);
 }
 .property-filter__tokens {
