@@ -21,7 +21,7 @@
   max-height: calc(var(--grid) * 56);
   margin: 0;
   overflow: hidden;
-  padding: var(--space-6);
+  padding: var(--space-6) var(--space-2);
   color: var(--color-text);
   background-color: var(--color-bg);
   background-image:
@@ -66,11 +66,9 @@
 
 .banner .preheader {
   margin: 0 0 var(--space-3);
-  font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
-  line-height: var(--leading-ui);
   color: var(--color-highlight);
 }
 
@@ -78,22 +76,18 @@
   max-width: 14ch;
   margin-bottom: var(--space-3);
   font-family: var(--font-display);
-  font-size: var(--font-size-display-lg);
-  font-stretch: var(--font-stretch-display);
+  font-size: clamp(calc(var(--grid) * 4.5), 6vw, var(--font-size-2xl));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: var(--leading-display);
+  line-height: 0.98;
   color: var(--color-text);
 }
 
 .banner .lede {
   max-width: 42ch;
   margin: 0 0 var(--space-5);
-  font-family: var(--font-secondary);
-  font-size: var(--font-size-body);
-  font-weight: var(--font-weight-regular);
+  font-family: var(--font-serif);
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
 }
 
@@ -111,8 +105,7 @@
     min-height: calc(var(--grid) * 36);
     height: 38dvh;
     max-height: calc(var(--grid) * 52);
-    padding-block: var(--space-8);
-    padding-inline: max(var(--space-4), calc((100% - var(--content-width-lg)) / 2));
+    padding: var(--space-8) var(--space-4);
   }
 
   .banner-actions {
@@ -120,38 +113,34 @@
     max-width: none;
   }
 
+  /* Align hero copy with page content measures (global, not :host-context) */
   .page--prose .banner,
   .page--prose app-banner .banner,
   .page--prose deml-banner .banner {
-    padding-block: var(--space-8);
     padding-inline: max(var(--space-4), calc((100% - var(--reading-width)) / 2));
   }
 
   .page--catalog .banner,
   .page--catalog app-banner .banner,
   .page--catalog deml-banner .banner {
-    padding-block: var(--space-8);
     padding-inline: max(var(--space-4), calc((100% - var(--content-width-lg)) / 2));
   }
 }
 
 @media screen and (min-width: 1200px) {
   .banner {
-    padding-block: var(--space-8);
-    padding-inline: max(var(--space-6), calc((100% - var(--content-width-lg)) / 2));
+    padding: var(--space-8) var(--space-6);
   }
 
   .page--prose .banner,
   .page--prose app-banner .banner,
   .page--prose deml-banner .banner {
-    padding-block: var(--space-8);
     padding-inline: max(var(--space-6), calc((100% - var(--reading-width)) / 2));
   }
 
   .page--catalog .banner,
   .page--catalog app-banner .banner,
   .page--catalog deml-banner .banner {
-    padding-block: var(--space-8);
     padding-inline: max(var(--space-6), calc((100% - var(--content-width-lg)) / 2));
   }
 }

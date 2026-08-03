@@ -1,4 +1,4 @@
-/* Component: bar-chart — aspect-locked plot band (same stage as area) */
+/* Component: bar-chart — aspect-locked plot band (same size as area) */
 
 .component--bar-chart .demo {
   display: grid;
@@ -15,7 +15,7 @@ deml-bar-chart,
   min-width: 0;
   min-height: 0;
   flex: 0 1 auto;
-  --chart-accent: var(--chart-series-1);
+  --chart-accent: var(--color-primary);
   --chart-plot: var(--color-plot);
   --chart-label: var(--color-plot-muted);
   --chart-value: var(--color-plot-ink);
@@ -24,34 +24,34 @@ deml-bar-chart,
 
 app-bar-chart[data-accent='gold'],
 :host([data-accent='gold']) {
-  --chart-accent: var(--chart-series-3);
+  --chart-accent: var(--color-accent-gold);
 }
 
 app-bar-chart[data-accent='red'],
 :host([data-accent='red']) {
-  --chart-accent: var(--chart-series-4);
+  --chart-accent: var(--color-accent-red);
 }
 
 app-bar-chart[data-accent='primary'],
 :host([data-accent='primary']) {
-  --chart-accent: var(--chart-series-1);
+  --chart-accent: var(--color-primary);
 }
 
 /*
- * Same stage as area plots — width fluid, height from --chart-aspect only.
+ * Same proportions as area plots — --chart-aspect container.
  * Rows scroll inside the band; the band never stretches.
  */
 .bar-chart {
   display: flex;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   flex-direction: column;
   justify-content: space-between;
   gap: var(--space-2);
   box-sizing: border-box;
-  width: 100%;
-  max-width: var(--chart-stage-max-inline);
+  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
   aspect-ratio: var(--chart-aspect);
   height: auto;
+  max-height: var(--chart-max-block);
   margin: 0 auto;
   padding: var(--chart-inset) var(--space-3);
   overflow: auto;
@@ -103,7 +103,7 @@ app-bar-chart[data-accent='primary'],
 .bar-chart-track {
   width: 100%;
   height: var(--space-1);
-  background-color: color-mix(in srgb, var(--chart-series-2) 16%, var(--chart-plot));
+  background-color: color-mix(in srgb, var(--color-plot-muted) 16%, var(--chart-plot));
   overflow: hidden;
 }
 
@@ -113,7 +113,7 @@ app-bar-chart[data-accent='primary'],
   background-image: linear-gradient(
     90deg,
     var(--chart-accent) 0%,
-    color-mix(in srgb, var(--chart-accent) 55%, var(--chart-series-paper)) 100%
+    color-mix(in srgb, var(--chart-accent) 55%, var(--color-on-primary)) 100%
   );
 }
 

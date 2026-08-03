@@ -1,4 +1,4 @@
-/* Component: section — NFTS content section */
+/* Component: section — atelier content section */
 
 .component--section .demo {
   display: grid;
@@ -9,8 +9,7 @@
   display: grid;
   gap: var(--space-md);
   width: 100%;
-  /* Identical outer spacing on all four sides */
-  padding: var(--module-pad);
+  padding: var(--module-pad) 0;
 }
 
 .section__header {
@@ -30,7 +29,7 @@
 .section__description {
   margin: 0;
   max-width: var(--reading-width);
-  font-family: var(--font-secondary);
+  font-family: var(--font-serif);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
   color: var(--color-text-secondary);

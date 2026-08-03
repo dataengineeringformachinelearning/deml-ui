@@ -1,13 +1,11 @@
-/* Component: dashboard-grid — equal cells, equal gaps (Pass 1 tokens) */
+/* Component: dashboard-grid — NFTS equal-cell rhythm */
 
 .component--dashboard-grid .demo {
   display: grid;
   gap: var(--tile-gap);
-  margin: 0;
-  padding: var(--tile-gap);
 }
 
-/* Thin Angular wrapper must not collapse the board */
+/* Angular tile-board is a thin data wrapper — must not collapse the grid */
 app-tile-board,
 deml-tile-board {
   display: block;
@@ -19,8 +17,10 @@ deml-tile-board {
 }
 
 /*
- * Fixed dash-row tracks + equal --tile-gap on every axis.
- * Identical peer heights: row size is exact (not minmax/auto).
+ * Equal-cell dashboard grid.
+ * Row unit matches new-from-the-start (--dash-row / --tile-row-unit).
+ * minmax(..., auto) lets fluid chart tiles grow without ragged gaps.
+ * Gap is always --tile-gap (8px scale); never invent one-off gutters.
  */
 
 app-dashboard-grid,
@@ -36,7 +36,7 @@ deml-dashboard-grid,
   padding: 0;
   gap: var(--dash-gap);
   grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: var(--dash-row);
+  grid-auto-rows: minmax(var(--dash-row), auto);
   grid-auto-flow: dense;
   align-items: stretch;
   justify-items: stretch;
@@ -47,17 +47,14 @@ app-dashboard-grid > *,
 deml-dashboard-grid > *,
 .dashboard-grid > *,
 :host > * {
-  box-sizing: border-box;
   min-width: 0;
   min-height: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
   align-self: stretch;
   justify-self: stretch;
 }
 
-/* Mobile: full-bleed columns; span rows for size tiers */
 app-dashboard-grid > [data-size='sm'],
 deml-dashboard-grid > [data-size='sm'],
 .dashboard-grid > [data-size='sm'],
@@ -102,7 +99,6 @@ deml-dashboard-grid > [data-size='hero'],
   color: var(--color-card-text);
   background-color: var(--color-card);
   border: var(--border-width) solid var(--color-card-border);
-  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
 }
 
@@ -111,10 +107,10 @@ deml-dashboard-grid > [data-size='hero'],
   deml-dashboard-grid,
   .dashboard-grid,
   :host {
-    --dash-row: var(--space-14);
-    --tile-row-unit: var(--space-14);
+    /* 14 × 8px — mid breakpoint dash-row (THEME NFTS rhythm) */
+    --dash-row: calc(var(--grid) * 14);
+    --tile-row-unit: calc(var(--grid) * 14);
     grid-template-columns: repeat(var(--tile-cols), minmax(0, 1fr));
-    grid-auto-rows: var(--dash-row);
   }
 
   app-dashboard-grid > [data-size='sm'],
@@ -128,7 +124,11 @@ deml-dashboard-grid > [data-size='hero'],
   app-dashboard-grid > [data-size='md'],
   deml-dashboard-grid > [data-size='md'],
   .dashboard-grid > [data-size='md'],
-  :host > [data-size='md'],
+  :host > [data-size='md'] {
+    grid-column: span 3;
+    grid-row: span 3;
+  }
+
   app-dashboard-grid > [data-size='lg'],
   deml-dashboard-grid > [data-size='lg'],
   .dashboard-grid > [data-size='lg'],
@@ -169,6 +169,5 @@ deml-dashboard-grid > [data-size='hero'],
   :host {
     --dash-row: var(--space-16);
     --tile-row-unit: var(--space-16);
-    grid-auto-rows: var(--dash-row);
   }
 }

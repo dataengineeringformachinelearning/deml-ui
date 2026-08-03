@@ -143,9 +143,9 @@ body:has(.site-navbar) {
   min-height: var(--navbar-hit);
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  font-weight: 700;
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-ui);
+  line-height: 1.2;
   text-transform: none;
   text-decoration: none;
   white-space: nowrap;

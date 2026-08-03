@@ -26,11 +26,8 @@
   align-items: center;
   min-height: var(--hit-target);
   padding: 0 var(--space-2);
-  font-family: var(--font-sans);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
+  font-weight: 700;
   letter-spacing: var(--tracking-eyebrow);
-  line-height: var(--leading-ui);
   text-transform: uppercase;
   text-decoration: none;
   color: var(--color-highlight);
@@ -49,11 +46,9 @@
   min-height: var(--hit-target);
   display: inline-flex;
   align-items: center;
-  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: 600;
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-ui);
   text-decoration: none;
   color: var(--color-text);
 }

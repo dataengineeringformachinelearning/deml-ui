@@ -1,38 +1,26 @@
-/* Component: page-section — equal section rhythm from Pass 1 tokens */
+/* Component: page-section — NFTS stacked section rhythm */
 
 .component--page-section .demo {
   display: grid;
-  gap: var(--tile-gap);
-  margin: 0;
-  padding: var(--tile-gap);
+  gap: var(--space-md);
 }
 
 app-page-section,
 deml-page-section,
 :host {
   display: block;
-  box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 0;
   background-color: transparent;
 }
 
-/* Equal gap between header and board inside a section body */
-.page-body > app-section-header,
-.page-body > deml-section-header,
-app-page-section .page-body > app-section-header,
-deml-page-section .page-body > deml-section-header {
-  margin: 0 0 var(--tile-gap);
-  padding: 0;
-}
-
+/* Equal outer rhythm between stacked section headers inside a page body */
 .page-body > app-section-header:not(:first-child),
 .page-body > deml-section-header:not(:first-child),
 app-page-section .page-body > app-section-header:not(:first-child),
 deml-page-section .page-body > deml-section-header:not(:first-child) {
   margin-top: var(--space-6);
-  margin-bottom: var(--tile-gap);
 }
 
 @media screen and (min-width: 800px) {
@@ -41,7 +29,6 @@ deml-page-section .page-body > deml-section-header:not(:first-child) {
   app-page-section .page-body > app-section-header:not(:first-child),
   deml-page-section .page-body > deml-section-header:not(:first-child) {
     margin-top: var(--space-8);
-    margin-bottom: var(--tile-gap);
   }
 }
 
@@ -52,13 +39,15 @@ deml-page-section[data-variant='auth'] .page-body--auth,
   flex: 1 1 auto;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
   width: 100%;
   min-height: calc(100dvh - var(--space-16));
-  margin: 0;
-  padding: var(--space-6);
+  padding-block: var(--space-6);
 }
 
+/*
+ * Catalog group — transparent NFTS board grouping (not a cream module shell).
+ * Cream lives on tiles/microcards; groups only own equal vertical rhythm.
+ */
 .catalog-group {
   box-sizing: border-box;
   display: block;
@@ -77,8 +66,7 @@ deml-page-section[data-variant='auth'] .page-body--auth,
 .catalog-group > app-section-header,
 .catalog-group > deml-section-header,
 .catalog-group > .section-header {
-  margin: 0 0 var(--tile-gap);
-  padding: 0;
+  margin-bottom: var(--space-4);
 }
 
 @media screen and (min-width: 800px) {

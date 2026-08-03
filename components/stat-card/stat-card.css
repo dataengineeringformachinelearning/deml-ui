@@ -54,7 +54,7 @@ deml-metric-card[data-accent='primary'],
   height: 100%;
   min-height: 100%;
   margin: 0;
-  padding: var(--module-pad);
+  padding: var(--space-3);
   overflow: hidden;
   color: var(--color-card-text);
   background-color: var(--color-card);
@@ -65,7 +65,6 @@ deml-metric-card[data-accent='primary'],
   );
   border: var(--border-width) solid var(--color-card-border);
   border-top: calc(var(--border-width) * 4) solid var(--stat-accent);
-  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
 }
 
@@ -82,9 +81,9 @@ deml-metric-card[data-accent='primary'],
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
+  font-weight: 600;
   letter-spacing: var(--tracking-eyebrow);
-  line-height: var(--leading-ui);
+  line-height: 1.2;
   text-transform: uppercase;
   color: var(--stat-accent);
 }
@@ -96,7 +95,7 @@ deml-metric-card[data-accent='primary'],
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
+  font-weight: 700;
   letter-spacing: var(--tracking-intro);
   line-height: 1;
   color: var(--color-card-text-secondary);
@@ -123,37 +122,35 @@ deml-stat-card[data-trend='down'] .stat-card-delta,
   margin: 0;
   flex: 0 0 auto;
   font-family: var(--font-display);
-  font-size: var(--font-size-title);
-  font-stretch: var(--font-stretch-display);
+  font-size: clamp(var(--font-size-lg), 4vw, calc(var(--grid) * 5.5));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: var(--leading-display);
+  line-height: 0.95;
   color: var(--color-card-text);
 }
 
 .stat-card-meta {
   margin: var(--space-1) 0 0;
   flex: 0 0 auto;
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-regular);
-  letter-spacing: var(--tracking-body);
-  line-height: var(--leading-snug);
+  font-weight: 400;
+  line-height: 1.35;
   color: var(--color-card-text-secondary);
 }
 
 .stat-card-spark {
   display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
+  flex: 1 1 auto;
+  align-items: stretch;
   width: 100%;
+  min-height: var(--chart-spark-min-block);
   margin-top: var(--space-3);
 }
 
 .stat-card-spark > :first-child {
   width: 100%;
-  min-height: 0;
+  min-height: 100%;
 }
 
 app-stat-card[data-size='sm'] .stat-card-spark,
@@ -174,11 +171,11 @@ deml-stat-card[data-size='hero'] .stat-card-value,
 :host([data-size='wide']) .stat-card-value,
 :host([data-size='lg']) .stat-card-value,
 :host([data-size='hero']) .stat-card-value {
-  font-size: var(--font-size-display);
+  font-size: clamp(calc(var(--grid) * 4.5), 5vw, calc(var(--grid) * 6.5));
 }
 
 @media screen and (min-width: 800px) {
   .stat-card {
-    padding: var(--module-pad-lg);
+    padding: var(--space-4);
   }
 }

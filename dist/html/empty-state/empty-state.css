@@ -1,4 +1,4 @@
-/* Component: empty-state — NFTS empty module */
+/* Component: empty-state — atelier empty module */
 
 .component--empty-state .demo {
   display: grid;
@@ -42,7 +42,7 @@
 .empty-state__description {
   margin: 0;
   max-width: var(--content-width-sm);
-  font-family: var(--font-secondary);
+  font-family: var(--font-serif);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
   color: var(--color-text-secondary);

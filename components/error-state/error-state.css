@@ -1,4 +1,4 @@
-/* Component: error-state — NFTS error module */
+/* Component: error-state — atelier error module */
 
 .component--error-state .demo {
   display: grid;
@@ -23,22 +23,18 @@
 .error-state__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: var(--font-size-title-sm);
-  font-stretch: var(--font-stretch-display);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-tight);
   color: var(--color-text);
 }
 
 .error-state__description {
   margin: 0;
   max-width: var(--content-width-sm);
-  font-family: var(--font-secondary);
-  font-size: var(--font-size-body);
-  font-weight: var(--font-weight-regular);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
 }
 
