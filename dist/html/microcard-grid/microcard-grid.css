@@ -7,10 +7,12 @@
 
 /* Microcard grid — equal-height tiles; gutters match card / dash grids */
 
-.microcard-grid {
+.microcard-grid,
+app-microcard-grid,
+deml-microcard-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: minmax(var(--tile-row-micro), auto);
+  grid-auto-rows: var(--tile-row-micro);
   grid-auto-flow: dense;
   gap: var(--tile-gap);
   align-items: stretch;
@@ -39,9 +41,11 @@
 }
 
 @media screen and (min-width: 800px) {
-  .microcard-grid {
+  .microcard-grid,
+  app-microcard-grid,
+  deml-microcard-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(var(--tile-row-micro), 1fr);
+    grid-auto-rows: var(--tile-row-micro);
   }
 }
 
