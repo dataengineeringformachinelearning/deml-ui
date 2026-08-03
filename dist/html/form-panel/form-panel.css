@@ -48,7 +48,7 @@
 .form-panel__title {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: clamp(1.75rem, 4vw, var(--font-size-lg));
+  font-size: clamp(calc(var(--grid) * 3.5), 4vw, var(--font-size-lg));
   font-weight: 700;
   letter-spacing: var(--tracking-display);
   line-height: 1.1;
@@ -73,6 +73,35 @@
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+/* Nested auth/account forms inherit the body rhythm */
+.form-panel__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.form-panel__error {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-intro);
+  line-height: 1.35;
+  color: var(--color-error);
+}
+
+.form-panel__form app-button-group,
+.form-panel__form deml-button-group {
+  width: 100%;
+}
+
+.form-panel__form .button {
+  width: 100%;
 }
 
 .form-panel__footer:empty {

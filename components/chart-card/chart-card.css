@@ -1,11 +1,11 @@
-/* Component: chart-card — NFTS fill + atelier type */
+/* Component: chart-card — NFTS fill + aspect-safe plot band */
 
 .component--chart-card .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
 }
 
-/* Chart card — titled shell; plot fills the body edge-to-edge */
+/* Chart card — titled shell; plot band hosts aspect-locked charts */
 
 app-chart-card,
 deml-chart-card,
@@ -83,6 +83,10 @@ app-chart-card[data-accent='primary'],
   color: var(--chart-accent);
 }
 
+/*
+ * Plot band — hosts fill width; charts size themselves via --chart-aspect.
+ * Do not force height:100% on children (that squashes viewBox plots).
+ */
 .chart-card-body {
   display: flex;
   flex: 1 1 auto;
@@ -90,21 +94,18 @@ app-chart-card[data-accent='primary'],
   align-items: stretch;
   justify-content: flex-start;
   gap: 0;
-  min-height: var(--chart-min-block);
-  height: 100%;
+  min-height: 0;
   width: 100%;
   overflow: hidden;
 }
 
-/* NFTS: chart hosts fill the plot band; aspect lock lives on the plot itself */
 .chart-card-body > *,
-:host ::ng-deep .chart-card-body > *,
-app-chart-card .chart-card-body > * {
+app-chart-card .chart-card-body > *,
+deml-chart-card .chart-card-body > * {
   width: 100%;
-  height: 100%;
   min-width: 0;
   min-height: 0;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
 }
 
 :host([data-size='hero']) .chart-card-heading,

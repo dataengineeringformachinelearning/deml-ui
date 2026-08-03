@@ -1,4 +1,4 @@
-/* Component: App Layout — catalog shell */
+/* Component: app-layout — atelier catalog shell */
 
 .component--app-layout .demo {
   display: grid;
@@ -19,7 +19,7 @@
 
 .app-layout__body {
   display: grid;
-  grid-template-columns: minmax(12rem, 16rem) 1fr;
+  grid-template-columns: minmax(calc(var(--grid) * 24), var(--space-28)) 1fr;
   flex: 1 1 auto;
   min-height: 0;
 }
@@ -48,7 +48,7 @@
   flex: 1;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 800px) {
   .app-layout__body {
     grid-template-columns: 1fr;
   }

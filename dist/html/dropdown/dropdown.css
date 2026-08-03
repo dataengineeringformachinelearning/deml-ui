@@ -1,48 +1,51 @@
-/* Component: Dropdown
-   Markup: components/dropdown/dropdown.html
-   Barebones structure — customize freely.
-*/
+/* Component: dropdown — atelier menu */
 
 .component--dropdown .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-.dropdown { position: relative; display: inline-block; }
-.dropdown__trigger {
-  font: inherit;
-  min-height: 2.75rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
-  cursor: pointer;
-  color: inherit;
+.dropdown {
+  position: relative;
+  display: inline-flex;
 }
+
+.dropdown__trigger {
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.dropdown__trigger:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
 .dropdown__menu {
   position: absolute;
-  inset-block-start: calc(100% + 0.25rem);
+  z-index: 20;
+  inset-block-start: calc(100% + var(--space-1));
   inset-inline-start: 0;
-  min-width: 10rem;
+  min-width: 100%;
   margin: 0;
-  padding: 0.25rem;
+  padding: var(--space-1);
   list-style: none;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
-  z-index: 10;
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-md);
 }
-.dropdown__menu[hidden] { display: none; }
-.dropdown__menu button {
-  display: block;
-  width: 100%;
-  text-align: start;
-  font: inherit;
-  padding: var(--space-sm);
-  border: 0;
-  background: transparent;
+
+.dropdown__item {
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
   cursor: pointer;
-  border-radius: 0;
-  color: inherit;
 }
-.dropdown__menu button:hover { background: var(--surface); }
+
+.dropdown__item:hover,
+.dropdown__item[aria-selected='true'] {
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+}

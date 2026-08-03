@@ -1,11 +1,23 @@
-/* Shared form control baseline
-   Used by form atoms; not a packaged component.
-*/
+/* Shared form control baseline — atelier tokens */
+
+.form-field {
+  display: grid;
+  gap: var(--space-1);
+  width: 100%;
+  max-width: var(--content-width-sm);
+}
 
 .form-field label {
   display: grid;
-  gap: var(--space-sm);
-  max-width: 28rem;
+  gap: var(--space-1);
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
 }
 
 .form-field input,
@@ -18,11 +30,21 @@
 .form-field input,
 .form-field select,
 .form-field textarea {
+  box-sizing: border-box;
   width: 100%;
-  min-height: 2.75rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
-  color: inherit;
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  appearance: none;
+}
+
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+  border-color: var(--color-primary);
 }

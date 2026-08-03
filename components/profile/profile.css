@@ -1,7 +1,4 @@
-/* Component: Profile
-   Markup: components/profile/profile.html
-   Barebones structure — customize freely.
-*/
+/* Component: profile — atelier identity block */
 
 .component--profile .demo {
   display: grid;
@@ -9,9 +6,25 @@
 }
 
 .profile {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--module-pad);
 }
-.profile__name { margin: 0; font-weight: 600; }
-.profile__meta { margin: 0; color: var(--muted); font-size: 0.875rem; }
+
+.profile__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+.profile__meta {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--tracking-intro);
+}

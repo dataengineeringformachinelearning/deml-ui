@@ -6,6 +6,28 @@
 <section id="chart-card" class="component component--chart-card">
   <h2>Chart Card</h2>
   <div class="demo">
-    <article class="chart-card"><header class="chart-card__header"><h3>Traffic</h3></header><div class="chart-card__body">Chart</div></article>
+    <article class="chart-card" aria-labelledby="chart-card-demo-heading">
+      <header class="chart-card-header">
+        <h3 class="chart-card-heading" id="chart-card-demo-heading">Traffic</h3>
+        <p class="chart-card-meta">Last 7 days</p>
+      </header>
+      <div class="chart-card-body">
+        <div class="area-chart-frame" role="img" aria-label="Sample area chart">
+          <svg
+            class="area-chart"
+            viewBox="0 0 360 150"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <polyline
+              class="area-chart-line"
+              fill="none"
+              points="32,110 80,90 140,95 200,50 260,70 320,40"
+            />
+          </svg>
+        </div>
+      </div>
+    </article>
   </div>
 </section>

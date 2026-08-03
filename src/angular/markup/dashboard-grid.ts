@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<div class=\"dashboard-grid\"><div class=\"dashboard-grid__cell\">Tile</div></div>";
+const DEML_TEMPLATE = "<div class=\"dashboard-grid\">\n      <div class=\"dashboard-grid__cell\" data-size=\"sm\">Tile SM</div>\n      <div class=\"dashboard-grid__cell\" data-size=\"md\">Tile MD</div>\n      <div class=\"dashboard-grid__cell\" data-size=\"sm\">Tile SM</div>\n    </div>";
 
 @Component({
   selector: "deml-dashboard-grid",

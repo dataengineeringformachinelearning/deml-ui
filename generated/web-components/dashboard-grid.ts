@@ -7,7 +7,11 @@ export class DemlDashboardGrid extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<div class="dashboard-grid"><div class="dashboard-grid__cell">Tile</div></div>`;
+      this.innerHTML = `<div class="dashboard-grid">
+      <div class="dashboard-grid__cell" data-size="sm">Tile SM</div>
+      <div class="dashboard-grid__cell" data-size="md">Tile MD</div>
+      <div class="dashboard-grid__cell" data-size="sm">Tile SM</div>
+    </div>`;
     }
   }
 }

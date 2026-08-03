@@ -1,30 +1,35 @@
-/* Component: Tooltip
-   Markup: components/tooltip/tooltip.html
-   Barebones structure — customize freely.
-*/
+/* Component: tooltip — atelier overlay */
 
 .component--tooltip .demo {
   display: grid;
   gap: var(--space-md);
+  justify-items: start;
 }
 
 .tooltip-trigger {
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
   font: inherit;
-  min-height: 2.75rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
   cursor: pointer;
-  color: inherit;
 }
+
+.tooltip-trigger:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
 .tooltip {
   display: inline-block;
-  margin-inline-start: var(--space-sm);
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--ink);
-  color: var(--bg);
-  font-size: 0.75rem;
+  max-width: var(--content-width-sm);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--tracking-intro);
+  box-shadow: var(--shadow-md);
 }

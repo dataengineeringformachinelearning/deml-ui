@@ -1,11 +1,50 @@
-/* Component: stat-card — from deml new-from-the-start */
+/* Component: stat-card — NFTS KPI tile (global app-* + deml-* selectors) */
 
 .component--stat-card .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
 }
 
-/* Stat card — KPI tile; spark fills remaining width with shared aspect */
+/*
+ * Host must establish size for dashboard-grid children.
+ * Prefer element selectors — :host is inert in the bundled deml-ui.css.
+ */
+app-stat-card,
+deml-stat-card,
+deml-metric-card,
+:host {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  --stat-accent: var(--color-primary);
+  background-color: transparent;
+}
+
+app-stat-card[data-accent='gold'],
+deml-stat-card[data-accent='gold'],
+deml-metric-card[data-accent='gold'],
+:host([data-accent='gold']) {
+  --stat-accent: var(--color-accent-gold);
+}
+
+app-stat-card[data-accent='red'],
+deml-stat-card[data-accent='red'],
+deml-metric-card[data-accent='red'],
+:host([data-accent='red']) {
+  --stat-accent: var(--color-accent-red);
+}
+
+app-stat-card[data-accent='primary'],
+deml-stat-card[data-accent='primary'],
+deml-metric-card[data-accent='primary'],
+:host([data-accent='primary']) {
+  --stat-accent: var(--color-primary);
+}
 
 .stat-card {
   display: flex;
@@ -67,10 +106,14 @@
   color: inherit;
 }
 
+app-stat-card[data-trend='up'] .stat-card-delta,
+deml-stat-card[data-trend='up'] .stat-card-delta,
 :host([data-trend='up']) .stat-card-delta {
   color: var(--color-accent-gold);
 }
 
+app-stat-card[data-trend='down'] .stat-card-delta,
+deml-stat-card[data-trend='down'] .stat-card-delta,
 :host([data-trend='down']) .stat-card-delta {
   color: var(--color-accent-red);
 }
@@ -78,9 +121,9 @@
 .stat-card-value {
   margin: 0;
   flex: 0 0 auto;
-  font-family: var(--font-sans);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-lg), 4vw, calc(var(--grid) * 5.5));
+  font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: 0.95;
   color: var(--color-card-text);
@@ -110,15 +153,25 @@
   min-height: 100%;
 }
 
+app-stat-card[data-size='sm'] .stat-card-spark,
+deml-stat-card[data-size='sm'] .stat-card-spark,
 :host([data-size='sm']) .stat-card-spark {
   display: none;
 }
 
+app-stat-card[data-size='md'] .stat-card-value,
+app-stat-card[data-size='wide'] .stat-card-value,
+app-stat-card[data-size='lg'] .stat-card-value,
+app-stat-card[data-size='hero'] .stat-card-value,
+deml-stat-card[data-size='md'] .stat-card-value,
+deml-stat-card[data-size='wide'] .stat-card-value,
+deml-stat-card[data-size='lg'] .stat-card-value,
+deml-stat-card[data-size='hero'] .stat-card-value,
 :host([data-size='md']) .stat-card-value,
 :host([data-size='wide']) .stat-card-value,
 :host([data-size='lg']) .stat-card-value,
 :host([data-size='hero']) .stat-card-value {
-  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-size: clamp(calc(var(--grid) * 4.5), 5vw, calc(var(--grid) * 6.5));
 }
 
 @media screen and (min-width: 800px) {

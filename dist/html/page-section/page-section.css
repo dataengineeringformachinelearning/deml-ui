@@ -5,17 +5,29 @@
   gap: var(--space-md);
 }
 
+app-page-section,
+deml-page-section,
+:host {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
 /* Equal outer rhythm between stacked section headers inside a page body */
 .page-body > app-section-header:not(:first-child),
 .page-body > deml-section-header:not(:first-child),
-app-page-section .page-body > app-section-header:not(:first-child) {
+app-page-section .page-body > app-section-header:not(:first-child),
+deml-page-section .page-body > deml-section-header:not(:first-child) {
   margin-top: var(--space-6);
 }
 
 @media screen and (min-width: 800px) {
   .page-body > app-section-header:not(:first-child),
   .page-body > deml-section-header:not(:first-child),
-  app-page-section .page-body > app-section-header:not(:first-child) {
+  app-page-section .page-body > app-section-header:not(:first-child),
+  deml-page-section .page-body > deml-section-header:not(:first-child) {
     margin-top: var(--space-8);
   }
 }
@@ -30,4 +42,35 @@ deml-page-section[data-variant='auth'] .page-body--auth,
   width: 100%;
   min-height: calc(100dvh - var(--space-16));
   padding-block: var(--space-6);
+}
+
+/*
+ * Catalog group — transparent NFTS board grouping (not a cream module shell).
+ * Cream lives on tiles/microcards; groups only own equal vertical rhythm.
+ */
+.catalog-group {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.catalog-group + .catalog-group {
+  margin-top: var(--space-6);
+}
+
+.catalog-group > app-section-header,
+.catalog-group > deml-section-header,
+.catalog-group > .section-header {
+  margin-bottom: var(--space-4);
+}
+
+@media screen and (min-width: 800px) {
+  .catalog-group + .catalog-group {
+    margin-top: var(--space-8);
+  }
 }

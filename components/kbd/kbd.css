@@ -1,22 +1,24 @@
-/* Component: Kbd
-   Markup: components/kbd/kbd.html
-   Barebones structure — customize freely.
-*/
+/* Component: kbd — atelier keycap */
 
 .component--kbd .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-.kbd {
+.kbd,
+kbd {
   display: inline-flex;
   align-items: center;
-  min-height: 1.5rem;
-  padding: 0 0.4rem;
-  border: 1px solid var(--line);
-  border-bottom-width: 2px;
-  border-radius: 0;
-  background: var(--surface);
-  font: inherit;
-  font-size: 0.75rem;
+  justify-content: center;
+  min-height: var(--space-3);
+  padding: 0 var(--space-1);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-mark);
+  text-transform: uppercase;
 }

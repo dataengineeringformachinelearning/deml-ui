@@ -1,7 +1,4 @@
-/* Component: Hud Panel
-   Markup: components/hud-panel/hud-panel.html
-   Barebones structure — customize freely.
-*/
+/* Component: hud-panel — atelier instrument panel */
 
 .component--hud-panel .demo {
   display: grid;
@@ -10,10 +7,33 @@
 
 .hud-panel {
   display: grid;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
+  gap: var(--space-2);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: var(--tile-row-unit);
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-card-border);
+  background-color: var(--color-card);
+  color: var(--color-card-text);
+  box-shadow: var(--shadow-card);
 }
-.hud-panel__header h3 { margin: 0; font-size: 1rem; }
+
+.hud-panel__header h3,
+.hud-panel__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-card-text);
+}
+
+.hud-panel__meta {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-card-text-secondary);
+}

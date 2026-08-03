@@ -1,7 +1,4 @@
-/* Component: Skeleton
-   Markup: components/skeleton/skeleton.html
-   Barebones structure — customize freely.
-*/
+/* Component: skeleton — atelier loading placeholder */
 
 .component--skeleton .demo {
   display: grid;
@@ -10,17 +7,45 @@
 
 .skeleton {
   display: grid;
-  gap: var(--space-sm);
+  gap: var(--space-2);
+  width: 100%;
 }
+
 .skeleton__line,
 .skeleton__block {
   display: block;
-  height: 0.75rem;
-  border-radius: 0;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  width: 100%;
+  border: var(--border-width) solid var(--color-border);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-surface) 70%, var(--color-border)) 0%,
+    color-mix(in srgb, var(--color-surface) 40%, var(--color-border)) 50%,
+    color-mix(in srgb, var(--color-surface) 70%, var(--color-border)) 100%
+  );
+  background-size: 200% 100%;
+  animation: deml-skeleton 1.4s ease-in-out infinite;
 }
-.skeleton__line--short { width: 45%; }
-.skeleton__line--medium { width: 65%; }
-.skeleton__line--long { width: 80%; }
-.skeleton__block { height: 4rem; width: 100%; }
+
+.skeleton__line {
+  height: var(--space-2);
+}
+
+.skeleton__block {
+  height: var(--space-8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton__line,
+  .skeleton__block {
+    animation: none;
+  }
+}
+
+@keyframes deml-skeleton {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}

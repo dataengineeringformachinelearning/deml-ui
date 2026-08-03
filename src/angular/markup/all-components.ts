@@ -97,6 +97,7 @@ import { DemlTable } from "./table";
 import { DemlTextField } from "./text-field";
 import { DemlTextarea } from "./textarea";
 import { DemlThemeToggle } from "./theme-toggle";
+import { DemlTileBoard } from "./tile-board";
 import { DemlTimeline } from "./timeline";
 import { DemlToast } from "./toast";
 import { DemlToggle } from "./toggle";
@@ -203,6 +204,7 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlTextField,
   DemlTextarea,
   DemlThemeToggle,
+  DemlTileBoard,
   DemlTimeline,
   DemlToast,
   DemlToggle,

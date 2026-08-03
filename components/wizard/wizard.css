@@ -1,7 +1,4 @@
-/* Component: Wizard
-   Markup: components/wizard/wizard.html
-   Barebones structure — customize freely.
-*/
+/* Component: wizard — atelier multi-step */
 
 .component--wizard .demo {
   display: grid;
@@ -10,29 +7,48 @@
 
 .wizard {
   display: grid;
-  gap: var(--space-md);
-  max-width: 32rem;
-  padding: var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
+  gap: var(--space-3);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--content-width-md);
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
+
 .wizard__steps {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md);
-  list-style: none;
+  gap: var(--space-2);
   margin: 0;
   padding: 0;
-  color: var(--muted);
-  font-size: 0.875rem;
+  list-style: none;
 }
-.wizard__steps [aria-current="step"] {
-  color: var(--ink);
-  font-weight: 600;
+
+.wizard__step {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
 }
-.wizard__footer {
+
+.wizard__step[aria-current='step'] {
+  color: var(--color-highlight);
+}
+
+.wizard__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.wizard__actions {
   display: flex;
-  justify-content: flex-end;
-  gap: var(--space-sm);
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }

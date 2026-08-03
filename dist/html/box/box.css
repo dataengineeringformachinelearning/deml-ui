@@ -1,7 +1,4 @@
-/* Component: Box
-   Markup: components/box/box.html
-   Barebones structure — customize freely.
-*/
+/* Component: box — atelier surface */
 
 .component--box .demo {
   display: grid;
@@ -9,8 +6,13 @@
 }
 
 .box {
-  padding: var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: var(--tile-row-unit);
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }

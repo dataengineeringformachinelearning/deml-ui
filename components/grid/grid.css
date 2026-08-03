@@ -1,21 +1,59 @@
-/* Component: Grid
-   Markup: components/grid/grid.html
-   Barebones structure — customize freely.
-*/
+/* Component: grid — equal-gap token grid utility */
 
 .component--grid .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
 }
 
-.grid {
+/*
+ * Scope to hosts + Storybook demo — do not override base.css `.grid` utility.
+ */
+app-grid,
+deml-grid,
+.component--grid .grid,
+:host {
   display: grid;
-  gap: var(--space-md);
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: var(--tile-gap);
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: minmax(var(--tile-row-unit), auto);
+  align-items: stretch;
+  justify-items: stretch;
+  background-color: transparent;
 }
+
+app-grid > *,
+deml-grid > *,
+.component--grid .grid > *,
+:host > * {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+}
+
 .grid__item {
-  padding: var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: var(--module-pad);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+}
+
+@media screen and (min-width: 800px) {
+  app-grid,
+  deml-grid,
+  .component--grid .grid,
+  :host {
+    grid-template-columns: repeat(auto-fit, minmax(var(--space-28), 1fr));
+    grid-auto-rows: minmax(var(--tile-row-unit), 1fr);
+  }
 }

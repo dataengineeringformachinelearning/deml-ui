@@ -1,134 +1,70 @@
-/* Component: callout — look from deml banner */
+/* Component: callout — atelier inline notice */
 
 .component--callout .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Banner — full-bleed hero; mobile-first */
-
-.banner {
+.callout {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
+  gap: var(--space-2);
   box-sizing: border-box;
   width: 100%;
-  max-width: none;
-  flex-shrink: 0;
-  min-height: var(--space-28);
-  height: 42dvh;
-  max-height: calc(var(--grid) * 56);
+  min-height: var(--hit-target);
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-border);
+  border-inline-start: calc(var(--border-width) * 4) solid var(--color-primary);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.callout[data-tone='warning'] {
+  border-inline-start-color: var(--color-highlight);
+}
+
+.callout[data-tone='error'],
+.callout[data-tone='danger'] {
+  border-inline-start-color: var(--color-error);
+}
+
+.callout[data-tone='success'] {
+  border-inline-start-color: var(--color-success);
+}
+
+.callout__body {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.callout__heading {
   margin: 0;
-  overflow: hidden;
-  padding: var(--space-6) var(--space-2);
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  background-image:
-    linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 0,
-      transparent var(--space-3),
-      transparent calc(100% - var(--space-3)),
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 100%
-    ),
-    radial-gradient(
-      110% 85% at 50% 120%,
-      color-mix(in srgb, var(--color-primary) 38%, transparent) 0%,
-      transparent 58%
-    ),
-    radial-gradient(
-      70% 55% at 12% 18%,
-      color-mix(in srgb, var(--color-primary) 20%, transparent) 0%,
-      transparent 62%
-    ),
-    radial-gradient(
-      55% 45% at 92% 30%,
-      color-mix(in srgb, var(--color-accent-red) 14%, transparent) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      48% 38% at 78% 10%,
-      color-mix(in srgb, var(--color-accent-gold) 14%, transparent) 0%,
-      transparent 65%
-    ),
-    radial-gradient(
-      40% 30% at 8% 88%,
-      color-mix(in srgb, var(--color-accent-gold) 8%, transparent) 0%,
-      transparent 70%
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--color-surface) 38%, var(--color-bg)) 0%,
-      var(--color-bg) 100%
-    );
-}
-
-.banner .preheader {
-  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
   font-size: var(--font-size-sm);
-  font-weight: 600;
-  letter-spacing: var(--tracking-eyebrow);
-  color: var(--color-highlight);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
 }
 
-.banner .banner-heading {
-  max-width: 16ch;
-  margin-bottom: var(--space-3);
-  font-weight: 700;
-  letter-spacing: var(--tracking-display);
-  color: var(--color-text);
-}
-
-.banner .lede {
-  max-width: 40ch;
-  margin: 0 0 var(--space-5);
+.callout__text {
+  margin: 0;
+  font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
   color: var(--color-text-secondary);
 }
 
-.banner-actions:empty {
-  display: none;
+.callout__close {
+  flex: 0 0 auto;
+  min-width: var(--hit-target);
+  min-height: var(--hit-target);
+  border: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
 }
 
-.banner-actions {
-  width: 100%;
-  max-width: calc(var(--grid) * 44);
-}
-
-@media screen and (min-width: 800px) {
-  .banner {
-    min-height: calc(var(--grid) * 36);
-    height: 38dvh;
-    max-height: calc(var(--grid) * 52);
-    padding: var(--space-8) var(--space-4);
-  }
-
-  .banner-actions {
-    width: auto;
-    max-width: none;
-  }
-
-  /* Align hero copy with page content measures */
-  :host-context(.page--prose) .banner {
-    padding-inline: max(var(--space-4), calc((100% - var(--reading-width)) / 2));
-  }
-
-  :host-context(.page--catalog) .banner {
-    padding-inline: max(var(--space-4), calc((100% - var(--content-width-lg)) / 2));
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .banner {
-    padding: var(--space-8) var(--space-6);
-  }
-
-  :host-context(.page--prose) .banner {
-    padding-inline: max(var(--space-6), calc((100% - var(--reading-width)) / 2));
-  }
-
-  :host-context(.page--catalog) .banner {
-    padding-inline: max(var(--space-6), calc((100% - var(--content-width-lg)) / 2));
-  }
+.callout__close:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
 }

@@ -1,8 +1,41 @@
-/* Component: microcard — from deml new-from-the-start */
+/* Component: microcard — NFTS compact linked teaser */
 
 .component--microcard .demo {
   display: grid;
   gap: var(--space-md);
+}
+
+app-microcard,
+deml-microcard,
+:host {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  --microcard-visual: var(--color-primary);
+  background-color: transparent;
+}
+
+app-microcard[data-visual='gold'],
+deml-microcard[data-visual='gold'],
+:host([data-visual='gold']) {
+  --microcard-visual: var(--color-accent-gold);
+}
+
+app-microcard[data-visual='red'],
+deml-microcard[data-visual='red'],
+:host([data-visual='red']) {
+  --microcard-visual: var(--color-accent-red);
+}
+
+app-microcard[data-visual='olive'],
+deml-microcard[data-visual='olive'],
+:host([data-visual='olive']) {
+  --microcard-visual: var(--color-primary);
 }
 
 /* Microcard — compact linked teaser */
@@ -46,7 +79,7 @@
     var(--color-card) 55%
   );
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(calc(-1 * var(--focus-ring-offset)));
 }
 
 .microcard:focus-visible {
@@ -79,8 +112,9 @@
 
 .microcard-heading {
   margin: 0;
+  font-family: var(--font-display);
   font-size: var(--font-size-sm);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
   line-height: 1.25;
   color: var(--color-card-text);

@@ -1,7 +1,4 @@
-/* Component: Sheet
-   Markup: components/sheet/sheet.html
-   Barebones structure — customize freely.
-*/
+/* Component: sheet — atelier slide-over */
 
 .component--sheet .demo {
   display: grid;
@@ -9,33 +6,44 @@
 }
 
 .sheet {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  width: min(24rem, 100%);
-  min-height: 16rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: min(var(--content-width-sm), 100%);
+  min-height: var(--space-28);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-md);
 }
-.sheet[hidden] { display: none; }
+
 .sheet__header,
 .sheet__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  border-block-end: 1px solid var(--line);
+  gap: var(--space-2);
+  padding: var(--module-pad);
 }
+
+.sheet__header {
+  border-block-end: var(--border-width) solid var(--color-border);
+}
+
 .sheet__footer {
-  border-block-end: 0;
-  border-block-start: 1px solid var(--line);
-  justify-content: flex-end;
+  border-block-start: var(--border-width) solid var(--color-border);
+  margin-top: auto;
 }
-.sheet__body { padding: var(--space-md); }
-.sheet__close {
-  border: 0;
-  background: transparent;
-  font: inherit;
-  cursor: pointer;
+
+.sheet__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.sheet__body {
+  flex: 1 1 auto;
+  padding: var(--module-pad);
 }

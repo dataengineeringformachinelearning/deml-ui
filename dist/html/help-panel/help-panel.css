@@ -1,7 +1,4 @@
-/* Component: Help Panel
-   Markup: components/help-panel/help-panel.html
-   Barebones structure — customize freely.
-*/
+/* Component: help-panel — atelier side help */
 
 .component--help-panel .demo {
   display: grid;
@@ -10,12 +7,29 @@
 
 .help-panel {
   display: grid;
-  gap: var(--space-sm);
-  padding: var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--surface);
-  max-width: 22rem;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: calc(var(--grid) * 44);
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
-.help-panel h3 { margin: 0; font-size: 1rem; }
-.help-panel p { margin: 0; color: var(--muted); }
+
+.help-panel h3,
+.help-panel__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.help-panel p,
+.help-panel__body {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-text-secondary);
+}

@@ -7,7 +7,35 @@ export class DemlBarChart extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<div class="bar-chart" role="img" aria-label="Bar chart"></div>`;
+      this.innerHTML = `<ul class="bar-chart" role="list" aria-label="Bar chart">
+      <li class="bar-chart-row">
+        <div class="bar-chart-meta">
+          <span class="bar-chart-label">Alpha</span>
+          <span class="bar-chart-value">80%</span>
+        </div>
+        <div class="bar-chart-track" aria-hidden="true">
+          <div class="bar-chart-fill" style="width: 80%"></div>
+        </div>
+      </li>
+      <li class="bar-chart-row">
+        <div class="bar-chart-meta">
+          <span class="bar-chart-label">Beta</span>
+          <span class="bar-chart-value">55%</span>
+        </div>
+        <div class="bar-chart-track" aria-hidden="true">
+          <div class="bar-chart-fill" style="width: 55%"></div>
+        </div>
+      </li>
+      <li class="bar-chart-row">
+        <div class="bar-chart-meta">
+          <span class="bar-chart-label">Gamma</span>
+          <span class="bar-chart-value">35%</span>
+        </div>
+        <div class="bar-chart-track" aria-hidden="true">
+          <div class="bar-chart-fill" style="width: 35%"></div>
+        </div>
+      </li>
+    </ul>`;
     }
   }
 }

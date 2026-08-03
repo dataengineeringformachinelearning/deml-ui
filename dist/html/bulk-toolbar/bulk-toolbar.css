@@ -1,7 +1,4 @@
-/* Component: Bulk Toolbar
-   Markup: components/bulk-toolbar/bulk-toolbar.html
-   Barebones structure — customize freely.
-*/
+/* Component: bulk-toolbar — atelier selection actions */
 
 .component--bulk-toolbar .demo {
   display: grid;
@@ -12,20 +9,36 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--surface);
+  gap: var(--space-2);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--hit-target);
+  padding: var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
-.bulk-toolbar__count { font-weight: 600; margin-inline-end: auto; }
+
+.bulk-toolbar__count {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
 .bulk-toolbar button {
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font: inherit;
-  min-height: 2.5rem;
-  padding: 0.35rem 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
   cursor: pointer;
-  color: inherit;
+}
+
+.bulk-toolbar button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
 }

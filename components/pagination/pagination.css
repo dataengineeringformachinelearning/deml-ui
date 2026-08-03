@@ -1,7 +1,4 @@
-/* Component: Pagination
-   Markup: components/pagination/pagination.html
-   Barebones structure — customize freely.
-*/
+/* Component: pagination — atelier controls */
 
 .component--pagination .demo {
   display: grid;
@@ -12,27 +9,57 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-sm);
-}
-.pagination__pages {
-  display: flex;
-  gap: 0.25rem;
-  list-style: none;
+  gap: var(--space-1);
   margin: 0;
   padding: 0;
 }
-.pagination button {
-  font: inherit;
-  min-height: 2.5rem;
-  min-width: 2.5rem;
-  padding: 0.35rem 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
-  color: inherit;
+
+.pagination__pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination__prev,
+.pagination__next,
+.pagination__pages button,
+.pagination button,
+.pagination a {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--hit-target);
+  min-width: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  text-decoration: none;
   cursor: pointer;
 }
-.pagination button[aria-current="page"] {
-  background: var(--surface);
-  font-weight: 600;
+
+.pagination__prev:focus-visible,
+.pagination__next:focus-visible,
+.pagination__pages button:focus-visible,
+.pagination button:focus-visible,
+.pagination a:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.pagination__pages button[aria-current='page'],
+.pagination [aria-current='page'] {
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }

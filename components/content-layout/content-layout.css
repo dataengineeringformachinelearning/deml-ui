@@ -1,16 +1,46 @@
-/* Component: Content Layout
-   Markup: components/content-layout/content-layout.html
-   Barebones structure — customize freely.
-*/
+/* Component: content-layout — equal outer token rhythm */
 
 .component--content-layout .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
 }
 
-.content-layout {
+.content-layout,
+app-content-layout,
+deml-content-layout,
+:host {
   display: grid;
-  gap: var(--space-md);
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: var(--tile-gap);
+  grid-auto-rows: minmax(0, auto);
+  background-color: transparent;
 }
-.content-layout__breadcrumbs { color: var(--muted); font-size: 0.875rem; }
-.content-layout__header h1 { margin: 0; font-size: 1.5rem; }
+
+.content-layout__breadcrumbs {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.content-layout__header h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, var(--font-size-md));
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+.content-layout__body {
+  display: grid;
+  gap: var(--tile-gap);
+  min-width: 0;
+}

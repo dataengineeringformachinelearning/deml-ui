@@ -1,7 +1,4 @@
-/* Component: Empty State
-   Markup: components/empty-state/empty-state.html
-   Barebones structure — customize freely.
-*/
+/* Component: empty-state — atelier empty module */
 
 .component--empty-state .demo {
   display: grid;
@@ -10,14 +7,51 @@
 
 .empty-state {
   display: grid;
-  gap: var(--space-sm);
+  gap: var(--space-2);
   place-items: center;
   text-align: center;
-  padding: var(--space-xl) var(--space-md);
-  border: 1px dashed var(--line);
-  border-radius: 0;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--tile-row-unit);
+  padding: var(--module-pad-lg);
+  border: var(--border-width) dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
-.empty-state__eyebrow { margin: 0; color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
-.empty-state__title { margin: 0; font-size: 1.125rem; font-weight: 600; }
-.empty-state__description { margin: 0; color: var(--muted); max-width: 28rem; }
-.empty-state__actions { margin-block-start: var(--space-sm); display: flex; gap: var(--space-sm); }
+
+.empty-state__eyebrow {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-highlight);
+}
+
+.empty-state__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+.empty-state__description {
+  margin: 0;
+  max-width: var(--content-width-sm);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-text-secondary);
+}
+
+.empty-state__actions {
+  margin-block-start: var(--space-2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}

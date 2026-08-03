@@ -1,7 +1,4 @@
-/* Component: Accordion
-   Markup: components/accordion/accordion.html
-   Barebones structure — customize freely.
-*/
+/* Component: accordion — atelier disclosure list */
 
 .component--accordion .demo {
   display: grid;
@@ -9,20 +6,43 @@
 }
 
 .accordion {
-  border: 1px solid var(--line);
-  border-radius: 0;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  background: var(--bg);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
+
 .accordion__item + .accordion__item {
-  border-block-start: 1px solid var(--line);
+  border-block-start: var(--border-width) solid var(--color-border);
 }
+
 .accordion__trigger {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-height: var(--hit-target);
   padding: var(--space-md);
-  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  list-style: none;
 }
+
+.accordion__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__trigger:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
 .accordion__panel {
   padding: 0 var(--space-md) var(--space-md);
-  color: var(--muted);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-text-secondary);
 }

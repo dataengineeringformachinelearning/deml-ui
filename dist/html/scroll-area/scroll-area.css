@@ -1,7 +1,4 @@
-/* Component: Scroll Area
-   Markup: components/scroll-area/scroll-area.html
-   Barebones structure — customize freely.
-*/
+/* Component: scroll-area — atelier scroll region */
 
 .component--scroll-area .demo {
   display: grid;
@@ -9,10 +6,12 @@
 }
 
 .scroll-area {
-  max-height: 10rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: var(--tile-row-unit);
   overflow: auto;
-  padding: var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }

@@ -1,7 +1,4 @@
-/* Component: Autocomplete
-   Markup: components/autocomplete/autocomplete.html
-   Barebones structure — customize freely.
-*/
+/* Component: autocomplete — atelier combobox */
 
 .component--autocomplete .demo {
   display: grid;
@@ -9,33 +6,50 @@
 }
 
 .autocomplete {
-  display: grid;
-  gap: var(--space-sm);
-  max-width: 28rem;
   position: relative;
+  display: grid;
+  gap: var(--space-1);
+  width: 100%;
+  max-width: var(--content-width-sm);
 }
-.autocomplete input {
+
+.autocomplete__input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
   font: inherit;
-  min-height: 2.75rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
-  color: inherit;
 }
+
+.autocomplete__input:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+  border-color: var(--color-primary);
+}
+
 .autocomplete__list {
-  list-style: none;
+  position: absolute;
+  z-index: 20;
+  inset-block-start: calc(100% + var(--space-1));
+  inset-inline: 0;
   margin: 0;
-  padding: 0.25rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
+  padding: var(--space-1);
+  list-style: none;
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-md);
 }
-.autocomplete__list [role="option"] {
-  padding: var(--space-sm);
-  border-radius: 0;
+
+.autocomplete__option {
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
   cursor: pointer;
 }
-.autocomplete__list [aria-selected="true"] {
-  background: var(--surface);
+
+.autocomplete__option[aria-selected='true'],
+.autocomplete__option:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
 }

@@ -1,7 +1,4 @@
-/* Component: Separator
-   Markup: components/separator/separator.html
-   Barebones structure — customize freely.
-*/
+/* Component: separator — atelier divider */
 
 .component--separator .demo {
   display: grid;
@@ -10,15 +7,16 @@
 
 .separator {
   border: 0;
-  border-block-start: 1px solid var(--line);
+  border-block-start: var(--border-width) solid var(--color-border);
   margin: var(--space-md) 0;
 }
+
 .separator--vertical {
   display: inline-block;
-  width: 1px;
-  height: 1.5rem;
+  width: var(--border-width);
+  height: var(--space-3);
   border: 0;
-  background: var(--line);
+  background: var(--color-border);
   margin-inline: var(--space-sm);
   vertical-align: middle;
 }

@@ -7,6 +7,11 @@
 
 /* Navbar — full-bleed fixed top bar; mobile-first */
 
+/* Offset document flow under the fixed bar */
+body:has(.site-navbar) {
+  padding-top: calc(var(--space-2) * 2 + var(--hit-target));
+}
+
 .site-navbar {
   position: fixed;
   top: 0;
@@ -51,7 +56,7 @@
   height: var(--navbar-hit);
   color: var(--navbar-icon-color, var(--navbar-accent));
   background-color: transparent;
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
   transition: color 120ms ease, transform 120ms ease, background-color 120ms ease;
 }
 
@@ -159,7 +164,7 @@
 .main-navigation ul li a.is-active {
   color: var(--navbar-accent);
   text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: var(--focus-ring-width);
   text-underline-offset: 0.25em;
   background-color: color-mix(in srgb, var(--color-highlight) 12%, transparent);
 }

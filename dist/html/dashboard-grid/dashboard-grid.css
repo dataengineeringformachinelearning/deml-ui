@@ -2,13 +2,25 @@
 
 .component--dashboard-grid .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
+}
+
+/* Angular tile-board is a thin data wrapper — must not collapse the grid */
+app-tile-board,
+deml-tile-board {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 /*
  * Equal-cell dashboard grid.
  * Row unit matches new-from-the-start (--dash-row / --tile-row-unit).
  * minmax(..., auto) lets fluid chart tiles grow without ragged gaps.
+ * Gap is always --tile-gap (8px scale); never invent one-off gutters.
  */
 
 app-dashboard-grid,
@@ -31,10 +43,10 @@ deml-dashboard-grid,
   background-color: transparent;
 }
 
-app-dashboard-grid > [data-size],
-deml-dashboard-grid > [data-size],
-.dashboard-grid > [data-size],
-:host > [data-size] {
+app-dashboard-grid > *,
+deml-dashboard-grid > *,
+.dashboard-grid > *,
+:host > * {
   min-width: 0;
   min-height: 0;
   width: 100%;
@@ -75,11 +87,27 @@ deml-dashboard-grid > [data-size='hero'],
   grid-row: span 3;
 }
 
+.dashboard-grid__cell {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: var(--module-pad);
+  color: var(--color-card-text);
+  background-color: var(--color-card);
+  border: var(--border-width) solid var(--color-card-border);
+  box-shadow: var(--shadow-card);
+}
+
 @media screen and (min-width: 800px) {
   app-dashboard-grid,
   deml-dashboard-grid,
   .dashboard-grid,
   :host {
+    /* 14 × 8px — mid breakpoint dash-row (THEME NFTS rhythm) */
     --dash-row: calc(var(--grid) * 14);
     --tile-row-unit: calc(var(--grid) * 14);
     grid-template-columns: repeat(var(--tile-cols), minmax(0, 1fr));

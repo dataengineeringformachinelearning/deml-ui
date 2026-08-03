@@ -100,6 +100,7 @@ import { defineTabs } from "./tabs.js";
 import { defineTextField } from "./text-field.js";
 import { defineTextarea } from "./textarea.js";
 import { defineThemeToggle } from "./theme-toggle.js";
+import { defineTileBoard } from "./tile-board.js";
 import { defineTimeline } from "./timeline.js";
 import { defineToast } from "./toast.js";
 import { defineToggle } from "./toggle.js";
@@ -209,6 +210,7 @@ export function defineAll(): void {
   defineTextField();
   defineTextarea();
   defineThemeToggle();
+  defineTileBoard();
   defineTimeline();
   defineToast();
   defineToggle();
@@ -318,6 +320,7 @@ export const componentNames = [
   "text-field",
   "textarea",
   "theme-toggle",
+  "tile-board",
   "timeline",
   "toast",
   "toggle",

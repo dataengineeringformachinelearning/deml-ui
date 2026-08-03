@@ -1,7 +1,4 @@
-/* Component: Toggle
-   Markup: components/toggle/toggle.html
-   Barebones structure — customize freely.
-*/
+/* Component: toggle — atelier segmented control */
 
 .component--toggle .demo {
   display: grid;
@@ -10,18 +7,35 @@
 
 .toggle-group {
   display: inline-flex;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  overflow: hidden;
+  flex-wrap: wrap;
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
 }
+
 .toggle {
-  font: inherit;
-  min-height: 2.75rem;
-  padding: 0.5rem 1rem;
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
   border: 0;
-  background: var(--bg);
-  color: inherit;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-intro);
   cursor: pointer;
 }
-.toggle + .toggle { border-inline-start: 1px solid var(--line); }
-.toggle[aria-pressed="true"] { background: var(--surface); font-weight: 600; }
+
+.toggle + .toggle {
+  border-inline-start: var(--border-width) solid var(--color-border);
+}
+
+.toggle[aria-pressed='true'],
+.toggle[data-state='on'] {
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+}
+
+.toggle:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}

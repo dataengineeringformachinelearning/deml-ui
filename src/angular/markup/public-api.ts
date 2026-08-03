@@ -97,6 +97,7 @@ export { DemlTable } from "./table";
 export { DemlTextField } from "./text-field";
 export { DemlTextarea } from "./textarea";
 export { DemlThemeToggle } from "./theme-toggle";
+export { DemlTileBoard } from "./tile-board";
 export { DemlTimeline } from "./timeline";
 export { DemlToast } from "./toast";
 export { DemlToggle } from "./toggle";

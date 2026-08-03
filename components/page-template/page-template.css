@@ -1,7 +1,4 @@
-/* Component: Page Template
-   Markup: components/page-template/page-template.html
-   Barebones structure — customize freely.
-*/
+/* Component: page-template — atelier page chrome */
 
 .component--page-template .demo {
   display: grid;
@@ -9,18 +6,33 @@
 }
 
 .page-template {
-  display: grid;
-  gap: var(--space-md);
-}
-.page-template__header {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: 100%;
+  padding: var(--space-4) var(--space-2);
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
-.page-template__header h1 { margin: 0; font-size: 1.5rem; }
-.page-template__content,
-.page-template__footer {
-  min-width: 0;
+
+.page-template__header h1,
+.page-template__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-lg), 4vw, var(--font-size-xl));
+  font-weight: var(--font-weight-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.page-template__content {
+  display: grid;
+  gap: var(--tile-gap);
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .page-template {
+    padding: var(--space-6) var(--space-4);
+  }
 }

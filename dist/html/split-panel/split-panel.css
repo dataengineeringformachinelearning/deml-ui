@@ -1,7 +1,4 @@
-/* Component: Split Panel
-   Markup: components/split-panel/split-panel.html
-   Barebones structure — customize freely.
-*/
+/* Component: split-panel — atelier dual pane */
 
 .component--split-panel .demo {
   display: grid;
@@ -10,21 +7,33 @@
 
 .split-panel {
   display: grid;
-  grid-template-columns: 1fr minmax(12rem, 18rem);
+  grid-template-columns: 1fr minmax(calc(var(--grid) * 24), calc(var(--grid) * 36));
   gap: 0;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  overflow: hidden;
-  min-height: 12rem;
-  background: var(--bg);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: calc(var(--grid) * 24);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
-.split-panel__main { padding: var(--space-md); }
+
+.split-panel__main,
 .split-panel__side {
-  padding: var(--space-md);
-  border-inline-start: 1px solid var(--line);
-  background: var(--surface);
+  min-width: 0;
+  padding: var(--module-pad);
 }
-@media (max-width: 40rem) {
-  .split-panel { grid-template-columns: 1fr; }
-  .split-panel__side { border-inline-start: 0; border-block-start: 1px solid var(--line); }
+
+.split-panel__side {
+  border-inline-start: var(--border-width) solid var(--color-border);
+}
+
+@media (max-width: 800px) {
+  .split-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .split-panel__side {
+    border-inline-start: 0;
+    border-block-start: var(--border-width) solid var(--color-border);
+  }
 }

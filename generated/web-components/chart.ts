@@ -8,10 +8,23 @@ export class DemlChart extends HTMLElement {
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
       this.innerHTML = `<figure class="chart-figure">
-      <svg class="chart" viewBox="0 0 240 120" width="100%" height="120" role="img" aria-label="Sample line chart">
-        <line x1="0" y1="110" x2="240" y2="110" stroke="currentColor" opacity="0.25" />
-        <polyline fill="none" stroke="currentColor" stroke-width="2" points="0,90 40,70 80,75 120,40 160,55 200,30 240,20" />
-      </svg>
+      <div class="chart-figure__plot">
+        <svg
+          class="chart"
+          viewBox="0 0 360 150"
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          aria-label="Sample line chart"
+        >
+          <line x1="0" y1="130" x2="360" y2="130" stroke="currentColor" opacity="0.25" />
+          <polyline
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            points="0,110 60,85 120,95 180,50 240,70 300,40 360,30"
+          />
+        </svg>
+      </div>
       <figcaption>Chart placeholder (native SVG)</figcaption>
     </figure>`;
     }

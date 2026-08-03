@@ -1,27 +1,95 @@
-/* Component: Select
-   Markup: components/select/select.html
-   Barebones structure — customize freely.
-*/
+/* Component: select — atelier form control */
 
 .component--select .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-.component--select label {
+.component--select label, .select {
   display: grid;
-  gap: var(--space-sm);
-  max-width: 28rem;
-}
-.component--select input,
-.component--select select,
-.component--select textarea {
-  font: inherit;
+  gap: var(--space-1);
   width: 100%;
-  min-height: 2.75rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
-  color: inherit;
+  max-width: var(--content-width-sm);
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.component--select label, .select label,
+.select__label {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.component--select label, .select input,
+.component--select label, .select select,
+.component--select label, .select textarea,
+.select__control {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--hit-target);
+  margin: 0;
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-intro);
+  line-height: 1.3;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  appearance: none;
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.component--select label, .select input::placeholder,
+.component--select label, .select textarea::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.72;
+}
+
+.component--select label, .select input:hover:not(:disabled),
+.component--select label, .select select:hover:not(:disabled),
+.component--select label, .select textarea:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+}
+
+.component--select label, .select input:focus,
+.component--select label, .select select:focus,
+.component--select label, .select textarea:focus {
+  outline: none;
+}
+
+.component--select label, .select input:focus-visible,
+.component--select label, .select select:focus-visible,
+.component--select label, .select textarea:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+  border-color: var(--color-primary);
+}
+
+.component--select label, .select input:disabled,
+.component--select label, .select select:disabled,
+.component--select label, .select textarea:disabled {
+  opacity: 0.64;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .component--select label, .select input,
+  .component--select label, .select select,
+  .component--select label, .select textarea,
+  .select__control {
+    transition: none;
+  }
 }

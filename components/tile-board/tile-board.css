@@ -1,0 +1,57 @@
+/* Component: tile-board — NFTS board shell over dashboard-grid */
+
+.component--tile-board .demo {
+  display: grid;
+  gap: var(--tile-gap);
+}
+
+/*
+ * Tile board — equal outer rhythm; children stretch into dash-row cells.
+ * Compose: tile-board → dashboard-grid → typed tiles (stat / chart-card).
+ */
+
+app-tile-board,
+deml-tile-board,
+.tile-board,
+:host {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+app-tile-board > .dashboard-grid,
+app-tile-board > app-dashboard-grid,
+app-tile-board > deml-dashboard-grid,
+deml-tile-board > .dashboard-grid,
+deml-tile-board > app-dashboard-grid,
+deml-tile-board > deml-dashboard-grid,
+.tile-board > .dashboard-grid,
+.tile-board > app-dashboard-grid,
+.tile-board > deml-dashboard-grid,
+:host > .dashboard-grid,
+:host > app-dashboard-grid,
+:host > deml-dashboard-grid {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Demo / static cells — match peer tile stretch contract */
+.tile-board__cell {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: var(--module-pad);
+  color: var(--color-card-text);
+  background-color: var(--color-card);
+  border: var(--border-width) solid var(--color-card-border);
+  box-shadow: var(--shadow-card);
+}

@@ -1,7 +1,4 @@
-/* Component: Toast
-   Markup: components/toast/toast.html
-   Barebones structure — customize freely.
-*/
+/* Component: toast — atelier notification */
 
 .component--toast .demo {
   display: grid;
@@ -11,22 +8,55 @@
 .toast {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: var(--space-sm) var(--space-md);
-  max-width: 24rem;
-  padding: var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--bg);
-  box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 8%, transparent);
+  gap: var(--space-1) var(--space-2);
+  box-sizing: border-box;
+  width: min(var(--content-width-sm), 100%);
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-border);
+  border-inline-start: calc(var(--border-width) * 4) solid var(--color-primary);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-md);
 }
-.toast__title { margin: 0; font-weight: 600; grid-column: 1; }
-.toast__description { margin: 0; color: var(--muted); grid-column: 1; }
+
+.toast__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+}
+
+.toast__description,
+.toast__body {
+  grid-column: 1;
+  margin: 0;
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-text-secondary);
+}
+
 .toast__close {
   grid-column: 2;
   grid-row: 1 / span 2;
   align-self: start;
+  min-width: var(--hit-target);
+  min-height: var(--hit-target);
   border: 0;
   background: transparent;
+  color: var(--color-text-secondary);
   cursor: pointer;
-  font: inherit;
+}
+
+.toast__close:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.toast[data-tone='error'] {
+  border-inline-start-color: var(--color-error);
+}
+
+.toast[data-tone='success'] {
+  border-inline-start-color: var(--color-success);
 }

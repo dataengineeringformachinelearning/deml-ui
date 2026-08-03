@@ -1,7 +1,4 @@
-/* Component: App Sidebar
-   Markup: components/app-sidebar/app-sidebar.html
-   Barebones structure — customize freely.
-*/
+/* Component: app-sidebar — atelier nav rail */
 
 .component--app-sidebar .demo {
   display: grid;
@@ -9,28 +6,37 @@
 }
 
 .app-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  min-width: 14rem;
-  padding: var(--space-md);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--surface);
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  width: 100%;
+  min-width: calc(var(--grid) * 28);
+  min-height: 100%;
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
 }
-.app-sidebar__brand { font-weight: 600; margin: 0; }
-.app-sidebar__nav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-.app-sidebar__nav a {
+
+.app-sidebar a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hit-target);
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-text-secondary);
   text-decoration: none;
-  color: inherit;
-  padding: var(--space-sm);
-  border-radius: 0;
+  border: var(--border-width) solid transparent;
 }
-.app-sidebar__nav a[aria-current="page"] {
-  background: var(--bg);
-  border: 1px solid var(--line);
+
+.app-sidebar a:hover,
+.app-sidebar a[aria-current='page'] {
+  color: var(--color-text);
+  border-color: var(--color-border);
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.app-sidebar a:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
 }

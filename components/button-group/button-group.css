@@ -7,18 +7,40 @@
 
 /* Button group — host is the flex shell (mobile-first) */
 
+app-button-group,
+deml-button-group,
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+app-button-group.place-end,
+deml-button-group.place-end,
 :host(.place-end) {
   justify-content: flex-end;
 }
 
+app-button-group.place-start,
+deml-button-group.place-start,
 :host(.place-start) {
   justify-content: flex-start;
 }
 
+app-button-group.place-center,
+deml-button-group.place-center,
 :host(.place-center) {
   justify-content: center;
 }
 
+app-button-group[data-layout='row'],
+deml-button-group[data-layout='row'],
 :host([data-layout='row']) {
   flex-direction: row;
   flex-wrap: wrap;
@@ -27,17 +49,23 @@
   max-width: 100%;
 }
 
+app-button-group[data-layout='column'],
+deml-button-group[data-layout='column'],
 :host([data-layout='column']) {
   flex-direction: column;
   align-items: stretch;
   width: 100%;
 }
 
+app-button-group > *,
+deml-button-group > *,
 :host > * {
   flex: 0 0 auto;
 }
 
 @media screen and (min-width: 800px) {
+  app-button-group[data-layout='responsive'],
+  deml-button-group[data-layout='responsive'],
   :host([data-layout='responsive']) {
     flex-direction: row;
     flex-wrap: wrap;

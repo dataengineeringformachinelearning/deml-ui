@@ -1,7 +1,4 @@
-/* Component: Spinner
-   Markup: components/spinner/spinner.html
-   Barebones structure — customize freely.
-*/
+/* Component: spinner — atelier loading mark */
 
 .component--spinner .demo {
   display: grid;
@@ -13,17 +10,40 @@
   align-items: center;
   justify-content: center;
 }
-.spinner__visual {
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 2px solid var(--line);
-  border-block-start-color: var(--ink);
-  border-radius: 999px;
-  animation: deml-spin 0.7s linear infinite;
+
+.spinner__visual,
+.spinner:not(:has(.spinner__visual)) {
+  box-sizing: border-box;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border: var(--focus-ring-width) solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  animation: deml-spinner 700ms linear infinite;
 }
+
+.spinner[data-size='sm'] .spinner__visual,
+.spinner[data-size='sm']:not(:has(.spinner__visual)) {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.spinner[data-size='lg'] .spinner__visual,
+.spinner[data-size='lg']:not(:has(.spinner__visual)) {
+  width: var(--hit-target);
+  height: var(--hit-target);
+}
+
+@keyframes deml-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .spinner__visual { animation: none; border-color: var(--ink); }
-}
-@keyframes deml-spin {
-  to { transform: rotate(360deg); }
+  .spinner__visual,
+  .spinner:not(:has(.spinner__visual)) {
+    animation: none;
+    opacity: 0.72;
+  }
 }

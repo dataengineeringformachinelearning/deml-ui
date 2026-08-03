@@ -1,8 +1,47 @@
-/* Component: card — ported from deml new-from-the-start */
+/* Component: card — NFTS feature / teaser modules */
 
 .component--card .demo {
   display: grid;
   gap: var(--space-md);
+}
+
+app-card,
+deml-card,
+:host {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  --card-visual: var(--color-primary);
+  background-color: transparent;
+}
+
+app-card[data-visual='gold'],
+deml-card[data-visual='gold'],
+:host([data-visual='gold']) {
+  --card-visual: var(--color-accent-gold);
+}
+
+app-card[data-visual='red'],
+deml-card[data-visual='red'],
+:host([data-visual='red']) {
+  --card-visual: var(--color-accent-red);
+}
+
+app-card[data-visual='olive'],
+deml-card[data-visual='olive'],
+:host([data-visual='olive']) {
+  --card-visual: var(--color-primary);
+}
+
+app-card[data-visual='none'],
+deml-card[data-visual='none'],
+:host([data-visual='none']) {
+  --card-visual: var(--color-primary);
 }
 
 /* Card — elevated module with accent color */
@@ -36,7 +75,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 36rem;
+  max-width: var(--content-width-md);
   background-color: transparent;
 }
 
@@ -54,7 +93,7 @@
 .card-heading {
   margin: 0 0 var(--space-2);
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, var(--font-size-lg));
+  font-size: clamp(calc(var(--grid) * 3.5), 4vw, var(--font-size-lg));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: 1.05;
@@ -123,23 +162,15 @@
     );
 }
 
-:host([data-visual='gold']) {
-  --card-visual: var(--color-accent-gold);
-}
-
-:host([data-visual='red']) {
-  --card-visual: var(--color-accent-red);
-}
-
-:host([data-visual='olive']) {
-  --card-visual: var(--color-primary);
-}
-
 /* Full-width blog / list teaser */
+app-card[data-layout='teaser'],
+deml-card[data-layout='teaser'],
 :host([data-layout='teaser']) {
   height: auto;
 }
 
+app-card[data-layout='teaser'] .card,
+deml-card[data-layout='teaser'] .card,
 :host([data-layout='teaser']) .card {
   align-items: stretch;
   min-height: 0;
@@ -147,21 +178,31 @@
   text-align: left;
 }
 
+app-card[data-layout='teaser'] .card-copy,
+deml-card[data-layout='teaser'] .card-copy,
 :host([data-layout='teaser']) .card-copy {
   align-items: flex-start;
   max-width: none;
   flex: 1 1 auto;
 }
 
+app-card[data-layout='teaser'] .card-subtext,
+deml-card[data-layout='teaser'] .card-subtext,
 :host([data-layout='teaser']) .card-subtext {
   max-width: 56ch;
 }
 
+app-card[data-layout='teaser'] .card-actions,
+deml-card[data-layout='teaser'] .card-actions,
 :host([data-layout='teaser']) .card-actions {
   justify-content: flex-start;
   margin-bottom: 0;
 }
 
+app-card[data-layout='teaser'] .card-media.has-visual:empty,
+app-card[data-layout='teaser'] .card-media.has-visual,
+deml-card[data-layout='teaser'] .card-media.has-visual:empty,
+deml-card[data-layout='teaser'] .card-media.has-visual,
 :host([data-layout='teaser']) .card-media.has-visual:empty,
 :host([data-layout='teaser']) .card-media.has-visual {
   min-height: var(--space-16);
@@ -179,6 +220,8 @@
     min-height: var(--space-26);
   }
 
+  app-card[data-layout='teaser'] .card,
+  deml-card[data-layout='teaser'] .card,
   :host([data-layout='teaser']) .card {
     flex-direction: row;
     align-items: stretch;
@@ -188,19 +231,27 @@
     border-left: calc(var(--border-width) * 4) solid var(--card-visual, var(--color-primary));
   }
 
+  app-card[data-layout='teaser'] .card-copy,
+  deml-card[data-layout='teaser'] .card-copy,
   :host([data-layout='teaser']) .card-copy {
     justify-content: center;
     padding: var(--space-6) var(--space-6);
     background-color: var(--color-card);
   }
 
+  app-card[data-layout='teaser'] .card-media,
+  deml-card[data-layout='teaser'] .card-media,
   :host([data-layout='teaser']) .card-media {
-    flex: 0 0 min(40%, 22rem);
+    flex: 0 0 min(40%, calc(var(--grid) * 44));
     width: auto;
     min-height: 100%;
     margin-top: 0;
   }
 
+  app-card[data-layout='teaser'] .card-media.has-visual:empty,
+  app-card[data-layout='teaser'] .card-media.has-visual,
+  deml-card[data-layout='teaser'] .card-media.has-visual:empty,
+  deml-card[data-layout='teaser'] .card-media.has-visual,
   :host([data-layout='teaser']) .card-media.has-visual:empty,
   :host([data-layout='teaser']) .card-media.has-visual {
     min-height: 100%;
@@ -221,6 +272,8 @@
 }
 
 @media screen and (min-width: 1200px) {
+  app-card[data-layout='teaser'] .card-copy,
+  deml-card[data-layout='teaser'] .card-copy,
   :host([data-layout='teaser']) .card-copy {
     padding: var(--space-8) var(--space-8);
   }

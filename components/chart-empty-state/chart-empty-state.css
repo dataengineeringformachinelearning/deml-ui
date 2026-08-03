@@ -1,23 +1,45 @@
-/* Component: Chart Empty State
-   Markup: components/chart-empty-state/chart-empty-state.html
-   Barebones structure — customize freely.
-*/
+/* Component: chart-empty-state — aspect-locked empty plot band */
 
 .component--chart-empty-state .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
 }
 
-.chart-empty-state {
+app-chart-empty-state,
+deml-chart-empty-state,
+.chart-empty-state,
+:host {
   display: grid;
   place-items: center;
-  gap: var(--space-sm);
-  min-height: 10rem;
-  padding: var(--space-lg);
-  border: 1px dashed var(--line);
-  border-radius: 0;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
+  aspect-ratio: var(--chart-aspect);
+  height: auto;
+  max-height: var(--chart-max-block);
+  margin: 0 auto;
+  padding: var(--module-pad);
   text-align: center;
-  color: var(--muted);
+  color: var(--color-plot-muted);
+  background-color: var(--chart-plot);
+  border: var(--border-width) dashed var(--color-plot-border);
 }
-.chart-empty-state__title { margin: 0; color: var(--ink); font-weight: 600; }
-.chart-empty-state__description { margin: 0; }
+
+.chart-empty-state__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-plot-ink);
+}
+
+.chart-empty-state__description {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-plot-muted);
+  max-width: var(--reading-width);
+}

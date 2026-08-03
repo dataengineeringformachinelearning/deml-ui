@@ -100,6 +100,7 @@ export { DemlTabs, defineTabs } from "./tabs.js";
 export { DemlTextField, defineTextField } from "./text-field.js";
 export { DemlTextarea, defineTextarea } from "./textarea.js";
 export { DemlThemeToggle, defineThemeToggle } from "./theme-toggle.js";
+export { DemlTileBoard, defineTileBoard } from "./tile-board.js";
 export { DemlTimeline, defineTimeline } from "./timeline.js";
 export { DemlToast, defineToast } from "./toast.js";
 export { DemlToggle, defineToggle } from "./toggle.js";

@@ -1,18 +1,28 @@
-# deml-ui — Cursor rules
+# deml-ui — Cursor rules (design system SoT LOCKED)
 
-This repo is the DEML design system (new-from-the-start / atelier).
+This repo is the DEML design system — **single source of truth** for the
+**new-from-the-start / atelier** look consumed by deml and Django static chrome.
 
 ## Do
 
 - Change visuals in `components/<name>/` and `styles/tokens.css` / `styles/base.css`.
-- Keep an 8px grid, dual `data-theme`, equal tile gaps, and locked chart aspect.
+- Keep an 8px grid (`--grid` / `--space-*`), dual `data-theme`, equal tile gaps
+  (`--tile-gap`), identical row heights (`--tile-row-unit`), and locked chart
+  aspect (`--chart-aspect: 2.4`).
+- Use tokens only for chrome — `--color-*`, `--space-*`, `--tile-*`, `--chart-*`,
+  `--font-*`, `--tracking-*`, `--hit-target`.
+- Large bold display + letterspaced secondary / eyebrows; preserve type recipes in `base.css`.
 - Run `npm run sync` after adding/removing component folders; `npm run build` before release.
-- Prefer WCAG 2.0 AA patterns already used in base + headless primitives.
+- Prefer WCAG 2.0 AA patterns already used in base + headless primitives
+  (focus-visible, contrast, hit targets, reduced motion).
 
 ## Do not
 
 - Reintroduce Viking-UI naming, void-black / electric `#2176ff` suite chrome, or `--viking-*` tokens.
 - Hand-edit generated wrappers under `src/angular/markup/` or `generated/` — regenerate via sync.
 - Break the chart aspect contract or invent one-off spacing outside the token scale.
+- Ship arbitrary hex in component CSS for chrome outside the atelier token set.
 
-Consumer guidance for the Angular app lives in deml `THEME.md` / `AGENTS.md`.
+Consumer guidance for the Angular app lives in deml `THEME.md` / `AGENTS.md` / `.cursorrules`.
+
+**Locked:** deml-ui owns the look; Viking is fully retired.

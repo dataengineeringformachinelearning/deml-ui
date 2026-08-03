@@ -1,7 +1,4 @@
-/* Component: Status Pill
-   Markup: components/status-pill/status-pill.html
-   Barebones structure — customize freely.
-*/
+/* Component: status-pill — atelier mark */
 
 .component--status-pill .demo {
   display: grid;
@@ -11,11 +8,40 @@
 .status-pill {
   display: inline-flex;
   align-items: center;
-  min-height: 1.5rem;
-  padding: 0 0.6rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: var(--surface);
+  gap: var(--space-1);
+  min-height: var(--space-3);
+  padding: 0 var(--space-1);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-mark);
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+.status-pill[data-status='up'],
+.status-pill[data-tone='success'] {
+  color: var(--color-on-primary);
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.status-pill[data-status='down'],
+.status-pill[data-tone='error'],
+.status-pill[data-tone='danger'] {
+  color: var(--color-on-accent);
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.status-pill[data-status='maintenance'],
+.status-pill[data-tone='warn'],
+.status-pill[data-tone='warning'] {
+  color: var(--color-card-text);
+  background-color: var(--color-highlight);
+  border-color: var(--color-highlight);
 }

@@ -1,7 +1,4 @@
-/* Component: Page Back Link
-   Markup: components/page-back-link/page-back-link.html
-   Barebones structure — customize freely.
-*/
+/* Component: page-back-link — atelier back control */
 
 .component--page-back-link .demo {
   display: grid;
@@ -11,8 +8,18 @@
 .page-back-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  color: inherit;
+  gap: var(--space-1);
+  min-height: var(--hit-target);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
   text-decoration: none;
+  color: var(--color-highlight);
 }
-.page-back-link:hover { text-decoration: underline; }
+
+.page-back-link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}

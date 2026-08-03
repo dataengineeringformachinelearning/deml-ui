@@ -1,14 +1,46 @@
-/* Component: container — ported from deml new-from-the-start */
+/* Component: container — atelier content anatomy */
 
 .component--container .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Container — host is the padded shell (mobile-first) */
+.container {
+  display: grid;
+  gap: var(--space-3);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: var(--tile-row-unit);
+  padding: var(--module-pad);
+  border: var(--border-width) solid var(--color-card-border);
+  background-color: var(--color-card);
+  color: var(--color-card-text);
+  box-shadow: var(--shadow-card);
+}
 
-@media screen and (min-width: 800px) {
-  }
+.container__header {
+  display: grid;
+  gap: var(--space-1);
+}
 
-@media screen and (min-width: 1200px) {
-  }
+.container__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-card-text);
+}
+
+.container__description {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-card-text-secondary);
+}
+
+.container__body {
+  display: grid;
+  gap: var(--tile-gap);
+}

@@ -1,7 +1,4 @@
-/* Component: Table
-   Markup: components/table/table.html
-   Barebones structure — customize freely.
-*/
+/* Component: table — atelier data table */
 
 .component--table .demo {
   display: grid;
@@ -13,17 +10,35 @@ table {
   width: 100%;
   border-collapse: collapse;
   font: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
 }
+
 .component--table th,
 .component--table td,
-th, td {
+th,
+td {
   padding: var(--space-sm) var(--space-md);
-  border-block-end: 1px solid var(--line);
+  border-block-end: var(--border-width) solid var(--color-border);
   text-align: start;
 }
+
+.component--table th,
+th {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
 .component--table caption,
 caption {
   text-align: start;
   padding-block-end: var(--space-sm);
-  color: var(--muted);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--tracking-mark);
+  text-transform: uppercase;
 }

@@ -18,7 +18,7 @@ var e = class extends HTMLElement {
     </div>`));
   }
 };
-function Xe() {
+function $e() {
   customElements.get(e.tagName) || customElements.define(e.tagName, e);
 }
 var t = class extends HTMLElement {
@@ -43,7 +43,7 @@ var t = class extends HTMLElement {
     </ul>`));
   }
 };
-function $e() {
+function et() {
   customElements.get(t.tagName) || customElements.define(t.tagName, t);
 }
 var a = class extends HTMLElement {
@@ -63,7 +63,7 @@ var a = class extends HTMLElement {
     </footer>`));
   }
 };
-function et() {
+function tt() {
   customElements.get(a.tagName) || customElements.define(a.tagName, a);
 }
 var s = class extends HTMLElement {
@@ -86,7 +86,7 @@ var s = class extends HTMLElement {
     </header>`));
   }
 };
-function tt() {
+function at() {
   customElements.get(s.tagName) || customElements.define(s.tagName, s);
 }
 var i = class extends HTMLElement {
@@ -107,10 +107,10 @@ var i = class extends HTMLElement {
     </div>`));
   }
 };
-function at() {
+function st() {
   customElements.get(i.tagName) || customElements.define(i.tagName, i);
 }
-var n = class extends HTMLElement {
+var l = class extends HTMLElement {
   static {
     this.tagName = "deml-app-sidebar";
   }
@@ -128,10 +128,10 @@ var n = class extends HTMLElement {
     </aside>`));
   }
 };
-function st() {
-  customElements.get(n.tagName) || customElements.define(n.tagName, n);
+function it() {
+  customElements.get(l.tagName) || customElements.define(l.tagName, l);
 }
-var l = class extends HTMLElement {
+var n = class extends HTMLElement {
   static {
     this.tagName = "deml-area-chart";
   }
@@ -139,11 +139,26 @@ var l = class extends HTMLElement {
     this.componentName = "area-chart";
   }
   connectedCallback() {
-    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<div class="area-chart" role="img" aria-label="Area chart"></div>'));
+    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<div class="area-chart-frame" role="img" aria-label="Area chart">
+      <svg
+        class="area-chart"
+        viewBox="0 0 360 150"
+        preserveAspectRatio="xMidYMid meet"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <line class="area-chart-baseline" x1="32" y1="120" x2="348" y2="120" />
+        <polyline
+          class="area-chart-line"
+          fill="none"
+          points="32,110 80,90 140,95 200,50 260,70 320,40"
+        />
+      </svg>
+    </div>`));
   }
 };
-function it() {
-  customElements.get(l.tagName) || customElements.define(l.tagName, l);
+function lt() {
+  customElements.get(n.tagName) || customElements.define(n.tagName, n);
 }
 var d = class extends HTMLElement {
   static {
@@ -178,10 +193,10 @@ var r = class extends HTMLElement {
     </div>`));
   }
 };
-function lt() {
+function dt() {
   customElements.get(r.tagName) || customElements.define(r.tagName, r);
 }
-var o = class extends HTMLElement {
+var c = class extends HTMLElement {
   static {
     this.tagName = "deml-avatar";
   }
@@ -197,10 +212,10 @@ var o = class extends HTMLElement {
     </span>`));
   }
 };
-function dt() {
-  customElements.get(o.tagName) || customElements.define(o.tagName, o);
+function rt() {
+  customElements.get(c.tagName) || customElements.define(c.tagName, c);
 }
-var c = class extends HTMLElement {
+var o = class extends HTMLElement {
   static {
     this.tagName = "deml-badge";
   }
@@ -214,8 +229,8 @@ var c = class extends HTMLElement {
     <span class="badge" data-tone="danger">Danger</span>`));
   }
 };
-function rt() {
-  customElements.get(c.tagName) || customElements.define(c.tagName, c);
+function ct() {
+  customElements.get(o.tagName) || customElements.define(o.tagName, o);
 }
 var m = class extends HTMLElement {
   static {
@@ -239,10 +254,38 @@ var u = class extends HTMLElement {
     this.componentName = "bar-chart";
   }
   connectedCallback() {
-    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<div class="bar-chart" role="img" aria-label="Bar chart"></div>'));
+    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<ul class="bar-chart" role="list" aria-label="Bar chart">
+      <li class="bar-chart-row">
+        <div class="bar-chart-meta">
+          <span class="bar-chart-label">Alpha</span>
+          <span class="bar-chart-value">80%</span>
+        </div>
+        <div class="bar-chart-track" aria-hidden="true">
+          <div class="bar-chart-fill" style="width: 80%"></div>
+        </div>
+      </li>
+      <li class="bar-chart-row">
+        <div class="bar-chart-meta">
+          <span class="bar-chart-label">Beta</span>
+          <span class="bar-chart-value">55%</span>
+        </div>
+        <div class="bar-chart-track" aria-hidden="true">
+          <div class="bar-chart-fill" style="width: 55%"></div>
+        </div>
+      </li>
+      <li class="bar-chart-row">
+        <div class="bar-chart-meta">
+          <span class="bar-chart-label">Gamma</span>
+          <span class="bar-chart-value">35%</span>
+        </div>
+        <div class="bar-chart-track" aria-hidden="true">
+          <div class="bar-chart-fill" style="width: 35%"></div>
+        </div>
+      </li>
+    </ul>`));
   }
 };
-function ct() {
+function mt() {
   customElements.get(u.tagName) || customElements.define(u.tagName, u);
 }
 var h = class extends HTMLElement {
@@ -258,7 +301,7 @@ var h = class extends HTMLElement {
     </div>`));
   }
 };
-function mt() {
+function ut() {
   customElements.get(h.tagName) || customElements.define(h.tagName, h);
 }
 var p = class extends HTMLElement {
@@ -275,7 +318,7 @@ var p = class extends HTMLElement {
     </a>`));
   }
 };
-function ut() {
+function ht() {
   customElements.get(p.tagName) || customElements.define(p.tagName, p);
 }
 var f = class extends HTMLElement {
@@ -295,7 +338,7 @@ var f = class extends HTMLElement {
     </nav>`));
   }
 };
-function ht() {
+function pt() {
   customElements.get(f.tagName) || customElements.define(f.tagName, f);
 }
 var g = class extends HTMLElement {
@@ -314,7 +357,7 @@ var g = class extends HTMLElement {
     </div>`));
   }
 };
-function pt() {
+function ft() {
   customElements.get(g.tagName) || customElements.define(g.tagName, g);
 }
 var b = class extends HTMLElement {
@@ -332,7 +375,7 @@ var b = class extends HTMLElement {
     <button type="button" class="button button--primary" disabled>Disabled</button>`));
   }
 };
-function ft() {
+function gt() {
   customElements.get(b.tagName) || customElements.define(b.tagName, b);
 }
 var N = class extends HTMLElement {
@@ -350,10 +393,10 @@ var N = class extends HTMLElement {
     </div>`));
   }
 };
-function gt() {
+function bt() {
   customElements.get(N.tagName) || customElements.define(N.tagName, N);
 }
-var y = class extends HTMLElement {
+var v = class extends HTMLElement {
   static {
     this.tagName = "deml-callout";
   }
@@ -370,10 +413,10 @@ var y = class extends HTMLElement {
     </aside>`));
   }
 };
-function bt() {
-  customElements.get(y.tagName) || customElements.define(y.tagName, y);
+function Nt() {
+  customElements.get(v.tagName) || customElements.define(v.tagName, v);
 }
-var v = class extends HTMLElement {
+var y = class extends HTMLElement {
   static {
     this.tagName = "deml-card";
   }
@@ -395,8 +438,8 @@ var v = class extends HTMLElement {
     </article>`));
   }
 };
-function Nt() {
-  customElements.get(v.tagName) || customElements.define(v.tagName, v);
+function vt() {
+  customElements.get(y.tagName) || customElements.define(y.tagName, y);
 }
 var H = class extends HTMLElement {
   static {
@@ -421,15 +464,28 @@ var _ = class extends HTMLElement {
   }
   connectedCallback() {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<figure class="chart-figure">
-      <svg class="chart" viewBox="0 0 240 120" width="100%" height="120" role="img" aria-label="Sample line chart">
-        <line x1="0" y1="110" x2="240" y2="110" stroke="currentColor" opacity="0.25" />
-        <polyline fill="none" stroke="currentColor" stroke-width="2" points="0,90 40,70 80,75 120,40 160,55 200,30 240,20" />
-      </svg>
+      <div class="chart-figure__plot">
+        <svg
+          class="chart"
+          viewBox="0 0 360 150"
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          aria-label="Sample line chart"
+        >
+          <line x1="0" y1="130" x2="360" y2="130" stroke="currentColor" opacity="0.25" />
+          <polyline
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            points="0,110 60,85 120,95 180,50 240,70 300,40 360,30"
+          />
+        </svg>
+      </div>
       <figcaption>Chart placeholder (native SVG)</figcaption>
     </figure>`));
   }
 };
-function vt() {
+function Ht() {
   customElements.get(_.tagName) || customElements.define(_.tagName, _);
 }
 var E = class extends HTMLElement {
@@ -440,10 +496,32 @@ var E = class extends HTMLElement {
     this.componentName = "chart-card";
   }
   connectedCallback() {
-    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<article class="chart-card"><header class="chart-card__header"><h3>Traffic</h3></header><div class="chart-card__body">Chart</div></article>'));
+    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<article class="chart-card" aria-labelledby="chart-card-demo-heading">
+      <header class="chart-card-header">
+        <h3 class="chart-card-heading" id="chart-card-demo-heading">Traffic</h3>
+        <p class="chart-card-meta">Last 7 days</p>
+      </header>
+      <div class="chart-card-body">
+        <div class="area-chart-frame" role="img" aria-label="Sample area chart">
+          <svg
+            class="area-chart"
+            viewBox="0 0 360 150"
+            preserveAspectRatio="xMidYMid meet"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <polyline
+              class="area-chart-line"
+              fill="none"
+              points="32,110 80,90 140,95 200,50 260,70 320,40"
+            />
+          </svg>
+        </div>
+      </div>
+    </article>`));
   }
 };
-function Ht() {
+function _t() {
   customElements.get(E.tagName) || customElements.define(E.tagName, E);
 }
 var C = class extends HTMLElement {
@@ -460,7 +538,7 @@ var C = class extends HTMLElement {
     </div>`));
   }
 };
-function _t() {
+function Et() {
   customElements.get(C.tagName) || customElements.define(C.tagName, C);
 }
 var T = class extends HTMLElement {
@@ -484,7 +562,7 @@ var T = class extends HTMLElement {
     </section>`));
   }
 };
-function Et() {
+function Ct() {
   customElements.get(T.tagName) || customElements.define(T.tagName, T);
 }
 var L = class extends HTMLElement {
@@ -501,7 +579,7 @@ var L = class extends HTMLElement {
     </label>`));
   }
 };
-function Ct() {
+function Tt() {
   customElements.get(L.tagName) || customElements.define(L.tagName, L);
 }
 var M = class extends HTMLElement {
@@ -515,7 +593,7 @@ var M = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<label class="checkbox-field"><input type="checkbox" /><span>Remember me</span></label>'));
   }
 };
-function Tt() {
+function Lt() {
   customElements.get(M.tagName) || customElements.define(M.tagName, M);
 }
 var k = class extends HTMLElement {
@@ -533,7 +611,7 @@ var k = class extends HTMLElement {
     </div>`));
   }
 };
-function Lt() {
+function Mt() {
   customElements.get(k.tagName) || customElements.define(k.tagName, k);
 }
 var x = class extends HTMLElement {
@@ -554,7 +632,7 @@ var x = class extends HTMLElement {
     </div>`));
   }
 };
-function Mt() {
+function kt() {
   customElements.get(x.tagName) || customElements.define(x.tagName, x);
 }
 var D = class extends HTMLElement {
@@ -578,7 +656,7 @@ var D = class extends HTMLElement {
     </dialog>`));
   }
 };
-function kt() {
+function xt() {
   customElements.get(D.tagName) || customElements.define(D.tagName, D);
 }
 var S = class extends HTMLElement {
@@ -600,7 +678,7 @@ var S = class extends HTMLElement {
     </div>`));
   }
 };
-function xt() {
+function Dt() {
   customElements.get(S.tagName) || customElements.define(S.tagName, S);
 }
 var w = class extends HTMLElement {
@@ -620,7 +698,7 @@ var w = class extends HTMLElement {
     </div>`));
   }
 };
-function Dt() {
+function St() {
   customElements.get(w.tagName) || customElements.define(w.tagName, w);
 }
 var P = class extends HTMLElement {
@@ -631,10 +709,14 @@ var P = class extends HTMLElement {
     this.componentName = "dashboard-grid";
   }
   connectedCallback() {
-    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<div class="dashboard-grid"><div class="dashboard-grid__cell">Tile</div></div>'));
+    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<div class="dashboard-grid">
+      <div class="dashboard-grid__cell" data-size="sm">Tile SM</div>
+      <div class="dashboard-grid__cell" data-size="md">Tile MD</div>
+      <div class="dashboard-grid__cell" data-size="sm">Tile SM</div>
+    </div>`));
   }
 };
-function St() {
+function wt() {
   customElements.get(P.tagName) || customElements.define(P.tagName, P);
 }
 var A = class extends HTMLElement {
@@ -658,7 +740,7 @@ var A = class extends HTMLElement {
     </dialog>`));
   }
 };
-function wt() {
+function Pt() {
   customElements.get(A.tagName) || customElements.define(A.tagName, A);
 }
 var B = class extends HTMLElement {
@@ -679,7 +761,7 @@ var B = class extends HTMLElement {
     </div>`));
   }
 };
-function Pt() {
+function At() {
   customElements.get(B.tagName) || customElements.define(B.tagName, B);
 }
 var F = class extends HTMLElement {
@@ -700,7 +782,7 @@ var F = class extends HTMLElement {
     </div>`));
   }
 };
-function At() {
+function Bt() {
   customElements.get(F.tagName) || customElements.define(F.tagName, F);
 }
 var G = class extends HTMLElement {
@@ -721,7 +803,7 @@ var G = class extends HTMLElement {
     </div>`));
   }
 };
-function Bt() {
+function Ft() {
   customElements.get(G.tagName) || customElements.define(G.tagName, G);
 }
 var I = class extends HTMLElement {
@@ -741,10 +823,10 @@ var I = class extends HTMLElement {
     </div>`));
   }
 };
-function Ft() {
+function Gt() {
   customElements.get(I.tagName) || customElements.define(I.tagName, I);
 }
-var R = class extends HTMLElement {
+var z = class extends HTMLElement {
   static {
     this.tagName = "deml-field";
   }
@@ -761,10 +843,10 @@ var R = class extends HTMLElement {
     </div>`));
   }
 };
-function Gt() {
-  customElements.get(R.tagName) || customElements.define(R.tagName, R);
+function It() {
+  customElements.get(z.tagName) || customElements.define(z.tagName, z);
 }
-var z = class extends HTMLElement {
+var R = class extends HTMLElement {
   static {
     this.tagName = "deml-file-upload";
   }
@@ -782,8 +864,8 @@ var z = class extends HTMLElement {
     </div>`));
   }
 };
-function It() {
-  customElements.get(z.tagName) || customElements.define(z.tagName, z);
+function zt() {
+  customElements.get(R.tagName) || customElements.define(R.tagName, R);
 }
 var O = class extends HTMLElement {
   static {
@@ -824,7 +906,7 @@ var U = class extends HTMLElement {
     </div>`));
   }
 };
-function zt() {
+function Ot() {
   customElements.get(U.tagName) || customElements.define(U.tagName, U);
 }
 var W = class extends HTMLElement {
@@ -838,10 +920,10 @@ var W = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<form class="form-panel"><label class="field"><span class="field__label">Email</span><input class="input-text" type="email" /></label><button class="button button--primary" type="submit">Submit</button></form>'));
   }
 };
-function Ot() {
+function Ut() {
   customElements.get(W.tagName) || customElements.define(W.tagName, W);
 }
-var J = class extends HTMLElement {
+var K = class extends HTMLElement {
   static {
     this.tagName = "deml-form-section";
   }
@@ -861,10 +943,10 @@ var J = class extends HTMLElement {
     </section>`));
   }
 };
-function Ut() {
-  customElements.get(J.tagName) || customElements.define(J.tagName, J);
+function Wt() {
+  customElements.get(K.tagName) || customElements.define(K.tagName, K);
 }
-var K = class extends HTMLElement {
+var J = class extends HTMLElement {
   static {
     this.tagName = "deml-grid";
   }
@@ -880,10 +962,10 @@ var K = class extends HTMLElement {
     </div>`));
   }
 };
-function Wt() {
-  customElements.get(K.tagName) || customElements.define(K.tagName, K);
+function Kt() {
+  customElements.get(J.tagName) || customElements.define(J.tagName, J);
 }
-var q = class extends HTMLElement {
+var Y = class extends HTMLElement {
   static {
     this.tagName = "deml-help-panel";
   }
@@ -899,9 +981,9 @@ var q = class extends HTMLElement {
   }
 };
 function Jt() {
-  customElements.get(q.tagName) || customElements.define(q.tagName, q);
+  customElements.get(Y.tagName) || customElements.define(Y.tagName, Y);
 }
-var j = class extends HTMLElement {
+var q = class extends HTMLElement {
   static {
     this.tagName = "deml-hud-panel";
   }
@@ -919,10 +1001,10 @@ var j = class extends HTMLElement {
     </section>`));
   }
 };
-function Kt() {
-  customElements.get(j.tagName) || customElements.define(j.tagName, j);
+function Yt() {
+  customElements.get(q.tagName) || customElements.define(q.tagName, q);
 }
-var V = class extends HTMLElement {
+var j = class extends HTMLElement {
   static {
     this.tagName = "deml-icon";
   }
@@ -938,9 +1020,9 @@ var V = class extends HTMLElement {
   }
 };
 function qt() {
-  customElements.get(V.tagName) || customElements.define(V.tagName, V);
+  customElements.get(j.tagName) || customElements.define(j.tagName, j);
 }
-var Z = class extends HTMLElement {
+var V = class extends HTMLElement {
   static {
     this.tagName = "deml-input-date";
   }
@@ -953,9 +1035,9 @@ var Z = class extends HTMLElement {
   }
 };
 function jt() {
-  customElements.get(Z.tagName) || customElements.define(Z.tagName, Z);
+  customElements.get(V.tagName) || customElements.define(V.tagName, V);
 }
-var Y = class extends HTMLElement {
+var Z = class extends HTMLElement {
   static {
     this.tagName = "deml-input-email";
   }
@@ -968,7 +1050,7 @@ var Y = class extends HTMLElement {
   }
 };
 function Vt() {
-  customElements.get(Y.tagName) || customElements.define(Y.tagName, Y);
+  customElements.get(Z.tagName) || customElements.define(Z.tagName, Z);
 }
 var Q = class extends HTMLElement {
   static {
@@ -997,7 +1079,7 @@ var X = class extends HTMLElement {
     <input id="input-password-field" name="password" type="password" placeholder="Password" autocomplete="new-password">`));
   }
 };
-function Yt() {
+function Qt() {
   customElements.get(X.tagName) || customElements.define(X.tagName, X);
 }
 var $ = class extends HTMLElement {
@@ -1012,7 +1094,7 @@ var $ = class extends HTMLElement {
     <input id="input-range-field" name="range" type="range" min="0" max="100" value="40">`));
   }
 };
-function Qt() {
+function Xt() {
   customElements.get($.tagName) || customElements.define($.tagName, $);
 }
 var ee = class extends HTMLElement {
@@ -1027,7 +1109,7 @@ var ee = class extends HTMLElement {
     <input id="input-search-field" name="search" type="search" placeholder="Search…">`));
   }
 };
-function Xt() {
+function $t() {
   customElements.get(ee.tagName) || customElements.define(ee.tagName, ee);
 }
 var te = class extends HTMLElement {
@@ -1042,7 +1124,7 @@ var te = class extends HTMLElement {
     <input id="input-text-field" name="name" type="text" placeholder="Name" autocomplete="name" required>`));
   }
 };
-function $t() {
+function ea() {
   customElements.get(te.tagName) || customElements.define(te.tagName, te);
 }
 var ae = class extends HTMLElement {
@@ -1057,7 +1139,7 @@ var ae = class extends HTMLElement {
     <input id="input-time-field" name="time" type="time">`));
   }
 };
-function ea() {
+function ta() {
   customElements.get(ae.tagName) || customElements.define(ae.tagName, ae);
 }
 var se = class extends HTMLElement {
@@ -1071,7 +1153,7 @@ var se = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<p>Press <kbd class="kbd">⌘</kbd> <kbd class="kbd">K</kbd> to search.</p>'));
   }
 };
-function ta() {
+function aa() {
   customElements.get(se.tagName) || customElements.define(se.tagName, se);
 }
 var ie = class extends HTMLElement {
@@ -1086,10 +1168,10 @@ var ie = class extends HTMLElement {
     <input id="label-demo-input" type="text" name="label-demo" />`));
   }
 };
-function aa() {
+function sa() {
   customElements.get(ie.tagName) || customElements.define(ie.tagName, ie);
 }
-var ne = class extends HTMLElement {
+var le = class extends HTMLElement {
   static {
     this.tagName = "deml-loading-overlay";
   }
@@ -1102,10 +1184,10 @@ var ne = class extends HTMLElement {
     </div>`));
   }
 };
-function sa() {
-  customElements.get(ne.tagName) || customElements.define(ne.tagName, ne);
+function ia() {
+  customElements.get(le.tagName) || customElements.define(le.tagName, le);
 }
-var le = class extends HTMLElement {
+var ne = class extends HTMLElement {
   static {
     this.tagName = "deml-metric-card";
   }
@@ -1120,8 +1202,8 @@ var le = class extends HTMLElement {
     </article>`));
   }
 };
-function ia() {
-  customElements.get(le.tagName) || customElements.define(le.tagName, le);
+function la() {
+  customElements.get(ne.tagName) || customElements.define(ne.tagName, ne);
 }
 var de = class extends HTMLElement {
   static {
@@ -1148,10 +1230,10 @@ var re = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<article class="microcard"><p class="microcard__label">Label</p><p class="microcard__value">42</p></article>'));
   }
 };
-function la() {
+function da() {
   customElements.get(re.tagName) || customElements.define(re.tagName, re);
 }
-var oe = class extends HTMLElement {
+var ce = class extends HTMLElement {
   static {
     this.tagName = "deml-microcard-grid";
   }
@@ -1162,10 +1244,10 @@ var oe = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<div class="microcard-grid"><article class="microcard"><p class="microcard__label">A</p><p class="microcard__value">1</p></article></div>'));
   }
 };
-function da() {
-  customElements.get(oe.tagName) || customElements.define(oe.tagName, oe);
+function ra() {
+  customElements.get(ce.tagName) || customElements.define(ce.tagName, ce);
 }
-var ce = class extends HTMLElement {
+var oe = class extends HTMLElement {
   static {
     this.tagName = "deml-navbar";
   }
@@ -1176,8 +1258,8 @@ var ce = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<header class="site-navbar"><div class="site-navbar-branding"><a class="site-navbar-icon" href="#">DEML</a></div><nav class="main-navigation"><ul><li><a href="#">Home</a></li></ul></nav></header>'));
   }
 };
-function ra() {
-  customElements.get(ce.tagName) || customElements.define(ce.tagName, ce);
+function ca() {
+  customElements.get(oe.tagName) || customElements.define(oe.tagName, oe);
 }
 var me = class extends HTMLElement {
   static {
@@ -1210,7 +1292,7 @@ var ue = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<a class="page-back-link" href="#">← Back to list</a>'));
   }
 };
-function ca() {
+function ma() {
   customElements.get(ue.tagName) || customElements.define(ue.tagName, ue);
 }
 var he = class extends HTMLElement {
@@ -1233,7 +1315,7 @@ var he = class extends HTMLElement {
     </header>`));
   }
 };
-function ma() {
+function ua() {
   customElements.get(he.tagName) || customElements.define(he.tagName, he);
 }
 var pe = class extends HTMLElement {
@@ -1247,7 +1329,7 @@ var pe = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<section class="page-section"><div class="page-section__body">Section body</div></section>'));
   }
 };
-function ua() {
+function ha() {
   customElements.get(pe.tagName) || customElements.define(pe.tagName, pe);
 }
 var fe = class extends HTMLElement {
@@ -1265,7 +1347,7 @@ var fe = class extends HTMLElement {
     </div>`));
   }
 };
-function ha() {
+function pa() {
   customElements.get(fe.tagName) || customElements.define(fe.tagName, fe);
 }
 var ge = class extends HTMLElement {
@@ -1288,7 +1370,7 @@ var ge = class extends HTMLElement {
     </div>`));
   }
 };
-function pa() {
+function fa() {
   customElements.get(ge.tagName) || customElements.define(ge.tagName, ge);
 }
 var be = class extends HTMLElement {
@@ -1310,7 +1392,7 @@ var be = class extends HTMLElement {
     </nav>`));
   }
 };
-function fa() {
+function ga() {
   customElements.get(be.tagName) || customElements.define(be.tagName, be);
 }
 var Ne = class extends HTMLElement {
@@ -1327,10 +1409,10 @@ var Ne = class extends HTMLElement {
     </div>`));
   }
 };
-function ga() {
+function ba() {
   customElements.get(Ne.tagName) || customElements.define(Ne.tagName, Ne);
 }
-var ye = class extends HTMLElement {
+var ve = class extends HTMLElement {
   static {
     this.tagName = "deml-popover";
   }
@@ -1347,10 +1429,10 @@ var ye = class extends HTMLElement {
     </div>`));
   }
 };
-function ba() {
-  customElements.get(ye.tagName) || customElements.define(ye.tagName, ye);
+function Na() {
+  customElements.get(ve.tagName) || customElements.define(ve.tagName, ve);
 }
-var ve = class extends HTMLElement {
+var ye = class extends HTMLElement {
   static {
     this.tagName = "deml-profile";
   }
@@ -1367,8 +1449,8 @@ var ve = class extends HTMLElement {
     </div>`));
   }
 };
-function Na() {
-  customElements.get(ve.tagName) || customElements.define(ve.tagName, ve);
+function va() {
+  customElements.get(ye.tagName) || customElements.define(ye.tagName, ye);
 }
 var He = class extends HTMLElement {
   static {
@@ -1404,7 +1486,7 @@ var _e = class extends HTMLElement {
     </div>`));
   }
 };
-function va() {
+function Ha() {
   customElements.get(_e.tagName) || customElements.define(_e.tagName, _e);
 }
 var Ee = class extends HTMLElement {
@@ -1423,7 +1505,7 @@ var Ee = class extends HTMLElement {
     </fieldset>`));
   }
 };
-function Ha() {
+function _a() {
   customElements.get(Ee.tagName) || customElements.define(Ee.tagName, Ee);
 }
 var Ce = class extends HTMLElement {
@@ -1442,7 +1524,7 @@ var Ce = class extends HTMLElement {
     </div>`));
   }
 };
-function _a() {
+function Ea() {
   customElements.get(Ce.tagName) || customElements.define(Ce.tagName, Ce);
 }
 var Te = class extends HTMLElement {
@@ -1464,7 +1546,7 @@ var Te = class extends HTMLElement {
     </section>`));
   }
 };
-function Ea() {
+function Ca() {
   customElements.get(Te.tagName) || customElements.define(Te.tagName, Te);
 }
 var Le = class extends HTMLElement {
@@ -1478,7 +1560,7 @@ var Le = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<header class="section-header"><p class="type-eyebrow">Eyebrow</p><h2 class="type-display">Section</h2><p class="type-intro">Supporting copy.</p></header>'));
   }
 };
-function Ca() {
+function Ta() {
   customElements.get(Le.tagName) || customElements.define(Le.tagName, Le);
 }
 var Me = class extends HTMLElement {
@@ -1502,7 +1584,7 @@ var Me = class extends HTMLElement {
     </section>`));
   }
 };
-function Ta() {
+function La() {
   customElements.get(Me.tagName) || customElements.define(Me.tagName, Me);
 }
 var ke = class extends HTMLElement {
@@ -1526,7 +1608,7 @@ var ke = class extends HTMLElement {
     </select>`));
   }
 };
-function La() {
+function Ma() {
   customElements.get(ke.tagName) || customElements.define(ke.tagName, ke);
 }
 var xe = class extends HTMLElement {
@@ -1543,7 +1625,7 @@ var xe = class extends HTMLElement {
     <div class="separator separator--vertical" role="separator" aria-orientation="vertical"></div>`));
   }
 };
-function Ma() {
+function ka() {
   customElements.get(xe.tagName) || customElements.define(xe.tagName, xe);
 }
 var De = class extends HTMLElement {
@@ -1570,7 +1652,7 @@ var De = class extends HTMLElement {
     </div>`));
   }
 };
-function ka() {
+function xa() {
   customElements.get(De.tagName) || customElements.define(De.tagName, De);
 }
 var Se = class extends HTMLElement {
@@ -1597,7 +1679,7 @@ var Se = class extends HTMLElement {
     </nav>`));
   }
 };
-function xa() {
+function Da() {
   customElements.get(Se.tagName) || customElements.define(Se.tagName, Se);
 }
 var we = class extends HTMLElement {
@@ -1615,7 +1697,7 @@ var we = class extends HTMLElement {
     </div>`));
   }
 };
-function Da() {
+function Sa() {
   customElements.get(we.tagName) || customElements.define(we.tagName, we);
 }
 var Pe = class extends HTMLElement {
@@ -1630,7 +1712,7 @@ var Pe = class extends HTMLElement {
     <p id="main">Focus the skip link (Tab) to reveal it — first focusable control on real pages.</p>`));
   }
 };
-function Sa() {
+function wa() {
   customElements.get(Pe.tagName) || customElements.define(Pe.tagName, Pe);
 }
 var Ae = class extends HTMLElement {
@@ -1646,7 +1728,7 @@ var Ae = class extends HTMLElement {
     </span>`));
   }
 };
-function wa() {
+function Pa() {
   customElements.get(Ae.tagName) || customElements.define(Ae.tagName, Ae);
 }
 var Be = class extends HTMLElement {
@@ -1668,7 +1750,7 @@ var Be = class extends HTMLElement {
     </div>`));
   }
 };
-function Pa() {
+function Aa() {
   customElements.get(Be.tagName) || customElements.define(Be.tagName, Be);
 }
 var Fe = class extends HTMLElement {
@@ -1686,7 +1768,7 @@ var Fe = class extends HTMLElement {
     </div>`));
   }
 };
-function Aa() {
+function Ba() {
   customElements.get(Fe.tagName) || customElements.define(Fe.tagName, Fe);
 }
 var Ge = class extends HTMLElement {
@@ -1700,7 +1782,7 @@ var Ge = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<article class="stat-card"><p class="stat-card__label">Sessions</p><p class="stat-card__value">1.2k</p><p class="stat-card__delta">+4%</p></article>'));
   }
 };
-function Ba() {
+function Fa() {
   customElements.get(Ge.tagName) || customElements.define(Ge.tagName, Ge);
 }
 var Ie = class extends HTMLElement {
@@ -1721,10 +1803,10 @@ var Ie = class extends HTMLElement {
     </span>`));
   }
 };
-function Fa() {
+function Ga() {
   customElements.get(Ie.tagName) || customElements.define(Ie.tagName, Ie);
 }
-var Re = class extends HTMLElement {
+var ze = class extends HTMLElement {
   static {
     this.tagName = "deml-status-card";
   }
@@ -1742,10 +1824,10 @@ var Re = class extends HTMLElement {
     </article>`));
   }
 };
-function Ga() {
-  customElements.get(Re.tagName) || customElements.define(Re.tagName, Re);
+function Ia() {
+  customElements.get(ze.tagName) || customElements.define(ze.tagName, ze);
 }
-var ze = class extends HTMLElement {
+var Re = class extends HTMLElement {
   static {
     this.tagName = "deml-status-pill";
   }
@@ -1758,8 +1840,8 @@ var ze = class extends HTMLElement {
     <span class="status-pill" data-status="maintenance">Maintenance</span>`));
   }
 };
-function Ia() {
-  customElements.get(ze.tagName) || customElements.define(ze.tagName, ze);
+function za() {
+  customElements.get(Re.tagName) || customElements.define(Re.tagName, Re);
 }
 var Oe = class extends HTMLElement {
   static {
@@ -1826,7 +1908,7 @@ var Ue = class extends HTMLElement {
     </table>`));
   }
 };
-function za() {
+function Oa() {
   customElements.get(Ue.tagName) || customElements.define(Ue.tagName, Ue);
 }
 var We = class extends HTMLElement {
@@ -1849,10 +1931,10 @@ var We = class extends HTMLElement {
     </div>`));
   }
 };
-function Oa() {
+function Ua() {
   customElements.get(We.tagName) || customElements.define(We.tagName, We);
 }
-var Je = class extends HTMLElement {
+var Ke = class extends HTMLElement {
   static {
     this.tagName = "deml-text-field";
   }
@@ -1863,10 +1945,10 @@ var Je = class extends HTMLElement {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = '<label class="text-field"><span class="text-field__label">Name</span><input class="text-field__input" type="text" /></label>'));
   }
 };
-function Ua() {
-  customElements.get(Je.tagName) || customElements.define(Je.tagName, Je);
+function Wa() {
+  customElements.get(Ke.tagName) || customElements.define(Ke.tagName, Ke);
 }
-var Ke = class extends HTMLElement {
+var Je = class extends HTMLElement {
   static {
     this.tagName = "deml-textarea";
   }
@@ -1878,10 +1960,10 @@ var Ke = class extends HTMLElement {
     <textarea id="textarea-field" name="message" rows="4" cols="40" placeholder="Message"></textarea>`));
   }
 };
-function Wa() {
-  customElements.get(Ke.tagName) || customElements.define(Ke.tagName, Ke);
+function Ka() {
+  customElements.get(Je.tagName) || customElements.define(Je.tagName, Je);
 }
-var qe = class extends HTMLElement {
+var Ye = class extends HTMLElement {
   static {
     this.tagName = "deml-theme-toggle";
   }
@@ -1895,6 +1977,26 @@ var qe = class extends HTMLElement {
   }
 };
 function Ja() {
+  customElements.get(Ye.tagName) || customElements.define(Ye.tagName, Ye);
+}
+var qe = class extends HTMLElement {
+  static {
+    this.tagName = "deml-tile-board";
+  }
+  static {
+    this.componentName = "tile-board";
+  }
+  connectedCallback() {
+    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<div class="tile-board">
+      <div class="dashboard-grid">
+        <article class="tile-board__cell" data-size="sm">Stat</article>
+        <article class="tile-board__cell" data-size="md">Chart</article>
+        <article class="tile-board__cell" data-size="sm">KPI</article>
+      </div>
+    </div>`));
+  }
+};
+function Ya() {
   customElements.get(qe.tagName) || customElements.define(qe.tagName, qe);
 }
 var je = class extends HTMLElement {
@@ -1919,7 +2021,7 @@ var je = class extends HTMLElement {
     </ol>`));
   }
 };
-function Ka() {
+function qa() {
   customElements.get(je.tagName) || customElements.define(je.tagName, je);
 }
 var Ve = class extends HTMLElement {
@@ -1937,7 +2039,7 @@ var Ve = class extends HTMLElement {
     </div>`));
   }
 };
-function qa() {
+function ja() {
   customElements.get(Ve.tagName) || customElements.define(Ve.tagName, Ve);
 }
 var Ze = class extends HTMLElement {
@@ -1954,10 +2056,10 @@ var Ze = class extends HTMLElement {
     </div>`));
   }
 };
-function ja() {
+function Va() {
   customElements.get(Ze.tagName) || customElements.define(Ze.tagName, Ze);
 }
-var Ye = class extends HTMLElement {
+var Qe = class extends HTMLElement {
   static {
     this.tagName = "deml-tooltip";
   }
@@ -1969,10 +2071,10 @@ var Ye = class extends HTMLElement {
     <span id="tooltip-demo" class="tooltip" role="tooltip">Helpful tip</span>`));
   }
 };
-function Va() {
-  customElements.get(Ye.tagName) || customElements.define(Ye.tagName, Ye);
+function Za() {
+  customElements.get(Qe.tagName) || customElements.define(Qe.tagName, Qe);
 }
-var Qe = class extends HTMLElement {
+var Xe = class extends HTMLElement {
   static {
     this.tagName = "deml-wizard";
   }
@@ -1999,13 +2101,13 @@ var Qe = class extends HTMLElement {
     </div>`));
   }
 };
-function Za() {
-  customElements.get(Qe.tagName) || customElements.define(Qe.tagName, Qe);
+function Qa() {
+  customElements.get(Xe.tagName) || customElements.define(Xe.tagName, Xe);
 }
-function Ya() {
-  Xe(), $e(), et(), tt(), at(), st(), it(), nt(), lt(), dt(), rt(), ot(), ct(), mt(), ut(), ht(), pt(), ft(), gt(), bt(), Nt(), yt(), vt(), Ht(), _t(), Et(), Ct(), Tt(), Lt(), Mt(), kt(), xt(), Dt(), St(), wt(), Pt(), At(), Bt(), Ft(), Gt(), It(), Rt(), zt(), Ot(), Ut(), Wt(), Jt(), Kt(), qt(), jt(), Vt(), Zt(), Yt(), Qt(), Xt(), $t(), ea(), ta(), aa(), sa(), ia(), na(), la(), da(), ra(), oa(), ca(), ma(), ua(), ha(), pa(), fa(), ga(), ba(), Na(), ya(), va(), Ha(), _a(), Ea(), Ca(), Ta(), La(), Ma(), ka(), xa(), Da(), Sa(), wa(), Pa(), Aa(), Ba(), Fa(), Ga(), Ia(), Ra(), za(), Oa(), Ua(), Wa(), Ja(), Ka(), qa(), ja(), Va(), Za();
+function Xa() {
+  $e(), et(), tt(), at(), st(), it(), lt(), nt(), dt(), rt(), ct(), ot(), mt(), ut(), ht(), pt(), ft(), gt(), bt(), Nt(), vt(), yt(), Ht(), _t(), Et(), Ct(), Tt(), Lt(), Mt(), kt(), xt(), Dt(), St(), wt(), Pt(), At(), Bt(), Ft(), Gt(), It(), zt(), Rt(), Ot(), Ut(), Wt(), Kt(), Jt(), Yt(), qt(), jt(), Vt(), Zt(), Qt(), Xt(), $t(), ea(), ta(), aa(), sa(), ia(), la(), na(), da(), ra(), ca(), oa(), ma(), ua(), ha(), pa(), fa(), ga(), ba(), Na(), va(), ya(), Ha(), _a(), Ea(), Ca(), Ta(), La(), Ma(), ka(), xa(), Da(), Sa(), wa(), Pa(), Aa(), Ba(), Fa(), Ga(), Ia(), za(), Ra(), Oa(), Ua(), Wa(), Ka(), Ja(), Ya(), qa(), ja(), Va(), Za(), Qa();
 }
-var Qa = [
+var $a = [
   "accordion",
   "activity-list",
   "app-footer",
@@ -2107,25 +2209,26 @@ var Qa = [
   "text-field",
   "textarea",
   "theme-toggle",
+  "tile-board",
   "timeline",
   "toast",
   "toggle",
   "tooltip",
   "wizard"
 ];
-Ya();
+Xa();
 export {
   e as DemlAccordion,
   t as DemlActivityList,
   a as DemlAppFooter,
   s as DemlAppHeader,
   i as DemlAppLayout,
-  n as DemlAppSidebar,
-  l as DemlAreaChart,
+  l as DemlAppSidebar,
+  n as DemlAreaChart,
   d as DemlArticle,
   r as DemlAutocomplete,
-  o as DemlAvatar,
-  c as DemlBadge,
+  c as DemlAvatar,
+  o as DemlBadge,
   m as DemlBanner,
   u as DemlBarChart,
   h as DemlBox,
@@ -2134,8 +2237,8 @@ export {
   g as DemlBulkToolbar,
   b as DemlButton,
   N as DemlButtonGroup,
-  y as DemlCallout,
-  v as DemlCard,
+  v as DemlCallout,
+  y as DemlCard,
   H as DemlCardGrid,
   _ as DemlChart,
   E as DemlChartCard,
@@ -2154,18 +2257,18 @@ export {
   F as DemlDropdown,
   G as DemlEmptyState,
   I as DemlErrorState,
-  R as DemlField,
-  z as DemlFileUpload,
+  z as DemlField,
+  R as DemlFileUpload,
   O as DemlFlashbar,
   U as DemlFormGrid,
   W as DemlFormPanel,
-  J as DemlFormSection,
-  K as DemlGrid,
-  q as DemlHelpPanel,
-  j as DemlHudPanel,
-  V as DemlIcon,
-  Z as DemlInputDate,
-  Y as DemlInputEmail,
+  K as DemlFormSection,
+  J as DemlGrid,
+  Y as DemlHelpPanel,
+  q as DemlHudPanel,
+  j as DemlIcon,
+  V as DemlInputDate,
+  Z as DemlInputEmail,
   Q as DemlInputNumber,
   X as DemlInputPassword,
   $ as DemlInputRange,
@@ -2174,12 +2277,12 @@ export {
   ae as DemlInputTime,
   se as DemlKbd,
   ie as DemlLabel,
-  ne as DemlLoadingOverlay,
-  le as DemlMetricCard,
+  le as DemlLoadingOverlay,
+  ne as DemlMetricCard,
   de as DemlMetricList,
   re as DemlMicrocard,
-  oe as DemlMicrocardGrid,
-  ce as DemlNavbar,
+  ce as DemlMicrocardGrid,
+  oe as DemlNavbar,
   me as DemlNavigationMenu,
   ue as DemlPageBackLink,
   he as DemlPageHeader,
@@ -2188,8 +2291,8 @@ export {
   ge as DemlPageTemplate,
   be as DemlPagination,
   Ne as DemlPanelGrid,
-  ye as DemlPopover,
-  ve as DemlProfile,
+  ve as DemlPopover,
+  ye as DemlProfile,
   He as DemlProgress,
   _e as DemlPropertyFilter,
   Ee as DemlRadioGroup,
@@ -2208,127 +2311,129 @@ export {
   Fe as DemlStack,
   Ge as DemlStatCard,
   Ie as DemlStatusBadge,
-  Re as DemlStatusCard,
-  ze as DemlStatusPill,
+  ze as DemlStatusCard,
+  Re as DemlStatusPill,
   Oe as DemlSwitch,
   Ue as DemlTable,
   We as DemlTabs,
-  Je as DemlTextField,
-  Ke as DemlTextarea,
-  qe as DemlThemeToggle,
+  Ke as DemlTextField,
+  Je as DemlTextarea,
+  Ye as DemlThemeToggle,
+  qe as DemlTileBoard,
   je as DemlTimeline,
   Ve as DemlToast,
   Ze as DemlToggle,
-  Ye as DemlTooltip,
-  Qe as DemlWizard,
-  Qa as componentNames,
-  Xe as defineAccordion,
-  $e as defineActivityList,
-  Ya as defineAll,
-  et as defineAppFooter,
-  tt as defineAppHeader,
-  at as defineAppLayout,
-  st as defineAppSidebar,
-  it as defineAreaChart,
+  Qe as DemlTooltip,
+  Xe as DemlWizard,
+  $a as componentNames,
+  $e as defineAccordion,
+  et as defineActivityList,
+  Xa as defineAll,
+  tt as defineAppFooter,
+  at as defineAppHeader,
+  st as defineAppLayout,
+  it as defineAppSidebar,
+  lt as defineAreaChart,
   nt as defineArticle,
-  lt as defineAutocomplete,
-  dt as defineAvatar,
-  rt as defineBadge,
+  dt as defineAutocomplete,
+  rt as defineAvatar,
+  ct as defineBadge,
   ot as defineBanner,
-  ct as defineBarChart,
-  mt as defineBox,
-  ut as defineBrand,
-  ht as defineBreadcrumbs,
-  pt as defineBulkToolbar,
-  ft as defineButton,
-  gt as defineButtonGroup,
-  bt as defineCallout,
-  Nt as defineCard,
+  mt as defineBarChart,
+  ut as defineBox,
+  ht as defineBrand,
+  pt as defineBreadcrumbs,
+  ft as defineBulkToolbar,
+  gt as defineButton,
+  bt as defineButtonGroup,
+  Nt as defineCallout,
+  vt as defineCard,
   yt as defineCardGrid,
-  vt as defineChart,
-  Ht as defineChartCard,
-  _t as defineChartEmptyState,
-  Et as defineChartPanel,
-  Ct as defineCheckbox,
-  Tt as defineCheckboxField,
-  Lt as defineCluster,
-  Mt as defineCommand,
-  kt as defineConfirmDialog,
-  xt as defineContainer,
-  Dt as defineContentLayout,
-  St as defineDashboardGrid,
-  wt as defineDialog,
-  Pt as defineDisclosure,
-  At as defineDropdown,
-  Bt as defineEmptyState,
-  Ft as defineErrorState,
-  Gt as defineField,
-  It as defineFileUpload,
+  Ht as defineChart,
+  _t as defineChartCard,
+  Et as defineChartEmptyState,
+  Ct as defineChartPanel,
+  Tt as defineCheckbox,
+  Lt as defineCheckboxField,
+  Mt as defineCluster,
+  kt as defineCommand,
+  xt as defineConfirmDialog,
+  Dt as defineContainer,
+  St as defineContentLayout,
+  wt as defineDashboardGrid,
+  Pt as defineDialog,
+  At as defineDisclosure,
+  Bt as defineDropdown,
+  Ft as defineEmptyState,
+  Gt as defineErrorState,
+  It as defineField,
+  zt as defineFileUpload,
   Rt as defineFlashbar,
-  zt as defineFormGrid,
-  Ot as defineFormPanel,
-  Ut as defineFormSection,
-  Wt as defineGrid,
+  Ot as defineFormGrid,
+  Ut as defineFormPanel,
+  Wt as defineFormSection,
+  Kt as defineGrid,
   Jt as defineHelpPanel,
-  Kt as defineHudPanel,
+  Yt as defineHudPanel,
   qt as defineIcon,
   jt as defineInputDate,
   Vt as defineInputEmail,
   Zt as defineInputNumber,
-  Yt as defineInputPassword,
-  Qt as defineInputRange,
-  Xt as defineInputSearch,
-  $t as defineInputText,
-  ea as defineInputTime,
-  ta as defineKbd,
-  aa as defineLabel,
-  sa as defineLoadingOverlay,
-  ia as defineMetricCard,
+  Qt as defineInputPassword,
+  Xt as defineInputRange,
+  $t as defineInputSearch,
+  ea as defineInputText,
+  ta as defineInputTime,
+  aa as defineKbd,
+  sa as defineLabel,
+  ia as defineLoadingOverlay,
+  la as defineMetricCard,
   na as defineMetricList,
-  la as defineMicrocard,
-  da as defineMicrocardGrid,
-  ra as defineNavbar,
+  da as defineMicrocard,
+  ra as defineMicrocardGrid,
+  ca as defineNavbar,
   oa as defineNavigationMenu,
-  ca as definePageBackLink,
-  ma as definePageHeader,
-  ua as definePageSection,
-  ha as definePageShell,
-  pa as definePageTemplate,
-  fa as definePagination,
-  ga as definePanelGrid,
-  ba as definePopover,
-  Na as defineProfile,
+  ma as definePageBackLink,
+  ua as definePageHeader,
+  ha as definePageSection,
+  pa as definePageShell,
+  fa as definePageTemplate,
+  ga as definePagination,
+  ba as definePanelGrid,
+  Na as definePopover,
+  va as defineProfile,
   ya as defineProgress,
-  va as definePropertyFilter,
-  Ha as defineRadioGroup,
-  _a as defineScrollArea,
-  Ea as defineSection,
-  Ca as defineSectionHeader,
-  Ta as defineSectionTemplate,
-  La as defineSelect,
-  Ma as defineSeparator,
-  ka as defineSheet,
-  xa as defineSidebarNav,
-  Da as defineSkeleton,
-  Sa as defineSkipLink,
-  wa as defineSpinner,
-  Pa as defineSplitPanel,
-  Aa as defineStack,
-  Ba as defineStatCard,
-  Fa as defineStatusBadge,
-  Ga as defineStatusCard,
-  Ia as defineStatusPill,
+  Ha as definePropertyFilter,
+  _a as defineRadioGroup,
+  Ea as defineScrollArea,
+  Ca as defineSection,
+  Ta as defineSectionHeader,
+  La as defineSectionTemplate,
+  Ma as defineSelect,
+  ka as defineSeparator,
+  xa as defineSheet,
+  Da as defineSidebarNav,
+  Sa as defineSkeleton,
+  wa as defineSkipLink,
+  Pa as defineSpinner,
+  Aa as defineSplitPanel,
+  Ba as defineStack,
+  Fa as defineStatCard,
+  Ga as defineStatusBadge,
+  Ia as defineStatusCard,
+  za as defineStatusPill,
   Ra as defineSwitch,
-  za as defineTable,
-  Oa as defineTabs,
-  Ua as defineTextField,
-  Wa as defineTextarea,
+  Oa as defineTable,
+  Ua as defineTabs,
+  Wa as defineTextField,
+  Ka as defineTextarea,
   Ja as defineThemeToggle,
-  Ka as defineTimeline,
-  qa as defineToast,
-  ja as defineToggle,
-  Va as defineTooltip,
-  Za as defineWizard
+  Ya as defineTileBoard,
+  qa as defineTimeline,
+  ja as defineToast,
+  Va as defineToggle,
+  Za as defineTooltip,
+  Qa as defineWizard
 };
 
 //# sourceMappingURL=deml-ui.js.map

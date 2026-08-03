@@ -1,7 +1,4 @@
-/* Component: Chart Empty State
-   Markup: components/chart-empty-state/chart-empty-state.html
-   Barebones structure — customize freely.
-*/
+/* Component: chart-empty-state — plot-band placeholder */
 
 .component--chart-empty-state .demo {
   display: grid;
@@ -10,14 +7,30 @@
 
 .chart-empty-state {
   display: grid;
+  gap: var(--space-2);
   place-items: center;
-  gap: var(--space-sm);
-  min-height: 10rem;
-  padding: var(--space-lg);
-  border: 1px dashed var(--line);
-  border-radius: 0;
   text-align: center;
-  color: var(--muted);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--chart-min-block);
+  padding: var(--module-pad);
+  border: var(--border-width) dashed var(--color-plot-border);
+  background-color: var(--chart-plot);
+  color: var(--chart-label);
 }
-.chart-empty-state__title { margin: 0; color: var(--ink); font-weight: 600; }
-.chart-empty-state__description { margin: 0; }
+
+.chart-empty-state__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--chart-value);
+}
+
+.chart-empty-state__description {
+  margin: 0;
+  max-width: var(--content-width-sm);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--tracking-intro);
+}
