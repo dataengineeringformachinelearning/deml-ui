@@ -1,0 +1,18 @@
+# deml-ui — Cursor rules
+
+This repo is the DEML design system (new-from-the-start / atelier).
+
+## Do
+
+- Change visuals in `components/<name>/` and `styles/tokens.css` / `styles/base.css`.
+- Keep an 8px grid, dual `data-theme`, equal tile gaps, and locked chart aspect.
+- Run `npm run sync` after adding/removing component folders; `npm run build` before release.
+- Prefer WCAG 2.0 AA patterns already used in base + headless primitives.
+
+## Do not
+
+- Reintroduce Viking-UI naming, void-black / electric `#2176ff` suite chrome, or `--viking-*` tokens.
+- Hand-edit generated wrappers under `src/angular/markup/` or `generated/` — regenerate via sync.
+- Break the chart aspect contract or invent one-off spacing outside the token scale.
+
+Consumer guidance for the Angular app lives in deml `THEME.md` / `AGENTS.md`.
