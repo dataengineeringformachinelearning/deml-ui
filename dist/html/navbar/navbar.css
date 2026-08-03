@@ -7,9 +7,9 @@
 
 /* Navbar — full-bleed fixed top bar; mobile-first */
 
-/* Offset document flow under the fixed bar */
+/* Offset document flow under the fixed bar (inset + hit + inset) */
 body:has(.site-navbar) {
-  padding-top: calc(var(--space-2) * 2 + var(--hit-target));
+  padding-top: calc(var(--navbar-inset) * 2 + var(--navbar-hit));
 }
 
 .site-navbar {
@@ -23,7 +23,9 @@ body:has(.site-navbar) {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: var(--navbar-inset);
+  /* Equal inner padding on all four sides */
+  padding-block: var(--navbar-inset);
+  padding-inline: var(--navbar-inset);
   color: var(--navbar-fg);
   background-color: var(--navbar-bg);
   background-image: linear-gradient(
