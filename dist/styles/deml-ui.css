@@ -1,55 +1,67 @@
 /* Full library stylesheet for package consumers (tokens + base + components) */
 /* inlined: styles/tokens.css */
 /* =========================================================
-   deml-ui design tokens — new-from-the-start warm ash system
+   deml-ui design tokens — atelier system (8px grid, dual theme)
    Import via: deml-ui/tokens.css  or  deml-ui/styles.css (full kit)
+   Contrast targets: WCAG 2.0 AA for text and UI chrome.
    ========================================================= */
 
 :root {
   color-scheme: dark;
 
-  /* Surfaces — warm ash ground, light elevated modules */
-  --color-bg: #35312d;
-  --color-surface: #1c1916;
-  --color-card: #f3f0ea;
-  --color-card-text: #1c1916;
-  --color-card-text-secondary: #4a453f;
-  --color-card-border: color-mix(in srgb, #8a847c 38%, #f3f0ea);
+  /* Surfaces — limestone plaster modules on deep ink ground */
+  --color-bg: #2a2622;
+  --color-surface: #1a1815;
+  --color-card: #f4f0e6;
+  --color-card-text: #1a1815;
+  --color-card-text-secondary: #4a443c;
+  --color-card-border: color-mix(in srgb, #6e675c 32%, #f4f0e6);
 
-  /* Fills — AA with white text on solid CTAs */
-  --color-primary: #2f5f8f;
-  --color-primary-hover: color-mix(in srgb, #2f5f8f 78%, #ffffff);
-  --color-accent-gold: #3f6b54;
-  --color-accent-gold-hover: color-mix(in srgb, #3f6b54 78%, #ffffff);
-  --color-accent-red: #9e3d47;
-  --color-accent-red-hover: color-mix(in srgb, #9e3d47 78%, #ffffff);
+  /* Fills — solid CTAs meet AA with --color-on-primary */
+  --color-primary: #1f4d66;
+  --color-primary-hover: color-mix(in srgb, #1f4d66 82%, #ffffff);
+  --color-accent-gold: #3a5446;
+  --color-accent-gold-hover: color-mix(in srgb, #3a5446 82%, #ffffff);
+  --color-accent-red: #8b3a3f;
+  --color-accent-red-hover: color-mix(in srgb, #8b3a3f 82%, #ffffff);
+  --color-brass: #8a6f35;
+  --color-brass-hover: color-mix(in srgb, #8a6f35 78%, #ffffff);
 
   /* Text on page ground */
-  --color-text: #f3f0ea;
-  --color-text-secondary: #c6c0b7;
-  --color-highlight: #9bb8d4;
-  --color-highlight-hover: #c2d4e6;
+  --color-text: #f4f0e6;
+  --color-text-secondary: #c4bdb0;
+  --color-highlight: #c4a45a;
+  --color-highlight-hover: #e0c98a;
 
-  /* Chart plot — never theme-invert the series */
-  --color-plot: #1c1916;
-  --color-plot-ink: #f3f0ea;
-  --color-plot-muted: #c6c0b7;
-  --color-plot-grid: color-mix(in srgb, #c6c0b7 22%, transparent);
-  --color-plot-baseline: color-mix(in srgb, #c6c0b7 35%, transparent);
-  --color-plot-border: color-mix(in srgb, #c6c0b7 24%, #1c1916);
+  /* Chart plot — series colors never theme-invert */
+  --color-plot: #1a1815;
+  --color-plot-ink: #f4f0e6;
+  --color-plot-muted: #c4bdb0;
+  --color-plot-grid: color-mix(in srgb, #c4bdb0 22%, transparent);
+  --color-plot-baseline: color-mix(in srgb, #c4bdb0 35%, transparent);
+  --color-plot-border: color-mix(in srgb, #c4bdb0 24%, #1a1815);
+
+  /* Locked chart paint (consumers may override accent only) */
+  --chart-plot: var(--color-plot);
+  --chart-grid: var(--color-plot-grid);
+  --chart-baseline: var(--color-plot-baseline);
+  --chart-accent: var(--color-primary);
+  --chart-node: var(--color-plot-ink);
+  --chart-label: var(--color-plot-muted);
+  --chart-value: var(--color-plot-ink);
 
   /* UI */
-  --color-border: color-mix(in srgb, #c6c0b7 30%, #35312d);
-  --color-focus: #f3f0ea;
-  --color-error: #9e3d47;
-  --color-success: #3f6b54;
+  --color-border: color-mix(in srgb, #c4bdb0 28%, #2a2622);
+  --color-focus: #e0c98a;
+  --color-error: #8b3a3f;
+  --color-success: #3a5446;
 
-  --shadow-sm: 0 0 0 1px color-mix(in srgb, #1c1916 30%, transparent);
-  --shadow-md: 0 8px 32px color-mix(in srgb, #1c1916 36%, transparent);
-  --shadow-card: 0 8px 32px color-mix(in srgb, #1c1916 26%, transparent),
-    0 0 0 1px color-mix(in srgb, #1c1916 12%, transparent);
+  --shadow-sm: 0 0 0 1px color-mix(in srgb, #1a1815 28%, transparent);
+  --shadow-md: 0 8px 32px color-mix(in srgb, #1a1815 40%, transparent);
+  --shadow-card: 0 8px 32px color-mix(in srgb, #1a1815 28%, transparent),
+    0 0 0 1px color-mix(in srgb, #1a1815 12%, transparent);
 
-  /* Semantic aliases (deml app + legacy deml-ui) */
+  /* Semantic aliases */
   --color-background: var(--color-bg);
   --color-text-primary: var(--color-text);
   --color-text-muted: var(--color-text-secondary);
@@ -63,10 +75,10 @@
   --color-on-accent: #ffffff;
   --color-on-dark: var(--color-text);
   --color-selection: color-mix(in srgb, var(--color-primary) 28%, transparent);
-  --shadow-color: color-mix(in srgb, #1c1916 36%, transparent);
-  --shadow-color-soft: color-mix(in srgb, #1c1916 20%, transparent);
+  --shadow-color: color-mix(in srgb, #1a1815 40%, transparent);
+  --shadow-color-soft: color-mix(in srgb, #1a1815 22%, transparent);
 
-  /* Public deml-ui aliases used by existing component CSS */
+  /* Public deml-ui aliases */
   --bg-primary: var(--color-bg);
   --bg-secondary: var(--color-surface);
   --text-primary: var(--color-text);
@@ -108,13 +120,14 @@
   --space-90: calc(var(--grid) * 90);
   --space-160: calc(var(--grid) * 160);
 
-  /* Legacy spacing aliases */
   --space-sm: var(--space-2);
   --space-md: var(--space-3);
   --space-lg: var(--space-6);
   --space-xl: var(--space-8);
   --gutter: var(--space-2);
   --demo-padding: var(--space-3);
+  --module-pad: var(--space-3);
+  --module-pad-lg: var(--space-4);
 
   --hit-target: var(--space-6);
   --icon-size: var(--space-4);
@@ -127,33 +140,48 @@
   --radius-md: 0;
   --radius-lg: 0;
 
+  /*
+   * Chart contract — fixed aspect everywhere.
+   * Plots must never squash, stretch, or freely resize outside these bounds.
+   */
   --chart-aspect: 2.4;
   --chart-spark-aspect: 2.4;
   --chart-min-block: calc(var(--grid) * 20);
-  --chart-max-block: calc(var(--grid) * 40);
-  --chart-spark-min-block: calc(var(--grid) * 12);
-  --chart-spark-max-block: calc(var(--grid) * 25);
+  --chart-max-block: calc(var(--grid) * 28);
+  --chart-spark-min-block: calc(var(--grid) * 10);
+  --chart-spark-max-block: calc(var(--grid) * 14);
   --chart-panel-block: var(--chart-min-block);
   --chart-plot-block: var(--chart-min-block);
   --chart-inset: var(--space-2);
+
+  /* Equal tile rhythm — one row unit; spans multiply evenly */
   --tile-gap: var(--space-2);
-  --tile-row-micro: var(--space-22);
-  --tile-row-card: var(--space-52);
+  --tile-row-unit: calc(var(--grid) * 10);
+  --tile-row-micro: calc(var(--tile-row-unit) * 2);
+  --tile-row-card: calc(var(--tile-row-unit) * 4);
+  --tile-cols: 6;
 
-  --font-size-xs: 0.875rem;
-  --font-size-sm: var(--space-2);
-  --font-size-md: var(--space-3);
-  --font-size-lg: var(--space-4);
-  --font-size-xl: var(--space-6);
-  --font-size-2xl: var(--space-8);
+  /* Type — bold display + letterspaced marks */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 2rem;
+  --font-size-xl: 3rem;
+  --font-size-2xl: 4rem;
   --font-family: "Geist Variable", "Geist", system-ui, -apple-system, sans-serif;
+  --font-display: "Syne", var(--font-family);
   --font-sans: var(--font-family);
-  --font-serif: var(--font-family);
+  --font-serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-weight-display: 800;
+  --font-weight-bold: 700;
+  --font-weight-medium: 600;
+  --font-weight-regular: 400;
 
-  --tracking-eyebrow: 0.22em;
-  --tracking-intro: 0.06em;
-  --tracking-display: -0.04em;
-  --tracking-tight: -0.025em;
+  --tracking-eyebrow: 0.28em;
+  --tracking-intro: 0.12em;
+  --tracking-mark: 0.22em;
+  --tracking-display: -0.03em;
+  --tracking-tight: -0.02em;
 
   --content-width: 1200px;
   --content-width-sm: 600px;
@@ -165,8 +193,8 @@
   --bp-md: 800px;
 
   --focus-ring: 0 0 0 var(--focus-ring-width) var(--color-focus);
-  --white: #f3f0ea;
-  --black: #1c1916;
+  --white: #f4f0e6;
+  --black: #1a1815;
   --violet: var(--color-primary);
   --violet-soft: var(--color-primary-hover);
   --twilight: var(--color-highlight);
@@ -179,44 +207,51 @@
 .dark {
   color-scheme: dark;
 
-  --color-bg: #35312d;
-  --color-surface: #1c1916;
-  --color-card: #f3f0ea;
-  --color-card-text: #1c1916;
-  --color-card-text-secondary: #4a453f;
-  --color-card-border: color-mix(in srgb, #8a847c 38%, #f3f0ea);
-  --color-primary: #2f5f8f;
-  --color-primary-hover: color-mix(in srgb, #2f5f8f 78%, #ffffff);
-  --color-accent-gold: #3f6b54;
-  --color-accent-gold-hover: color-mix(in srgb, #3f6b54 78%, #ffffff);
-  --color-accent-red: #9e3d47;
-  --color-accent-red-hover: color-mix(in srgb, #9e3d47 78%, #ffffff);
+  --color-bg: #2a2622;
+  --color-surface: #1a1815;
+  --color-card: #f4f0e6;
+  --color-card-text: #1a1815;
+  --color-card-text-secondary: #4a443c;
+  --color-card-border: color-mix(in srgb, #6e675c 32%, #f4f0e6);
+  --color-primary: #1f4d66;
+  --color-primary-hover: color-mix(in srgb, #1f4d66 82%, #ffffff);
+  --color-accent-gold: #3a5446;
+  --color-accent-gold-hover: color-mix(in srgb, #3a5446 82%, #ffffff);
+  --color-accent-red: #8b3a3f;
+  --color-accent-red-hover: color-mix(in srgb, #8b3a3f 82%, #ffffff);
+  --color-brass: #8a6f35;
+  --color-brass-hover: color-mix(in srgb, #8a6f35 78%, #ffffff);
   --color-accent: var(--color-accent-red);
   --color-accent-hover: var(--color-accent-red-hover);
-  --color-text: #f3f0ea;
-  --color-text-secondary: #c6c0b7;
-  --color-plot: #1c1916;
-  --color-plot-ink: #f3f0ea;
-  --color-plot-muted: #c6c0b7;
-  --color-plot-grid: color-mix(in srgb, #c6c0b7 22%, transparent);
-  --color-plot-baseline: color-mix(in srgb, #c6c0b7 35%, transparent);
-  --color-plot-border: color-mix(in srgb, #c6c0b7 24%, #1c1916);
-  --color-border: color-mix(in srgb, #c6c0b7 30%, #35312d);
-  --color-focus: #f3f0ea;
-  --color-error: #9e3d47;
-  --color-success: #3f6b54;
+  --color-text: #f4f0e6;
+  --color-text-secondary: #c4bdb0;
+  --color-plot: #1a1815;
+  --color-plot-ink: #f4f0e6;
+  --color-plot-muted: #c4bdb0;
+  --color-plot-grid: color-mix(in srgb, #c4bdb0 22%, transparent);
+  --color-plot-baseline: color-mix(in srgb, #c4bdb0 35%, transparent);
+  --color-plot-border: color-mix(in srgb, #c4bdb0 24%, #1a1815);
+  --chart-plot: var(--color-plot);
+  --chart-grid: var(--color-plot-grid);
+  --chart-baseline: var(--color-plot-baseline);
+  --chart-label: var(--color-plot-muted);
+  --chart-value: var(--color-plot-ink);
+  --color-border: color-mix(in srgb, #c4bdb0 28%, #2a2622);
+  --color-focus: #e0c98a;
+  --color-error: #8b3a3f;
+  --color-success: #3a5446;
   --color-olive: var(--color-plot);
-  --color-highlight: #9bb8d4;
-  --color-highlight-hover: #c2d4e6;
+  --color-highlight: #c4a45a;
+  --color-highlight-hover: #e0c98a;
   --color-on-primary: #ffffff;
   --color-on-accent: #ffffff;
   --color-selection: color-mix(in srgb, var(--color-primary) 28%, transparent);
-  --shadow-sm: 0 0 0 1px color-mix(in srgb, #1c1916 30%, transparent);
-  --shadow-md: 0 8px 32px color-mix(in srgb, #1c1916 36%, transparent);
-  --shadow-card: 0 8px 32px color-mix(in srgb, #1c1916 26%, transparent),
-    0 0 0 1px color-mix(in srgb, #1c1916 12%, transparent);
-  --shadow-color: color-mix(in srgb, #1c1916 36%, transparent);
-  --shadow-color-soft: color-mix(in srgb, #1c1916 20%, transparent);
+  --shadow-sm: 0 0 0 1px color-mix(in srgb, #1a1815 28%, transparent);
+  --shadow-md: 0 8px 32px color-mix(in srgb, #1a1815 40%, transparent);
+  --shadow-card: 0 8px 32px color-mix(in srgb, #1a1815 28%, transparent),
+    0 0 0 1px color-mix(in srgb, #1a1815 12%, transparent);
+  --shadow-color: color-mix(in srgb, #1a1815 40%, transparent);
+  --shadow-color-soft: color-mix(in srgb, #1a1815 22%, transparent);
 
   --bg-primary: var(--color-bg);
   --bg-secondary: var(--color-surface);
@@ -236,44 +271,51 @@
 .light {
   color-scheme: light;
 
-  --color-bg: #d4cec5;
-  --color-surface: #f3f0ea;
-  --color-card: #faf8f4;
-  --color-card-text: #1c1916;
-  --color-card-text-secondary: #4a453f;
-  --color-card-border: color-mix(in srgb, #4a453f 20%, #d4cec5);
-  --color-primary: #2f5f8f;
-  --color-primary-hover: color-mix(in srgb, #2f5f8f 78%, #1c1916);
-  --color-accent-gold: #3f6b54;
-  --color-accent-gold-hover: color-mix(in srgb, #3f6b54 78%, #1c1916);
-  --color-accent-red: #9e3d47;
-  --color-accent-red-hover: color-mix(in srgb, #9e3d47 78%, #1c1916);
+  --color-bg: #e4ddd0;
+  --color-surface: #f4f0e6;
+  --color-card: #fbf8f1;
+  --color-card-text: #1a1815;
+  --color-card-text-secondary: #4a443c;
+  --color-card-border: color-mix(in srgb, #4a443c 18%, #e4ddd0);
+  --color-primary: #1f4d66;
+  --color-primary-hover: color-mix(in srgb, #1f4d66 82%, #1a1815);
+  --color-accent-gold: #3a5446;
+  --color-accent-gold-hover: color-mix(in srgb, #3a5446 82%, #1a1815);
+  --color-accent-red: #8b3a3f;
+  --color-accent-red-hover: color-mix(in srgb, #8b3a3f 82%, #1a1815);
+  --color-brass: #6b5528;
+  --color-brass-hover: color-mix(in srgb, #6b5528 82%, #1a1815);
   --color-accent: var(--color-accent-red);
   --color-accent-hover: var(--color-accent-red-hover);
-  --color-text: #1c1916;
-  --color-text-secondary: #4a453f;
-  --color-plot: #1c1916;
-  --color-plot-ink: #f3f0ea;
-  --color-plot-muted: #c6c0b7;
-  --color-plot-grid: color-mix(in srgb, #c6c0b7 22%, transparent);
-  --color-plot-baseline: color-mix(in srgb, #c6c0b7 35%, transparent);
-  --color-plot-border: color-mix(in srgb, #c6c0b7 24%, #1c1916);
-  --color-border: color-mix(in srgb, #4a453f 26%, #d4cec5);
-  --color-focus: #2f5f8f;
-  --color-error: #9e3d47;
-  --color-success: #3f6b54;
+  --color-text: #1a1815;
+  --color-text-secondary: #4a443c;
+  --color-plot: #1a1815;
+  --color-plot-ink: #f4f0e6;
+  --color-plot-muted: #c4bdb0;
+  --color-plot-grid: color-mix(in srgb, #c4bdb0 22%, transparent);
+  --color-plot-baseline: color-mix(in srgb, #c4bdb0 35%, transparent);
+  --color-plot-border: color-mix(in srgb, #c4bdb0 24%, #1a1815);
+  --chart-plot: var(--color-plot);
+  --chart-grid: var(--color-plot-grid);
+  --chart-baseline: var(--color-plot-baseline);
+  --chart-label: var(--color-plot-muted);
+  --chart-value: var(--color-plot-ink);
+  --color-border: color-mix(in srgb, #4a443c 22%, #e4ddd0);
+  --color-focus: #1f4d66;
+  --color-error: #8b3a3f;
+  --color-success: #3a5446;
   --color-olive: var(--color-plot);
-  --color-highlight: #2f5f8f;
-  --color-highlight-hover: color-mix(in srgb, #2f5f8f 78%, #1c1916);
+  --color-highlight: #6b5528;
+  --color-highlight-hover: #1f4d66;
   --color-on-primary: #ffffff;
   --color-on-accent: #ffffff;
-  --color-selection: color-mix(in srgb, var(--color-primary) 18%, transparent);
-  --shadow-sm: 0 0 0 1px color-mix(in srgb, #4a453f 14%, transparent);
-  --shadow-md: 0 8px 32px color-mix(in srgb, #1c1916 12%, transparent);
-  --shadow-card: 0 8px 32px color-mix(in srgb, #1c1916 10%, transparent),
-    0 0 0 1px color-mix(in srgb, #4a453f 12%, transparent);
-  --shadow-color: color-mix(in srgb, #1c1916 12%, transparent);
-  --shadow-color-soft: color-mix(in srgb, #1c1916 7%, transparent);
+  --color-selection: color-mix(in srgb, var(--color-primary) 16%, transparent);
+  --shadow-sm: 0 0 0 1px color-mix(in srgb, #4a443c 12%, transparent);
+  --shadow-md: 0 8px 32px color-mix(in srgb, #1a1815 10%, transparent);
+  --shadow-card: 0 8px 32px color-mix(in srgb, #1a1815 8%, transparent),
+    0 0 0 1px color-mix(in srgb, #4a443c 10%, transparent);
+  --shadow-color: color-mix(in srgb, #1a1815 10%, transparent);
+  --shadow-color-soft: color-mix(in srgb, #1a1815 6%, transparent);
 
   --bg-primary: var(--color-bg);
   --bg-secondary: var(--color-surface);
@@ -290,7 +332,7 @@
 }
 
 /* inlined: styles/base.css */
-/* Global base — mirrors deml new-from-the-start app chrome */
+/* Global base — atelier system chrome (8px grid, dual theme) */
 
 *,
 *::before,
@@ -301,11 +343,14 @@
 html {
   font-style: normal;
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.5;
   min-height: 100%;
   background-color: var(--color-bg);
   overflow-y: auto;
   scrollbar-gutter: stable;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -318,6 +363,16 @@ body {
   appearance: none;
   color: var(--color-text-primary);
   font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
+}
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .visually-hidden {
@@ -337,18 +392,28 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
-  line-height: 1.2;
+  line-height: 1.3;
   text-transform: uppercase;
   color: var(--color-highlight);
 }
 
 .type-display {
   margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(1.5rem, 3vw, var(--font-size-lg));
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, var(--font-size-xl));
+  font-weight: var(--font-weight-display);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.05;
+  color: var(--color-text);
+}
+
+.type-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, var(--font-size-md));
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
   line-height: 1.15;
   color: var(--color-text);
@@ -357,11 +422,22 @@ body {
 .type-intro,
 .lede {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: var(--font-size-sm);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.5;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.type-mark {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-mark);
+  line-height: 1.3;
+  text-transform: uppercase;
   color: var(--color-text-secondary);
 }
 
@@ -385,24 +461,31 @@ body {
   background-image:
     linear-gradient(
       90deg,
-      color-mix(in srgb, var(--color-surface) 18%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 22%, transparent) 0,
       transparent var(--space-2),
       transparent calc(100% - var(--space-2)),
-      color-mix(in srgb, var(--color-surface) 18%, transparent) 100%
+      color-mix(in srgb, var(--color-surface) 22%, transparent) 100%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent calc(var(--grid) * 7),
+      color-mix(in srgb, var(--color-brass) 4%, transparent) calc(var(--grid) * 7),
+      color-mix(in srgb, var(--color-brass) 4%, transparent) calc(var(--grid) * 8)
     ),
     radial-gradient(
       90% 40% at 50% 0%,
-      color-mix(in srgb, var(--color-primary) 12%, transparent) 0%,
+      color-mix(in srgb, var(--color-primary) 14%, transparent) 0%,
       transparent 70%
     ),
     radial-gradient(
       55% 30% at 85% 8%,
-      color-mix(in srgb, var(--color-accent-gold) 8%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent-gold) 10%, transparent) 0%,
       transparent 68%
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--color-surface) 42%, var(--color-bg)) 0%,
+      color-mix(in srgb, var(--color-surface) 48%, var(--color-bg)) 0%,
       var(--color-bg) var(--space-10)
     );
 }
@@ -3211,7 +3294,7 @@ progress {
   height: 100%;
   min-height: 100%;
   margin: 0;
-  padding: var(--space-6) var(--space-3) 0;
+  padding: var(--space-6) var(--module-pad) 0;
   overflow: hidden;
   text-align: center;
   color: var(--color-card-text);
@@ -3248,20 +3331,22 @@ progress {
 
 .card-heading {
   margin: 0 0 var(--space-2);
+  font-family: var(--font-display);
   font-size: clamp(1.75rem, 4vw, var(--font-size-lg));
-  font-weight: 700;
+  font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: 1.1;
+  line-height: 1.05;
   color: var(--color-card-text);
 }
 
 .card-subtext {
   margin: 0 0 var(--space-4);
   max-width: 32ch;
+  font-family: var(--font-serif);
   font-size: var(--font-size-sm);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--color-card-text-secondary);
 }
 
@@ -3437,7 +3522,7 @@ progress {
   height: 100%;
   min-height: 100%;
   margin: 0;
-  padding: var(--space-3);
+  padding: var(--module-pad);
   overflow: hidden;
   color: var(--color-card-text);
   background-color: var(--color-card);
@@ -3464,9 +3549,9 @@ progress {
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
-  line-height: 1.2;
+  line-height: 1.3;
   text-transform: uppercase;
   color: var(--stat-accent);
 }
@@ -3500,9 +3585,9 @@ progress {
 .stat-card-value {
   margin: 0;
   flex: 0 0 auto;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
+  font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: 0.95;
   color: var(--color-card-text);
@@ -3520,16 +3605,19 @@ progress {
 
 .stat-card-spark {
   display: flex;
-  flex: 1 1 auto;
-  align-items: stretch;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-height: var(--chart-spark-min-block);
+  max-height: var(--chart-spark-max-block);
   margin-top: var(--space-3);
 }
 
 .stat-card-spark > :first-child {
   width: 100%;
-  min-height: 100%;
+  height: auto;
+  max-height: var(--chart-spark-max-block);
 }
 
 :host([data-size='sm']) .stat-card-spark {
@@ -3545,7 +3633,7 @@ progress {
 
 @media screen and (min-width: 800px) {
   .stat-card {
-    padding: var(--space-4);
+    padding: var(--module-pad-lg);
   }
 }
 
@@ -4337,7 +4425,7 @@ caption {
 
 .area-chart-frame {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   align-items: stretch;
   justify-content: center;
   box-sizing: border-box;
@@ -4346,19 +4434,25 @@ caption {
   padding: var(--chart-inset);
   background-color: var(--chart-plot);
   border: var(--border-width) solid var(--color-plot-border);
+  /* Locked plot box — identical geometry across the app */
+  aspect-ratio: var(--chart-aspect);
+  height: auto;
+  max-width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
+  max-height: var(--chart-max-block);
+  min-height: var(--chart-min-block);
+  margin-inline: auto;
+  overflow: hidden;
 }
 
-/*
- * Full plot — fill card width; height from aspect.
- * Soft floor/ceiling on the 8px grid; never squash the viewBox.
- */
-:host(:not([data-variant='spark'])) .area-chart-frame {
-  aspect-ratio: var(--chart-aspect);
-  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
-  height: auto;
-  min-height: var(--chart-min-block);
-  max-height: var(--chart-max-block);
-  margin-inline: auto;
+:host([data-variant='spark']) .area-chart-frame,
+app-area-chart[data-variant='spark'] .area-chart-frame {
+  aspect-ratio: var(--chart-spark-aspect);
+  max-width: min(100%, calc(var(--chart-spark-max-block) * var(--chart-spark-aspect)));
+  min-height: var(--chart-spark-min-block);
+  max-height: var(--chart-spark-max-block);
+  padding: 0;
+  border: 0;
+  background-color: transparent;
 }
 
 .area-chart {
@@ -4366,7 +4460,10 @@ caption {
   width: 100%;
   height: 100%;
   min-height: 0;
+  max-height: 100%;
   overflow: visible;
+  object-fit: contain;
+  flex: 1 1 auto;
 }
 
 .area-chart-grid-v {
@@ -4419,28 +4516,16 @@ caption {
   fill: var(--chart-label);
   font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-mark);
 }
 
 .area-chart-y {
   font-size: 10px;
 }
 
-/* Spark — fills the KPI slot width; same aspect contract as full plots */
-:host([data-variant='spark']) .area-chart-frame {
-  width: min(100%, calc(var(--chart-spark-max-block) * var(--chart-spark-aspect)));
-  aspect-ratio: var(--chart-spark-aspect);
-  height: auto;
-  min-height: var(--chart-spark-min-block);
-  max-height: var(--chart-spark-max-block);
-  margin-inline: auto;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-:host([data-variant='spark']) .area-chart {
+:host([data-variant='spark']) .area-chart,
+app-area-chart[data-variant='spark'] .area-chart {
   min-height: 0;
 }
 
@@ -4568,23 +4653,27 @@ caption {
 
 .banner .preheader {
   margin: 0 0 var(--space-3);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
   color: var(--color-highlight);
 }
 
 .banner .banner-heading {
-  max-width: 16ch;
+  max-width: 14ch;
   margin-bottom: var(--space-3);
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, var(--font-size-2xl));
+  font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
+  line-height: 0.98;
   color: var(--color-text);
 }
 
 .banner .lede {
-  max-width: 40ch;
+  max-width: 42ch;
   margin: 0 0 var(--space-5);
+  font-family: var(--font-serif);
   letter-spacing: var(--tracking-intro);
   color: var(--color-text-secondary);
 }
@@ -4647,15 +4736,18 @@ caption {
 
 .bar-chart {
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   justify-content: space-between;
   gap: var(--space-2);
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  max-width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
+  aspect-ratio: var(--chart-aspect);
+  height: auto;
   min-height: var(--chart-min-block);
-  margin: 0;
+  max-height: var(--chart-max-block);
+  margin: 0 auto;
   padding: var(--space-3);
   overflow: auto;
   list-style: none;
@@ -4727,24 +4819,57 @@ caption {
 }
 
 /* inlined: components/card-grid/card-grid.css */
-/* Component: card-grid — from deml new-from-the-start */
+/* Component: card-grid — equal-height modules on the shared tile gap */
 
 .component--card-grid .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Card grid — equal-height tiles; gutters from shared --tile-gap */
+app-card-grid,
+deml-card-grid,
+.card-grid,
+:host {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: var(--tile-gap);
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: var(--tile-row-card);
+  align-items: stretch;
+  justify-items: stretch;
+}
 
-:host ::ng-deep > * {
+app-card-grid > *,
+deml-card-grid > *,
+.card-grid > *,
+:host > * {
   min-width: 0;
   min-height: 0;
+  width: 100%;
   height: 100%;
   align-self: stretch;
 }
 
 @media screen and (min-width: 800px) {
+  app-card-grid,
+  deml-card-grid,
+  .card-grid,
+  :host {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+@media screen and (min-width: 1200px) {
+  app-card-grid,
+  deml-card-grid,
+  .card-grid,
+  :host {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
 /* inlined: components/chart-card/chart-card.css */
 /* Component: chart-card — from deml new-from-the-start */
@@ -4764,13 +4889,13 @@ caption {
   height: 100%;
   min-height: 100%;
   margin: 0;
-  padding: var(--space-3);
+  padding: var(--module-pad);
   overflow: clip;
   color: var(--color-card-text);
   background-color: var(--color-card);
   background-image: linear-gradient(
     165deg,
-    color-mix(in srgb, var(--chart-accent) 14%, var(--color-card)) 0%,
+    color-mix(in srgb, var(--chart-accent) 12%, var(--color-card)) 0%,
     var(--color-card) 48%
   );
   border: var(--border-width) solid var(--color-card-border);
@@ -4788,9 +4913,9 @@ caption {
 
 .chart-card-heading {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: var(--font-size-sm);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
   line-height: 1.2;
   color: var(--color-card-text);
@@ -4800,7 +4925,7 @@ caption {
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--chart-accent);
@@ -4810,33 +4935,39 @@ caption {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 0;
   min-height: var(--chart-min-block);
-  height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-:host ::ng-deep .chart-card-body > * {
+/* Charts keep intrinsic aspect — never stretch to fill the card. */
+.chart-card-body > *,
+:host ::ng-deep .chart-card-body > *,
+app-chart-card .chart-card-body > * {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: var(--chart-max-block);
   min-width: 0;
   min-height: 0;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 }
 
 :host([data-size='hero']) .chart-card-heading,
 :host([data-size='lg']) .chart-card-heading,
-:host([data-size='wide']) .chart-card-heading {
+:host([data-size='wide']) .chart-card-heading,
+app-chart-card[data-size='hero'] .chart-card-heading,
+app-chart-card[data-size='lg'] .chart-card-heading,
+app-chart-card[data-size='wide'] .chart-card-heading {
   font-size: clamp(1.25rem, 2.5vw, var(--font-size-md));
   letter-spacing: var(--tracking-display);
 }
 
 @media screen and (min-width: 800px) {
   .chart-card {
-    padding: var(--space-4);
+    padding: var(--module-pad-lg);
   }
 }
 
@@ -4921,86 +5052,134 @@ caption {
 }
 
 /* inlined: components/dashboard-grid/dashboard-grid.css */
-/* Component: dashboard-grid — from deml new-from-the-start */
+/* Component: dashboard-grid — equal 8px-grid tile rhythm */
 
 .component--dashboard-grid .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Dashboard grid — row rhythm grows with fluid chart tiles */
+/*
+ * Equal-cell dashboard grid.
+ * Row unit is fixed; data-size spans multiply evenly — no ragged gaps.
+ * Works for Angular hosts (app-dashboard-grid / deml-dashboard-grid) and .dashboard-grid.
+ */
 
-:host ::ng-deep > [data-size] {
+app-dashboard-grid,
+deml-dashboard-grid,
+.dashboard-grid,
+:host {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: var(--tile-gap);
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: var(--tile-row-unit);
+  grid-auto-flow: dense;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+app-dashboard-grid > [data-size],
+deml-dashboard-grid > [data-size],
+.dashboard-grid > [data-size],
+:host > [data-size] {
   min-width: 0;
   min-height: 0;
   width: 100%;
   height: 100%;
   align-self: stretch;
+  justify-self: stretch;
 }
 
-:host ::ng-deep > [data-size='sm'] {
+app-dashboard-grid > [data-size='sm'],
+deml-dashboard-grid > [data-size='sm'],
+.dashboard-grid > [data-size='sm'],
+:host > [data-size='sm'] {
   grid-column: 1 / -1;
   grid-row: span 2;
 }
 
-:host ::ng-deep > [data-size='md'] {
+app-dashboard-grid > [data-size='md'],
+deml-dashboard-grid > [data-size='md'],
+.dashboard-grid > [data-size='md'],
+:host > [data-size='md'],
+app-dashboard-grid > [data-size='lg'],
+deml-dashboard-grid > [data-size='lg'],
+.dashboard-grid > [data-size='lg'],
+:host > [data-size='lg'],
+app-dashboard-grid > [data-size='wide'],
+deml-dashboard-grid > [data-size='wide'],
+.dashboard-grid > [data-size='wide'],
+:host > [data-size='wide'],
+app-dashboard-grid > [data-size='tall'],
+deml-dashboard-grid > [data-size='tall'],
+.dashboard-grid > [data-size='tall'],
+:host > [data-size='tall'],
+app-dashboard-grid > [data-size='hero'],
+deml-dashboard-grid > [data-size='hero'],
+.dashboard-grid > [data-size='hero'],
+:host > [data-size='hero'] {
   grid-column: 1 / -1;
-  grid-row: span 3;
-}
-
-:host ::ng-deep > [data-size='lg'],
-:host ::ng-deep > [data-size='wide'],
-:host ::ng-deep > [data-size='tall'],
-:host ::ng-deep > [data-size='hero'] {
-  grid-column: 1 / -1;
-  grid-row: span 3;
+  grid-row: span 4;
 }
 
 @media screen and (min-width: 800px) {
-  :host ::ng-deep > [data-size='sm'] {
+  app-dashboard-grid,
+  deml-dashboard-grid,
+  .dashboard-grid,
+  :host {
+    grid-template-columns: repeat(var(--tile-cols), minmax(0, 1fr));
+  }
+
+  app-dashboard-grid > [data-size='sm'],
+  deml-dashboard-grid > [data-size='sm'],
+  .dashboard-grid > [data-size='sm'],
+  :host > [data-size='sm'] {
     grid-column: span 2;
     grid-row: span 2;
   }
 
-  :host ::ng-deep > [data-size='md'] {
+  app-dashboard-grid > [data-size='md'],
+  deml-dashboard-grid > [data-size='md'],
+  .dashboard-grid > [data-size='md'],
+  :host > [data-size='md'] {
     grid-column: span 3;
-    grid-row: span 3;
+    grid-row: span 4;
   }
 
-  :host ::ng-deep > [data-size='lg'] {
+  app-dashboard-grid > [data-size='lg'],
+  deml-dashboard-grid > [data-size='lg'],
+  .dashboard-grid > [data-size='lg'],
+  :host > [data-size='lg'] {
     grid-column: span 3;
-    grid-row: span 3;
+    grid-row: span 4;
   }
 
-  :host ::ng-deep > [data-size='wide'] {
+  app-dashboard-grid > [data-size='wide'],
+  deml-dashboard-grid > [data-size='wide'],
+  .dashboard-grid > [data-size='wide'],
+  :host > [data-size='wide'] {
     grid-column: span 4;
-    grid-row: span 3;
+    grid-row: span 4;
   }
 
-  :host ::ng-deep > [data-size='tall'] {
+  app-dashboard-grid > [data-size='tall'],
+  deml-dashboard-grid > [data-size='tall'],
+  .dashboard-grid > [data-size='tall'],
+  :host > [data-size='tall'] {
     grid-column: span 2;
-    grid-row: span 3;
+    grid-row: span 4;
   }
 
-  :host ::ng-deep > [data-size='hero'] {
+  app-dashboard-grid > [data-size='hero'],
+  deml-dashboard-grid > [data-size='hero'],
+  .dashboard-grid > [data-size='hero'],
+  :host > [data-size='hero'] {
     grid-column: span 6;
-    grid-row: span 3;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  :host ::ng-deep > [data-size='md'] {
-    grid-row: span 3;
-  }
-
-  :host ::ng-deep > [data-size='wide'],
-  :host ::ng-deep > [data-size='lg'],
-  :host ::ng-deep > [data-size='tall'] {
-    grid-row: span 3;
-  }
-
-  :host ::ng-deep > [data-size='hero'] {
-    grid-row: span 3;
+    grid-row: span 4;
   }
 }
 
@@ -5362,10 +5541,12 @@ caption {
 
 /* Microcard grid — equal-height tiles; gutters match card / dash grids */
 
-.microcard-grid {
+.microcard-grid,
+app-microcard-grid,
+deml-microcard-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: minmax(var(--tile-row-micro), auto);
+  grid-auto-rows: var(--tile-row-micro);
   grid-auto-flow: dense;
   gap: var(--tile-gap);
   align-items: stretch;
@@ -5394,9 +5575,11 @@ caption {
 }
 
 @media screen and (min-width: 800px) {
-  .microcard-grid {
+  .microcard-grid,
+  app-microcard-grid,
+  deml-microcard-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(var(--tile-row-micro), 1fr);
+    grid-auto-rows: var(--tile-row-micro);
   }
 }
 

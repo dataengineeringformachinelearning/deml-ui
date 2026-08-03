@@ -1,6 +1,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Geist:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
   /* Story canvas: full-width demos match the site */
   #storybook-root {
@@ -14,18 +14,17 @@
     box-sizing: border-box;
   }
 
-  /* Density toolbar feedback */
+  /* Density toolbar feedback — 8px grid */
   #storybook-root > .story-root[data-density="compact"] {
-    --story-padding: 0.5rem;
+    --story-padding: var(--space-1, 0.5rem);
   }
 
   #storybook-root > .story-root[data-density="spacious"] {
-    --story-padding: 2rem;
+    --story-padding: var(--space-4, 2rem);
   }
 
-  /* Outline-friendly focus visibility in canvas */
   #storybook-root :focus-visible {
-    outline: 2px solid var(--accent, #5C2A5A);
-    outline-offset: 2px;
+    outline: var(--focus-ring-width, 2px) solid var(--color-focus, var(--accent, #1f4d66));
+    outline-offset: var(--focus-ring-offset, 2px);
   }
 </style>

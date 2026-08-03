@@ -1,18 +1,51 @@
-/* Component: card-grid — from deml new-from-the-start */
+/* Component: card-grid — equal-height modules on the shared tile gap */
 
 .component--card-grid .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Card grid — equal-height tiles; gutters from shared --tile-gap */
+app-card-grid,
+deml-card-grid,
+.card-grid,
+:host {
+  display: grid;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: var(--tile-gap);
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: var(--tile-row-card);
+  align-items: stretch;
+  justify-items: stretch;
+}
 
-:host ::ng-deep > * {
+app-card-grid > *,
+deml-card-grid > *,
+.card-grid > *,
+:host > * {
   min-width: 0;
   min-height: 0;
+  width: 100%;
   height: 100%;
   align-self: stretch;
 }
 
 @media screen and (min-width: 800px) {
+  app-card-grid,
+  deml-card-grid,
+  .card-grid,
+  :host {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+@media screen and (min-width: 1200px) {
+  app-card-grid,
+  deml-card-grid,
+  .card-grid,
+  :host {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
