@@ -1,4 +1,4 @@
-/* Component: chart-card — from deml new-from-the-start */
+/* Component: chart-card — NFTS fill + atelier type */
 
 .component--chart-card .demo {
   display: grid;
@@ -6,6 +6,32 @@
 }
 
 /* Chart card — titled shell; plot fills the body edge-to-edge */
+
+app-chart-card,
+deml-chart-card,
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  --chart-accent: var(--color-primary);
+  background-color: transparent;
+}
+
+app-chart-card[data-accent='gold'],
+:host([data-accent='gold']) {
+  --chart-accent: var(--color-accent-gold);
+}
+
+app-chart-card[data-accent='red'],
+:host([data-accent='red']) {
+  --chart-accent: var(--color-accent-red);
+}
+
+app-chart-card[data-accent='primary'],
+:host([data-accent='primary']) {
+  --chart-accent: var(--color-primary);
+}
 
 .chart-card {
   display: flex;
@@ -61,24 +87,24 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: flex-start;
   gap: 0;
   min-height: var(--chart-min-block);
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-/* Charts keep intrinsic aspect — never stretch to fill the card. */
+/* NFTS: chart hosts fill the plot band; aspect lock lives on the plot itself */
 .chart-card-body > *,
 :host ::ng-deep .chart-card-body > *,
 app-chart-card .chart-card-body > * {
   width: 100%;
-  height: auto;
-  max-height: var(--chart-max-block);
+  height: 100%;
   min-width: 0;
   min-height: 0;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
 }
 
 :host([data-size='hero']) .chart-card-heading,

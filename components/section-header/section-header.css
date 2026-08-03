@@ -1,11 +1,19 @@
-/* Component: section-header — from deml new-from-the-start */
+/* Component: section-header — NFTS outer margin + atelier type */
 
 .component--section-header .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Section header — tracked eyebrow + bold display on the 8px grid */
+app-section-header,
+deml-section-header,
+:host {
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  background-color: transparent;
+}
 
 .section-header {
   display: flex;
@@ -29,20 +37,26 @@
   max-width: var(--reading-width);
 }
 
+app-section-header[data-tone='card'] .section-header-heading,
+app-section-header[data-tone='card'] .section-header-heading.type-display,
+deml-section-header[data-tone='card'] .section-header-heading,
 :host([data-tone='card']) .section-header-heading,
 :host([data-tone='card']) .section-header-heading.type-display {
   color: var(--color-card-text);
 }
 
+app-section-header[data-tone='card'] .section-header-lede,
+app-section-header[data-tone='card'] .section-header-lede.type-intro,
+deml-section-header[data-tone='card'] .section-header-lede,
 :host([data-tone='card']) .section-header-lede,
 :host([data-tone='card']) .section-header-lede.type-intro {
   color: var(--color-card-text-secondary);
 }
 
+app-section-header[data-tone='card'] .section-header-eyebrow,
+app-section-header[data-tone='card'] .section-header-eyebrow.type-eyebrow,
+deml-section-header[data-tone='card'] .section-header-eyebrow,
 :host([data-tone='card']) .section-header-eyebrow,
 :host([data-tone='card']) .section-header-eyebrow.type-eyebrow {
   color: var(--color-primary);
 }
-
-@media screen and (min-width: 800px) {
-  }

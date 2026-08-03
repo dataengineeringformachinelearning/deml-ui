@@ -120,40 +120,41 @@ body {
 .page-body {
   display: block;
   width: 100%;
+  max-width: none;
   margin: 0;
   padding: var(--space-4) var(--space-2) var(--space-8);
   flex: 1 1 auto;
+  min-height: 0;
   background-color: var(--color-bg);
   background-image:
     linear-gradient(
       90deg,
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 0,
       transparent var(--space-2),
       transparent calc(100% - var(--space-2)),
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 100%
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent calc(var(--grid) * 7),
-      color-mix(in srgb, var(--color-brass) 4%, transparent) calc(var(--grid) * 7),
-      color-mix(in srgb, var(--color-brass) 4%, transparent) calc(var(--grid) * 8)
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 100%
     ),
     radial-gradient(
       90% 40% at 50% 0%,
-      color-mix(in srgb, var(--color-primary) 14%, transparent) 0%,
+      color-mix(in srgb, var(--color-primary) 12%, transparent) 0%,
       transparent 70%
     ),
     radial-gradient(
       55% 30% at 85% 8%,
-      color-mix(in srgb, var(--color-accent-gold) 10%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent-gold) 8%, transparent) 0%,
       transparent 68%
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--color-surface) 48%, var(--color-bg)) 0%,
+      color-mix(in srgb, var(--color-surface) 42%, var(--color-bg)) 0%,
       var(--color-bg) var(--space-10)
     );
+}
+
+/* Stacked catalog sections share equal outer rhythm */
+.page-body app-section-header:not(:first-child),
+.page-body deml-section-header:not(:first-child) {
+  margin-top: var(--space-6);
 }
 
 @media screen and (min-width: 800px) {
@@ -168,6 +169,25 @@ body {
 
   .page-body--prose {
     padding-inline: max(var(--space-4), calc((100% - var(--reading-width)) / 2));
+  }
+
+  .page-body app-section-header:not(:first-child),
+  .page-body deml-section-header:not(:first-child) {
+    margin-top: var(--space-8);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page-body {
+    padding: var(--space-6) var(--space-6) var(--space-10);
+  }
+
+  .page-body--catalog {
+    padding-inline: max(var(--space-6), calc((100% - var(--content-width-lg)) / 2));
+  }
+
+  .page-body--prose {
+    padding-inline: max(var(--space-6), calc((100% - var(--reading-width)) / 2));
   }
 }
 

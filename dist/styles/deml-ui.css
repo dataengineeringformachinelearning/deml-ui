@@ -147,18 +147,18 @@
   --chart-aspect: 2.4;
   --chart-spark-aspect: 2.4;
   --chart-min-block: calc(var(--grid) * 20);
-  --chart-max-block: calc(var(--grid) * 28);
-  --chart-spark-min-block: calc(var(--grid) * 10);
-  --chart-spark-max-block: calc(var(--grid) * 14);
+  --chart-max-block: calc(var(--grid) * 40);
+  --chart-spark-min-block: calc(var(--grid) * 12);
+  --chart-spark-max-block: calc(var(--grid) * 25);
   --chart-panel-block: var(--chart-min-block);
   --chart-plot-block: var(--chart-min-block);
   --chart-inset: var(--space-2);
 
-  /* Equal tile rhythm — one row unit; spans multiply evenly */
+  /* Equal tile rhythm — NFTS dash-row scale; spans multiply evenly */
   --tile-gap: var(--space-2);
-  --tile-row-unit: calc(var(--grid) * 10);
-  --tile-row-micro: calc(var(--tile-row-unit) * 2);
-  --tile-row-card: calc(var(--tile-row-unit) * 4);
+  --tile-row-unit: var(--space-16);
+  --tile-row-micro: var(--space-22);
+  --tile-row-card: var(--space-52);
   --tile-cols: 6;
 
   /* Type — bold display + letterspaced marks */
@@ -454,40 +454,41 @@ body {
 .page-body {
   display: block;
   width: 100%;
+  max-width: none;
   margin: 0;
   padding: var(--space-4) var(--space-2) var(--space-8);
   flex: 1 1 auto;
+  min-height: 0;
   background-color: var(--color-bg);
   background-image:
     linear-gradient(
       90deg,
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 0,
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 0,
       transparent var(--space-2),
       transparent calc(100% - var(--space-2)),
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 100%
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent calc(var(--grid) * 7),
-      color-mix(in srgb, var(--color-brass) 4%, transparent) calc(var(--grid) * 7),
-      color-mix(in srgb, var(--color-brass) 4%, transparent) calc(var(--grid) * 8)
+      color-mix(in srgb, var(--color-surface) 18%, transparent) 100%
     ),
     radial-gradient(
       90% 40% at 50% 0%,
-      color-mix(in srgb, var(--color-primary) 14%, transparent) 0%,
+      color-mix(in srgb, var(--color-primary) 12%, transparent) 0%,
       transparent 70%
     ),
     radial-gradient(
       55% 30% at 85% 8%,
-      color-mix(in srgb, var(--color-accent-gold) 10%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent-gold) 8%, transparent) 0%,
       transparent 68%
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--color-surface) 48%, var(--color-bg)) 0%,
+      color-mix(in srgb, var(--color-surface) 42%, var(--color-bg)) 0%,
       var(--color-bg) var(--space-10)
     );
+}
+
+/* Stacked catalog sections share equal outer rhythm */
+.page-body app-section-header:not(:first-child),
+.page-body deml-section-header:not(:first-child) {
+  margin-top: var(--space-6);
 }
 
 @media screen and (min-width: 800px) {
@@ -502,6 +503,25 @@ body {
 
   .page-body--prose {
     padding-inline: max(var(--space-4), calc((100% - var(--reading-width)) / 2));
+  }
+
+  .page-body app-section-header:not(:first-child),
+  .page-body deml-section-header:not(:first-child) {
+    margin-top: var(--space-8);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page-body {
+    padding: var(--space-6) var(--space-6) var(--space-10);
+  }
+
+  .page-body--catalog {
+    padding-inline: max(var(--space-6), calc((100% - var(--content-width-lg)) / 2));
+  }
+
+  .page-body--prose {
+    padding-inline: max(var(--space-6), calc((100% - var(--reading-width)) / 2));
   }
 }
 
@@ -3514,6 +3534,59 @@ progress {
 
 /* Stat card — KPI tile; spark fills remaining width with shared aspect */
 
+app-stat-card,
+deml-metric-card,
+deml-stat-card,
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  --stat-accent: var(--color-primary);
+  background-color: transparent;
+}
+
+app-stat-card[data-accent='gold'],
+:host([data-accent='gold']) {
+  --stat-accent: var(--color-accent-gold);
+}
+
+app-stat-card[data-accent='red'],
+:host([data-accent='red']) {
+  --stat-accent: var(--color-accent-red);
+}
+
+app-stat-card[data-accent='primary'],
+:host([data-accent='primary']) {
+  --stat-accent: var(--color-primary);
+}
+
+app-stat-card[data-size='sm'] .stat-card-spark,
+:host([data-size='sm']) .stat-card-spark {
+  display: none;
+}
+
+app-stat-card[data-size='md'] .stat-card-value,
+app-stat-card[data-size='wide'] .stat-card-value,
+app-stat-card[data-size='lg'] .stat-card-value,
+app-stat-card[data-size='hero'] .stat-card-value,
+:host([data-size='md']) .stat-card-value,
+:host([data-size='wide']) .stat-card-value,
+:host([data-size='lg']) .stat-card-value,
+:host([data-size='hero']) .stat-card-value {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+}
+
+app-stat-card[data-trend='up'] .stat-card-delta,
+:host([data-trend='up']) .stat-card-delta {
+  color: var(--color-accent-gold);
+}
+
+app-stat-card[data-trend='down'] .stat-card-delta,
+:host([data-trend='down']) .stat-card-delta {
+  color: var(--color-accent-red);
+}
+
 .stat-card {
   display: flex;
   flex-direction: column;
@@ -3605,19 +3678,16 @@ progress {
 
 .stat-card-spark {
   display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
+  flex: 1 1 auto;
+  align-items: stretch;
   width: 100%;
   min-height: var(--chart-spark-min-block);
-  max-height: var(--chart-spark-max-block);
   margin-top: var(--space-3);
 }
 
 .stat-card-spark > :first-child {
   width: 100%;
-  height: auto;
-  max-height: var(--chart-spark-max-block);
+  min-height: 100%;
 }
 
 :host([data-size='sm']) .stat-card-spark {
@@ -4413,19 +4483,53 @@ caption {
 
 /* Other */
 /* inlined: components/area-chart/area-chart.css */
-/* Component: area-chart — from deml new-from-the-start */
+/* Component: area-chart — NFTS aspect-locked plot that fills cards */
 
 .component--area-chart .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Area chart — fluid width, aspect-locked; never squash or stretch.
-   Fills the card like a full-bleed plot band. */
+app-area-chart,
+deml-area-chart,
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 auto;
+  --chart-accent: var(--color-primary);
+  --chart-plot: var(--color-plot);
+  --chart-grid: var(--color-plot-grid);
+  --chart-baseline: var(--color-plot-baseline);
+  --chart-label: var(--color-plot-muted);
+  --chart-node: var(--color-plot-ink);
+  background-color: transparent;
+}
+
+app-area-chart[data-accent='gold'],
+deml-area-chart[data-accent='gold'],
+:host([data-accent='gold']) {
+  --chart-accent: var(--color-accent-gold);
+}
+
+app-area-chart[data-accent='red'],
+deml-area-chart[data-accent='red'],
+:host([data-accent='red']) {
+  --chart-accent: var(--color-accent-red);
+}
+
+app-area-chart[data-accent='primary'],
+deml-area-chart[data-accent='primary'],
+:host([data-accent='primary']) {
+  --chart-accent: var(--color-primary);
+}
 
 .area-chart-frame {
   display: flex;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   align-items: stretch;
   justify-content: center;
   box-sizing: border-box;
@@ -4434,25 +4538,21 @@ caption {
   padding: var(--chart-inset);
   background-color: var(--chart-plot);
   border: var(--border-width) solid var(--color-plot-border);
-  /* Locked plot box — identical geometry across the app */
-  aspect-ratio: var(--chart-aspect);
-  height: auto;
-  max-width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
-  max-height: var(--chart-max-block);
-  min-height: var(--chart-min-block);
-  margin-inline: auto;
-  overflow: hidden;
 }
 
-:host([data-variant='spark']) .area-chart-frame,
-app-area-chart[data-variant='spark'] .area-chart-frame {
-  aspect-ratio: var(--chart-spark-aspect);
-  max-width: min(100%, calc(var(--chart-spark-max-block) * var(--chart-spark-aspect)));
-  min-height: var(--chart-spark-min-block);
-  max-height: var(--chart-spark-max-block);
-  padding: 0;
-  border: 0;
-  background-color: transparent;
+/*
+ * Full plot — fill card width; height from aspect.
+ * Soft floor/ceiling on the 8px grid; never squash the viewBox.
+ */
+app-area-chart:not([data-variant='spark']) .area-chart-frame,
+deml-area-chart:not([data-variant='spark']) .area-chart-frame,
+:host(:not([data-variant='spark'])) .area-chart-frame {
+  aspect-ratio: var(--chart-aspect);
+  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
+  height: auto;
+  min-height: var(--chart-min-block);
+  max-height: var(--chart-max-block);
+  margin-inline: auto;
 }
 
 .area-chart {
@@ -4460,10 +4560,7 @@ app-area-chart[data-variant='spark'] .area-chart-frame {
   width: 100%;
   height: 100%;
   min-height: 0;
-  max-height: 100%;
   overflow: visible;
-  object-fit: contain;
-  flex: 1 1 auto;
 }
 
 .area-chart-grid-v {
@@ -4524,23 +4621,42 @@ app-area-chart[data-variant='spark'] .area-chart-frame {
   font-size: 10px;
 }
 
-:host([data-variant='spark']) .area-chart,
-app-area-chart[data-variant='spark'] .area-chart {
+/* Spark — same aspect contract as full plots */
+app-area-chart[data-variant='spark'] .area-chart-frame,
+deml-area-chart[data-variant='spark'] .area-chart-frame,
+:host([data-variant='spark']) .area-chart-frame {
+  width: min(100%, calc(var(--chart-spark-max-block) * var(--chart-spark-aspect)));
+  aspect-ratio: var(--chart-spark-aspect);
+  height: auto;
+  min-height: var(--chart-spark-min-block);
+  max-height: var(--chart-spark-max-block);
+  margin-inline: auto;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+app-area-chart[data-variant='spark'] .area-chart,
+:host([data-variant='spark']) .area-chart {
   min-height: 0;
 }
 
+app-area-chart[data-variant='spark'] .area-chart-line,
 :host([data-variant='spark']) .area-chart-line {
   stroke-width: 2.75;
 }
 
+app-area-chart[data-variant='spark'] .area-chart-grid-v,
 :host([data-variant='spark']) .area-chart-grid-v {
   stroke: color-mix(in srgb, var(--color-card-text) 12%, transparent);
 }
 
+app-area-chart[data-variant='spark'] .area-chart-baseline,
 :host([data-variant='spark']) .area-chart-baseline {
   stroke: color-mix(in srgb, var(--color-card-text) 14%, transparent);
 }
 
+app-area-chart[data-variant='spark'] .area-chart-node,
 :host([data-variant='spark']) .area-chart-node {
   fill: var(--chart-accent);
   stroke: var(--color-card);
@@ -4734,20 +4850,50 @@ app-area-chart[data-variant='spark'] .area-chart {
 
 /* Bar chart — fills the chart-card plot band; rows stay inside */
 
+app-bar-chart,
+deml-bar-chart,
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: var(--chart-min-block);
+  flex: 1 1 auto;
+  --chart-accent: var(--color-primary);
+  --chart-plot: var(--color-plot);
+  --chart-label: var(--color-plot-muted);
+  --chart-value: var(--color-plot-ink);
+  background-color: transparent;
+}
+
+app-bar-chart[data-accent='gold'],
+:host([data-accent='gold']) {
+  --chart-accent: var(--color-accent-gold);
+}
+
+app-bar-chart[data-accent='red'],
+:host([data-accent='red']) {
+  --chart-accent: var(--color-accent-red);
+}
+
+app-bar-chart[data-accent='primary'],
+:host([data-accent='primary']) {
+  --chart-accent: var(--color-primary);
+}
+
 .bar-chart {
   display: flex;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   flex-direction: column;
   justify-content: space-between;
   gap: var(--space-2);
   box-sizing: border-box;
   width: 100%;
-  max-width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
-  aspect-ratio: var(--chart-aspect);
-  height: auto;
+  height: 100%;
   min-height: var(--chart-min-block);
-  max-height: var(--chart-max-block);
-  margin: 0 auto;
+  margin: 0;
   padding: var(--space-3);
   overflow: auto;
   list-style: none;
@@ -4819,7 +4965,7 @@ app-area-chart[data-variant='spark'] .area-chart {
 }
 
 /* inlined: components/card-grid/card-grid.css */
-/* Component: card-grid — equal-height modules on the shared tile gap */
+/* Component: card-grid — equal-height modules, NFTS minmax rows */
 
 .component--card-grid .demo {
   display: grid;
@@ -4833,13 +4979,16 @@ deml-card-grid,
   display: grid;
   box-sizing: border-box;
   width: 100%;
+  max-width: none;
   margin: 0;
   padding: 0;
   gap: var(--tile-gap);
   grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: var(--tile-row-card);
+  grid-auto-rows: minmax(var(--tile-row-card), auto);
+  grid-auto-flow: dense;
   align-items: stretch;
   justify-items: stretch;
+  background-color: transparent;
 }
 
 app-card-grid > *,
@@ -4859,6 +5008,7 @@ deml-card-grid > *,
   .card-grid,
   :host {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(var(--tile-row-card), 1fr);
   }
 }
 
@@ -4872,7 +5022,7 @@ deml-card-grid > *,
 }
 
 /* inlined: components/chart-card/chart-card.css */
-/* Component: chart-card — from deml new-from-the-start */
+/* Component: chart-card — NFTS fill + atelier type */
 
 .component--chart-card .demo {
   display: grid;
@@ -4880,6 +5030,32 @@ deml-card-grid > *,
 }
 
 /* Chart card — titled shell; plot fills the body edge-to-edge */
+
+app-chart-card,
+deml-chart-card,
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  --chart-accent: var(--color-primary);
+  background-color: transparent;
+}
+
+app-chart-card[data-accent='gold'],
+:host([data-accent='gold']) {
+  --chart-accent: var(--color-accent-gold);
+}
+
+app-chart-card[data-accent='red'],
+:host([data-accent='red']) {
+  --chart-accent: var(--color-accent-red);
+}
+
+app-chart-card[data-accent='primary'],
+:host([data-accent='primary']) {
+  --chart-accent: var(--color-primary);
+}
 
 .chart-card {
   display: flex;
@@ -4935,24 +5111,24 @@ deml-card-grid > *,
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: flex-start;
   gap: 0;
   min-height: var(--chart-min-block);
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-/* Charts keep intrinsic aspect — never stretch to fill the card. */
+/* NFTS: chart hosts fill the plot band; aspect lock lives on the plot itself */
 .chart-card-body > *,
 :host ::ng-deep .chart-card-body > *,
 app-chart-card .chart-card-body > * {
   width: 100%;
-  height: auto;
-  max-height: var(--chart-max-block);
+  height: 100%;
   min-width: 0;
   min-height: 0;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
 }
 
 :host([data-size='hero']) .chart-card-heading,
@@ -5052,7 +5228,7 @@ app-chart-card[data-size='wide'] .chart-card-heading {
 }
 
 /* inlined: components/dashboard-grid/dashboard-grid.css */
-/* Component: dashboard-grid — equal 8px-grid tile rhythm */
+/* Component: dashboard-grid — NFTS equal-cell rhythm */
 
 .component--dashboard-grid .demo {
   display: grid;
@@ -5061,25 +5237,28 @@ app-chart-card[data-size='wide'] .chart-card-heading {
 
 /*
  * Equal-cell dashboard grid.
- * Row unit is fixed; data-size spans multiply evenly — no ragged gaps.
- * Works for Angular hosts (app-dashboard-grid / deml-dashboard-grid) and .dashboard-grid.
+ * Row unit matches new-from-the-start (--dash-row / --tile-row-unit).
+ * minmax(..., auto) lets fluid chart tiles grow without ragged gaps.
  */
 
 app-dashboard-grid,
 deml-dashboard-grid,
 .dashboard-grid,
 :host {
+  --dash-gap: var(--tile-gap);
+  --dash-row: var(--tile-row-unit);
   display: grid;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 0;
-  gap: var(--tile-gap);
+  gap: var(--dash-gap);
   grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: var(--tile-row-unit);
+  grid-auto-rows: minmax(var(--dash-row), auto);
   grid-auto-flow: dense;
   align-items: stretch;
   justify-items: stretch;
+  background-color: transparent;
 }
 
 app-dashboard-grid > [data-size],
@@ -5123,7 +5302,7 @@ deml-dashboard-grid > [data-size='hero'],
 .dashboard-grid > [data-size='hero'],
 :host > [data-size='hero'] {
   grid-column: 1 / -1;
-  grid-row: span 4;
+  grid-row: span 3;
 }
 
 @media screen and (min-width: 800px) {
@@ -5131,6 +5310,8 @@ deml-dashboard-grid > [data-size='hero'],
   deml-dashboard-grid,
   .dashboard-grid,
   :host {
+    --dash-row: calc(var(--grid) * 14);
+    --tile-row-unit: calc(var(--grid) * 14);
     grid-template-columns: repeat(var(--tile-cols), minmax(0, 1fr));
   }
 
@@ -5147,7 +5328,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='md'],
   :host > [data-size='md'] {
     grid-column: span 3;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   app-dashboard-grid > [data-size='lg'],
@@ -5155,7 +5336,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='lg'],
   :host > [data-size='lg'] {
     grid-column: span 3;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   app-dashboard-grid > [data-size='wide'],
@@ -5163,7 +5344,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='wide'],
   :host > [data-size='wide'] {
     grid-column: span 4;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   app-dashboard-grid > [data-size='tall'],
@@ -5171,7 +5352,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='tall'],
   :host > [data-size='tall'] {
     grid-column: span 2;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   app-dashboard-grid > [data-size='hero'],
@@ -5179,7 +5360,17 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='hero'],
   :host > [data-size='hero'] {
     grid-column: span 6;
-    grid-row: span 4;
+    grid-row: span 3;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  app-dashboard-grid,
+  deml-dashboard-grid,
+  .dashboard-grid,
+  :host {
+    --dash-row: var(--space-16);
+    --tile-row-unit: var(--space-16);
   }
 }
 
@@ -5532,21 +5723,19 @@ deml-dashboard-grid > [data-size='hero'],
 }
 
 /* inlined: components/microcard-grid/microcard-grid.css */
-/* Component: microcard-grid — from deml new-from-the-start */
+/* Component: microcard-grid — NFTS minmax equal tiles */
 
 .component--microcard-grid .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Microcard grid — equal-height tiles; gutters match card / dash grids */
-
 .microcard-grid,
 app-microcard-grid,
 deml-microcard-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: var(--tile-row-micro);
+  grid-auto-rows: minmax(var(--tile-row-micro), auto);
   grid-auto-flow: dense;
   gap: var(--tile-gap);
   align-items: stretch;
@@ -5558,7 +5747,8 @@ deml-microcard-grid {
   background-color: transparent;
 }
 
-/* Projected list items keep equal cell height */
+app-microcard-grid .microcard-grid > li,
+deml-microcard-grid .microcard-grid > li,
 :host ::ng-deep .microcard-grid > li {
   width: 100%;
   height: 100%;
@@ -5570,6 +5760,7 @@ deml-microcard-grid {
   background-color: transparent;
 }
 
+app-microcard-grid .microcard-grid > li > *,
 :host ::ng-deep .microcard-grid > li > * {
   height: 100%;
 }
@@ -5579,11 +5770,12 @@ deml-microcard-grid {
   app-microcard-grid,
   deml-microcard-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: var(--tile-row-micro);
+    grid-auto-rows: minmax(var(--tile-row-micro), 1fr);
   }
 }
 
 @media screen and (min-width: 1200px) {
+  app-microcard-grid[data-columns='3'] .microcard-grid,
   :host([data-columns='3']) .microcard-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -5851,24 +6043,30 @@ app-button-group {
 }
 
 /* inlined: components/page-section/page-section.css */
-/* Component: page-section — from deml new-from-the-start */
+/* Component: page-section — NFTS stacked section rhythm */
 
 .component--page-section .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Equal outer rhythm between stacked section hosts inside a page body */
-:host ::ng-deep > app-section-header:not(:first-child) {
+/* Equal outer rhythm between stacked section headers inside a page body */
+.page-body > app-section-header:not(:first-child),
+.page-body > deml-section-header:not(:first-child),
+app-page-section .page-body > app-section-header:not(:first-child) {
   margin-top: var(--space-6);
 }
 
 @media screen and (min-width: 800px) {
-  :host ::ng-deep > app-section-header:not(:first-child) {
+  .page-body > app-section-header:not(:first-child),
+  .page-body > deml-section-header:not(:first-child),
+  app-page-section .page-body > app-section-header:not(:first-child) {
     margin-top: var(--space-8);
   }
 }
 
+app-page-section[data-variant='auth'] .page-body--auth,
+deml-page-section[data-variant='auth'] .page-body--auth,
 :host([data-variant='auth']) .page-body--auth {
   display: flex;
   flex: 1 1 auto;
@@ -5880,14 +6078,22 @@ app-button-group {
 }
 
 /* inlined: components/section-header/section-header.css */
-/* Component: section-header — from deml new-from-the-start */
+/* Component: section-header — NFTS outer margin + atelier type */
 
 .component--section-header .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Section header — tracked eyebrow + bold display on the 8px grid */
+app-section-header,
+deml-section-header,
+:host {
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  background-color: transparent;
+}
 
 .section-header {
   display: flex;
@@ -5911,23 +6117,29 @@ app-button-group {
   max-width: var(--reading-width);
 }
 
+app-section-header[data-tone='card'] .section-header-heading,
+app-section-header[data-tone='card'] .section-header-heading.type-display,
+deml-section-header[data-tone='card'] .section-header-heading,
 :host([data-tone='card']) .section-header-heading,
 :host([data-tone='card']) .section-header-heading.type-display {
   color: var(--color-card-text);
 }
 
+app-section-header[data-tone='card'] .section-header-lede,
+app-section-header[data-tone='card'] .section-header-lede.type-intro,
+deml-section-header[data-tone='card'] .section-header-lede,
 :host([data-tone='card']) .section-header-lede,
 :host([data-tone='card']) .section-header-lede.type-intro {
   color: var(--color-card-text-secondary);
 }
 
+app-section-header[data-tone='card'] .section-header-eyebrow,
+app-section-header[data-tone='card'] .section-header-eyebrow.type-eyebrow,
+deml-section-header[data-tone='card'] .section-header-eyebrow,
 :host([data-tone='card']) .section-header-eyebrow,
 :host([data-tone='card']) .section-header-eyebrow.type-eyebrow {
   color: var(--color-primary);
 }
-
-@media screen and (min-width: 800px) {
-  }
 
 /* inlined: components/stat-card/stat-card.css */
 /* Component: stat-card — from deml new-from-the-start */

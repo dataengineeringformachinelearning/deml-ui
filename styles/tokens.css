@@ -145,18 +145,18 @@
   --chart-aspect: 2.4;
   --chart-spark-aspect: 2.4;
   --chart-min-block: calc(var(--grid) * 20);
-  --chart-max-block: calc(var(--grid) * 28);
-  --chart-spark-min-block: calc(var(--grid) * 10);
-  --chart-spark-max-block: calc(var(--grid) * 14);
+  --chart-max-block: calc(var(--grid) * 40);
+  --chart-spark-min-block: calc(var(--grid) * 12);
+  --chart-spark-max-block: calc(var(--grid) * 25);
   --chart-panel-block: var(--chart-min-block);
   --chart-plot-block: var(--chart-min-block);
   --chart-inset: var(--space-2);
 
-  /* Equal tile rhythm — one row unit; spans multiply evenly */
+  /* Equal tile rhythm — NFTS dash-row scale; spans multiply evenly */
   --tile-gap: var(--space-2);
-  --tile-row-unit: calc(var(--grid) * 10);
-  --tile-row-micro: calc(var(--tile-row-unit) * 2);
-  --tile-row-card: calc(var(--tile-row-unit) * 4);
+  --tile-row-unit: var(--space-16);
+  --tile-row-micro: var(--space-22);
+  --tile-row-card: var(--space-52);
   --tile-cols: 6;
 
   /* Type — bold display + letterspaced marks */

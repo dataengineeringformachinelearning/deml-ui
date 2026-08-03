@@ -1,16 +1,50 @@
-/* Component: area-chart — from deml new-from-the-start */
+/* Component: area-chart — NFTS aspect-locked plot that fills cards */
 
 .component--area-chart .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Area chart — fluid width, aspect-locked; never squash or stretch.
-   Fills the card like a full-bleed plot band. */
+app-area-chart,
+deml-area-chart,
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 auto;
+  --chart-accent: var(--color-primary);
+  --chart-plot: var(--color-plot);
+  --chart-grid: var(--color-plot-grid);
+  --chart-baseline: var(--color-plot-baseline);
+  --chart-label: var(--color-plot-muted);
+  --chart-node: var(--color-plot-ink);
+  background-color: transparent;
+}
+
+app-area-chart[data-accent='gold'],
+deml-area-chart[data-accent='gold'],
+:host([data-accent='gold']) {
+  --chart-accent: var(--color-accent-gold);
+}
+
+app-area-chart[data-accent='red'],
+deml-area-chart[data-accent='red'],
+:host([data-accent='red']) {
+  --chart-accent: var(--color-accent-red);
+}
+
+app-area-chart[data-accent='primary'],
+deml-area-chart[data-accent='primary'],
+:host([data-accent='primary']) {
+  --chart-accent: var(--color-primary);
+}
 
 .area-chart-frame {
   display: flex;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   align-items: stretch;
   justify-content: center;
   box-sizing: border-box;
@@ -19,25 +53,21 @@
   padding: var(--chart-inset);
   background-color: var(--chart-plot);
   border: var(--border-width) solid var(--color-plot-border);
-  /* Locked plot box — identical geometry across the app */
-  aspect-ratio: var(--chart-aspect);
-  height: auto;
-  max-width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
-  max-height: var(--chart-max-block);
-  min-height: var(--chart-min-block);
-  margin-inline: auto;
-  overflow: hidden;
 }
 
-:host([data-variant='spark']) .area-chart-frame,
-app-area-chart[data-variant='spark'] .area-chart-frame {
-  aspect-ratio: var(--chart-spark-aspect);
-  max-width: min(100%, calc(var(--chart-spark-max-block) * var(--chart-spark-aspect)));
-  min-height: var(--chart-spark-min-block);
-  max-height: var(--chart-spark-max-block);
-  padding: 0;
-  border: 0;
-  background-color: transparent;
+/*
+ * Full plot — fill card width; height from aspect.
+ * Soft floor/ceiling on the 8px grid; never squash the viewBox.
+ */
+app-area-chart:not([data-variant='spark']) .area-chart-frame,
+deml-area-chart:not([data-variant='spark']) .area-chart-frame,
+:host(:not([data-variant='spark'])) .area-chart-frame {
+  aspect-ratio: var(--chart-aspect);
+  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
+  height: auto;
+  min-height: var(--chart-min-block);
+  max-height: var(--chart-max-block);
+  margin-inline: auto;
 }
 
 .area-chart {
@@ -45,10 +75,7 @@ app-area-chart[data-variant='spark'] .area-chart-frame {
   width: 100%;
   height: 100%;
   min-height: 0;
-  max-height: 100%;
   overflow: visible;
-  object-fit: contain;
-  flex: 1 1 auto;
 }
 
 .area-chart-grid-v {
@@ -109,23 +136,42 @@ app-area-chart[data-variant='spark'] .area-chart-frame {
   font-size: 10px;
 }
 
-:host([data-variant='spark']) .area-chart,
-app-area-chart[data-variant='spark'] .area-chart {
+/* Spark — same aspect contract as full plots */
+app-area-chart[data-variant='spark'] .area-chart-frame,
+deml-area-chart[data-variant='spark'] .area-chart-frame,
+:host([data-variant='spark']) .area-chart-frame {
+  width: min(100%, calc(var(--chart-spark-max-block) * var(--chart-spark-aspect)));
+  aspect-ratio: var(--chart-spark-aspect);
+  height: auto;
+  min-height: var(--chart-spark-min-block);
+  max-height: var(--chart-spark-max-block);
+  margin-inline: auto;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+app-area-chart[data-variant='spark'] .area-chart,
+:host([data-variant='spark']) .area-chart {
   min-height: 0;
 }
 
+app-area-chart[data-variant='spark'] .area-chart-line,
 :host([data-variant='spark']) .area-chart-line {
   stroke-width: 2.75;
 }
 
+app-area-chart[data-variant='spark'] .area-chart-grid-v,
 :host([data-variant='spark']) .area-chart-grid-v {
   stroke: color-mix(in srgb, var(--color-card-text) 12%, transparent);
 }
 
+app-area-chart[data-variant='spark'] .area-chart-baseline,
 :host([data-variant='spark']) .area-chart-baseline {
   stroke: color-mix(in srgb, var(--color-card-text) 14%, transparent);
 }
 
+app-area-chart[data-variant='spark'] .area-chart-node,
 :host([data-variant='spark']) .area-chart-node {
   fill: var(--chart-accent);
   stroke: var(--color-card);

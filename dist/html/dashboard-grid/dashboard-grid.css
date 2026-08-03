@@ -1,4 +1,4 @@
-/* Component: dashboard-grid — equal 8px-grid tile rhythm */
+/* Component: dashboard-grid — NFTS equal-cell rhythm */
 
 .component--dashboard-grid .demo {
   display: grid;
@@ -7,25 +7,28 @@
 
 /*
  * Equal-cell dashboard grid.
- * Row unit is fixed; data-size spans multiply evenly — no ragged gaps.
- * Works for Angular hosts (app-dashboard-grid / deml-dashboard-grid) and .dashboard-grid.
+ * Row unit matches new-from-the-start (--dash-row / --tile-row-unit).
+ * minmax(..., auto) lets fluid chart tiles grow without ragged gaps.
  */
 
 app-dashboard-grid,
 deml-dashboard-grid,
 .dashboard-grid,
 :host {
+  --dash-gap: var(--tile-gap);
+  --dash-row: var(--tile-row-unit);
   display: grid;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 0;
-  gap: var(--tile-gap);
+  gap: var(--dash-gap);
   grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: var(--tile-row-unit);
+  grid-auto-rows: minmax(var(--dash-row), auto);
   grid-auto-flow: dense;
   align-items: stretch;
   justify-items: stretch;
+  background-color: transparent;
 }
 
 app-dashboard-grid > [data-size],
@@ -69,7 +72,7 @@ deml-dashboard-grid > [data-size='hero'],
 .dashboard-grid > [data-size='hero'],
 :host > [data-size='hero'] {
   grid-column: 1 / -1;
-  grid-row: span 4;
+  grid-row: span 3;
 }
 
 @media screen and (min-width: 800px) {
@@ -77,6 +80,8 @@ deml-dashboard-grid > [data-size='hero'],
   deml-dashboard-grid,
   .dashboard-grid,
   :host {
+    --dash-row: calc(var(--grid) * 14);
+    --tile-row-unit: calc(var(--grid) * 14);
     grid-template-columns: repeat(var(--tile-cols), minmax(0, 1fr));
   }
 
@@ -93,7 +98,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='md'],
   :host > [data-size='md'] {
     grid-column: span 3;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   app-dashboard-grid > [data-size='lg'],
@@ -101,7 +106,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='lg'],
   :host > [data-size='lg'] {
     grid-column: span 3;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   app-dashboard-grid > [data-size='wide'],
@@ -109,7 +114,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='wide'],
   :host > [data-size='wide'] {
     grid-column: span 4;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   app-dashboard-grid > [data-size='tall'],
@@ -117,7 +122,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='tall'],
   :host > [data-size='tall'] {
     grid-column: span 2;
-    grid-row: span 4;
+    grid-row: span 3;
   }
 
   app-dashboard-grid > [data-size='hero'],
@@ -125,6 +130,16 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='hero'],
   :host > [data-size='hero'] {
     grid-column: span 6;
-    grid-row: span 4;
+    grid-row: span 3;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  app-dashboard-grid,
+  deml-dashboard-grid,
+  .dashboard-grid,
+  :host {
+    --dash-row: var(--space-16);
+    --tile-row-unit: var(--space-16);
   }
 }
