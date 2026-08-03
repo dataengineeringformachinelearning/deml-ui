@@ -1,21 +1,27 @@
-/* Component: page-section — from deml new-from-the-start */
+/* Component: page-section — NFTS stacked section rhythm */
 
 .component--page-section .demo {
   display: grid;
   gap: var(--space-md);
 }
 
-/* Equal outer rhythm between stacked section hosts inside a page body */
-:host ::ng-deep > app-section-header:not(:first-child) {
+/* Equal outer rhythm between stacked section headers inside a page body */
+.page-body > app-section-header:not(:first-child),
+.page-body > deml-section-header:not(:first-child),
+app-page-section .page-body > app-section-header:not(:first-child) {
   margin-top: var(--space-6);
 }
 
 @media screen and (min-width: 800px) {
-  :host ::ng-deep > app-section-header:not(:first-child) {
+  .page-body > app-section-header:not(:first-child),
+  .page-body > deml-section-header:not(:first-child),
+  app-page-section .page-body > app-section-header:not(:first-child) {
     margin-top: var(--space-8);
   }
 }
 
+app-page-section[data-variant='auth'] .page-body--auth,
+deml-page-section[data-variant='auth'] .page-body--auth,
 :host([data-variant='auth']) .page-body--auth {
   display: flex;
   flex: 1 1 auto;

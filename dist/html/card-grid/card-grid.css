@@ -1,4 +1,4 @@
-/* Component: card-grid — equal-height modules on the shared tile gap */
+/* Component: card-grid — equal-height modules, NFTS minmax rows */
 
 .component--card-grid .demo {
   display: grid;
@@ -12,13 +12,16 @@ deml-card-grid,
   display: grid;
   box-sizing: border-box;
   width: 100%;
+  max-width: none;
   margin: 0;
   padding: 0;
   gap: var(--tile-gap);
   grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: var(--tile-row-card);
+  grid-auto-rows: minmax(var(--tile-row-card), auto);
+  grid-auto-flow: dense;
   align-items: stretch;
   justify-items: stretch;
+  background-color: transparent;
 }
 
 app-card-grid > *,
@@ -38,6 +41,7 @@ deml-card-grid > *,
   .card-grid,
   :host {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(var(--tile-row-card), 1fr);
   }
 }
 
