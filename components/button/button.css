@@ -19,7 +19,7 @@
   min-height: var(--hit-target);
   height: auto;
   margin: 0;
-  padding: var(--space-1) var(--space-4);
+  padding: var(--button-pad-block) var(--button-pad-inline);
   border-style: solid;
   border-width: var(--border-width);
   border-radius: 0;
@@ -139,7 +139,7 @@
   min-width: max-content;
   max-width: none;
   min-height: var(--hit-target);
-  padding: var(--space-1) var(--space-4);
+  padding: var(--button-pad-block) var(--button-pad-inline);
   border-radius: var(--radius-pill);
   border-width: 0;
   font-size: var(--font-size-sm);
