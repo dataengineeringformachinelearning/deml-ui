@@ -1,8 +1,10 @@
-/* Component: microcard-grid — NFTS minmax equal tiles */
+/* Component: microcard-grid — identical micro heights, equal gaps */
 
 .component--microcard-grid .demo {
   display: grid;
   gap: var(--tile-gap);
+  margin: 0;
+  padding: var(--tile-gap);
 }
 
 .microcard-grid,
@@ -10,23 +12,20 @@ app-microcard-grid,
 deml-microcard-grid,
 :host {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-auto-rows: minmax(var(--tile-row-micro), auto);
-  grid-auto-flow: dense;
-  gap: var(--tile-gap);
-  align-items: stretch;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
+  gap: var(--tile-gap);
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: var(--tile-row-micro);
+  grid-auto-flow: dense;
+  align-items: stretch;
+  justify-items: stretch;
   background-color: transparent;
 }
 
-/*
- * When the host is the Angular wrapper, the UL inside is the grid.
- * Keep both host + list as grids so either markup shape works.
- */
 app-microcard-grid > .microcard-grid,
 deml-microcard-grid > .microcard-grid,
 :host > .microcard-grid {
@@ -45,6 +44,7 @@ deml-microcard-grid > .microcard-grid,
 app-microcard-grid .microcard-grid > li,
 deml-microcard-grid .microcard-grid > li,
 .microcard-grid > li {
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
   min-width: 0;
@@ -59,6 +59,7 @@ app-microcard-grid .microcard-grid > li > *,
 deml-microcard-grid .microcard-grid > li > *,
 .microcard-grid > li > * {
   height: 100%;
+  margin: 0;
 }
 
 @media screen and (min-width: 800px) {
@@ -67,7 +68,7 @@ deml-microcard-grid .microcard-grid > li > *,
   deml-microcard-grid,
   :host {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(var(--tile-row-micro), 1fr);
+    grid-auto-rows: var(--tile-row-micro);
   }
 }
 
@@ -78,5 +79,6 @@ deml-microcard-grid .microcard-grid > li > *,
   app-microcard-grid[data-columns='3'] > .microcard-grid,
   deml-microcard-grid[data-columns='3'] > .microcard-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: var(--tile-row-micro);
   }
 }

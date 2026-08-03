@@ -48,7 +48,7 @@
   min-width: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
   line-height: 1.4;
   color: var(--color-card-text-secondary);

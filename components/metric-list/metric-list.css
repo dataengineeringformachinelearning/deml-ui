@@ -15,36 +15,36 @@ deml-metric-list,
   min-width: 0;
   min-height: 0;
   flex: 0 1 auto;
-  --chart-accent: var(--color-primary);
+  --chart-accent: var(--chart-series-1);
   background-color: transparent;
 }
 
 app-metric-list[data-accent='gold'],
 :host([data-accent='gold']) {
-  --chart-accent: var(--color-accent-gold);
+  --chart-accent: var(--chart-series-3);
 }
 
 app-metric-list[data-accent='red'],
 :host([data-accent='red']) {
-  --chart-accent: var(--color-accent-red);
+  --chart-accent: var(--chart-series-4);
 }
 
 app-metric-list[data-accent='primary'],
 :host([data-accent='primary']) {
-  --chart-accent: var(--color-primary);
+  --chart-accent: var(--chart-series-1);
 }
 
 .metric-list {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   justify-content: flex-start;
   gap: 0;
   box-sizing: border-box;
-  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
+  width: 100%;
+  max-width: var(--chart-stage-max-inline);
   aspect-ratio: var(--chart-aspect);
   height: auto;
-  max-height: var(--chart-max-block);
   margin: 0 auto;
   padding: var(--space-3);
   overflow: auto;
@@ -63,7 +63,7 @@ app-metric-list[data-accent='primary'],
   margin: 0;
   padding: var(--space-2) 0;
   border-bottom: var(--border-width) solid
-    color-mix(in srgb, var(--color-plot-muted) 14%, transparent);
+    color-mix(in srgb, var(--chart-series-2) 14%, transparent);
   background-color: transparent;
 }
 

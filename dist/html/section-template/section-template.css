@@ -1,4 +1,4 @@
-/* Component: section-template — atelier section chrome */
+/* Component: section-template — NFTS section chrome */
 
 .component--section-template .demo {
   display: grid;
@@ -9,7 +9,8 @@
   display: grid;
   gap: var(--space-3);
   width: 100%;
-  padding: var(--module-pad) 0;
+  /* Identical outer spacing on all four sides */
+  padding: var(--module-pad);
 }
 
 .section-template__title {
@@ -24,7 +25,7 @@
 .section-template__description {
   margin: 0;
   max-width: var(--reading-width);
-  font-family: var(--font-serif);
+  font-family: var(--font-secondary);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
   color: var(--color-text-secondary);

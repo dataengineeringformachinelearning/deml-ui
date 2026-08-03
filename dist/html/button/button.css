@@ -22,12 +22,12 @@
   padding: var(--space-1) var(--space-4);
   border-style: solid;
   border-width: var(--border-width);
-  border-radius: 0;
+  border-radius: var(--radius-sm);
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-intro);
-  line-height: 1;
+  line-height: var(--leading-ui);
   text-decoration: none;
   appearance: none;
   cursor: pointer;
@@ -143,7 +143,7 @@
   border-radius: var(--radius-pill);
   border-width: 0;
   font-size: var(--font-size-sm);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-intro);
   white-space: nowrap;
   box-shadow: none;

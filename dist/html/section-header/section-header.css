@@ -1,4 +1,4 @@
-/* Component: section-header — NFTS outer margin + atelier type */
+/* Component: section-header — NFTS outer margin + type hierarchy */
 
 .component--section-header .demo {
   display: grid;
@@ -9,8 +9,9 @@ app-section-header,
 deml-section-header,
 :host {
   display: block;
+  box-sizing: border-box;
   width: 100%;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--tile-gap);
   padding: 0;
   background-color: transparent;
 }

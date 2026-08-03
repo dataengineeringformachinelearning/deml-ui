@@ -1,4 +1,4 @@
-/* Component: status-pill — atelier mark */
+/* Component: status-pill — NFTS mark */
 
 .component--status-pill .demo {
   display: grid;
@@ -10,7 +10,7 @@
   align-items: center;
   gap: var(--space-1);
   min-height: var(--space-3);
-  padding: 0 var(--space-1);
+  padding: var(--space-1) var(--space-2);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-pill);
   font-family: var(--font-sans);
@@ -18,7 +18,7 @@
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: var(--leading-ui);
   color: var(--color-text);
   background-color: var(--color-surface);
 }

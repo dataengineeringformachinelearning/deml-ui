@@ -555,8 +555,19 @@ var T = class extends HTMLElement {
         <p class="chart-panel__value">42</p>
       </header>
       <div class="chart-panel__body" role="img" aria-label="Sample chart placeholder">
-        <svg class="chart" viewBox="0 0 200 80" width="100%" height="80" aria-hidden="true">
-          <polyline fill="none" stroke="currentColor" stroke-width="2" points="0,60 40,40 80,50 120,20 160,35 200,10" />
+        <svg
+          class="chart"
+          viewBox="0 0 360 150"
+          preserveAspectRatio="xMidYMid meet"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <polyline
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            points="0,110 60,80 120,95 180,40 240,65 300,30 360,20"
+          />
         </svg>
       </div>
     </section>`));
@@ -946,7 +957,7 @@ var K = class extends HTMLElement {
 function Wt() {
   customElements.get(K.tagName) || customElements.define(K.tagName, K);
 }
-var J = class extends HTMLElement {
+var Y = class extends HTMLElement {
   static {
     this.tagName = "deml-grid";
   }
@@ -963,9 +974,9 @@ var J = class extends HTMLElement {
   }
 };
 function Kt() {
-  customElements.get(J.tagName) || customElements.define(J.tagName, J);
+  customElements.get(Y.tagName) || customElements.define(Y.tagName, Y);
 }
-var Y = class extends HTMLElement {
+var J = class extends HTMLElement {
   static {
     this.tagName = "deml-help-panel";
   }
@@ -980,8 +991,8 @@ var Y = class extends HTMLElement {
     </aside>`));
   }
 };
-function Jt() {
-  customElements.get(Y.tagName) || customElements.define(Y.tagName, Y);
+function Yt() {
+  customElements.get(J.tagName) || customElements.define(J.tagName, J);
 }
 var q = class extends HTMLElement {
   static {
@@ -1001,7 +1012,7 @@ var q = class extends HTMLElement {
     </section>`));
   }
 };
-function Yt() {
+function Jt() {
   customElements.get(q.tagName) || customElements.define(q.tagName, q);
 }
 var j = class extends HTMLElement {
@@ -1948,7 +1959,7 @@ var Ke = class extends HTMLElement {
 function Wa() {
   customElements.get(Ke.tagName) || customElements.define(Ke.tagName, Ke);
 }
-var Je = class extends HTMLElement {
+var Ye = class extends HTMLElement {
   static {
     this.tagName = "deml-textarea";
   }
@@ -1961,9 +1972,9 @@ var Je = class extends HTMLElement {
   }
 };
 function Ka() {
-  customElements.get(Je.tagName) || customElements.define(Je.tagName, Je);
+  customElements.get(Ye.tagName) || customElements.define(Ye.tagName, Ye);
 }
-var Ye = class extends HTMLElement {
+var Je = class extends HTMLElement {
   static {
     this.tagName = "deml-theme-toggle";
   }
@@ -1976,8 +1987,8 @@ var Ye = class extends HTMLElement {
     </button>`));
   }
 };
-function Ja() {
-  customElements.get(Ye.tagName) || customElements.define(Ye.tagName, Ye);
+function Ya() {
+  customElements.get(Je.tagName) || customElements.define(Je.tagName, Je);
 }
 var qe = class extends HTMLElement {
   static {
@@ -1996,7 +2007,7 @@ var qe = class extends HTMLElement {
     </div>`));
   }
 };
-function Ya() {
+function Ja() {
   customElements.get(qe.tagName) || customElements.define(qe.tagName, qe);
 }
 var je = class extends HTMLElement {
@@ -2105,7 +2116,7 @@ function Qa() {
   customElements.get(Xe.tagName) || customElements.define(Xe.tagName, Xe);
 }
 function Xa() {
-  $e(), et(), tt(), at(), st(), it(), lt(), nt(), dt(), rt(), ct(), ot(), mt(), ut(), ht(), pt(), ft(), gt(), bt(), Nt(), vt(), yt(), Ht(), _t(), Et(), Ct(), Tt(), Lt(), Mt(), kt(), xt(), Dt(), St(), wt(), Pt(), At(), Bt(), Ft(), Gt(), It(), zt(), Rt(), Ot(), Ut(), Wt(), Kt(), Jt(), Yt(), qt(), jt(), Vt(), Zt(), Qt(), Xt(), $t(), ea(), ta(), aa(), sa(), ia(), la(), na(), da(), ra(), ca(), oa(), ma(), ua(), ha(), pa(), fa(), ga(), ba(), Na(), va(), ya(), Ha(), _a(), Ea(), Ca(), Ta(), La(), Ma(), ka(), xa(), Da(), Sa(), wa(), Pa(), Aa(), Ba(), Fa(), Ga(), Ia(), za(), Ra(), Oa(), Ua(), Wa(), Ka(), Ja(), Ya(), qa(), ja(), Va(), Za(), Qa();
+  $e(), et(), tt(), at(), st(), it(), lt(), nt(), dt(), rt(), ct(), ot(), mt(), ut(), ht(), pt(), ft(), gt(), bt(), Nt(), vt(), yt(), Ht(), _t(), Et(), Ct(), Tt(), Lt(), Mt(), kt(), xt(), Dt(), St(), wt(), Pt(), At(), Bt(), Ft(), Gt(), It(), zt(), Rt(), Ot(), Ut(), Wt(), Kt(), Yt(), Jt(), qt(), jt(), Vt(), Zt(), Qt(), Xt(), $t(), ea(), ta(), aa(), sa(), ia(), la(), na(), da(), ra(), ca(), oa(), ma(), ua(), ha(), pa(), fa(), ga(), ba(), Na(), va(), ya(), Ha(), _a(), Ea(), Ca(), Ta(), La(), Ma(), ka(), xa(), Da(), Sa(), wa(), Pa(), Aa(), Ba(), Fa(), Ga(), Ia(), za(), Ra(), Oa(), Ua(), Wa(), Ka(), Ya(), Ja(), qa(), ja(), Va(), Za(), Qa();
 }
 var $a = [
   "accordion",
@@ -2263,8 +2274,8 @@ export {
   U as DemlFormGrid,
   W as DemlFormPanel,
   K as DemlFormSection,
-  J as DemlGrid,
-  Y as DemlHelpPanel,
+  Y as DemlGrid,
+  J as DemlHelpPanel,
   q as DemlHudPanel,
   j as DemlIcon,
   V as DemlInputDate,
@@ -2317,8 +2328,8 @@ export {
   Ue as DemlTable,
   We as DemlTabs,
   Ke as DemlTextField,
-  Je as DemlTextarea,
-  Ye as DemlThemeToggle,
+  Ye as DemlTextarea,
+  Je as DemlThemeToggle,
   qe as DemlTileBoard,
   je as DemlTimeline,
   Ve as DemlToast,
@@ -2373,8 +2384,8 @@ export {
   Ut as defineFormPanel,
   Wt as defineFormSection,
   Kt as defineGrid,
-  Jt as defineHelpPanel,
-  Yt as defineHudPanel,
+  Yt as defineHelpPanel,
+  Jt as defineHudPanel,
   qt as defineIcon,
   jt as defineInputDate,
   Vt as defineInputEmail,
@@ -2427,8 +2438,8 @@ export {
   Ua as defineTabs,
   Wa as defineTextField,
   Ka as defineTextarea,
-  Ja as defineThemeToggle,
-  Ya as defineTileBoard,
+  Ya as defineThemeToggle,
+  Ja as defineTileBoard,
   qa as defineTimeline,
   ja as defineToast,
   Va as defineToggle,

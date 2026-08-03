@@ -1,4 +1,4 @@
-/* Component: page-template — atelier page chrome */
+/* Component: page-template — NFTS page chrome */
 
 .component--page-template .demo {
   display: grid;
@@ -11,7 +11,8 @@
   gap: var(--space-4);
   width: 100%;
   min-height: 100%;
-  padding: var(--space-4) var(--space-2);
+  /* Identical outer spacing on all four sides */
+  padding: var(--space-4);
   background-color: var(--color-bg);
   color: var(--color-text);
 }
@@ -33,6 +34,6 @@
 
 @media screen and (min-width: 800px) {
   .page-template {
-    padding: var(--space-6) var(--space-4);
+    padding: var(--space-6);
   }
 }

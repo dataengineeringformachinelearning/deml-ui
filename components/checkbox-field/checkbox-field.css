@@ -46,11 +46,11 @@
 .checkbox-field__label {
   flex: 1 1 auto;
   min-width: 0;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
-  font-weight: 400;
-  letter-spacing: var(--tracking-intro);
-  line-height: 1.4;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--leading-body);
   color: var(--color-card-text-secondary);
 }
 

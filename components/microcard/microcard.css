@@ -59,6 +59,7 @@ deml-microcard[data-visual='olive'],
     var(--color-card) 50%
   );
   border: var(--border-width) solid var(--color-card-border);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
   transition:
     border-color 160ms ease,
@@ -103,9 +104,9 @@ deml-microcard[data-visual='olive'],
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
-  line-height: 1.2;
+  line-height: var(--leading-ui);
   text-transform: uppercase;
   color: var(--microcard-visual, var(--color-primary));
 }
@@ -113,10 +114,11 @@ deml-microcard[data-visual='olive'],
 .microcard-heading {
   margin: 0;
   font-family: var(--font-display);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-title-sm);
+  font-stretch: var(--font-stretch-display);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
-  line-height: 1.25;
+  line-height: var(--leading-tight);
   color: var(--color-card-text);
   word-break: break-word;
 }
@@ -124,17 +126,19 @@ deml-microcard[data-visual='olive'],
 .microcard-subtext {
   margin: 0;
   flex: 1 1 auto;
+  font-family: var(--font-secondary);
   font-size: var(--font-size-sm);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.4;
+  line-height: var(--leading-relaxed);
   color: var(--color-card-text-secondary);
 }
 
 .microcard-cta {
   margin-top: var(--space-2);
+  font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--microcard-visual, var(--color-primary));

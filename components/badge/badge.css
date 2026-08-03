@@ -1,4 +1,4 @@
-/* Component: badge — atelier mark */
+/* Component: badge — NFTS mark */
 
 .component--badge .demo {
   display: grid;
@@ -10,13 +10,14 @@
   align-items: center;
   gap: var(--space-1);
   min-height: var(--space-3);
-  padding: 0 var(--space-1);
+  padding: var(--space-1) var(--space-2);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-pill);
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-mark);
+  line-height: var(--leading-ui);
   text-transform: uppercase;
   color: var(--color-text);
   background-color: var(--color-surface);

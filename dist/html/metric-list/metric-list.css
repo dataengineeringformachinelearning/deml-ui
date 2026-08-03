@@ -1,23 +1,51 @@
-/* Component: metric-list — from deml new-from-the-start */
+/* Component: metric-list — aspect-locked plot band peer to charts */
 
 .component--metric-list .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
 }
 
-/* Metric list — fills the chart-card plot band; content stays inside */
+app-metric-list,
+deml-metric-list,
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex: 0 1 auto;
+  --chart-accent: var(--chart-series-1);
+  background-color: transparent;
+}
+
+app-metric-list[data-accent='gold'],
+:host([data-accent='gold']) {
+  --chart-accent: var(--chart-series-3);
+}
+
+app-metric-list[data-accent='red'],
+:host([data-accent='red']) {
+  --chart-accent: var(--chart-series-4);
+}
+
+app-metric-list[data-accent='primary'],
+:host([data-accent='primary']) {
+  --chart-accent: var(--chart-series-1);
+}
 
 .metric-list {
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 0;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  min-height: var(--chart-min-block);
-  margin: 0;
+  max-width: var(--chart-stage-max-inline);
+  aspect-ratio: var(--chart-aspect);
+  height: auto;
+  margin: 0 auto;
   padding: var(--space-3);
   overflow: auto;
   list-style: none;
@@ -34,7 +62,8 @@
   flex: 0 0 auto;
   margin: 0;
   padding: var(--space-2) 0;
-  border-bottom: var(--border-width) solid color-mix(in srgb, var(--color-plot-muted) 14%, transparent);
+  border-bottom: var(--border-width) solid
+    color-mix(in srgb, var(--chart-series-2) 14%, transparent);
   background-color: transparent;
 }
 
@@ -50,7 +79,7 @@
 .metric-list-rank {
   font-family: var(--font-sans);
   font-size: var(--font-size-md);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-display);
   line-height: 1;
   color: var(--chart-accent);
@@ -66,7 +95,7 @@
 .metric-list-label {
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
   line-height: 1.25;
   color: var(--color-plot-ink);
@@ -78,7 +107,7 @@
 .metric-list-meta {
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-intro);
   line-height: 1.2;
   color: var(--color-plot-muted);
@@ -90,7 +119,7 @@
 .metric-list-value {
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
   color: var(--color-plot-ink);
   white-space: nowrap;

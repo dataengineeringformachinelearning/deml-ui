@@ -30,9 +30,12 @@ body {
 
 .story-root .component > h2 {
   margin: 0 0 var(--space-md);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-stretch: normal;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: var(--leading-ui);
   text-transform: uppercase;
   color: var(--muted);
 }

@@ -1,4 +1,4 @@
-/* Component: page-header — atelier page title */
+/* Component: page-header — NFTS page title */
 
 .component--page-header .demo {
   display: grid;
@@ -9,7 +9,7 @@
   display: grid;
   gap: var(--space-2);
   width: 100%;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--tile-gap);
   padding: 0;
 }
 
@@ -19,6 +19,7 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
+  line-height: var(--leading-ui);
   text-transform: uppercase;
   color: var(--color-highlight);
 }
@@ -27,10 +28,11 @@
 .page-header__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(var(--font-size-lg), 4vw, var(--font-size-xl));
+  font-size: var(--font-size-display);
+  font-stretch: var(--font-stretch-display);
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: 1.05;
+  line-height: var(--leading-display);
   color: var(--color-text);
 }
 
@@ -38,8 +40,10 @@
 .page-header__lede {
   margin: 0;
   max-width: var(--reading-width);
-  font-family: var(--font-serif);
-  font-size: var(--font-size-sm);
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
+  line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
 }

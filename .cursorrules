@@ -1,28 +1,48 @@
 # deml-ui — Cursor rules (design system SoT LOCKED)
 
 This repo is the DEML design system — **single source of truth** for the
-**new-from-the-start / atelier** look consumed by deml and Django static chrome.
+**new-from-the-start (NFTS) / heritage** look consumed by deml and Django static
+chrome. **Seven-color palette only.** Do not drift to Viking or atelier-cream.
+
+## Locked palette (exact)
+
+`#0066B2` `#3D3D3D` `#BDBDBD` `#121212` `#FFFFFF` `#3C7A4A` `#C41E3A`
+
+Dark/light role swaps only; mixes only among these hexes. No cream
+(`#E4DDD0` / `#F4F1EA`), void (`#2A2622`), or electric (`#2176ff`).
 
 ## Do
 
 - Change visuals in `components/<name>/` and `styles/tokens.css` / `styles/base.css`.
-- Keep an 8px grid (`--grid` / `--space-*`), dual `data-theme`, equal tile gaps
-  (`--tile-gap`), identical row heights (`--tile-row-unit`), and locked chart
-  aspect (`--chart-aspect: 2.4`).
-- Use tokens only for chrome — `--color-*`, `--space-*`, `--tile-*`, `--chart-*`,
-  `--font-*`, `--tracking-*`, `--hit-target`.
-- Large bold display + letterspaced secondary / eyebrows; preserve type recipes in `base.css`.
-- Run `npm run sync` after adding/removing component folders; `npm run build` before release.
+- Keep an 8px grid (`--grid` / `--space-*`), dual `data-theme`, **equal outer
+  spacing on all four sides**, equal tile gaps (`--tile-gap` / `--module-pad`),
+  identical row heights (`--tile-row-unit`), and locked chart aspect
+  (`--chart-aspect: 2.4` — never squash/stretch).
+- Use tokens only for chrome — `--palette-*`, `--color-*`, `--space-*`,
+  `--tile-*`, `--chart-*`, `--font-*`, `--tracking-*`, `--hit-target`.
+- Type hierarchy: large primary headings bold condensed tight tracking
+  (`--font-display` / `--tracking-display`); secondary/intro generous
+  letter-spacing (`--tracking-eyebrow` / `--tracking-intro`); readable body.
+- Chart series colors from the seven-color palette only; plots inside
+  equal-height chart-cards with aspect-locked containers.
+- Run `npm run sync` after adding/removing component folders; `npm run build`
+  before release.
 - Prefer WCAG 2.0 AA patterns already used in base + headless primitives
   (focus-visible, contrast, hit targets, reduced motion).
 
 ## Do not
 
-- Reintroduce Viking-UI naming, void-black / electric `#2176ff` suite chrome, or `--viking-*` tokens.
-- Hand-edit generated wrappers under `src/angular/markup/` or `generated/` — regenerate via sync.
-- Break the chart aspect contract or invent one-off spacing outside the token scale.
-- Ship arbitrary hex in component CSS for chrome outside the atelier token set.
+- Reintroduce Viking-UI naming, void-black / electric `#2176ff` suite chrome, or
+  `--viking-*` tokens.
+- Reintroduce atelier-cream / limestone hexes or any eighth chrome color.
+- Hand-edit generated wrappers under `src/angular/markup/` or `generated/` —
+  regenerate via sync.
+- Break the chart aspect contract or invent one-off / asymmetric spacing outside
+  the token scale.
+- Ship arbitrary hex in component CSS for chrome outside the seven locked colors.
 
-Consumer guidance for the Angular app lives in deml `THEME.md` / `AGENTS.md` / `.cursorrules`.
+Consumer guidance for the Angular app lives in deml `THEME.md` / `AGENTS.md` /
+`.cursorrules`. deml must not invent app-level DS chrome CSS.
 
-**Locked:** deml-ui owns the look; Viking is fully retired.
+**Locked:** deml-ui owns the NFTS / heritage look; Viking and cream atelier are
+fully retired.

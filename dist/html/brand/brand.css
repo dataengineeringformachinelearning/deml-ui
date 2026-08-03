@@ -1,4 +1,4 @@
-/* Component: brand — atelier wordmark */
+/* Component: brand — NFTS wordmark */
 
 .component--brand .demo {
   display: grid;
@@ -24,9 +24,11 @@
 
 .brand__name {
   font-family: var(--font-display);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--tracking-tight);
+  font-size: var(--font-size-title-sm);
+  font-stretch: var(--font-stretch-display);
+  font-weight: var(--font-weight-display);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
 }
 
 .brand:focus-visible {

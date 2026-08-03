@@ -1,4 +1,4 @@
-/* Component: sidebar-nav — atelier side navigation */
+/* Component: sidebar-nav — NFTS side navigation */
 
 .component--sidebar-nav .demo {
   display: grid;
@@ -19,10 +19,14 @@
   min-height: var(--hit-target);
   padding: var(--space-1) var(--space-2);
   border: var(--border-width) solid transparent;
+  border-radius: var(--radius-sm);
   color: var(--color-text-secondary);
   text-decoration: none;
+  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-intro);
+  line-height: var(--leading-ui);
 }
 
 .sidebar-nav a:hover,

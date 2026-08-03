@@ -79,6 +79,7 @@ app-stat-card[data-trend='down'] .stat-card-delta,
   );
   border: var(--border-width) solid var(--color-card-border);
   border-top: calc(var(--border-width) * 4) solid var(--stat-accent);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
 }
 
@@ -109,7 +110,7 @@ app-stat-card[data-trend='down'] .stat-card-delta,
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-intro);
   line-height: 1;
   color: var(--color-card-text-secondary);
@@ -132,35 +133,37 @@ app-stat-card[data-trend='down'] .stat-card-delta,
   margin: 0;
   flex: 0 0 auto;
   font-family: var(--font-display);
-  font-size: clamp(var(--font-size-lg), 4vw, calc(var(--grid) * 5.5));
+  font-size: var(--font-size-title);
+  font-stretch: var(--font-stretch-display);
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: 0.95;
+  line-height: var(--leading-display);
   color: var(--color-card-text);
 }
 
 .stat-card-meta {
   margin: var(--space-1) 0 0;
   flex: 0 0 auto;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--font-size-sm);
-  font-weight: 400;
-  line-height: 1.35;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--leading-snug);
   color: var(--color-card-text-secondary);
 }
 
 .stat-card-spark {
   display: flex;
-  flex: 1 1 auto;
-  align-items: stretch;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  min-height: var(--chart-spark-min-block);
   margin-top: var(--space-3);
 }
 
 .stat-card-spark > :first-child {
   width: 100%;
-  min-height: 100%;
+  min-height: 0;
 }
 
 :host([data-size='sm']) .stat-card-spark {

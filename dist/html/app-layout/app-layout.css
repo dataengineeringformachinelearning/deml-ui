@@ -1,8 +1,8 @@
-/* Component: app-layout — atelier catalog shell */
+/* Component: App Layout — catalog shell with equal token gutters */
 
 .component--app-layout .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
 }
 
 .app-layout {
@@ -19,14 +19,15 @@
 
 .app-layout__body {
   display: grid;
-  grid-template-columns: minmax(calc(var(--grid) * 24), var(--space-28)) 1fr;
+  grid-template-columns: minmax(var(--space-22), var(--space-28)) 1fr;
   flex: 1 1 auto;
   min-height: 0;
+  gap: 0;
 }
 
 .app-layout__nav,
 .app-layout__tools {
-  padding: var(--space-3);
+  padding: var(--module-pad);
   background: var(--color-surface);
   border-inline-end: var(--border-width) solid var(--color-border);
 }
@@ -50,7 +51,7 @@
 
 @media (max-width: 800px) {
   .app-layout__body {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .app-layout__nav,

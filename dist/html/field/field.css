@@ -1,4 +1,4 @@
-/* Component: field — atelier form field */
+/* Component: field — NFTS form field */
 
 .component--field .demo {
   display: grid;
@@ -22,7 +22,7 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
-  line-height: 1.2;
+  line-height: var(--leading-ui);
   text-transform: uppercase;
   color: var(--color-text-secondary);
 }
@@ -51,12 +51,16 @@
 .field select,
 .field textarea {
   box-sizing: border-box;
-  font: inherit;
   width: 100%;
   min-height: var(--hit-target);
   padding: var(--space-1) var(--space-2);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--leading-ui);
   background-color: var(--color-surface);
   color: var(--color-text);
   appearance: none;

@@ -1,14 +1,11 @@
-/* Component: tile-board — NFTS board shell over dashboard-grid */
+/* Component: tile-board — board shell; rhythm owned by dashboard-grid */
 
 .component--tile-board .demo {
   display: grid;
   gap: var(--tile-gap);
+  margin: 0;
+  padding: var(--tile-gap);
 }
-
-/*
- * Tile board — equal outer rhythm; children stretch into dash-row cells.
- * Compose: tile-board → dashboard-grid → typed tiles (stat / chart-card).
- */
 
 app-tile-board,
 deml-tile-board,
@@ -39,7 +36,6 @@ deml-tile-board > deml-dashboard-grid,
   padding: 0;
 }
 
-/* Demo / static cells — match peer tile stretch contract */
 .tile-board__cell {
   display: flex;
   flex-direction: column;
@@ -53,5 +49,6 @@ deml-tile-board > deml-dashboard-grid,
   color: var(--color-card-text);
   background-color: var(--color-card);
   border: var(--border-width) solid var(--color-card-border);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
 }

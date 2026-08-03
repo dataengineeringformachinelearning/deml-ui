@@ -10,6 +10,12 @@
 
 .label {
   display: inline-block;
-  font-weight: 500;
-  margin-block-end: var(--space-sm);
+  margin-block-end: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: var(--leading-ui);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
 }

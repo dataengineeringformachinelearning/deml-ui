@@ -627,7 +627,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/chart-panel/chart-panel.html — do not edit */
-const DEML_TEMPLATE$1e = "<section class=\"chart-panel\" aria-labelledby=\"chart-panel-title\">\n      <header class=\"chart-panel__header\">\n        <h3 id=\"chart-panel-title\">Chart panel</h3>\n        <p class=\"chart-panel__value\">42</p>\n      </header>\n      <div class=\"chart-panel__body\" role=\"img\" aria-label=\"Sample chart placeholder\">\n        <svg class=\"chart\" viewBox=\"0 0 200 80\" width=\"100%\" height=\"80\" aria-hidden=\"true\">\n          <polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" points=\"0,60 40,40 80,50 120,20 160,35 200,10\" />\n        </svg>\n      </div>\n    </section>";
+const DEML_TEMPLATE$1e = "<section class=\"chart-panel\" aria-labelledby=\"chart-panel-title\">\n      <header class=\"chart-panel__header\">\n        <h3 id=\"chart-panel-title\">Chart panel</h3>\n        <p class=\"chart-panel__value\">42</p>\n      </header>\n      <div class=\"chart-panel__body\" role=\"img\" aria-label=\"Sample chart placeholder\">\n        <svg\n          class=\"chart\"\n          viewBox=\"0 0 360 150\"\n          preserveAspectRatio=\"xMidYMid meet\"\n          aria-hidden=\"true\"\n          focusable=\"false\"\n        >\n          <polyline\n            fill=\"none\"\n            stroke=\"currentColor\"\n            stroke-width=\"2\"\n            points=\"0,110 60,80 120,95 180,40 240,65 300,30 360,20\"\n          />\n        </svg>\n      </div>\n    </section>";
 class DemlChartPanel {
     constructor(host) {
         this.host = host;

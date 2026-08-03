@@ -12,7 +12,8 @@
   gap: var(--space-4);
   width: 100%;
   margin: 0;
-  padding: var(--space-5) var(--space-4);
+  /* Identical outer spacing on all four sides */
+  padding: var(--module-pad-lg);
   color: var(--color-card-text);
   background-color: var(--color-card);
   background-image: linear-gradient(
@@ -22,6 +23,7 @@
   );
   border: var(--border-width) solid var(--color-card-border);
   border-top: calc(var(--border-width) * 4) solid var(--color-primary);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
 }
 
@@ -38,31 +40,32 @@
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
-  line-height: 1.2;
+  line-height: var(--leading-ui);
   text-transform: uppercase;
   color: var(--color-primary);
 }
 
 .form-panel__title {
   margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(calc(var(--grid) * 3.5), 4vw, var(--font-size-lg));
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: var(--font-size-title);
+  font-stretch: var(--font-stretch-display);
+  font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: 1.1;
+  line-height: var(--leading-tight);
   color: var(--color-card-text);
 }
 
 .form-panel__description {
   margin: 0;
   max-width: 42ch;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
-  font-weight: 400;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.45;
+  line-height: var(--leading-relaxed);
   color: var(--color-card-text-secondary);
 }
 
@@ -89,9 +92,9 @@
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.35;
+  line-height: var(--leading-snug);
   color: var(--color-error);
 }
 
@@ -124,7 +127,7 @@
 
 .form-panel__footer a {
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
@@ -135,6 +138,6 @@
 
 @media screen and (min-width: 800px) {
   .form-panel {
-    padding: var(--space-6) var(--space-5);
+    padding: var(--space-6);
   }
 }

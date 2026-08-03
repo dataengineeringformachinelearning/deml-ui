@@ -1,4 +1,4 @@
-/* Component: area-chart — aspect-locked plot; never squash viewBox */
+/* Component: area-chart — aspect-locked plot; series from palette tokens */
 
 .component--area-chart .demo {
   display: grid;
@@ -15,67 +15,54 @@ deml-area-chart,
   min-width: 0;
   min-height: 0;
   flex: 0 1 auto;
-  --chart-accent: var(--color-primary);
+  --chart-accent: var(--chart-series-1);
   --chart-plot: var(--color-plot);
   --chart-grid: var(--color-plot-grid);
   --chart-baseline: var(--color-plot-baseline);
   --chart-label: var(--color-plot-muted);
-  --chart-node: var(--color-plot-ink);
+  --chart-node: var(--chart-series-paper);
   background-color: transparent;
 }
 
 app-area-chart[data-accent='gold'],
 deml-area-chart[data-accent='gold'],
 :host([data-accent='gold']) {
-  --chart-accent: var(--color-accent-gold);
+  --chart-accent: var(--chart-series-3);
 }
 
 app-area-chart[data-accent='red'],
 deml-area-chart[data-accent='red'],
 :host([data-accent='red']) {
-  --chart-accent: var(--color-accent-red);
+  --chart-accent: var(--chart-series-4);
 }
 
 app-area-chart[data-accent='primary'],
 deml-area-chart[data-accent='primary'],
 :host([data-accent='primary']) {
-  --chart-accent: var(--color-primary);
+  --chart-accent: var(--chart-series-1);
 }
 
 .area-chart-frame {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   align-items: stretch;
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
-  margin: 0;
+  max-width: var(--chart-stage-max-inline);
+  aspect-ratio: var(--chart-aspect);
+  height: auto;
+  margin: 0 auto;
   padding: var(--chart-inset);
   background-color: var(--chart-plot);
   border: var(--border-width) solid var(--color-plot-border);
-}
-
-/*
- * Full plot — width fills card; height from --chart-aspect only.
- * Soft ceiling via max-width derived from --chart-max-block.
- * Never set height:100% or conflicting min-height that breaks aspect.
- */
-app-area-chart:not([data-variant='spark']) .area-chart-frame,
-deml-area-chart:not([data-variant='spark']) .area-chart-frame,
-:host(:not([data-variant='spark'])) .area-chart-frame,
-.component--area-chart .area-chart-frame,
-.component--chart-card .area-chart-frame {
-  aspect-ratio: var(--chart-aspect);
-  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
-  height: auto;
-  max-height: var(--chart-max-block);
-  margin-inline: auto;
 }
 
 .area-chart {
   display: block;
   width: 100%;
   height: 100%;
+  min-width: 0;
   min-height: 0;
   overflow: visible;
 }
@@ -134,23 +121,16 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   letter-spacing: var(--tracking-mark);
 }
 
-/* Spark — same aspect contract as full plots */
+/* Spark — same aspect; smaller max-inline only */
 app-area-chart[data-variant='spark'] .area-chart-frame,
 deml-area-chart[data-variant='spark'] .area-chart-frame,
 :host([data-variant='spark']) .area-chart-frame {
-  width: min(100%, calc(var(--chart-spark-max-block) * var(--chart-spark-aspect)));
+  max-width: var(--chart-spark-stage-max-inline);
   aspect-ratio: var(--chart-spark-aspect);
   height: auto;
-  max-height: var(--chart-spark-max-block);
-  margin-inline: auto;
   padding: 0;
   border: 0;
   background-color: transparent;
-}
-
-app-area-chart[data-variant='spark'] .area-chart,
-:host([data-variant='spark']) .area-chart {
-  min-height: 0;
 }
 
 app-area-chart[data-variant='spark'] .area-chart-line,
