@@ -38,6 +38,7 @@ import { defineDisclosure } from "./disclosure.js";
 import { defineDropdown } from "./dropdown.js";
 import { defineEmptyState } from "./empty-state.js";
 import { defineErrorState } from "./error-state.js";
+import { defineExploreCard } from "./explore-card.js";
 import { defineField } from "./field.js";
 import { defineFileUpload } from "./file-upload.js";
 import { defineFlashbar } from "./flashbar.js";
@@ -148,6 +149,7 @@ export function defineAll(): void {
   defineDropdown();
   defineEmptyState();
   defineErrorState();
+  defineExploreCard();
   defineField();
   defineFileUpload();
   defineFlashbar();
@@ -258,6 +260,7 @@ export const componentNames = [
   "dropdown",
   "empty-state",
   "error-state",
+  "explore-card",
   "field",
   "file-upload",
   "flashbar",

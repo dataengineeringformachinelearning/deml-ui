@@ -38,10 +38,11 @@
   border-color: var(--color-error);
 }
 
+.status-pill[data-status='degraded'],
 .status-pill[data-status='maintenance'],
 .status-pill[data-tone='warn'],
 .status-pill[data-tone='warning'] {
-  color: var(--color-card-text);
-  background-color: var(--color-highlight);
-  border-color: var(--color-highlight);
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }

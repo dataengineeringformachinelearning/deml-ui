@@ -2,7 +2,7 @@ import * as i0 from '@angular/core';
 import { ViewEncapsulation, Component, InjectionToken, inject, ElementRef, input, computed, Directive, model, contentChildren, afterNextRender, ChangeDetectionStrategy, DestroyRef, viewChild, output, effect, signal } from '@angular/core';
 
 /* AUTO-GENERATED from components/accordion/accordion.html — do not edit */
-const DEML_TEMPLATE$1D = "<div class=\"accordion\">\n      <details class=\"accordion__item\" open>\n        <summary class=\"accordion__trigger\">Section one</summary>\n        <div class=\"accordion__panel\">Content for section one.</div>\n      </details>\n      <details class=\"accordion__item\">\n        <summary class=\"accordion__trigger\">Section two</summary>\n        <div class=\"accordion__panel\">Content for section two.</div>\n      </details>\n    </div>";
+const DEML_TEMPLATE$1E = "<div class=\"accordion\">\n      <details class=\"accordion__item\" open>\n        <summary class=\"accordion__trigger\">Section one</summary>\n        <div class=\"accordion__panel\">Content for section one.</div>\n      </details>\n      <details class=\"accordion__item\">\n        <summary class=\"accordion__trigger\">Section two</summary>\n        <div class=\"accordion__panel\">Content for section two.</div>\n      </details>\n    </div>";
 class DemlAccordion {
     constructor(host) {
         this.host = host;
@@ -10,7 +10,7 @@ class DemlAccordion {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1D;
+            el.innerHTML = DEML_TEMPLATE$1E;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlAccordion, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -27,7 +27,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/activity-list/activity-list.html — do not edit */
-const DEML_TEMPLATE$1C = "<ul class=\"activity-list\" aria-label=\"Recent activity\">\n      <li class=\"activity-list__item\">\n        <time datetime=\"2026-07-30T12:00:00Z\">12:00</time>\n        <p class=\"activity-list__title\">Deploy completed</p>\n        <p class=\"activity-list__meta\">production</p>\n      </li>\n      <li class=\"activity-list__item\">\n        <time datetime=\"2026-07-30T11:40:00Z\">11:40</time>\n        <p class=\"activity-list__title\">Config updated</p>\n        <p class=\"activity-list__meta\">settings</p>\n      </li>\n    </ul>";
+const DEML_TEMPLATE$1D = "<ul class=\"activity-list\" aria-label=\"Recent activity\">\n      <li class=\"activity-list__item\">\n        <time datetime=\"2026-07-30T12:00:00Z\">12:00</time>\n        <p class=\"activity-list__title\">Deploy completed</p>\n        <p class=\"activity-list__meta\">production</p>\n      </li>\n      <li class=\"activity-list__item\">\n        <time datetime=\"2026-07-30T11:40:00Z\">11:40</time>\n        <p class=\"activity-list__title\">Config updated</p>\n        <p class=\"activity-list__meta\">settings</p>\n      </li>\n    </ul>";
 class DemlActivityList {
     constructor(host) {
         this.host = host;
@@ -35,7 +35,7 @@ class DemlActivityList {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1C;
+            el.innerHTML = DEML_TEMPLATE$1D;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlActivityList, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -52,7 +52,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/app-footer/app-footer.html — do not edit */
-const DEML_TEMPLATE$1B = "<footer class=\"app-footer\">\n      <p class=\"app-footer__copy\">© Product</p>\n      <nav class=\"app-footer__nav\" aria-label=\"Footer\">\n        <a href=\"#\">Privacy</a>\n        <a href=\"#\">Terms</a>\n      </nav>\n    </footer>";
+const DEML_TEMPLATE$1C = "<footer class=\"app-footer\">\n      <p class=\"app-footer__copy\">© Product</p>\n      <nav class=\"app-footer__nav\" aria-label=\"Footer\">\n        <a href=\"#\">Privacy</a>\n        <a href=\"#\">Terms</a>\n      </nav>\n    </footer>";
 class DemlAppFooter {
     constructor(host) {
         this.host = host;
@@ -60,7 +60,7 @@ class DemlAppFooter {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1B;
+            el.innerHTML = DEML_TEMPLATE$1C;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlAppFooter, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -77,7 +77,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/app-header/app-header.html — do not edit */
-const DEML_TEMPLATE$1A = "<header class=\"app-header\">\n      <a class=\"app-header__brand\" href=\"#\">Product</a>\n      <nav class=\"app-header__nav\" aria-label=\"App\">\n        <a href=\"#\">Home</a>\n        <a href=\"#\">Docs</a>\n      </nav>\n      <div class=\"app-header__actions\">\n        <button type=\"button\">Account</button>\n      </div>\n    </header>";
+const DEML_TEMPLATE$1B = "<header class=\"app-header\">\n      <a class=\"app-header__brand\" href=\"#\">Product</a>\n      <nav class=\"app-header__nav\" aria-label=\"App\">\n        <a href=\"#\">Home</a>\n        <a href=\"#\">Docs</a>\n      </nav>\n      <div class=\"app-header__actions\">\n        <button type=\"button\">Account</button>\n      </div>\n    </header>";
 class DemlAppHeader {
     constructor(host) {
         this.host = host;
@@ -85,7 +85,7 @@ class DemlAppHeader {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1A;
+            el.innerHTML = DEML_TEMPLATE$1B;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlAppHeader, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -102,7 +102,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/app-layout/app-layout.html — do not edit */
-const DEML_TEMPLATE$1z = "<div class=\"app-layout\">\n      <aside class=\"app-layout__nav\" aria-label=\"App navigation\">Nav</aside>\n      <div class=\"app-layout__main\">\n        <header class=\"app-layout__header\">Header</header>\n        <main class=\"app-layout__content\">Main content</main>\n      </div>\n      <aside class=\"app-layout__tools\" aria-label=\"Tools\">Tools</aside>\n    </div>";
+const DEML_TEMPLATE$1A = "<div class=\"app-layout\">\n      <aside class=\"app-layout__nav\" aria-label=\"App navigation\">Nav</aside>\n      <div class=\"app-layout__main\">\n        <header class=\"app-layout__header\">Header</header>\n        <main class=\"app-layout__content\">Main content</main>\n      </div>\n      <aside class=\"app-layout__tools\" aria-label=\"Tools\">Tools</aside>\n    </div>";
 class DemlAppLayout {
     constructor(host) {
         this.host = host;
@@ -110,7 +110,7 @@ class DemlAppLayout {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1z;
+            el.innerHTML = DEML_TEMPLATE$1A;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlAppLayout, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -127,7 +127,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/app-sidebar/app-sidebar.html — do not edit */
-const DEML_TEMPLATE$1y = "<aside class=\"app-sidebar\" aria-label=\"Dashboard\">\n      <p class=\"app-sidebar__brand\">Product</p>\n      <nav class=\"app-sidebar__nav\">\n        <a href=\"#\" aria-current=\"page\">Dashboard</a>\n        <a href=\"#\">Pipelines</a>\n        <a href=\"#\">Settings</a>\n      </nav>\n    </aside>";
+const DEML_TEMPLATE$1z = "<aside class=\"app-sidebar\" aria-label=\"Dashboard\">\n      <p class=\"app-sidebar__brand\">Product</p>\n      <nav class=\"app-sidebar__nav\">\n        <a href=\"#\" aria-current=\"page\">Dashboard</a>\n        <a href=\"#\">Pipelines</a>\n        <a href=\"#\">Settings</a>\n      </nav>\n    </aside>";
 class DemlAppSidebar {
     constructor(host) {
         this.host = host;
@@ -135,7 +135,7 @@ class DemlAppSidebar {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1y;
+            el.innerHTML = DEML_TEMPLATE$1z;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlAppSidebar, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -152,7 +152,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/area-chart/area-chart.html — do not edit */
-const DEML_TEMPLATE$1x = "<div class=\"area-chart-frame\" role=\"img\" aria-label=\"Area chart\">\n      <svg\n        class=\"area-chart\"\n        viewBox=\"0 0 360 150\"\n        preserveAspectRatio=\"xMidYMid meet\"\n        aria-hidden=\"true\"\n        focusable=\"false\"\n      >\n        <line class=\"area-chart-baseline\" x1=\"32\" y1=\"120\" x2=\"348\" y2=\"120\" />\n        <polyline\n          class=\"area-chart-line\"\n          fill=\"none\"\n          points=\"32,110 80,90 140,95 200,50 260,70 320,40\"\n        />\n      </svg>\n    </div>";
+const DEML_TEMPLATE$1y = "<div class=\"area-chart-frame\" role=\"img\" aria-label=\"Area chart\">\n      <svg\n        class=\"area-chart\"\n        viewBox=\"0 0 360 150\"\n        preserveAspectRatio=\"xMidYMid meet\"\n        aria-hidden=\"true\"\n        focusable=\"false\"\n      >\n        <line class=\"area-chart-baseline\" x1=\"32\" y1=\"120\" x2=\"348\" y2=\"120\" />\n        <polyline\n          class=\"area-chart-line\"\n          fill=\"none\"\n          points=\"32,110 80,90 140,95 200,50 260,70 320,40\"\n        />\n      </svg>\n    </div>";
 class DemlAreaChart {
     constructor(host) {
         this.host = host;
@@ -160,7 +160,7 @@ class DemlAreaChart {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1x;
+            el.innerHTML = DEML_TEMPLATE$1y;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlAreaChart, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -177,7 +177,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/article/article.html — do not edit */
-const DEML_TEMPLATE$1w = "<article class=\"article\"><h1>Article title</h1><p>Body copy.</p></article>";
+const DEML_TEMPLATE$1x = "<article class=\"article\"><h1>Article title</h1><p>Body copy.</p></article>";
 class DemlArticle {
     constructor(host) {
         this.host = host;
@@ -185,7 +185,7 @@ class DemlArticle {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1w;
+            el.innerHTML = DEML_TEMPLATE$1x;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlArticle, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -202,7 +202,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/autocomplete/autocomplete.html — do not edit */
-const DEML_TEMPLATE$1v = "<div class=\"autocomplete\">\n      <label for=\"autocomplete-input\">Fruit</label>\n      <input id=\"autocomplete-input\" type=\"text\" name=\"fruit\" autocomplete=\"off\" aria-autocomplete=\"list\" aria-controls=\"autocomplete-list\" aria-expanded=\"true\" />\n      <ul id=\"autocomplete-list\" class=\"autocomplete__list\" role=\"listbox\">\n        <li role=\"option\" aria-selected=\"true\">Apple</li>\n        <li role=\"option\">Apricot</li>\n        <li role=\"option\">Avocado</li>\n      </ul>\n    </div>";
+const DEML_TEMPLATE$1w = "<div class=\"autocomplete\">\n      <label for=\"autocomplete-input\">Fruit</label>\n      <input id=\"autocomplete-input\" type=\"text\" name=\"fruit\" autocomplete=\"off\" aria-autocomplete=\"list\" aria-controls=\"autocomplete-list\" aria-expanded=\"true\" />\n      <ul id=\"autocomplete-list\" class=\"autocomplete__list\" role=\"listbox\">\n        <li role=\"option\" aria-selected=\"true\">Apple</li>\n        <li role=\"option\">Apricot</li>\n        <li role=\"option\">Avocado</li>\n      </ul>\n    </div>";
 class DemlAutocomplete {
     constructor(host) {
         this.host = host;
@@ -210,7 +210,7 @@ class DemlAutocomplete {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1v;
+            el.innerHTML = DEML_TEMPLATE$1w;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlAutocomplete, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -227,7 +227,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/avatar/avatar.html — do not edit */
-const DEML_TEMPLATE$1u = "<span class=\"avatar\" aria-label=\"Ada Lovelace\">\n      <span class=\"avatar__initials\" aria-hidden=\"true\">AL</span>\n    </span>\n    <span class=\"avatar\" aria-label=\"User photo\">\n      <img class=\"avatar__image\" src=\"\" alt=\"\" width=\"40\" height=\"40\" />\n    </span>";
+const DEML_TEMPLATE$1v = "<span class=\"avatar\" aria-label=\"Ada Lovelace\">\n      <span class=\"avatar__initials\" aria-hidden=\"true\">AL</span>\n    </span>\n    <span class=\"avatar\" aria-label=\"User photo\">\n      <img class=\"avatar__image\" src=\"\" alt=\"\" width=\"40\" height=\"40\" />\n    </span>";
 class DemlAvatar {
     constructor(host) {
         this.host = host;
@@ -235,7 +235,7 @@ class DemlAvatar {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1u;
+            el.innerHTML = DEML_TEMPLATE$1v;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlAvatar, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -252,7 +252,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/badge/badge.html — do not edit */
-const DEML_TEMPLATE$1t = "<span class=\"badge\">Badge</span>\n    <span class=\"badge\" data-tone=\"success\">Success</span>\n    <span class=\"badge\" data-tone=\"warning\">Warning</span>\n    <span class=\"badge\" data-tone=\"danger\">Danger</span>";
+const DEML_TEMPLATE$1u = "<span class=\"badge\">Badge</span>\n    <span class=\"badge\" data-tone=\"success\">Success</span>\n    <span class=\"badge\" data-tone=\"warning\">Warning</span>\n    <span class=\"badge\" data-tone=\"danger\">Danger</span>";
 class DemlBadge {
     constructor(host) {
         this.host = host;
@@ -260,7 +260,7 @@ class DemlBadge {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1t;
+            el.innerHTML = DEML_TEMPLATE$1u;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBadge, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -277,7 +277,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/banner/banner.html — do not edit */
-const DEML_TEMPLATE$1s = "<div class=\"banner\"><p class=\"banner__title\">Banner</p><p class=\"banner__text\">Supporting message.</p></div>";
+const DEML_TEMPLATE$1t = "<div class=\"banner\"><p class=\"banner__title\">Banner</p><p class=\"banner__text\">Supporting message.</p></div>";
 class DemlBanner {
     constructor(host) {
         this.host = host;
@@ -285,7 +285,7 @@ class DemlBanner {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1s;
+            el.innerHTML = DEML_TEMPLATE$1t;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBanner, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -302,7 +302,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/bar-chart/bar-chart.html — do not edit */
-const DEML_TEMPLATE$1r = "<ul class=\"bar-chart\" role=\"list\" aria-label=\"Bar chart\">\n      <li class=\"bar-chart-row\">\n        <div class=\"bar-chart-meta\">\n          <span class=\"bar-chart-label\">Alpha</span>\n          <span class=\"bar-chart-value\">80%</span>\n        </div>\n        <div class=\"bar-chart-track\" aria-hidden=\"true\">\n          <div class=\"bar-chart-fill\" style=\"width: 80%\"></div>\n        </div>\n      </li>\n      <li class=\"bar-chart-row\">\n        <div class=\"bar-chart-meta\">\n          <span class=\"bar-chart-label\">Beta</span>\n          <span class=\"bar-chart-value\">55%</span>\n        </div>\n        <div class=\"bar-chart-track\" aria-hidden=\"true\">\n          <div class=\"bar-chart-fill\" style=\"width: 55%\"></div>\n        </div>\n      </li>\n      <li class=\"bar-chart-row\">\n        <div class=\"bar-chart-meta\">\n          <span class=\"bar-chart-label\">Gamma</span>\n          <span class=\"bar-chart-value\">35%</span>\n        </div>\n        <div class=\"bar-chart-track\" aria-hidden=\"true\">\n          <div class=\"bar-chart-fill\" style=\"width: 35%\"></div>\n        </div>\n      </li>\n    </ul>";
+const DEML_TEMPLATE$1s = "<ul class=\"bar-chart\" role=\"list\" aria-label=\"Bar chart\">\n      <li class=\"bar-chart-row\">\n        <div class=\"bar-chart-meta\">\n          <span class=\"bar-chart-label\">Alpha</span>\n          <span class=\"bar-chart-value\">80%</span>\n        </div>\n        <div class=\"bar-chart-track\" aria-hidden=\"true\">\n          <div class=\"bar-chart-fill\" style=\"width: 80%\"></div>\n        </div>\n      </li>\n      <li class=\"bar-chart-row\">\n        <div class=\"bar-chart-meta\">\n          <span class=\"bar-chart-label\">Beta</span>\n          <span class=\"bar-chart-value\">55%</span>\n        </div>\n        <div class=\"bar-chart-track\" aria-hidden=\"true\">\n          <div class=\"bar-chart-fill\" style=\"width: 55%\"></div>\n        </div>\n      </li>\n      <li class=\"bar-chart-row\">\n        <div class=\"bar-chart-meta\">\n          <span class=\"bar-chart-label\">Gamma</span>\n          <span class=\"bar-chart-value\">35%</span>\n        </div>\n        <div class=\"bar-chart-track\" aria-hidden=\"true\">\n          <div class=\"bar-chart-fill\" style=\"width: 35%\"></div>\n        </div>\n      </li>\n    </ul>";
 class DemlBarChart {
     constructor(host) {
         this.host = host;
@@ -310,7 +310,7 @@ class DemlBarChart {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1r;
+            el.innerHTML = DEML_TEMPLATE$1s;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBarChart, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -327,7 +327,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/box/box.html — do not edit */
-const DEML_TEMPLATE$1q = "<div class=\"box\">\n      <p>Lightweight content grouping box.</p>\n    </div>";
+const DEML_TEMPLATE$1r = "<div class=\"box\">\n      <p>Lightweight content grouping box.</p>\n    </div>";
 class DemlBox {
     constructor(host) {
         this.host = host;
@@ -335,7 +335,7 @@ class DemlBox {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1q;
+            el.innerHTML = DEML_TEMPLATE$1r;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBox, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -352,7 +352,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/brand/brand.html — do not edit */
-const DEML_TEMPLATE$1p = "<a class=\"brand\" href=\"/\" aria-label=\"Product home\">\n      <span class=\"brand__mark\" aria-hidden=\"true\"></span>\n      <span class=\"brand__wordmark\">Product</span>\n    </a>";
+const DEML_TEMPLATE$1q = "<a class=\"brand\" href=\"/\" aria-label=\"Product home\">\n      <span class=\"brand__mark\" aria-hidden=\"true\"></span>\n      <span class=\"brand__wordmark\">Product</span>\n    </a>";
 class DemlBrand {
     constructor(host) {
         this.host = host;
@@ -360,7 +360,7 @@ class DemlBrand {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1p;
+            el.innerHTML = DEML_TEMPLATE$1q;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBrand, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -377,7 +377,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/breadcrumbs/breadcrumbs.html — do not edit */
-const DEML_TEMPLATE$1o = "<nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">\n      <ol class=\"breadcrumbs__list\">\n        <li><a href=\"#\">Home</a></li>\n        <li><a href=\"#\">Library</a></li>\n        <li aria-current=\"page\">Current page</li>\n      </ol>\n    </nav>";
+const DEML_TEMPLATE$1p = "<nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">\n      <ol class=\"breadcrumbs__list\">\n        <li><a href=\"#\">Home</a></li>\n        <li><a href=\"#\">Library</a></li>\n        <li aria-current=\"page\">Current page</li>\n      </ol>\n    </nav>";
 class DemlBreadcrumbs {
     constructor(host) {
         this.host = host;
@@ -385,7 +385,7 @@ class DemlBreadcrumbs {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1o;
+            el.innerHTML = DEML_TEMPLATE$1p;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBreadcrumbs, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -402,7 +402,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/bulk-toolbar/bulk-toolbar.html — do not edit */
-const DEML_TEMPLATE$1n = "<div class=\"bulk-toolbar\" role=\"toolbar\" aria-label=\"Bulk actions\">\n      <span class=\"bulk-toolbar__count\">3 selected</span>\n      <button type=\"button\">Archive</button>\n      <button type=\"button\">Delete</button>\n      <button type=\"button\">Clear selection</button>\n    </div>";
+const DEML_TEMPLATE$1o = "<div class=\"bulk-toolbar\" role=\"toolbar\" aria-label=\"Bulk actions\">\n      <span class=\"bulk-toolbar__count\">3 selected</span>\n      <button type=\"button\">Archive</button>\n      <button type=\"button\">Delete</button>\n      <button type=\"button\">Clear selection</button>\n    </div>";
 class DemlBulkToolbar {
     constructor(host) {
         this.host = host;
@@ -410,7 +410,7 @@ class DemlBulkToolbar {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1n;
+            el.innerHTML = DEML_TEMPLATE$1o;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBulkToolbar, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -427,7 +427,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/button/button.html — do not edit */
-const DEML_TEMPLATE$1m = "<button type=\"button\" class=\"button button--primary\">Primary</button>\n    <button type=\"button\" class=\"button button--secondary\">Secondary</button>\n    <button type=\"button\" class=\"button button--accent\">Accent</button>\n    <button type=\"button\" class=\"button button--primary button--pill\">Pill</button>\n    <button type=\"button\" class=\"button button--primary\" disabled>Disabled</button>";
+const DEML_TEMPLATE$1n = "<button type=\"button\" class=\"button button--primary\">Primary</button>\n    <button type=\"button\" class=\"button button--secondary\">Secondary</button>\n    <button type=\"button\" class=\"button button--accent\">Accent</button>\n    <button type=\"button\" class=\"button button--primary button--pill\">Pill</button>\n    <button type=\"button\" class=\"button button--primary\" disabled>Disabled</button>";
 class DemlButton {
     constructor(host) {
         this.host = host;
@@ -435,7 +435,7 @@ class DemlButton {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1m;
+            el.innerHTML = DEML_TEMPLATE$1n;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlButton, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -452,7 +452,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/button-group/button-group.html — do not edit */
-const DEML_TEMPLATE$1l = "<div class=\"button-group\" role=\"group\" aria-label=\"Alignment\">\n      <button type=\"button\">Left</button>\n      <button type=\"button\">Center</button>\n      <button type=\"button\">Right</button>\n    </div>";
+const DEML_TEMPLATE$1m = "<div class=\"button-group\" role=\"group\" aria-label=\"Alignment\">\n      <button type=\"button\">Left</button>\n      <button type=\"button\">Center</button>\n      <button type=\"button\">Right</button>\n    </div>";
 class DemlButtonGroup {
     constructor(host) {
         this.host = host;
@@ -460,7 +460,7 @@ class DemlButtonGroup {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1l;
+            el.innerHTML = DEML_TEMPLATE$1m;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlButtonGroup, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -477,7 +477,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/callout/callout.html — do not edit */
-const DEML_TEMPLATE$1k = "<aside class=\"callout\" role=\"status\" data-tone=\"info\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Callout heading</p>\n        <p class=\"callout__text\">Highlighted message for the user.</p>\n      </div>\n      <button type=\"button\" class=\"callout__close\" aria-label=\"Dismiss\">×</button>\n    </aside>";
+const DEML_TEMPLATE$1l = "<aside class=\"callout\" role=\"status\" data-tone=\"info\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Callout heading</p>\n        <p class=\"callout__text\">Highlighted message for the user.</p>\n      </div>\n      <button type=\"button\" class=\"callout__close\" aria-label=\"Dismiss\">×</button>\n    </aside>";
 class DemlCallout {
     constructor(host) {
         this.host = host;
@@ -485,7 +485,7 @@ class DemlCallout {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1k;
+            el.innerHTML = DEML_TEMPLATE$1l;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCallout, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -502,7 +502,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/card/card.html — do not edit */
-const DEML_TEMPLATE$1j = "<article class=\"card\">\n      <header class=\"card__header\">\n        <h3 class=\"card__title\">Card title</h3>\n        <p class=\"card__description\">Optional supporting text.</p>\n      </header>\n      <div class=\"card__body\">\n        <p>Card body content.</p>\n      </div>\n      <footer class=\"card__footer\">\n        <button type=\"button\" class=\"button\">Action</button>\n      </footer>\n    </article>";
+const DEML_TEMPLATE$1k = "<article class=\"card\">\n      <header class=\"card__header\">\n        <h3 class=\"card__title\">Card title</h3>\n        <p class=\"card__description\">Optional supporting text.</p>\n      </header>\n      <div class=\"card__body\">\n        <p>Card body content.</p>\n      </div>\n      <footer class=\"card__footer\">\n        <button type=\"button\" class=\"button\">Action</button>\n      </footer>\n    </article>";
 class DemlCard {
     constructor(host) {
         this.host = host;
@@ -510,7 +510,7 @@ class DemlCard {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1j;
+            el.innerHTML = DEML_TEMPLATE$1k;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCard, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -527,7 +527,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/card-grid/card-grid.html — do not edit */
-const DEML_TEMPLATE$1i = "<div class=\"card-grid\"><article class=\"card\"><h3 class=\"card-heading\">Card</h3></article></div>";
+const DEML_TEMPLATE$1j = "<div class=\"card-grid\"><article class=\"card\"><h3 class=\"card-heading\">Card</h3></article></div>";
 class DemlCardGrid {
     constructor(host) {
         this.host = host;
@@ -535,7 +535,7 @@ class DemlCardGrid {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1i;
+            el.innerHTML = DEML_TEMPLATE$1j;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCardGrid, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -552,7 +552,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/chart/chart.html — do not edit */
-const DEML_TEMPLATE$1h = "<figure class=\"chart-figure\">\n      <div class=\"chart-figure__plot\">\n        <svg\n          class=\"chart\"\n          viewBox=\"0 0 360 150\"\n          preserveAspectRatio=\"xMidYMid meet\"\n          role=\"img\"\n          aria-label=\"Sample line chart\"\n        >\n          <line x1=\"0\" y1=\"130\" x2=\"360\" y2=\"130\" stroke=\"currentColor\" opacity=\"0.25\" />\n          <polyline\n            fill=\"none\"\n            stroke=\"currentColor\"\n            stroke-width=\"2\"\n            points=\"0,110 60,85 120,95 180,50 240,70 300,40 360,30\"\n          />\n        </svg>\n      </div>\n      <figcaption>Chart placeholder (native SVG)</figcaption>\n    </figure>";
+const DEML_TEMPLATE$1i = "<figure class=\"chart-figure\">\n      <div class=\"chart-figure__plot\">\n        <svg\n          class=\"chart\"\n          viewBox=\"0 0 360 150\"\n          preserveAspectRatio=\"xMidYMid meet\"\n          role=\"img\"\n          aria-label=\"Sample line chart\"\n        >\n          <line x1=\"0\" y1=\"130\" x2=\"360\" y2=\"130\" stroke=\"currentColor\" opacity=\"0.25\" />\n          <polyline\n            fill=\"none\"\n            stroke=\"currentColor\"\n            stroke-width=\"2\"\n            points=\"0,110 60,85 120,95 180,50 240,70 300,40 360,30\"\n          />\n        </svg>\n      </div>\n      <figcaption>Chart placeholder (native SVG)</figcaption>\n    </figure>";
 class DemlChart {
     constructor(host) {
         this.host = host;
@@ -560,7 +560,7 @@ class DemlChart {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1h;
+            el.innerHTML = DEML_TEMPLATE$1i;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlChart, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -577,7 +577,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/chart-card/chart-card.html — do not edit */
-const DEML_TEMPLATE$1g = "<article class=\"chart-card\" aria-labelledby=\"chart-card-demo-heading\">\n      <header class=\"chart-card-header\">\n        <h3 class=\"chart-card-heading\" id=\"chart-card-demo-heading\">Traffic</h3>\n        <p class=\"chart-card-meta\">Last 7 days</p>\n      </header>\n      <div class=\"chart-card-body\">\n        <div class=\"area-chart-frame\" role=\"img\" aria-label=\"Sample area chart\">\n          <svg\n            class=\"area-chart\"\n            viewBox=\"0 0 360 150\"\n            preserveAspectRatio=\"xMidYMid meet\"\n            aria-hidden=\"true\"\n            focusable=\"false\"\n          >\n            <polyline\n              class=\"area-chart-line\"\n              fill=\"none\"\n              points=\"32,110 80,90 140,95 200,50 260,70 320,40\"\n            />\n          </svg>\n        </div>\n      </div>\n    </article>";
+const DEML_TEMPLATE$1h = "<article class=\"chart-card\" aria-labelledby=\"chart-card-demo-heading\">\n      <header class=\"chart-card-header\">\n        <h3 class=\"chart-card-heading\" id=\"chart-card-demo-heading\">Traffic</h3>\n        <p class=\"chart-card-meta\">Last 7 days</p>\n      </header>\n      <div class=\"chart-card-body\">\n        <div class=\"area-chart-frame\" role=\"img\" aria-label=\"Sample area chart\">\n          <svg\n            class=\"area-chart\"\n            viewBox=\"0 0 360 150\"\n            preserveAspectRatio=\"xMidYMid meet\"\n            aria-hidden=\"true\"\n            focusable=\"false\"\n          >\n            <polyline\n              class=\"area-chart-line\"\n              fill=\"none\"\n              points=\"32,110 80,90 140,95 200,50 260,70 320,40\"\n            />\n          </svg>\n        </div>\n      </div>\n    </article>";
 class DemlChartCard {
     constructor(host) {
         this.host = host;
@@ -585,7 +585,7 @@ class DemlChartCard {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1g;
+            el.innerHTML = DEML_TEMPLATE$1h;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlChartCard, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -602,7 +602,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/chart-empty-state/chart-empty-state.html — do not edit */
-const DEML_TEMPLATE$1f = "<div class=\"chart-empty-state\" role=\"status\">\n      <p class=\"chart-empty-state__title\">No chart data</p>\n      <p class=\"chart-empty-state__description\">Data will appear here once available.</p>\n    </div>";
+const DEML_TEMPLATE$1g = "<div class=\"chart-empty-state\" role=\"status\">\n      <p class=\"chart-empty-state__title\">No chart data</p>\n      <p class=\"chart-empty-state__description\">Data will appear here once available.</p>\n    </div>";
 class DemlChartEmptyState {
     constructor(host) {
         this.host = host;
@@ -610,7 +610,7 @@ class DemlChartEmptyState {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1f;
+            el.innerHTML = DEML_TEMPLATE$1g;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlChartEmptyState, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -627,7 +627,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/chart-panel/chart-panel.html — do not edit */
-const DEML_TEMPLATE$1e = "<section class=\"chart-panel\" aria-labelledby=\"chart-panel-title\">\n      <header class=\"chart-panel__header\">\n        <h3 id=\"chart-panel-title\">Chart panel</h3>\n        <p class=\"chart-panel__value\">42</p>\n      </header>\n      <div class=\"chart-panel__body\" role=\"img\" aria-label=\"Sample chart placeholder\">\n        <svg\n          class=\"chart\"\n          viewBox=\"0 0 360 150\"\n          preserveAspectRatio=\"xMidYMid meet\"\n          aria-hidden=\"true\"\n          focusable=\"false\"\n        >\n          <polyline\n            fill=\"none\"\n            stroke=\"currentColor\"\n            stroke-width=\"2\"\n            points=\"0,110 60,80 120,95 180,40 240,65 300,30 360,20\"\n          />\n        </svg>\n      </div>\n    </section>";
+const DEML_TEMPLATE$1f = "<section class=\"chart-panel\" aria-labelledby=\"chart-panel-title\">\n      <header class=\"chart-panel__header\">\n        <h3 id=\"chart-panel-title\">Chart panel</h3>\n        <p class=\"chart-panel__value\">42</p>\n      </header>\n      <div class=\"chart-panel__body\" role=\"img\" aria-label=\"Sample chart placeholder\">\n        <svg\n          class=\"chart\"\n          viewBox=\"0 0 360 150\"\n          preserveAspectRatio=\"xMidYMid meet\"\n          aria-hidden=\"true\"\n          focusable=\"false\"\n        >\n          <polyline\n            fill=\"none\"\n            stroke=\"currentColor\"\n            stroke-width=\"2\"\n            points=\"0,110 60,80 120,95 180,40 240,65 300,30 360,20\"\n          />\n        </svg>\n      </div>\n    </section>";
 class DemlChartPanel {
     constructor(host) {
         this.host = host;
@@ -635,7 +635,7 @@ class DemlChartPanel {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1e;
+            el.innerHTML = DEML_TEMPLATE$1f;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlChartPanel, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -652,7 +652,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/checkbox/checkbox.html — do not edit */
-const DEML_TEMPLATE$1d = "<label class=\"checkbox\">\n      <input type=\"checkbox\" name=\"checkbox-demo\" />\n      <span class=\"checkbox__label\">Checkbox option</span>\n    </label>";
+const DEML_TEMPLATE$1e = "<label class=\"checkbox\">\n      <input type=\"checkbox\" name=\"checkbox-demo\" />\n      <span class=\"checkbox__label\">Checkbox option</span>\n    </label>";
 class DemlCheckbox {
     constructor(host) {
         this.host = host;
@@ -660,7 +660,7 @@ class DemlCheckbox {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1d;
+            el.innerHTML = DEML_TEMPLATE$1e;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCheckbox, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -677,7 +677,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/checkbox-field/checkbox-field.html — do not edit */
-const DEML_TEMPLATE$1c = "<label class=\"checkbox-field\"><input type=\"checkbox\" /><span>Remember me</span></label>";
+const DEML_TEMPLATE$1d = "<label class=\"checkbox-field\"><input type=\"checkbox\" /><span>Remember me</span></label>";
 class DemlCheckboxField {
     constructor(host) {
         this.host = host;
@@ -685,7 +685,7 @@ class DemlCheckboxField {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1c;
+            el.innerHTML = DEML_TEMPLATE$1d;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCheckboxField, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -702,7 +702,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/cluster/cluster.html — do not edit */
-const DEML_TEMPLATE$1b = "<div class=\"cluster\">\n      <button type=\"button\">Primary</button>\n      <button type=\"button\">Secondary</button>\n      <span class=\"badge\">Tag</span>\n    </div>";
+const DEML_TEMPLATE$1c = "<div class=\"cluster\">\n      <button type=\"button\">Primary</button>\n      <button type=\"button\">Secondary</button>\n      <span class=\"badge\">Tag</span>\n    </div>";
 class DemlCluster {
     constructor(host) {
         this.host = host;
@@ -710,7 +710,7 @@ class DemlCluster {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1b;
+            el.innerHTML = DEML_TEMPLATE$1c;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCluster, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -727,7 +727,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/command/command.html — do not edit */
-const DEML_TEMPLATE$1a = "<div class=\"command\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Command palette\">\n      <input class=\"command__input\" type=\"search\" placeholder=\"Type a command…\" aria-controls=\"command-list\" />\n      <ul id=\"command-list\" class=\"command__list\" role=\"listbox\">\n        <li role=\"option\" aria-selected=\"true\">Go to dashboard</li>\n        <li role=\"option\">Open settings</li>\n        <li role=\"option\">Sign out</li>\n      </ul>\n    </div>";
+const DEML_TEMPLATE$1b = "<div class=\"command\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Command palette\">\n      <input class=\"command__input\" type=\"search\" placeholder=\"Type a command…\" aria-controls=\"command-list\" />\n      <ul id=\"command-list\" class=\"command__list\" role=\"listbox\">\n        <li role=\"option\" aria-selected=\"true\">Go to dashboard</li>\n        <li role=\"option\">Open settings</li>\n        <li role=\"option\">Sign out</li>\n      </ul>\n    </div>";
 class DemlCommand {
     constructor(host) {
         this.host = host;
@@ -735,7 +735,7 @@ class DemlCommand {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1a;
+            el.innerHTML = DEML_TEMPLATE$1b;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCommand, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -752,7 +752,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/confirm-dialog/confirm-dialog.html — do not edit */
-const DEML_TEMPLATE$19 = "<button type=\"button\" class=\"button\" data-deml-open-confirm>Delete item</button>\n    <dialog class=\"confirm-dialog\">\n      <form method=\"dialog\">\n        <h3 class=\"confirm-dialog__title\">Confirm action</h3>\n        <p class=\"confirm-dialog__body\">This cannot be undone.</p>\n        <div class=\"confirm-dialog__actions\">\n          <button type=\"submit\" class=\"button\" value=\"cancel\">Cancel</button>\n          <button type=\"submit\" class=\"button\" data-variant=\"primary\" value=\"confirm\">Confirm</button>\n        </div>\n      </form>\n    </dialog>";
+const DEML_TEMPLATE$1a = "<button type=\"button\" class=\"button\" data-deml-open-confirm>Delete item</button>\n    <dialog class=\"confirm-dialog\">\n      <form method=\"dialog\">\n        <h3 class=\"confirm-dialog__title\">Confirm action</h3>\n        <p class=\"confirm-dialog__body\">This cannot be undone.</p>\n        <div class=\"confirm-dialog__actions\">\n          <button type=\"submit\" class=\"button\" value=\"cancel\">Cancel</button>\n          <button type=\"submit\" class=\"button\" data-variant=\"primary\" value=\"confirm\">Confirm</button>\n        </div>\n      </form>\n    </dialog>";
 class DemlConfirmDialog {
     constructor(host) {
         this.host = host;
@@ -760,7 +760,7 @@ class DemlConfirmDialog {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$19;
+            el.innerHTML = DEML_TEMPLATE$1a;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlConfirmDialog, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -777,7 +777,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/container/container.html — do not edit */
-const DEML_TEMPLATE$18 = "<div class=\"container\">\n      <header class=\"container__header\">\n        <h3 class=\"container__title\">Container</h3>\n        <p class=\"container__description\">Content anatomy wrapper.</p>\n      </header>\n      <div class=\"container__body\">\n        <p>Body content.</p>\n      </div>\n    </div>";
+const DEML_TEMPLATE$19 = "<div class=\"container\">\n      <header class=\"container__header\">\n        <h3 class=\"container__title\">Container</h3>\n        <p class=\"container__description\">Content anatomy wrapper.</p>\n      </header>\n      <div class=\"container__body\">\n        <p>Body content.</p>\n      </div>\n    </div>";
 class DemlContainer {
     constructor(host) {
         this.host = host;
@@ -785,7 +785,7 @@ class DemlContainer {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$18;
+            el.innerHTML = DEML_TEMPLATE$19;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlContainer, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -802,7 +802,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/content-layout/content-layout.html — do not edit */
-const DEML_TEMPLATE$17 = "<div class=\"content-layout\">\n      <nav class=\"content-layout__breadcrumbs\" aria-label=\"Breadcrumb\">Home / Page</nav>\n      <header class=\"content-layout__header\">\n        <h1>Content layout</h1>\n      </header>\n      <div class=\"content-layout__body\">Body region</div>\n    </div>";
+const DEML_TEMPLATE$18 = "<div class=\"content-layout\">\n      <nav class=\"content-layout__breadcrumbs\" aria-label=\"Breadcrumb\">Home / Page</nav>\n      <header class=\"content-layout__header\">\n        <h1>Content layout</h1>\n      </header>\n      <div class=\"content-layout__body\">Body region</div>\n    </div>";
 class DemlContentLayout {
     constructor(host) {
         this.host = host;
@@ -810,7 +810,7 @@ class DemlContentLayout {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$17;
+            el.innerHTML = DEML_TEMPLATE$18;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlContentLayout, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -827,7 +827,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/dashboard-grid/dashboard-grid.html — do not edit */
-const DEML_TEMPLATE$16 = "<div class=\"dashboard-grid\">\n      <div class=\"dashboard-grid__cell\" data-size=\"sm\">Tile SM</div>\n      <div class=\"dashboard-grid__cell\" data-size=\"md\">Tile MD</div>\n      <div class=\"dashboard-grid__cell\" data-size=\"sm\">Tile SM</div>\n    </div>";
+const DEML_TEMPLATE$17 = "<div class=\"dashboard-grid\">\n      <div class=\"dashboard-grid__cell\" data-size=\"sm\">Tile SM</div>\n      <div class=\"dashboard-grid__cell\" data-size=\"md\">Tile MD</div>\n      <div class=\"dashboard-grid__cell\" data-size=\"sm\">Tile SM</div>\n    </div>";
 class DemlDashboardGrid {
     constructor(host) {
         this.host = host;
@@ -835,7 +835,7 @@ class DemlDashboardGrid {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$16;
+            el.innerHTML = DEML_TEMPLATE$17;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlDashboardGrid, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -852,7 +852,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/dropdown/dropdown.html — do not edit */
-const DEML_TEMPLATE$15 = "<div class=\"dropdown\">\n      <button type=\"button\" class=\"dropdown__trigger\" aria-haspopup=\"menu\" aria-expanded=\"false\" aria-controls=\"dropdown-menu\">Actions</button>\n      <ul id=\"dropdown-menu\" class=\"dropdown__menu\" role=\"menu\" hidden>\n        <li role=\"none\"><button type=\"button\" role=\"menuitem\">Edit</button></li>\n        <li role=\"none\"><button type=\"button\" role=\"menuitem\">Duplicate</button></li>\n        <li role=\"none\"><button type=\"button\" role=\"menuitem\">Delete</button></li>\n      </ul>\n    </div>";
+const DEML_TEMPLATE$16 = "<div class=\"dropdown\">\n      <button type=\"button\" class=\"dropdown__trigger\" aria-haspopup=\"menu\" aria-expanded=\"false\" aria-controls=\"dropdown-menu\">Actions</button>\n      <ul id=\"dropdown-menu\" class=\"dropdown__menu\" role=\"menu\" hidden>\n        <li role=\"none\"><button type=\"button\" role=\"menuitem\">Edit</button></li>\n        <li role=\"none\"><button type=\"button\" role=\"menuitem\">Duplicate</button></li>\n        <li role=\"none\"><button type=\"button\" role=\"menuitem\">Delete</button></li>\n      </ul>\n    </div>";
 class DemlDropdown {
     constructor(host) {
         this.host = host;
@@ -860,7 +860,7 @@ class DemlDropdown {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$15;
+            el.innerHTML = DEML_TEMPLATE$16;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlDropdown, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -877,7 +877,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/empty-state/empty-state.html — do not edit */
-const DEML_TEMPLATE$14 = "<div class=\"empty-state\" role=\"status\">\n      <p class=\"empty-state__eyebrow\">Empty</p>\n      <p class=\"empty-state__title\">No items yet</p>\n      <p class=\"empty-state__description\">Create your first item to get started.</p>\n      <div class=\"empty-state__actions\">\n        <button type=\"button\">Create item</button>\n      </div>\n    </div>";
+const DEML_TEMPLATE$15 = "<div class=\"empty-state\" role=\"status\">\n      <p class=\"empty-state__eyebrow\">Empty</p>\n      <p class=\"empty-state__title\">No items yet</p>\n      <p class=\"empty-state__description\">Create your first item to get started.</p>\n      <div class=\"empty-state__actions\">\n        <button type=\"button\">Create item</button>\n      </div>\n    </div>";
 class DemlEmptyState {
     constructor(host) {
         this.host = host;
@@ -885,7 +885,7 @@ class DemlEmptyState {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$14;
+            el.innerHTML = DEML_TEMPLATE$15;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlEmptyState, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -902,7 +902,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/error-state/error-state.html — do not edit */
-const DEML_TEMPLATE$13 = "<div class=\"error-state\" role=\"alert\">\n      <p class=\"error-state__title\">Something went wrong</p>\n      <p class=\"error-state__description\">We could not load this resource. Try again.</p>\n      <div class=\"error-state__actions\">\n        <button type=\"button\">Retry</button>\n      </div>\n    </div>";
+const DEML_TEMPLATE$14 = "<div class=\"error-state\" role=\"alert\">\n      <p class=\"error-state__title\">Something went wrong</p>\n      <p class=\"error-state__description\">We could not load this resource. Try again.</p>\n      <div class=\"error-state__actions\">\n        <button type=\"button\">Retry</button>\n      </div>\n    </div>";
 class DemlErrorState {
     constructor(host) {
         this.host = host;
@@ -910,7 +910,7 @@ class DemlErrorState {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$13;
+            el.innerHTML = DEML_TEMPLATE$14;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlErrorState, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -920,6 +920,31 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
             type: Component,
             args: [{
                     selector: "deml-error-state",
+                    standalone: true,
+                    template: "",
+                    encapsulation: ViewEncapsulation.None,
+                }]
+        }], ctorParameters: () => [{ type: i0.ElementRef }] });
+
+/* AUTO-GENERATED from components/explore-card/explore-card.html — do not edit */
+const DEML_TEMPLATE$13 = "<article class=\"explore-card\" data-status=\"operational\">\n      <header class=\"explore-card__header\">\n        <div class=\"explore-card__meta\">\n          <span class=\"status-pill\" data-status=\"up\">Operational</span>\n          <span class=\"explore-card__tag\">Public Status Page</span>\n        </div>\n        <h3 class=\"explore-card__title\">Platform Status</h3>\n        <p class=\"explore-card__lede\">Live service health for the DEML control plane.</p>\n      </header>\n      <ul class=\"explore-card__metrics\" role=\"list\">\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Cumulative SLA</span>\n          <span class=\"explore-card__metric-value\">99.98%</span>\n          <span class=\"explore-card__metric-meta\">Based on real telemetry</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">P99 Latency</span>\n          <span class=\"explore-card__metric-value\">42ms</span>\n          <span class=\"explore-card__metric-meta\">Last 24h</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Spike Risk</span>\n          <span class=\"explore-card__metric-value\">12.00</span>\n          <span class=\"explore-card__metric-meta\">Dynamic Temporal Forecasting</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Threat Anomaly</span>\n          <span class=\"explore-card__metric-value\">0.40%</span>\n          <span class=\"explore-card__metric-meta\">Active</span>\n        </li>\n      </ul>\n      <div class=\"explore-card__uptime\">\n        <div class=\"explore-card__uptime-head\">\n          <span class=\"explore-card__uptime-label\">Uptime</span>\n          <span class=\"explore-card__uptime-value\">99.9%</span>\n        </div>\n        <div class=\"explore-card__uptime-track\" aria-hidden=\"true\">\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"partial\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n        </div>\n        <p class=\"explore-card__uptime-summary\">No current issues</p>\n      </div>\n      <footer class=\"explore-card__footer\">\n        <a class=\"button button--primary button--pill\" href=\"#\">View status</a>\n      </footer>\n    </article>";
+class DemlExploreCard {
+    constructor(host) {
+        this.host = host;
+    }
+    ngOnInit() {
+        const el = this.host.nativeElement;
+        if (!el.hasChildNodes()) {
+            el.innerHTML = DEML_TEMPLATE$13;
+        }
+    }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlExploreCard, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.2.25", type: DemlExploreCard, isStandalone: true, selector: "deml-explore-card", ngImport: i0, template: "", isInline: true, encapsulation: i0.ViewEncapsulation.None }); }
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlExploreCard, decorators: [{
+            type: Component,
+            args: [{
+                    selector: "deml-explore-card",
                     standalone: true,
                     template: "",
                     encapsulation: ViewEncapsulation.None,
@@ -2641,6 +2666,7 @@ const DEML_MARKUP_COMPONENTS = [
     DemlDropdown,
     DemlEmptyState,
     DemlErrorState,
+    DemlExploreCard,
     DemlField,
     DemlFileUpload,
     DemlFlashbar,
@@ -4874,5 +4900,5 @@ const DEML_COMPONENTS = [
  * Generated bundle index. Do not edit.
  */
 
-export { DEML_COMBOBOX, DEML_COMBOBOX_IMPORTS, DEML_COMPONENTS, DEML_DIALOG, DEML_DIALOG_IMPORTS, DEML_DISCLOSURE, DEML_DISCLOSURE_IMPORTS, DEML_HEADLESS, DEML_MARKUP_COMPONENTS, DEML_MENU, DEML_MENU_IMPORTS, DEML_TABS, DEML_TABS_IMPORTS, DemlAccordion, DemlActivityList, DemlAppFooter, DemlAppHeader, DemlAppLayout, DemlAppSidebar, DemlAreaChart, DemlArticle, DemlAutocomplete, DemlAvatar, DemlBadge, DemlBanner, DemlBarChart, DemlBox, DemlBrand, DemlBreadcrumbs, DemlBulkToolbar, DemlButton, DemlButtonGroup, DemlCallout, DemlCard, DemlCardGrid, DemlChart, DemlChartCard, DemlChartEmptyState, DemlChartPanel, DemlCheckbox, DemlCheckboxField, DemlCluster, DemlCombobox, DemlComboboxButton, DemlComboboxInput, DemlComboboxLabel, DemlComboboxOption, DemlComboboxOptions, DemlCommand, DemlConfirmDialog, DemlContainer, DemlContentLayout, DemlDashboardGrid, DemlDialog, DemlDialogClose, DemlDialogDescription, DemlDialogPanel, DemlDialogTitle, DemlDisclosure, DemlDisclosureButton, DemlDisclosurePanel, DemlDropdown, DemlEmptyState, DemlErrorState, DemlField, DemlFileUpload, DemlFlashbar, DemlFormGrid, DemlFormPanel, DemlFormSection, DemlGrid, DemlHelpPanel, DemlHudPanel, DemlIcon, DemlInputDate, DemlInputEmail, DemlInputNumber, DemlInputPassword, DemlInputRange, DemlInputSearch, DemlInputText, DemlInputTime, DemlKbd, DemlLabel, DemlLoadingOverlay, DemlMenu, DemlMenuButton, DemlMenuItem, DemlMenuItems, DemlMetricCard, DemlMetricList, DemlMicrocard, DemlMicrocardGrid, DemlNavbar, DemlNavigationMenu, DemlPageBackLink, DemlPageHeader, DemlPageSection, DemlPageShell, DemlPageTemplate, DemlPagination, DemlPanelGrid, DemlPopover, DemlProfile, DemlProgress, DemlPropertyFilter, DemlRadioGroup, DemlScrollArea, DemlSection, DemlSectionHeader, DemlSectionTemplate, DemlSelect, DemlSeparator, DemlSheet, DemlSidebarNav, DemlSkeleton, DemlSkipLink, DemlSpinner, DemlSplitPanel, DemlStack, DemlStatCard, DemlStatusBadge, DemlStatusCard, DemlStatusPill, DemlSwitch, DemlTab, DemlTabList, DemlTabPanel, DemlTable, DemlTabs, DemlTextField, DemlTextarea, DemlThemeToggle, DemlTileBoard, DemlTimeline, DemlToast, DemlToggle, DemlTooltip, DemlWizard, TypeaheadBuffer, createFocusTrap, demlId, findTypeaheadIndex, isActivationKey, nextRovingIndex, onClickOutside, resolveOpen, resolveValue };
+export { DEML_COMBOBOX, DEML_COMBOBOX_IMPORTS, DEML_COMPONENTS, DEML_DIALOG, DEML_DIALOG_IMPORTS, DEML_DISCLOSURE, DEML_DISCLOSURE_IMPORTS, DEML_HEADLESS, DEML_MARKUP_COMPONENTS, DEML_MENU, DEML_MENU_IMPORTS, DEML_TABS, DEML_TABS_IMPORTS, DemlAccordion, DemlActivityList, DemlAppFooter, DemlAppHeader, DemlAppLayout, DemlAppSidebar, DemlAreaChart, DemlArticle, DemlAutocomplete, DemlAvatar, DemlBadge, DemlBanner, DemlBarChart, DemlBox, DemlBrand, DemlBreadcrumbs, DemlBulkToolbar, DemlButton, DemlButtonGroup, DemlCallout, DemlCard, DemlCardGrid, DemlChart, DemlChartCard, DemlChartEmptyState, DemlChartPanel, DemlCheckbox, DemlCheckboxField, DemlCluster, DemlCombobox, DemlComboboxButton, DemlComboboxInput, DemlComboboxLabel, DemlComboboxOption, DemlComboboxOptions, DemlCommand, DemlConfirmDialog, DemlContainer, DemlContentLayout, DemlDashboardGrid, DemlDialog, DemlDialogClose, DemlDialogDescription, DemlDialogPanel, DemlDialogTitle, DemlDisclosure, DemlDisclosureButton, DemlDisclosurePanel, DemlDropdown, DemlEmptyState, DemlErrorState, DemlExploreCard, DemlField, DemlFileUpload, DemlFlashbar, DemlFormGrid, DemlFormPanel, DemlFormSection, DemlGrid, DemlHelpPanel, DemlHudPanel, DemlIcon, DemlInputDate, DemlInputEmail, DemlInputNumber, DemlInputPassword, DemlInputRange, DemlInputSearch, DemlInputText, DemlInputTime, DemlKbd, DemlLabel, DemlLoadingOverlay, DemlMenu, DemlMenuButton, DemlMenuItem, DemlMenuItems, DemlMetricCard, DemlMetricList, DemlMicrocard, DemlMicrocardGrid, DemlNavbar, DemlNavigationMenu, DemlPageBackLink, DemlPageHeader, DemlPageSection, DemlPageShell, DemlPageTemplate, DemlPagination, DemlPanelGrid, DemlPopover, DemlProfile, DemlProgress, DemlPropertyFilter, DemlRadioGroup, DemlScrollArea, DemlSection, DemlSectionHeader, DemlSectionTemplate, DemlSelect, DemlSeparator, DemlSheet, DemlSidebarNav, DemlSkeleton, DemlSkipLink, DemlSpinner, DemlSplitPanel, DemlStack, DemlStatCard, DemlStatusBadge, DemlStatusCard, DemlStatusPill, DemlSwitch, DemlTab, DemlTabList, DemlTabPanel, DemlTable, DemlTabs, DemlTextField, DemlTextarea, DemlThemeToggle, DemlTileBoard, DemlTimeline, DemlToast, DemlToggle, DemlTooltip, DemlWizard, TypeaheadBuffer, createFocusTrap, demlId, findTypeaheadIndex, isActivationKey, nextRovingIndex, onClickOutside, resolveOpen, resolveValue };
 //# sourceMappingURL=deml-ui.mjs.map

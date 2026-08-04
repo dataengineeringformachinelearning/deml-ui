@@ -38,6 +38,7 @@ export { DemlDisclosure, defineDisclosure } from "./disclosure.js";
 export { DemlDropdown, defineDropdown } from "./dropdown.js";
 export { DemlEmptyState, defineEmptyState } from "./empty-state.js";
 export { DemlErrorState, defineErrorState } from "./error-state.js";
+export { DemlExploreCard, defineExploreCard } from "./explore-card.js";
 export { DemlField, defineField } from "./field.js";
 export { DemlFileUpload, defineFileUpload } from "./file-upload.js";
 export { DemlFlashbar, defineFlashbar } from "./flashbar.js";
