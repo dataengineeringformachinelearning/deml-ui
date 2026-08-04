@@ -15,10 +15,11 @@
 .chart-figure__plot {
   display: block;
   box-sizing: border-box;
-  width: min(100%, var(--chart-stage-max-inline));
+  width: 100%;
+  max-width: var(--chart-stage-max-inline);
   aspect-ratio: var(--chart-aspect);
   height: auto;
-  max-height: var(--chart-max-block);
+  max-height: none;
   margin-inline: auto;
   padding: var(--chart-inset);
   background-color: var(--chart-plot);

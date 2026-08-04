@@ -13,12 +13,13 @@ deml-chart-empty-state,
   place-items: center;
   gap: var(--space-2);
   box-sizing: border-box;
-  width: min(100%, var(--chart-stage-max-inline));
+  width: 100%;
+  max-width: var(--chart-stage-max-inline);
   aspect-ratio: var(--chart-aspect);
   height: auto;
-  max-height: var(--chart-max-block);
+  max-height: none;
   margin: 0 auto;
-  padding: var(--module-pad);
+  padding: var(--chart-inset);
   text-align: center;
   color: var(--color-plot-muted);
   background-color: var(--chart-plot);

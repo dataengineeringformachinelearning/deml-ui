@@ -23,7 +23,7 @@ Consumer app: [`deml`](https://github.com/dataengineeringformachinelearning/deml
 3. **Geist only** — `--font-display`, `--font-mark`, `--font-secondary`, and body all resolve to Geist. Do not ship Syne/Fraunces mixes.
 4. **8px grid** — spacing and tile rhythm via `--grid`, `--tile-gap`, `--tile-row-unit`.
 5. **Fluid equal cells** — `grid-auto-rows: minmax(var(--tile-row-unit), auto)` so peer tiles stretch; never squash with fixed-only rows.
-6. **Charts** — keep `--chart-aspect: 2.4`; size via aspect + `--chart-stage-max-inline`, never `height: 100%` on plots.
+6. **Charts** — `--chart-aspect: 2.4` with equal `--chart-inset`; width fills the well (capped by `--chart-stage-max-inline`) so wider cards grow taller; never `height: 100%` / max-height squash on plot stages — letterbox peer tiles, not the SVG.
 7. **Light + dark** — `[data-theme="light"|"dark"]` (and `.light` / `.dark`).
 8. **A11y** — WCAG 2.0 AA: focus-visible, contrast, hit targets, reduced motion.
 9. **No Viking-UI** — do not reintroduce `viking-*`, `--viking-*`, or void-black suite chrome.

@@ -69,14 +69,16 @@ deml-chart-panel,
 
 .chart-panel__body {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  width: min(100%, var(--chart-stage-max-inline));
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--chart-stage-max-inline);
   aspect-ratio: var(--chart-aspect);
   height: auto;
-  max-height: var(--chart-max-block);
+  max-height: none;
   margin: 0 auto;
   padding: var(--chart-inset);
   overflow: visible;
@@ -90,6 +92,8 @@ deml-chart-panel,
   display: block;
   width: 100%;
   height: 100%;
+  min-width: 0;
+  min-height: 0;
 }
 
 @media screen and (min-width: 800px) {

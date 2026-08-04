@@ -1,4 +1,4 @@
-/* Component: area-chart — aspect-locked plot; never squash viewBox */
+/* Component: area-chart — width→aspect height; equal inset; never squash */
 
 .component--area-chart .demo {
   display: grid;
@@ -14,7 +14,7 @@ deml-area-chart,
   width: 100%;
   min-width: 0;
   min-height: 0;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   --chart-accent: var(--color-primary);
   --chart-plot: var(--color-plot);
   --chart-grid: var(--color-plot-grid);
@@ -44,21 +44,22 @@ deml-area-chart[data-accent='primary'],
 
 .area-chart-frame {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   align-items: stretch;
-  justify-content: center;
+  justify-content: stretch;
   box-sizing: border-box;
   width: 100%;
-  margin: 0;
+  max-width: var(--chart-stage-max-inline);
+  margin: 0 auto;
   padding: var(--chart-inset);
   background-color: var(--chart-plot);
   border: var(--border-width) solid var(--color-plot-border);
 }
 
 /*
- * Full plot — width fills card; height from --chart-aspect only.
- * Soft ceiling via max-width derived from --chart-max-block.
- * Never set height:100% or conflicting min-height that breaks aspect.
+ * Full plot — fill the well width; height from --chart-aspect only.
+ * Soft ceiling is max-width (--chart-stage-max-inline), never max-height
+ * (max-height fights aspect and leaves empty black wells).
  */
 app-area-chart:not([data-variant='spark']) .area-chart-frame,
 deml-area-chart:not([data-variant='spark']) .area-chart-frame,
@@ -66,17 +67,20 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
 .component--area-chart .area-chart-frame,
 .component--chart-card .area-chart-frame {
   aspect-ratio: var(--chart-aspect);
-  width: min(100%, var(--chart-stage-max-inline));
+  width: 100%;
+  max-width: var(--chart-stage-max-inline);
   height: auto;
-  max-height: var(--chart-max-block);
-  margin-inline: auto;
+  max-height: none;
 }
 
 .area-chart {
   display: block;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
+  min-width: 0;
   min-height: 0;
+  flex: 1 1 auto;
   overflow: visible;
 }
 
@@ -134,14 +138,15 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   letter-spacing: var(--tracking-mark);
 }
 
-/* Spark — same aspect contract as full plots */
+/* Spark — same aspect contract; soft ceiling via spark max-inline */
 app-area-chart[data-variant='spark'] .area-chart-frame,
 deml-area-chart[data-variant='spark'] .area-chart-frame,
 :host([data-variant='spark']) .area-chart-frame {
-  width: min(100%, calc(var(--chart-spark-max-block) * var(--chart-spark-aspect)));
+  width: 100%;
+  max-width: var(--chart-spark-stage-max-inline);
   aspect-ratio: var(--chart-spark-aspect);
   height: auto;
-  max-height: var(--chart-spark-max-block);
+  max-height: none;
   margin-inline: auto;
   padding: 0;
   border: 0;

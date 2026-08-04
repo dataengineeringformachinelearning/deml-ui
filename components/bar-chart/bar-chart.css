@@ -1,4 +1,4 @@
-/* Component: bar-chart — content-sized plot band (peer width to area) */
+/* Component: bar-chart — peer width + equal inset; content-tall rows */
 
 .component--bar-chart .demo {
   display: grid;
@@ -14,7 +14,7 @@ deml-bar-chart,
   width: 100%;
   min-width: 0;
   min-height: 0;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   --chart-accent: var(--color-primary);
   --chart-plot: var(--color-plot);
   --chart-label: var(--color-plot-muted);
@@ -38,21 +38,22 @@ app-bar-chart[data-accent='primary'],
 }
 
 /*
- * Content-sized plot band — peer width to area charts via --chart-stage-max-inline.
- * Height grows with rows (no aspect lock / inner scroll); tiles stretch around it.
+ * Plot well — same max-inline + equal inset as area charts.
+ * Height grows with rows (no aspect lock); peer tiles letterbox around it.
  */
 .bar-chart {
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   justify-content: flex-start;
   gap: var(--space-2);
   box-sizing: border-box;
-  width: min(100%, var(--chart-stage-max-inline));
+  width: 100%;
+  max-width: var(--chart-stage-max-inline);
   min-height: var(--chart-min-block);
   height: auto;
   margin: 0 auto;
-  padding: var(--chart-inset) var(--space-3);
+  padding: var(--chart-inset);
   overflow: visible;
   list-style: none;
   background-color: var(--chart-plot);
