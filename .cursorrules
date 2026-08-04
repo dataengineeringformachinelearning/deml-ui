@@ -2,25 +2,33 @@
 
 This repo is the DEML design system: **new-from-the-start (warm ash)**.
 
+## LOCKED STYLE — MANDATORY EVERYWHERE
+
+Warm ash NFTS is the **only** allowed look. **Any deviation is forbidden.**
+Do not invent parallel palettes, type stacks, or chart contracts.
+
 ## Look (mandatory)
 
-- Warm ash grounds (`#35312D` / `#1C1916`), cream modules (`#F3F0EA`), primary `#2F5F8F`
-- **Geist only** for all type roles (display, intro, body) — do not add Syne/Fraunces
+- Warm ash grounds (`#35312D` / `#1C1916`), cream modules (`#F3F0EA`), primary `#2F5F8F`,
+  accents `#3F6B54` / `#9E3D47`; light ground `#D4CEC5`; muted `#C6C0B7` / `#4A453F`
+- **Geist only** for all type roles (display, marks, intro, body) — do not add Syne/Fraunces
 - 8px grid, dual `data-theme`, equal `--tile-gap`, fluid dash-rows (`minmax(--tile-row-unit, auto)`)
-- Fixed `--chart-aspect: 2.4` — never squash or stretch plots
+- Fixed `--chart-aspect: 2.4`, equal `--chart-inset` — never squash, stretch, or theme-invert plots
 - Sharp modules (`--radius-*: 0`) unless a control needs the pill radius
+- Solid opaque navbar; no page horizontal overflow from scaffolding
 
 ## Do
 
 - Change visuals in `components/<name>/` and `styles/tokens.css` / `styles/base.css`
-- Expand from this warm-ash NFTS system — do not mix cold seven-color or Viking chrome
+- Expand from this warm-ash NFTS system only
 - Run `npm run sync` after adding/removing component folders; `npm run build` before release
 - Prefer WCAG 2.0 AA patterns already used in base + headless primitives
 
-## Do not
+## Do not (forbidden)
 
+- Deviate from NFTS for experiments, atelier frankensteins, or cold seven-color locks
 - Reintroduce Viking-UI naming, void-black / electric `#2176ff`, or `--viking-*` tokens
-- Replace warm ash with arbitrary seven-color locks (`#0066B2` / `#121212` / `#FFFFFF` suite) that fight NFTS
+- Replace warm ash with arbitrary seven-color locks (`#0066B2` / `#121212` / `#FFFFFF` suite)
 - Hand-edit generated wrappers under `src/angular/markup/` or `generated/` — regenerate via sync
 - Use fixed `grid-auto-rows: var(--dash-row)` without `minmax(..., auto)` (squashes charts/tiles)
 - Invent one-off spacing outside the token scale
