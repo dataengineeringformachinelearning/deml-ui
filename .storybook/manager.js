@@ -1,34 +1,35 @@
 import { addons } from "storybook/manager-api";
 import { create } from "storybook/theming/create";
 
+/** Storybook chrome — new-from-the-start warm ash (Geist, sharp modules) */
 const demlTheme = create({
-  base: "light",
+  base: "dark",
   brandTitle: "deml-ui",
   brandUrl: "https://ui.deml.app",
   brandTarget: "_self",
 
-  colorPrimary: "#5C2A5A",
-  colorSecondary: "#5C2A5A",
+  colorPrimary: "#2F5F8F",
+  colorSecondary: "#2F5F8F",
 
-  appBg: "#F7F8FA",
-  appContentBg: "#FFFFFF",
-  appPreviewBg: "#F7F8FA",
-  appBorderColor: "#D1D8DE",
-  appBorderRadius: 8,
+  appBg: "#35312D",
+  appContentBg: "#1C1916",
+  appPreviewBg: "#35312D",
+  appBorderColor: "#4A453F",
+  appBorderRadius: 0,
 
-  textColor: "#0C0C0D",
-  textInverseColor: "#F7F8FA",
-  textMutedColor: "#4A5560",
+  textColor: "#F3F0EA",
+  textInverseColor: "#1C1916",
+  textMutedColor: "#C6C0B7",
 
-  barTextColor: "#4A5560",
-  barSelectedColor: "#5C2A5A",
-  barHoverColor: "#8B5A8C",
-  barBg: "#FFFFFF",
+  barTextColor: "#C6C0B7",
+  barSelectedColor: "#9BB8D4",
+  barHoverColor: "#C2D4E6",
+  barBg: "#1C1916",
 
-  inputBg: "#FFFFFF",
-  inputBorder: "#D1D8DE",
-  inputTextColor: "#0C0C0D",
-  inputBorderRadius: 6,
+  inputBg: "#1C1916",
+  inputBorder: "#4A453F",
+  inputTextColor: "#F3F0EA",
+  inputBorderRadius: 0,
 
   fontBase:
     '"Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
@@ -50,7 +51,6 @@ addons.setConfig({
     eject: { hidden: false },
     copy: { hidden: false },
     fullscreen: { hidden: false },
-    // Essentials toolbar tools — keep visible
     "storybook/viewport": { hidden: false },
     "storybook/background": { hidden: false },
     "storybook/outline": { hidden: false },

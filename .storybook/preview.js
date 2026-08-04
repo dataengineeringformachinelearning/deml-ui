@@ -3,16 +3,14 @@ import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from "storybook/viewport";
 import "../styles.css";
 import "../components/components.css";
 
-/** Design-token-aligned canvas backgrounds */
+/** Canvas backgrounds — new-from-the-start warm ash only */
 const demlBackgrounds = {
-  default: "page",
+  default: "warm-ash",
   values: [
-    { name: "page", value: "#F7F8FA" },
-    { name: "surface", value: "#EEF1F4" },
-    { name: "white", value: "#FFFFFF" },
-    { name: "charcoal", value: "#2A2E32" },
-    { name: "violet", value: "#5C2A5A" },
-    { name: "twilight", value: "#9BB8C9" },
+    { name: "warm-ash", value: "#35312D" },
+    { name: "deep-surface", value: "#1C1916" },
+    { name: "cream", value: "#F3F0EA" },
+    { name: "light-ground", value: "#D4CEC5" },
   ],
 };
 
@@ -129,7 +127,7 @@ const preview = {
         light: "light",
         dark: "dark",
       },
-      defaultTheme: "light",
+      defaultTheme: "dark",
       attributeName: "data-theme",
       parentSelector: "html",
     }),
@@ -160,7 +158,7 @@ const preview = {
 
   initialGlobals: {
     viewport: { value: "responsive", isRotated: false },
-    backgrounds: { value: "page" },
+    backgrounds: { value: "warm-ash" },
   },
 };
 

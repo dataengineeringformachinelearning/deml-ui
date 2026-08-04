@@ -1,10 +1,10 @@
 # deml-ui
 
-Barebones, working HTML/CSS components for building dashboard applications — with dual package builds (**Web Components** + **Angular**).
+**new-from-the-start (warm ash)** component library for DEML — HTML/CSS sources with dual package builds (**Web Components** + **Angular**).
 
-Style first in Storybook. Ship via `npm run build`.
+Style first in Storybook. Ship via `npm run build`. Geist only; no Syne/Fraunces, no Viking-UI, no cold seven-color frankenstein.
 
-**Source of truth:** `components/<name>/<name>.html` + `<name>.css`. Generators produce Custom Elements and Angular standalone wrappers. Headless Angular primitives live under `src/angular/headless/`.
+**Source of truth:** `components/<name>/<name>.html` + `<name>.css` + `styles/tokens.css`. Generators produce Custom Elements and Angular standalone wrappers. Headless Angular primitives live under `src/angular/headless/`.
 
 ## Quick start
 
@@ -26,7 +26,7 @@ Editing `components/**` hot-updates Storybook. Adding/removing a folder regenera
 | **Docs** | Autodocs + packaged HTML source (`.demo` fragment) |
 | **Theme** | Toolbar — light / dark (`data-theme`) |
 | **Viewport** | Toolbar — phone, tablet, desktop, deml widths |
-| **Backgrounds** | Toolbar — page / surface / charcoal |
+| **Backgrounds** | Toolbar — warm ash / deep surface / cream / light ground |
 | **Measure / Outline** | Toolbar — spacing & box inspection |
 | **Density** | Toolbar — compact / comfortable / spacious |
 | **A11y** | Panel — axe (WCAG 2 A/AA + best practices) |

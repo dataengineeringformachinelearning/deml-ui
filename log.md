@@ -1,5 +1,6 @@
 # log
 
+- 2026-08-04: **NFTS shell purge** — remove Syne/Fraunces + cold violet Storybook chrome; lock index/Storybook to warm ash + Geist; rename leftover atelier comments.
 - 2026-07-30: **Headless Dialog upgrade** — `demlDialogPanel`, body portal, controlled/uncontrolled `open`, Escape/`cancel` handling, focus trap + restore; still zero visual CSS.
 - 2026-07-30: **Headless Menu** — trigger + panel (`deml-menu`) with WAI-ARIA menu roles, roving focus, typeahead, click-outside, disabled items; zero styles.
 - 2026-07-30: **Headless Combobox** — editable autocomplete/listbox (`deml-combobox`) with `aria-activedescendant`, typeahead query model, click-outside, full keyboard; consumer-owned filtering/styling.

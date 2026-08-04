@@ -4,9 +4,9 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # deml-ui
 
-Barebones, working HTML/CSS components for building dashboard applications — with dual package builds (**Web Components** + **Angular**).
+**new-from-the-start (warm ash)** — DEML’s component library with dual package builds (**Web Components** + **Angular**).
 
-Style first in Storybook. Ship via `npm run build`.
+Style first in Storybook. Ship via `npm run build`. Geist only; dual `data-theme`; WCAG 2.0 AA.
 
 ## How to use this Storybook
 
@@ -16,7 +16,7 @@ Style first in Storybook. Ship via `npm run build`.
 | **Docs** | Autodocs + packaged HTML source (`.demo` fragment) |
 | **Theme** | Toolbar — light / dark (`data-theme`) |
 | **Viewport** | Toolbar — phone, tablet, desktop, deml widths |
-| **Backgrounds** | Toolbar — page / surface / charcoal |
+| **Backgrounds** | Toolbar — warm ash / deep surface / cream / light ground |
 | **Measure / Outline** | Toolbar — spacing & box inspection |
 | **Density** | Toolbar — compact / comfortable / spacious |
 | **A11y** | Panel — axe (WCAG 2 A/AA + best practices) |
@@ -24,12 +24,21 @@ Style first in Storybook. Ship via `npm run build`.
 
 ## Source of truth
 
-`components/<name>/`:
+`components/<name>/` + `styles/tokens.css`:
 
 - `<name>.html` — Storybook chrome + reusable markup in `.demo`
-- `<name>.css` — barebones structure under BEM roots (`.card`, `.tabs`, …)
+- `<name>.css` — structure under BEM roots (`.card`, `.tabs`, …)
+- Tokens own palette, type, tile rhythm, and `--chart-aspect: 2.4`
 
 Edit → hot reload. Add/remove a folder → `npm run sync` regenerates stories + wrappers.
+
+## Laws
+
+1. Warm ash NFTS only (`#35312D` / `#1C1916` / `#F3F0EA` / `#D4CEC5` / `#2F5F8F`)
+2. Geist for every type role — no Syne / Fraunces
+3. Fluid equal cells — `grid-auto-rows: minmax(var(--tile-row-unit), auto)`
+4. Charts — width-driven aspect; never squash with fixed-only rows or `height: 100%` on plot stages
+5. No Viking-UI / cold seven-color frankenstein
 
 ## Sidebar
 
@@ -59,22 +68,5 @@ Two layers ship from `deml-ui/angular`:
 
 | Layer | What it is |
 |-------|------------|
-| **Markup wrappers** | Standalone components generated from each `.demo` fragment — style with package CSS |
-| **Headless primitives** | Unstyled behavior (Signals + WAI-ARIA) — compose parts, apply your own classes |
-
-Headless kit (composition-first):
-
-| Primitive | Import | Parts |
-|-----------|--------|-------|
-| Tabs | `DEML_TABS_IMPORTS` | `demlTabList`, `demlTab`, `demlTabPanel` |
-| Dialog | `DEML_DIALOG_IMPORTS` | panel / title / description / close |
-| Disclosure | `DEML_DISCLOSURE_IMPORTS` | button / panel |
-| Combobox | `DEML_COMBOBOX_IMPORTS` | label / input / button / options |
-| Menu | `DEML_MENU_IMPORTS` | button / items / item |
-
-```ts
-import { DEML_TABS_IMPORTS, DEML_DIALOG_IMPORTS } from "deml-ui/angular";
-```
-
-Shared API: `[(open)]` / `[(value)]`, `(change)`, `(opened)` / `(closed)`, `data-state`.  
-Full examples: repo `src/angular/headless/USAGE.md` · conventions: `CONVENTIONS.md`.
+| Markup wrappers | Thin hosts for deml-ui HTML/CSS |
+| Headless | Behavior-only primitives under `src/angular/headless/` |
