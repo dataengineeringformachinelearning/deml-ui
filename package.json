@@ -44,7 +44,9 @@
     "build": "node scripts/build-all.mjs",
     "prepare": "node scripts/prepare.mjs",
     "prepublishOnly": "npm run build",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "check:nfts": "node scripts/check_nfts_style.mjs",
+    "validate:nfts": "npm run check:nfts"
   },
   "repository": {
     "type": "git",

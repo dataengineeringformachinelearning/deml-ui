@@ -33,4 +33,11 @@ Do not invent parallel palettes, type stacks, or chart contracts.
 - Use fixed `grid-auto-rows: var(--dash-row)` without `minmax(..., auto)` (squashes charts/tiles)
 - Invent one-off spacing outside the token scale
 
+## Automated enforcement (no escape hatches)
+
+`scripts/check_nfts_style.mjs` (`npm run check:nfts`) **fails** on missing NFTS
+palette / `--chart-aspect: 2.4` / Geist, Viking or `#2176ff` chrome, fixed-only
+`grid-auto-rows`, and chart-stage squash patterns. CI runs this before build.
+Reject any change that does not pass the gate.
+
 Consumer guidance: deml `THEME.md` / `AGENTS.md`.

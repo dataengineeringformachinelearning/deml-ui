@@ -47,10 +47,13 @@ Consumer app: [`deml`](https://github.com/dataengineeringformachinelearning/deml
 ## Commands
 
 ```bash
+npm run check:nfts   # mandatory warm-ash gate — must pass
 npm run sync
 npm run storybook
 npm run build
 ```
+
+CI (`.github/workflows/ci.yml`) runs `check:nfts` before sync/build. **No escape hatches.**
 
 ## When deml needs a new primitive
 

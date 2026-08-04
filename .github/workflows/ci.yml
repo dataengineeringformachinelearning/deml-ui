@@ -29,6 +29,9 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: NFTS style gate (warm ash)
+        run: npm run check:nfts
+
       - name: Sync generators
         run: npm run sync
 
