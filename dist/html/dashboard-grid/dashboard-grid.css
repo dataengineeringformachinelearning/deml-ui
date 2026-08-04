@@ -55,14 +55,14 @@ deml-dashboard-grid > *,
   justify-self: stretch;
 }
 
+/*
+ * Mobile: single column; one fluid track per tile (content sets height).
+ * Avoid multi-row spans that force empty height / inner overflow.
+ */
 app-dashboard-grid > [data-size='sm'],
 deml-dashboard-grid > [data-size='sm'],
 .dashboard-grid > [data-size='sm'],
-:host > [data-size='sm'] {
-  grid-column: 1 / -1;
-  grid-row: span 2;
-}
-
+:host > [data-size='sm'],
 app-dashboard-grid > [data-size='md'],
 deml-dashboard-grid > [data-size='md'],
 .dashboard-grid > [data-size='md'],
@@ -84,7 +84,7 @@ deml-dashboard-grid > [data-size='hero'],
 .dashboard-grid > [data-size='hero'],
 :host > [data-size='hero'] {
   grid-column: 1 / -1;
-  grid-row: span 3;
+  grid-row: span 1;
 }
 
 .dashboard-grid__cell {
@@ -113,44 +113,36 @@ deml-dashboard-grid > [data-size='hero'],
     grid-template-columns: repeat(var(--tile-cols), minmax(0, 1fr));
   }
 
+  /*
+   * Equal column boards on a 6-col track:
+   * sm ×3 · md/lg/wide/tall ×2 · hero ×1 — single fluid row each.
+   */
   app-dashboard-grid > [data-size='sm'],
   deml-dashboard-grid > [data-size='sm'],
   .dashboard-grid > [data-size='sm'],
   :host > [data-size='sm'] {
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: span 1;
   }
 
   app-dashboard-grid > [data-size='md'],
   deml-dashboard-grid > [data-size='md'],
   .dashboard-grid > [data-size='md'],
-  :host > [data-size='md'] {
-    grid-column: span 3;
-    grid-row: span 3;
-  }
-
+  :host > [data-size='md'],
   app-dashboard-grid > [data-size='lg'],
   deml-dashboard-grid > [data-size='lg'],
   .dashboard-grid > [data-size='lg'],
-  :host > [data-size='lg'] {
-    grid-column: span 3;
-    grid-row: span 3;
-  }
-
+  :host > [data-size='lg'],
   app-dashboard-grid > [data-size='wide'],
   deml-dashboard-grid > [data-size='wide'],
   .dashboard-grid > [data-size='wide'],
-  :host > [data-size='wide'] {
-    grid-column: span 4;
-    grid-row: span 3;
-  }
-
+  :host > [data-size='wide'],
   app-dashboard-grid > [data-size='tall'],
   deml-dashboard-grid > [data-size='tall'],
   .dashboard-grid > [data-size='tall'],
   :host > [data-size='tall'] {
-    grid-column: span 2;
-    grid-row: span 3;
+    grid-column: span 3;
+    grid-row: span 1;
   }
 
   app-dashboard-grid > [data-size='hero'],
@@ -158,7 +150,7 @@ deml-dashboard-grid > [data-size='hero'],
   .dashboard-grid > [data-size='hero'],
   :host > [data-size='hero'] {
     grid-column: span 6;
-    grid-row: span 3;
+    grid-row: span 1;
   }
 }
 

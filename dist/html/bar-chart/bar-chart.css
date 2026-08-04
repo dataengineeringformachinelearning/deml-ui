@@ -1,4 +1,4 @@
-/* Component: bar-chart — aspect-locked plot band (same size as area) */
+/* Component: bar-chart — content-sized plot band (peer width to area) */
 
 .component--bar-chart .demo {
   display: grid;
@@ -38,23 +38,22 @@ app-bar-chart[data-accent='primary'],
 }
 
 /*
- * Same proportions as area plots — --chart-aspect container.
- * Rows scroll inside the band; the band never stretches.
+ * Content-sized plot band — peer width to area charts via --chart-stage-max-inline.
+ * Height grows with rows (no aspect lock / inner scroll); tiles stretch around it.
  */
 .bar-chart {
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: var(--space-2);
   box-sizing: border-box;
-  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
-  aspect-ratio: var(--chart-aspect);
+  width: min(100%, var(--chart-stage-max-inline));
+  min-height: var(--chart-min-block);
   height: auto;
-  max-height: var(--chart-max-block);
   margin: 0 auto;
   padding: var(--chart-inset) var(--space-3);
-  overflow: auto;
+  overflow: visible;
   list-style: none;
   background-color: var(--chart-plot);
   border: var(--border-width) solid var(--color-plot-border);

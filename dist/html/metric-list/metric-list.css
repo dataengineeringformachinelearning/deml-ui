@@ -1,4 +1,4 @@
-/* Component: metric-list — aspect-locked plot band peer to charts */
+/* Component: metric-list — content-sized plot band peer to charts */
 
 .component--metric-list .demo {
   display: grid;
@@ -34,6 +34,9 @@ app-metric-list[data-accent='primary'],
   --chart-accent: var(--chart-series-1);
 }
 
+/*
+ * Content-sized list band — same stage width as charts; no aspect lock / inner scroll.
+ */
 .metric-list {
   display: flex;
   flex: 0 0 auto;
@@ -41,13 +44,12 @@ app-metric-list[data-accent='primary'],
   justify-content: flex-start;
   gap: 0;
   box-sizing: border-box;
-  width: 100%;
-  max-width: var(--chart-stage-max-inline);
-  aspect-ratio: var(--chart-aspect);
+  width: min(100%, var(--chart-stage-max-inline));
+  min-height: var(--chart-min-block);
   height: auto;
   margin: 0 auto;
   padding: var(--space-3);
-  overflow: auto;
+  overflow: visible;
   list-style: none;
   background-color: var(--color-plot);
   border: var(--border-width) solid var(--color-plot-border);

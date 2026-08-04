@@ -40,13 +40,14 @@ body {
   border: 0;
 }
 
+.type-mark,
 .type-eyebrow,
 .preheader {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-mark);
   font-size: var(--font-size-xs);
-  font-weight: 600;
-  letter-spacing: var(--tracking-eyebrow);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
   line-height: 1.2;
   text-transform: uppercase;
   color: var(--color-highlight);
@@ -54,22 +55,22 @@ body {
 
 .type-display {
   margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(1.5rem, 3vw, var(--font-size-lg));
-  font-weight: 700;
-  letter-spacing: var(--tracking-tight);
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-size: clamp(calc(var(--grid) * 3.5), 4.5vw, var(--font-size-xl));
+  font-weight: var(--font-weight-display);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
   color: var(--color-text);
 }
 
 .type-intro,
 .lede {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--font-size-sm);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.5;
+  line-height: var(--leading-body);
   color: var(--color-text-secondary);
 }
 

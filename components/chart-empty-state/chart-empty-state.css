@@ -13,10 +13,10 @@ deml-chart-empty-state,
   place-items: center;
   gap: var(--space-2);
   box-sizing: border-box;
-  width: 100%;
-  max-width: var(--chart-stage-max-inline);
+  width: min(100%, var(--chart-stage-max-inline));
   aspect-ratio: var(--chart-aspect);
   height: auto;
+  max-height: var(--chart-max-block);
   margin: 0 auto;
   padding: var(--module-pad);
   text-align: center;

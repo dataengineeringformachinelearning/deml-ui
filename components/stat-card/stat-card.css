@@ -79,10 +79,10 @@ deml-metric-card[data-accent='primary'],
 
 .stat-card-label {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-mark);
   font-size: var(--font-size-xs);
-  font-weight: 600;
-  letter-spacing: var(--tracking-eyebrow);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
   line-height: 1.2;
   text-transform: uppercase;
   color: var(--stat-accent);
@@ -142,15 +142,19 @@ deml-stat-card[data-trend='down'] .stat-card-delta,
 .stat-card-spark {
   display: flex;
   flex: 1 1 auto;
+  flex-direction: column;
   align-items: stretch;
+  justify-content: flex-end;
   width: 100%;
   min-height: var(--chart-spark-min-block);
   margin-top: var(--space-3);
 }
 
+/* Spark keeps --chart-spark-aspect; never stretch to fill leftover tile height */
 .stat-card-spark > :first-child {
   width: 100%;
-  min-height: 100%;
+  flex: 0 0 auto;
+  align-self: stretch;
 }
 
 app-stat-card[data-size='sm'] .stat-card-spark,

@@ -66,7 +66,7 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
 .component--area-chart .area-chart-frame,
 .component--chart-card .area-chart-frame {
   aspect-ratio: var(--chart-aspect);
-  width: min(100%, calc(var(--chart-max-block) * var(--chart-aspect)));
+  width: min(100%, var(--chart-stage-max-inline));
   height: auto;
   max-height: var(--chart-max-block);
   margin-inline: auto;

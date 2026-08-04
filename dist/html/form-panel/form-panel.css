@@ -36,10 +36,10 @@
 
 .form-panel__eyebrow {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-mark);
   font-size: var(--font-size-xs);
-  font-weight: 600;
-  letter-spacing: var(--tracking-eyebrow);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
   line-height: 1.2;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -47,22 +47,22 @@
 
 .form-panel__title {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
   font-size: clamp(calc(var(--grid) * 3.5), 4vw, var(--font-size-lg));
-  font-weight: 700;
+  font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: 1.1;
+  line-height: var(--leading-display);
   color: var(--color-card-text);
 }
 
 .form-panel__description {
   margin: 0;
   max-width: 42ch;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--font-size-sm);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.45;
+  line-height: var(--leading-body);
   color: var(--color-card-text-secondary);
 }
 
@@ -83,6 +83,55 @@
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+/* Settings / account tables compose inside form panels without one-off app CSS */
+.form-panel table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  line-height: var(--leading-body);
+  color: var(--color-card-text);
+}
+
+.form-panel caption {
+  caption-side: top;
+  margin: 0 0 var(--space-2);
+  text-align: left;
+  font-family: var(--font-mark);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
+  text-transform: uppercase;
+  color: var(--color-card-text-secondary);
+}
+
+.form-panel th,
+.form-panel td {
+  padding: var(--space-2) var(--space-2) var(--space-2) 0;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: var(--border-width) solid var(--color-card-border);
+}
+
+.form-panel th {
+  font-family: var(--font-mark);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
+  text-transform: uppercase;
+  color: var(--color-card-text-secondary);
+}
+
+.form-panel tbody th {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  text-transform: none;
+  color: var(--color-card-text);
 }
 
 .form-panel__error {

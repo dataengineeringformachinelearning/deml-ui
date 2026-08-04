@@ -66,9 +66,10 @@
 
 .banner .preheader {
   margin: 0 0 var(--space-3);
+  font-family: var(--font-mark);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-eyebrow);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
   color: var(--color-highlight);
 }
 
@@ -79,15 +80,16 @@
   font-size: clamp(calc(var(--grid) * 4.5), 6vw, var(--font-size-2xl));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: 0.98;
+  line-height: var(--leading-display);
   color: var(--color-text);
 }
 
 .banner .lede {
   max-width: 42ch;
   margin: 0 0 var(--space-5);
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   letter-spacing: var(--tracking-intro);
+  line-height: var(--leading-body);
   color: var(--color-text-secondary);
 }
 
