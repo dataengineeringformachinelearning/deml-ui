@@ -13,6 +13,7 @@
   max-width: calc(var(--grid) * 44);
   padding: var(--module-pad);
   border: var(--border-width) solid var(--color-border);
+  border-inline-start: calc(var(--border-width) * 4) solid var(--color-primary);
   background-color: var(--color-surface);
   color: var(--color-text);
 }

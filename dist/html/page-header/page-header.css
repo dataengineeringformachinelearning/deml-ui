@@ -38,7 +38,7 @@
 .page-header__lede {
   margin: 0;
   max-width: var(--reading-width);
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
   color: var(--color-text-secondary);

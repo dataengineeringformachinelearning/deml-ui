@@ -103,7 +103,7 @@ deml-card[data-visual='none'],
 .card-subtext {
   margin: 0 0 var(--space-4);
   max-width: 32ch;
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);

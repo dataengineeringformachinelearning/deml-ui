@@ -354,6 +354,28 @@ body {
   color: var(--color-text-primary);
 }
 
+/* Shared interactive focus — components may refine, not omit */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible,
+[role="menuitem"]:focus-visible,
+[role="option"]:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+a {
+  color: var(--color-highlight);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--color-highlight-hover);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -59,6 +59,7 @@ deml-microcard[data-visual='olive'],
     var(--color-card) 50%
   );
   border: var(--border-width) solid var(--color-card-border);
+  border-top: calc(var(--border-width) * 4) solid var(--microcard-visual, var(--color-primary));
   box-shadow: var(--shadow-card);
   transition:
     border-color 160ms ease,

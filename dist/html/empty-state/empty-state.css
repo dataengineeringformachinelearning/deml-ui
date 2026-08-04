@@ -42,7 +42,7 @@
 .empty-state__description {
   margin: 0;
   max-width: var(--content-width-sm);
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
   color: var(--color-text-secondary);
