@@ -18,7 +18,8 @@ table {
 .component--table td,
 th,
 td {
-  padding: var(--space-sm) var(--space-md);
+  /* Equal L/R inset so headers/cells never sit flush on the panel edge */
+  padding: var(--space-2) var(--space-3);
   border-block-end: var(--border-width) solid var(--color-border);
   text-align: start;
 }

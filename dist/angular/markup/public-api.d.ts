@@ -83,6 +83,7 @@ export { DemlSelect } from "./select";
 export { DemlSeparator } from "./separator";
 export { DemlSheet } from "./sheet";
 export { DemlSidebarNav } from "./sidebar-nav";
+export { DemlSiteFooter } from "./site-footer";
 export { DemlSkeleton } from "./skeleton";
 export { DemlSkipLink } from "./skip-link";
 export { DemlSpinner } from "./spinner";

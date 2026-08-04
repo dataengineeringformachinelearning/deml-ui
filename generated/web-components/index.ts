@@ -86,6 +86,7 @@ export { DemlSelect, defineSelect } from "./select.js";
 export { DemlSeparator, defineSeparator } from "./separator.js";
 export { DemlSheet, defineSheet } from "./sheet.js";
 export { DemlSidebarNav, defineSidebarNav } from "./sidebar-nav.js";
+export { DemlSiteFooter, defineSiteFooter } from "./site-footer.js";
 export { DemlSkeleton, defineSkeleton } from "./skeleton.js";
 export { DemlSkipLink, defineSkipLink } from "./skip-link.js";
 export { DemlSpinner, defineSpinner } from "./spinner.js";

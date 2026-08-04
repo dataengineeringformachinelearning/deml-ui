@@ -7,7 +7,17 @@ export class DemlBanner extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<div class="banner"><p class="banner__title">Banner</p><p class="banner__text">Supporting message.</p></div>`;
+      this.innerHTML = `<div class="banner banner--hero" data-variant="hero">
+      <p class="preheader">DEML</p>
+      <h1 class="banner-heading">Control plane for ML data.</h1>
+      <p class="lede">Identity, status, analytics, and learning in one warm-ash surface.</p>
+      <div class="banner-actions">
+        <div class="button-group">
+          <a class="button button--primary" href="#">Dashboard</a>
+          <a class="button button--secondary" href="#">Explore</a>
+        </div>
+      </div>
+    </div>`;
     }
   }
 }

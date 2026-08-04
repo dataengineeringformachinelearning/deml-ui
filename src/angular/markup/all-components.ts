@@ -84,6 +84,7 @@ import { DemlSelect } from "./select";
 import { DemlSeparator } from "./separator";
 import { DemlSheet } from "./sheet";
 import { DemlSidebarNav } from "./sidebar-nav";
+import { DemlSiteFooter } from "./site-footer";
 import { DemlSkeleton } from "./skeleton";
 import { DemlSkipLink } from "./skip-link";
 import { DemlSpinner } from "./spinner";
@@ -192,6 +193,7 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlSeparator,
   DemlSheet,
   DemlSidebarNav,
+  DemlSiteFooter,
   DemlSkeleton,
   DemlSkipLink,
   DemlSpinner,

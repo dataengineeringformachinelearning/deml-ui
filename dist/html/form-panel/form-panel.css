@@ -103,6 +103,7 @@ deml-form-panel,
 }
 
 /* Settings / account tables compose inside form panels without one-off app CSS */
+.form-panel__table,
 .form-panel table {
   width: 100%;
   margin: 0;
@@ -116,6 +117,7 @@ deml-form-panel,
 .form-panel caption {
   caption-side: top;
   margin: 0 0 var(--space-2);
+  padding-inline: var(--space-3);
   text-align: left;
   font-family: var(--font-mark);
   font-size: var(--font-size-xs);
@@ -127,7 +129,7 @@ deml-form-panel,
 
 .form-panel th,
 .form-panel td {
-  padding: var(--space-2) var(--space-2) var(--space-2) 0;
+  padding: var(--space-2) var(--space-3);
   text-align: left;
   vertical-align: middle;
   border-bottom: var(--border-width) solid var(--color-card-border);
