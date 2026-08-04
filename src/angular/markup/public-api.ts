@@ -36,6 +36,7 @@ export { DemlDashboardGrid } from "./dashboard-grid";
 export { DemlDropdown } from "./dropdown";
 export { DemlEmptyState } from "./empty-state";
 export { DemlErrorState } from "./error-state";
+export { DemlExploreCard } from "./explore-card";
 export { DemlField } from "./field";
 export { DemlFileUpload } from "./file-upload";
 export { DemlFlashbar } from "./flashbar";

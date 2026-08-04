@@ -36,6 +36,7 @@ import { DemlDashboardGrid } from "./dashboard-grid";
 import { DemlDropdown } from "./dropdown";
 import { DemlEmptyState } from "./empty-state";
 import { DemlErrorState } from "./error-state";
+import { DemlExploreCard } from "./explore-card";
 import { DemlField } from "./field";
 import { DemlFileUpload } from "./file-upload";
 import { DemlFlashbar } from "./flashbar";
@@ -143,6 +144,7 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlDropdown,
   DemlEmptyState,
   DemlErrorState,
+  DemlExploreCard,
   DemlField,
   DemlFileUpload,
   DemlFlashbar,
