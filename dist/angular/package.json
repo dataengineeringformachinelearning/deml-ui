@@ -1,6 +1,6 @@
 {
   "name": "deml-ui-angular",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Angular entry for deml-ui (use import from 'deml-ui/angular')",
   "module": "fesm2022/deml-ui.mjs",
   "typings": "index.d.ts",

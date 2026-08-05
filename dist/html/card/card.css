@@ -162,7 +162,7 @@ deml-card[data-visual='none'],
     );
 }
 
-/* Full-width blog / list teaser */
+/* Full-width blog / list teaser (Angular host or static a.card / .card) */
 app-card[data-layout='teaser'],
 deml-card[data-layout='teaser'],
 :host([data-layout='teaser']) {
@@ -171,16 +171,23 @@ deml-card[data-layout='teaser'],
 
 app-card[data-layout='teaser'] .card,
 deml-card[data-layout='teaser'] .card,
-:host([data-layout='teaser']) .card {
+:host([data-layout='teaser']) .card,
+a.card[data-layout='teaser'],
+.card[data-layout='teaser'] {
   align-items: stretch;
   min-height: 0;
+  height: auto;
   padding: var(--space-4);
   text-align: left;
+  text-decoration: none;
+  color: inherit;
 }
 
 app-card[data-layout='teaser'] .card-copy,
 deml-card[data-layout='teaser'] .card-copy,
-:host([data-layout='teaser']) .card-copy {
+:host([data-layout='teaser']) .card-copy,
+a.card[data-layout='teaser'] .card-copy,
+.card[data-layout='teaser'] .card-copy {
   align-items: flex-start;
   max-width: none;
   flex: 1 1 auto;
@@ -188,8 +195,11 @@ deml-card[data-layout='teaser'] .card-copy,
 
 app-card[data-layout='teaser'] .card-subtext,
 deml-card[data-layout='teaser'] .card-subtext,
-:host([data-layout='teaser']) .card-subtext {
+:host([data-layout='teaser']) .card-subtext,
+a.card[data-layout='teaser'] .card-subtext,
+.card[data-layout='teaser'] .card-subtext {
   max-width: 56ch;
+  margin-bottom: 0;
 }
 
 app-card[data-layout='teaser'] .card-actions,
@@ -220,6 +230,7 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
     min-height: var(--space-26);
   }
 
+  /* Angular teaser — horizontal media band */
   app-card[data-layout='teaser'] .card,
   deml-card[data-layout='teaser'] .card,
   :host([data-layout='teaser']) .card {
@@ -237,6 +248,24 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
     justify-content: center;
     padding: var(--space-6) var(--space-6);
     background-color: var(--color-card);
+  }
+
+  /* Static link teasers (marketing) — compact stacked copy, no media band */
+  a.card[data-layout='teaser'],
+  .card-grid[data-density='compact'] .card[data-layout='teaser'] {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding: var(--space-5) var(--space-4);
+    border-top-width: calc(var(--border-width) * 4);
+    border-left: var(--border-width) solid var(--color-card-border);
+  }
+
+  a.card[data-layout='teaser'] .card-copy,
+  .card-grid[data-density='compact'] .card[data-layout='teaser'] .card-copy {
+    justify-content: flex-start;
+    padding: 0;
+    background-color: transparent;
   }
 
   app-card[data-layout='teaser'] .card-media,

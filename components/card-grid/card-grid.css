@@ -47,6 +47,34 @@ deml-card-grid > *,
   }
 }
 
+/*
+ * Compact — text / link boards (marketing platforms, resource lists).
+ * Content-sized rows; do not force --tile-row-card destination height.
+ */
+app-card-grid[data-density='compact'],
+deml-card-grid[data-density='compact'],
+.card-grid[data-density='compact'],
+:host([data-density='compact']) {
+  grid-auto-rows: minmax(min-content, auto);
+}
+
+app-card-grid[data-density='compact'] > *,
+deml-card-grid[data-density='compact'] > *,
+.card-grid[data-density='compact'] > *,
+:host([data-density='compact']) > * {
+  height: auto;
+  align-self: start;
+}
+
+@media screen and (min-width: 800px) {
+  app-card-grid[data-density='compact'],
+  deml-card-grid[data-density='compact'],
+  .card-grid[data-density='compact'],
+  :host([data-density='compact']) {
+    grid-auto-rows: minmax(min-content, auto);
+  }
+}
+
 @media screen and (min-width: 1200px) {
   /* Opt-in 3-up only — never force a ragged 3+1 on four-card boards */
   app-card-grid[data-columns='3'],

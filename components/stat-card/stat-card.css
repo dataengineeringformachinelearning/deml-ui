@@ -150,13 +150,16 @@ deml-stat-card[data-trend='down'] .stat-card-delta,
   height: var(--chart-height-spark);
   min-height: var(--chart-height-spark);
   max-height: var(--chart-height-spark);
-  margin-top: var(--space-3);
+  /* Pin spark to tile bottom; never grow into leftover row height */
+  margin-top: auto;
+  padding-top: var(--space-3);
 }
 
 /* Spark: fixed 140px; never stretch to fill leftover tile height */
 .stat-card-spark > :first-child {
   width: 100%;
   height: var(--chart-height-spark);
+  max-height: var(--chart-height-spark);
   flex: 0 0 auto;
   align-self: stretch;
 }
