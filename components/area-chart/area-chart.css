@@ -47,10 +47,12 @@ deml-area-chart[data-accent='primary'],
   flex: 0 0 auto;
   align-items: stretch;
   justify-content: stretch;
+  align-self: stretch;
   box-sizing: border-box;
   width: 100%;
   max-width: var(--chart-stage-max-inline);
-  margin: 0 auto;
+  margin-inline: 0;
+  margin-block: 0;
   padding: var(--chart-inset);
   background-color: var(--chart-plot);
   border: var(--border-width) solid var(--color-plot-border);
@@ -58,8 +60,9 @@ deml-area-chart[data-accent='primary'],
 
 /*
  * Full plot — fill the well width; height from --chart-aspect only.
- * Soft ceiling is max-width (--chart-stage-max-inline), never max-height
- * (max-height fights aspect and leaves empty black wells).
+ * Inside chart-card/panel, --chart-stage-max-inline is 100% so the stage
+ * spans the content band (never a tiny centered black island). Soft ceiling
+ * for standalone stages remains the token; never max-height (fights aspect).
  */
 app-area-chart:not([data-variant='spark']) .area-chart-frame,
 deml-area-chart:not([data-variant='spark']) .area-chart-frame,
@@ -71,6 +74,7 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   max-width: var(--chart-stage-max-inline);
   height: auto;
   max-height: none;
+  margin-inline: 0;
 }
 
 .area-chart {

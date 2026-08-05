@@ -15,6 +15,8 @@ deml-chart-card,
   height: 100%;
   min-width: 0;
   --chart-accent: var(--color-primary);
+  /* Fill the card content width; aspect drives height (wider → taller). */
+  --chart-stage-max-inline: 100%;
   background-color: transparent;
 }
 
@@ -43,6 +45,8 @@ app-chart-card[data-accent='primary'],
   margin: 0;
   padding: var(--module-pad);
   overflow: visible;
+  /* Nested plot stages inherit this — fill the well, never a centered max-inline island. */
+  --chart-stage-max-inline: 100%;
   color: var(--color-card-text);
   background-color: var(--color-card);
   background-image: linear-gradient(
@@ -112,10 +116,26 @@ app-chart-card[data-accent='primary'],
 app-chart-card .chart-card-body > *,
 deml-chart-card .chart-card-body > * {
   width: 100%;
+  max-width: none;
   min-width: 0;
   min-height: 0;
   flex: 0 0 auto;
   align-self: stretch;
+  margin-inline: 0;
+}
+
+/* Plot wells stretch the content band (equal --chart-inset stays on the stage). */
+.chart-card-body .area-chart-frame,
+.chart-card-body .bar-chart,
+.chart-card-body .chart-figure__plot,
+.chart-card-body .chart-empty-state,
+app-chart-card .chart-card-body .area-chart-frame,
+app-chart-card .chart-card-body .bar-chart,
+deml-chart-card .chart-card-body .area-chart-frame,
+deml-chart-card .chart-card-body .bar-chart {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
 }
 
 :host([data-size='hero']) .chart-card-heading,

@@ -20,7 +20,7 @@
   aspect-ratio: var(--chart-aspect);
   height: auto;
   max-height: none;
-  margin-inline: auto;
+  margin-inline: 0;
   padding: var(--chart-inset);
   background-color: var(--chart-plot);
   border: var(--border-width) solid var(--color-plot-border);

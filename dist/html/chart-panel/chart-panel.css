@@ -13,6 +13,8 @@ deml-chart-panel,
   height: 100%;
   min-width: 0;
   --chart-accent: var(--color-primary);
+  /* Fill the panel content width; aspect drives height (wider → taller). */
+  --chart-stage-max-inline: 100%;
   background-color: transparent;
 }
 
@@ -26,6 +28,7 @@ deml-chart-panel,
   margin: 0;
   padding: var(--module-pad);
   overflow: visible;
+  --chart-stage-max-inline: 100%;
   color: var(--color-card-text);
   background-color: var(--color-card);
   background-image: linear-gradient(
@@ -75,11 +78,11 @@ deml-chart-panel,
   justify-content: flex-start;
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--chart-stage-max-inline);
+  max-width: none;
   aspect-ratio: var(--chart-aspect);
   height: auto;
   max-height: none;
-  margin: 0 auto;
+  margin: 0;
   padding: var(--chart-inset);
   overflow: visible;
   background-color: var(--chart-plot);
