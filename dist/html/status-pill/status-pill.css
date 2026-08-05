@@ -1,4 +1,4 @@
-/* Component: status-pill — NFTS mark */
+/* Component: status-pill — NFTS cream mark */
 
 .component--status-pill .demo {
   display: grid;
@@ -11,16 +11,16 @@
   gap: var(--space-1);
   min-height: var(--space-3);
   padding: var(--space-1) var(--space-2);
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--color-card-border);
   border-radius: var(--radius-pill);
-  font-family: var(--font-sans);
+  font-family: var(--font-mark);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-mark);
   letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
   line-height: var(--leading-ui);
-  color: var(--color-text);
-  background-color: var(--color-surface);
+  color: var(--color-card-text);
+  background-color: var(--color-card);
 }
 
 .status-pill[data-status='up'],

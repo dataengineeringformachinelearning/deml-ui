@@ -1,7 +1,7 @@
 {
   "name": "deml-ui",
-  "version": "1.0.0",
-  "description": "deml-ui — DEML component library with HTML/CSS sources, Web Components, and Angular builds.",
+  "version": "1.1.0",
+  "description": "deml-ui — DEML new-from-the-start (warm ash) component library with HTML/CSS sources, Web Components, and Angular builds.",
   "type": "module",
   "sideEffects": [
     "*.css",
@@ -12,6 +12,7 @@
   "main": "./dist/web-components/deml-ui.js",
   "module": "./dist/web-components/deml-ui.js",
   "types": "./dist/web-components/index.d.ts",
+  "style": "./dist/styles/deml-ui.css",
   "exports": {
     ".": {
       "types": "./dist/web-components/index.d.ts",
@@ -19,17 +20,24 @@
       "default": "./dist/web-components/deml-ui.js"
     },
     "./styles.css": "./dist/styles/deml-ui.css",
+    "./package.css": "./dist/styles/deml-ui.css",
     "./tokens.css": "./dist/styles/tokens.css",
     "./angular": {
       "types": "./dist/angular/index.d.ts",
+      "import": "./dist/angular/fesm2022/deml-ui.mjs",
       "default": "./dist/angular/fesm2022/deml-ui.mjs"
     },
-    "./html/*": "./dist/html/*"
+    "./html/*": "./dist/html/*",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
+    "LICENSE",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "sync": "node scripts/sync.mjs",
     "dev": "vite",

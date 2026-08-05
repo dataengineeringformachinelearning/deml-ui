@@ -1,4 +1,4 @@
-/* Component: pagination — NFTS controls */
+/* Component: pagination — NFTS cream controls */
 
 .component--pagination .demo {
   display: grid;
@@ -36,14 +36,14 @@
   min-height: var(--hit-target);
   min-width: var(--hit-target);
   padding: var(--space-1) var(--space-2);
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--color-card-border);
   border-radius: var(--radius-sm);
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-intro);
-  color: var(--color-text);
-  background-color: var(--color-surface);
+  color: var(--color-card-text);
+  background-color: var(--color-card);
   text-decoration: none;
   cursor: pointer;
 }
@@ -53,7 +53,7 @@
 .pagination__pages button:focus-visible,
 .pagination button:focus-visible,
 .pagination a:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline: var(--focus-ring-width) solid var(--color-primary);
   outline-offset: var(--focus-ring-offset);
 }
 

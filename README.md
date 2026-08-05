@@ -153,6 +153,22 @@ Tokens: `styles/tokens.css`. Prefer token variables (`--space-*`, `--line`, `--s
 - CI: `npm ci` → `sync` → `build` → `build-storybook`
 - Vercel: Storybook static (`build-storybook` → `storybook-static`)
 
+## Publish to npm
+
+Package name: `deml-ui` (unscoped). `dist/` is committed for `github:` consumers; `prepublishOnly` rebuilds before publish.
+
+```bash
+npm run check:nfts   # must pass
+npm run sync && npm run build
+npm publish --dry-run   # inspect tarball contents
+npm login               # once
+npm publish             # publishes public 1.x from package.json version
+```
+
+Prerequisites: Node ≥ 20, npm account with publish rights to `deml-ui`, clean working tree preferred.
+
+After publish, re-pin the deml app to the npm version (`"deml-ui": "^1.1.0"`) or keep the `github:` SHA pin and bump when ready.
+
 ## License
 
-ISC
+ISC — see [LICENSE](./LICENSE).

@@ -1,4 +1,4 @@
-/* Component: table — NFTS data table */
+/* Component: table — NFTS cream data table */
 
 .component--table .demo {
   display: grid;
@@ -10,8 +10,10 @@ table {
   width: 100%;
   border-collapse: collapse;
   font: inherit;
-  color: var(--color-text);
-  background-color: var(--color-surface);
+  color: var(--color-card-text);
+  background-color: var(--color-card);
+  border: var(--border-width) solid var(--color-card-border);
+  box-shadow: var(--shadow-card);
 }
 
 .component--table th,
@@ -20,26 +22,37 @@ th,
 td {
   /* Equal L/R inset so headers/cells never sit flush on the panel edge */
   padding: var(--space-2) var(--space-3);
-  border-block-end: var(--border-width) solid var(--color-border);
+  border-block-end: var(--border-width) solid var(--color-card-border);
   text-align: start;
 }
 
 .component--table th,
 th {
-  font-family: var(--font-sans);
+  font-family: var(--font-mark);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-mark);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
+  background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-card));
+}
+
+.component--table td,
+td {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-card-text);
 }
 
 .component--table caption,
 caption {
   text-align: start;
-  padding-block-end: var(--space-sm);
-  color: var(--color-text-secondary);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-card-text-secondary);
+  font-family: var(--font-mark);
   font-size: var(--font-size-xs);
   letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
+  background-color: var(--color-card);
 }

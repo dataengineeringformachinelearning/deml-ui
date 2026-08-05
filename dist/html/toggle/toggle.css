@@ -1,4 +1,4 @@
-/* Component: toggle — NFTS segmented control */
+/* Component: toggle — NFTS cream segmented control */
 
 .component--toggle .demo {
   display: grid;
@@ -8,8 +8,9 @@
 .toggle-group {
   display: inline-flex;
   flex-wrap: wrap;
-  border: var(--border-width) solid var(--color-border);
-  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-card-border);
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-card);
 }
 
 .toggle {
@@ -17,7 +18,7 @@
   padding: var(--space-1) var(--space-2);
   border: 0;
   background: transparent;
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
@@ -26,7 +27,7 @@
 }
 
 .toggle + .toggle {
-  border-inline-start: var(--border-width) solid var(--color-border);
+  border-inline-start: var(--border-width) solid var(--color-card-border);
 }
 
 .toggle[aria-pressed='true'],
@@ -36,6 +37,6 @@
 }
 
 .toggle:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline: var(--focus-ring-width) solid var(--color-primary);
   outline-offset: var(--focus-ring-offset);
 }

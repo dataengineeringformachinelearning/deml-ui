@@ -1,4 +1,4 @@
-/* Component: field — NFTS form field */
+/* Component: field — NFTS cream form field */
 
 .component--field .demo {
   display: grid;
@@ -24,7 +24,7 @@
   letter-spacing: var(--tracking-eyebrow);
   line-height: var(--leading-ui);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
 }
 
 .field__required {
@@ -38,7 +38,7 @@
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   letter-spacing: var(--tracking-intro);
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
 }
 
 .field__error {
@@ -54,23 +54,43 @@
   width: 100%;
   min-height: var(--hit-target);
   padding: var(--space-1) var(--space-2);
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--color-card-border);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-body);
   line-height: var(--leading-ui);
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  background-color: color-mix(in srgb, var(--color-card) 88%, var(--color-surface));
+  color: var(--color-card-text);
   appearance: none;
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.field__control:hover:not(:disabled),
+.field input:hover:not(:disabled),
+.field select:hover:not(:disabled),
+.field textarea:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-card-border));
 }
 
 .field__control:focus-visible,
 .field input:focus-visible,
 .field select:focus-visible,
 .field textarea:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline: var(--focus-ring-width) solid var(--color-primary);
   outline-offset: var(--focus-ring-offset);
   border-color: var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field__control,
+  .field input,
+  .field select,
+  .field textarea {
+    transition: none;
+  }
 }

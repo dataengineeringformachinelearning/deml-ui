@@ -1,4 +1,4 @@
-/* Component: dropdown — NFTS menu */
+/* Component: dropdown — NFTS cream menu */
 
 .component--dropdown .demo {
   display: grid;
@@ -13,15 +13,16 @@
 .dropdown__trigger {
   min-height: var(--hit-target);
   padding: var(--space-1) var(--space-2);
-  border: var(--border-width) solid var(--color-border);
-  background-color: var(--color-surface);
-  color: var(--color-text);
-  font: inherit;
+  border: var(--border-width) solid var(--color-card-border);
+  background-color: color-mix(in srgb, var(--color-card) 88%, var(--color-surface));
+  color: var(--color-card-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
   cursor: pointer;
 }
 
 .dropdown__trigger:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline: var(--focus-ring-width) solid var(--color-primary);
   outline-offset: var(--focus-ring-offset);
 }
 
@@ -34,18 +35,27 @@
   margin: 0;
   padding: var(--space-1);
   list-style: none;
-  border: var(--border-width) solid var(--color-border);
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-md);
+  border: var(--border-width) solid var(--color-card-border);
+  background-color: var(--color-card);
+  color: var(--color-card-text);
+  box-shadow: var(--shadow-card);
 }
 
 .dropdown__item {
   min-height: var(--hit-target);
   padding: var(--space-1) var(--space-2);
   cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-card-text);
 }
 
 .dropdown__item:hover,
 .dropdown__item[aria-selected='true'] {
-  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  background-color: color-mix(in srgb, var(--color-primary) 12%, var(--color-card));
+}
+
+.dropdown__item:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-primary);
+  outline-offset: var(--focus-ring-offset);
 }

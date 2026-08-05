@@ -1,4 +1,4 @@
-/* Shared form control baseline — NFTS tokens */
+/* Shared form control baseline — NFTS cream tokens */
 
 .form-field {
   display: grid;
@@ -17,7 +17,7 @@
   letter-spacing: var(--tracking-eyebrow);
   line-height: 1.2;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
 }
 
 .form-field input,
@@ -34,17 +34,17 @@
   width: 100%;
   min-height: var(--hit-target);
   padding: var(--space-1) var(--space-2);
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--color-card-border);
   border-radius: var(--radius-sm);
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  background-color: color-mix(in srgb, var(--color-card) 88%, var(--color-surface));
+  color: var(--color-card-text);
   appearance: none;
 }
 
 .form-field input:focus-visible,
 .form-field select:focus-visible,
 .form-field textarea:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline: var(--focus-ring-width) solid var(--color-primary);
   outline-offset: var(--focus-ring-offset);
   border-color: var(--color-primary);
 }

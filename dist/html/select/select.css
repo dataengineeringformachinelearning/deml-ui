@@ -24,7 +24,7 @@
   letter-spacing: var(--tracking-eyebrow);
   line-height: var(--leading-ui);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
 }
 
 .component--select label, .select input,
@@ -36,15 +36,15 @@
   min-height: var(--hit-target);
   margin: 0;
   padding: var(--space-1) var(--space-2);
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid var(--color-card-border);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-body);
   line-height: var(--leading-ui);
-  color: var(--color-text);
-  background-color: var(--color-surface);
+  color: var(--color-card-text);
+  background-color: color-mix(in srgb, var(--color-card) 88%, var(--color-surface));
   appearance: none;
   transition:
     border-color 120ms ease,
@@ -54,14 +54,14 @@
 
 .component--select label, .select input::placeholder,
 .component--select label, .select textarea::placeholder {
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
   opacity: 0.72;
 }
 
 .component--select label, .select input:hover:not(:disabled),
 .component--select label, .select select:hover:not(:disabled),
 .component--select label, .select textarea:hover:not(:disabled) {
-  border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+  border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-card-border));
 }
 
 .component--select label, .select input:focus,
@@ -73,7 +73,7 @@
 .component--select label, .select input:focus-visible,
 .component--select label, .select select:focus-visible,
 .component--select label, .select textarea:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline: var(--focus-ring-width) solid var(--color-primary);
   outline-offset: var(--focus-ring-offset);
   border-color: var(--color-primary);
 }

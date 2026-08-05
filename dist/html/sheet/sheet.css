@@ -1,4 +1,4 @@
-/* Component: sheet — NFTS slide-over */
+/* Component: sheet — NFTS cream slide-over module */
 
 .component--sheet .demo {
   display: grid;
@@ -11,10 +11,16 @@
   box-sizing: border-box;
   width: min(var(--content-width-sm), 100%);
   min-height: var(--space-28);
-  border: var(--border-width) solid var(--color-border);
-  background-color: var(--color-surface);
-  color: var(--color-text);
-  box-shadow: var(--shadow-md);
+  border: var(--border-width) solid var(--color-card-border);
+  border-top: calc(var(--border-width) * 4) solid var(--color-primary);
+  background-color: var(--color-card);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-primary) 12%, var(--color-card)) 0%,
+    var(--color-card) 40%
+  );
+  color: var(--color-card-text);
+  box-shadow: var(--shadow-card);
 }
 
 .sheet__header,
@@ -27,11 +33,11 @@
 }
 
 .sheet__header {
-  border-block-end: var(--border-width) solid var(--color-border);
+  border-block-end: var(--border-width) solid var(--color-card-border);
 }
 
 .sheet__footer {
-  border-block-start: var(--border-width) solid var(--color-border);
+  border-block-start: var(--border-width) solid var(--color-card-border);
   margin-top: auto;
 }
 
@@ -41,9 +47,12 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
+  color: var(--color-card-text);
 }
 
 .sheet__body {
   flex: 1 1 auto;
   padding: var(--module-pad);
+  font-family: var(--font-body);
+  color: var(--color-card-text-secondary);
 }

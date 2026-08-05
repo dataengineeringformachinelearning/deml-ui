@@ -1,4 +1,4 @@
-/* Component: wizard — NFTS multi-step */
+/* Component: wizard — NFTS cream multi-step module */
 
 .component--wizard .demo {
   display: grid;
@@ -12,9 +12,16 @@
   width: 100%;
   max-width: var(--content-width-md);
   padding: var(--module-pad);
-  border: var(--border-width) solid var(--color-border);
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  border: var(--border-width) solid var(--color-card-border);
+  border-top: calc(var(--border-width) * 4) solid var(--color-primary);
+  background-color: var(--color-card);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-primary) 12%, var(--color-card)) 0%,
+    var(--color-card) 40%
+  );
+  color: var(--color-card-text);
+  box-shadow: var(--shadow-card);
 }
 
 .wizard__steps {
@@ -27,16 +34,16 @@
 }
 
 .wizard__step {
-  font-family: var(--font-sans);
+  font-family: var(--font-mark);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-mark);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
 }
 
 .wizard__step[aria-current='step'] {
-  color: var(--color-highlight);
+  color: var(--color-primary);
 }
 
 .wizard__title {
@@ -45,6 +52,7 @@
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
+  color: var(--color-card-text);
 }
 
 .wizard__actions {
