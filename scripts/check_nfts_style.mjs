@@ -2,6 +2,8 @@
 /**
  * NFTS (new-from-the-start / warm ash) style enforcement for deml-ui.
  * Fails on drift from the locked warm-ash contract.
+ *
+ * CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE
  */
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, extname } from 'node:path';
@@ -57,7 +59,7 @@ function read(p) {
   return readFileSync(p, 'utf8');
 }
 
-// --- 1) tokens must lock NFTS palette + chart aspect + Geist ---
+// --- 1) tokens must lock NFTS palette + fixed chart heights + Geist ---
 {
   const tokensPath = join(ROOT, 'styles/tokens.css');
   if (!existsSync(tokensPath)) {
@@ -70,19 +72,26 @@ function read(p) {
         fail(`styles/tokens.css missing required NFTS hex #${hex}`);
       }
     }
-    if (!/--chart-aspect\s*:\s*2\.4\s*;/.test(tokens)) {
-      fail('styles/tokens.css must set --chart-aspect: 2.4');
+    if (!/--chart-height-spark\s*:\s*140px\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --chart-height-spark: 140px');
+    }
+    if (!/--chart-height-panel\s*:\s*280px\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --chart-height-panel: 280px');
+    }
+    if (!/--chart-stage-ink\s*:\s*var\(--color-plot-stage\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --chart-stage-ink: var(--color-plot-stage)');
+    }
+    if (!/--color-plot-stage\s*:\s*#121212\s*;/i.test(tokens)) {
+      fail('styles/tokens.css must set --color-plot-stage: #121212 (activity-graph stage)');
     }
     if (!/Geist/i.test(tokens)) {
       fail('styles/tokens.css must use Geist font family');
     }
-    // Mentions in "no Syne / Fraunces" comments are OK; live font stacks are not.
     const tokensNoComments = tokens.replace(/\/\*[\s\S]*?\*\//g, '');
     if (/\bSyne\b|\bFraunces\b/.test(tokensNoComments)) {
       fail('styles/tokens.css must not use Syne or Fraunces in live declarations');
     }
     if (/--font-display\s*:\s*(?!var\(--font-sans\)|var\(--font-family\))/.test(tokens)) {
-      // Soft check: display should resolve via sans/family (Geist)
       if (!/--font-display\s*:\s*var\(--font-/.test(tokens)) {
         fail('styles/tokens.css --font-display must resolve to Geist stack vars');
       }
@@ -104,7 +113,6 @@ function read(p) {
       if (!['.css', '.ts', '.html', '.js', '.mjs', '.mdx', '.md'].includes(ext)) {
         continue;
       }
-      // Standards docs may say "do not reintroduce viking"
       if (
         (r.endsWith('AGENTS.md') || r.endsWith('.cursorrules') || r.endsWith('README.md')) &&
         !/import .*viking|from ['"].*viking/i.test(read(p))
@@ -118,7 +126,6 @@ function read(p) {
       }
       const text = read(p);
       if (bad.test(text)) {
-        // Allow explicit "forbidden" mentions in Introduction stories
         if (
           /forbidden|do not|retired|never|no viking|do not reintroduce/i.test(text) &&
           !/addEventListener\(\s*['"]viking-|--viking-[a-z]/i.test(text)
@@ -126,6 +133,13 @@ function read(p) {
           continue;
         }
         fail(`Forbidden Viking / cold-palette chrome: ${r}`);
+      }
+      // #121212 only allowed as --color-plot-stage / chart stage ink token
+      if (/#121212/i.test(text) && !/--color-plot-stage|#121212 \(activity/.test(text)) {
+        const bare = text.replace(/--color-plot-stage\s*:\s*#121212/gi, '');
+        if (/#121212/i.test(bare) && !/activity-graph stage|chart stage/i.test(text)) {
+          fail(`#121212 only allowed as --color-plot-stage (chart stage ink): ${r}`);
+        }
       }
     }
   }
@@ -147,75 +161,61 @@ function read(p) {
   }
 }
 
-// --- 4) Chart stages must not max-height squash the aspect contract ---
+// --- 4) Line chart stages must use fixed heights (not aspect-driven) ---
 {
-  const chartFiles = walk(join(ROOT, 'components')).filter(
-    (p) =>
-      extname(p) === '.css' &&
-      /\/(area-chart|bar-chart|chart|chart-card|chart-panel|chart-empty-state)\//.test(
-        rel(p),
-      ),
-  );
-  for (const p of chartFiles) {
-    const text = read(p);
-    // Flag stage/frame max-height that fights aspect (common squash anti-pattern)
-    if (
-      /\.area-chart-frame|\.chart-figure__plot|\.chart-card__plot|\.chart-stage/.test(
-        text,
-      ) &&
-      /max-height\s*:\s*(?!none)\S+/.test(text) &&
-      /aspect-ratio\s*:\s*var\(--chart-aspect\)/.test(text)
-    ) {
-      // Allow max-height: none explicitly; fail other max-height on same file near frames
-      const stageBlocks = text.split(/[{}]/);
-      for (let i = 0; i < stageBlocks.length; i++) {
-        const block = stageBlocks[i];
-        if (
-          /area-chart-frame|chart-figure__plot|chart-card__plot|chart-stage/.test(
-            block,
-          )
-        ) {
-          const body = stageBlocks[i + 1] || '';
-          if (/max-height\s*:\s*(?!none\b)[^;]+;/.test(body)) {
-            fail(
-              `Chart stage max-height squash (keep aspect-driven height): ${rel(p)}`,
-            );
-          }
-          if (/height\s*:\s*100%\s*;/.test(body) && /aspect-ratio/.test(body)) {
-            fail(
-              `Chart stage height:100% with aspect-ratio (use height:auto): ${rel(p)}`,
-            );
-          }
-        }
-      }
+  const areaCss = join(ROOT, 'components/area-chart/area-chart.css');
+  if (!existsSync(areaCss)) {
+    fail('Missing required chart component CSS: components/area-chart/area-chart.css');
+  } else {
+    const text = read(areaCss);
+    if (!/var\(--chart-height-spark\)/.test(text)) {
+      fail('components/area-chart/area-chart.css must use var(--chart-height-spark)');
+    }
+    if (!/var\(--chart-height-panel\)/.test(text)) {
+      fail('components/area-chart/area-chart.css must use var(--chart-height-panel)');
+    }
+    if (/aspect-ratio\s*:\s*var\(--chart-aspect\)/.test(text)) {
+      fail(
+        'components/area-chart/area-chart.css must not size via --chart-aspect (fixed heights only)',
+      );
+    }
+    if (!/CHART RULES LOCKED/.test(text)) {
+      fail('components/area-chart/area-chart.css must include CHART RULES LOCKED comment');
+    }
+  }
+
+  const panelCss = join(ROOT, 'components/chart-panel/chart-panel.css');
+  if (existsSync(panelCss)) {
+    const text = read(panelCss);
+    if (!/var\(--chart-height-panel\)/.test(text)) {
+      fail('components/chart-panel/chart-panel.css must use var(--chart-height-panel)');
+    }
+  }
+
+  const chartCss = join(ROOT, 'components/chart/chart.css');
+  if (existsSync(chartCss)) {
+    const text = read(chartCss);
+    if (!/var\(--chart-height-panel\)/.test(text)) {
+      fail('components/chart/chart.css must use var(--chart-height-panel)');
     }
   }
 }
 
-// --- 5) Require chart-aspect contract on plot frames / hosts ---
+// --- 5) Chart card documents fixed-height contract ---
 {
-  const mustDeclareAspect = [
-    'components/area-chart/area-chart.css',
-    'components/chart/chart.css',
-  ];
-  for (const relPath of mustDeclareAspect) {
-    const p = join(ROOT, relPath);
-    if (!existsSync(p)) {
-      fail(`Missing required chart component CSS: ${relPath}`);
-      continue;
-    }
-    const text = read(p);
-    if (!/var\(--chart-aspect\)/.test(text)) {
-      fail(`${relPath} must use var(--chart-aspect)`);
-    }
-  }
   const chartCard = join(ROOT, 'components/chart-card/chart-card.css');
   if (!existsSync(chartCard)) {
     fail('Missing required chart component CSS: components/chart-card/chart-card.css');
-  } else if (!/--chart-aspect/.test(read(chartCard))) {
-    fail(
-      'components/chart-card/chart-card.css must document/lock --chart-aspect plot contract',
-    );
+  } else {
+    const text = read(chartCard);
+    if (!/--chart-height-panel|--chart-height-spark/.test(text)) {
+      fail(
+        'components/chart-card/chart-card.css must document/lock fixed --chart-height-* contract',
+      );
+    }
+    if (!/CHART RULES LOCKED/.test(text)) {
+      fail('components/chart-card/chart-card.css must include CHART RULES LOCKED comment');
+    }
   }
 }
 

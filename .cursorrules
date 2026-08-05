@@ -13,7 +13,9 @@ Do not invent parallel palettes, type stacks, or chart contracts.
   accents `#3F6B54` / `#9E3D47`; light ground `#D4CEC5`; muted `#C6C0B7` / `#4A453F`
 - **Geist only** for all type roles (display, marks, intro, body) — do not add Syne/Fraunces
 - 8px grid, dual `data-theme`, equal `--tile-gap`, fluid dash-rows (`minmax(--tile-row-unit, auto)`)
-- Fixed `--chart-aspect: 2.4`, equal `--chart-inset` — never squash, stretch, or theme-invert plots
+- Charts **LOCKED**: `--chart-height-spark: 140px` / `--chart-height-panel: 280px`,
+  width `100%`, equal `--chart-inset`, `--chart-stage-ink` for panel stages —
+  never data-driven height, aspect-driven line charts, or theme-invert plots
 - Sharp modules (`--radius-*: 0`) unless a control needs the pill radius
 - Solid opaque navbar; no page horizontal overflow from scaffolding
 
@@ -28,7 +30,9 @@ Do not invent parallel palettes, type stacks, or chart contracts.
 
 - Deviate from NFTS for experiments, atelier frankensteins, or cold seven-color locks
 - Reintroduce Viking-UI naming, void-black / electric `#2176ff`, or `--viking-*` tokens
-- Replace warm ash with arbitrary seven-color locks (`#0066B2` / `#121212` / `#FFFFFF` suite)
+- Replace warm ash with arbitrary seven-color locks (`#0066B2` / void page chrome /
+  `#FFFFFF` suite). `#121212` is allowed **only** as `--color-plot-stage` /
+  `--chart-stage-ink` for activity-graph plot stages
 - Hand-edit generated wrappers under `src/angular/markup/` or `generated/` — regenerate via sync
 - Use fixed `grid-auto-rows: var(--dash-row)` without `minmax(..., auto)` (squashes charts/tiles)
 - Invent one-off spacing outside the token scale
@@ -36,8 +40,8 @@ Do not invent parallel palettes, type stacks, or chart contracts.
 ## Automated enforcement (no escape hatches)
 
 `scripts/check_nfts_style.mjs` (`npm run check:nfts`) **fails** on missing NFTS
-palette / `--chart-aspect: 2.4` / Geist, Viking or `#2176ff` chrome, fixed-only
-`grid-auto-rows`, and chart-stage squash patterns. CI runs this before build.
-Reject any change that does not pass the gate.
+palette / `--chart-height-spark: 140px` / `--chart-height-panel: 280px` / Geist,
+Viking or `#2176ff` chrome, fixed-only `grid-auto-rows`, and aspect-driven line
+chart stages. CI runs this before build. Reject any change that does not pass.
 
 Consumer guidance: deml `THEME.md` / `AGENTS.md`.

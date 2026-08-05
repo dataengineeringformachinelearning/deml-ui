@@ -139,20 +139,24 @@ deml-stat-card[data-trend='down'] .stat-card-delta,
   color: var(--color-card-text-secondary);
 }
 
+/* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
 .stat-card-spark {
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-end;
   width: 100%;
-  min-height: var(--chart-spark-min-block);
+  height: var(--chart-height-spark);
+  min-height: var(--chart-height-spark);
+  max-height: var(--chart-height-spark);
   margin-top: var(--space-3);
 }
 
-/* Spark keeps --chart-spark-aspect; never stretch to fill leftover tile height */
+/* Spark: fixed 140px; never stretch to fill leftover tile height */
 .stat-card-spark > :first-child {
   width: 100%;
+  height: var(--chart-height-spark);
   flex: 0 0 auto;
   align-self: stretch;
 }

@@ -1,4 +1,5 @@
-/* Component: area-chart — width→aspect height; equal inset; never squash */
+/* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
+/* Component: area-chart — fixed spark 140 / panel 280; width 100%; never data-sized */
 
 .component--area-chart .demo {
   display: grid;
@@ -20,7 +21,7 @@ deml-area-chart,
   --chart-grid: var(--color-plot-grid);
   --chart-baseline: var(--color-plot-baseline);
   --chart-label: var(--color-plot-muted);
-  --chart-node: var(--color-plot-ink);
+  --chart-node: #ffffff;
   background-color: transparent;
 }
 
@@ -50,31 +51,30 @@ deml-area-chart[data-accent='primary'],
   align-self: stretch;
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--chart-stage-max-inline);
+  max-width: none;
+  height: var(--chart-height-panel);
   margin-inline: 0;
   margin-block: 0;
   padding: var(--chart-inset);
-  background-color: var(--chart-plot);
+  background-color: var(--chart-stage-ink);
   border: var(--border-width) solid var(--color-plot-border);
 }
 
 /*
- * Full plot — fill the well width; height from --chart-aspect only.
- * Inside chart-card/panel, --chart-stage-max-inline is 100% so the stage
- * spans the content band (never a tiny centered black island). Soft ceiling
- * for standalone stages remains the token; never max-height (fights aspect).
+ * Panel / full plot — fixed 280px; width 100%; height never follows data or aspect.
  */
 app-area-chart:not([data-variant='spark']) .area-chart-frame,
 deml-area-chart:not([data-variant='spark']) .area-chart-frame,
 :host(:not([data-variant='spark'])) .area-chart-frame,
 .component--area-chart .area-chart-frame,
 .component--chart-card .area-chart-frame {
-  aspect-ratio: var(--chart-aspect);
   width: 100%;
-  max-width: var(--chart-stage-max-inline);
-  height: auto;
+  max-width: none;
+  height: var(--chart-height-panel);
+  aspect-ratio: auto;
   max-height: none;
   margin-inline: 0;
+  background-color: var(--chart-stage-ink);
 }
 
 .area-chart {
@@ -114,7 +114,7 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
 
 .area-chart-node {
   fill: var(--chart-node);
-  stroke: var(--chart-plot);
+  stroke: var(--chart-stage-ink);
   stroke-width: 1.5;
 }
 
@@ -142,16 +142,16 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   letter-spacing: var(--tracking-mark);
 }
 
-/* Spark — same aspect contract; soft ceiling via spark max-inline */
+/* Spark — fixed 140px; no axes/grid chrome (markup omits them); transparent stage */
 app-area-chart[data-variant='spark'] .area-chart-frame,
 deml-area-chart[data-variant='spark'] .area-chart-frame,
 :host([data-variant='spark']) .area-chart-frame {
   width: 100%;
-  max-width: var(--chart-spark-stage-max-inline);
-  aspect-ratio: var(--chart-spark-aspect);
-  height: auto;
+  max-width: none;
+  height: var(--chart-height-spark);
+  aspect-ratio: auto;
   max-height: none;
-  margin-inline: auto;
+  margin-inline: 0;
   padding: 0;
   border: 0;
   background-color: transparent;
@@ -167,18 +167,8 @@ app-area-chart[data-variant='spark'] .area-chart-line,
   stroke-width: 2.75;
 }
 
-app-area-chart[data-variant='spark'] .area-chart-grid-v,
-:host([data-variant='spark']) .area-chart-grid-v {
-  stroke: color-mix(in srgb, var(--color-card-text) 12%, transparent);
-}
-
-app-area-chart[data-variant='spark'] .area-chart-baseline,
-:host([data-variant='spark']) .area-chart-baseline {
-  stroke: color-mix(in srgb, var(--color-card-text) 14%, transparent);
-}
-
 app-area-chart[data-variant='spark'] .area-chart-node,
 :host([data-variant='spark']) .area-chart-node {
-  fill: var(--chart-accent);
+  fill: var(--chart-node);
   stroke: var(--color-card);
 }

@@ -1,4 +1,5 @@
-/* Component: chart — aspect-locked native SVG plot shell */
+/* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
+/* Component: chart — fixed 280px native SVG plot shell */
 
 .component--chart .demo {
   display: grid;
@@ -16,13 +17,13 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--chart-stage-max-inline);
-  aspect-ratio: var(--chart-aspect);
-  height: auto;
+  max-width: none;
+  height: var(--chart-height-panel);
+  aspect-ratio: auto;
   max-height: none;
   margin-inline: 0;
   padding: var(--chart-inset);
-  background-color: var(--chart-plot);
+  background-color: var(--chart-stage-ink);
   border: var(--border-width) solid var(--color-plot-border);
   color: var(--color-plot-ink);
 }

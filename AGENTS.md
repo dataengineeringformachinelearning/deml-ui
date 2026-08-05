@@ -33,10 +33,11 @@ Consumer app: [`deml`](https://github.com/dataengineeringformachinelearning/deml
    `--module-pad`.
 5. **Fluid equal cells** — `grid-auto-rows: minmax(var(--tile-row-unit), auto)` so peer
    tiles stretch; never squash with fixed-only rows.
-6. **Charts** — `--chart-aspect: 2.4` with equal `--chart-inset`; width fills the well
-   (capped by `--chart-stage-max-inline`) so wider cards grow taller; never
-   `height: 100%` / max-height squash on plot stages — letterbox peer tiles, not the SVG;
-   never theme-invert plot series.
+6. **Charts (LOCKED)** — `--chart-height-spark: 140px` /
+   `--chart-height-panel: 280px`; width always `100%`; shared global y-scale in the
+   consumer; equal `--chart-inset`; panel stages use `--chart-stage-ink` (`#121212`);
+   never aspect-driven taller-when-wider for line charts, data-driven height, or
+   theme-inverted plot series. Do not change these constants unless explicitly asked.
 7. **Light + dark** — `[data-theme="light"|"dark"]` (and `.light` / `.dark`).
 8. **Shell** — solid opaque navbar; page scaffolding must not introduce horizontal overflow.
 9. **A11y** — WCAG 2.0 AA: focus-visible, contrast, hit targets, reduced motion.

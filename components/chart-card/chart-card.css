@@ -1,11 +1,12 @@
-/* Component: chart-card — NFTS fill + aspect-safe plot band */
+/* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
+/* Component: chart-card — NFTS fill; plot band hosts fixed-height line charts */
 
 .component--chart-card .demo {
   display: grid;
   gap: var(--tile-gap);
 }
 
-/* Chart card — titled shell; plot band hosts aspect-locked charts */
+/* Chart card — titled shell; plot band hosts fixed 140/280 line charts */
 
 app-chart-card,
 deml-chart-card,
@@ -15,7 +16,6 @@ deml-chart-card,
   height: 100%;
   min-width: 0;
   --chart-accent: var(--color-primary);
-  /* Fill the card content width; aspect drives height (wider → taller). */
   --chart-stage-max-inline: 100%;
   background-color: transparent;
 }
@@ -45,7 +45,6 @@ app-chart-card[data-accent='primary'],
   margin: 0;
   padding: var(--module-pad);
   overflow: visible;
-  /* Nested plot stages inherit this — fill the well, never a centered max-inline island. */
   --chart-stage-max-inline: 100%;
   color: var(--color-card-text);
   background-color: var(--color-card);
@@ -88,10 +87,10 @@ app-chart-card[data-accent='primary'],
 }
 
 /*
- * Plot band — hosts fill the card content width; plots size via --chart-aspect
- * (wider well → taller plot). Equal --chart-inset lives on the plot stage.
- * Do not stretch children with height:100% (squashes viewBox plots).
- * Peer equal-height rows: ::after letterboxes leftover tile height, not the SVG.
+ * Plot band — hosts fill the card content width; line charts use fixed
+ * --chart-height-panel (280px) / --chart-height-spark (140px). Equal
+ * --chart-inset lives on the plot stage. Peer equal-height rows: ::after
+ * letterboxes leftover tile height, not the SVG.
  */
 .chart-card-body {
   display: flex;

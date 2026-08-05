@@ -1,4 +1,5 @@
-/* Component: chart-panel — titled shell with aspect-locked plot */
+/* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
+/* Component: chart-panel — titled shell with fixed 280px plot stage */
 
 .component--chart-panel .demo {
   display: grid;
@@ -13,7 +14,6 @@ deml-chart-panel,
   height: 100%;
   min-width: 0;
   --chart-accent: var(--color-primary);
-  /* Fill the panel content width; aspect drives height (wider → taller). */
   --chart-stage-max-inline: 100%;
   background-color: transparent;
 }
@@ -79,13 +79,13 @@ deml-chart-panel,
   box-sizing: border-box;
   width: 100%;
   max-width: none;
-  aspect-ratio: var(--chart-aspect);
-  height: auto;
+  height: var(--chart-height-panel);
+  aspect-ratio: auto;
   max-height: none;
   margin: 0;
   padding: var(--chart-inset);
   overflow: visible;
-  background-color: var(--chart-plot);
+  background-color: var(--chart-stage-ink);
   border: var(--border-width) solid var(--color-plot-border);
   color: var(--color-plot-ink);
 }
