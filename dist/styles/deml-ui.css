@@ -3111,10 +3111,11 @@ deml-panel-grid > *,
   gap: var(--space-md);
 }
 
-/* Button group — host is the flex shell (mobile-first) */
+/* Button group — host or static .button-group shell (mobile-first) */
 
 app-button-group,
 deml-button-group,
+.button-group,
 :host {
   display: flex;
   flex-direction: column;
@@ -3125,6 +3126,18 @@ deml-button-group,
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+}
+
+.button-group[data-layout='row'] {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+.button-group.place-center {
+  justify-content: center;
 }
 
 app-button-group.place-end,
@@ -5318,24 +5331,28 @@ deml-card,
 
 app-card[data-visual='gold'],
 deml-card[data-visual='gold'],
+.card[data-visual='gold'],
 :host([data-visual='gold']) {
   --card-visual: var(--color-accent-gold);
 }
 
 app-card[data-visual='red'],
 deml-card[data-visual='red'],
+.card[data-visual='red'],
 :host([data-visual='red']) {
   --card-visual: var(--color-accent-red);
 }
 
 app-card[data-visual='olive'],
 deml-card[data-visual='olive'],
+.card[data-visual='olive'],
 :host([data-visual='olive']) {
   --card-visual: var(--color-primary);
 }
 
 app-card[data-visual='none'],
 deml-card[data-visual='none'],
+.card[data-visual='none'],
 :host([data-visual='none']) {
   --card-visual: var(--color-primary);
 }

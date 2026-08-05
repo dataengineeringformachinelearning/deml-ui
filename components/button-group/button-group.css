@@ -5,10 +5,11 @@
   gap: var(--space-md);
 }
 
-/* Button group — host is the flex shell (mobile-first) */
+/* Button group — host or static .button-group shell (mobile-first) */
 
 app-button-group,
 deml-button-group,
+.button-group,
 :host {
   display: flex;
   flex-direction: column;
@@ -19,6 +20,18 @@ deml-button-group,
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+}
+
+.button-group[data-layout='row'] {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+}
+
+.button-group.place-center {
+  justify-content: center;
 }
 
 app-button-group.place-end,

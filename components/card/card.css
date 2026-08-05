@@ -22,24 +22,28 @@ deml-card,
 
 app-card[data-visual='gold'],
 deml-card[data-visual='gold'],
+.card[data-visual='gold'],
 :host([data-visual='gold']) {
   --card-visual: var(--color-accent-gold);
 }
 
 app-card[data-visual='red'],
 deml-card[data-visual='red'],
+.card[data-visual='red'],
 :host([data-visual='red']) {
   --card-visual: var(--color-accent-red);
 }
 
 app-card[data-visual='olive'],
 deml-card[data-visual='olive'],
+.card[data-visual='olive'],
 :host([data-visual='olive']) {
   --card-visual: var(--color-primary);
 }
 
 app-card[data-visual='none'],
 deml-card[data-visual='none'],
+.card[data-visual='none'],
 :host([data-visual='none']) {
   --card-visual: var(--color-primary);
 }
