@@ -35,6 +35,7 @@ export { DemlContentLayout, defineContentLayout } from "./content-layout.js";
 export { DemlDashboardGrid, defineDashboardGrid } from "./dashboard-grid.js";
 export { DemlDialog, defineDialog } from "./dialog.js";
 export { DemlDisclosure, defineDisclosure } from "./disclosure.js";
+export { DemlDonutChart, defineDonutChart } from "./donut-chart.js";
 export { DemlDropdown, defineDropdown } from "./dropdown.js";
 export { DemlEmptyState, defineEmptyState } from "./empty-state.js";
 export { DemlErrorState, defineErrorState } from "./error-state.js";

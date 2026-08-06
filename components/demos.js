@@ -2,6 +2,7 @@
  * Demo wiring for the Vite reference site (index.html).
  * Storybook uses stories/render.js (same patterns).
  */
+import { initSvgCharts } from "../src/charts/svg-mount.js";
 
 export function initDemos(root = document) {
   const dialog = root.querySelector("dialog.dialog, #demo-dialog");
@@ -40,4 +41,8 @@ export function initDemos(root = document) {
       btn.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
     });
   });
+
+  if (root.querySelector("[data-chart]")) {
+    initSvgCharts(root);
+  }
 }

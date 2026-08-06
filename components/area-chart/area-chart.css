@@ -1,9 +1,20 @@
 /* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
-/* Component: area-chart — fixed spark 140 / panel 280; width 100%; never data-sized */
+/* Component: area-chart — premium SVG; spark 140 / panel 280; NFTS tokens */
 
 .component--area-chart .demo {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.component--area-chart .chart-board {
   display: grid;
-  gap: var(--tile-gap);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 app-area-chart,
@@ -21,25 +32,28 @@ deml-area-chart,
   --chart-grid: var(--color-plot-grid);
   --chart-baseline: var(--color-plot-baseline);
   --chart-label: var(--color-plot-muted);
-  --chart-node: #ffffff;
+  --chart-node: var(--color-accent-gold);
   background-color: transparent;
 }
 
 app-area-chart[data-accent='gold'],
 deml-area-chart[data-accent='gold'],
-:host([data-accent='gold']) {
+:host([data-accent='gold']),
+.chart-card[data-accent='gold'] {
   --chart-accent: var(--color-accent-gold);
 }
 
 app-area-chart[data-accent='red'],
 deml-area-chart[data-accent='red'],
-:host([data-accent='red']) {
+:host([data-accent='red']),
+.chart-card[data-accent='red'] {
   --chart-accent: var(--color-accent-red);
 }
 
 app-area-chart[data-accent='primary'],
 deml-area-chart[data-accent='primary'],
-:host([data-accent='primary']) {
+:host([data-accent='primary']),
+.chart-card[data-accent='primary'] {
   --chart-accent: var(--color-primary);
 }
 
@@ -50,24 +64,24 @@ deml-area-chart[data-accent='primary'],
   justify-content: stretch;
   align-self: stretch;
   box-sizing: border-box;
+  position: relative;
   width: 100%;
   max-width: none;
   height: var(--chart-height-panel);
-  margin-inline: 0;
-  margin-block: 0;
+  margin: 0;
   padding: var(--chart-inset);
   background-color: var(--chart-stage-ink);
   border: var(--border-width) solid var(--color-plot-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
-/*
- * Panel / full plot — fixed 280px; width 100%; height never follows data or aspect.
- */
 app-area-chart:not([data-variant='spark']) .area-chart-frame,
 deml-area-chart:not([data-variant='spark']) .area-chart-frame,
 :host(:not([data-variant='spark'])) .area-chart-frame,
-.component--area-chart .area-chart-frame,
-.component--chart-card .area-chart-frame {
+.component--area-chart .area-chart-frame:not([data-variant='spark']),
+.component--chart-card .area-chart-frame:not([data-variant='spark']),
+.component--chart-panel .area-chart-frame:not([data-variant='spark']) {
   width: 100%;
   max-width: none;
   height: var(--chart-height-panel);
@@ -77,6 +91,7 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   background-color: var(--chart-stage-ink);
 }
 
+.area-chart-mount,
 .area-chart {
   display: block;
   box-sizing: border-box;
@@ -85,13 +100,29 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   min-width: 0;
   min-height: 0;
   flex: 1 1 auto;
+  position: relative;
   overflow: visible;
+}
+
+.area-chart-mount > .area-chart {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.area-chart-grid-h {
+  stroke: var(--chart-grid);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  vector-effect: non-scaling-stroke;
 }
 
 .area-chart-grid-v {
   stroke: var(--chart-grid);
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
+  opacity: 0.55;
 }
 
 .area-chart-baseline {
@@ -116,6 +147,15 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   fill: var(--chart-node);
   stroke: var(--chart-stage-ink);
   stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.area-chart-cursor {
+  stroke: color-mix(in srgb, var(--color-plot-ink) 32%, transparent);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
 }
 
 .area-chart-stop--top {
@@ -140,35 +180,66 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-mark);
+  font-variant-numeric: tabular-nums;
 }
 
-/* Spark — fixed 140px; no axes/grid chrome (markup omits them); transparent stage */
+.chart-tooltip {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 4.5rem;
+  padding: var(--space-1) var(--space-2);
+  pointer-events: none;
+  color: var(--color-text);
+  background-color: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+}
+
+.chart-tooltip[hidden] {
+  display: none;
+}
+
+.chart-tooltip__label {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-mark);
+  color: var(--color-text-secondary);
+}
+
+.chart-tooltip__value {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
 app-area-chart[data-variant='spark'] .area-chart-frame,
 deml-area-chart[data-variant='spark'] .area-chart-frame,
-:host([data-variant='spark']) .area-chart-frame {
+:host([data-variant='spark']) .area-chart-frame,
+.area-chart-frame[data-variant='spark'] {
   width: 100%;
   max-width: none;
   height: var(--chart-height-spark);
   aspect-ratio: auto;
   max-height: none;
   margin-inline: 0;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-app-area-chart[data-variant='spark'] .area-chart,
-:host([data-variant='spark']) .area-chart {
-  min-height: 0;
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-plot-border);
+  background-color: var(--color-surface);
 }
 
 app-area-chart[data-variant='spark'] .area-chart-line,
-:host([data-variant='spark']) .area-chart-line {
+:host([data-variant='spark']) .area-chart-line,
+.area-chart-frame[data-variant='spark'] .area-chart-line {
   stroke-width: 2.75;
 }
 
 app-area-chart[data-variant='spark'] .area-chart-node,
-:host([data-variant='spark']) .area-chart-node {
+:host([data-variant='spark']) .area-chart-node,
+.area-chart-frame[data-variant='spark'] .area-chart-node {
   fill: var(--chart-node);
-  stroke: var(--color-card);
+  stroke: var(--color-surface);
 }

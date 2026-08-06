@@ -35,6 +35,7 @@ import { defineContentLayout } from "./content-layout.js";
 import { defineDashboardGrid } from "./dashboard-grid.js";
 import { defineDialog } from "./dialog.js";
 import { defineDisclosure } from "./disclosure.js";
+import { defineDonutChart } from "./donut-chart.js";
 import { defineDropdown } from "./dropdown.js";
 import { defineEmptyState } from "./empty-state.js";
 import { defineErrorState } from "./error-state.js";
@@ -148,6 +149,7 @@ export function defineAll(): void {
   defineDashboardGrid();
   defineDialog();
   defineDisclosure();
+  defineDonutChart();
   defineDropdown();
   defineEmptyState();
   defineErrorState();
@@ -261,6 +263,7 @@ export const componentNames = [
   "dashboard-grid",
   "dialog",
   "disclosure",
+  "donut-chart",
   "dropdown",
   "empty-state",
   "error-state",

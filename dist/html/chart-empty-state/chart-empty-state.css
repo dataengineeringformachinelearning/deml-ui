@@ -1,9 +1,20 @@
 /* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
-/* Component: chart-empty-state — fixed 280px empty plot band */
+/* Component: chart-empty-state — fill / inline / loading empty plot bands */
 
 .component--chart-empty-state .demo {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.component--chart-empty-state .chart-board--empty {
   display: grid;
-  gap: var(--tile-gap);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 app-chart-empty-state,
@@ -12,25 +23,61 @@ deml-chart-empty-state,
 :host {
   display: grid;
   place-items: center;
+  align-content: center;
   gap: var(--space-2);
   box-sizing: border-box;
   width: 100%;
   max-width: none;
-  height: var(--chart-height-panel);
+  height: var(--chart-height-spark);
   aspect-ratio: auto;
   max-height: none;
-  margin-inline: 0;
-  margin-block: 0;
+  margin: 0;
   padding: var(--chart-inset);
   text-align: center;
   color: var(--color-plot-muted);
   background-color: var(--chart-stage-ink);
   border: var(--border-width) dashed var(--color-plot-border);
+  border-radius: var(--radius-md);
+}
+
+.chart-empty-state[data-layout='fill'] {
+  height: var(--chart-height-spark);
+}
+
+.chart-empty-state[data-layout='inline'] {
+  height: var(--chart-height-spark);
+  background-color: var(--color-surface);
+}
+
+.chart-empty-state[data-layout='loading'] {
+  border-style: solid;
+}
+
+.chart-empty-state__badge {
+  width: var(--space-3);
+  height: var(--space-3);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-primary) 55%, var(--color-plot-muted));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 18%, transparent);
+}
+
+.chart-empty-state__skeleton {
+  width: min(100%, 10rem);
+  height: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-plot-muted) 18%, transparent) 0%,
+    color-mix(in srgb, var(--color-plot-ink) 22%, transparent) 50%,
+    color-mix(in srgb, var(--color-plot-muted) 18%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: chart-empty-shimmer 1.2s ease-in-out infinite;
 }
 
 .chart-empty-state__title {
   margin: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
@@ -44,5 +91,20 @@ deml-chart-empty-state,
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
   color: var(--color-plot-muted);
-  max-width: var(--reading-width);
+  max-width: 18rem;
+}
+
+@keyframes chart-empty-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-empty-state__skeleton {
+    animation: none;
+  }
 }

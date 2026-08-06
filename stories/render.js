@@ -3,6 +3,7 @@
  * Loads component HTML via import.meta.glob (Vite HMR).
  * Wires interactive demos so overlays/tabs work in Canvas + Docs.
  */
+import { initSvgCharts } from "../src/charts/svg-mount.js";
 
 const htmlModules = import.meta.glob("../components/*/*.html", {
   query: "?raw",
@@ -153,6 +154,11 @@ function initStoryDemos(root) {
   const commandInput = root.querySelector(".command__input");
   if (commandInput && root.querySelector(".command")) {
     queueMicrotask(() => commandInput.focus());
+  }
+
+  // Native SVG charts — shared Y per [data-chart-board]
+  if (root.querySelector("[data-chart]")) {
+    initSvgCharts(root);
   }
 }
 

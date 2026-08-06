@@ -1,5 +1,6 @@
 # log
 
+- 2026-08-05: **Chart suite (premium NFTS)** — native SVG mounts (`src/charts/svg-mount.js`) with shared Y, smooth area/line, column bars, donut; elevate chart-card/panel/empty; gold markers + dashed grid + tooltips; Storybook 2–3-up viewport-fit boards.
 - 2026-08-04: **NFTS shell purge** — remove Syne/Fraunces + cold violet Storybook chrome; lock index/Storybook to warm ash + Geist; rename leftover atelier comments.
 - 2026-07-30: **Headless Dialog upgrade** — `demlDialogPanel`, body portal, controlled/uncontrolled `open`, Escape/`cancel` handling, focus trap + restore; still zero visual CSS.
 - 2026-07-30: **Headless Menu** — trigger + panel (`deml-menu`) with WAI-ARIA menu roles, roving focus, typeahead, click-outside, disabled items; zero styles.

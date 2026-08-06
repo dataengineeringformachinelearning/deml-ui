@@ -1,12 +1,21 @@
 /* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
-/* Component: chart-card — NFTS fill; plot band hosts fixed-height line charts */
+/* Component: chart-card — cream module + value/trend header; hosts 140/280 plots */
 
 .component--chart-card .demo {
-  display: grid;
-  gap: var(--tile-gap);
+  max-height: 100%;
+  overflow: hidden;
 }
 
-/* Chart card — titled shell; plot band hosts fixed 140/280 line charts */
+.component--chart-card .chart-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
 
 app-chart-card,
 deml-chart-card,
@@ -16,22 +25,26 @@ deml-chart-card,
   height: 100%;
   min-width: 0;
   --chart-accent: var(--color-primary);
+  --chart-node: var(--color-accent-gold);
   --chart-stage-max-inline: 100%;
   background-color: transparent;
 }
 
 app-chart-card[data-accent='gold'],
-:host([data-accent='gold']) {
+:host([data-accent='gold']),
+.chart-card[data-accent='gold'] {
   --chart-accent: var(--color-accent-gold);
 }
 
 app-chart-card[data-accent='red'],
-:host([data-accent='red']) {
+:host([data-accent='red']),
+.chart-card[data-accent='red'] {
   --chart-accent: var(--color-accent-red);
 }
 
 app-chart-card[data-accent='primary'],
-:host([data-accent='primary']) {
+:host([data-accent='primary']),
+.chart-card[data-accent='primary'] {
   --chart-accent: var(--color-primary);
 }
 
@@ -41,10 +54,10 @@ app-chart-card[data-accent='primary'],
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  min-height: 100%;
+  min-height: 0;
   margin: 0;
-  padding: var(--module-pad);
-  overflow: visible;
+  padding: var(--space-2);
+  overflow: hidden;
   --chart-stage-max-inline: 100%;
   color: var(--color-card-text);
   background-color: var(--color-card);
@@ -54,21 +67,35 @@ app-chart-card[data-accent='primary'],
     var(--color-card) 48%
   );
   border: var(--border-width) solid var(--color-card-border);
-  border-top: calc(var(--border-width) * 4) solid var(--chart-accent);
+  border-block-start: calc(var(--border-width) * 3) solid var(--chart-accent);
   box-shadow: var(--shadow-card);
+  border-radius: var(--radius-lg);
+  transition: box-shadow 180ms ease, border-color 160ms ease;
+}
+
+.chart-card:hover {
+  border-color: color-mix(in srgb, var(--color-accent-gold) 40%, var(--color-card-border));
+  box-shadow: var(--shadow-md);
 }
 
 .chart-card-header {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--space-2);
   flex: 0 0 auto;
+}
+
+.chart-card-header__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
 }
 
 .chart-card-heading {
   margin: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
@@ -76,21 +103,53 @@ app-chart-card[data-accent='primary'],
   color: var(--color-card-text);
 }
 
+.chart-card-value {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  color: var(--color-card-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.chart-card-unit {
+  margin-inline-start: 0.15em;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-card-text-secondary);
+}
+
 .chart-card-meta {
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
   font-family: var(--font-mark);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-mark);
   letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
-  color: var(--chart-accent);
+  color: var(--color-card-text-secondary);
+}
+
+.chart-card-trend {
+  color: var(--color-accent-gold);
+}
+
+.chart-card-trend[data-trend='down'] {
+  color: var(--color-accent-red);
+}
+
+.chart-card-trend[data-trend='up'] {
+  color: var(--color-accent-gold);
 }
 
 /*
  * Plot band — hosts fill the card content width; line charts use fixed
- * --chart-height-panel (280px) / --chart-height-spark (140px). Equal
- * --chart-inset lives on the plot stage. Peer equal-height rows: ::after
- * letterboxes leftover tile height, not the SVG.
+ * --chart-height-panel (280px) / --chart-height-spark (140px).
  */
 .chart-card-body {
   display: flex;
@@ -101,7 +160,7 @@ app-chart-card[data-accent='primary'],
   gap: 0;
   min-height: 0;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .chart-card-body::after {
@@ -123,9 +182,9 @@ deml-chart-card .chart-card-body > * {
   margin-inline: 0;
 }
 
-/* Plot wells stretch the content band (equal --chart-inset stays on the stage). */
 .chart-card-body .area-chart-frame,
 .chart-card-body .bar-chart,
+.chart-card-body .donut-chart-frame,
 .chart-card-body .chart-figure__plot,
 .chart-card-body .chart-empty-state,
 app-chart-card .chart-card-body .area-chart-frame,
@@ -149,6 +208,6 @@ app-chart-card[data-size='wide'] .chart-card-heading {
 
 @media screen and (min-width: 800px) {
   .chart-card {
-    padding: var(--module-pad-lg);
+    padding: var(--space-3);
   }
 }

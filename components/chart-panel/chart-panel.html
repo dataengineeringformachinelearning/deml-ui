@@ -1,33 +1,57 @@
 <!--
-  Component: Chart Panel
+  Component: chart-panel — panel shell with value/trend + stage-ink plot
   Path: components/chart-panel/chart-panel.html
   Styles: components/chart-panel/chart-panel.css
-  Source: deml-ui structural shell
 -->
 <section id="chart-panel" class="component component--chart-panel">
   <h2>Chart Panel</h2>
   <div class="demo">
-    <section class="chart-panel" aria-labelledby="chart-panel-title">
-      <header class="chart-panel__header">
-        <h3 id="chart-panel-title">Chart panel</h3>
-        <p class="chart-panel__value">42</p>
-      </header>
-      <div class="chart-panel__body" role="img" aria-label="Sample chart placeholder">
-        <svg
-          class="chart"
-          viewBox="0 0 360 150"
-          preserveAspectRatio="xMidYMid meet"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <polyline
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            points="0,110 60,80 120,95 180,40 240,65 300,30 360,20"
-          />
-        </svg>
-      </div>
-    </section>
+    <div class="chart-board chart-board--panel" data-chart-board data-chart-ymax="auto">
+      <section class="chart-panel" data-accent="primary" aria-labelledby="panel-a">
+        <header class="chart-panel__header">
+          <div class="chart-panel__header-row">
+            <h3 class="chart-panel__title" id="panel-a">System latency</h3>
+            <p class="chart-panel__value">52<span class="chart-panel__unit">ms</span></p>
+          </div>
+          <p class="chart-panel__meta">
+            <span class="chart-card-trend" data-trend="up">+4%</span>
+            Last 24h · shared Y
+          </p>
+        </header>
+        <div class="chart-panel__body">
+          <div class="area-chart-frame" data-variant="spark" role="img" aria-label="Latency">
+            <div
+              class="area-chart-mount"
+              data-chart="area"
+              data-series="[36,40,38,44,52,48,42]"
+              data-categories='["00","04","08","12","16","20","24"]'
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-panel" data-accent="primary" aria-labelledby="panel-b">
+        <header class="chart-panel__header">
+          <div class="chart-panel__header-row">
+            <h3 class="chart-panel__title" id="panel-b">Throughput</h3>
+            <p class="chart-panel__value">1.2<span class="chart-panel__unit">k</span></p>
+          </div>
+          <p class="chart-panel__meta">
+            <span class="chart-card-trend" data-trend="up">+9%</span>
+            Same scale
+          </p>
+        </header>
+        <div class="chart-panel__body">
+          <div class="area-chart-frame" data-variant="spark" role="img" aria-label="Throughput">
+            <div
+              class="area-chart-mount"
+              data-chart="area"
+              data-series="[22,28,26,34,40,38,32]"
+              data-categories='["00","04","08","12","16","20","24"]'
+            ></div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </section>

@@ -32,6 +32,7 @@ export { DemlConfirmDialog } from "./confirm-dialog";
 export { DemlContainer } from "./container";
 export { DemlContentLayout } from "./content-layout";
 export { DemlDashboardGrid } from "./dashboard-grid";
+export { DemlDonutChart } from "./donut-chart";
 export { DemlDropdown } from "./dropdown";
 export { DemlEmptyState } from "./empty-state";
 export { DemlErrorState } from "./error-state";

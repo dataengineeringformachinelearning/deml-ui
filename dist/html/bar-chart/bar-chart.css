@@ -1,8 +1,20 @@
-/* Component: bar-chart — peer width + equal inset; content-tall rows */
+/* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
+/* Component: bar-chart — column SVG (soft column bars) + optional list rows */
 
 .component--bar-chart .demo {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.component--bar-chart .chart-board {
   display: grid;
-  gap: var(--tile-gap);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 app-bar-chart,
@@ -37,11 +49,24 @@ app-bar-chart[data-accent='primary'],
   --chart-accent: var(--color-primary);
 }
 
-/*
- * Plot well — same max-inline + equal inset as area charts.
- * Height grows with rows (no aspect lock); peer tiles letterbox around it.
- */
-.bar-chart {
+.bar-chart-frame.area-chart-frame {
+  height: var(--chart-height-panel);
+}
+
+.bar-chart-frame.area-chart-frame[data-variant='spark'] {
+  height: var(--chart-height-spark);
+}
+
+.bar-chart-col {
+  fill: var(--chart-accent);
+  opacity: 0.92;
+}
+
+.bar-chart-col:hover {
+  opacity: 1;
+}
+
+.bar-chart:not([data-chart]):not(.bar-chart-svg) {
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
@@ -53,13 +78,13 @@ app-bar-chart[data-accent='primary'],
   max-width: var(--chart-stage-max-inline);
   min-height: var(--chart-min-block);
   height: auto;
-  margin-inline: 0;
-  margin-block: 0;
+  margin: 0;
   padding: var(--chart-inset);
   overflow: visible;
   list-style: none;
-  background-color: var(--chart-plot);
+  background-color: var(--color-surface);
   border: var(--border-width) solid var(--color-plot-border);
+  border-radius: var(--radius-md);
 }
 
 .bar-chart-row {
@@ -69,7 +94,6 @@ app-bar-chart[data-accent='primary'],
   flex: 0 0 auto;
   margin: 0;
   padding: 0;
-  background-color: transparent;
 }
 
 .bar-chart-meta {
@@ -100,27 +124,19 @@ app-bar-chart[data-accent='primary'],
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-intro);
   color: var(--chart-label);
+  font-variant-numeric: tabular-nums;
 }
 
 .bar-chart-track {
   width: 100%;
   height: var(--space-1);
-  background-color: color-mix(in srgb, var(--color-plot-muted) 16%, var(--chart-plot));
+  background-color: color-mix(in srgb, var(--color-plot-muted) 16%, var(--color-surface));
   overflow: hidden;
+  border-radius: var(--radius-pill);
 }
 
 .bar-chart-fill {
   height: 100%;
   background-color: var(--chart-accent);
-  background-image: linear-gradient(
-    90deg,
-    var(--chart-accent) 0%,
-    color-mix(in srgb, var(--chart-accent) 55%, var(--color-on-primary)) 100%
-  );
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bar-chart-fill {
-    transition: none;
-  }
+  border-radius: var(--radius-pill);
 }

@@ -108,6 +108,7 @@ export const CATEGORIES = {
     "chart-card",
     "area-chart",
     "bar-chart",
+    "donut-chart",
     "chart",
     "chart-panel",
     "chart-empty-state",
@@ -150,6 +151,12 @@ export const INTERACTIVE = new Set([
   "accordion",
   "command",
   "sheet",
+  "area-chart",
+  "bar-chart",
+  "donut-chart",
+  "chart",
+  "chart-card",
+  "chart-panel",
 ]);
 
 export function toPascalCase(kebab) {

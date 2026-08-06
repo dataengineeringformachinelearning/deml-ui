@@ -28,4 +28,56 @@
     outline: 2px solid var(--color-focus, #f3f0ea);
     outline-offset: 2px;
   }
+
+  /* Chart stories — multi-variant boards fit viewport with zero canvas scroll */
+  #storybook-root > .story-root[data-component="area-chart"],
+  #storybook-root > .story-root[data-component="bar-chart"],
+  #storybook-root > .story-root[data-component="donut-chart"],
+  #storybook-root > .story-root[data-component="chart"],
+  #storybook-root > .story-root[data-component="chart-card"],
+  #storybook-root > .story-root[data-component="chart-panel"],
+  #storybook-root > .story-root[data-component="chart-empty-state"] {
+    --story-padding: var(--space-2);
+    height: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  #storybook-root > .story-root[data-component="area-chart"] .component > h2,
+  #storybook-root > .story-root[data-component="bar-chart"] .component > h2,
+  #storybook-root > .story-root[data-component="donut-chart"] .component > h2,
+  #storybook-root > .story-root[data-component="chart"] .component > h2,
+  #storybook-root > .story-root[data-component="chart-card"] .component > h2,
+  #storybook-root > .story-root[data-component="chart-panel"] .component > h2,
+  #storybook-root > .story-root[data-component="chart-empty-state"] .component > h2 {
+    display: none;
+  }
+
+  #storybook-root > .story-root[data-component="area-chart"] .component,
+  #storybook-root > .story-root[data-component="bar-chart"] .component,
+  #storybook-root > .story-root[data-component="donut-chart"] .component,
+  #storybook-root > .story-root[data-component="chart"] .component,
+  #storybook-root > .story-root[data-component="chart-card"] .component,
+  #storybook-root > .story-root[data-component="chart-panel"] .component,
+  #storybook-root > .story-root[data-component="chart-empty-state"] .component,
+  #storybook-root > .story-root[data-component="area-chart"] .demo,
+  #storybook-root > .story-root[data-component="bar-chart"] .demo,
+  #storybook-root > .story-root[data-component="donut-chart"] .demo,
+  #storybook-root > .story-root[data-component="chart"] .demo,
+  #storybook-root > .story-root[data-component="chart-card"] .demo,
+  #storybook-root > .story-root[data-component="chart-panel"] .demo,
+  #storybook-root > .story-root[data-component="chart-empty-state"] .demo,
+  #storybook-root > .story-root[data-component="area-chart"] .chart-board,
+  #storybook-root > .story-root[data-component="bar-chart"] .chart-board,
+  #storybook-root > .story-root[data-component="donut-chart"] .chart-board,
+  #storybook-root > .story-root[data-component="chart"] .chart-board,
+  #storybook-root > .story-root[data-component="chart-card"] .chart-board,
+  #storybook-root > .story-root[data-component="chart-panel"] .chart-board,
+  #storybook-root > .story-root[data-component="chart-empty-state"] .chart-board {
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
 </style>

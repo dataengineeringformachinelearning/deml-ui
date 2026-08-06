@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<div class=\"chart-empty-state\" role=\"status\">\n      <p class=\"chart-empty-state__title\">No chart data</p>\n      <p class=\"chart-empty-state__description\">Data will appear here once available.</p>\n    </div>";
+const DEML_TEMPLATE = "<div class=\"chart-board chart-board--empty\">\n      <div class=\"chart-empty-state\" data-layout=\"fill\" role=\"status\">\n        <span class=\"chart-empty-state__badge\" aria-hidden=\"true\"></span>\n        <p class=\"chart-empty-state__title\">No chart data</p>\n        <p class=\"chart-empty-state__description\">Signals appear once telemetry lands.</p>\n      </div>\n\n      <div class=\"chart-empty-state\" data-layout=\"inline\" role=\"status\">\n        <span class=\"chart-empty-state__badge\" aria-hidden=\"true\"></span>\n        <p class=\"chart-empty-state__title\">Awaiting signal</p>\n        <p class=\"chart-empty-state__description\">Connect a stream to populate this tile.</p>\n      </div>\n\n      <div class=\"chart-empty-state\" data-layout=\"loading\" role=\"status\" aria-busy=\"true\">\n        <span class=\"chart-empty-state__skeleton\" aria-hidden=\"true\"></span>\n        <p class=\"chart-empty-state__title\">Loading series</p>\n        <p class=\"chart-empty-state__description\">Fetching the latest board domain.</p>\n      </div>\n    </div>";
 
 @Component({
   selector: "deml-chart-empty-state",

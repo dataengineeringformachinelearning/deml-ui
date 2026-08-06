@@ -33,6 +33,7 @@ import { DemlConfirmDialog } from "./confirm-dialog";
 import { DemlContainer } from "./container";
 import { DemlContentLayout } from "./content-layout";
 import { DemlDashboardGrid } from "./dashboard-grid";
+import { DemlDonutChart } from "./donut-chart";
 import { DemlDropdown } from "./dropdown";
 import { DemlEmptyState } from "./empty-state";
 import { DemlErrorState } from "./error-state";
@@ -143,6 +144,7 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlContainer,
   DemlContentLayout,
   DemlDashboardGrid,
+  DemlDonutChart,
   DemlDropdown,
   DemlEmptyState,
   DemlErrorState,

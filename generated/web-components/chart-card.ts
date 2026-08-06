@@ -7,29 +7,76 @@ export class DemlChartCard extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<article class="chart-card" aria-labelledby="chart-card-demo-heading">
-      <header class="chart-card-header">
-        <h3 class="chart-card-heading" id="chart-card-demo-heading">Traffic</h3>
-        <p class="chart-card-meta">Last 7 days</p>
-      </header>
-      <div class="chart-card-body">
-        <div class="area-chart-frame" role="img" aria-label="Sample area chart">
-          <svg
-            class="area-chart"
-            viewBox="0 0 360 150"
-            preserveAspectRatio="xMidYMid meet"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <polyline
-              class="area-chart-line"
-              fill="none"
-              points="32,110 80,90 140,95 200,50 260,70 320,40"
-            />
-          </svg>
+      this.innerHTML = `<div class="chart-board" data-chart-board data-chart-ymax="auto">
+      <article class="chart-card" data-accent="primary" aria-labelledby="cc-a">
+        <header class="chart-card-header">
+          <div class="chart-card-header__row">
+            <h3 class="chart-card-heading" id="cc-a">Listen time</h3>
+            <p class="chart-card-value">230<span class="chart-card-unit">m</span></p>
+          </div>
+          <p class="chart-card-meta">
+            <span class="chart-card-trend" data-trend="up">+12%</span>
+            Last 7 days
+          </p>
+        </header>
+        <div class="chart-card-body">
+          <div class="area-chart-frame" data-variant="spark" role="img" aria-label="Listen time">
+            <div
+              class="area-chart-mount"
+              data-chart="area"
+              data-series="[120,156,142,188,210,196,230]"
+              data-categories='["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]'
+            ></div>
+          </div>
         </div>
-      </div>
-    </article>`;
+      </article>
+
+      <article class="chart-card" data-accent="primary" aria-labelledby="cc-b">
+        <header class="chart-card-header">
+          <div class="chart-card-header__row">
+            <h3 class="chart-card-heading" id="cc-b">Playlist adds</h3>
+            <p class="chart-card-value">74</p>
+          </div>
+          <p class="chart-card-meta">
+            <span class="chart-card-trend" data-trend="up">+8%</span>
+            Same Y scale
+          </p>
+        </header>
+        <div class="chart-card-body">
+          <div class="area-chart-frame" data-variant="spark" role="img" aria-label="Playlist adds">
+            <div
+              class="area-chart-mount"
+              data-chart="area"
+              data-series="[32,40,38,55,62,58,74]"
+              data-categories='["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]'
+            ></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chart-card" data-accent="primary" aria-labelledby="cc-c">
+        <header class="chart-card-header">
+          <div class="chart-card-header__row">
+            <h3 class="chart-card-heading" id="cc-c">Follows</h3>
+            <p class="chart-card-value">34</p>
+          </div>
+          <p class="chart-card-meta">
+            <span class="chart-card-trend" data-trend="down">−3%</span>
+            Same Y scale
+          </p>
+        </header>
+        <div class="chart-card-body">
+          <div class="area-chart-frame" data-variant="spark" role="img" aria-label="Follows">
+            <div
+              class="area-chart-mount"
+              data-chart="area"
+              data-series="[14,18,16,22,28,26,34]"
+              data-categories='["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]'
+            ></div>
+          </div>
+        </div>
+      </article>
+    </div>`;
     }
   }
 }

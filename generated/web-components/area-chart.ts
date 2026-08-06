@@ -7,21 +7,57 @@ export class DemlAreaChart extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<div class="area-chart-frame" role="img" aria-label="Area chart">
-      <svg
-        class="area-chart"
-        viewBox="0 0 360 150"
-        preserveAspectRatio="xMidYMid meet"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <line class="area-chart-baseline" x1="32" y1="120" x2="348" y2="120" />
-        <polyline
-          class="area-chart-line"
-          fill="none"
-          points="32,110 80,90 140,95 200,50 260,70 320,40"
-        />
-      </svg>
+      this.innerHTML = `<div class="chart-board" data-chart-board data-chart-ymax="auto">
+      <article class="chart-card" data-accent="primary" aria-labelledby="area-a">
+        <header class="chart-card-header">
+          <h3 class="chart-card-heading" id="area-a">Streams</h3>
+          <p class="chart-card-meta">Shared Y · 0–max</p>
+        </header>
+        <div class="chart-card-body">
+          <div class="area-chart-frame" data-variant="spark" role="img" aria-label="Streams">
+            <div
+              class="area-chart-mount"
+              data-chart="area"
+              data-series="[120,156,142,188,210,196,230]"
+              data-categories='["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]'
+            ></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chart-card" data-accent="primary" aria-labelledby="area-b">
+        <header class="chart-card-header">
+          <h3 class="chart-card-heading" id="area-b">Saves</h3>
+          <p class="chart-card-meta">Same scale</p>
+        </header>
+        <div class="chart-card-body">
+          <div class="area-chart-frame" data-variant="spark" role="img" aria-label="Saves">
+            <div
+              class="area-chart-mount"
+              data-chart="area"
+              data-series="[48,62,55,70,84,78,96]"
+              data-categories='["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]'
+            ></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="chart-card" data-accent="primary" aria-labelledby="area-c">
+        <header class="chart-card-header">
+          <h3 class="chart-card-heading" id="area-c">Shares</h3>
+          <p class="chart-card-meta">Same scale</p>
+        </header>
+        <div class="chart-card-body">
+          <div class="area-chart-frame" data-variant="spark" role="img" aria-label="Shares">
+            <div
+              class="area-chart-mount"
+              data-chart="area"
+              data-series="[18,22,20,28,34,30,42]"
+              data-categories='["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]'
+            ></div>
+          </div>
+        </div>
+      </article>
     </div>`;
     }
   }

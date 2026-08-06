@@ -1,9 +1,20 @@
 /* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
-/* Component: chart-panel — titled shell with fixed 280px plot stage */
+/* Component: chart-panel — titled shell with fixed plot stage (spark demos / 280 panel) */
 
 .component--chart-panel .demo {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.component--chart-panel .chart-board--panel {
   display: grid;
-  gap: var(--tile-gap);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 app-chart-panel,
@@ -18,16 +29,24 @@ deml-chart-panel,
   background-color: transparent;
 }
 
+.chart-panel[data-accent='gold'] {
+  --chart-accent: var(--color-accent-gold);
+}
+
+.chart-panel[data-accent='red'] {
+  --chart-accent: var(--color-accent-red);
+}
+
 .chart-panel {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  min-height: 100%;
+  min-height: 0;
   margin: 0;
-  padding: var(--module-pad);
-  overflow: visible;
+  padding: var(--space-2);
+  overflow: hidden;
   --chart-stage-max-inline: 100%;
   color: var(--color-card-text);
   background-color: var(--color-card);
@@ -37,22 +56,30 @@ deml-chart-panel,
     var(--color-card) 48%
   );
   border: var(--border-width) solid var(--color-card-border);
-  border-top: calc(var(--border-width) * 4) solid var(--chart-accent);
+  border-block-start: calc(var(--border-width) * 3) solid var(--chart-accent);
   box-shadow: var(--shadow-card);
+  border-radius: var(--radius-lg);
 }
 
 .chart-panel__header {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--space-2);
   flex: 0 0 auto;
+}
+
+.chart-panel__header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
 }
 
 .chart-panel__header h3,
 .chart-panel__title {
   margin: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
@@ -63,44 +90,60 @@ deml-chart-panel,
 .chart-panel__value {
   margin: 0;
   font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-card-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.chart-panel__unit {
+  margin-inline-start: 0.15em;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-card-text-secondary);
+}
+
+.chart-panel__meta {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-mark);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
-  color: var(--chart-accent);
+  color: var(--color-card-text-secondary);
 }
 
 .chart-panel__body {
   display: flex;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
   box-sizing: border-box;
   width: 100%;
-  max-width: none;
-  height: var(--chart-height-panel);
-  aspect-ratio: auto;
-  max-height: none;
+  min-height: 0;
   margin: 0;
-  padding: var(--chart-inset);
-  overflow: visible;
-  background-color: var(--chart-stage-ink);
-  border: var(--border-width) solid var(--color-plot-border);
-  color: var(--color-plot-ink);
+  padding: 0;
+  overflow: hidden;
 }
 
-.chart-panel__body > .chart,
-.chart-panel__body > svg {
-  display: block;
+.chart-panel__body .area-chart-frame {
   width: 100%;
-  height: 100%;
-  min-width: 0;
-  min-height: 0;
+  height: var(--chart-height-spark);
+}
+
+.chart-panel__body .area-chart-frame:not([data-variant='spark']) {
+  height: var(--chart-height-panel);
+  background-color: var(--chart-stage-ink);
 }
 
 @media screen and (min-width: 800px) {
   .chart-panel {
-    padding: var(--module-pad-lg);
+    padding: var(--space-3);
   }
 }

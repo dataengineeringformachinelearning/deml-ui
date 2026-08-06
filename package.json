@@ -28,10 +28,12 @@
       "default": "./dist/angular/fesm2022/deml-ui.mjs"
     },
     "./html/*": "./dist/html/*",
+    "./charts": "./src/charts/svg-mount.js",
     "./package.json": "./package.json"
   },
   "files": [
     "dist",
+    "src/charts",
     "LICENSE",
     "README.md"
   ],
