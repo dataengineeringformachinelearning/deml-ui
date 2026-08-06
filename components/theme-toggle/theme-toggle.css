@@ -58,6 +58,11 @@
   height: var(--icon-size-sm);
 }
 
+/* Author display:block must not defeat the hidden attribute */
+.theme-toggle svg[hidden] {
+  display: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle,
   .theme-toggle:hover {

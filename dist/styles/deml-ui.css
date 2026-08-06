@@ -1655,6 +1655,11 @@ app-button-group {
   height: var(--icon-size-sm);
 }
 
+/* Author display:block must not defeat the hidden attribute */
+.theme-toggle svg[hidden] {
+  display: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle,
   .theme-toggle:hover {
@@ -8802,6 +8807,10 @@ deml-navbar {
   height: var(--navbar-icon-size);
 }
 
+.site-navbar-menu-toggle svg[hidden] {
+  display: none !important;
+}
+
 .site-navbar-icon:hover {
   color: var(--navbar-icon-color-hover, var(--navbar-accent-hover));
   background-color: color-mix(in srgb, var(--navbar-accent) 12%, transparent);
@@ -8911,7 +8920,8 @@ deml-navbar {
   color: var(--navbar-accent);
 }
 
-app-button-group {
+app-button-group,
+.site-navbar .button-group {
   justify-self: stretch;
   width: 100%;
 }
@@ -8931,7 +8941,9 @@ app-button-group {
 
 /* Full-width actions when stacked in the mobile menu */
 .site-navbar.is-menu-open app-button-group .button--pill,
-.site-navbar.is-menu-open app-button-group .theme-toggle {
+.site-navbar.is-menu-open app-button-group .theme-toggle,
+.site-navbar.is-menu-open .button-group .button--pill,
+.site-navbar.is-menu-open .button-group .theme-toggle {
   width: 100%;
   min-height: var(--navbar-hit);
 }
@@ -8966,18 +8978,25 @@ app-button-group {
     width: auto;
   }
 
-  app-button-group {
+  app-button-group,
+  .site-navbar .button-group {
     grid-area: actions;
     justify-self: end;
     width: max-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .site-navbar.is-menu-open app-button-group .button--pill,
-  .site-navbar.is-menu-open app-button-group .theme-toggle {
+  .site-navbar.is-menu-open app-button-group .theme-toggle,
+  .site-navbar.is-menu-open .button-group .button--pill,
+  .site-navbar.is-menu-open .button-group .theme-toggle {
     width: auto;
   }
 
-  .site-navbar.is-menu-open app-button-group .theme-toggle {
+  .site-navbar.is-menu-open app-button-group .theme-toggle,
+  .site-navbar.is-menu-open .button-group .theme-toggle {
     width: var(--navbar-hit);
     min-height: var(--navbar-hit);
     padding: 0;
