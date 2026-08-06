@@ -56,7 +56,7 @@ app-chart-card[data-accent='primary'],
   height: 100%;
   min-height: 0;
   margin: 0;
-  padding: var(--space-2);
+  padding: var(--module-pad);
   overflow: hidden;
   --chart-stage-max-inline: 100%;
   color: var(--color-card-text);
@@ -208,6 +208,6 @@ app-chart-card[data-size='wide'] .chart-card-heading {
 
 @media screen and (min-width: 800px) {
   .chart-card {
-    padding: var(--space-3);
+    padding: var(--module-pad-lg);
   }
 }

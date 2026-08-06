@@ -1,13 +1,13 @@
 # log
 
 - 2026-08-05: **Chart suite (premium NFTS)** — native SVG mounts (`src/charts/svg-mount.js`) with shared Y, smooth area/line, column bars, donut; elevate chart-card/panel/empty; gold markers + dashed grid + tooltips; Storybook 2–3-up viewport-fit boards.
-- 2026-08-04: **NFTS shell purge** — remove Syne/Fraunces + cold violet Storybook chrome; lock index/Storybook to warm ash + Geist; rename leftover atelier comments.
+- 2026-08-04: **NFTS shell purge** — remove Syne/Fraunces + cold violet Storybook chrome; lock index/Storybook to warm ash + Geist; rename leftover legacy comments.
 - 2026-07-30: **Headless Dialog upgrade** — `demlDialogPanel`, body portal, controlled/uncontrolled `open`, Escape/`cancel` handling, focus trap + restore; still zero visual CSS.
 - 2026-07-30: **Headless Menu** — trigger + panel (`deml-menu`) with WAI-ARIA menu roles, roving focus, typeahead, click-outside, disabled items; zero styles.
 - 2026-07-30: **Headless Combobox** — editable autocomplete/listbox (`deml-combobox`) with `aria-activedescendant`, typeahead query model, click-outside, full keyboard; consumer-owned filtering/styling.
 - 2026-07-30: **Headless Angular** — `tabs`, `dialog`, `disclosure` as unstyled Signals primitives (`src/angular/headless/`) with WAI-ARIA, keyboard, focus trap; usage in `USAGE.md`. Markup dumps skipped for those three.
 - 2026-07-30: **Dashboard kit curation** — removed HTML-element zoo + niche shells (~81); kept ~89 barebones working components. Fixed nested `.demo` extractTemplate; per-component CSF3 stories; interactive play wiring (tabs/dialogs/menus); structural CSS on BEM roots; Storybook groups Shell/Layout/Forms/Feedback/Data/Overlays; Dashboard composition MDX; Angular constructor DI.
-- 2026-07-30: Structural shells curated into deml-ui components (new-from-the-start / atelier).
+- 2026-07-30: Structural shells curated into deml-ui components (new-from-the-start).
 - 2026-07-25: HTML/CSS startpoint — element reference page (`index.html`); layout tokens/shell in `styles.css`.
 - 2026-07-25: Component convention — co-located `components/<name>/<name>.html` + `<name>.css`.
 - 2026-07-25: Navbar component — co-located markup/styles; Components gallery on `index.html`.

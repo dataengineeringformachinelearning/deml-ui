@@ -87,6 +87,27 @@ function read(p) {
     if (!/Geist/i.test(tokens)) {
       fail('styles/tokens.css must use Geist font family');
     }
+    if (!/--font-weight-display\s*:\s*800\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --font-weight-display: 800 (dense display)');
+    }
+    if (!/--tracking-mark\s*:\s*0\.24em\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --tracking-mark: 0.24em (wide mark caps)');
+    }
+    if (!/--tracking-intro\s*:\s*0\.08em\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --tracking-intro: 0.08em');
+    }
+    if (!/--module-pad\s*:\s*var\(--space-3\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --module-pad: var(--space-3) (equal module inset)');
+    }
+    if (!/--module-pad-lg\s*:\s*var\(--space-4\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --module-pad-lg: var(--space-4)');
+    }
+    if (!/--grid\s*:\s*8px\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --grid: 8px');
+    }
+    if (!/--hit-target\s*:\s*var\(--space-6\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --hit-target: var(--space-6) (≥44px WCAG)');
+    }
     const tokensNoComments = tokens.replace(/\/\*[\s\S]*?\*\//g, '');
     if (/\bSyne\b|\bFraunces\b/.test(tokensNoComments)) {
       fail('styles/tokens.css must not use Syne or Fraunces in live declarations');
@@ -94,6 +115,27 @@ function read(p) {
     if (/--font-display\s*:\s*(?!var\(--font-sans\)|var\(--font-family\))/.test(tokens)) {
       if (!/--font-display\s*:\s*var\(--font-/.test(tokens)) {
         fail('styles/tokens.css --font-display must resolve to Geist stack vars');
+      }
+    }
+  }
+}
+
+// --- 1b) Forbidden external brand / inspiration labels in product sources ---
+{
+  const roots = ['styles', 'components', 'src', 'stories', '.storybook', 'scripts'].map((d) =>
+    join(ROOT, d),
+  );
+  const brands =
+    /\bspotify\b|\bporsche\b|\bpalantir\b|\bspacex\b|\bmaterial design\b|\bbootstrap\b|\btailwind\b|\bfrench\b|\bamerican heritage\b|\batelier\b/i;
+  for (const root of roots) {
+    for (const p of walk(root)) {
+      const r = rel(p);
+      const ext = extname(p);
+      if (!['.css', '.ts', '.html', '.js', '.mjs', '.mdx', '.md'].includes(ext)) continue;
+      if (r.endsWith('check_nfts_style.mjs')) continue;
+      const text = read(p);
+      if (brands.test(text)) {
+        fail(`Forbidden brand / inspiration label in source: ${r}`);
       }
     }
   }

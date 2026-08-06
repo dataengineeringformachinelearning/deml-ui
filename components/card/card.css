@@ -59,7 +59,8 @@ deml-card[data-visual='none'],
   height: 100%;
   min-height: 100%;
   margin: 0;
-  padding: var(--space-6) var(--module-pad) 0;
+  /* Equal outer inset on every side — 8px grid module pad */
+  padding: var(--module-pad-lg);
   overflow: hidden;
   text-align: center;
   color: var(--color-card-text);
@@ -100,18 +101,18 @@ deml-card[data-visual='none'],
   font-size: clamp(calc(var(--grid) * 3.5), 4vw, var(--font-size-lg));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: 1.05;
+  line-height: var(--leading-display);
   color: var(--color-card-text);
 }
 
 .card-subtext {
   margin: 0 0 var(--space-4);
-  max-width: 32ch;
+  max-width: 36ch;
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.5;
+  line-height: var(--leading-body);
   color: var(--color-card-text-secondary);
 }
 
@@ -119,7 +120,7 @@ deml-card[data-visual='none'],
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: var(--space-5);
+  margin-bottom: 0;
   background-color: transparent;
 }
 

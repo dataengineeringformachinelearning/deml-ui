@@ -27,12 +27,12 @@ Consumer app: [`deml`](https://github.com/dataengineeringformachinelearning/deml
 2. **Warm ash NFTS only (mandatory)** — grounds `#35312D`/`#1C1916`, cards `#F3F0EA`,
    primary `#2F5F8F`, accents `#3F6B54`/`#9E3D47`; light theme `#D4CEC5` ground.
    Muted `#C6C0B7`/`#4A453F`. **No** cold seven-color swap that fights this system.
-3. **Geist only** — `--font-display`, `--font-mark`, `--font-secondary`, and body all
-   resolve to Geist. Do not ship Syne/Fraunces mixes.
+3. **Geist only** — display weight 800 + tight tracking; marks at 0.24em caps; intro
+   at 0.08em. Do not ship Syne/Fraunces mixes.
 4. **8px grid** — spacing and tile rhythm via `--grid`, `--tile-gap`, `--tile-row-unit`,
-   `--module-pad`.
-5. **Fluid equal cells** — `grid-auto-rows: minmax(var(--tile-row-unit), auto)` so peer
-   tiles stretch; never squash with fixed-only rows.
+   equal `--module-pad` / `--module-pad-lg` on elevated modules.
+5. **Fluid equal cells** — `grid-auto-rows: minmax(var(--tile-row-*), auto|1fr)` so peer
+   tiles stretch with no ragged gaps; never squash with fixed-only rows.
 6. **Charts (LOCKED)** — `--chart-height-spark: 140px` /
    `--chart-height-panel: 280px`; width always `100%`; shared global y-scale in the
    consumer; equal `--chart-inset`; panel stages use `--chart-stage-ink` (`#121212`);
@@ -40,7 +40,7 @@ Consumer app: [`deml`](https://github.com/dataengineeringformachinelearning/deml
    theme-inverted plot series. Do not change these constants unless explicitly asked.
 7. **Light + dark** — `[data-theme="light"|"dark"]` (and `.light` / `.dark`).
 8. **Shell** — solid opaque navbar; page scaffolding must not introduce horizontal overflow.
-9. **A11y** — WCAG 2.0 AA: focus-visible, contrast, hit targets, reduced motion.
+9. **A11y** — WCAG 2.0 Level AA / §508: focus-visible, contrast, ≥44px hits, reduced motion, skip link.
 10. **No Viking-UI** — do not reintroduce `viking-*`, `--viking-*`, or void-black /
     electric `#2176ff` suite chrome.
 11. **Ship dist** — `npm run build` updates committed `dist/` for `github:` consumers.

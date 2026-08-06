@@ -29,7 +29,8 @@ deml-form-panel,
   height: 100%;
   min-height: 100%;
   margin: 0;
-  padding: var(--space-5) var(--space-4);
+  /* Equal outer inset — matches card / chart shells */
+  padding: var(--module-pad-lg);
   color: var(--color-card-text);
   background-color: var(--color-card);
   background-image: linear-gradient(
@@ -65,7 +66,7 @@ deml-form-panel,
 .form-panel__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(calc(var(--grid) * 3.5), 4vw, var(--font-size-lg));
+  font-size: clamp(calc(var(--grid) * 3.5), 4.25vw, var(--font-size-xl));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
@@ -74,7 +75,7 @@ deml-form-panel,
 
 .form-panel__description {
   margin: 0;
-  max-width: 42ch;
+  max-width: 44ch;
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);

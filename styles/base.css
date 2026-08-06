@@ -53,25 +53,38 @@ body {
   color: var(--color-highlight);
 }
 
+/* Large bold display — tight tracking, 8px-linked clamp */
 .type-display {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(calc(var(--grid) * 3.5), 4.5vw, var(--font-size-xl));
+  font-size: clamp(calc(var(--grid) * 4), 5.5vw, var(--font-size-2xl));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
   color: var(--color-text);
 }
 
+/* Open-tracked intro — readable secondary ink */
 .type-intro,
 .lede {
   margin: 0;
+  max-width: 48ch;
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
   line-height: var(--leading-body);
   color: var(--color-text-secondary);
+}
+
+.type-body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--leading-body);
+  color: var(--color-text);
 }
 
 .page {
@@ -360,14 +373,18 @@ body {
   color: var(--color-text-primary);
 }
 
-/* Shared interactive focus — components may refine, not omit */
+/* Shared interactive focus — WCAG 2.0 AA; components may refine, not omit */
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
 [role="button"]:focus-visible,
 [role="tab"]:focus-visible,
 [role="menuitem"]:focus-visible,
 [role="option"]:focus-visible,
+[role="link"]:focus-visible,
 [tabindex]:not([tabindex="-1"]):focus-visible {
   outline: var(--focus-ring-width) solid var(--color-focus);
   outline-offset: var(--focus-ring-offset);
@@ -380,6 +397,24 @@ a {
 
 a:hover {
   color: var(--color-highlight-hover);
+}
+
+/* Equal-height peer boards — stretch children into shared row tracks */
+.peer-board {
+  display: grid;
+  gap: var(--tile-gap);
+  align-items: stretch;
+  justify-items: stretch;
+  grid-auto-rows: minmax(var(--tile-row-unit), auto);
+}
+
+.peer-board > * {
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  justify-self: stretch;
 }
 
 @media (prefers-reduced-motion: reduce) {
