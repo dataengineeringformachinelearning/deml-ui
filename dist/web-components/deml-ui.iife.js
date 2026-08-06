@@ -156,17 +156,18 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
         <p class="callout__text">Highlighted message for the user.</p>
       </div>
       <button type="button" class="callout__close" aria-label="Dismiss">×</button>
-    </aside>`))}};function Ht(){customElements.get(_.tagName)||customElements.define(_.tagName,_)}var y=class extends HTMLElement{static{this.tagName="deml-card"}static{this.componentName="card"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<article class="card">
-      <header class="card__header">
-        <h3 class="card__title">Card title</h3>
-        <p class="card__description">Optional supporting text.</p>
-      </header>
-      <div class="card__body">
-        <p>Card body content.</p>
+    </aside>`))}};function Ht(){customElements.get(_.tagName)||customElements.define(_.tagName,_)}var y=class extends HTMLElement{static{this.tagName="deml-card"}static{this.componentName="card"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<article class="card" data-visual="olive">
+      <div class="card-copy">
+        <p class="card-meta">Feature</p>
+        <h3 class="card-heading">Card title</h3>
+        <p class="card-subtext">Optional supporting text for the elevated cream module.</p>
+        <div class="card-actions">
+          <div class="button-group" data-layout="row" role="group">
+            <button type="button" class="button button--primary button--pill">Action</button>
+          </div>
+        </div>
       </div>
-      <footer class="card__footer">
-        <button type="button" class="button">Action</button>
-      </footer>
+      <div class="card-media has-visual" aria-hidden="true"></div>
     </article>`))}};function Et(){customElements.get(y.tagName)||customElements.define(y.tagName,y)}var H=class extends HTMLElement{static{this.tagName="deml-card-grid"}static{this.componentName="card-grid"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML='<div class="card-grid"><article class="card"><h3 class="card-heading">Card</h3></article></div>'))}};function Ct(){customElements.get(H.tagName)||customElements.define(H.tagName,H)}var E=class extends HTMLElement{static{this.tagName="deml-chart"}static{this.componentName="chart"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<figure class="chart-figure">
       <div class="chart-figure__plot">
         <svg

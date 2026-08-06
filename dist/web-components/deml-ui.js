@@ -395,7 +395,7 @@ var b = class extends HTMLElement {
     <button type="button" class="button button--primary" disabled>Disabled</button>`));
   }
 };
-function _t() {
+function vt() {
   customElements.get(b.tagName) || customElements.define(b.tagName, b);
 }
 var N = class extends HTMLElement {
@@ -413,10 +413,10 @@ var N = class extends HTMLElement {
     </div>`));
   }
 };
-function vt() {
+function _t() {
   customElements.get(N.tagName) || customElements.define(N.tagName, N);
 }
-var _ = class extends HTMLElement {
+var v = class extends HTMLElement {
   static {
     this.tagName = "deml-callout";
   }
@@ -434,9 +434,9 @@ var _ = class extends HTMLElement {
   }
 };
 function yt() {
-  customElements.get(_.tagName) || customElements.define(_.tagName, _);
+  customElements.get(v.tagName) || customElements.define(v.tagName, v);
 }
-var v = class extends HTMLElement {
+var _ = class extends HTMLElement {
   static {
     this.tagName = "deml-card";
   }
@@ -444,22 +444,23 @@ var v = class extends HTMLElement {
     this.componentName = "card";
   }
   connectedCallback() {
-    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<article class="card">
-      <header class="card__header">
-        <h3 class="card__title">Card title</h3>
-        <p class="card__description">Optional supporting text.</p>
-      </header>
-      <div class="card__body">
-        <p>Card body content.</p>
+    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<article class="card" data-visual="olive">
+      <div class="card-copy">
+        <p class="card-meta">Feature</p>
+        <h3 class="card-heading">Card title</h3>
+        <p class="card-subtext">Optional supporting text for the elevated cream module.</p>
+        <div class="card-actions">
+          <div class="button-group" data-layout="row" role="group">
+            <button type="button" class="button button--primary button--pill">Action</button>
+          </div>
+        </div>
       </div>
-      <footer class="card__footer">
-        <button type="button" class="button">Action</button>
-      </footer>
+      <div class="card-media has-visual" aria-hidden="true"></div>
     </article>`));
   }
 };
 function Ht() {
-  customElements.get(v.tagName) || customElements.define(v.tagName, v);
+  customElements.get(_.tagName) || customElements.define(_.tagName, _);
 }
 var y = class extends HTMLElement {
   static {
@@ -1463,7 +1464,7 @@ var be = class extends HTMLElement {
     </div>`));
   }
 };
-function _a() {
+function va() {
   customElements.get(be.tagName) || customElements.define(be.tagName, be);
 }
 var Ne = class extends HTMLElement {
@@ -1485,10 +1486,10 @@ var Ne = class extends HTMLElement {
     </nav>`));
   }
 };
-function va() {
+function _a() {
   customElements.get(Ne.tagName) || customElements.define(Ne.tagName, Ne);
 }
-var _e = class extends HTMLElement {
+var ve = class extends HTMLElement {
   static {
     this.tagName = "deml-panel-grid";
   }
@@ -1503,9 +1504,9 @@ var _e = class extends HTMLElement {
   }
 };
 function ya() {
-  customElements.get(_e.tagName) || customElements.define(_e.tagName, _e);
+  customElements.get(ve.tagName) || customElements.define(ve.tagName, ve);
 }
-var ve = class extends HTMLElement {
+var _e = class extends HTMLElement {
   static {
     this.tagName = "deml-popover";
   }
@@ -1523,7 +1524,7 @@ var ve = class extends HTMLElement {
   }
 };
 function Ha() {
-  customElements.get(ve.tagName) || customElements.define(ve.tagName, ve);
+  customElements.get(_e.tagName) || customElements.define(_e.tagName, _e);
 }
 var ye = class extends HTMLElement {
   static {
@@ -2301,7 +2302,7 @@ function ss() {
   customElements.get(tt.tagName) || customElements.define(tt.tagName, tt);
 }
 function is() {
-  at(), st(), it(), lt(), nt(), dt(), rt(), ct(), ot(), mt(), ut(), ht(), pt(), ft(), gt(), bt(), Nt(), _t(), vt(), yt(), Ht(), Et(), Ct(), Tt(), Lt(), Mt(), xt(), kt(), Dt(), St(), wt(), Pt(), At(), Bt(), Ft(), Gt(), It(), Rt(), zt(), Ot(), Ut(), Jt(), Kt(), Wt(), Yt(), qt(), Vt(), jt(), Zt(), Qt(), Xt(), $t(), ea(), ta(), aa(), sa(), ia(), la(), na(), da(), ra(), ca(), oa(), ma(), ua(), ha(), pa(), fa(), ga(), ba(), Na(), _a(), va(), ya(), Ha(), Ea(), Ca(), Ta(), La(), Ma(), xa(), ka(), Da(), Sa(), wa(), Pa(), Aa(), Ba(), Fa(), Ga(), Ia(), Ra(), za(), Oa(), Ua(), Ja(), Ka(), Wa(), Ya(), qa(), Va(), ja(), Za(), Qa(), Xa(), $a(), es(), ts(), as(), ss();
+  at(), st(), it(), lt(), nt(), dt(), rt(), ct(), ot(), mt(), ut(), ht(), pt(), ft(), gt(), bt(), Nt(), vt(), _t(), yt(), Ht(), Et(), Ct(), Tt(), Lt(), Mt(), xt(), kt(), Dt(), St(), wt(), Pt(), At(), Bt(), Ft(), Gt(), It(), Rt(), zt(), Ot(), Ut(), Jt(), Kt(), Wt(), Yt(), qt(), Vt(), jt(), Zt(), Qt(), Xt(), $t(), ea(), ta(), aa(), sa(), ia(), la(), na(), da(), ra(), ca(), oa(), ma(), ua(), ha(), pa(), fa(), ga(), ba(), Na(), va(), _a(), ya(), Ha(), Ea(), Ca(), Ta(), La(), Ma(), xa(), ka(), Da(), Sa(), wa(), Pa(), Aa(), Ba(), Fa(), Ga(), Ia(), Ra(), za(), Oa(), Ua(), Ja(), Ka(), Wa(), Ya(), qa(), Va(), ja(), Za(), Qa(), Xa(), $a(), es(), ts(), as(), ss();
 }
 var ls = [
   "accordion",
@@ -2436,8 +2437,8 @@ export {
   g as DemlBulkToolbar,
   b as DemlButton,
   N as DemlButtonGroup,
-  _ as DemlCallout,
-  v as DemlCard,
+  v as DemlCallout,
+  _ as DemlCard,
   y as DemlCardGrid,
   H as DemlChart,
   E as DemlChartCard,
@@ -2490,8 +2491,8 @@ export {
   ge as DemlPageShell,
   be as DemlPageTemplate,
   Ne as DemlPagination,
-  _e as DemlPanelGrid,
-  ve as DemlPopover,
+  ve as DemlPanelGrid,
+  _e as DemlPopover,
   ye as DemlProfile,
   He as DemlProgress,
   Ee as DemlPropertyFilter,
@@ -2546,8 +2547,8 @@ export {
   gt as defineBrand,
   bt as defineBreadcrumbs,
   Nt as defineBulkToolbar,
-  _t as defineButton,
-  vt as defineButtonGroup,
+  vt as defineButton,
+  _t as defineButtonGroup,
   yt as defineCallout,
   Ht as defineCard,
   Et as defineCardGrid,
@@ -2600,8 +2601,8 @@ export {
   ga as definePageHeader,
   ba as definePageSection,
   Na as definePageShell,
-  _a as definePageTemplate,
-  va as definePagination,
+  va as definePageTemplate,
+  _a as definePagination,
   ya as definePanelGrid,
   Ha as definePopover,
   Ea as defineProfile,

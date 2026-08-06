@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<article class=\"card\">\n      <header class=\"card__header\">\n        <h3 class=\"card__title\">Card title</h3>\n        <p class=\"card__description\">Optional supporting text.</p>\n      </header>\n      <div class=\"card__body\">\n        <p>Card body content.</p>\n      </div>\n      <footer class=\"card__footer\">\n        <button type=\"button\" class=\"button\">Action</button>\n      </footer>\n    </article>";
+const DEML_TEMPLATE = "<article class=\"card\" data-visual=\"olive\">\n      <div class=\"card-copy\">\n        <p class=\"card-meta\">Feature</p>\n        <h3 class=\"card-heading\">Card title</h3>\n        <p class=\"card-subtext\">Optional supporting text for the elevated cream module.</p>\n        <div class=\"card-actions\">\n          <div class=\"button-group\" data-layout=\"row\" role=\"group\">\n            <button type=\"button\" class=\"button button--primary button--pill\">Action</button>\n          </div>\n        </div>\n      </div>\n      <div class=\"card-media has-visual\" aria-hidden=\"true\"></div>\n    </article>";
 
 @Component({
   selector: "deml-card",

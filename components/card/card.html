@@ -7,17 +7,18 @@
 <section id="card" class="component component--card">
   <h2>Card</h2>
   <div class="demo">
-    <article class="card">
-      <header class="card__header">
-        <h3 class="card__title">Card title</h3>
-        <p class="card__description">Optional supporting text.</p>
-      </header>
-      <div class="card__body">
-        <p>Card body content.</p>
+    <article class="card" data-visual="olive">
+      <div class="card-copy">
+        <p class="card-meta">Feature</p>
+        <h3 class="card-heading">Card title</h3>
+        <p class="card-subtext">Optional supporting text for the elevated cream module.</p>
+        <div class="card-actions">
+          <div class="button-group" data-layout="row" role="group">
+            <button type="button" class="button button--primary button--pill">Action</button>
+          </div>
+        </div>
       </div>
-      <footer class="card__footer">
-        <button type="button" class="button">Action</button>
-      </footer>
+      <div class="card-media has-visual" aria-hidden="true"></div>
     </article>
   </div>
 </section>
