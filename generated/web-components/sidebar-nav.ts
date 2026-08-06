@@ -8,18 +8,26 @@ export class DemlSidebarNav extends HTMLElement {
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
       this.innerHTML = `<nav class="sidebar-nav" aria-label="Sidebar">
-      <p class="sidebar-nav__header">Workspace</p>
-      <ul class="sidebar-nav__list">
-        <li><a href="#" aria-current="page">Overview</a></li>
-        <li>
-          <button type="button" aria-expanded="true">Projects</button>
-          <ul>
-            <li><a href="#">Alpha</a></li>
-            <li><a href="#">Beta</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Members</a></li>
-      </ul>
+      <div class="sidebar-nav__header">
+        <p class="sidebar-nav__title">Table of contents</p>
+      </div>
+      <div class="sidebar-nav__group">
+        <h3 class="sidebar-nav__group-title">Foundations</h3>
+        <ul class="sidebar-nav__list">
+          <li>
+            <a class="sidebar-nav__link sidebar-nav__link--numbered" href="#" aria-current="page">
+              <span class="sidebar-nav__num">1</span>
+              <span class="sidebar-nav__label">Fresh install</span>
+            </a>
+          </li>
+          <li>
+            <a class="sidebar-nav__link sidebar-nav__link--numbered" href="#">
+              <span class="sidebar-nav__num">2</span>
+              <span class="sidebar-nav__label">Clean codebase</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>`;
     }
   }

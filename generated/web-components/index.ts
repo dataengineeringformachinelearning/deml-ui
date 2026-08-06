@@ -105,6 +105,7 @@ export { DemlThemeToggle, defineThemeToggle } from "./theme-toggle.js";
 export { DemlTileBoard, defineTileBoard } from "./tile-board.js";
 export { DemlTimeline, defineTimeline } from "./timeline.js";
 export { DemlToast, defineToast } from "./toast.js";
+export { DemlToc, defineToc } from "./toc.js";
 export { DemlToggle, defineToggle } from "./toggle.js";
 export { DemlTooltip, defineTooltip } from "./tooltip.js";
 export { DemlWizard, defineWizard } from "./wizard.js";

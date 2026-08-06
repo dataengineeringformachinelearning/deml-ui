@@ -1,4 +1,4 @@
-/* Component: sidebar-nav — NFTS side navigation */
+/* Component: sidebar-nav — NFTS side navigation (+ chapter groups) */
 
 .component--sidebar-nav .demo {
   display: grid;
@@ -7,15 +7,56 @@
 
 .sidebar-nav {
   display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav__header {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.sidebar-nav__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-highlight);
+}
+
+.sidebar-nav__group {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.sidebar-nav__group-title {
+  margin: 0;
+  padding: 0 var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.sidebar-nav__list {
+  display: grid;
   gap: var(--space-1);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.sidebar-nav a {
+.sidebar-nav a,
+.sidebar-nav__link {
   display: inline-flex;
   align-items: center;
+  box-sizing: border-box;
   min-height: var(--hit-target);
   padding: var(--space-1) var(--space-2);
   border: var(--border-width) solid transparent;
@@ -29,14 +70,39 @@
   line-height: var(--leading-ui);
 }
 
+.sidebar-nav__link--numbered {
+  display: grid;
+  grid-template-columns: var(--space-4) minmax(0, 1fr);
+  gap: var(--space-2);
+  width: 100%;
+}
+
 .sidebar-nav a:hover,
-.sidebar-nav a[aria-current='page'] {
+.sidebar-nav a[aria-current='page'],
+.sidebar-nav__link:hover,
+.sidebar-nav__link[aria-current='page'] {
   color: var(--color-text);
   border-color: var(--color-border);
   background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
-.sidebar-nav a:focus-visible {
+.sidebar-nav a:focus-visible,
+.sidebar-nav__link:focus-visible {
   outline: var(--focus-ring-width) solid var(--color-focus);
   outline-offset: var(--focus-ring-offset);
+}
+
+.sidebar-nav__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mark);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
+  color: var(--color-primary);
+}
+
+.sidebar-nav__label {
+  min-width: 0;
 }

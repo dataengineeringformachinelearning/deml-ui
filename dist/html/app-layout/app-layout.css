@@ -13,6 +13,19 @@
   color: var(--color-text);
 }
 
+/* Under a site navbar / marketing chrome — do not force full viewport */
+.app-layout--embedded {
+  min-height: 0;
+}
+
+.app-layout--embedded .app-layout__nav {
+  position: sticky;
+  top: calc(var(--navbar-inset, var(--space-1)) * 2 + var(--navbar-hit, var(--space-6)));
+  align-self: start;
+  max-height: calc(100dvh - var(--navbar-hit, var(--space-6)) - var(--space-4));
+  overflow: auto;
+}
+
 .app-layout__header {
   flex: 0 0 auto;
 }

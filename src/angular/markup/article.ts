@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<article class=\"article\"><h1>Article title</h1><p>Body copy.</p></article>";
+const DEML_TEMPLATE = "<article class=\"article\">\n      <div class=\"article-body\">\n        <h2>Section title</h2>\n        <p>Body copy for long-form reading — paragraphs, lists, and code.</p>\n        <ul>\n          <li>First point</li>\n          <li>Second point</li>\n        </ul>\n        <pre><code>npm run build</code></pre>\n      </div>\n    </article>";
 
 @Component({
   selector: "deml-article",

@@ -102,6 +102,7 @@ export { DemlThemeToggle } from "./theme-toggle";
 export { DemlTileBoard } from "./tile-board";
 export { DemlTimeline } from "./timeline";
 export { DemlToast } from "./toast";
+export { DemlToc } from "./toc";
 export { DemlToggle } from "./toggle";
 export { DemlTooltip } from "./tooltip";
 export { DemlWizard } from "./wizard";

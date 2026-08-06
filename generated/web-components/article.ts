@@ -7,7 +7,17 @@ export class DemlArticle extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<article class="article"><h1>Article title</h1><p>Body copy.</p></article>`;
+      this.innerHTML = `<article class="article">
+      <div class="article-body">
+        <h2>Section title</h2>
+        <p>Body copy for long-form reading — paragraphs, lists, and code.</p>
+        <ul>
+          <li>First point</li>
+          <li>Second point</li>
+        </ul>
+        <pre><code>npm run build</code></pre>
+      </div>
+    </article>`;
     }
   }
 }

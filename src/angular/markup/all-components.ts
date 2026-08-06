@@ -102,6 +102,7 @@ import { DemlThemeToggle } from "./theme-toggle";
 import { DemlTileBoard } from "./tile-board";
 import { DemlTimeline } from "./timeline";
 import { DemlToast } from "./toast";
+import { DemlToc } from "./toc";
 import { DemlToggle } from "./toggle";
 import { DemlTooltip } from "./tooltip";
 import { DemlWizard } from "./wizard";
@@ -211,6 +212,7 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlTileBoard,
   DemlTimeline,
   DemlToast,
+  DemlToc,
   DemlToggle,
   DemlTooltip,
   DemlWizard,

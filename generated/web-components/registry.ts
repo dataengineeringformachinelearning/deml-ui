@@ -105,6 +105,7 @@ import { defineThemeToggle } from "./theme-toggle.js";
 import { defineTileBoard } from "./tile-board.js";
 import { defineTimeline } from "./timeline.js";
 import { defineToast } from "./toast.js";
+import { defineToc } from "./toc.js";
 import { defineToggle } from "./toggle.js";
 import { defineTooltip } from "./tooltip.js";
 import { defineWizard } from "./wizard.js";
@@ -217,6 +218,7 @@ export function defineAll(): void {
   defineTileBoard();
   defineTimeline();
   defineToast();
+  defineToc();
   defineToggle();
   defineTooltip();
   defineWizard();
@@ -329,6 +331,7 @@ export const componentNames = [
   "tile-board",
   "timeline",
   "toast",
+  "toc",
   "toggle",
   "tooltip",
   "wizard"

@@ -636,6 +636,12 @@ export declare class DemlToast extends HTMLElement {
 }
 export declare function defineToast(): void;
 
+export declare class DemlToc extends HTMLElement {
+  static readonly tagName: "deml-toc";
+  static readonly componentName: "toc";
+}
+export declare function defineToc(): void;
+
 export declare class DemlToggle extends HTMLElement {
   static readonly tagName: "deml-toggle";
   static readonly componentName: "toggle";
@@ -655,7 +661,7 @@ export declare class DemlWizard extends HTMLElement {
 export declare function defineWizard(): void;
 
 export declare function defineAll(): void;
-export declare const componentNames: readonly ["accordion", "activity-list", "app-footer", "app-header", "app-layout", "app-sidebar", "area-chart", "article", "autocomplete", "avatar", "badge", "banner", "bar-chart", "box", "brand", "breadcrumbs", "bulk-toolbar", "button", "button-group", "callout", "card", "card-grid", "chart", "chart-card", "chart-empty-state", "chart-panel", "checkbox", "checkbox-field", "cluster", "command", "confirm-dialog", "container", "content-layout", "dashboard-grid", "dialog", "disclosure", "dropdown", "empty-state", "error-state", "explore-card", "field", "file-upload", "flashbar", "form-grid", "form-panel", "form-section", "grid", "help-panel", "hud-panel", "icon", "input-date", "input-email", "input-number", "input-password", "input-range", "input-search", "input-text", "input-time", "kbd", "label", "loading-overlay", "metric-card", "metric-list", "microcard", "microcard-grid", "navbar", "navigation-menu", "page-back-link", "page-header", "page-section", "page-shell", "page-template", "pagination", "panel-grid", "popover", "profile", "progress", "property-filter", "radio-group", "scroll-area", "section", "section-header", "section-template", "select", "separator", "sheet", "sidebar-nav", "site-footer", "skeleton", "skip-link", "spinner", "split-panel", "stack", "stat-card", "status-badge", "status-card", "status-pill", "switch", "table", "tabs", "text-field", "textarea", "theme-toggle", "tile-board", "timeline", "toast", "toggle", "tooltip", "wizard"];
+export declare const componentNames: readonly ["accordion", "activity-list", "app-footer", "app-header", "app-layout", "app-sidebar", "area-chart", "article", "autocomplete", "avatar", "badge", "banner", "bar-chart", "box", "brand", "breadcrumbs", "bulk-toolbar", "button", "button-group", "callout", "card", "card-grid", "chart", "chart-card", "chart-empty-state", "chart-panel", "checkbox", "checkbox-field", "cluster", "command", "confirm-dialog", "container", "content-layout", "dashboard-grid", "dialog", "disclosure", "dropdown", "empty-state", "error-state", "explore-card", "field", "file-upload", "flashbar", "form-grid", "form-panel", "form-section", "grid", "help-panel", "hud-panel", "icon", "input-date", "input-email", "input-number", "input-password", "input-range", "input-search", "input-text", "input-time", "kbd", "label", "loading-overlay", "metric-card", "metric-list", "microcard", "microcard-grid", "navbar", "navigation-menu", "page-back-link", "page-header", "page-section", "page-shell", "page-template", "pagination", "panel-grid", "popover", "profile", "progress", "property-filter", "radio-group", "scroll-area", "section", "section-header", "section-template", "select", "separator", "sheet", "sidebar-nav", "site-footer", "skeleton", "skip-link", "spinner", "split-panel", "stack", "stat-card", "status-badge", "status-card", "status-pill", "switch", "table", "tabs", "text-field", "textarea", "theme-toggle", "tile-board", "timeline", "toast", "toc", "toggle", "tooltip", "wizard"];
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -765,6 +771,7 @@ declare global {
     "deml-tile-board": DemlTileBoard;
     "deml-timeline": DemlTimeline;
     "deml-toast": DemlToast;
+    "deml-toc": DemlToc;
     "deml-toggle": DemlToggle;
     "deml-tooltip": DemlTooltip;
     "deml-wizard": DemlWizard;
