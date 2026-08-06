@@ -10,6 +10,7 @@ progress {
   display: block;
   width: min(100%, var(--content-width-sm));
   height: var(--space-2);
+  margin: 0;
   border: var(--border-width) solid var(--color-card-border);
   background-color: color-mix(in srgb, var(--color-card) 88%, var(--color-surface));
   color: var(--color-primary);

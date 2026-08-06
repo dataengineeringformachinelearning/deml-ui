@@ -139,6 +139,7 @@ deml-navbar {
 }
 
 .main-navigation ul {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -163,7 +164,7 @@ deml-navbar {
   text-decoration: none;
   white-space: nowrap;
   color: var(--navbar-muted);
-  padding: var(--space-1) var(--space-2);
+  padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-pill);
   background-color: transparent;
   transition: color 120ms ease, background-color 120ms ease;
@@ -263,7 +264,7 @@ app-button-group,
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: var(--space-1);
+    gap: var(--space-2);
     width: auto;
   }
 
