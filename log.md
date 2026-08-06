@@ -1,5 +1,6 @@
 # log
 
+- 2026-08-05: **Contrast AA** — light theme deepens primary/success/error for ≥4.5:1 on page ground; dark theme adds success/error status inks; status-badge uses *-ink tokens.
 - 2026-08-05: **Chart suite (premium NFTS)** — native SVG mounts (`src/charts/svg-mount.js`) with shared Y, smooth area/line, column bars, donut; elevate chart-card/panel/empty; gold markers + dashed grid + tooltips; Storybook 2–3-up viewport-fit boards.
 - 2026-08-04: **NFTS shell purge** — remove Syne/Fraunces + cold violet Storybook chrome; lock index/Storybook to warm ash + Geist; rename leftover legacy comments.
 - 2026-07-30: **Headless Dialog upgrade** — `demlDialogPanel`, body portal, controlled/uncontrolled `open`, Escape/`cancel` handling, focus trap + restore; still zero visual CSS.

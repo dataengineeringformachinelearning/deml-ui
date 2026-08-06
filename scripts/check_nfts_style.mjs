@@ -20,6 +20,13 @@ const REQUIRED_HEX = [
   '2f5f8f',
   '3f6b54',
   '9e3d47',
+  /* light-theme AA solids */
+  '23486d',
+  '2f5540',
+  '7a3038',
+  /* dark status label inks (AA on ash ground) */
+  '9bc4a8',
+  'e8a0a6',
 ];
 
 const IGNORE_DIR_NAMES = new Set([
@@ -107,6 +114,12 @@ function read(p) {
     }
     if (!/--hit-target\s*:\s*var\(--space-6\)\s*;/.test(tokens)) {
       fail('styles/tokens.css must set --hit-target: var(--space-6) (≥44px WCAG)');
+    }
+    if (!/--color-success-ink\s*:/.test(tokens)) {
+      fail('styles/tokens.css must define --color-success-ink (status labels on page ground)');
+    }
+    if (!/--color-error-ink\s*:/.test(tokens)) {
+      fail('styles/tokens.css must define --color-error-ink (status labels on page ground)');
     }
     const tokensNoComments = tokens.replace(/\/\*[\s\S]*?\*\//g, '');
     if (/\bSyne\b|\bFraunces\b/.test(tokensNoComments)) {

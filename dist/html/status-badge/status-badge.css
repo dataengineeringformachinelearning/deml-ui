@@ -25,26 +25,31 @@
   background-color: var(--color-text-secondary);
 }
 
+/* Dot fills can use solid tokens; label ink uses *-ink for AA on page ground */
+.status-badge[data-tone='success'] {
+  color: var(--color-success-ink);
+}
+
 .status-badge[data-tone='success'] .status-badge__dot {
-  background-color: var(--color-success);
+  background-color: var(--color-success-ink);
 }
 
 .status-badge[data-tone='error'],
 .status-badge[data-tone='danger'] {
-  color: var(--color-error);
+  color: var(--color-error-ink);
 }
 
 .status-badge[data-tone='error'] .status-badge__dot,
 .status-badge[data-tone='danger'] .status-badge__dot {
-  background-color: var(--color-error);
+  background-color: var(--color-error-ink);
 }
 
 .status-badge[data-tone='warn'],
 .status-badge[data-tone='warning'] {
-  color: var(--color-highlight);
+  color: var(--color-warning-ink);
 }
 
 .status-badge[data-tone='warn'] .status-badge__dot,
 .status-badge[data-tone='warning'] .status-badge__dot {
-  background-color: var(--color-highlight);
+  background-color: var(--color-warning-ink);
 }
