@@ -26,6 +26,7 @@ deml-button-group,
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  align-content: center;
   width: max-content;
   max-width: 100%;
 }

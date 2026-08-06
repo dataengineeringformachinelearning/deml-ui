@@ -194,6 +194,27 @@ app-button-group,
   width: 100%;
 }
 
+/* Keep icon toggle and pill CTAs on one optical midline */
+.site-navbar .theme-toggle {
+  align-self: center;
+  width: var(--navbar-hit);
+  height: var(--navbar-hit);
+  min-width: var(--navbar-hit);
+  min-height: var(--navbar-hit);
+  flex: 0 0 auto;
+  margin: 0;
+  line-height: 0;
+}
+
+.site-navbar .button.button--pill {
+  align-self: center;
+  box-sizing: border-box;
+  height: var(--navbar-hit);
+  min-height: var(--navbar-hit);
+  padding-block: 0;
+  line-height: 1;
+}
+
 .site-navbar.is-menu-open {
   max-height: 100dvh;
   overflow-y: auto;
@@ -248,12 +269,15 @@ app-button-group,
 
   app-button-group,
   .site-navbar .button-group {
+    display: flex;
     grid-area: actions;
     justify-self: end;
     width: max-content;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
+    align-content: center;
+    gap: var(--space-2);
   }
 
   .site-navbar.is-menu-open app-button-group .button--pill,
