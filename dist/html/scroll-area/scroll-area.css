@@ -14,7 +14,7 @@
   border: var(--border-width) solid var(--color-card-border);
   background-color: var(--color-card);
   color: var(--color-card-text);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--elevation-1);
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
 }

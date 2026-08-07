@@ -17,10 +17,30 @@
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   text-decoration: none;
+  color: var(--color-text-secondary);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--motion-ui);
+}
+
+.page-back-link:hover {
+  color: var(--color-text);
+}
+
+.page-back-link:active {
+  transform: scale(var(--press-scale));
   color: var(--color-highlight);
 }
 
 .page-back-link:focus-visible {
   outline: var(--focus-ring-width) solid var(--color-focus);
   outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-back-link,
+  .page-back-link:active {
+    transition: none;
+    transform: none;
+  }
 }

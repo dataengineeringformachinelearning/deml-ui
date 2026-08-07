@@ -1,4 +1,4 @@
-/* Component: skeleton — NFTS loading placeholder */
+/* Component: skeleton — quiet loading placeholder */
 
 .component--skeleton .demo {
   display: grid;
@@ -15,19 +15,33 @@
 .skeleton__block {
   display: block;
   width: 100%;
-  border: var(--border-width) solid var(--color-border);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-sm);
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--color-surface) 70%, var(--color-border)) 0%,
-    color-mix(in srgb, var(--color-surface) 40%, var(--color-border)) 50%,
-    color-mix(in srgb, var(--color-surface) 70%, var(--color-border)) 100%
+    color-mix(in srgb, var(--color-surface) 55%, var(--color-border)) 0%,
+    color-mix(in srgb, var(--color-surface) 32%, var(--color-border)) 48%,
+    color-mix(in srgb, var(--color-surface) 55%, var(--color-border)) 100%
   );
   background-size: 200% 100%;
-  animation: deml-skeleton 1.4s ease-in-out infinite;
+  animation: deml-skeleton calc(var(--duration-slow) * 4) var(--ease-in-out) infinite;
+  opacity: var(--opacity-muted);
 }
 
 .skeleton__line {
   height: var(--space-2);
+}
+
+.skeleton__line--short {
+  width: 28%;
+}
+
+.skeleton__line--medium {
+  width: 58%;
+}
+
+.skeleton__line--long {
+  width: 88%;
 }
 
 .skeleton__block {
@@ -38,6 +52,7 @@
   .skeleton__line,
   .skeleton__block {
     animation: none;
+    opacity: var(--opacity-subtle);
   }
 }
 

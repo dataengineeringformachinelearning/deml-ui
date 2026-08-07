@@ -23,7 +23,7 @@
   border: var(--border-width) solid var(--color-card-border);
   border-radius: var(--radius-pill);
   background-color: color-mix(in srgb, var(--color-card) 88%, var(--color-surface));
-  transition: background-color 120ms ease, border-color 120ms ease;
+  transition: background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 }
 
 .switch__track input {
@@ -43,7 +43,7 @@
   height: var(--space-2);
   border-radius: var(--radius-pill);
   background-color: var(--color-card-text);
-  transition: transform 120ms ease;
+  transition: transform var(--duration-fast) var(--ease-out);
   pointer-events: none;
 }
 

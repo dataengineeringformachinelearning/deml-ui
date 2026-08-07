@@ -1,4 +1,4 @@
-/* Component: checkbox-field — from deml new-from-the-start */
+/* Component: checkbox-field — 48pt row hit; compact visual box */
 
 .component--checkbox-field .demo {
   display: grid;
@@ -7,14 +7,18 @@
 
 .checkbox-field {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-2);
+  box-sizing: border-box;
   width: 100%;
+  min-height: var(--hit-target);
   margin: 0;
-  padding: 0;
+  padding-block: var(--space-1);
   cursor: pointer;
   text-align: left;
   color: var(--color-card-text);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .checkbox-field__input {
@@ -34,13 +38,9 @@
   flex: 0 0 auto;
   width: var(--space-3);
   height: var(--space-3);
-  margin-top: var(--focus-ring-offset);
   border: var(--border-width) solid var(--color-card-border);
   background-color: color-mix(in srgb, var(--color-card) 88%, var(--color-surface));
-  transition:
-    background-color 120ms ease,
-    border-color 120ms ease,
-    box-shadow 120ms ease;
+  transition: var(--motion-ui);
 }
 
 .checkbox-field__label {
@@ -67,7 +67,7 @@
 
 .checkbox-field__input:disabled + .checkbox-field__box,
 .checkbox-field__input:disabled ~ .checkbox-field__label {
-  opacity: 0.64;
+  opacity: var(--opacity-muted);
   cursor: not-allowed;
 }
 

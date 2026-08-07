@@ -51,7 +51,8 @@
   color: var(--navbar-icon-color, var(--navbar-accent));
   background-color: transparent;
   border-radius: var(--radius-pill);
-  transition: color 120ms ease, transform 120ms ease, background-color 120ms ease;
+  transition: var(--motion-ui);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .site-navbar-icon svg,
@@ -62,8 +63,11 @@
 
 .site-navbar-icon:hover {
   color: var(--navbar-icon-color-hover, var(--navbar-accent-hover));
-  background-color: color-mix(in srgb, var(--navbar-accent) 12%, transparent);
-  transform: scale(1.06);
+  background-color: color-mix(in srgb, var(--navbar-accent) 8%, transparent);
+}
+
+.site-navbar-icon:active {
+  transform: scale(var(--press-scale));
 }
 
 .site-navbar-icon:focus-visible {
@@ -90,12 +94,18 @@
   color: var(--navbar-fg);
   cursor: pointer;
   appearance: none;
-  transition: color 120ms ease, background-color 120ms ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--motion-ui);
 }
 
 .site-navbar-menu-toggle:hover {
   color: var(--navbar-accent-hover);
-  background-color: var(--navbar-surface);
+  background-color: color-mix(in srgb, var(--navbar-accent) 8%, transparent);
+}
+
+.site-navbar-menu-toggle:active {
+  transform: scale(var(--press-scale));
 }
 
 .site-navbar-menu-toggle:focus-visible {
@@ -147,20 +157,26 @@
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-pill);
   background-color: transparent;
-  transition: color 120ms ease, background-color 120ms ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--motion-ui);
 }
 
 .main-navigation ul li a:hover {
-  color: var(--navbar-accent-hover);
-  background-color: color-mix(in srgb, var(--color-highlight) 10%, transparent);
+  color: var(--navbar-fg);
+  background-color: color-mix(in srgb, var(--color-highlight) 8%, transparent);
+}
+
+.main-navigation ul li a:active {
+  transform: scale(var(--press-scale));
 }
 
 .main-navigation ul li a.is-active {
   color: var(--navbar-accent);
-  text-decoration: underline;
-  text-decoration-thickness: var(--focus-ring-width);
-  text-underline-offset: 0.25em;
+  text-decoration: none;
   background-color: color-mix(in srgb, var(--color-highlight) 12%, transparent);
+  box-shadow: inset 0 0 0 var(--border-width)
+    color-mix(in srgb, var(--navbar-accent) 35%, transparent);
 }
 
 .main-navigation ul li a:focus-visible {

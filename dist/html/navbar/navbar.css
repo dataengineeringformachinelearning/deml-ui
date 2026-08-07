@@ -7,9 +7,9 @@
 
 /* Navbar — full-bleed fixed top bar; mobile-first */
 
-/* Offset document flow under the fixed bar (inset + hit + inset) */
+/* Offset document flow under the fixed bar (safe-area + inset + hit + inset) */
 body:has(.site-navbar) {
-  padding-top: calc(var(--navbar-inset) * 2 + var(--navbar-hit));
+  padding-top: calc(var(--safe-top) + var(--navbar-inset) * 2 + var(--navbar-hit));
 }
 
 app-navbar,
@@ -29,9 +29,11 @@ deml-navbar {
   width: 100%;
   max-width: none;
   margin: 0;
-  /* Equal inner padding on all four sides */
-  padding-block: var(--navbar-inset);
-  padding-inline: var(--navbar-inset);
+  /* Safe-area + equal inset — notch / Dynamic Island aware */
+  padding-top: max(var(--navbar-inset), var(--safe-top));
+  padding-bottom: var(--navbar-inset);
+  padding-left: max(var(--navbar-inset), var(--safe-left));
+  padding-right: max(var(--navbar-inset), var(--safe-right));
   color: var(--navbar-fg);
   /* Opaque shell — no backdrop blur / no transparent paint */
   background-color: var(--navbar-bg);
@@ -63,10 +65,14 @@ deml-navbar {
   box-sizing: border-box;
   width: var(--navbar-hit);
   height: var(--navbar-hit);
+  min-width: var(--navbar-hit);
+  min-height: var(--navbar-hit);
   color: var(--navbar-icon-color, var(--navbar-accent));
   background-color: transparent;
   border-radius: var(--radius-pill);
-  transition: color 120ms ease, transform 120ms ease, background-color 120ms ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--motion-ui);
 }
 
 .site-navbar-icon svg,
@@ -81,8 +87,11 @@ deml-navbar {
 
 .site-navbar-icon:hover {
   color: var(--navbar-icon-color-hover, var(--navbar-accent-hover));
-  background-color: color-mix(in srgb, var(--navbar-accent) 12%, transparent);
-  transform: scale(1.06);
+  background-color: color-mix(in srgb, var(--navbar-accent) 10%, transparent);
+}
+
+.site-navbar-icon:active {
+  transform: scale(var(--press-scale));
 }
 
 .site-navbar-icon:focus-visible {
@@ -101,6 +110,8 @@ deml-navbar {
   box-sizing: border-box;
   width: var(--navbar-hit);
   height: var(--navbar-hit);
+  min-width: var(--navbar-hit);
+  min-height: var(--navbar-hit);
   padding: 0;
   margin: 0;
   border: 0;
@@ -109,12 +120,18 @@ deml-navbar {
   color: var(--navbar-fg);
   cursor: pointer;
   appearance: none;
-  transition: color 120ms ease, background-color 120ms ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--motion-ui);
 }
 
 .site-navbar-menu-toggle:hover {
   color: var(--navbar-accent-hover);
-  background-color: var(--navbar-surface);
+  background-color: color-mix(in srgb, var(--navbar-accent) 10%, transparent);
+}
+
+.site-navbar-menu-toggle:active {
+  transform: scale(var(--press-scale));
 }
 
 .site-navbar-menu-toggle:focus-visible {
@@ -154,33 +171,40 @@ deml-navbar {
 .main-navigation ul li a {
   display: inline-flex;
   align-items: center;
+  box-sizing: border-box;
+  width: 100%;
   min-height: var(--navbar-hit);
   font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-intro);
   line-height: 1.2;
   text-transform: none;
   text-decoration: none;
   white-space: nowrap;
   color: var(--navbar-muted);
-  padding: var(--space-1) var(--space-3);
+  padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-pill);
   background-color: transparent;
-  transition: color 120ms ease, background-color 120ms ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: var(--motion-ui);
 }
 
 .main-navigation ul li a:hover {
-  color: var(--navbar-accent-hover);
-  background-color: color-mix(in srgb, var(--color-highlight) 10%, transparent);
+  color: var(--navbar-fg);
+  background-color: color-mix(in srgb, var(--color-highlight) 8%, transparent);
+}
+
+.main-navigation ul li a:active {
+  transform: scale(var(--press-scale));
 }
 
 .main-navigation ul li a.is-active {
   color: var(--navbar-accent);
-  text-decoration: underline;
-  text-decoration-thickness: var(--focus-ring-width);
-  text-underline-offset: 0.25em;
+  text-decoration: none;
   background-color: color-mix(in srgb, var(--color-highlight) 12%, transparent);
+  box-shadow: inset 0 0 0 var(--border-width) color-mix(in srgb, var(--navbar-accent) 35%, transparent);
 }
 
 .main-navigation ul li a:focus-visible {
@@ -218,15 +242,21 @@ app-button-group,
 
 .site-navbar.is-menu-open {
   max-height: 100dvh;
+  max-height: 100svh;
   overflow-y: auto;
+  overscroll-behavior: contain;
   background-color: var(--navbar-bg);
   background-image: none;
+  padding-bottom: max(var(--navbar-inset), var(--safe-bottom));
 }
 
 .site-navbar.is-menu-open .site-navbar-panel {
   display: flex;
-  padding-top: var(--space-1);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
   background-color: var(--navbar-bg);
+  /* Sheet-like stack — full-width actions, calm gap */
+  gap: var(--space-3);
 }
 
 /* Full-width actions when stacked in the mobile menu */
@@ -265,6 +295,10 @@ app-button-group,
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
+    width: auto;
+  }
+
+  .main-navigation ul li a {
     width: auto;
   }
 

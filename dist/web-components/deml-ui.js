@@ -1973,19 +1973,20 @@ var we = class extends HTMLElement {
     this.componentName = "sheet";
   }
   connectedCallback() {
-    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<button type="button" class="button" data-deml-open-sheet>Open sheet</button>
-    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
-      <header class="sheet__header">
-        <h3 id="sheet-title">Sheet title</h3>
-        <button type="button" class="sheet__close" aria-label="Close" data-deml-close-sheet>×</button>
-      </header>
-      <div class="sheet__body">
-        <p>Slide-over panel content.</p>
+    this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<div class="sheet-overlay" role="presentation">
+      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+        <div class="sheet__handle" aria-hidden="true"></div>
+        <header class="sheet__header">
+          <h3 class="sheet__title" id="sheet-title">Confirm action</h3>
+        </header>
+        <div class="sheet__body">
+          <p>Bottom sheet on phone; centered panel from 800px.</p>
+        </div>
+        <footer class="sheet__footer">
+          <button type="button" class="button button--secondary button--pill">Cancel</button>
+          <button type="button" class="button button--primary button--pill">Confirm</button>
+        </footer>
       </div>
-      <footer class="sheet__footer">
-        <button type="button" class="button" data-deml-close-sheet>Cancel</button>
-        <button type="button" class="button" data-variant="primary">Save</button>
-      </footer>
     </div>`));
   }
 };

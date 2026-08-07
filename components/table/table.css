@@ -13,7 +13,7 @@ table {
   color: var(--color-card-text);
   background-color: var(--color-card);
   border: var(--border-width) solid var(--color-card-border);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--elevation-1);
 }
 
 .component--table th,
@@ -34,7 +34,7 @@ th {
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--color-card-text-secondary);
-  background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-card));
+  background-color: color-mix(in srgb, var(--module-accent) var(--module-wash), var(--module-bg));
 }
 
 .component--table td,

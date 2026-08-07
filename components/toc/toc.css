@@ -16,11 +16,11 @@
   background-color: var(--color-card);
   background-image: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--color-primary) 10%, var(--color-card)) 0%,
-    var(--color-card) 40%
+    color-mix(in srgb, var(--module-accent) var(--module-wash), var(--module-bg)) 0%,
+    var(--module-bg) var(--module-wash-stop)
   );
   color: var(--color-card-text);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--elevation-1);
 }
 
 .toc__heading {
@@ -77,9 +77,9 @@
   letter-spacing: var(--tracking-intro);
   line-height: var(--leading-ui);
   transition:
-    color 120ms ease,
-    background-color 120ms ease,
-    border-color 120ms ease;
+    color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
 }
 
 .toc__item:hover,

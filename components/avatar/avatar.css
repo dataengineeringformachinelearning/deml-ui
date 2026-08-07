@@ -22,7 +22,7 @@
   letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--elevation-1);
 }
 
 .avatar img {

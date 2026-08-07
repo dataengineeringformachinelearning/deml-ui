@@ -32,5 +32,5 @@
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   letter-spacing: var(--tracking-intro);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--elevation-1);
 }

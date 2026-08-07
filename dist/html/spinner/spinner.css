@@ -19,7 +19,8 @@
   border: var(--focus-ring-width) solid var(--color-border);
   border-top-color: var(--color-primary);
   border-radius: var(--radius-pill);
-  animation: deml-spinner 700ms linear infinite;
+  opacity: var(--opacity-muted);
+  animation: deml-spinner calc(var(--duration-slow) * 2.5) linear infinite;
 }
 
 .spinner[data-size='sm'] .spinner__visual,

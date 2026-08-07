@@ -1,4 +1,4 @@
-/* Component: form-panel — from deml new-from-the-start */
+/* Component: form-panel — shared module surface */
 
 .component--form-panel .demo {
   display: grid;
@@ -29,18 +29,19 @@ deml-form-panel,
   height: 100%;
   min-height: 100%;
   margin: 0;
-  /* Equal outer inset — matches card / chart shells */
-  padding: var(--module-pad-lg);
-  color: var(--color-card-text);
-  background-color: var(--color-card);
+  padding: var(--module-pad);
+  color: var(--module-fg);
+  background-color: var(--module-bg);
   background-image: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--color-primary) 12%, var(--color-card)) 0%,
-    var(--color-card) 40%
+    color-mix(in srgb, var(--module-accent) var(--module-wash), var(--module-bg)) 0%,
+    var(--module-bg) var(--module-wash-stop)
   );
-  border: var(--border-width) solid var(--color-card-border);
-  border-top: calc(var(--border-width) * 4) solid var(--color-primary);
-  box-shadow: var(--shadow-card);
+  border: var(--border-width) solid var(--module-border);
+  border-top: var(--module-accent-width) solid var(--module-accent);
+  border-radius: var(--module-radius);
+  box-shadow: var(--module-elevation);
+  animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
 }
 
 .form-panel__header {
@@ -55,10 +56,10 @@ deml-form-panel,
 .form-panel__eyebrow {
   margin: 0;
   font-family: var(--font-mark);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-mark);
   font-weight: var(--font-weight-mark);
   letter-spacing: var(--tracking-mark);
-  line-height: 1.2;
+  line-height: var(--leading-ui);
   text-transform: uppercase;
   color: var(--color-primary);
 }
@@ -70,7 +71,7 @@ deml-form-panel,
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
-  color: var(--color-card-text);
+  color: var(--module-fg);
 }
 
 .form-panel__description {
@@ -81,7 +82,7 @@ deml-form-panel,
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
   line-height: var(--leading-body);
-  color: var(--color-card-text-secondary);
+  color: var(--module-fg-muted);
 }
 
 .form-panel__body {
@@ -93,7 +94,6 @@ deml-form-panel,
   padding: 0;
 }
 
-/* Nested auth/account forms inherit the body rhythm */
 .form-panel__form {
   display: flex;
   flex-direction: column;
@@ -103,7 +103,6 @@ deml-form-panel,
   padding: 0;
 }
 
-/* Settings / account tables compose inside form panels without one-off app CSS */
 .form-panel__table,
 .form-panel table {
   width: 100%;
@@ -112,7 +111,7 @@ deml-form-panel,
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   line-height: var(--leading-body);
-  color: var(--color-card-text);
+  color: var(--module-fg);
 }
 
 .form-panel caption {
@@ -121,11 +120,11 @@ deml-form-panel,
   padding-inline: var(--space-3);
   text-align: left;
   font-family: var(--font-mark);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-mark);
   font-weight: var(--font-weight-mark);
   letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
-  color: var(--color-card-text-secondary);
+  color: var(--module-fg-muted);
 }
 
 .form-panel th,
@@ -133,16 +132,16 @@ deml-form-panel,
   padding: var(--space-2) var(--space-3);
   text-align: left;
   vertical-align: middle;
-  border-bottom: var(--border-width) solid var(--color-card-border);
+  border-bottom: var(--border-width) solid var(--module-border);
 }
 
 .form-panel th {
   font-family: var(--font-mark);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-mark);
   font-weight: var(--font-weight-mark);
   letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
-  color: var(--color-card-text-secondary);
+  color: var(--module-fg-muted);
 }
 
 .form-panel tbody th {
@@ -151,17 +150,126 @@ deml-form-panel,
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
   text-transform: none;
-  color: var(--color-card-text);
+  color: var(--module-fg);
+}
+
+.form-panel__status,
+.form-panel__empty {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  line-height: var(--leading-relaxed);
+  color: var(--module-fg-muted);
+  animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
+}
+
+.form-panel__status {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-panel__empty {
+  padding-block: var(--space-2);
+}
+
+.form-panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-panel__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: var(--space-3);
+  border: var(--border-width) solid var(--module-border);
+  background-color: var(--control-fill);
+}
+
+.form-panel__item-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.form-panel__item-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  color: var(--module-fg);
+}
+
+.form-panel__item-meta {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  line-height: var(--leading-ui);
+  color: var(--module-fg-muted);
+  word-break: break-word;
+}
+
+.form-panel__item-actions {
+  width: 100%;
+}
+
+.form-panel__item-actions .button {
+  width: 100%;
+}
+
+.form-panel__note {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--tracking-intro);
+  line-height: var(--leading-relaxed);
+  color: var(--module-fg-muted);
+}
+
+.form-panel__note a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hit-target);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .form-panel__error {
   margin: 0;
+  padding: var(--space-2) var(--space-3);
   font-family: var(--font-sans);
-  font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.35;
+  line-height: var(--leading-ui);
   color: var(--color-error);
+  background-color: color-mix(in srgb, var(--color-error) var(--tint-subtle), transparent);
+  border-inline-start: var(--module-accent-width) solid var(--color-error);
+  animation: deml-state-enter var(--duration-fast) var(--ease-enter) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-panel,
+  .form-panel__status,
+  .form-panel__empty,
+  .form-panel__error {
+    animation: none;
+  }
 }
 
 .form-panel__form app-button-group,
@@ -188,14 +296,19 @@ deml-form-panel,
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
-  color: var(--color-card-text-secondary);
+  color: var(--module-fg-muted);
 }
 
 .form-panel__footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--hit-target);
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-decoration: underline;
   text-underline-offset: 0.18em;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .form-panel__footer a:hover {
@@ -204,6 +317,22 @@ deml-form-panel,
 
 @media screen and (min-width: 800px) {
   .form-panel {
-    padding: var(--space-6) var(--space-5);
+    padding: var(--module-pad-lg);
+  }
+
+  .form-panel__item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .form-panel__item-actions {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .form-panel__item-actions .button {
+    width: auto;
   }
 }

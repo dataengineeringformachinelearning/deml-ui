@@ -68,9 +68,9 @@ app-chart-card[data-accent='primary'],
   );
   border: var(--border-width) solid var(--color-card-border);
   border-block-start: calc(var(--border-width) * 3) solid var(--chart-accent);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--elevation-1);
   border-radius: var(--radius-lg);
-  transition: box-shadow 180ms ease, border-color 160ms ease;
+  transition: box-shadow var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
 }
 
 .chart-card:hover {

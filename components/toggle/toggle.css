@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   border: var(--border-width) solid var(--color-card-border);
   background-color: var(--color-card);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--elevation-1);
 }
 
 .toggle {

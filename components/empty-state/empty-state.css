@@ -1,4 +1,4 @@
-/* Component: empty-state — NFTS cream empty module */
+/* Component: empty-state — shared module surface */
 
 .component--empty-state .demo {
   display: grid;
@@ -13,27 +13,29 @@
   box-sizing: border-box;
   width: 100%;
   min-height: var(--tile-row-unit);
-  padding: var(--module-pad-lg);
-  border: var(--border-width) dashed var(--color-card-border);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-card);
+  padding: var(--module-pad);
+  color: var(--module-fg);
+  background-color: var(--module-bg);
   background-image: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--color-primary) 10%, var(--color-card)) 0%,
-    var(--color-card) 42%
+    color-mix(in srgb, var(--module-accent) var(--module-wash), var(--module-bg)) 0%,
+    var(--module-bg) var(--module-wash-stop)
   );
-  color: var(--color-card-text);
-  box-shadow: var(--shadow-card);
+  border: var(--border-width) solid var(--module-border);
+  border-top: var(--module-accent-width) solid var(--module-accent);
+  border-radius: var(--module-radius);
+  box-shadow: var(--module-elevation);
+  animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
 }
 
 .empty-state__eyebrow {
   margin: 0;
   font-family: var(--font-mark);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-mark);
   font-weight: var(--font-weight-mark);
-  letter-spacing: var(--tracking-eyebrow);
+  letter-spacing: var(--tracking-mark);
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--module-fg-muted);
 }
 
 .empty-state__title {
@@ -42,16 +44,17 @@
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
-  color: var(--color-card-text);
+  color: var(--module-fg);
 }
 
 .empty-state__description {
   margin: 0;
-  max-width: var(--content-width-sm);
+  max-width: 36ch;
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
-  color: var(--color-card-text-secondary);
+  line-height: var(--leading-relaxed);
+  color: var(--module-fg-muted);
 }
 
 .empty-state__actions {
@@ -60,4 +63,10 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .empty-state {
+    animation: none;
+  }
 }

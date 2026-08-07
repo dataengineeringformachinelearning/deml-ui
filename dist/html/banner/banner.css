@@ -21,42 +21,23 @@
   height: auto;
   margin: 0;
   overflow: visible;
-  /* Equal horizontal inset from page edges (8px grid) */
-  padding: var(--space-6) var(--space-3);
+  /* Inline safe areas (navbar owns top inset) */
+  padding-block: var(--space-6);
+  padding-inline-start: max(var(--space-3), var(--safe-left));
+  padding-inline-end: max(var(--space-3), var(--safe-right));
   color: var(--color-text);
   background-color: var(--color-bg);
+  /* Neutrals + one primary wash — no secondary accent glows */
   background-image:
-    linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 0,
-      transparent var(--space-3),
-      transparent calc(100% - var(--space-3)),
-      color-mix(in srgb, var(--color-surface) 22%, transparent) 100%
-    ),
     radial-gradient(
-      110% 85% at 50% 120%,
-      color-mix(in srgb, var(--color-primary) 38%, transparent) 0%,
+      110% 80% at 50% 120%,
+      color-mix(in srgb, var(--color-primary) 28%, transparent) 0%,
       transparent 58%
     ),
     radial-gradient(
-      70% 55% at 12% 18%,
-      color-mix(in srgb, var(--color-primary) 20%, transparent) 0%,
-      transparent 62%
-    ),
-    radial-gradient(
-      55% 45% at 92% 30%,
-      color-mix(in srgb, var(--color-accent-red) 14%, transparent) 0%,
-      transparent 60%
-    ),
-    radial-gradient(
-      48% 38% at 78% 10%,
-      color-mix(in srgb, var(--color-accent-gold) 14%, transparent) 0%,
-      transparent 65%
-    ),
-    radial-gradient(
-      40% 30% at 8% 88%,
-      color-mix(in srgb, var(--color-accent-gold) 8%, transparent) 0%,
-      transparent 70%
+      70% 50% at 14% 16%,
+      color-mix(in srgb, var(--color-primary) 14%, transparent) 0%,
+      transparent 64%
     ),
     linear-gradient(
       180deg,
@@ -71,9 +52,11 @@
 app-banner[data-variant='hero'] .banner,
 deml-banner[data-variant='hero'] .banner {
   gap: var(--space-4);
-  min-height: max(var(--space-40), 52dvh);
-  padding-block: var(--space-8);
-  padding-inline: var(--space-3);
+  /* Phone-first: brand presence without forcing half-viewport dead space */
+  min-height: max(var(--space-36), 42svh);
+  padding-block: var(--space-7);
+  padding-inline-start: max(var(--space-3), var(--safe-left));
+  padding-inline-end: max(var(--space-3), var(--safe-right));
 }
 
 .banner .preheader {
@@ -97,13 +80,12 @@ deml-banner[data-variant='hero'] .banner {
 }
 
 .banner .lede {
-  max-width: 44ch;
+  max-width: 36ch;
   margin: 0;
-  letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-body);
   font-family: var(--font-body);
+  font-size: var(--font-size-body);
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-body);
+  line-height: var(--leading-relaxed);
   color: var(--color-text-secondary);
 }
 
@@ -113,8 +95,28 @@ deml-banner[data-variant='hero'] .banner {
 
 .banner-actions {
   width: 100%;
-  max-width: calc(var(--grid) * 44);
+  max-width: calc(var(--grid) * 40);
   margin-block-start: var(--space-2);
+}
+
+/* Banner CTAs — stack full-width on phone; row on desktop */
+.banner-actions .button-group,
+.banner-actions app-button-group,
+.banner .button-group,
+.banner app-button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  gap: var(--space-2);
+}
+
+.banner-actions .button,
+.banner-actions .button-group .button,
+.banner .button-group .button,
+.banner app-button-group .button {
+  width: 100%;
 }
 
 .banner--hero .banner-actions,
@@ -127,7 +129,9 @@ deml-banner[data-variant='hero'] .banner-actions {
 @media screen and (min-width: 800px) {
   .banner {
     min-height: calc(var(--grid) * 32);
-    padding: var(--space-8) var(--space-4);
+    padding-block: var(--space-8);
+    padding-inline-start: max(var(--space-4), var(--safe-left));
+    padding-inline-end: max(var(--space-4), var(--safe-right));
   }
 
   .banner--hero,
@@ -136,7 +140,8 @@ deml-banner[data-variant='hero'] .banner-actions {
   deml-banner[data-variant='hero'] .banner {
     min-height: max(var(--space-52), 48dvh);
     padding-block: var(--space-10);
-    padding-inline: var(--space-4);
+    padding-inline-start: max(var(--space-4), var(--safe-left));
+    padding-inline-end: max(var(--space-4), var(--safe-right));
   }
 
   .banner-actions {
@@ -144,23 +149,60 @@ deml-banner[data-variant='hero'] .banner-actions {
     max-width: none;
   }
 
+  .banner-actions .button-group,
+  .banner-actions app-button-group,
+  .banner .button-group,
+  .banner app-button-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: max-content;
+  }
+
+  .banner-actions .button,
+  .banner-actions .button-group .button,
+  .banner .button-group .button,
+  .banner app-button-group .button {
+    width: auto;
+  }
+
   /* Align hero copy with page content measures (global, not :host-context) */
   .page--prose .banner,
   .page--prose app-banner .banner,
   .page--prose deml-banner .banner {
-    padding-inline: max(var(--space-4), calc((100% - var(--reading-width)) / 2));
+    padding-inline-start: max(
+      var(--space-4),
+      calc((100% - var(--reading-width)) / 2),
+      var(--safe-left)
+    );
+    padding-inline-end: max(
+      var(--space-4),
+      calc((100% - var(--reading-width)) / 2),
+      var(--safe-right)
+    );
   }
 
   .page--catalog .banner,
   .page--catalog app-banner .banner,
   .page--catalog deml-banner .banner {
-    padding-inline: max(var(--space-4), calc((100% - var(--content-width-lg)) / 2));
+    padding-inline-start: max(
+      var(--space-4),
+      calc((100% - var(--content-width-lg)) / 2),
+      var(--safe-left)
+    );
+    padding-inline-end: max(
+      var(--space-4),
+      calc((100% - var(--content-width-lg)) / 2),
+      var(--safe-right)
+    );
   }
 }
 
 @media screen and (min-width: 1200px) {
   .banner {
-    padding: var(--space-8) var(--space-6);
+    padding-block: var(--space-8);
+    padding-inline-start: max(var(--space-6), var(--safe-left));
+    padding-inline-end: max(var(--space-6), var(--safe-right));
   }
 
   .banner--hero,
@@ -168,19 +210,38 @@ deml-banner[data-variant='hero'] .banner-actions {
   app-banner[data-variant='hero'] .banner,
   deml-banner[data-variant='hero'] .banner {
     padding-block: var(--space-12);
-    padding-inline: var(--space-6);
+    padding-inline-start: max(var(--space-6), var(--safe-left));
+    padding-inline-end: max(var(--space-6), var(--safe-right));
   }
 
   .page--prose .banner,
   .page--prose app-banner .banner,
   .page--prose deml-banner .banner {
-    padding-inline: max(var(--space-6), calc((100% - var(--reading-width)) / 2));
+    padding-inline-start: max(
+      var(--space-6),
+      calc((100% - var(--reading-width)) / 2),
+      var(--safe-left)
+    );
+    padding-inline-end: max(
+      var(--space-6),
+      calc((100% - var(--reading-width)) / 2),
+      var(--safe-right)
+    );
   }
 
   .page--catalog .banner,
   .page--catalog app-banner .banner,
   .page--catalog deml-banner .banner {
-    padding-inline: max(var(--space-6), calc((100% - var(--content-width-lg)) / 2));
+    padding-inline-start: max(
+      var(--space-6),
+      calc((100% - var(--content-width-lg)) / 2),
+      var(--safe-left)
+    );
+    padding-inline-end: max(
+      var(--space-6),
+      calc((100% - var(--content-width-lg)) / 2),
+      var(--safe-right)
+    );
   }
 }
 

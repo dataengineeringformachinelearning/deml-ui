@@ -1,26 +1,76 @@
-/* Component: sheet — NFTS cream slide-over module */
+/* Component: sheet — mobile-first bottom sheet; desktop centered panel */
 
 .component--sheet .demo {
   display: grid;
   gap: var(--space-md);
 }
 
+/* Overlay host — phone: bottom-anchored; md+: centered */
+.sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: color-mix(in srgb, var(--color-bg) 55%, transparent);
+  -webkit-tap-highlight-color: transparent;
+  animation: deml-sheet-overlay-enter var(--duration-fast) var(--ease-out) both;
+}
+
+.sheet-overlay[hidden] {
+  display: none !important;
+}
+
 .sheet {
+  --module-elevation: var(--elevation-2);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: min(var(--content-width-sm), 100%);
+  width: 100%;
+  max-width: none;
   min-height: var(--space-28);
-  border: var(--border-width) solid var(--color-card-border);
-  border-top: calc(var(--border-width) * 4) solid var(--color-primary);
-  background-color: var(--color-card);
+  max-height: min(92dvh, 100%);
+  margin: 0;
+  color: var(--module-fg);
+  background-color: var(--module-bg);
   background-image: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--color-primary) 12%, var(--color-card)) 0%,
-    var(--color-card) 40%
+    color-mix(in srgb, var(--module-accent) var(--module-wash), var(--module-bg)) 0%,
+    var(--module-bg) var(--module-wash-stop)
   );
-  color: var(--color-card-text);
-  box-shadow: var(--shadow-card);
+  border: var(--border-width) solid var(--module-border);
+  border-top: var(--module-accent-width) solid var(--module-accent);
+  border-radius: var(--module-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: var(--module-elevation);
+  padding-bottom: var(--safe-bottom);
+  overscroll-behavior: contain;
+  transform: translateZ(0);
+  animation: deml-sheet-enter var(--duration-normal) var(--ease-enter) both;
+}
+
+.sheet__handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: var(--space-5);
+  padding-block: var(--space-2);
+}
+
+.sheet__handle::before {
+  content: '';
+  display: block;
+  width: var(--space-6);
+  height: var(--space-half);
+  border-radius: var(--radius-pill);
+  background-color: color-mix(in srgb, var(--color-card-text-secondary) 45%, transparent);
 }
 
 .sheet__header,
@@ -30,6 +80,8 @@
   justify-content: space-between;
   gap: var(--space-2);
   padding: var(--module-pad);
+  padding-left: max(var(--module-pad), var(--safe-left));
+  padding-right: max(var(--module-pad), var(--safe-right));
 }
 
 .sheet__header {
@@ -37,22 +89,123 @@
 }
 
 .sheet__footer {
+  flex-direction: column;
+  align-items: stretch;
   border-block-start: var(--border-width) solid var(--color-card-border);
   margin-top: auto;
+  padding-bottom: max(var(--module-pad), var(--safe-bottom));
+}
+
+.sheet__footer .button-group,
+.sheet__footer app-button-group,
+.sheet__footer deml-button-group {
+  width: 100%;
+}
+
+.sheet__footer .button {
+  width: 100%;
 }
 
 .sheet__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
   color: var(--color-card-text);
 }
 
 .sheet__body {
   flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   padding: var(--module-pad);
+  padding-left: max(var(--module-pad), var(--safe-left));
+  padding-right: max(var(--module-pad), var(--safe-right));
   font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--leading-body);
   color: var(--color-card-text-secondary);
+}
+
+.sheet__body p {
+  margin: 0;
+}
+
+@keyframes deml-sheet-overlay-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes deml-sheet-enter {
+  from {
+    opacity: 0.96;
+    transform: translateY(var(--space-4));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .sheet-overlay {
+    align-items: center;
+    justify-content: center;
+    padding: max(var(--space-4), var(--safe-top)) max(var(--space-4), var(--safe-right))
+      max(var(--space-4), var(--safe-bottom)) max(var(--space-4), var(--safe-left));
+  }
+
+  .sheet {
+    width: min(var(--content-width-sm), 100%);
+    max-height: min(80dvh, 100%);
+    padding-bottom: 0;
+    animation-name: deml-sheet-enter-md;
+  }
+
+  .sheet__handle {
+    display: none;
+  }
+
+  .sheet__header,
+  .sheet__footer,
+  .sheet__body {
+    padding-left: var(--module-pad-lg);
+    padding-right: var(--module-pad-lg);
+  }
+
+  .sheet__footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: var(--module-pad-lg);
+  }
+
+  .sheet__footer .button {
+    width: auto;
+  }
+
+  @keyframes deml-sheet-enter-md {
+    from {
+      opacity: 0;
+      transform: translateY(var(--space-2));
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet-overlay,
+  .sheet {
+    animation: none;
+  }
 }

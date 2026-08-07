@@ -16,8 +16,8 @@
 
 .skip-link {
   position: absolute;
-  inset-inline-start: var(--space-2);
-  inset-block-start: var(--space-2);
+  inset-inline-start: max(var(--space-2), var(--safe-left));
+  inset-block-start: max(var(--space-2), var(--safe-top));
   z-index: 1000;
   display: inline-flex;
   align-items: center;

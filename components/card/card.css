@@ -64,16 +64,18 @@ deml-card[data-visual='none'],
   padding: var(--module-pad-lg);
   overflow: hidden;
   text-align: center;
-  color: var(--color-card-text);
-  background-color: var(--color-card);
+  --module-accent: var(--card-visual, var(--color-primary));
+  color: var(--module-fg);
+  background-color: var(--module-bg);
   background-image: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--card-visual, var(--color-primary)) 14%, var(--color-card)) 0%,
-    var(--color-card) 42%
+    color-mix(in srgb, var(--module-accent) var(--module-wash), var(--module-bg)) 0%,
+    var(--module-bg) var(--module-wash-stop)
   );
-  border: var(--border-width) solid var(--color-card-border);
-  border-top: calc(var(--border-width) * 4) solid var(--card-visual, var(--color-primary));
-  box-shadow: var(--shadow-card);
+  border: var(--border-width) solid var(--module-border);
+  border-top: var(--module-accent-width) solid var(--module-accent);
+  border-radius: var(--module-radius);
+  box-shadow: var(--module-elevation);
 }
 
 .card-copy {
@@ -90,7 +92,7 @@ deml-card[data-visual='none'],
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   letter-spacing: var(--tracking-eyebrow);
   line-height: 1.2;
   text-transform: uppercase;

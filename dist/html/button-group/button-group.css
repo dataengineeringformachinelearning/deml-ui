@@ -22,13 +22,23 @@ deml-button-group,
   box-sizing: border-box;
 }
 
+/* Row is a progressive enhancement — stack on phone by default */
 .button-group[data-layout='row'] {
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  width: max-content;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 100%;
   max-width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .button-group[data-layout='row'] {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    width: max-content;
+  }
 }
 
 .button-group.place-center {
@@ -53,14 +63,26 @@ deml-button-group.place-center,
   justify-content: center;
 }
 
+/* Angular hosts: stack on phone; row from md (matches static .button-group) */
 app-button-group[data-layout='row'],
 deml-button-group[data-layout='row'],
 :host([data-layout='row']) {
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  width: max-content;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 100%;
   max-width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  app-button-group[data-layout='row'],
+  deml-button-group[data-layout='row'],
+  :host([data-layout='row']) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: max-content;
+  }
 }
 
 app-button-group[data-layout='column'],

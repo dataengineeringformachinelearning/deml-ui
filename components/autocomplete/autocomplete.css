@@ -43,7 +43,7 @@
   border: var(--border-width) solid var(--color-card-border);
   background-color: var(--color-card);
   color: var(--color-card-text);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--elevation-1);
 }
 
 .autocomplete__option {
@@ -57,7 +57,7 @@
 
 .autocomplete__option[aria-selected='true'],
 .autocomplete__option:hover {
-  background-color: color-mix(in srgb, var(--color-primary) 12%, var(--color-card));
+  background-color: color-mix(in srgb, var(--module-accent) var(--module-wash), var(--module-bg));
 }
 
 .autocomplete__option:focus-visible {

@@ -1,6 +1,6 @@
 {
   "name": "deml-ui",
-  "version": "1.3.2",
+  "version": "1.3.8",
   "description": "deml-ui \u2014 DEML new-from-the-start (warm ash) component library with HTML/CSS sources, Web Components, and Angular builds.",
   "type": "module",
   "sideEffects": [

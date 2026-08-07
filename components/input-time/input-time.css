@@ -47,9 +47,9 @@
   background-color: color-mix(in srgb, var(--color-card) 88%, var(--color-surface));
   appearance: none;
   transition:
-    border-color 120ms ease,
-    background-color 120ms ease,
-    box-shadow 120ms ease;
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
 }
 
 .component--input-time label, .input-time input::placeholder,
