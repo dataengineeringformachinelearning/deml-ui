@@ -10,11 +10,24 @@ export class DemlSiteFooter extends HTMLElement {
       this.innerHTML = `<footer class="site-footer">
       <div class="site-footer__inner">
         <nav class="site-footer__directory" aria-label="Footer">
-          <ul class="site-footer__list">
-            <li><a href="/privacy/">Privacy</a></li>
-            <li><a href="/terms/">Terms</a></li>
-            <li><a href="/status/platform-status">Status</a></li>
-          </ul>
+          <div class="site-footer__group">
+            <p class="site-footer__heading">Resources</p>
+            <ul class="site-footer__list">
+              <li><a href="/book">Book</a></li>
+              <li><a href="/whitepaper">Whitepaper</a></li>
+              <li><a href="/documentation">Docs</a></li>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__group">
+            <p class="site-footer__heading">Legal</p>
+            <ul class="site-footer__list">
+              <li><a href="/compliance">Compliance</a></li>
+              <li><a href="/privacy/">Privacy</a></li>
+              <li><a href="/terms/">Terms</a></li>
+              <li><a href="/status/platform-status">Status</a></li>
+            </ul>
+          </div>
         </nav>
 
         <div class="site-footer__bottom">

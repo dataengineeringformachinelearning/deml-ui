@@ -238,10 +238,21 @@ deml-navbar {
   color: var(--navbar-accent);
 }
 
-app-button-group,
-.site-navbar .button-group {
-  justify-self: stretch;
+.site-navbar-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--space-2);
   width: 100%;
+  min-width: 0;
+}
+
+.site-navbar-actions app-button-group,
+.site-navbar-actions deml-button-group,
+.site-navbar-actions .button-group {
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Keep icon toggle and pill CTAs on one optical midline */
@@ -294,6 +305,8 @@ app-button-group,
 }
 
 /* Full-width actions when stacked in the mobile menu */
+.site-navbar.is-menu-open .site-navbar-actions .button--pill,
+.site-navbar.is-menu-open .site-navbar-actions .theme-toggle,
 .site-navbar.is-menu-open app-button-group .button--pill,
 .site-navbar.is-menu-open app-button-group .theme-toggle,
 .site-navbar.is-menu-open .button-group .button--pill,
@@ -302,18 +315,25 @@ app-button-group,
   min-height: var(--navbar-hit);
 }
 
+/* Desktop: brand left · links center · actions right */
 @media screen and (min-width: 800px) {
   .site-navbar {
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr auto;
     grid-template-areas: "brand nav actions";
     align-items: center;
+    column-gap: var(--space-4);
+  }
+
+  .site-navbar-branding {
+    justify-self: start;
   }
 
   .site-navbar-menu-toggle {
     display: none;
   }
 
-  .site-navbar-panel {
+  .site-navbar-panel,
+  .site-navbar-panel__inner {
     display: contents;
     grid-template-rows: none;
     opacity: 1;
@@ -321,47 +341,65 @@ app-button-group,
     visibility: visible;
     pointer-events: auto;
     transition: none;
-  }
-
-  .site-navbar-panel__inner {
-    display: contents;
     max-height: none;
-    overflow: visible;
     padding: 0;
   }
 
   .main-navigation {
-    display: block;
+    display: flex;
     grid-area: nav;
-    justify-self: center;
+    justify-self: stretch;
+    align-self: center;
+    justify-content: center;
     width: auto;
+    min-width: 0;
   }
 
   .main-navigation ul {
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
     width: auto;
+    max-width: 100%;
   }
 
   .main-navigation ul li a {
     width: auto;
   }
 
-  app-button-group,
-  .site-navbar .button-group {
+  .site-navbar-actions {
     display: flex;
     grid-area: actions;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
     justify-self: end;
+    gap: var(--space-2);
     width: max-content;
+    max-width: none;
+  }
+
+  .site-navbar-actions app-button-group,
+  .site-navbar-actions deml-button-group,
+  .site-navbar-actions .button-group,
+  app-button-group.site-navbar-actions,
+  deml-button-group.site-navbar-actions {
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     align-content: center;
+    justify-content: flex-end;
     gap: var(--space-2);
+    width: max-content;
+    max-width: none;
   }
 
+  .site-navbar.is-menu-open .site-navbar-actions .button--pill,
+  .site-navbar.is-menu-open .site-navbar-actions .theme-toggle,
   .site-navbar.is-menu-open app-button-group .button--pill,
   .site-navbar.is-menu-open app-button-group .theme-toggle,
   .site-navbar.is-menu-open .button-group .button--pill,
@@ -369,6 +407,7 @@ app-button-group,
     width: auto;
   }
 
+  .site-navbar.is-menu-open .site-navbar-actions .theme-toggle,
   .site-navbar.is-menu-open app-button-group .theme-toggle,
   .site-navbar.is-menu-open .button-group .theme-toggle {
     width: var(--navbar-hit);

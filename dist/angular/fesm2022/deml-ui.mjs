@@ -102,7 +102,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/banner/banner.html — do not edit */
-const DEML_TEMPLATE$9 = "<div class=\"banner banner--hero\" data-variant=\"hero\">\n      <p class=\"preheader\">DEML</p>\n      <h1 class=\"banner-heading\">Status your customers can trust.</h1>\n      <p class=\"lede\">Publish public status pages, share clear uptime, and manage your account in one place.</p>\n      <div class=\"banner-actions\">\n        <div class=\"button-group\">\n          <a class=\"button button--primary\" href=\"#\">Explore</a>\n          <a class=\"button button--secondary\" href=\"#\">Log in</a>\n        </div>\n      </div>\n    </div>";
+const DEML_TEMPLATE$d = "<div class=\"banner banner--hero\" data-variant=\"hero\">\n      <p class=\"preheader\">DEML</p>\n      <h1 class=\"banner-heading\">Status your customers can trust.</h1>\n      <p class=\"lede\">Publish public status pages, share clear uptime, and manage your account in one place.</p>\n      <div class=\"banner-actions\">\n        <div class=\"button-group\">\n          <a class=\"button button--primary\" href=\"#\">Explore</a>\n          <a class=\"button button--secondary\" href=\"#\">Log in</a>\n        </div>\n      </div>\n    </div>";
 class DemlBanner {
     constructor(host) {
         this.host = host;
@@ -110,7 +110,7 @@ class DemlBanner {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$9;
+            el.innerHTML = DEML_TEMPLATE$d;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBanner, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -202,7 +202,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/button/button.html — do not edit */
-const DEML_TEMPLATE$5 = "<button type=\"button\" class=\"button button--primary\">Primary</button>\n    <button type=\"button\" class=\"button button--secondary\">Secondary</button>\n    <button type=\"button\" class=\"button button--accent\">Accent</button>\n    <button type=\"button\" class=\"button button--primary button--pill\">Pill</button>\n    <button type=\"button\" class=\"button button--primary\" disabled>Disabled</button>\n    <button type=\"button\" class=\"button button--primary is-busy\" aria-busy=\"true\">\n      <span class=\"button__label\">Saving</span>\n      <span class=\"button__spinner\" aria-hidden=\"true\"></span>\n    </button>";
+const DEML_TEMPLATE$9 = "<button type=\"button\" class=\"button button--primary\">Primary</button>\n    <button type=\"button\" class=\"button button--secondary\">Secondary</button>\n    <button type=\"button\" class=\"button button--accent\">Accent</button>\n    <button type=\"button\" class=\"button button--primary button--pill\">Pill</button>\n    <button type=\"button\" class=\"button button--primary\" disabled>Disabled</button>\n    <button type=\"button\" class=\"button button--primary is-busy\" aria-busy=\"true\">\n      <span class=\"button__label\">Saving</span>\n      <span class=\"button__spinner\" aria-hidden=\"true\"></span>\n    </button>";
 class DemlButton {
     constructor(host) {
         this.host = host;
@@ -210,7 +210,7 @@ class DemlButton {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$5;
+            el.innerHTML = DEML_TEMPLATE$9;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlButton, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -677,7 +677,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/explore-card/explore-card.html — do not edit */
-const DEML_TEMPLATE$4 = "<article class=\"explore-card\" data-status=\"operational\">\n      <header class=\"explore-card__header\">\n        <div class=\"explore-card__meta\">\n          <span class=\"status-pill\" data-status=\"up\">Operational</span>\n          <span class=\"explore-card__tag\">Public Status Page</span>\n        </div>\n        <h3 class=\"explore-card__title\">Platform Status</h3>\n        <p class=\"explore-card__lede\">Live service health for teams publishing status with DEML.</p>\n      </header>\n      <ul class=\"explore-card__metrics\" role=\"list\">\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Cumulative SLA</span>\n          <span class=\"explore-card__metric-value\">99.98%</span>\n          <span class=\"explore-card__metric-meta\">Based on real telemetry</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">P99 Latency</span>\n          <span class=\"explore-card__metric-value\">42ms</span>\n          <span class=\"explore-card__metric-meta\">Last 24h</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Spike Risk</span>\n          <span class=\"explore-card__metric-value\">12.00</span>\n          <span class=\"explore-card__metric-meta\">Dynamic Temporal Forecasting</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Threat Anomaly</span>\n          <span class=\"explore-card__metric-value\">0.40%</span>\n          <span class=\"explore-card__metric-meta\">Active</span>\n        </li>\n      </ul>\n      <div class=\"explore-card__uptime\">\n        <div class=\"explore-card__uptime-head\">\n          <span class=\"explore-card__uptime-label\">Uptime</span>\n          <span class=\"explore-card__uptime-value\">99.9%</span>\n        </div>\n        <div class=\"explore-card__uptime-track\" aria-hidden=\"true\">\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"partial\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n        </div>\n        <p class=\"explore-card__uptime-summary\">No current issues</p>\n      </div>\n      <footer class=\"explore-card__footer\">\n        <a class=\"button button--primary button--pill\" href=\"#\">View status</a>\n      </footer>\n    </article>";
+const DEML_TEMPLATE$5 = "<article class=\"explore-card\" data-status=\"operational\">\n      <header class=\"explore-card__header\">\n        <div class=\"explore-card__meta\">\n          <span class=\"status-pill\" data-status=\"up\">Operational</span>\n          <span class=\"explore-card__tag\">Public Status Page</span>\n        </div>\n        <h3 class=\"explore-card__title\">Platform Status</h3>\n        <p class=\"explore-card__lede\">Live service health for teams publishing status with DEML.</p>\n      </header>\n      <ul class=\"explore-card__metrics\" role=\"list\">\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Cumulative SLA</span>\n          <span class=\"explore-card__metric-value\">99.98%</span>\n          <span class=\"explore-card__metric-meta\">Based on real telemetry</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">P99 Latency</span>\n          <span class=\"explore-card__metric-value\">42ms</span>\n          <span class=\"explore-card__metric-meta\">Last 24h</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Spike Risk</span>\n          <span class=\"explore-card__metric-value\">12.00</span>\n          <span class=\"explore-card__metric-meta\">Dynamic Temporal Forecasting</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Threat Anomaly</span>\n          <span class=\"explore-card__metric-value\">0.40%</span>\n          <span class=\"explore-card__metric-meta\">Active</span>\n        </li>\n      </ul>\n      <div class=\"explore-card__uptime\">\n        <div class=\"explore-card__uptime-head\">\n          <span class=\"explore-card__uptime-label\">Uptime</span>\n          <span class=\"explore-card__uptime-value\">99.9%</span>\n        </div>\n        <div class=\"explore-card__uptime-track\" aria-hidden=\"true\">\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"partial\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n        </div>\n        <p class=\"explore-card__uptime-summary\">No current issues</p>\n      </div>\n      <footer class=\"explore-card__footer\">\n        <a class=\"button button--primary button--pill\" href=\"#\">View status</a>\n      </footer>\n    </article>";
 class DemlExploreCard {
     constructor(host) {
         this.host = host;
@@ -685,7 +685,7 @@ class DemlExploreCard {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$4;
+            el.innerHTML = DEML_TEMPLATE$5;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlExploreCard, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -1077,7 +1077,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/navbar/navbar.html — do not edit */
-const DEML_TEMPLATE$H = "<header class=\"site-navbar\"><div class=\"site-navbar-branding\"><a class=\"site-navbar-icon\" href=\"#\">DEML</a></div><nav class=\"main-navigation\"><ul><li><a href=\"#\">Home</a></li></ul></nav></header>";
+const DEML_TEMPLATE$4 = "<header class=\"site-navbar\">\n      <div class=\"site-navbar-branding\">\n        <a class=\"site-navbar-icon\" href=\"#\" aria-label=\"DEML home\">DEML</a>\n      </div>\n      <button type=\"button\" class=\"site-navbar-menu-toggle\" aria-label=\"Open menu\" aria-expanded=\"false\">\n        Menu\n      </button>\n      <div class=\"site-navbar-panel\">\n        <div class=\"site-navbar-panel__inner\">\n          <nav class=\"main-navigation\" aria-label=\"Primary\">\n            <ul>\n              <li><a href=\"#\">Explore</a></li>\n              <li><a href=\"#\">Docs</a></li>\n            </ul>\n          </nav>\n          <div class=\"site-navbar-actions\">\n            <div class=\"button-group\" data-layout=\"row\" role=\"group\" aria-label=\"Account actions\">\n              <a class=\"button button--primary button--pill\" href=\"#\">Log in</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </header>";
 class DemlNavbar {
     constructor(host) {
         this.host = host;
@@ -1085,7 +1085,7 @@ class DemlNavbar {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$H;
+            el.innerHTML = DEML_TEMPLATE$4;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlNavbar, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -1502,7 +1502,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/site-footer/site-footer.html — do not edit */
-const DEML_TEMPLATE$1 = "<footer class=\"site-footer\">\n      <div class=\"site-footer__inner\">\n        <nav class=\"site-footer__directory\" aria-label=\"Footer\">\n          <ul class=\"site-footer__list\">\n            <li><a href=\"/privacy/\">Privacy</a></li>\n            <li><a href=\"/terms/\">Terms</a></li>\n            <li><a href=\"/status/platform-status\">Status</a></li>\n          </ul>\n        </nav>\n\n        <div class=\"site-footer__bottom\">\n          <p class=\"site-footer__badge\">Made in the U.S.A.</p>\n          <p class=\"site-footer__copy\">\n            Copyright © 2026 Data Engineering for Machine Learning by\n            <a href=\"https://joealongi.dev/\" target=\"_blank\" rel=\"noopener noreferrer\">Joe Alongi</a>.\n            All rights reserved.\n          </p>\n        </div>\n      </div>\n    </footer>";
+const DEML_TEMPLATE$1 = "<footer class=\"site-footer\">\n      <div class=\"site-footer__inner\">\n        <nav class=\"site-footer__directory\" aria-label=\"Footer\">\n          <div class=\"site-footer__group\">\n            <p class=\"site-footer__heading\">Resources</p>\n            <ul class=\"site-footer__list\">\n              <li><a href=\"/book\">Book</a></li>\n              <li><a href=\"/whitepaper\">Whitepaper</a></li>\n              <li><a href=\"/documentation\">Docs</a></li>\n              <li><a href=\"/blog\">Blog</a></li>\n            </ul>\n          </div>\n          <div class=\"site-footer__group\">\n            <p class=\"site-footer__heading\">Legal</p>\n            <ul class=\"site-footer__list\">\n              <li><a href=\"/compliance\">Compliance</a></li>\n              <li><a href=\"/privacy/\">Privacy</a></li>\n              <li><a href=\"/terms/\">Terms</a></li>\n              <li><a href=\"/status/platform-status\">Status</a></li>\n            </ul>\n          </div>\n        </nav>\n\n        <div class=\"site-footer__bottom\">\n          <p class=\"site-footer__badge\">Made in the U.S.A.</p>\n          <p class=\"site-footer__copy\">\n            Copyright © 2026 Data Engineering for Machine Learning by\n            <a href=\"https://joealongi.dev/\" target=\"_blank\" rel=\"noopener noreferrer\">Joe Alongi</a>.\n            All rights reserved.\n          </p>\n        </div>\n      </div>\n    </footer>";
 class DemlSiteFooter {
     constructor(host) {
         this.host = host;
