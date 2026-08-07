@@ -16,9 +16,15 @@
   max-width: none;
   margin: 0;
   padding: 0;
-  min-height: 100%;
+  min-height: 0;
   background-color: transparent;
   color: var(--color-text);
+}
+
+/* Cream reading surface (blog posts, long-form notes) */
+.article.module {
+  padding: var(--module-pad-lg);
+  min-height: 0;
 }
 
 .article + .article,

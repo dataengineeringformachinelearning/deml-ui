@@ -196,6 +196,36 @@ a.card[data-layout='teaser'],
   text-align: left;
   text-decoration: none;
   color: inherit;
+  transition: var(--motion-ui);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.card[data-layout='teaser']:hover {
+    border-color: color-mix(
+      in srgb,
+      var(--card-visual, var(--color-primary)) 45%,
+      var(--color-card-border)
+    );
+    box-shadow: var(--elevation-2);
+  }
+}
+
+a.card[data-layout='teaser']:active {
+  transform: scale(var(--press-scale));
+  opacity: var(--press-opacity);
+}
+
+a.card[data-layout='teaser']:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.card[data-layout='teaser'],
+  a.card[data-layout='teaser']:active {
+    transition: none;
+    transform: none;
+  }
 }
 
 app-card[data-layout='teaser'] .card-copy,
