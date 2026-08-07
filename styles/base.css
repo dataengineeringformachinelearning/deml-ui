@@ -59,14 +59,15 @@ body {
   letter-spacing: var(--tracking-mark);
   line-height: var(--leading-ui);
   text-transform: uppercase;
-  color: var(--color-highlight);
+  /* Neutrals only — accent reserved for actions */
+  color: var(--color-text-secondary);
 }
 
 /* Large bold display — tight tracking, 8px-linked clamp */
 .type-display {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(calc(var(--grid) * 4), 5.5vw, var(--font-size-2xl));
+  font-size: clamp(calc(var(--grid) * 4), 5.5vw, var(--font-size-display));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
@@ -82,7 +83,7 @@ body {
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-relaxed);
+  line-height: var(--leading-body);
   color: var(--color-text-secondary);
 }
 
@@ -93,6 +94,17 @@ body {
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-body);
   line-height: var(--leading-body);
+  color: var(--color-text);
+}
+
+/* Section / module titles — between body and display */
+.type-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
   color: var(--color-text);
 }
 
@@ -140,25 +152,19 @@ body {
   padding-inline-end: max(var(--space-3), var(--safe-right));
   flex: 1 1 auto;
   background-color: var(--color-bg);
-  /* Atmosphere: surface wash + one restrained primary wash — no second accent */
-  background-image:
-    radial-gradient(
-      90% 36% at 50% 0%,
-      color-mix(in srgb, var(--color-primary) 12%, transparent) 0%,
-      transparent 72%
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--color-surface) 42%, var(--color-bg)) 0%,
-      var(--color-bg) var(--space-10)
-    );
+  /* Quiet vertical depth — neutrals only */
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-surface) 36%, var(--color-bg)) 0%,
+    var(--color-bg) var(--space-12)
+  );
 }
 
 @media screen and (min-width: 800px) {
   .page-body {
     --page-pad-block: var(--space-6);
     --page-pad-inline: max(var(--space-4), var(--safe-left), var(--safe-right));
-    --page-pad-block-end: max(var(--space-10), calc(var(--space-8) + var(--safe-bottom)));
+    --page-pad-block-end: max(var(--space-12), calc(var(--space-8) + var(--safe-bottom)));
     --tile-gap: var(--space-3);
     padding-inline-start: max(var(--space-4), var(--safe-left));
     padding-inline-end: max(var(--space-4), var(--safe-right));
@@ -476,11 +482,11 @@ summary {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Shared enter for designed empty / error / loading shells */
+/* Shared enter / exit — quiet rise, decelerate in; ease-out exit */
 @keyframes deml-state-enter {
   from {
     opacity: 0;
-    transform: translateY(var(--space-1));
+    transform: translateY(var(--enter-distance));
   }
   to {
     opacity: 1;
@@ -488,19 +494,35 @@ summary {
   }
 }
 
-/* Page continuity — Angular view transitions (crossfade, no bounce) */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: var(--duration-normal);
-  animation-timing-function: var(--ease-in-out);
+@keyframes deml-state-exit {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(calc(var(--enter-distance) * 0.5));
+  }
 }
 
+@keyframes deml-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Surface shells — continuous state changes without flash */
+.deml-surface-enter {
+  animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
+}
+
+/* Page continuity — Angular view transitions (crossfade, decelerate) */
 ::view-transition-old(root) {
-  animation-name: deml-vt-fade-out;
+  animation: deml-vt-fade-out var(--duration-fast) var(--ease-exit) both;
 }
 
 ::view-transition-new(root) {
-  animation-name: deml-vt-fade-in;
+  animation: deml-vt-fade-in var(--duration-normal) var(--ease-enter) both;
 }
 
 @keyframes deml-vt-fade-out {

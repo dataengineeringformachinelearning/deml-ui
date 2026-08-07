@@ -2,7 +2,7 @@
 
 .component--skeleton .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 .skeleton {
@@ -20,11 +20,11 @@
   background: linear-gradient(
     90deg,
     color-mix(in srgb, var(--color-surface) 55%, var(--color-border)) 0%,
-    color-mix(in srgb, var(--color-surface) 32%, var(--color-border)) 48%,
+    color-mix(in srgb, var(--color-surface) 38%, var(--color-border)) 50%,
     color-mix(in srgb, var(--color-surface) 55%, var(--color-border)) 100%
   );
-  background-size: 200% 100%;
-  animation: deml-skeleton calc(var(--duration-slow) * 4) var(--ease-in-out) infinite;
+  background-size: 220% 100%;
+  animation: deml-skeleton var(--duration-skeleton) var(--ease-in-out) infinite;
   opacity: var(--opacity-muted);
 }
 

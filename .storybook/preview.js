@@ -1,5 +1,6 @@
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from "storybook/viewport";
+import "@fontsource-variable/geist/wght.css";
 import "../styles.css";
 import "../components/components.css";
 
@@ -135,10 +136,10 @@ const preview = {
       const density = context.globals.density || "comfortable";
       const padding =
         density === "compact"
-          ? "0.5rem"
+          ? "var(--space-2)"
           : density === "spacious"
-            ? "2rem"
-            : "1rem";
+            ? "var(--space-8)"
+            : "var(--space-4)";
 
       // Keep .dark in sync with themes addon (tokens accept data-theme or .dark)
       const root = document.documentElement;

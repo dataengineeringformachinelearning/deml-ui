@@ -20,7 +20,7 @@
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-highlight);
+  color: var(--color-text-secondary);
 }
 
 .page-header h1,

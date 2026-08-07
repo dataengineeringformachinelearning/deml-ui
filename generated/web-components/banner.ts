@@ -9,12 +9,12 @@ export class DemlBanner extends HTMLElement {
     if (!this.hasChildNodes()) {
       this.innerHTML = `<div class="banner banner--hero" data-variant="hero">
       <p class="preheader">DEML</p>
-      <h1 class="banner-heading">Control plane for ML data.</h1>
-      <p class="lede">Identity, status, analytics, and learning in one warm-ash surface.</p>
+      <h1 class="banner-heading">Status your customers can trust.</h1>
+      <p class="lede">Publish public status pages, share clear uptime, and manage your account in one place.</p>
       <div class="banner-actions">
         <div class="button-group">
-          <a class="button button--primary" href="#">Dashboard</a>
-          <a class="button button--secondary" href="#">Explore</a>
+          <a class="button button--primary" href="#">Explore</a>
+          <a class="button button--secondary" href="#">Log in</a>
         </div>
       </div>
     </div>`;

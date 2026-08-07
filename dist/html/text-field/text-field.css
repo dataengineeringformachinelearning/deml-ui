@@ -2,7 +2,7 @@
 
 .component--text-field .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 .text-field {
@@ -18,11 +18,10 @@
 .text-field__label {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--tracking-eyebrow);
-  line-height: 1.2;
-  text-transform: uppercase;
+  letter-spacing: var(--tracking-intro);
+  line-height: 1.3;
   color: var(--color-card-text-secondary);
 }
 
@@ -31,7 +30,9 @@
   color: var(--color-error);
 }
 
-.text-field__control {
+/* `__control` is canonical; `__input` kept as alias for older markup */
+.text-field__control,
+.text-field__input {
   box-sizing: border-box;
   width: 100%;
   min-height: var(--hit-target-lg);
@@ -53,35 +54,50 @@
   transition: var(--motion-ui);
 }
 
-.text-field__control::placeholder {
+.text-field__control::placeholder,
+.text-field__input::placeholder {
   color: var(--color-card-text-secondary);
   opacity: var(--opacity-disabled);
 }
 
-.text-field__control:hover:not(:disabled) {
-  border-color: var(--control-hover-border);
+@media (hover: hover) and (pointer: fine) {
+  .text-field__control:hover:not(:disabled),
+  .text-field__input:hover:not(:disabled) {
+    border-color: var(--control-hover-border);
+  }
 }
 
-.text-field__control:focus {
+.text-field__control:focus,
+.text-field__input:focus {
   outline: none;
 }
 
-.text-field__control:focus-visible {
+.text-field__control:focus-visible,
+.text-field__input:focus-visible {
   outline: var(--focus-ring-width) solid var(--color-primary);
   outline-offset: var(--focus-ring-offset);
   border-color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--control-fill) 96%, var(--color-primary));
 }
 
-.text-field__control:disabled {
+.text-field__control:active:not(:disabled),
+.text-field__input:active:not(:disabled) {
+  border-color: color-mix(in srgb, var(--color-primary) 45%, var(--module-border));
+}
+
+.text-field__control:disabled,
+.text-field__input:disabled {
   opacity: var(--opacity-muted);
   cursor: not-allowed;
 }
 
-:host([data-invalid='true']) .text-field__control {
+:host([data-invalid='true']) .text-field__control,
+:host([data-invalid='true']) .text-field__input {
   border-color: var(--color-error);
 }
 
-:host([data-invalid='true']) .text-field__control:focus-visible {
+:host([data-invalid='true']) .text-field__control:focus-visible,
+:host([data-invalid='true']) .text-field__input:focus-visible {
   outline-color: var(--color-error);
 }
 
@@ -89,10 +105,10 @@
 .text-field__error {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .text-field__hint {
@@ -106,7 +122,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .text-field__control {
+  .text-field__control,
+  .text-field__input {
     transition: none;
   }
 

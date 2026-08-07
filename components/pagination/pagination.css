@@ -7,8 +7,9 @@
 
 .pagination {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: var(--space-3);
   margin: var(--space-6) 0 0;
@@ -37,6 +38,7 @@
   justify-content: center;
   min-height: var(--hit-target);
   min-width: var(--hit-target);
+  max-width: 100%;
   padding: var(--space-1) var(--space-2);
   border: var(--border-width) solid var(--color-card-border);
   border-radius: var(--radius-sm);
@@ -48,6 +50,16 @@
   background-color: var(--color-card);
   text-decoration: none;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.pagination__prev,
+.pagination__next {
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .pagination__prev:focus-visible,
@@ -64,4 +76,16 @@
   color: var(--color-on-primary);
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+}
+
+@media screen and (min-width: 800px) {
+  .pagination {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .pagination__prev,
+  .pagination__next {
+    width: auto;
+  }
 }

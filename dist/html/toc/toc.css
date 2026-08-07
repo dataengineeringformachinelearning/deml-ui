@@ -45,7 +45,7 @@
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-highlight);
+  color: var(--color-text-secondary);
 }
 
 .toc__group:first-of-type .toc__group-title {
@@ -80,6 +80,17 @@
     color var(--duration-fast) var(--ease-out),
     background-color var(--duration-fast) var(--ease-out),
     border-color var(--duration-fast) var(--ease-out);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Label-only items (no .toc__num) — single readable column */
+.toc__item:not(:has(.toc__num)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.toc__item:not(:has(.toc__num)) .toc__label {
+  grid-column: 1;
 }
 
 .toc__item:hover,

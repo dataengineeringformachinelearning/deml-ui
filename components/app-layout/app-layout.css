@@ -1,4 +1,4 @@
-/* Component: App Layout — catalog shell with equal token gutters */
+/* Component: App Layout — mobile-first; sidebar is progressive enhancement */
 
 .component--app-layout .demo {
   display: grid;
@@ -18,39 +18,30 @@
   min-height: 0;
 }
 
-.app-layout--embedded .app-layout__nav {
-  position: sticky;
-  top: calc(var(--navbar-inset, var(--space-1)) * 2 + var(--navbar-hit, var(--space-6)));
-  align-self: start;
-  max-height: calc(100dvh - var(--navbar-hit, var(--space-6)) - var(--space-4));
-  overflow: auto;
-}
-
 .app-layout__header {
   flex: 0 0 auto;
 }
 
 .app-layout__body {
   display: grid;
-  grid-template-columns: minmax(var(--space-28), var(--space-36)) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   flex: 1 1 auto;
   min-height: 0;
-  gap: var(--space-4);
-  padding: var(--space-4);
+  gap: var(--space-3);
+  padding: var(--space-3);
+  padding-left: max(var(--space-3), var(--safe-left));
+  padding-right: max(var(--space-3), var(--safe-right));
+  padding-bottom: max(var(--space-3), var(--safe-bottom));
   box-sizing: border-box;
 }
 
 .app-layout__nav,
 .app-layout__tools {
-  padding: var(--space-4);
+  min-width: 0;
+  padding: var(--space-3);
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-md);
-}
-
-.app-layout__tools {
-  border-inline-end: var(--border-width) solid var(--color-border);
-  border-inline-start: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-none);
 }
 
 .app-layout__main {
@@ -59,29 +50,114 @@
   min-width: 0;
   background: var(--color-bg);
   border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-none);
   overflow: hidden;
 }
 
 .app-layout__content {
-  padding: var(--space-5) var(--space-5) var(--space-8);
+  padding: var(--space-4) var(--space-3) var(--space-6);
   flex: 1;
   box-sizing: border-box;
 }
 
-@media (max-width: 800px) {
+/* Collapsible chapter TOC on phone — details/summary */
+.book-toc {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.book-toc > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  min-height: var(--hit-target-lg);
+  margin: 0 0 var(--space-2);
+  padding: var(--space-2) 0;
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-intro);
+  color: var(--color-text);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.book-toc > summary::-webkit-details-marker {
+  display: none;
+}
+
+.book-toc > summary::after {
+  content: '';
+  width: var(--space-2);
+  height: var(--space-2);
+  border-right: var(--border-width) solid currentColor;
+  border-bottom: var(--border-width) solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.book-toc[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.book-toc > summary:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-toc > summary::after {
+    transition: none;
+  }
+}
+
+/* Desktop: two-column reading shell */
+@media screen and (min-width: 800px) {
   .app-layout__body {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-    padding: var(--space-3);
+    grid-template-columns: minmax(var(--space-28), var(--space-36)) minmax(0, 1fr);
+    gap: var(--space-4);
+    padding: var(--space-4);
+    padding-left: max(var(--space-4), var(--safe-left));
+    padding-right: max(var(--space-4), var(--safe-right));
+    padding-bottom: max(var(--space-4), var(--safe-bottom));
+  }
+
+  .app-layout--embedded .app-layout__nav {
+    position: sticky;
+    top: calc(
+      var(--navbar-inset, var(--space-1)) * 2 + var(--navbar-hit, var(--space-6)) +
+        var(--safe-top)
+    );
+    align-self: start;
+    max-height: calc(
+      100dvh - var(--navbar-hit, var(--space-6)) - var(--space-4) - var(--safe-top) -
+        var(--safe-bottom)
+    );
+    overflow: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   .app-layout__nav,
   .app-layout__tools {
-    display: none;
+    padding: var(--space-4);
   }
 
   .app-layout__content {
-    padding: var(--space-4) var(--space-3) var(--space-6);
+    padding: var(--space-5) var(--space-5) var(--space-8);
+  }
+
+  /* Force TOC open on larger screens; hide the summary chrome */
+  .book-toc > summary {
+    display: none;
+  }
+
+  .book-toc .toc,
+  .book-toc > nav {
+    display: grid !important;
   }
 }

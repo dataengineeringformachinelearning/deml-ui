@@ -1,12 +1,11 @@
 import { Meta, Canvas } from "@storybook/addon-docs/blocks";
-import * as Navbar from "./components/navbar.stories.js";
+import * as Navbar from "./shell/navbar.stories.js";
 import * as AppLayout from "./shell/app-layout.stories.js";
 import * as PageHeader from "./shell/page-header.stories.js";
 import * as SectionHeader from "./layout/section-header.stories.js";
-import * as MetricCard from "./data/metric-card.stories.js";
 import * as ChartPanel from "./data/chart-panel.stories.js";
 import * as StatCard from "./data/stat-card.stories.js";
-import * as Banner from "./components/banner.stories.js";
+import * as Banner from "./feedback/banner.stories.js";
 
 <Meta title="Dashboard" />
 
@@ -28,7 +27,6 @@ Reference composition for the DEML product shell using the **new-from-the-start*
 ## Metrics & charts
 
 <Canvas of={StatCard.Default} />
-<Canvas of={MetricCard.Default} />
 <Canvas of={ChartPanel.Default} />
 
 Compose routes as:

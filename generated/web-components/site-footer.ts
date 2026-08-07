@@ -10,42 +10,13 @@ export class DemlSiteFooter extends HTMLElement {
       this.innerHTML = `<footer class="site-footer">
       <div class="site-footer__inner">
         <nav class="site-footer__directory" aria-label="Footer">
-          <div class="site-footer__column">
-            <h3 class="site-footer__heading">Platforms</h3>
-            <ul class="site-footer__list">
-              <li><a href="#">DEML</a></li>
-              <li><a href="#">FORJD</a></li>
-              <li><a href="#">Explore</a></li>
-              <li><a href="#">Dashboard</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__column">
-            <h3 class="site-footer__heading">Resources</h3>
-            <ul class="site-footer__list">
-              <li><a href="#">Community</a></li>
-              <li><a href="#">Whitepaper</a></li>
-              <li><a href="#">Book</a></li>
-              <li><a href="#">Blue Notes</a></li>
-              <li><a href="#">Learn</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__column">
-            <h3 class="site-footer__heading">Support</h3>
-            <ul class="site-footer__list">
-              <li><a href="#">Platform Status</a></li>
-              <li><a href="#">Report a Bug</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__column">
-            <h3 class="site-footer__heading">Legal &amp; Compliance</h3>
-            <ul class="site-footer__list">
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">SOC2 Compliance</a></li>
-              <li><a href="#">GDPR Compliance</a></li>
-            </ul>
-          </div>
+          <ul class="site-footer__list">
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+            <li><a href="/status/platform-status">Status</a></li>
+          </ul>
         </nav>
+
         <div class="site-footer__bottom">
           <p class="site-footer__badge">Made in the U.S.A.</p>
           <p class="site-footer__copy">

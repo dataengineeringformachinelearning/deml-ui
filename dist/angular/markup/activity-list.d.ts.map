@@ -1,1 +1,0 @@
-{"version":3,"file":"activity-list.d.ts","sourceRoot":"","sources":["../../../src/angular/markup/activity-list.ts"],"names":[],"mappings":"AACA,OAAO,EAEL,UAAU,EACV,MAAM,EAEP,MAAM,eAAe,CAAC;;AAIvB,qBAMa,gBAAiB,YAAW,MAAM;IACjC,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU,CAAC,WAAW,CAAC;IAE1D,QAAQ,IAAI,IAAI;yCAHL,gBAAgB;2CAAhB,gBAAgB;CAS5B"}

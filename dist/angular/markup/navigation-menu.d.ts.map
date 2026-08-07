@@ -1,1 +1,0 @@
-{"version":3,"file":"navigation-menu.d.ts","sourceRoot":"","sources":["../../../src/angular/markup/navigation-menu.ts"],"names":[],"mappings":"AACA,OAAO,EAEL,UAAU,EACV,MAAM,EAEP,MAAM,eAAe,CAAC;;AAIvB,qBAMa,kBAAmB,YAAW,MAAM;IACnC,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU,CAAC,WAAW,CAAC;IAE1D,QAAQ,IAAI,IAAI;yCAHL,kBAAkB;2CAAlB,kBAAkB;CAS9B"}

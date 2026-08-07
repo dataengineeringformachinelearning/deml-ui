@@ -1,6 +1,3 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   /* Story canvas: full-width demos match the site */
   #storybook-root {
@@ -10,17 +7,17 @@
   #storybook-root > .story-root {
     display: block;
     width: 100%;
-    padding: var(--story-padding, var(--gutter, 1rem));
+    padding: var(--story-padding, var(--gutter, var(--space-4)));
     box-sizing: border-box;
   }
 
   /* Density toolbar feedback */
   #storybook-root > .story-root[data-density="compact"] {
-    --story-padding: 0.5rem;
+    --story-padding: var(--space-2);
   }
 
   #storybook-root > .story-root[data-density="spacious"] {
-    --story-padding: 2rem;
+    --story-padding: var(--space-8);
   }
 
   /* Outline-friendly focus visibility in canvas — warm ash focus */
@@ -32,7 +29,6 @@
   /* Chart stories — multi-variant boards fit viewport with zero canvas scroll */
   #storybook-root > .story-root[data-component="area-chart"],
   #storybook-root > .story-root[data-component="bar-chart"],
-  #storybook-root > .story-root[data-component="donut-chart"],
   #storybook-root > .story-root[data-component="chart"],
   #storybook-root > .story-root[data-component="chart-card"],
   #storybook-root > .story-root[data-component="chart-panel"],
@@ -46,7 +42,6 @@
 
   #storybook-root > .story-root[data-component="area-chart"] .component > h2,
   #storybook-root > .story-root[data-component="bar-chart"] .component > h2,
-  #storybook-root > .story-root[data-component="donut-chart"] .component > h2,
   #storybook-root > .story-root[data-component="chart"] .component > h2,
   #storybook-root > .story-root[data-component="chart-card"] .component > h2,
   #storybook-root > .story-root[data-component="chart-panel"] .component > h2,
@@ -56,21 +51,18 @@
 
   #storybook-root > .story-root[data-component="area-chart"] .component,
   #storybook-root > .story-root[data-component="bar-chart"] .component,
-  #storybook-root > .story-root[data-component="donut-chart"] .component,
   #storybook-root > .story-root[data-component="chart"] .component,
   #storybook-root > .story-root[data-component="chart-card"] .component,
   #storybook-root > .story-root[data-component="chart-panel"] .component,
   #storybook-root > .story-root[data-component="chart-empty-state"] .component,
   #storybook-root > .story-root[data-component="area-chart"] .demo,
   #storybook-root > .story-root[data-component="bar-chart"] .demo,
-  #storybook-root > .story-root[data-component="donut-chart"] .demo,
   #storybook-root > .story-root[data-component="chart"] .demo,
   #storybook-root > .story-root[data-component="chart-card"] .demo,
   #storybook-root > .story-root[data-component="chart-panel"] .demo,
   #storybook-root > .story-root[data-component="chart-empty-state"] .demo,
   #storybook-root > .story-root[data-component="area-chart"] .chart-board,
   #storybook-root > .story-root[data-component="bar-chart"] .chart-board,
-  #storybook-root > .story-root[data-component="donut-chart"] .chart-board,
   #storybook-root > .story-root[data-component="chart"] .chart-board,
   #storybook-root > .story-root[data-component="chart-card"] .chart-board,
   #storybook-root > .story-root[data-component="chart-panel"] .chart-board,

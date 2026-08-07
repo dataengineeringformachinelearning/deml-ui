@@ -7,7 +7,7 @@ export class DemlTextField extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<label class="text-field"><span class="text-field__label">Name</span><input class="text-field__input" type="text" /></label>`;
+      this.innerHTML = `<label class="text-field"><span class="text-field__label">Name</span><input class="text-field__control" type="text" /></label>`;
     }
   }
 }

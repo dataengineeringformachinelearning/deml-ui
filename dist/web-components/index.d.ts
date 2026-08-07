@@ -1,40 +1,10 @@
 /* AUTO-GENERATED — deml-ui web component types */
 
-export declare class DemlAccordion extends HTMLElement {
-  static readonly tagName: "deml-accordion";
-  static readonly componentName: "accordion";
-}
-export declare function defineAccordion(): void;
-
-export declare class DemlActivityList extends HTMLElement {
-  static readonly tagName: "deml-activity-list";
-  static readonly componentName: "activity-list";
-}
-export declare function defineActivityList(): void;
-
-export declare class DemlAppFooter extends HTMLElement {
-  static readonly tagName: "deml-app-footer";
-  static readonly componentName: "app-footer";
-}
-export declare function defineAppFooter(): void;
-
-export declare class DemlAppHeader extends HTMLElement {
-  static readonly tagName: "deml-app-header";
-  static readonly componentName: "app-header";
-}
-export declare function defineAppHeader(): void;
-
 export declare class DemlAppLayout extends HTMLElement {
   static readonly tagName: "deml-app-layout";
   static readonly componentName: "app-layout";
 }
 export declare function defineAppLayout(): void;
-
-export declare class DemlAppSidebar extends HTMLElement {
-  static readonly tagName: "deml-app-sidebar";
-  static readonly componentName: "app-sidebar";
-}
-export declare function defineAppSidebar(): void;
 
 export declare class DemlAreaChart extends HTMLElement {
   static readonly tagName: "deml-area-chart";
@@ -47,18 +17,6 @@ export declare class DemlArticle extends HTMLElement {
   static readonly componentName: "article";
 }
 export declare function defineArticle(): void;
-
-export declare class DemlAutocomplete extends HTMLElement {
-  static readonly tagName: "deml-autocomplete";
-  static readonly componentName: "autocomplete";
-}
-export declare function defineAutocomplete(): void;
-
-export declare class DemlAvatar extends HTMLElement {
-  static readonly tagName: "deml-avatar";
-  static readonly componentName: "avatar";
-}
-export declare function defineAvatar(): void;
 
 export declare class DemlBadge extends HTMLElement {
   static readonly tagName: "deml-badge";
@@ -89,18 +47,6 @@ export declare class DemlBrand extends HTMLElement {
   static readonly componentName: "brand";
 }
 export declare function defineBrand(): void;
-
-export declare class DemlBreadcrumbs extends HTMLElement {
-  static readonly tagName: "deml-breadcrumbs";
-  static readonly componentName: "breadcrumbs";
-}
-export declare function defineBreadcrumbs(): void;
-
-export declare class DemlBulkToolbar extends HTMLElement {
-  static readonly tagName: "deml-bulk-toolbar";
-  static readonly componentName: "bulk-toolbar";
-}
-export declare function defineBulkToolbar(): void;
 
 export declare class DemlButton extends HTMLElement {
   static readonly tagName: "deml-button";
@@ -174,12 +120,6 @@ export declare class DemlCluster extends HTMLElement {
 }
 export declare function defineCluster(): void;
 
-export declare class DemlCommand extends HTMLElement {
-  static readonly tagName: "deml-command";
-  static readonly componentName: "command";
-}
-export declare function defineCommand(): void;
-
 export declare class DemlConfirmDialog extends HTMLElement {
   static readonly tagName: "deml-confirm-dialog";
   static readonly componentName: "confirm-dialog";
@@ -209,18 +149,6 @@ export declare class DemlDialog extends HTMLElement {
   static readonly componentName: "dialog";
 }
 export declare function defineDialog(): void;
-
-export declare class DemlDisclosure extends HTMLElement {
-  static readonly tagName: "deml-disclosure";
-  static readonly componentName: "disclosure";
-}
-export declare function defineDisclosure(): void;
-
-export declare class DemlDonutChart extends HTMLElement {
-  static readonly tagName: "deml-donut-chart";
-  static readonly componentName: "donut-chart";
-}
-export declare function defineDonutChart(): void;
 
 export declare class DemlDropdown extends HTMLElement {
   static readonly tagName: "deml-dropdown";
@@ -252,18 +180,6 @@ export declare class DemlField extends HTMLElement {
 }
 export declare function defineField(): void;
 
-export declare class DemlFileUpload extends HTMLElement {
-  static readonly tagName: "deml-file-upload";
-  static readonly componentName: "file-upload";
-}
-export declare function defineFileUpload(): void;
-
-export declare class DemlFlashbar extends HTMLElement {
-  static readonly tagName: "deml-flashbar";
-  static readonly componentName: "flashbar";
-}
-export declare function defineFlashbar(): void;
-
 export declare class DemlFormGrid extends HTMLElement {
   static readonly tagName: "deml-form-grid";
   static readonly componentName: "form-grid";
@@ -287,18 +203,6 @@ export declare class DemlGrid extends HTMLElement {
   static readonly componentName: "grid";
 }
 export declare function defineGrid(): void;
-
-export declare class DemlHelpPanel extends HTMLElement {
-  static readonly tagName: "deml-help-panel";
-  static readonly componentName: "help-panel";
-}
-export declare function defineHelpPanel(): void;
-
-export declare class DemlHudPanel extends HTMLElement {
-  static readonly tagName: "deml-hud-panel";
-  static readonly componentName: "hud-panel";
-}
-export declare function defineHudPanel(): void;
 
 export declare class DemlIcon extends HTMLElement {
   static readonly tagName: "deml-icon";
@@ -354,59 +258,17 @@ export declare class DemlInputTime extends HTMLElement {
 }
 export declare function defineInputTime(): void;
 
-export declare class DemlKbd extends HTMLElement {
-  static readonly tagName: "deml-kbd";
-  static readonly componentName: "kbd";
-}
-export declare function defineKbd(): void;
-
 export declare class DemlLabel extends HTMLElement {
   static readonly tagName: "deml-label";
   static readonly componentName: "label";
 }
 export declare function defineLabel(): void;
 
-export declare class DemlLoadingOverlay extends HTMLElement {
-  static readonly tagName: "deml-loading-overlay";
-  static readonly componentName: "loading-overlay";
-}
-export declare function defineLoadingOverlay(): void;
-
-export declare class DemlMetricCard extends HTMLElement {
-  static readonly tagName: "deml-metric-card";
-  static readonly componentName: "metric-card";
-}
-export declare function defineMetricCard(): void;
-
-export declare class DemlMetricList extends HTMLElement {
-  static readonly tagName: "deml-metric-list";
-  static readonly componentName: "metric-list";
-}
-export declare function defineMetricList(): void;
-
-export declare class DemlMicrocard extends HTMLElement {
-  static readonly tagName: "deml-microcard";
-  static readonly componentName: "microcard";
-}
-export declare function defineMicrocard(): void;
-
-export declare class DemlMicrocardGrid extends HTMLElement {
-  static readonly tagName: "deml-microcard-grid";
-  static readonly componentName: "microcard-grid";
-}
-export declare function defineMicrocardGrid(): void;
-
 export declare class DemlNavbar extends HTMLElement {
   static readonly tagName: "deml-navbar";
   static readonly componentName: "navbar";
 }
 export declare function defineNavbar(): void;
-
-export declare class DemlNavigationMenu extends HTMLElement {
-  static readonly tagName: "deml-navigation-menu";
-  static readonly componentName: "navigation-menu";
-}
-export declare function defineNavigationMenu(): void;
 
 export declare class DemlPageBackLink extends HTMLElement {
   static readonly tagName: "deml-page-back-link";
@@ -450,29 +312,11 @@ export declare class DemlPanelGrid extends HTMLElement {
 }
 export declare function definePanelGrid(): void;
 
-export declare class DemlPopover extends HTMLElement {
-  static readonly tagName: "deml-popover";
-  static readonly componentName: "popover";
-}
-export declare function definePopover(): void;
-
-export declare class DemlProfile extends HTMLElement {
-  static readonly tagName: "deml-profile";
-  static readonly componentName: "profile";
-}
-export declare function defineProfile(): void;
-
 export declare class DemlProgress extends HTMLElement {
   static readonly tagName: "deml-progress";
   static readonly componentName: "progress";
 }
 export declare function defineProgress(): void;
-
-export declare class DemlPropertyFilter extends HTMLElement {
-  static readonly tagName: "deml-property-filter";
-  static readonly componentName: "property-filter";
-}
-export declare function definePropertyFilter(): void;
 
 export declare class DemlRadioGroup extends HTMLElement {
   static readonly tagName: "deml-radio-group";
@@ -522,12 +366,6 @@ export declare class DemlSheet extends HTMLElement {
 }
 export declare function defineSheet(): void;
 
-export declare class DemlSidebarNav extends HTMLElement {
-  static readonly tagName: "deml-sidebar-nav";
-  static readonly componentName: "sidebar-nav";
-}
-export declare function defineSidebarNav(): void;
-
 export declare class DemlSiteFooter extends HTMLElement {
   static readonly tagName: "deml-site-footer";
   static readonly componentName: "site-footer";
@@ -552,12 +390,6 @@ export declare class DemlSpinner extends HTMLElement {
 }
 export declare function defineSpinner(): void;
 
-export declare class DemlSplitPanel extends HTMLElement {
-  static readonly tagName: "deml-split-panel";
-  static readonly componentName: "split-panel";
-}
-export declare function defineSplitPanel(): void;
-
 export declare class DemlStack extends HTMLElement {
   static readonly tagName: "deml-stack";
   static readonly componentName: "stack";
@@ -576,12 +408,6 @@ export declare class DemlStatusBadge extends HTMLElement {
 }
 export declare function defineStatusBadge(): void;
 
-export declare class DemlStatusCard extends HTMLElement {
-  static readonly tagName: "deml-status-card";
-  static readonly componentName: "status-card";
-}
-export declare function defineStatusCard(): void;
-
 export declare class DemlStatusPill extends HTMLElement {
   static readonly tagName: "deml-status-pill";
   static readonly componentName: "status-pill";
@@ -599,12 +425,6 @@ export declare class DemlTable extends HTMLElement {
   static readonly componentName: "table";
 }
 export declare function defineTable(): void;
-
-export declare class DemlTabs extends HTMLElement {
-  static readonly tagName: "deml-tabs";
-  static readonly componentName: "tabs";
-}
-export declare function defineTabs(): void;
 
 export declare class DemlTextField extends HTMLElement {
   static readonly tagName: "deml-text-field";
@@ -630,18 +450,6 @@ export declare class DemlTileBoard extends HTMLElement {
 }
 export declare function defineTileBoard(): void;
 
-export declare class DemlTimeline extends HTMLElement {
-  static readonly tagName: "deml-timeline";
-  static readonly componentName: "timeline";
-}
-export declare function defineTimeline(): void;
-
-export declare class DemlToast extends HTMLElement {
-  static readonly tagName: "deml-toast";
-  static readonly componentName: "toast";
-}
-export declare function defineToast(): void;
-
 export declare class DemlToc extends HTMLElement {
   static readonly tagName: "deml-toc";
   static readonly componentName: "toc";
@@ -654,40 +462,19 @@ export declare class DemlToggle extends HTMLElement {
 }
 export declare function defineToggle(): void;
 
-export declare class DemlTooltip extends HTMLElement {
-  static readonly tagName: "deml-tooltip";
-  static readonly componentName: "tooltip";
-}
-export declare function defineTooltip(): void;
-
-export declare class DemlWizard extends HTMLElement {
-  static readonly tagName: "deml-wizard";
-  static readonly componentName: "wizard";
-}
-export declare function defineWizard(): void;
-
 export declare function defineAll(): void;
-export declare const componentNames: readonly ["accordion", "activity-list", "app-footer", "app-header", "app-layout", "app-sidebar", "area-chart", "article", "autocomplete", "avatar", "badge", "banner", "bar-chart", "box", "brand", "breadcrumbs", "bulk-toolbar", "button", "button-group", "callout", "card", "card-grid", "chart", "chart-card", "chart-empty-state", "chart-panel", "checkbox", "checkbox-field", "cluster", "command", "confirm-dialog", "container", "content-layout", "dashboard-grid", "dialog", "disclosure", "donut-chart", "dropdown", "empty-state", "error-state", "explore-card", "field", "file-upload", "flashbar", "form-grid", "form-panel", "form-section", "grid", "help-panel", "hud-panel", "icon", "input-date", "input-email", "input-number", "input-password", "input-range", "input-search", "input-text", "input-time", "kbd", "label", "loading-overlay", "metric-card", "metric-list", "microcard", "microcard-grid", "navbar", "navigation-menu", "page-back-link", "page-header", "page-section", "page-shell", "page-template", "pagination", "panel-grid", "popover", "profile", "progress", "property-filter", "radio-group", "scroll-area", "section", "section-header", "section-template", "select", "separator", "sheet", "sidebar-nav", "site-footer", "skeleton", "skip-link", "spinner", "split-panel", "stack", "stat-card", "status-badge", "status-card", "status-pill", "switch", "table", "tabs", "text-field", "textarea", "theme-toggle", "tile-board", "timeline", "toast", "toc", "toggle", "tooltip", "wizard"];
+export declare const componentNames: readonly ["app-layout", "area-chart", "article", "badge", "banner", "bar-chart", "box", "brand", "button", "button-group", "callout", "card", "card-grid", "chart", "chart-card", "chart-empty-state", "chart-panel", "checkbox", "checkbox-field", "cluster", "confirm-dialog", "container", "content-layout", "dashboard-grid", "dialog", "dropdown", "empty-state", "error-state", "explore-card", "field", "form-grid", "form-panel", "form-section", "grid", "icon", "input-date", "input-email", "input-number", "input-password", "input-range", "input-search", "input-text", "input-time", "label", "navbar", "page-back-link", "page-header", "page-section", "page-shell", "page-template", "pagination", "panel-grid", "progress", "radio-group", "scroll-area", "section", "section-header", "section-template", "select", "separator", "sheet", "site-footer", "skeleton", "skip-link", "spinner", "stack", "stat-card", "status-badge", "status-pill", "switch", "table", "text-field", "textarea", "theme-toggle", "tile-board", "toc", "toggle"];
 
 declare global {
   interface HTMLElementTagNameMap {
-    "deml-accordion": DemlAccordion;
-    "deml-activity-list": DemlActivityList;
-    "deml-app-footer": DemlAppFooter;
-    "deml-app-header": DemlAppHeader;
     "deml-app-layout": DemlAppLayout;
-    "deml-app-sidebar": DemlAppSidebar;
     "deml-area-chart": DemlAreaChart;
     "deml-article": DemlArticle;
-    "deml-autocomplete": DemlAutocomplete;
-    "deml-avatar": DemlAvatar;
     "deml-badge": DemlBadge;
     "deml-banner": DemlBanner;
     "deml-bar-chart": DemlBarChart;
     "deml-box": DemlBox;
     "deml-brand": DemlBrand;
-    "deml-breadcrumbs": DemlBreadcrumbs;
-    "deml-bulk-toolbar": DemlBulkToolbar;
     "deml-button": DemlButton;
     "deml-button-group": DemlButtonGroup;
     "deml-callout": DemlCallout;
@@ -700,27 +487,20 @@ declare global {
     "deml-checkbox": DemlCheckbox;
     "deml-checkbox-field": DemlCheckboxField;
     "deml-cluster": DemlCluster;
-    "deml-command": DemlCommand;
     "deml-confirm-dialog": DemlConfirmDialog;
     "deml-container": DemlContainer;
     "deml-content-layout": DemlContentLayout;
     "deml-dashboard-grid": DemlDashboardGrid;
     "deml-dialog": DemlDialog;
-    "deml-disclosure": DemlDisclosure;
-    "deml-donut-chart": DemlDonutChart;
     "deml-dropdown": DemlDropdown;
     "deml-empty-state": DemlEmptyState;
     "deml-error-state": DemlErrorState;
     "deml-explore-card": DemlExploreCard;
     "deml-field": DemlField;
-    "deml-file-upload": DemlFileUpload;
-    "deml-flashbar": DemlFlashbar;
     "deml-form-grid": DemlFormGrid;
     "deml-form-panel": DemlFormPanel;
     "deml-form-section": DemlFormSection;
     "deml-grid": DemlGrid;
-    "deml-help-panel": DemlHelpPanel;
-    "deml-hud-panel": DemlHudPanel;
     "deml-icon": DemlIcon;
     "deml-input-date": DemlInputDate;
     "deml-input-email": DemlInputEmail;
@@ -730,15 +510,8 @@ declare global {
     "deml-input-search": DemlInputSearch;
     "deml-input-text": DemlInputText;
     "deml-input-time": DemlInputTime;
-    "deml-kbd": DemlKbd;
     "deml-label": DemlLabel;
-    "deml-loading-overlay": DemlLoadingOverlay;
-    "deml-metric-card": DemlMetricCard;
-    "deml-metric-list": DemlMetricList;
-    "deml-microcard": DemlMicrocard;
-    "deml-microcard-grid": DemlMicrocardGrid;
     "deml-navbar": DemlNavbar;
-    "deml-navigation-menu": DemlNavigationMenu;
     "deml-page-back-link": DemlPageBackLink;
     "deml-page-header": DemlPageHeader;
     "deml-page-section": DemlPageSection;
@@ -746,10 +519,7 @@ declare global {
     "deml-page-template": DemlPageTemplate;
     "deml-pagination": DemlPagination;
     "deml-panel-grid": DemlPanelGrid;
-    "deml-popover": DemlPopover;
-    "deml-profile": DemlProfile;
     "deml-progress": DemlProgress;
-    "deml-property-filter": DemlPropertyFilter;
     "deml-radio-group": DemlRadioGroup;
     "deml-scroll-area": DemlScrollArea;
     "deml-section": DemlSection;
@@ -758,30 +528,22 @@ declare global {
     "deml-select": DemlSelect;
     "deml-separator": DemlSeparator;
     "deml-sheet": DemlSheet;
-    "deml-sidebar-nav": DemlSidebarNav;
     "deml-site-footer": DemlSiteFooter;
     "deml-skeleton": DemlSkeleton;
     "deml-skip-link": DemlSkipLink;
     "deml-spinner": DemlSpinner;
-    "deml-split-panel": DemlSplitPanel;
     "deml-stack": DemlStack;
     "deml-stat-card": DemlStatCard;
     "deml-status-badge": DemlStatusBadge;
-    "deml-status-card": DemlStatusCard;
     "deml-status-pill": DemlStatusPill;
     "deml-switch": DemlSwitch;
     "deml-table": DemlTable;
-    "deml-tabs": DemlTabs;
     "deml-text-field": DemlTextField;
     "deml-textarea": DemlTextarea;
     "deml-theme-toggle": DemlThemeToggle;
     "deml-tile-board": DemlTileBoard;
-    "deml-timeline": DemlTimeline;
-    "deml-toast": DemlToast;
     "deml-toc": DemlToc;
     "deml-toggle": DemlToggle;
-    "deml-tooltip": DemlTooltip;
-    "deml-wizard": DemlWizard;
   }
 }
 

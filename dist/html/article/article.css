@@ -115,7 +115,7 @@
 }
 
 .article-body a:hover {
-  color: var(--color-primary-hover, var(--color-highlight));
+  color: var(--color-primary);
 }
 
 .article-body a:focus-visible {

@@ -2,7 +2,7 @@
 
 .component--button .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 .button,
@@ -11,6 +11,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-2);
   box-sizing: border-box;
   width: auto;
   max-width: 100%;
@@ -41,7 +42,7 @@
   outline-offset: var(--focus-ring-offset);
 }
 
-.button:active:not(:disabled):not(.is-disabled) {
+.button:active:not(:disabled):not(.is-disabled):not(.is-busy) {
   transform: scale(var(--press-scale));
 }
 
@@ -68,6 +69,45 @@
   opacity: var(--opacity-disabled);
 }
 
+/* Busy — calm progress; label yields to spinner */
+.button.is-busy,
+.button[aria-busy='true'] {
+  cursor: progress;
+  pointer-events: none;
+}
+
+.button__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.button.is-busy .button__label,
+.button[aria-busy='true'] .button__label {
+  opacity: 0;
+}
+
+.button__spinner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.button__spinner::before {
+  content: '';
+  box-sizing: border-box;
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+  border: var(--focus-ring-width) solid color-mix(in srgb, currentColor 28%, transparent);
+  border-top-color: currentColor;
+  border-radius: var(--radius-pill);
+  opacity: var(--opacity-muted);
+  animation: deml-spinner var(--duration-skeleton) linear infinite;
+}
+
 /* Primary — inevitable CTA; solid fill, restrained hover */
 .button--primary {
   min-height: var(--hit-target-lg);
@@ -78,14 +118,15 @@
   border-color: var(--color-primary);
 }
 
-.button--primary:hover {
-  color: var(--color-on-primary);
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
-  box-shadow: var(--elevation-1);
+@media (hover: hover) and (pointer: fine) {
+  .button--primary:hover:not(:disabled):not(.is-disabled) {
+    color: var(--color-on-primary);
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+  }
 }
 
-.button--primary:active:not(:disabled):not(.is-disabled) {
+.button--primary:active:not(:disabled):not(.is-disabled):not(.is-busy) {
   background-color: color-mix(in srgb, var(--color-primary) 88%, var(--color-surface));
   box-shadow: none;
 }
@@ -95,33 +136,45 @@
   color: var(--color-text-secondary);
   background-color: transparent;
   background-image: none;
-  border-color: var(--color-border);
+  border-color: color-mix(in srgb, var(--color-border) 88%, transparent);
   font-weight: var(--font-weight-semibold);
+  opacity: 0.92;
 }
 
-.button--secondary:hover {
-  color: var(--color-text);
-  background-color: color-mix(in srgb, var(--color-text) 6%, transparent);
-  border-color: color-mix(in srgb, var(--color-text-secondary) 55%, var(--color-border));
-  box-shadow: none;
+@media (hover: hover) and (pointer: fine) {
+  .button--secondary:hover:not(:disabled):not(.is-disabled) {
+    color: var(--color-text);
+    background-color: color-mix(in srgb, var(--color-text) 6%, transparent);
+    border-color: color-mix(in srgb, var(--color-text-secondary) 55%, var(--color-border));
+    box-shadow: none;
+    opacity: 1;
+  }
 }
 
-.button--secondary:active:not(:disabled):not(.is-disabled) {
+.button--secondary:active:not(:disabled):not(.is-disabled):not(.is-busy) {
   background-color: color-mix(in srgb, var(--color-text) 10%, transparent);
+  opacity: 1;
 }
 
 /* Accent — destructive only; no theatrical gradients */
 .button--accent {
-  color: var(--color-on-accent);
+  color: var(--color-on-primary);
   background-color: var(--color-error);
   background-image: none;
   border-color: var(--color-error);
 }
 
-.button--accent:hover {
-  color: var(--color-on-accent);
-  background-color: var(--color-error-hover);
-  border-color: var(--color-error-hover);
+@media (hover: hover) and (pointer: fine) {
+  .button--accent:hover:not(:disabled):not(.is-disabled) {
+    color: var(--color-on-primary);
+    background-color: var(--color-error-hover);
+    border-color: var(--color-error-hover);
+    box-shadow: none;
+  }
+}
+
+.button--accent:active:not(:disabled):not(.is-disabled):not(.is-busy) {
+  background-color: color-mix(in srgb, var(--color-error) 88%, var(--color-surface));
   box-shadow: none;
 }
 
@@ -145,14 +198,22 @@
   font-weight: var(--font-weight-semibold);
 }
 
+/* Primary pills keep the larger hit — inevitable CTA on phone */
 .button--pill.button--primary {
   border-width: 0;
+  min-height: var(--hit-target-lg);
+  padding-inline: var(--button-pad-inline-lg);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .button,
-  .button:active:not(:disabled):not(.is-disabled) {
+  .button:active:not(:disabled):not(.is-disabled):not(.is-busy) {
     transition: none;
     transform: none;
+  }
+
+  .button__spinner::before {
+    animation: none;
+    opacity: 0.72;
   }
 }

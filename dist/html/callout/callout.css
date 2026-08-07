@@ -28,8 +28,9 @@
   box-shadow: var(--module-elevation);
 }
 
-.callout[data-tone='warning'] {
-  --module-accent: var(--color-highlight);
+.callout[data-tone='warning'],
+.callout[data-tone='info'] {
+  --module-accent: var(--color-primary);
 }
 
 .callout[data-tone='error'],

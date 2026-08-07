@@ -2,7 +2,7 @@
 
 .component--navbar .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 /* Navbar — full-bleed fixed top bar; mobile-first */
@@ -85,13 +85,16 @@ deml-navbar {
   display: none !important;
 }
 
-.site-navbar-icon:hover {
-  color: var(--navbar-icon-color-hover, var(--navbar-accent-hover));
-  background-color: color-mix(in srgb, var(--navbar-accent) 10%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .site-navbar-icon:hover {
+    color: var(--navbar-icon-color-hover, var(--navbar-accent-hover));
+    background-color: color-mix(in srgb, var(--navbar-accent) 10%, transparent);
+  }
 }
 
 .site-navbar-icon:active {
   transform: scale(var(--press-scale));
+  opacity: var(--press-opacity);
 }
 
 .site-navbar-icon:focus-visible {
@@ -125,13 +128,16 @@ deml-navbar {
   transition: var(--motion-ui);
 }
 
-.site-navbar-menu-toggle:hover {
-  color: var(--navbar-accent-hover);
-  background-color: color-mix(in srgb, var(--navbar-accent) 10%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .site-navbar-menu-toggle:hover {
+    color: var(--navbar-accent-hover);
+    background-color: color-mix(in srgb, var(--navbar-accent) 10%, transparent);
+  }
 }
 
 .site-navbar-menu-toggle:active {
   transform: scale(var(--press-scale));
+  opacity: var(--press-opacity);
 }
 
 .site-navbar-menu-toggle:focus-visible {
@@ -140,13 +146,28 @@ deml-navbar {
 }
 
 .site-navbar-panel {
-  display: none;
+  display: grid;
   grid-area: panel;
-  flex-direction: column;
-  gap: var(--navbar-inset);
+  grid-template-rows: 0fr;
   width: 100%;
   box-sizing: border-box;
   background-color: var(--navbar-bg);
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    grid-template-rows var(--duration-normal) var(--ease-enter),
+    opacity var(--duration-fast) var(--ease-out),
+    visibility var(--duration-fast) var(--ease-out);
+}
+
+.site-navbar-panel__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--navbar-inset);
+  min-height: 0;
+  overflow: hidden;
 }
 
 .main-navigation {
@@ -191,20 +212,24 @@ deml-navbar {
   transition: var(--motion-ui);
 }
 
-.main-navigation ul li a:hover {
-  color: var(--navbar-fg);
-  background-color: color-mix(in srgb, var(--color-highlight) 8%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .main-navigation ul li a:hover {
+    color: var(--navbar-fg);
+    background-color: color-mix(in srgb, var(--color-text) 6%, transparent);
+  }
 }
 
 .main-navigation ul li a:active {
   transform: scale(var(--press-scale));
+  opacity: var(--press-opacity);
 }
 
 .main-navigation ul li a.is-active {
   color: var(--navbar-accent);
   text-decoration: none;
-  background-color: color-mix(in srgb, var(--color-highlight) 12%, transparent);
-  box-shadow: inset 0 0 0 var(--border-width) color-mix(in srgb, var(--navbar-accent) 35%, transparent);
+  background-color: color-mix(in srgb, var(--color-primary) 14%, transparent);
+  box-shadow: inset 0 0 0 var(--border-width)
+    color-mix(in srgb, var(--color-primary) 40%, transparent);
 }
 
 .main-navigation ul li a:focus-visible {
@@ -251,12 +276,21 @@ app-button-group,
 }
 
 .site-navbar.is-menu-open .site-navbar-panel {
-  display: flex;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background-color: var(--navbar-bg);
+}
+
+.site-navbar.is-menu-open .site-navbar-panel__inner {
+  gap: var(--space-3);
   padding-top: var(--space-2);
   padding-bottom: var(--space-2);
-  background-color: var(--navbar-bg);
-  /* Sheet-like stack — full-width actions, calm gap */
-  gap: var(--space-3);
+  max-height: min(70dvh, var(--content-width-sm));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Full-width actions when stacked in the mobile menu */
@@ -281,6 +315,19 @@ app-button-group,
 
   .site-navbar-panel {
     display: contents;
+    grid-template-rows: none;
+    opacity: 1;
+    overflow: visible;
+    visibility: visible;
+    pointer-events: auto;
+    transition: none;
+  }
+
+  .site-navbar-panel__inner {
+    display: contents;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
   }
 
   .main-navigation {
@@ -334,7 +381,8 @@ app-button-group,
   .site-navbar-icon,
   .site-navbar-icon:hover,
   .site-navbar-menu-toggle,
-  .main-navigation ul li a {
+  .main-navigation ul li a,
+  .site-navbar-panel {
     transition: none;
     transform: none;
   }

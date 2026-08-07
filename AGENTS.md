@@ -11,9 +11,9 @@ consumed by the deml Angular app and Django static chrome.
 
 | Path | Role |
 |------|------|
-| `styles/tokens.css` | Warm-ash color, space, type, chart, tile, navbar tokens |
-| `styles/base.css` | Page chrome, type recipes (Geist), layout utilities, no-overflow scaffolding |
-| `components/<name>/` | HTML + CSS source of truth |
+| `styles/tokens.css` | **SoT** — color · type · space · radius · elevation · motion · opacity |
+| `styles/base.css` | Type recipes (mark/body/title/display), module surface, page chrome |
+| `components/<name>/` | Primitives only — compose from tokens; no one-off values |
 | `src/angular/` | Markup wrappers + headless primitives |
 | `src/web-components/` | Custom element registration |
 | Storybook | Local `:6006` · production [ui.deml.app](https://ui.deml.app) |
@@ -29,8 +29,8 @@ Consumer app: [`deml`](https://github.com/dataengineeringformachinelearning/deml
    Muted `#C6C0B7`/`#4A453F`. **No** cold seven-color swap that fights this system.
 3. **Geist only** — display weight 800 + tight tracking; marks at 0.24em caps; intro
    at 0.08em. Do not ship Syne/Fraunces mixes.
-4. **8px grid** — spacing and tile rhythm via `--grid`, `--tile-gap`, `--tile-row-unit`,
-   equal `--module-pad` / `--module-pad-lg` on elevated modules.
+4. **8px grid** — core space scale half→8 + layout steps; equal `--module-pad` /
+   `--module-pad-lg`. Prefer `--space-1`…`--space-4` for UI rhythm. No invented px/rem.
 5. **Fluid equal cells** — `grid-auto-rows: minmax(var(--tile-row-*), auto|1fr)` so peer
    tiles stretch with no ragged gaps; never squash with fixed-only rows.
 6. **Charts (LOCKED)** — `--chart-height-spark: 140px` /
@@ -55,6 +55,26 @@ npm run build
 ```
 
 CI (`.github/workflows/ci.yml`) runs `check:nfts` before sync/build. **No escape hatches.**
+
+## Token roles (use these names)
+
+| Role | Tokens |
+|------|--------|
+| Color | `--color-bg/surface/card/text/primary/success/error` (+ card-* / *-hover / *-ink) |
+| Type | `--font-size-mark/body/title/display` · weights · `--tracking-mark/intro/display` |
+| Space | `--grid` · `--space-half`…`--space-8` · layout `--space-12/16/28/36` |
+| Radius | `--radius-none` · `--radius-pill` |
+| Elevation | `--elevation-0/1/2` |
+| Motion | `--duration-fast/normal/slow` · `--ease-out/exit` · `--press-scale` |
+| Opacity | `--opacity-disabled/muted/subtle/overlay` · `--press-opacity` |
+
+Aliases (`--space-md`, `--font-size-sm`, …) map to core only — prefer core names in new CSS.
+
+## Product primitives (keep thin)
+
+Prefer composing: **banner · button · button-group · text-field · checkbox · form-panel ·
+explore-card · navbar · page-section · sheet · empty/error-state · skeleton · theme-toggle ·
+site-footer**. Add new primitives here first; never invent app-local DS chrome in deml.
 
 ## When deml needs a new primitive
 

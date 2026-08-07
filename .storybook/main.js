@@ -46,7 +46,6 @@ const config = {
   addons: [
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
-    "@storybook/addon-links",
     "@storybook/addon-themes",
   ],
   framework: {

@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<label class=\"text-field\"><span class=\"text-field__label\">Name</span><input class=\"text-field__input\" type=\"text\" /></label>";
+const DEML_TEMPLATE = "<label class=\"text-field\"><span class=\"text-field__label\">Name</span><input class=\"text-field__control\" type=\"text\" /></label>";
 
 @Component({
   selector: "deml-text-field",

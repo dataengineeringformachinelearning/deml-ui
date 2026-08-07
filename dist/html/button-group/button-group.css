@@ -2,7 +2,7 @@
 
 .component--button-group .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 /* Button group — host or static .button-group shell (mobile-first) */
@@ -96,6 +96,19 @@ deml-button-group[data-layout='column'],
 app-button-group > *,
 deml-button-group > *,
 :host > * {
+  flex: 0 0 auto;
+}
+
+/* Primary fills the first beat on phone stacks; secondary recedes */
+.button-group > .button--primary,
+app-button-group .button--primary,
+deml-button-group .button--primary {
+  flex: 1 1 auto;
+}
+
+.button-group > .button--secondary,
+app-button-group .button--secondary,
+deml-button-group .button--secondary {
   flex: 0 0 auto;
 }
 

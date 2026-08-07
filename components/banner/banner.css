@@ -2,7 +2,7 @@
 
 .component--banner .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 /* Banner — full-bleed page intro; mobile-first */
@@ -52,20 +52,31 @@
 app-banner[data-variant='hero'] .banner,
 deml-banner[data-variant='hero'] .banner {
   gap: var(--space-4);
-  /* Phone-first: brand presence without forcing half-viewport dead space */
-  min-height: max(var(--space-36), 42svh);
-  padding-block: var(--space-7);
+  /* Phone-first: presence without lonely empty space on short viewports */
+  min-height: max(var(--space-28), 36svh);
+  padding-block: var(--space-6);
   padding-inline-start: max(var(--space-3), var(--safe-left));
   padding-inline-end: max(var(--space-3), var(--safe-right));
+}
+
+@media (min-height: 720px) {
+  .banner--hero,
+  .banner[data-variant='hero'],
+  app-banner[data-variant='hero'] .banner,
+  deml-banner[data-variant='hero'] .banner {
+    min-height: max(var(--space-36), 42svh);
+    padding-block: var(--space-7);
+  }
 }
 
 .banner .preheader {
   margin: 0;
   font-family: var(--font-mark);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-mark);
   font-weight: var(--font-weight-mark);
   letter-spacing: var(--tracking-mark);
-  color: var(--color-highlight);
+  color: var(--color-text-secondary);
+  animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
 }
 
 .banner .banner-heading {
@@ -77,6 +88,8 @@ deml-banner[data-variant='hero'] .banner {
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
   color: var(--color-text);
+  animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
+  animation-delay: var(--stagger-step);
 }
 
 .banner .lede {
@@ -85,8 +98,10 @@ deml-banner[data-variant='hero'] .banner {
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-relaxed);
+  line-height: var(--leading-body);
   color: var(--color-text-secondary);
+  animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
+  animation-delay: calc(var(--stagger-step) * 2);
 }
 
 .banner-actions:empty {
@@ -97,6 +112,8 @@ deml-banner[data-variant='hero'] .banner {
   width: 100%;
   max-width: calc(var(--grid) * 40);
   margin-block-start: var(--space-2);
+  animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
+  animation-delay: calc(var(--stagger-step) * 3);
 }
 
 /* Banner CTAs — stack full-width on phone; row on desktop */
@@ -248,5 +265,12 @@ deml-banner[data-variant='hero'] .banner-actions {
 @media (prefers-reduced-motion: reduce) {
   .banner {
     scroll-margin-block: 0;
+  }
+
+  .banner .preheader,
+  .banner .banner-heading,
+  .banner .lede,
+  .banner-actions {
+    animation: none;
   }
 }

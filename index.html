@@ -8,15 +8,13 @@
   <title>deml-ui — Component reference</title>
   <base href="./">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>D</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/@fontsource-variable/geist/wght.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="components/components.css">
 </head>
 <body>
   <div data-include="components/skip-link/skip-link.html"></div>
-  <div data-include="components/app-header/app-header.html"></div>
+  <div data-include="components/navbar/navbar.html"></div>
 
   <main id="main" class="page-shell">
     <div class="page-shell__inner">
@@ -37,7 +35,7 @@
         </header>
         <div data-include="components/app-layout/app-layout.html"></div>
         <div data-include="components/page-header/page-header.html"></div>
-        <div data-include="components/sidebar-nav/sidebar-nav.html"></div>
+        <div data-include="components/toc/toc.html"></div>
       </section>
 
       <section class="section">
@@ -46,7 +44,7 @@
           <p class="section__description">Surfaces you compose into dashboards.</p>
         </header>
         <div class="panel-grid">
-          <div data-include="components/metric-card/metric-card.html"></div>
+          <div data-include="components/stat-card/stat-card.html"></div>
           <div data-include="components/card/card.html"></div>
         </div>
         <div data-include="components/table/table.html"></div>
@@ -60,13 +58,13 @@
         <div data-include="components/field/field.html"></div>
         <div data-include="components/button/button.html"></div>
         <div data-include="components/callout/callout.html"></div>
-        <div data-include="components/tabs/tabs.html"></div>
+        <div data-include="components/sheet/sheet.html"></div>
         <div data-include="components/dialog/dialog.html"></div>
       </section>
     </div>
   </main>
 
-  <div data-include="components/app-footer/app-footer.html"></div>
+  <div data-include="components/site-footer/site-footer.html"></div>
   <script type="module" src="components/load.js"></script>
 </body>
 </html>

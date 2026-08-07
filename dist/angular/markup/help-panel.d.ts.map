@@ -1,1 +1,0 @@
-{"version":3,"file":"help-panel.d.ts","sourceRoot":"","sources":["../../../src/angular/markup/help-panel.ts"],"names":[],"mappings":"AACA,OAAO,EAEL,UAAU,EACV,MAAM,EAEP,MAAM,eAAe,CAAC;;AAIvB,qBAMa,aAAc,YAAW,MAAM;IAC9B,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU,CAAC,WAAW,CAAC;IAE1D,QAAQ,IAAI,IAAI;yCAHL,aAAa;2CAAb,aAAa;CASzB"}

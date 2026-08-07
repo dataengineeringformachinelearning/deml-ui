@@ -1,5 +1,6 @@
 import { addons } from "storybook/manager-api";
 import { create } from "storybook/theming/create";
+import "@fontsource-variable/geist/wght.css";
 
 /** Storybook chrome — new-from-the-start warm ash (Geist, sharp modules) */
 const demlTheme = create({
@@ -32,7 +33,7 @@ const demlTheme = create({
   inputBorderRadius: 0,
 
   fontBase:
-    '"Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    '"Geist Variable", "Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
   fontCode: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
 });
 

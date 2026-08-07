@@ -2,7 +2,7 @@
 
 .component--form-panel .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 app-form-panel,
@@ -22,12 +22,13 @@ deml-form-panel,
 .form-panel {
   box-sizing: border-box;
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
   width: 100%;
-  height: 100%;
-  min-height: 100%;
+  height: auto;
+  min-height: 0;
+  max-width: 100%;
   margin: 0;
   padding: var(--module-pad);
   color: var(--module-fg);
@@ -61,7 +62,7 @@ deml-form-panel,
   letter-spacing: var(--tracking-mark);
   line-height: var(--leading-ui);
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--module-fg-muted);
 }
 
 .form-panel__title {
@@ -103,9 +104,18 @@ deml-form-panel,
   padding: 0;
 }
 
+.form-panel__table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
 .form-panel__table,
 .form-panel table {
   width: 100%;
+  min-width: min(100%, 36rem);
   margin: 0;
   border-collapse: collapse;
   font-family: var(--font-body);
@@ -159,7 +169,7 @@ deml-form-panel,
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-relaxed);
+  line-height: var(--leading-body);
   color: var(--module-fg-muted);
   animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
 }
@@ -193,6 +203,14 @@ deml-form-panel,
   padding: var(--space-3);
   border: var(--border-width) solid var(--module-border);
   background-color: var(--control-fill);
+  transition: var(--motion-ui);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .form-panel__item:hover {
+    border-color: var(--control-hover-border);
+    background-color: color-mix(in srgb, var(--control-fill) 92%, var(--color-text));
+  }
 }
 
 .form-panel__item-header {
@@ -208,7 +226,7 @@ deml-form-panel,
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-snug);
+  line-height: var(--leading-ui);
   color: var(--module-fg);
 }
 
@@ -235,7 +253,7 @@ deml-form-panel,
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-relaxed);
+  line-height: var(--leading-body);
   color: var(--module-fg-muted);
 }
 
@@ -267,8 +285,11 @@ deml-form-panel,
   .form-panel,
   .form-panel__status,
   .form-panel__empty,
-  .form-panel__error {
+  .form-panel__error,
+  .form-panel__item {
     animation: none;
+    transition: none;
+    transform: none;
   }
 }
 
@@ -311,12 +332,38 @@ deml-form-panel,
   -webkit-tap-highlight-color: transparent;
 }
 
-.form-panel__footer a:hover {
-  color: var(--color-primary-hover);
+@media (hover: hover) and (pointer: fine) {
+  .form-panel__footer a:hover {
+    color: var(--color-primary-hover);
+  }
+}
+
+.form-panel__footer a:active {
+  opacity: var(--press-opacity);
+}
+
+/* Phone: side-by-side contextual actions — still ≥44pt each */
+.form-panel__item-actions .button-group[data-layout='row'],
+.form-panel__item-actions app-button-group[data-layout='row'],
+.form-panel__item-actions deml-button-group[data-layout='row'] {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.form-panel__item-actions .button-group[data-layout='row'] > .button,
+.form-panel__item-actions app-button-group[data-layout='row'] .button,
+.form-panel__item-actions deml-button-group[data-layout='row'] .button {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
 }
 
 @media screen and (min-width: 800px) {
   .form-panel {
+    flex: 1 1 auto;
+    gap: var(--space-4);
     padding: var(--module-pad-lg);
   }
 
@@ -334,5 +381,11 @@ deml-form-panel,
 
   .form-panel__item-actions .button {
     width: auto;
+  }
+
+  .form-panel__item-actions .button-group[data-layout='row'] > .button,
+  .form-panel__item-actions app-button-group[data-layout='row'] .button,
+  .form-panel__item-actions deml-button-group[data-layout='row'] .button {
+    flex: 0 0 auto;
   }
 }

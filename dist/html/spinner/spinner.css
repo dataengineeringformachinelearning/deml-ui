@@ -20,7 +20,7 @@
   border-top-color: var(--color-primary);
   border-radius: var(--radius-pill);
   opacity: var(--opacity-muted);
-  animation: deml-spinner calc(var(--duration-slow) * 2.5) linear infinite;
+  animation: deml-spinner var(--duration-skeleton) linear infinite;
 }
 
 .spinner[data-size='sm'] .spinner__visual,

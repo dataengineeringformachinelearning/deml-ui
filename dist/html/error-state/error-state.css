@@ -2,7 +2,7 @@
 
 .component--error-state .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 .error-state {
@@ -44,16 +44,61 @@
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
   letter-spacing: var(--tracking-intro);
-  line-height: var(--leading-relaxed);
+  line-height: var(--leading-body);
   color: var(--module-fg-muted);
+}
+
+.error-state__eyebrow {
+  margin: 0;
+  font-family: var(--font-mark);
+  font-size: var(--font-size-mark);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
+  text-transform: uppercase;
+  color: var(--module-fg-muted);
+}
+
+.error-state__actions:empty {
+  display: none;
 }
 
 .error-state__actions {
   margin-block-start: var(--space-2);
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-2);
+  width: 100%;
+  max-width: 28ch;
+}
+
+.error-state__actions .button {
+  width: 100%;
+  min-height: var(--hit-target-lg);
+}
+
+.error-state__actions .button--secondary {
+  order: 2;
+}
+
+.error-state__actions .button--primary,
+.error-state__actions .button--accent {
+  order: 1;
+}
+
+@media screen and (min-width: 800px) {
+  .error-state__actions {
+    flex-direction: row;
+    max-width: none;
+    width: auto;
+  }
+
+  .error-state__actions .button {
+    width: auto;
+    min-height: var(--hit-target);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

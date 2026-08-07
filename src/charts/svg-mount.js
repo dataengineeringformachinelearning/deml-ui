@@ -88,7 +88,7 @@ function smoothLinePath(nodes) {
 
 function layout(el, series, domain) {
   const frame = el.closest(
-    ".area-chart-frame, .bar-chart-frame, .chart-figure__plot, .donut-chart-frame",
+    ".area-chart-frame, .bar-chart-frame, .chart-figure__plot",
   );
   const variant =
     frame?.getAttribute("data-variant") ||
@@ -265,69 +265,6 @@ function buildBarSvg(el, domain) {
   };
 }
 
-function buildDonutSvg(el) {
-  const segments = parseJson(el, "data-segments", []);
-  const list = Array.isArray(segments) ? segments : [];
-  const total = list.reduce((s, seg) => s + (Number(seg.value) || 0), 0) || 1;
-  const size = 160;
-  const cx = size / 2;
-  const cy = size / 2;
-  const r = 58;
-  const inner = 34;
-  let angle = -Math.PI / 2;
-  const tones = ["primary", "gold", "red", "muted"];
-
-  const slices = list
-    .map((seg, i) => {
-      const value = Number(seg.value) || 0;
-      const sweep = (value / total) * Math.PI * 2;
-      const a0 = angle;
-      const a1 = angle + sweep;
-      angle = a1;
-      const x0 = cx + r * Math.cos(a0);
-      const y0 = cy + r * Math.sin(a0);
-      const x1 = cx + r * Math.cos(a1);
-      const y1 = cy + r * Math.sin(a1);
-      const large = sweep > Math.PI ? 1 : 0;
-      const xi0 = cx + inner * Math.cos(a1);
-      const yi0 = cy + inner * Math.sin(a1);
-      const xi1 = cx + inner * Math.cos(a0);
-      const yi1 = cy + inner * Math.sin(a0);
-      const d = [
-        `M${x0.toFixed(2)},${y0.toFixed(2)}`,
-        `A${r},${r} 0 ${large} 1 ${x1.toFixed(2)},${y1.toFixed(2)}`,
-        `L${xi0.toFixed(2)},${yi0.toFixed(2)}`,
-        `A${inner},${inner} 0 ${large} 0 ${xi1.toFixed(2)},${yi1.toFixed(2)}`,
-        "Z",
-      ].join(" ");
-      const tone = seg.tone || tones[i % tones.length];
-      return `<path class="donut-chart-slice" data-tone="${escapeAttr(tone)}" d="${d}" data-label="${escapeAttr(seg.label || "")}" data-value="${value}" />`;
-    })
-    .join("");
-
-  const center = el.getAttribute("data-center") || String(Math.round(total));
-  const legend = list
-    .map((seg, i) => {
-      const tone = seg.tone || tones[i % tones.length];
-      return `<span class="donut-chart-legend-item"><span class="donut-chart-swatch" data-tone="${escapeAttr(tone)}"></span>${escapeAttr(seg.label || "")}</span>`;
-    })
-    .join("");
-
-  return {
-    html: `
-    <div class="donut-chart-plot">
-      <svg class="donut-chart-svg" viewBox="0 0 ${size} ${size}" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-        ${slices}
-        <circle class="donut-chart-hole" cx="${cx}" cy="${cy}" r="${inner}" />
-        <text class="donut-chart-total" x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central">${escapeAttr(center)}</text>
-      </svg>
-      <div class="donut-chart-legend">${legend}</div>
-    </div>
-    <div class="chart-tooltip" hidden role="tooltip"></div>
-  `,
-  };
-}
-
 function wireTooltip(host) {
   const tip = host.querySelector(".chart-tooltip");
   const cursor = host.querySelector(".area-chart-cursor");
@@ -351,24 +288,21 @@ function wireTooltip(host) {
     cursor?.setAttribute("hidden", "");
   };
 
-  host
-    .querySelectorAll(".area-chart-node, .bar-chart-col, .donut-chart-slice")
-    .forEach((node) => {
-      node.addEventListener("pointerenter", (e) => {
-        const label = node.getAttribute("data-label") || "";
-        const value = node.getAttribute("data-value") || "";
-        const cx = node.getAttribute("cx");
-        show(label, value, e.clientX, e.clientY, cx != null ? Number(cx) : null);
-      });
-      node.addEventListener("pointerleave", hide);
+  host.querySelectorAll(".area-chart-node, .bar-chart-col").forEach((node) => {
+    node.addEventListener("pointerenter", (e) => {
+      const label = node.getAttribute("data-label") || "";
+      const value = node.getAttribute("data-value") || "";
+      const cx = node.getAttribute("cx");
+      show(label, value, e.clientX, e.clientY, cx != null ? Number(cx) : null);
     });
+    node.addEventListener("pointerleave", hide);
+  });
 }
 
 function mountOne(el, domain) {
   const kind = (el.getAttribute("data-chart") || "area").toLowerCase();
   let built;
   if (kind === "bar") built = buildBarSvg(el, domain);
-  else if (kind === "donut") built = buildDonutSvg(el);
   else if (kind === "line")
     built = buildAreaSvg(el, domain, { fill: false, points: true });
   else built = buildAreaSvg(el, domain, { fill: true, points: true });
@@ -386,9 +320,7 @@ export function initSvgCharts(root = document) {
 
   if (boards.length) {
     for (const board of boards) {
-      const charts = [
-        ...board.querySelectorAll('[data-chart]:not([data-chart="donut"])'),
-      ];
+      const charts = [...board.querySelectorAll("[data-chart]")];
       const seriesList = charts.map(seriesFrom);
       const pinned = board.getAttribute("data-chart-ymax");
       let domain = computeSharedDomain(seriesList);
@@ -408,9 +340,7 @@ export function initSvgCharts(root = document) {
 
   const mounts = [...root.querySelectorAll("[data-chart]")];
   if (!mounts.length) return;
-  const seriesList = mounts
-    .filter((el) => el.getAttribute("data-chart") !== "donut")
-    .map(seriesFrom);
+  const seriesList = mounts.map(seriesFrom);
   const domain = computeSharedDomain(
     seriesList.length ? seriesList : [[{ value: 1 }]],
   );

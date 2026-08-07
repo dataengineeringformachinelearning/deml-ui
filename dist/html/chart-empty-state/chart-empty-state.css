@@ -87,11 +87,11 @@ deml-chart-empty-state,
 .chart-empty-state__description {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-mark);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-intro);
   color: var(--color-plot-muted);
-  max-width: 18rem;
+  max-width: var(--content-width-sm);
 }
 
 @keyframes chart-empty-shimmer {

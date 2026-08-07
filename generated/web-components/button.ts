@@ -11,7 +11,11 @@ export class DemlButton extends HTMLElement {
     <button type="button" class="button button--secondary">Secondary</button>
     <button type="button" class="button button--accent">Accent</button>
     <button type="button" class="button button--primary button--pill">Pill</button>
-    <button type="button" class="button button--primary" disabled>Disabled</button>`;
+    <button type="button" class="button button--primary" disabled>Disabled</button>
+    <button type="button" class="button button--primary is-busy" aria-busy="true">
+      <span class="button__label">Saving</span>
+      <span class="button__spinner" aria-hidden="true"></span>
+    </button>`;
     }
   }
 }

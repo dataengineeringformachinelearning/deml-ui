@@ -2,7 +2,7 @@
 
 .component--theme-toggle .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--space-3);
 }
 
 .theme-toggle {
@@ -28,15 +28,18 @@
   transition: var(--motion-ui);
 }
 
-.theme-toggle:hover {
-  color: var(--color-text);
-  background-color: color-mix(in srgb, var(--color-text) 8%, var(--color-surface));
-  border-color: color-mix(in srgb, var(--color-text-secondary) 50%, var(--color-border));
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover {
+    color: var(--color-text);
+    background-color: color-mix(in srgb, var(--color-text) 8%, var(--color-surface));
+    border-color: color-mix(in srgb, var(--color-text-secondary) 50%, var(--color-border));
+  }
 }
 
 .theme-toggle:active {
   transform: scale(var(--press-scale));
-  color: var(--color-highlight);
+  opacity: var(--press-opacity);
+  color: var(--color-text);
 }
 
 .theme-toggle:focus-visible {
