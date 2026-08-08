@@ -56,8 +56,14 @@
   color: var(--color-card-text-secondary);
 }
 
-.page-body.article-body,
-.page-body--prose.article-body {
+/*
+  Full-page prose shells center with padding on .page-body--prose.
+  Keep measure there; never use this combo inside app-layout book columns.
+*/
+.page > .page-body.article-body,
+.page > .page-body--prose.article-body,
+.page--prose > .page-body.article-body,
+.page--prose > .page-body--prose.article-body {
   max-width: none;
 }
 

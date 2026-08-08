@@ -45,7 +45,7 @@
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
 }
 
 .toc__group:first-of-type .toc__group-title {
@@ -102,7 +102,7 @@
 }
 
 .toc__item:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline: var(--focus-ring-width) solid var(--color-focus-on-card);
   outline-offset: var(--focus-ring-offset);
 }
 

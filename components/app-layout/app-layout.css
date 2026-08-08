@@ -60,6 +60,36 @@
   box-sizing: border-box;
 }
 
+/* Book chapters: ash ground + cream reading column (not a full-bleed dark page shell) */
+.app-layout--book .app-layout__nav {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.app-layout--book .app-layout__main {
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+
+.app-layout--book .app-layout__content {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+  width: 100%;
+  max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
+  margin-inline: 0;
+  padding: var(--space-3) 0 var(--space-8);
+}
+
+.app-layout--book .app-layout__content > .page-header,
+.app-layout--book .app-layout__content > .article.module,
+.app-layout--book .app-layout__content > .pagination {
+  width: 100%;
+  max-width: 100%;
+}
+
 /* Collapsible chapter TOC on phone — details/summary */
 .book-toc {
   margin: 0;
@@ -149,6 +179,10 @@
 
   .app-layout__content {
     padding: var(--space-5) var(--space-5) var(--space-8);
+  }
+
+  .app-layout--book .app-layout__content {
+    padding: var(--space-4) 0 var(--space-8);
   }
 
   /* Force TOC open on larger screens; hide the summary chrome */

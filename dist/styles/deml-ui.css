@@ -1053,6 +1053,36 @@ summary {
   box-sizing: border-box;
 }
 
+/* Book chapters: ash ground + cream reading column (not a full-bleed dark page shell) */
+.app-layout--book .app-layout__nav {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.app-layout--book .app-layout__main {
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+
+.app-layout--book .app-layout__content {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+  width: 100%;
+  max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
+  margin-inline: 0;
+  padding: var(--space-3) 0 var(--space-8);
+}
+
+.app-layout--book .app-layout__content > .page-header,
+.app-layout--book .app-layout__content > .article.module,
+.app-layout--book .app-layout__content > .pagination {
+  width: 100%;
+  max-width: 100%;
+}
+
 /* Collapsible chapter TOC on phone — details/summary */
 .book-toc {
   margin: 0;
@@ -1142,6 +1172,10 @@ summary {
 
   .app-layout__content {
     padding: var(--space-5) var(--space-5) var(--space-8);
+  }
+
+  .app-layout--book .app-layout__content {
+    padding: var(--space-4) 0 var(--space-8);
   }
 
   /* Force TOC open on larger screens; hide the summary chrome */
@@ -2171,7 +2205,7 @@ deml-site-footer,
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-card-text-secondary);
 }
 
 .toc__group:first-of-type .toc__group-title {
@@ -2228,7 +2262,7 @@ deml-site-footer,
 }
 
 .toc__item:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline: var(--focus-ring-width) solid var(--color-focus-on-card);
   outline-offset: var(--focus-ring-offset);
 }
 
@@ -7700,8 +7734,14 @@ a.explore-card:focus-visible,
   color: var(--color-card-text-secondary);
 }
 
-.page-body.article-body,
-.page-body--prose.article-body {
+/*
+  Full-page prose shells center with padding on .page-body--prose.
+  Keep measure there; never use this combo inside app-layout book columns.
+*/
+.page > .page-body.article-body,
+.page > .page-body--prose.article-body,
+.page--prose > .page-body.article-body,
+.page--prose > .page-body--prose.article-body {
   max-width: none;
 }
 
