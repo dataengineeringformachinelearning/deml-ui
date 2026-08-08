@@ -59,6 +59,7 @@ import { DemlSectionTemplate } from "./section-template";
 import { DemlSelect } from "./select";
 import { DemlSeparator } from "./separator";
 import { DemlSheet } from "./sheet";
+import { DemlSidebarNav } from "./sidebar-nav";
 import { DemlSiteFooter } from "./site-footer";
 import { DemlSkeleton } from "./skeleton";
 import { DemlSkipLink } from "./skip-link";
@@ -138,6 +139,7 @@ export const DEML_MARKUP_COMPONENTS = [
   DemlSelect,
   DemlSeparator,
   DemlSheet,
+  DemlSidebarNav,
   DemlSiteFooter,
   DemlSkeleton,
   DemlSkipLink,

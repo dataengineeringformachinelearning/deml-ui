@@ -1053,34 +1053,44 @@ summary {
   box-sizing: border-box;
 }
 
-/* Book chapters: ash ground + cream reading column (not a full-bleed dark page shell) */
+/* Book chapters: ash chapter rail + staged reading column */
 .app-layout--book .app-layout__nav {
-  background: transparent;
-  border: 0;
-  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
 }
 
 .app-layout--book .app-layout__main {
-  background: transparent;
-  border: 0;
-  overflow: visible;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  overflow: auto;
 }
 
 .app-layout--book .app-layout__content {
   display: grid;
-  gap: var(--space-4);
-  justify-items: start;
+  gap: var(--space-6);
+  justify-items: center;
   width: 100%;
-  max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
+  max-width: none;
   margin-inline: 0;
-  padding: var(--space-3) 0 var(--space-8);
+  padding: var(--space-5) var(--space-4) var(--space-8);
 }
 
 .app-layout--book .app-layout__content > .page-header,
 .app-layout--book .app-layout__content > .article.module,
+.app-layout--book .app-layout__content > .card,
 .app-layout--book .app-layout__content > .pagination {
   width: 100%;
-  max-width: 100%;
+  max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
+}
+
+.app-layout--book .app-layout__content > .page-header {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.app-layout--book .app-layout__content > .card {
+  min-height: calc(var(--space-36) + var(--space-16));
 }
 
 /* Collapsible chapter TOC on phone — details/summary */
@@ -1149,6 +1159,12 @@ summary {
     padding-bottom: max(var(--space-4), var(--safe-bottom));
   }
 
+  /* Book needs a wider chapter rail so titles do not wrap into a scrunched stack */
+  .app-layout--book .app-layout__body {
+    grid-template-columns: minmax(var(--space-36), var(--space-52)) minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+
   .app-layout--embedded .app-layout__nav {
     position: sticky;
     top: calc(
@@ -1175,7 +1191,8 @@ summary {
   }
 
   .app-layout--book .app-layout__content {
-    padding: var(--space-4) 0 var(--space-8);
+    gap: var(--space-8);
+    padding: var(--space-8) var(--space-6) var(--space-12);
   }
 
   /* Force TOC open on larger screens; hide the summary chrome */
@@ -1184,6 +1201,7 @@ summary {
   }
 
   .book-toc .toc,
+  .book-toc .sidebar-nav,
   .book-toc > nav {
     display: grid !important;
   }
@@ -2286,6 +2304,125 @@ deml-site-footer,
   .toc__item {
     transition: none;
   }
+}
+
+/* inlined: components/sidebar-nav/sidebar-nav.css */
+/* Component: sidebar-nav — chapter / tools rail on ash surface (warm ash NFTS) */
+
+.component--sidebar-nav .demo {
+  display: grid;
+  gap: var(--space-3);
+  max-width: calc(var(--grid) * 44);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav__header {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.sidebar-nav__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-highlight);
+}
+
+.sidebar-nav__group {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.sidebar-nav__group-title {
+  margin: 0;
+  padding: var(--space-1) var(--space-2) 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.sidebar-nav__list {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav a,
+.sidebar-nav__link {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: var(--hit-target);
+  padding: var(--space-2);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-none);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-intro);
+  line-height: var(--leading-body);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidebar-nav__link--numbered {
+  display: grid;
+  grid-template-columns: var(--space-5) minmax(0, 1fr);
+  column-gap: var(--space-2);
+  align-items: start;
+  width: 100%;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a[aria-current='page'],
+.sidebar-nav__link:hover,
+.sidebar-nav__link[aria-current='page'] {
+  color: var(--color-text);
+  border-color: var(--color-border);
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
+}
+
+.sidebar-nav a:focus-visible,
+.sidebar-nav__link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.sidebar-nav__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(var(--font-size-sm) * var(--leading-body));
+  font-family: var(--font-mark);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-mark);
+  letter-spacing: var(--tracking-mark);
+  color: var(--color-primary);
+}
+
+.sidebar-nav__label {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 
@@ -7775,7 +7912,8 @@ a.explore-card:focus-visible,
 .article.module .article-body h3,
 .article.module .article-body h4,
 .article.module .article-body h5,
-.article.module .article-body h6 {
+.article.module .article-body h6,
+.article.module .article-body .card-heading {
   color: var(--color-card-text);
 }
 

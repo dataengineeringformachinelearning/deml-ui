@@ -60,6 +60,7 @@ import { defineSectionTemplate } from "./section-template.js";
 import { defineSelect } from "./select.js";
 import { defineSeparator } from "./separator.js";
 import { defineSheet } from "./sheet.js";
+import { defineSidebarNav } from "./sidebar-nav.js";
 import { defineSiteFooter } from "./site-footer.js";
 import { defineSkeleton } from "./skeleton.js";
 import { defineSkipLink } from "./skip-link.js";
@@ -140,6 +141,7 @@ export function defineAll(): void {
   defineSelect();
   defineSeparator();
   defineSheet();
+  defineSidebarNav();
   defineSiteFooter();
   defineSkeleton();
   defineSkipLink();
@@ -220,6 +222,7 @@ export const componentNames = [
   "select",
   "separator",
   "sheet",
+  "sidebar-nav",
   "site-footer",
   "skeleton",
   "skip-link",

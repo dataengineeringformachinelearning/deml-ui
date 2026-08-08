@@ -77,7 +77,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/badge/badge.html — do not edit */
-const DEML_TEMPLATE$h = "<span class=\"badge\">Badge</span>\n    <span class=\"badge\" data-tone=\"neutral\">Neutral</span>\n    <span class=\"badge\" data-tone=\"info\">Info</span>\n    <span class=\"badge\" data-tone=\"success\">Success</span>\n    <span class=\"badge\" data-tone=\"warning\">Warning</span>\n    <span class=\"badge\" data-tone=\"danger\">Danger</span>";
+const DEML_TEMPLATE$y = "<span class=\"badge\">Badge</span>\n    <span class=\"badge\" data-tone=\"neutral\">Neutral</span>\n    <span class=\"badge\" data-tone=\"info\">Info</span>\n    <span class=\"badge\" data-tone=\"success\">Success</span>\n    <span class=\"badge\" data-tone=\"warning\">Warning</span>\n    <span class=\"badge\" data-tone=\"danger\">Danger</span>";
 class DemlBadge {
     constructor(host) {
         this.host = host;
@@ -85,7 +85,7 @@ class DemlBadge {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$h;
+            el.innerHTML = DEML_TEMPLATE$y;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBadge, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -102,7 +102,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/banner/banner.html — do not edit */
-const DEML_TEMPLATE$d = "<div class=\"banner banner--hero\" data-variant=\"hero\">\n      <p class=\"preheader\">DEML</p>\n      <h1 class=\"banner-heading\">Status your customers can trust.</h1>\n      <p class=\"lede\">Publish public status pages, share clear uptime, and manage your account in one place.</p>\n      <div class=\"banner-actions\">\n        <div class=\"button-group\">\n          <a class=\"button button--primary\" href=\"#\">Explore</a>\n          <a class=\"button button--secondary\" href=\"#\">Log in</a>\n        </div>\n      </div>\n    </div>";
+const DEML_TEMPLATE$x = "<div class=\"banner banner--hero\" data-variant=\"hero\">\n      <p class=\"preheader\">DEML</p>\n      <h1 class=\"banner-heading\">Status your customers can trust.</h1>\n      <p class=\"lede\">Publish public status pages, share clear uptime, and manage your account in one place.</p>\n      <div class=\"banner-actions\">\n        <div class=\"button-group\">\n          <a class=\"button button--primary\" href=\"#\">Explore</a>\n          <a class=\"button button--secondary\" href=\"#\">Log in</a>\n        </div>\n      </div>\n    </div>";
 class DemlBanner {
     constructor(host) {
         this.host = host;
@@ -110,7 +110,7 @@ class DemlBanner {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$d;
+            el.innerHTML = DEML_TEMPLATE$x;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlBanner, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -202,7 +202,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/button/button.html — do not edit */
-const DEML_TEMPLATE$9 = "<button type=\"button\" class=\"button button--primary\">Primary</button>\n    <button type=\"button\" class=\"button button--secondary\">Secondary</button>\n    <button type=\"button\" class=\"button button--accent\">Accent</button>\n    <button type=\"button\" class=\"button button--primary button--pill\">Pill</button>\n    <button type=\"button\" class=\"button button--primary\" disabled>Disabled</button>\n    <button type=\"button\" class=\"button button--primary is-busy\" aria-busy=\"true\">\n      <span class=\"button__label\">Saving</span>\n      <span class=\"button__spinner\" aria-hidden=\"true\"></span>\n    </button>";
+const DEML_TEMPLATE$v = "<button type=\"button\" class=\"button button--primary\">Primary</button>\n    <button type=\"button\" class=\"button button--secondary\">Secondary</button>\n    <button type=\"button\" class=\"button button--accent\">Accent</button>\n    <button type=\"button\" class=\"button button--primary button--pill\">Pill</button>\n    <button type=\"button\" class=\"button button--primary\" disabled>Disabled</button>\n    <button type=\"button\" class=\"button button--primary is-busy\" aria-busy=\"true\">\n      <span class=\"button__label\">Saving</span>\n      <span class=\"button__spinner\" aria-hidden=\"true\"></span>\n    </button>";
 class DemlButton {
     constructor(host) {
         this.host = host;
@@ -210,7 +210,7 @@ class DemlButton {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$9;
+            el.innerHTML = DEML_TEMPLATE$v;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlButton, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -252,7 +252,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/callout/callout.html — do not edit */
-const DEML_TEMPLATE$1o = "<aside class=\"callout\" role=\"status\" data-tone=\"info\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Callout heading</p>\n        <p class=\"callout__text\">Highlighted message for the user.</p>\n      </div>\n      <button type=\"button\" class=\"callout__close\" aria-label=\"Dismiss\">×</button>\n    </aside>";
+const DEML_TEMPLATE$n = "<aside class=\"callout\" role=\"status\" data-tone=\"info\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Callout heading</p>\n        <p class=\"callout__text\">Highlighted message for the user.</p>\n      </div>\n      <button type=\"button\" class=\"callout__close\" aria-label=\"Dismiss\">×</button>\n    </aside>";
 class DemlCallout {
     constructor(host) {
         this.host = host;
@@ -260,7 +260,7 @@ class DemlCallout {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1o;
+            el.innerHTML = DEML_TEMPLATE$n;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCallout, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -427,7 +427,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/checkbox/checkbox.html — do not edit */
-const DEML_TEMPLATE$1h = "<label class=\"checkbox\">\n      <input type=\"checkbox\" name=\"checkbox-demo\" />\n      <span class=\"checkbox__label\">Checkbox option</span>\n    </label>";
+const DEML_TEMPLATE$m = "<label class=\"checkbox\">\n      <input type=\"checkbox\" name=\"checkbox-demo\" />\n      <span class=\"checkbox__label\">Checkbox option</span>\n    </label>";
 class DemlCheckbox {
     constructor(host) {
         this.host = host;
@@ -435,7 +435,7 @@ class DemlCheckbox {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1h;
+            el.innerHTML = DEML_TEMPLATE$m;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCheckbox, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -452,7 +452,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/checkbox-field/checkbox-field.html — do not edit */
-const DEML_TEMPLATE$1g = "<label class=\"checkbox-field\"><input type=\"checkbox\" /><span>Remember me</span></label>";
+const DEML_TEMPLATE$l = "<label class=\"checkbox-field\"><input type=\"checkbox\" /><span>Remember me</span></label>";
 class DemlCheckboxField {
     constructor(host) {
         this.host = host;
@@ -460,7 +460,7 @@ class DemlCheckboxField {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$1g;
+            el.innerHTML = DEML_TEMPLATE$l;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlCheckboxField, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -677,7 +677,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/explore-card/explore-card.html — do not edit */
-const DEML_TEMPLATE$5 = "<article class=\"explore-card\" data-status=\"operational\">\n      <header class=\"explore-card__header\">\n        <div class=\"explore-card__meta\">\n          <span class=\"status-pill\" data-status=\"up\">Operational</span>\n          <span class=\"explore-card__tag\">Public Status Page</span>\n        </div>\n        <h3 class=\"explore-card__title\">Platform Status</h3>\n        <p class=\"explore-card__lede\">Live service health for teams publishing status with DEML.</p>\n      </header>\n      <ul class=\"explore-card__metrics\" role=\"list\">\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Cumulative SLA</span>\n          <span class=\"explore-card__metric-value\">99.98%</span>\n          <span class=\"explore-card__metric-meta\">Based on real telemetry</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">P99 Latency</span>\n          <span class=\"explore-card__metric-value\">42ms</span>\n          <span class=\"explore-card__metric-meta\">Last 24h</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Spike Risk</span>\n          <span class=\"explore-card__metric-value\">12.00</span>\n          <span class=\"explore-card__metric-meta\">Dynamic Temporal Forecasting</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Threat Anomaly</span>\n          <span class=\"explore-card__metric-value\">0.40%</span>\n          <span class=\"explore-card__metric-meta\">Active</span>\n        </li>\n      </ul>\n      <div class=\"explore-card__uptime\">\n        <div class=\"explore-card__uptime-head\">\n          <span class=\"explore-card__uptime-label\">Uptime</span>\n          <span class=\"explore-card__uptime-value\">99.9%</span>\n        </div>\n        <div class=\"explore-card__uptime-track\" aria-hidden=\"true\">\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"partial\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n        </div>\n        <p class=\"explore-card__uptime-summary\">No current issues</p>\n      </div>\n      <footer class=\"explore-card__footer\">\n        <a class=\"button button--primary button--pill\" href=\"#\">View status</a>\n      </footer>\n    </article>";
+const DEML_TEMPLATE$h = "<article class=\"explore-card\" data-status=\"operational\">\n      <header class=\"explore-card__header\">\n        <div class=\"explore-card__meta\">\n          <span class=\"status-pill\" data-status=\"up\">Operational</span>\n          <span class=\"explore-card__tag\">Public Status Page</span>\n        </div>\n        <h3 class=\"explore-card__title\">Platform Status</h3>\n        <p class=\"explore-card__lede\">Live service health for teams publishing status with DEML.</p>\n      </header>\n      <ul class=\"explore-card__metrics\" role=\"list\">\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Cumulative SLA</span>\n          <span class=\"explore-card__metric-value\">99.98%</span>\n          <span class=\"explore-card__metric-meta\">Based on real telemetry</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">P99 Latency</span>\n          <span class=\"explore-card__metric-value\">42ms</span>\n          <span class=\"explore-card__metric-meta\">Last 24h</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Spike Risk</span>\n          <span class=\"explore-card__metric-value\">12.00</span>\n          <span class=\"explore-card__metric-meta\">Dynamic Temporal Forecasting</span>\n        </li>\n        <li class=\"explore-card__metric\">\n          <span class=\"explore-card__metric-label\">Threat Anomaly</span>\n          <span class=\"explore-card__metric-value\">0.40%</span>\n          <span class=\"explore-card__metric-meta\">Active</span>\n        </li>\n      </ul>\n      <div class=\"explore-card__uptime\">\n        <div class=\"explore-card__uptime-head\">\n          <span class=\"explore-card__uptime-label\">Uptime</span>\n          <span class=\"explore-card__uptime-value\">99.9%</span>\n        </div>\n        <div class=\"explore-card__uptime-track\" aria-hidden=\"true\">\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"partial\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n          <span class=\"explore-card__uptime-seg\" data-status=\"up\"></span>\n        </div>\n        <p class=\"explore-card__uptime-summary\">No current issues</p>\n      </div>\n      <footer class=\"explore-card__footer\">\n        <a class=\"button button--primary button--pill\" href=\"#\">View status</a>\n      </footer>\n    </article>";
 class DemlExploreCard {
     constructor(host) {
         this.host = host;
@@ -685,7 +685,7 @@ class DemlExploreCard {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$5;
+            el.innerHTML = DEML_TEMPLATE$h;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlExploreCard, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -1002,7 +1002,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/input-text/input-text.html — do not edit */
-const DEML_TEMPLATE$Q = "<label for=\"input-text-field\">Name</label>\n    <input id=\"input-text-field\" name=\"name\" type=\"text\" placeholder=\"Name\" autocomplete=\"name\" required>";
+const DEML_TEMPLATE$d = "<label for=\"input-text-field\">Name</label>\n    <input id=\"input-text-field\" name=\"name\" type=\"text\" placeholder=\"Name\" autocomplete=\"name\" required>";
 class DemlInputText {
     constructor(host) {
         this.host = host;
@@ -1010,7 +1010,7 @@ class DemlInputText {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$Q;
+            el.innerHTML = DEML_TEMPLATE$d;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlInputText, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -1077,7 +1077,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/navbar/navbar.html — do not edit */
-const DEML_TEMPLATE$4 = "<header class=\"site-navbar\">\n      <div class=\"site-navbar-branding\">\n        <a class=\"site-navbar-icon\" href=\"#\" aria-label=\"DEML home\">DEML</a>\n      </div>\n      <button type=\"button\" class=\"site-navbar-menu-toggle\" aria-label=\"Open menu\" aria-expanded=\"false\">\n        Menu\n      </button>\n      <div class=\"site-navbar-panel\">\n        <div class=\"site-navbar-panel__inner\">\n          <nav class=\"main-navigation\" aria-label=\"Primary\">\n            <ul>\n              <li><a href=\"#\">Explore</a></li>\n              <li><a href=\"#\">Docs</a></li>\n            </ul>\n          </nav>\n          <div class=\"site-navbar-actions\">\n            <div class=\"button-group\" data-layout=\"row\" role=\"group\" aria-label=\"Account actions\">\n              <a class=\"button button--primary button--pill\" href=\"#\">Log in</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </header>";
+const DEML_TEMPLATE$9 = "<header class=\"site-navbar\">\n      <div class=\"site-navbar-branding\">\n        <a class=\"site-navbar-icon\" href=\"#\" aria-label=\"DEML home\">DEML</a>\n      </div>\n      <button type=\"button\" class=\"site-navbar-menu-toggle\" aria-label=\"Open menu\" aria-expanded=\"false\">\n        Menu\n      </button>\n      <div class=\"site-navbar-panel\">\n        <div class=\"site-navbar-panel__inner\">\n          <nav class=\"main-navigation\" aria-label=\"Primary\">\n            <ul>\n              <li><a href=\"#\">Explore</a></li>\n              <li><a href=\"#\">Docs</a></li>\n            </ul>\n          </nav>\n          <div class=\"site-navbar-actions\">\n            <div class=\"button-group\" data-layout=\"row\" role=\"group\" aria-label=\"Account actions\">\n              <a class=\"button button--primary button--pill\" href=\"#\">Log in</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </header>";
 class DemlNavbar {
     constructor(host) {
         this.host = host;
@@ -1085,7 +1085,7 @@ class DemlNavbar {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$4;
+            el.innerHTML = DEML_TEMPLATE$9;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlNavbar, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -1477,7 +1477,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/sheet/sheet.html — do not edit */
-const DEML_TEMPLATE$n = "<div class=\"sheet-overlay\" role=\"presentation\">\n      <div class=\"sheet\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"sheet-title\">\n        <div class=\"sheet__handle\" aria-hidden=\"true\"></div>\n        <header class=\"sheet__header\">\n          <h3 class=\"sheet__title\" id=\"sheet-title\">Confirm action</h3>\n        </header>\n        <div class=\"sheet__body\">\n          <p>Bottom sheet on phone; centered panel from 800px.</p>\n        </div>\n        <footer class=\"sheet__footer\">\n          <button type=\"button\" class=\"button button--secondary button--pill\">Cancel</button>\n          <button type=\"button\" class=\"button button--primary button--pill\">Confirm</button>\n        </footer>\n      </div>\n    </div>";
+const DEML_TEMPLATE$5 = "<div class=\"sheet-overlay\" role=\"presentation\">\n      <div class=\"sheet\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"sheet-title\">\n        <div class=\"sheet__handle\" aria-hidden=\"true\"></div>\n        <header class=\"sheet__header\">\n          <h3 class=\"sheet__title\" id=\"sheet-title\">Confirm action</h3>\n        </header>\n        <div class=\"sheet__body\">\n          <p>Bottom sheet on phone; centered panel from 800px.</p>\n        </div>\n        <footer class=\"sheet__footer\">\n          <button type=\"button\" class=\"button button--secondary button--pill\">Cancel</button>\n          <button type=\"button\" class=\"button button--primary button--pill\">Confirm</button>\n        </footer>\n      </div>\n    </div>";
 class DemlSheet {
     constructor(host) {
         this.host = host;
@@ -1485,7 +1485,7 @@ class DemlSheet {
     ngOnInit() {
         const el = this.host.nativeElement;
         if (!el.hasChildNodes()) {
-            el.innerHTML = DEML_TEMPLATE$n;
+            el.innerHTML = DEML_TEMPLATE$5;
         }
     }
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlSheet, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
@@ -1495,6 +1495,31 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
             type: Component,
             args: [{
                     selector: "deml-sheet",
+                    standalone: true,
+                    template: "",
+                    encapsulation: ViewEncapsulation.None,
+                }]
+        }], ctorParameters: () => [{ type: i0.ElementRef }] });
+
+/* AUTO-GENERATED from components/sidebar-nav/sidebar-nav.html — do not edit */
+const DEML_TEMPLATE$4 = "<nav class=\"sidebar-nav\" aria-label=\"Sidebar\">\n      <div class=\"sidebar-nav__header\">\n        <p class=\"sidebar-nav__title\">Table of contents</p>\n      </div>\n      <div class=\"sidebar-nav__group\">\n        <h3 class=\"sidebar-nav__group-title\">Foundations</h3>\n        <ul class=\"sidebar-nav__list\">\n          <li>\n            <a class=\"sidebar-nav__link sidebar-nav__link--numbered\" href=\"#\" aria-current=\"page\">\n              <span class=\"sidebar-nav__num\">01</span>\n              <span class=\"sidebar-nav__label\">Fresh install</span>\n            </a>\n          </li>\n          <li>\n            <a class=\"sidebar-nav__link sidebar-nav__link--numbered\" href=\"#\">\n              <span class=\"sidebar-nav__num\">02</span>\n              <span class=\"sidebar-nav__label\">Clean codebase</span>\n            </a>\n          </li>\n          <li>\n            <a class=\"sidebar-nav__link sidebar-nav__link--numbered\" href=\"#\">\n              <span class=\"sidebar-nav__num\">03</span>\n              <span class=\"sidebar-nav__label\">The Fresh Install &amp; Environment Setup</span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </nav>";
+class DemlSidebarNav {
+    constructor(host) {
+        this.host = host;
+    }
+    ngOnInit() {
+        const el = this.host.nativeElement;
+        if (!el.hasChildNodes()) {
+            el.innerHTML = DEML_TEMPLATE$4;
+        }
+    }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlSidebarNav, deps: [{ token: i0.ElementRef }], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "19.2.25", type: DemlSidebarNav, isStandalone: true, selector: "deml-sidebar-nav", ngImport: i0, template: "", isInline: true, encapsulation: i0.ViewEncapsulation.None }); }
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: DemlSidebarNav, decorators: [{
+            type: Component,
+            args: [{
+                    selector: "deml-sidebar-nav",
                     standalone: true,
                     template: "",
                     encapsulation: ViewEncapsulation.None,
@@ -1964,6 +1989,7 @@ const DEML_MARKUP_COMPONENTS = [
     DemlSelect,
     DemlSeparator,
     DemlSheet,
+    DemlSidebarNav,
     DemlSiteFooter,
     DemlSkeleton,
     DemlSkipLink,
@@ -4146,5 +4172,5 @@ const DEML_COMPONENTS = [
  * Generated bundle index. Do not edit.
  */
 
-export { DEML_COMBOBOX, DEML_COMBOBOX_IMPORTS, DEML_COMPONENTS, DEML_DIALOG, DEML_DIALOG_IMPORTS, DEML_DISCLOSURE, DEML_DISCLOSURE_IMPORTS, DEML_HEADLESS, DEML_MARKUP_COMPONENTS, DEML_MENU, DEML_MENU_IMPORTS, DEML_TABS, DEML_TABS_IMPORTS, DemlAppLayout, DemlAreaChart, DemlArticle, DemlBadge, DemlBanner, DemlBarChart, DemlBox, DemlBrand, DemlButton, DemlButtonGroup, DemlCallout, DemlCard, DemlCardGrid, DemlChart, DemlChartCard, DemlChartEmptyState, DemlChartPanel, DemlCheckbox, DemlCheckboxField, DemlCluster, DemlCombobox, DemlComboboxButton, DemlComboboxInput, DemlComboboxLabel, DemlComboboxOption, DemlComboboxOptions, DemlConfirmDialog, DemlContainer, DemlContentLayout, DemlDashboardGrid, DemlDialog, DemlDialogClose, DemlDialogDescription, DemlDialogPanel, DemlDialogTitle, DemlDisclosure, DemlDisclosureButton, DemlDisclosurePanel, DemlDropdown, DemlEmptyState, DemlErrorState, DemlExploreCard, DemlField, DemlFormGrid, DemlFormPanel, DemlFormSection, DemlGrid, DemlIcon, DemlInputDate, DemlInputEmail, DemlInputNumber, DemlInputPassword, DemlInputRange, DemlInputSearch, DemlInputText, DemlInputTime, DemlLabel, DemlMenu, DemlMenuButton, DemlMenuItem, DemlMenuItems, DemlNavbar, DemlPageBackLink, DemlPageHeader, DemlPageSection, DemlPageShell, DemlPageTemplate, DemlPagination, DemlPanelGrid, DemlProgress, DemlRadioGroup, DemlScrollArea, DemlSection, DemlSectionHeader, DemlSectionTemplate, DemlSelect, DemlSeparator, DemlSheet, DemlSiteFooter, DemlSkeleton, DemlSkipLink, DemlSpinner, DemlStack, DemlStatCard, DemlStatusBadge, DemlStatusPill, DemlSwitch, DemlTab, DemlTabList, DemlTabPanel, DemlTable, DemlTabs, DemlTextField, DemlTextarea, DemlThemeToggle, DemlTileBoard, DemlToc, DemlToggle, TypeaheadBuffer, createFocusTrap, demlId, findTypeaheadIndex, isActivationKey, nextRovingIndex, onClickOutside, resolveOpen, resolveValue };
+export { DEML_COMBOBOX, DEML_COMBOBOX_IMPORTS, DEML_COMPONENTS, DEML_DIALOG, DEML_DIALOG_IMPORTS, DEML_DISCLOSURE, DEML_DISCLOSURE_IMPORTS, DEML_HEADLESS, DEML_MARKUP_COMPONENTS, DEML_MENU, DEML_MENU_IMPORTS, DEML_TABS, DEML_TABS_IMPORTS, DemlAppLayout, DemlAreaChart, DemlArticle, DemlBadge, DemlBanner, DemlBarChart, DemlBox, DemlBrand, DemlButton, DemlButtonGroup, DemlCallout, DemlCard, DemlCardGrid, DemlChart, DemlChartCard, DemlChartEmptyState, DemlChartPanel, DemlCheckbox, DemlCheckboxField, DemlCluster, DemlCombobox, DemlComboboxButton, DemlComboboxInput, DemlComboboxLabel, DemlComboboxOption, DemlComboboxOptions, DemlConfirmDialog, DemlContainer, DemlContentLayout, DemlDashboardGrid, DemlDialog, DemlDialogClose, DemlDialogDescription, DemlDialogPanel, DemlDialogTitle, DemlDisclosure, DemlDisclosureButton, DemlDisclosurePanel, DemlDropdown, DemlEmptyState, DemlErrorState, DemlExploreCard, DemlField, DemlFormGrid, DemlFormPanel, DemlFormSection, DemlGrid, DemlIcon, DemlInputDate, DemlInputEmail, DemlInputNumber, DemlInputPassword, DemlInputRange, DemlInputSearch, DemlInputText, DemlInputTime, DemlLabel, DemlMenu, DemlMenuButton, DemlMenuItem, DemlMenuItems, DemlNavbar, DemlPageBackLink, DemlPageHeader, DemlPageSection, DemlPageShell, DemlPageTemplate, DemlPagination, DemlPanelGrid, DemlProgress, DemlRadioGroup, DemlScrollArea, DemlSection, DemlSectionHeader, DemlSectionTemplate, DemlSelect, DemlSeparator, DemlSheet, DemlSidebarNav, DemlSiteFooter, DemlSkeleton, DemlSkipLink, DemlSpinner, DemlStack, DemlStatCard, DemlStatusBadge, DemlStatusPill, DemlSwitch, DemlTab, DemlTabList, DemlTabPanel, DemlTable, DemlTabs, DemlTextField, DemlTextarea, DemlThemeToggle, DemlTileBoard, DemlToc, DemlToggle, TypeaheadBuffer, createFocusTrap, demlId, findTypeaheadIndex, isActivationKey, nextRovingIndex, onClickOutside, resolveOpen, resolveValue };
 //# sourceMappingURL=deml-ui.mjs.map

@@ -27,6 +27,7 @@ export const CATEGORIES = {
     "theme-toggle",
     "site-footer",
     "toc",
+    "sidebar-nav",
   ],
   Layout: [
     "section",

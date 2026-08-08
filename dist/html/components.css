@@ -16,6 +16,7 @@
 @import url("./theme-toggle/theme-toggle.css");
 @import url("./site-footer/site-footer.css");
 @import url("./toc/toc.css");
+@import url("./sidebar-nav/sidebar-nav.css");
 
 /* Layout */
 @import url("./section/section.css");

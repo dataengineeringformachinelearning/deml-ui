@@ -60,34 +60,44 @@
   box-sizing: border-box;
 }
 
-/* Book chapters: ash ground + cream reading column (not a full-bleed dark page shell) */
+/* Book chapters: ash chapter rail + staged reading column */
 .app-layout--book .app-layout__nav {
-  background: transparent;
-  border: 0;
-  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
 }
 
 .app-layout--book .app-layout__main {
-  background: transparent;
-  border: 0;
-  overflow: visible;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  overflow: auto;
 }
 
 .app-layout--book .app-layout__content {
   display: grid;
-  gap: var(--space-4);
-  justify-items: start;
+  gap: var(--space-6);
+  justify-items: center;
   width: 100%;
-  max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
+  max-width: none;
   margin-inline: 0;
-  padding: var(--space-3) 0 var(--space-8);
+  padding: var(--space-5) var(--space-4) var(--space-8);
 }
 
 .app-layout--book .app-layout__content > .page-header,
 .app-layout--book .app-layout__content > .article.module,
+.app-layout--book .app-layout__content > .card,
 .app-layout--book .app-layout__content > .pagination {
   width: 100%;
-  max-width: 100%;
+  max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
+}
+
+.app-layout--book .app-layout__content > .page-header {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.app-layout--book .app-layout__content > .card {
+  min-height: calc(var(--space-36) + var(--space-16));
 }
 
 /* Collapsible chapter TOC on phone — details/summary */
@@ -156,6 +166,12 @@
     padding-bottom: max(var(--space-4), var(--safe-bottom));
   }
 
+  /* Book needs a wider chapter rail so titles do not wrap into a scrunched stack */
+  .app-layout--book .app-layout__body {
+    grid-template-columns: minmax(var(--space-36), var(--space-52)) minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+
   .app-layout--embedded .app-layout__nav {
     position: sticky;
     top: calc(
@@ -182,7 +198,8 @@
   }
 
   .app-layout--book .app-layout__content {
-    padding: var(--space-4) 0 var(--space-8);
+    gap: var(--space-8);
+    padding: var(--space-8) var(--space-6) var(--space-12);
   }
 
   /* Force TOC open on larger screens; hide the summary chrome */
@@ -191,6 +208,7 @@
   }
 
   .book-toc .toc,
+  .book-toc .sidebar-nav,
   .book-toc > nav {
     display: grid !important;
   }

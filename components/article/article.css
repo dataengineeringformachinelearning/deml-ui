@@ -97,7 +97,8 @@
 .article.module .article-body h3,
 .article.module .article-body h4,
 .article.module .article-body h5,
-.article.module .article-body h6 {
+.article.module .article-body h6,
+.article.module .article-body .card-heading {
   color: var(--color-card-text);
 }
 

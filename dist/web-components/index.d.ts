@@ -366,6 +366,12 @@ export declare class DemlSheet extends HTMLElement {
 }
 export declare function defineSheet(): void;
 
+export declare class DemlSidebarNav extends HTMLElement {
+  static readonly tagName: "deml-sidebar-nav";
+  static readonly componentName: "sidebar-nav";
+}
+export declare function defineSidebarNav(): void;
+
 export declare class DemlSiteFooter extends HTMLElement {
   static readonly tagName: "deml-site-footer";
   static readonly componentName: "site-footer";
@@ -463,7 +469,7 @@ export declare class DemlToggle extends HTMLElement {
 export declare function defineToggle(): void;
 
 export declare function defineAll(): void;
-export declare const componentNames: readonly ["app-layout", "area-chart", "article", "badge", "banner", "bar-chart", "box", "brand", "button", "button-group", "callout", "card", "card-grid", "chart", "chart-card", "chart-empty-state", "chart-panel", "checkbox", "checkbox-field", "cluster", "confirm-dialog", "container", "content-layout", "dashboard-grid", "dialog", "dropdown", "empty-state", "error-state", "explore-card", "field", "form-grid", "form-panel", "form-section", "grid", "icon", "input-date", "input-email", "input-number", "input-password", "input-range", "input-search", "input-text", "input-time", "label", "navbar", "page-back-link", "page-header", "page-section", "page-shell", "page-template", "pagination", "panel-grid", "progress", "radio-group", "scroll-area", "section", "section-header", "section-template", "select", "separator", "sheet", "site-footer", "skeleton", "skip-link", "spinner", "stack", "stat-card", "status-badge", "status-pill", "switch", "table", "text-field", "textarea", "theme-toggle", "tile-board", "toc", "toggle"];
+export declare const componentNames: readonly ["app-layout", "area-chart", "article", "badge", "banner", "bar-chart", "box", "brand", "button", "button-group", "callout", "card", "card-grid", "chart", "chart-card", "chart-empty-state", "chart-panel", "checkbox", "checkbox-field", "cluster", "confirm-dialog", "container", "content-layout", "dashboard-grid", "dialog", "dropdown", "empty-state", "error-state", "explore-card", "field", "form-grid", "form-panel", "form-section", "grid", "icon", "input-date", "input-email", "input-number", "input-password", "input-range", "input-search", "input-text", "input-time", "label", "navbar", "page-back-link", "page-header", "page-section", "page-shell", "page-template", "pagination", "panel-grid", "progress", "radio-group", "scroll-area", "section", "section-header", "section-template", "select", "separator", "sheet", "sidebar-nav", "site-footer", "skeleton", "skip-link", "spinner", "stack", "stat-card", "status-badge", "status-pill", "switch", "table", "text-field", "textarea", "theme-toggle", "tile-board", "toc", "toggle"];
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -528,6 +534,7 @@ declare global {
     "deml-select": DemlSelect;
     "deml-separator": DemlSeparator;
     "deml-sheet": DemlSheet;
+    "deml-sidebar-nav": DemlSidebarNav;
     "deml-site-footer": DemlSiteFooter;
     "deml-skeleton": DemlSkeleton;
     "deml-skip-link": DemlSkipLink;
