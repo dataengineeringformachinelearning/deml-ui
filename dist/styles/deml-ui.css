@@ -3630,6 +3630,10 @@ deml-form-panel,
   width: 100%;
 }
 
+.form-panel__item-actions:empty {
+  display: none;
+}
+
 .form-panel__item-actions .button {
   width: 100%;
 }
