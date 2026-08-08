@@ -117,6 +117,8 @@ var s = class extends HTMLElement {
   }
   connectedCallback() {
     this.dataset.demlHydrated !== "true" && (this.dataset.demlHydrated = "true", this.hasChildNodes() || (this.innerHTML = `<span class="badge">Badge</span>
+    <span class="badge" data-tone="neutral">Neutral</span>
+    <span class="badge" data-tone="info">Info</span>
     <span class="badge" data-tone="success">Success</span>
     <span class="badge" data-tone="warning">Warning</span>
     <span class="badge" data-tone="danger">Danger</span>`));
@@ -214,7 +216,7 @@ var d = class extends HTMLElement {
 function ke() {
   customElements.get(d.tagName) || customElements.define(d.tagName, d);
 }
-var l = class extends HTMLElement {
+var n = class extends HTMLElement {
   static {
     this.tagName = "deml-box";
   }
@@ -228,9 +230,9 @@ var l = class extends HTMLElement {
   }
 };
 function Me() {
-  customElements.get(l.tagName) || customElements.define(l.tagName, l);
+  customElements.get(n.tagName) || customElements.define(n.tagName, n);
 }
-var n = class extends HTMLElement {
+var l = class extends HTMLElement {
   static {
     this.tagName = "deml-brand";
   }
@@ -245,7 +247,7 @@ var n = class extends HTMLElement {
   }
 };
 function Se() {
-  customElements.get(n.tagName) || customElements.define(n.tagName, n);
+  customElements.get(l.tagName) || customElements.define(l.tagName, l);
 }
 var r = class extends HTMLElement {
   static {
@@ -1023,7 +1025,7 @@ var I = class extends HTMLElement {
     <input id="input-number-field" name="number" type="number" min="0" max="100" step="1" value="10">`));
   }
 };
-function lt() {
+function nt() {
   customElements.get(I.tagName) || customElements.define(I.tagName, I);
 }
 var G = class extends HTMLElement {
@@ -1038,7 +1040,7 @@ var G = class extends HTMLElement {
     <input id="input-password-field" name="password" type="password" placeholder="Password" autocomplete="new-password">`));
   }
 };
-function nt() {
+function lt() {
   customElements.get(G.tagName) || customElements.define(G.tagName, G);
 }
 var R = class extends HTMLElement {
@@ -1437,7 +1439,7 @@ var de = class extends HTMLElement {
 function kt() {
   customElements.get(de.tagName) || customElements.define(de.tagName, de);
 }
-var le = class extends HTMLElement {
+var ne = class extends HTMLElement {
   static {
     this.tagName = "deml-sheet";
   }
@@ -1463,9 +1465,9 @@ var le = class extends HTMLElement {
   }
 };
 function Mt() {
-  customElements.get(le.tagName) || customElements.define(le.tagName, le);
+  customElements.get(ne.tagName) || customElements.define(ne.tagName, ne);
 }
-var ne = class extends HTMLElement {
+var le = class extends HTMLElement {
   static {
     this.tagName = "deml-site-footer";
   }
@@ -1509,7 +1511,7 @@ var ne = class extends HTMLElement {
   }
 };
 function St() {
-  customElements.get(ne.tagName) || customElements.define(ne.tagName, ne);
+  customElements.get(le.tagName) || customElements.define(le.tagName, le);
 }
 var re = class extends HTMLElement {
   static {
@@ -1813,7 +1815,7 @@ function qt() {
   customElements.get(He.tagName) || customElements.define(He.tagName, He);
 }
 function Kt() {
-  Ee(), Ce(), Te(), xe(), Le(), ke(), Me(), Se(), De(), we(), Pe(), Ae(), Be(), Fe(), Ie(), Ge(), Re(), We(), ze(), Oe(), Ue(), Ye(), qe(), Ke(), Ve(), Je(), je(), Qe(), Xe(), Ze(), $e(), et(), tt(), at(), st(), it(), dt(), lt(), nt(), rt(), ct(), ot(), mt(), ht(), ut(), pt(), ft(), gt(), bt(), vt(), yt(), Nt(), _t(), Ht(), Et(), Ct(), Tt(), xt(), Lt(), kt(), Mt(), St(), Dt(), wt(), Pt(), At(), Bt(), Ft(), It(), Gt(), Rt(), Wt(), zt(), Ot(), Ut(), Yt(), qt();
+  Ee(), Ce(), Te(), xe(), Le(), ke(), Me(), Se(), De(), we(), Pe(), Ae(), Be(), Fe(), Ie(), Ge(), Re(), We(), ze(), Oe(), Ue(), Ye(), qe(), Ke(), Ve(), Je(), je(), Qe(), Xe(), Ze(), $e(), et(), tt(), at(), st(), it(), dt(), nt(), lt(), rt(), ct(), ot(), mt(), ht(), ut(), pt(), ft(), gt(), bt(), vt(), yt(), Nt(), _t(), Ht(), Et(), Ct(), Tt(), xt(), Lt(), kt(), Mt(), St(), Dt(), wt(), Pt(), At(), Bt(), Ft(), It(), Gt(), Rt(), Wt(), zt(), Ot(), Ut(), Yt(), qt();
 }
 var Vt = [
   "app-layout",
@@ -1902,8 +1904,8 @@ export {
   s as DemlBadge,
   i as DemlBanner,
   d as DemlBarChart,
-  l as DemlBox,
-  n as DemlBrand,
+  n as DemlBox,
+  l as DemlBrand,
   r as DemlButton,
   c as DemlButtonGroup,
   o as DemlCallout,
@@ -1956,8 +1958,8 @@ export {
   se as DemlSectionTemplate,
   ie as DemlSelect,
   de as DemlSeparator,
-  le as DemlSheet,
-  ne as DemlSiteFooter,
+  ne as DemlSheet,
+  le as DemlSiteFooter,
   re as DemlSkeleton,
   ce as DemlSkipLink,
   oe as DemlSpinner,
@@ -2012,8 +2014,8 @@ export {
   st as defineIcon,
   it as defineInputDate,
   dt as defineInputEmail,
-  lt as defineInputNumber,
-  nt as defineInputPassword,
+  nt as defineInputNumber,
+  lt as defineInputPassword,
   rt as defineInputRange,
   ct as defineInputSearch,
   ot as defineInputText,
