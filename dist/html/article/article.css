@@ -25,6 +25,8 @@
 .article.module {
   padding: var(--module-pad-lg);
   min-height: 0;
+  /* Module already paints cream; force card ink so dark theme page text cannot win. */
+  color: var(--module-fg);
 }
 
 .article + .article,
@@ -47,6 +49,11 @@
   letter-spacing: var(--tracking-intro);
   line-height: 1.7;
   color: var(--color-text-secondary);
+}
+
+/* Cream modules stay cream in both themes — never inherit ash-page light ink. */
+.article.module .article-body {
+  color: var(--color-card-text-secondary);
 }
 
 .page-body.article-body,
@@ -79,6 +86,15 @@
   );
 }
 
+.article.module .article-body h1,
+.article.module .article-body h2,
+.article.module .article-body h3,
+.article.module .article-body h4,
+.article.module .article-body h5,
+.article.module .article-body h6 {
+  color: var(--color-card-text);
+}
+
 .article-body h1 {
   font-size: clamp(var(--font-size-lg), 4vw, var(--font-size-xl));
 }
@@ -87,6 +103,10 @@
   font-size: clamp(var(--font-size-md), 3vw, var(--font-size-lg));
   padding-bottom: var(--space-1);
   border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.article.module .article-body h2 {
+  border-bottom-color: var(--color-card-border);
 }
 
 .article-body h3 {
@@ -129,10 +149,19 @@
   outline-offset: var(--focus-ring-offset);
 }
 
+.article.module .article-body a:focus-visible {
+  outline-color: var(--color-focus-on-card);
+}
+
 .article-body strong,
 .article-body b {
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
+}
+
+.article.module .article-body strong,
+.article.module .article-body b {
+  color: var(--color-card-text);
 }
 
 .article-body em,
@@ -171,6 +200,10 @@
   border-top: var(--border-width) solid var(--color-border);
 }
 
+.article.module .article-body hr {
+  border-top-color: var(--color-card-border);
+}
+
 .article-body code {
   font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
   font-size: 0.92em;
@@ -181,6 +214,12 @@
   color: var(--color-text);
 }
 
+.article.module .article-body code {
+  border-color: var(--color-card-border);
+  background-color: color-mix(in srgb, var(--color-card-text) 8%, var(--color-card));
+  color: var(--color-card-text);
+}
+
 .article-body pre {
   margin: 0 0 var(--space-5);
   padding: var(--space-4);
@@ -189,6 +228,19 @@
   border-radius: var(--radius-md);
   background-color: var(--color-surface);
   color: var(--color-text);
+}
+
+/* Code blocks stay on ash surface ink even inside cream modules. */
+.article.module .article-body pre {
+  border-color: var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.article.module .article-body pre code {
+  border: 0;
+  background: transparent;
+  color: inherit;
 }
 
 .article-body pre code {
@@ -220,12 +272,26 @@
   background-color: color-mix(in srgb, var(--color-card) 80%, var(--color-surface));
 }
 
+.article.module .article-body th,
+.article.module .article-body td {
+  border-color: var(--color-card-border);
+}
+
+.article.module .article-body th {
+  color: var(--color-card-text);
+  background-color: color-mix(in srgb, var(--color-card-text) 6%, var(--color-card));
+}
+
 .article-body img {
   display: block;
   max-width: 100%;
   height: auto;
   margin: 0 0 var(--space-3);
   border: var(--border-width) solid var(--color-border);
+}
+
+.article.module .article-body img {
+  border-color: var(--color-card-border);
 }
 
 .article-body figure {
@@ -236,6 +302,10 @@
   margin-top: var(--space-1);
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
+}
+
+.article.module .article-body figcaption {
+  color: var(--color-card-text-secondary);
 }
 
 /* Cover / feature card nested in reading flow */
