@@ -1091,6 +1091,10 @@ summary {
 }
 
 .app-layout--book .app-layout__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   background: transparent;
   border: 0;
   overflow: visible;
@@ -1100,6 +1104,9 @@ summary {
   display: grid;
   gap: var(--space-6);
   justify-items: stretch;
+  /* Prefer cross-axis centering over flex-grow stretch from `.app-layout__content`. */
+  flex: 0 1 auto;
+  align-self: center;
   width: min(100%, calc(var(--reading-width) + (var(--module-pad-lg) * 2)));
   max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
   margin-inline: auto;
@@ -1200,13 +1207,23 @@ summary {
     padding-bottom: max(var(--space-4), var(--safe-bottom));
   }
 
-  /* Book: wider chapter rail + open gutters; page scroll owns the chapter */
+  /*
+   * Book: TOC | reading stage | matching gutter so the cream column sits in the
+   * optical center of the page (not glued to the left of the main track).
+   */
   .app-layout--book .app-layout__body {
-    grid-template-columns: minmax(var(--space-36), var(--space-52)) minmax(0, 1fr);
+    grid-template-columns:
+      minmax(var(--space-36), var(--space-52))
+      minmax(0, 1fr)
+      minmax(var(--space-36), var(--space-52));
     gap: var(--space-8);
     padding: var(--space-5) var(--space-6) var(--space-8);
     padding-left: max(var(--space-6), var(--safe-left));
     padding-right: max(var(--space-6), var(--safe-right));
+  }
+
+  .app-layout--book .app-layout__main {
+    grid-column: 2;
   }
 
   .app-layout--embedded .app-layout__nav {
@@ -1231,6 +1248,7 @@ summary {
   }
 
   .app-layout--book .app-layout__nav {
+    grid-column: 1;
     padding: var(--space-1) var(--space-4) var(--space-4) 0;
   }
 
@@ -2724,8 +2742,18 @@ deml-page-section[data-variant='auth'] .page-body--auth > *,
 app-page-section[data-variant='catalog'] .page-body--catalog,
 deml-page-section[data-variant='catalog'] .page-body--catalog,
 :host([data-variant='catalog']) .page-body--catalog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
   animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
   animation-delay: var(--stagger-step);
+}
+
+/* Angular/CE hosts wrap `.catalog-group` — keep hosts block so flex gap applies. */
+.page-body--catalog > app-catalog-group,
+.page-body--catalog > deml-catalog-group {
+  display: block;
+  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -2738,6 +2766,12 @@ deml-page-section[data-variant='catalog'] .page-body--catalog,
     padding-block: var(--space-6);
     padding-inline-start: max(var(--space-4), var(--safe-left));
     padding-inline-end: max(var(--space-4), var(--safe-right));
+  }
+
+  app-page-section[data-variant='catalog'] .page-body--catalog,
+  deml-page-section[data-variant='catalog'] .page-body--catalog,
+  :host([data-variant='catalog']) .page-body--catalog {
+    gap: var(--space-8);
   }
 }
 
@@ -2756,6 +2790,7 @@ deml-page-section[data-variant='catalog'] .page-body--catalog,
   box-shadow: none;
 }
 
+/* Adjacent `.catalog-group` siblings (native CE markup without host wrappers). */
 .catalog-group + .catalog-group {
   margin-top: var(--space-6);
 }
@@ -2770,6 +2805,12 @@ deml-page-section[data-variant='catalog'] .page-body--catalog,
   .catalog-group + .catalog-group {
     margin-top: var(--space-8);
   }
+}
+
+/* Flex gap already spaces catalog hosts — avoid double spacing on nested groups. */
+.page-body--catalog > app-catalog-group .catalog-group + .catalog-group,
+.page-body--catalog > deml-catalog-group .catalog-group + .catalog-group {
+  margin-top: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

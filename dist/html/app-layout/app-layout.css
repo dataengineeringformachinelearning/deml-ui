@@ -75,6 +75,10 @@
 }
 
 .app-layout--book .app-layout__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   background: transparent;
   border: 0;
   overflow: visible;
@@ -84,6 +88,9 @@
   display: grid;
   gap: var(--space-6);
   justify-items: stretch;
+  /* Prefer cross-axis centering over flex-grow stretch from `.app-layout__content`. */
+  flex: 0 1 auto;
+  align-self: center;
   width: min(100%, calc(var(--reading-width) + (var(--module-pad-lg) * 2)));
   max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
   margin-inline: auto;
@@ -184,13 +191,23 @@
     padding-bottom: max(var(--space-4), var(--safe-bottom));
   }
 
-  /* Book: wider chapter rail + open gutters; page scroll owns the chapter */
+  /*
+   * Book: TOC | reading stage | matching gutter so the cream column sits in the
+   * optical center of the page (not glued to the left of the main track).
+   */
   .app-layout--book .app-layout__body {
-    grid-template-columns: minmax(var(--space-36), var(--space-52)) minmax(0, 1fr);
+    grid-template-columns:
+      minmax(var(--space-36), var(--space-52))
+      minmax(0, 1fr)
+      minmax(var(--space-36), var(--space-52));
     gap: var(--space-8);
     padding: var(--space-5) var(--space-6) var(--space-8);
     padding-left: max(var(--space-6), var(--safe-left));
     padding-right: max(var(--space-6), var(--safe-right));
+  }
+
+  .app-layout--book .app-layout__main {
+    grid-column: 2;
   }
 
   .app-layout--embedded .app-layout__nav {
@@ -215,6 +232,7 @@
   }
 
   .app-layout--book .app-layout__nav {
+    grid-column: 1;
     padding: var(--space-1) var(--space-4) var(--space-4) 0;
   }
 

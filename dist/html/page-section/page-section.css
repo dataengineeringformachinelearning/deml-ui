@@ -60,8 +60,18 @@ deml-page-section[data-variant='auth'] .page-body--auth > *,
 app-page-section[data-variant='catalog'] .page-body--catalog,
 deml-page-section[data-variant='catalog'] .page-body--catalog,
 :host([data-variant='catalog']) .page-body--catalog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
   animation: deml-state-enter var(--duration-normal) var(--ease-enter) both;
   animation-delay: var(--stagger-step);
+}
+
+/* Angular/CE hosts wrap `.catalog-group` — keep hosts block so flex gap applies. */
+.page-body--catalog > app-catalog-group,
+.page-body--catalog > deml-catalog-group {
+  display: block;
+  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
@@ -74,6 +84,12 @@ deml-page-section[data-variant='catalog'] .page-body--catalog,
     padding-block: var(--space-6);
     padding-inline-start: max(var(--space-4), var(--safe-left));
     padding-inline-end: max(var(--space-4), var(--safe-right));
+  }
+
+  app-page-section[data-variant='catalog'] .page-body--catalog,
+  deml-page-section[data-variant='catalog'] .page-body--catalog,
+  :host([data-variant='catalog']) .page-body--catalog {
+    gap: var(--space-8);
   }
 }
 
@@ -92,6 +108,7 @@ deml-page-section[data-variant='catalog'] .page-body--catalog,
   box-shadow: none;
 }
 
+/* Adjacent `.catalog-group` siblings (native CE markup without host wrappers). */
 .catalog-group + .catalog-group {
   margin-top: var(--space-6);
 }
@@ -106,6 +123,12 @@ deml-page-section[data-variant='catalog'] .page-body--catalog,
   .catalog-group + .catalog-group {
     margin-top: var(--space-8);
   }
+}
+
+/* Flex gap already spaces catalog hosts — avoid double spacing on nested groups. */
+.page-body--catalog > app-catalog-group .catalog-group + .catalog-group,
+.page-body--catalog > deml-catalog-group .catalog-group + .catalog-group {
+  margin-top: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
