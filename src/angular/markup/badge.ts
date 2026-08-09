@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<span class=\"badge\">Badge</span>\n    <span class=\"badge\" data-tone=\"success\">Success</span>\n    <span class=\"badge\" data-tone=\"warning\">Warning</span>\n    <span class=\"badge\" data-tone=\"danger\">Danger</span>";
+const DEML_TEMPLATE = "<span class=\"badge\">Badge</span>\n    <span class=\"badge\" data-tone=\"neutral\">Neutral</span>\n    <span class=\"badge\" data-tone=\"info\">Info</span>\n    <span class=\"badge\" data-tone=\"success\">Success</span>\n    <span class=\"badge\" data-tone=\"warning\">Warning</span>\n    <span class=\"badge\" data-tone=\"danger\">Danger</span>";
 
 @Component({
   selector: "deml-badge",

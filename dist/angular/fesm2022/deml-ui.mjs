@@ -252,7 +252,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/callout/callout.html — do not edit */
-const DEML_TEMPLATE$n = "<aside class=\"callout\" role=\"status\" data-tone=\"info\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Callout heading</p>\n        <p class=\"callout__text\">Highlighted message for the user.</p>\n      </div>\n      <button type=\"button\" class=\"callout__close\" aria-label=\"Dismiss\">×</button>\n    </aside>";
+const DEML_TEMPLATE$n = "<aside class=\"callout\" role=\"status\" data-tone=\"info\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Info</p>\n        <p class=\"callout__text\">Highlighted message for the user.</p>\n      </div>\n      <button type=\"button\" class=\"callout__close\" aria-label=\"Dismiss\">×</button>\n    </aside>\n    <aside class=\"callout\" role=\"status\" data-tone=\"success\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Success</p>\n        <p class=\"callout__text\">Changes saved.</p>\n      </div>\n    </aside>\n    <aside class=\"callout\" role=\"status\" data-tone=\"warning\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Warning</p>\n        <p class=\"callout__text\">You are offline — edits will queue.</p>\n      </div>\n    </aside>\n    <aside class=\"callout\" role=\"alert\" data-tone=\"danger\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Danger</p>\n        <p class=\"callout__text\">This action cannot be undone.</p>\n      </div>\n    </aside>\n    <aside class=\"callout\" role=\"status\" data-tone=\"neutral\">\n      <div class=\"callout__body\">\n        <p class=\"callout__heading\">Neutral</p>\n        <p class=\"callout__text\">Quiet continuity note.</p>\n      </div>\n    </aside>";
 class DemlCallout {
     constructor(host) {
         this.host = host;
@@ -427,7 +427,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/checkbox/checkbox.html — do not edit */
-const DEML_TEMPLATE$m = "<label class=\"checkbox\">\n      <input type=\"checkbox\" name=\"checkbox-demo\" />\n      <span class=\"checkbox__label\">Checkbox option</span>\n    </label>";
+const DEML_TEMPLATE$m = "<label class=\"checkbox-field\">\n      <input class=\"checkbox-field__input\" type=\"checkbox\" name=\"checkbox-demo\" />\n      <span class=\"checkbox-field__box\" aria-hidden=\"true\"></span>\n      <span class=\"checkbox-field__label\">Checkbox option</span>\n    </label>\n    <label class=\"checkbox-field\">\n      <input class=\"checkbox-field__input\" type=\"checkbox\" name=\"checkbox-demo-disabled\" disabled />\n      <span class=\"checkbox-field__box\" aria-hidden=\"true\"></span>\n      <span class=\"checkbox-field__label\">Disabled option</span>\n    </label>";
 class DemlCheckbox {
     constructor(host) {
         this.host = host;
@@ -452,7 +452,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/checkbox-field/checkbox-field.html — do not edit */
-const DEML_TEMPLATE$l = "<label class=\"checkbox-field\"><input type=\"checkbox\" /><span>Remember me</span></label>";
+const DEML_TEMPLATE$l = "<label class=\"checkbox-field\">\n      <input class=\"checkbox-field__input\" type=\"checkbox\" name=\"remember\" />\n      <span class=\"checkbox-field__box\" aria-hidden=\"true\"></span>\n      <span class=\"checkbox-field__label\">Remember me</span>\n    </label>";
 class DemlCheckboxField {
     constructor(host) {
         this.host = host;
@@ -1002,7 +1002,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/input-text/input-text.html — do not edit */
-const DEML_TEMPLATE$d = "<label for=\"input-text-field\">Name</label>\n    <input id=\"input-text-field\" name=\"name\" type=\"text\" placeholder=\"Name\" autocomplete=\"name\" required>";
+const DEML_TEMPLATE$d = "<label class=\"text-field\" for=\"input-text-field\">\n      <span class=\"text-field__label\">Name</span>\n      <input\n        id=\"input-text-field\"\n        class=\"text-field__control\"\n        name=\"name\"\n        type=\"text\"\n        placeholder=\"Your name\"\n        autocomplete=\"name\"\n      />\n    </label>";
 class DemlInputText {
     constructor(host) {
         this.host = host;
@@ -1077,7 +1077,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/navbar/navbar.html — do not edit */
-const DEML_TEMPLATE$9 = "<header class=\"site-navbar\">\n      <div class=\"site-navbar-branding\">\n        <a class=\"site-navbar-icon\" href=\"#\" aria-label=\"DEML home\">DEML</a>\n      </div>\n      <button type=\"button\" class=\"site-navbar-menu-toggle\" aria-label=\"Open menu\" aria-expanded=\"false\">\n        Menu\n      </button>\n      <div class=\"site-navbar-panel\">\n        <div class=\"site-navbar-panel__inner\">\n          <nav class=\"main-navigation\" aria-label=\"Primary\">\n            <ul>\n              <li><a href=\"#\">Explore</a></li>\n              <li><a href=\"#\">Docs</a></li>\n            </ul>\n          </nav>\n          <div class=\"site-navbar-actions\">\n            <div class=\"button-group\" data-layout=\"row\" role=\"group\" aria-label=\"Account actions\">\n              <a class=\"button button--primary button--pill\" href=\"#\">Log in</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </header>";
+const DEML_TEMPLATE$9 = "<header class=\"site-navbar\">\n      <div class=\"site-navbar-branding\">\n        <a class=\"site-navbar-icon\" href=\"#\" aria-label=\"DEML home\">DEML</a>\n      </div>\n      <button\n        type=\"button\"\n        class=\"site-navbar-menu-toggle\"\n        aria-label=\"Open menu\"\n        aria-expanded=\"false\"\n        aria-controls=\"navbar-demo-panel\"\n        aria-haspopup=\"true\"\n      >\n        Menu\n      </button>\n      <div id=\"navbar-demo-panel\" class=\"site-navbar-panel\">\n        <div class=\"site-navbar-panel__inner\">\n          <nav class=\"main-navigation\" aria-label=\"Primary\">\n            <ul>\n              <li><a href=\"#\">Explore</a></li>\n              <li><a href=\"#\">Docs</a></li>\n            </ul>\n          </nav>\n          <div class=\"site-navbar-actions\">\n            <div class=\"button-group\" data-layout=\"row\" role=\"group\" aria-label=\"Account actions\">\n              <a class=\"button button--primary button--pill\" href=\"#\">Log in</a>\n            </div>\n          </div>\n        </div>\n      </div>\n    </header>";
 class DemlNavbar {
     constructor(host) {
         this.host = host;
@@ -1477,7 +1477,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/sheet/sheet.html — do not edit */
-const DEML_TEMPLATE$5 = "<div class=\"sheet-overlay\" role=\"presentation\">\n      <div class=\"sheet\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"sheet-title\">\n        <div class=\"sheet__handle\" aria-hidden=\"true\"></div>\n        <header class=\"sheet__header\">\n          <h3 class=\"sheet__title\" id=\"sheet-title\">Confirm action</h3>\n        </header>\n        <div class=\"sheet__body\">\n          <p>Bottom sheet on phone; centered panel from 800px.</p>\n        </div>\n        <footer class=\"sheet__footer\">\n          <button type=\"button\" class=\"button button--secondary button--pill\">Cancel</button>\n          <button type=\"button\" class=\"button button--primary button--pill\">Confirm</button>\n        </footer>\n      </div>\n    </div>";
+const DEML_TEMPLATE$5 = "<div class=\"sheet-overlay\" role=\"presentation\">\n      <div\n        class=\"sheet\"\n        role=\"dialog\"\n        aria-modal=\"true\"\n        aria-labelledby=\"sheet-title\"\n        aria-describedby=\"sheet-desc\"\n        tabindex=\"-1\"\n      >\n        <button type=\"button\" class=\"sheet__handle\" aria-label=\"Dismiss\"></button>\n        <header class=\"sheet__header\">\n          <h3 class=\"sheet__title\" id=\"sheet-title\">Confirm action</h3>\n        </header>\n        <div class=\"sheet__body\">\n          <p id=\"sheet-desc\">Bottom sheet on phone; centered panel from 800px.</p>\n        </div>\n        <footer class=\"sheet__footer\">\n          <button type=\"button\" class=\"button button--secondary button--pill\">Cancel</button>\n          <button type=\"button\" class=\"button button--primary button--pill\">Confirm</button>\n        </footer>\n      </div>\n    </div>";
 class DemlSheet {
     constructor(host) {
         this.host = host;
@@ -1777,7 +1777,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
         }], ctorParameters: () => [{ type: i0.ElementRef }] });
 
 /* AUTO-GENERATED from components/text-field/text-field.html — do not edit */
-const DEML_TEMPLATE = "<label class=\"text-field\"><span class=\"text-field__label\">Name</span><input class=\"text-field__control\" type=\"text\" /></label>";
+const DEML_TEMPLATE = "<label class=\"text-field\">\n      <span class=\"text-field__label\">Name</span>\n      <input class=\"text-field__control\" type=\"text\" name=\"name\" value=\"Ada Lovelace\" autocomplete=\"name\" />\n      <span class=\"text-field__hint\">Shown on your public profile.</span>\n    </label>\n    <label class=\"text-field\">\n      <span class=\"text-field__label\">Email</span>\n      <input class=\"text-field__control\" type=\"email\" name=\"email\" placeholder=\"you@example.com\" />\n    </label>\n    <label class=\"text-field\" data-invalid=\"true\">\n      <span class=\"text-field__label\">Slug</span>\n      <input\n        class=\"text-field__control\"\n        type=\"text\"\n        name=\"slug\"\n        id=\"demo-slug\"\n        value=\"Bad Slug\"\n        aria-invalid=\"true\"\n        aria-describedby=\"demo-slug-error demo-slug-hint\"\n      />\n      <span class=\"text-field__hint\" id=\"demo-slug-hint\">Lowercase letters and hyphens.</span>\n      <span class=\"text-field__error\" id=\"demo-slug-error\" role=\"alert\">Use lowercase letters and hyphens.</span>\n    </label>\n    <label class=\"text-field\">\n      <span class=\"text-field__label\">Locked</span>\n      <input class=\"text-field__control\" type=\"text\" value=\"Read only\" disabled />\n    </label>";
 class DemlTextField {
     constructor(host) {
         this.host = host;

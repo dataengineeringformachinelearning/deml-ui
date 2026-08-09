@@ -22,12 +22,12 @@ deml-form-panel,
 .form-panel {
   box-sizing: border-box;
   display: flex;
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   flex-direction: column;
   gap: var(--space-3);
   width: 100%;
-  height: auto;
-  min-height: 0;
+  height: 100%;
+  min-height: 100%;
   max-width: 100%;
   margin: 0;
   padding: var(--module-pad);
@@ -68,7 +68,7 @@ deml-form-panel,
 .form-panel__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(calc(var(--grid) * 3.5), 4.25vw, var(--font-size-xl));
+  font-size: clamp(var(--space-3), 4.25vw, var(--font-size-xl));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);

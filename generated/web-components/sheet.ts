@@ -8,13 +8,20 @@ export class DemlSheet extends HTMLElement {
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
       this.innerHTML = `<div class="sheet-overlay" role="presentation">
-      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
-        <div class="sheet__handle" aria-hidden="true"></div>
+      <div
+        class="sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sheet-title"
+        aria-describedby="sheet-desc"
+        tabindex="-1"
+      >
+        <button type="button" class="sheet__handle" aria-label="Dismiss"></button>
         <header class="sheet__header">
           <h3 class="sheet__title" id="sheet-title">Confirm action</h3>
         </header>
         <div class="sheet__body">
-          <p>Bottom sheet on phone; centered panel from 800px.</p>
+          <p id="sheet-desc">Bottom sheet on phone; centered panel from 800px.</p>
         </div>
         <footer class="sheet__footer">
           <button type="button" class="button button--secondary button--pill">Cancel</button>

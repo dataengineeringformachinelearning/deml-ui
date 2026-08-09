@@ -5,16 +5,17 @@
 
 .component--page-shell .demo {
   display: grid;
-  gap: var(--space-md);
+  gap: var(--tile-gap);
 }
 
 .page-shell {
   width: 100%;
 }
+
 .page-shell__inner {
   width: min(100%, var(--content-width));
   margin-inline: auto;
-  padding: var(--space-md) var(--gutter);
+  padding: var(--page-pad-block) var(--page-pad-inline);
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--tile-gap);
 }

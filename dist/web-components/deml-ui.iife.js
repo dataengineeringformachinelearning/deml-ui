@@ -71,7 +71,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
     <span class="badge" data-tone="info">Info</span>
     <span class="badge" data-tone="success">Success</span>
     <span class="badge" data-tone="warning">Warning</span>
-    <span class="badge" data-tone="danger">Danger</span>`))}};function De(){customElements.get(i.tagName)||customElements.define(i.tagName,i)}var n=class extends HTMLElement{static{this.tagName="deml-banner"}static{this.componentName="banner"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="banner banner--hero" data-variant="hero">
+    <span class="badge" data-tone="danger">Danger</span>`))}};function De(){customElements.get(i.tagName)||customElements.define(i.tagName,i)}var l=class extends HTMLElement{static{this.tagName="deml-banner"}static{this.componentName="banner"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="banner banner--hero" data-variant="hero">
       <p class="preheader">DEML</p>
       <h1 class="banner-heading">Status your customers can trust.</h1>
       <p class="lede">Publish public status pages, share clear uptime, and manage your account in one place.</p>
@@ -81,7 +81,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
           <a class="button button--secondary" href="#">Log in</a>
         </div>
       </div>
-    </div>`))}};function Me(){customElements.get(n.tagName)||customElements.define(n.tagName,n)}var l=class extends HTMLElement{static{this.tagName="deml-bar-chart"}static{this.componentName="bar-chart"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="chart-board" data-chart-board data-chart-ymax="auto">
+    </div>`))}};function Me(){customElements.get(l.tagName)||customElements.define(l.tagName,l)}var n=class extends HTMLElement{static{this.tagName="deml-bar-chart"}static{this.componentName="bar-chart"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="chart-board" data-chart-board data-chart-ymax="auto">
       <article class="chart-card" data-accent="primary" aria-labelledby="bar-a">
         <header class="chart-card-header">
           <h3 class="chart-card-heading" id="bar-a">Genre</h3>
@@ -132,12 +132,12 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
           </div>
         </div>
       </article>
-    </div>`))}};function Se(){customElements.get(l.tagName)||customElements.define(l.tagName,l)}var d=class extends HTMLElement{static{this.tagName="deml-box"}static{this.componentName="box"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="box">
+    </div>`))}};function Se(){customElements.get(n.tagName)||customElements.define(n.tagName,n)}var d=class extends HTMLElement{static{this.tagName="deml-box"}static{this.componentName="box"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="box">
       <p>Lightweight content grouping box.</p>
-    </div>`))}};function we(){customElements.get(d.tagName)||customElements.define(d.tagName,d)}var r=class extends HTMLElement{static{this.tagName="deml-brand"}static{this.componentName="brand"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<a class="brand" href="/" aria-label="Product home">
+    </div>`))}};function xe(){customElements.get(d.tagName)||customElements.define(d.tagName,d)}var r=class extends HTMLElement{static{this.tagName="deml-brand"}static{this.componentName="brand"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<a class="brand" href="/" aria-label="Product home">
       <span class="brand__mark" aria-hidden="true"></span>
       <span class="brand__wordmark">Product</span>
-    </a>`))}};function Pe(){customElements.get(r.tagName)||customElements.define(r.tagName,r)}var c=class extends HTMLElement{static{this.tagName="deml-button"}static{this.componentName="button"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<button type="button" class="button button--primary">Primary</button>
+    </a>`))}};function we(){customElements.get(r.tagName)||customElements.define(r.tagName,r)}var c=class extends HTMLElement{static{this.tagName="deml-button"}static{this.componentName="button"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<button type="button" class="button button--primary">Primary</button>
     <button type="button" class="button button--secondary">Secondary</button>
     <button type="button" class="button button--accent">Accent</button>
     <button type="button" class="button button--primary button--pill">Pill</button>
@@ -145,16 +145,40 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
     <button type="button" class="button button--primary is-busy" aria-busy="true">
       <span class="button__label">Saving</span>
       <span class="button__spinner" aria-hidden="true"></span>
-    </button>`))}};function xe(){customElements.get(c.tagName)||customElements.define(c.tagName,c)}var o=class extends HTMLElement{static{this.tagName="deml-button-group"}static{this.componentName="button-group"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="button-group" role="group" aria-label="Alignment">
+    </button>`))}};function Pe(){customElements.get(c.tagName)||customElements.define(c.tagName,c)}var o=class extends HTMLElement{static{this.tagName="deml-button-group"}static{this.componentName="button-group"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="button-group" role="group" aria-label="Alignment">
       <button type="button">Left</button>
       <button type="button">Center</button>
       <button type="button">Right</button>
     </div>`))}};function Be(){customElements.get(o.tagName)||customElements.define(o.tagName,o)}var m=class extends HTMLElement{static{this.tagName="deml-callout"}static{this.componentName="callout"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<aside class="callout" role="status" data-tone="info">
       <div class="callout__body">
-        <p class="callout__heading">Callout heading</p>
+        <p class="callout__heading">Info</p>
         <p class="callout__text">Highlighted message for the user.</p>
       </div>
       <button type="button" class="callout__close" aria-label="Dismiss">×</button>
+    </aside>
+    <aside class="callout" role="status" data-tone="success">
+      <div class="callout__body">
+        <p class="callout__heading">Success</p>
+        <p class="callout__text">Changes saved.</p>
+      </div>
+    </aside>
+    <aside class="callout" role="status" data-tone="warning">
+      <div class="callout__body">
+        <p class="callout__heading">Warning</p>
+        <p class="callout__text">You are offline — edits will queue.</p>
+      </div>
+    </aside>
+    <aside class="callout" role="alert" data-tone="danger">
+      <div class="callout__body">
+        <p class="callout__heading">Danger</p>
+        <p class="callout__text">This action cannot be undone.</p>
+      </div>
+    </aside>
+    <aside class="callout" role="status" data-tone="neutral">
+      <div class="callout__body">
+        <p class="callout__heading">Neutral</p>
+        <p class="callout__text">Quiet continuity note.</p>
+      </div>
     </aside>`))}};function Fe(){customElements.get(m.tagName)||customElements.define(m.tagName,m)}var h=class extends HTMLElement{static{this.tagName="deml-card"}static{this.componentName="card"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<article class="card" data-visual="olive">
       <div class="card-copy">
         <p class="card-meta">Feature</p>
@@ -351,14 +375,24 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
           </div>
         </div>
       </section>
-    </div>`))}};function ze(){customElements.get(b.tagName)||customElements.define(b.tagName,b)}var v=class extends HTMLElement{static{this.tagName="deml-checkbox"}static{this.componentName="checkbox"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label class="checkbox">
-      <input type="checkbox" name="checkbox-demo" />
-      <span class="checkbox__label">Checkbox option</span>
-    </label>`))}};function Oe(){customElements.get(v.tagName)||customElements.define(v.tagName,v)}var y=class extends HTMLElement{static{this.tagName="deml-checkbox-field"}static{this.componentName="checkbox-field"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML='<label class="checkbox-field"><input type="checkbox" /><span>Remember me</span></label>'))}};function Ue(){customElements.get(y.tagName)||customElements.define(y.tagName,y)}var N=class extends HTMLElement{static{this.tagName="deml-cluster"}static{this.componentName="cluster"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="cluster">
+    </div>`))}};function ze(){customElements.get(b.tagName)||customElements.define(b.tagName,b)}var v=class extends HTMLElement{static{this.tagName="deml-checkbox"}static{this.componentName="checkbox"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label class="checkbox-field">
+      <input class="checkbox-field__input" type="checkbox" name="checkbox-demo" />
+      <span class="checkbox-field__box" aria-hidden="true"></span>
+      <span class="checkbox-field__label">Checkbox option</span>
+    </label>
+    <label class="checkbox-field">
+      <input class="checkbox-field__input" type="checkbox" name="checkbox-demo-disabled" disabled />
+      <span class="checkbox-field__box" aria-hidden="true"></span>
+      <span class="checkbox-field__label">Disabled option</span>
+    </label>`))}};function Ue(){customElements.get(v.tagName)||customElements.define(v.tagName,v)}var _=class extends HTMLElement{static{this.tagName="deml-checkbox-field"}static{this.componentName="checkbox-field"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label class="checkbox-field">
+      <input class="checkbox-field__input" type="checkbox" name="remember" />
+      <span class="checkbox-field__box" aria-hidden="true"></span>
+      <span class="checkbox-field__label">Remember me</span>
+    </label>`))}};function Ye(){customElements.get(_.tagName)||customElements.define(_.tagName,_)}var y=class extends HTMLElement{static{this.tagName="deml-cluster"}static{this.componentName="cluster"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="cluster">
       <button type="button">Primary</button>
       <button type="button">Secondary</button>
       <span class="badge">Tag</span>
-    </div>`))}};function Ye(){customElements.get(N.tagName)||customElements.define(N.tagName,N)}var _=class extends HTMLElement{static{this.tagName="deml-confirm-dialog"}static{this.componentName="confirm-dialog"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<button type="button" class="button" data-deml-open-confirm>Delete item</button>
+    </div>`))}};function Oe(){customElements.get(y.tagName)||customElements.define(y.tagName,y)}var N=class extends HTMLElement{static{this.tagName="deml-confirm-dialog"}static{this.componentName="confirm-dialog"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<button type="button" class="button" data-deml-open-confirm>Delete item</button>
     <dialog class="confirm-dialog">
       <form method="dialog">
         <h3 class="confirm-dialog__title">Confirm action</h3>
@@ -368,7 +402,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
           <button type="submit" class="button" data-variant="primary" value="confirm">Confirm</button>
         </div>
       </form>
-    </dialog>`))}};function qe(){customElements.get(_.tagName)||customElements.define(_.tagName,_)}var H=class extends HTMLElement{static{this.tagName="deml-container"}static{this.componentName="container"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="container">
+    </dialog>`))}};function qe(){customElements.get(N.tagName)||customElements.define(N.tagName,N)}var H=class extends HTMLElement{static{this.tagName="deml-container"}static{this.componentName="container"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="container">
       <header class="container__header">
         <h3 class="container__title">Container</h3>
         <p class="container__description">Content anatomy wrapper.</p>
@@ -470,12 +504,12 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
         <input id="field-input" class="field__control" type="text" name="field" required aria-describedby="field-desc" />
       </label>
       <p class="field__description" id="field-desc">Helper text for the control.</p>
-    </div>`))}};function ea(){customElements.get(S.tagName)||customElements.define(S.tagName,S)}var w=class extends HTMLElement{static{this.tagName="deml-form-grid"}static{this.componentName="form-grid"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="form-grid">
+    </div>`))}};function ea(){customElements.get(S.tagName)||customElements.define(S.tagName,S)}var x=class extends HTMLElement{static{this.tagName="deml-form-grid"}static{this.componentName="form-grid"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="form-grid">
       <label>First name <input type="text" name="first" /></label>
       <label>Last name <input type="text" name="last" /></label>
       <label>Email <input type="email" name="email" /></label>
       <label>Company <input type="text" name="company" /></label>
-    </div>`))}};function aa(){customElements.get(w.tagName)||customElements.define(w.tagName,w)}var P=class extends HTMLElement{static{this.tagName="deml-form-panel"}static{this.componentName="form-panel"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML='<form class="form-panel"><label class="field"><span class="field__label">Email</span><input class="input-text" type="email" /></label><button class="button button--primary" type="submit">Submit</button></form>'))}};function ta(){customElements.get(P.tagName)||customElements.define(P.tagName,P)}var x=class extends HTMLElement{static{this.tagName="deml-form-section"}static{this.componentName="form-section"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<section class="form-section">
+    </div>`))}};function aa(){customElements.get(x.tagName)||customElements.define(x.tagName,x)}var w=class extends HTMLElement{static{this.tagName="deml-form-panel"}static{this.componentName="form-panel"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML='<form class="form-panel"><label class="field"><span class="field__label">Email</span><input class="input-text" type="email" /></label><button class="button button--primary" type="submit">Submit</button></form>'))}};function ta(){customElements.get(w.tagName)||customElements.define(w.tagName,w)}var P=class extends HTMLElement{static{this.tagName="deml-form-section"}static{this.componentName="form-section"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<section class="form-section">
       <header class="form-section__header">
         <h3 class="form-section__title">Account</h3>
         <p class="form-section__description">Basic profile settings.</p>
@@ -484,7 +518,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
         <label>Name <input type="text" name="name" /></label>
         <label>Email <input type="email" name="email" /></label>
       </div>
-    </section>`))}};function sa(){customElements.get(x.tagName)||customElements.define(x.tagName,x)}var B=class extends HTMLElement{static{this.tagName="deml-grid"}static{this.componentName="grid"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="grid">
+    </section>`))}};function sa(){customElements.get(P.tagName)||customElements.define(P.tagName,P)}var B=class extends HTMLElement{static{this.tagName="deml-grid"}static{this.componentName="grid"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="grid">
       <div class="grid__item">A</div>
       <div class="grid__item">B</div>
       <div class="grid__item">C</div>
@@ -493,23 +527,39 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
       <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" />
       <path d="M12 8v4l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
     </svg>
-    <span class="icon-label">Icon placeholder</span>`))}};function na(){customElements.get(F.tagName)||customElements.define(F.tagName,F)}var A=class extends HTMLElement{static{this.tagName="deml-input-date"}static{this.componentName="input-date"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-date-field">Date</label>
-    <input id="input-date-field" name="date" type="date">`))}};function la(){customElements.get(A.tagName)||customElements.define(A.tagName,A)}var I=class extends HTMLElement{static{this.tagName="deml-input-email"}static{this.componentName="input-email"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-email-field">Email</label>
+    <span class="icon-label">Icon placeholder</span>`))}};function la(){customElements.get(F.tagName)||customElements.define(F.tagName,F)}var A=class extends HTMLElement{static{this.tagName="deml-input-date"}static{this.componentName="input-date"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-date-field">Date</label>
+    <input id="input-date-field" name="date" type="date">`))}};function na(){customElements.get(A.tagName)||customElements.define(A.tagName,A)}var I=class extends HTMLElement{static{this.tagName="deml-input-email"}static{this.componentName="input-email"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-email-field">Email</label>
     <input id="input-email-field" name="email" type="email" placeholder="you@example.com" autocomplete="email">`))}};function da(){customElements.get(I.tagName)||customElements.define(I.tagName,I)}var G=class extends HTMLElement{static{this.tagName="deml-input-number"}static{this.componentName="input-number"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-number-field">Number</label>
     <input id="input-number-field" name="number" type="number" min="0" max="100" step="1" value="10">`))}};function ra(){customElements.get(G.tagName)||customElements.define(G.tagName,G)}var R=class extends HTMLElement{static{this.tagName="deml-input-password"}static{this.componentName="input-password"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-password-field">Password</label>
     <input id="input-password-field" name="password" type="password" placeholder="Password" autocomplete="new-password">`))}};function ca(){customElements.get(R.tagName)||customElements.define(R.tagName,R)}var W=class extends HTMLElement{static{this.tagName="deml-input-range"}static{this.componentName="input-range"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-range-field">Range</label>
     <input id="input-range-field" name="range" type="range" min="0" max="100" value="40">`))}};function oa(){customElements.get(W.tagName)||customElements.define(W.tagName,W)}var z=class extends HTMLElement{static{this.tagName="deml-input-search"}static{this.componentName="input-search"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-search-field">Search</label>
-    <input id="input-search-field" name="search" type="search" placeholder="Search…">`))}};function ma(){customElements.get(z.tagName)||customElements.define(z.tagName,z)}var O=class extends HTMLElement{static{this.tagName="deml-input-text"}static{this.componentName="input-text"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-text-field">Name</label>
-    <input id="input-text-field" name="name" type="text" placeholder="Name" autocomplete="name" required>`))}};function ha(){customElements.get(O.tagName)||customElements.define(O.tagName,O)}var U=class extends HTMLElement{static{this.tagName="deml-input-time"}static{this.componentName="input-time"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-time-field">Time</label>
-    <input id="input-time-field" name="time" type="time">`))}};function ua(){customElements.get(U.tagName)||customElements.define(U.tagName,U)}var Y=class extends HTMLElement{static{this.tagName="deml-label"}static{this.componentName="label"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label class="label" for="label-demo-input">Label</label>
-    <input id="label-demo-input" type="text" name="label-demo" />`))}};function pa(){customElements.get(Y.tagName)||customElements.define(Y.tagName,Y)}var q=class extends HTMLElement{static{this.tagName="deml-navbar"}static{this.componentName="navbar"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<header class="site-navbar">
+    <input id="input-search-field" name="search" type="search" placeholder="Search…">`))}};function ma(){customElements.get(z.tagName)||customElements.define(z.tagName,z)}var U=class extends HTMLElement{static{this.tagName="deml-input-text"}static{this.componentName="input-text"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label class="text-field" for="input-text-field">
+      <span class="text-field__label">Name</span>
+      <input
+        id="input-text-field"
+        class="text-field__control"
+        name="name"
+        type="text"
+        placeholder="Your name"
+        autocomplete="name"
+      />
+    </label>`))}};function ha(){customElements.get(U.tagName)||customElements.define(U.tagName,U)}var Y=class extends HTMLElement{static{this.tagName="deml-input-time"}static{this.componentName="input-time"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="input-time-field">Time</label>
+    <input id="input-time-field" name="time" type="time">`))}};function ua(){customElements.get(Y.tagName)||customElements.define(Y.tagName,Y)}var O=class extends HTMLElement{static{this.tagName="deml-label"}static{this.componentName="label"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label class="label" for="label-demo-input">Label</label>
+    <input id="label-demo-input" type="text" name="label-demo" />`))}};function pa(){customElements.get(O.tagName)||customElements.define(O.tagName,O)}var q=class extends HTMLElement{static{this.tagName="deml-navbar"}static{this.componentName="navbar"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<header class="site-navbar">
       <div class="site-navbar-branding">
         <a class="site-navbar-icon" href="#" aria-label="DEML home">DEML</a>
       </div>
-      <button type="button" class="site-navbar-menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <button
+        type="button"
+        class="site-navbar-menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navbar-demo-panel"
+        aria-haspopup="true"
+      >
         Menu
       </button>
-      <div class="site-navbar-panel">
+      <div id="navbar-demo-panel" class="site-navbar-panel">
         <div class="site-navbar-panel__inner">
           <nav class="main-navigation" aria-label="Primary">
             <ul>
@@ -537,7 +587,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
       <div class="page-shell__inner">
         <p>Constrained page canvas content.</p>
       </div>
-    </div>`))}};function ya(){customElements.get(J.tagName)||customElements.define(J.tagName,J)}var Q=class extends HTMLElement{static{this.tagName="deml-page-template"}static{this.componentName="page-template"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="page-template">
+    </div>`))}};function _a(){customElements.get(J.tagName)||customElements.define(J.tagName,J)}var Q=class extends HTMLElement{static{this.tagName="deml-page-template"}static{this.componentName="page-template"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="page-template">
       <header class="page-template__header">
         <h1>Page template</h1>
         <div class="page-template__actions"><button type="button">Action</button></div>
@@ -546,7 +596,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
         <p>Route content region.</p>
       </div>
       <footer class="page-template__footer">Footer slot</footer>
-    </div>`))}};function Na(){customElements.get(Q.tagName)||customElements.define(Q.tagName,Q)}var X=class extends HTMLElement{static{this.tagName="deml-pagination"}static{this.componentName="pagination"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<nav class="pagination" aria-label="Pagination">
+    </div>`))}};function ya(){customElements.get(Q.tagName)||customElements.define(Q.tagName,Q)}var X=class extends HTMLElement{static{this.tagName="deml-pagination"}static{this.componentName="pagination"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<nav class="pagination" aria-label="Pagination">
       <button type="button" class="pagination__prev" aria-label="Previous page">Previous</button>
       <ul class="pagination__pages">
         <li><button type="button" aria-current="page">1</button></li>
@@ -554,7 +604,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
         <li><button type="button">3</button></li>
       </ul>
       <button type="button" class="pagination__next" aria-label="Next page">Next</button>
-    </nav>`))}};function _a(){customElements.get(X.tagName)||customElements.define(X.tagName,X)}var Z=class extends HTMLElement{static{this.tagName="deml-panel-grid"}static{this.componentName="panel-grid"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="panel-grid">
+    </nav>`))}};function Na(){customElements.get(X.tagName)||customElements.define(X.tagName,X)}var Z=class extends HTMLElement{static{this.tagName="deml-panel-grid"}static{this.componentName="panel-grid"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="panel-grid">
       <article class="panel-grid__item">Panel A</article>
       <article class="panel-grid__item">Panel B</article>
     </div>`))}};function Ha(){customElements.get(Z.tagName)||customElements.define(Z.tagName,Z)}var $=class extends HTMLElement{static{this.tagName="deml-progress"}static{this.componentName="progress"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="progress-field">Progress</label>
@@ -586,7 +636,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
       </header>
       <hr class="section-template__divider" />
       <div class="section-template__body">Body content.</div>
-    </section>`))}};function Da(){customElements.get(ie.tagName)||customElements.define(ie.tagName,ie)}var ne=class extends HTMLElement{static{this.tagName="deml-select"}static{this.componentName="select"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="select-field">Country</label>
+    </section>`))}};function Da(){customElements.get(ie.tagName)||customElements.define(ie.tagName,ie)}var le=class extends HTMLElement{static{this.tagName="deml-select"}static{this.componentName="select"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="select-field">Country</label>
     <select id="select-field" name="country">
       <optgroup label="Americas">
         <option value="us">United States</option>
@@ -596,24 +646,31 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
         <option value="uk">United Kingdom</option>
         <option value="de">Germany</option>
       </optgroup>
-    </select>`))}};function Ma(){customElements.get(ne.tagName)||customElements.define(ne.tagName,ne)}var le=class extends HTMLElement{static{this.tagName="deml-separator"}static{this.componentName="separator"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<p>Above</p>
+    </select>`))}};function Ma(){customElements.get(le.tagName)||customElements.define(le.tagName,le)}var ne=class extends HTMLElement{static{this.tagName="deml-separator"}static{this.componentName="separator"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<p>Above</p>
     <hr class="separator" />
     <p>Below</p>
-    <div class="separator separator--vertical" role="separator" aria-orientation="vertical"></div>`))}};function Sa(){customElements.get(le.tagName)||customElements.define(le.tagName,le)}var de=class extends HTMLElement{static{this.tagName="deml-sheet"}static{this.componentName="sheet"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="sheet-overlay" role="presentation">
-      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
-        <div class="sheet__handle" aria-hidden="true"></div>
+    <div class="separator separator--vertical" role="separator" aria-orientation="vertical"></div>`))}};function Sa(){customElements.get(ne.tagName)||customElements.define(ne.tagName,ne)}var de=class extends HTMLElement{static{this.tagName="deml-sheet"}static{this.componentName="sheet"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="sheet-overlay" role="presentation">
+      <div
+        class="sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sheet-title"
+        aria-describedby="sheet-desc"
+        tabindex="-1"
+      >
+        <button type="button" class="sheet__handle" aria-label="Dismiss"></button>
         <header class="sheet__header">
           <h3 class="sheet__title" id="sheet-title">Confirm action</h3>
         </header>
         <div class="sheet__body">
-          <p>Bottom sheet on phone; centered panel from 800px.</p>
+          <p id="sheet-desc">Bottom sheet on phone; centered panel from 800px.</p>
         </div>
         <footer class="sheet__footer">
           <button type="button" class="button button--secondary button--pill">Cancel</button>
           <button type="button" class="button button--primary button--pill">Confirm</button>
         </footer>
       </div>
-    </div>`))}};function wa(){customElements.get(de.tagName)||customElements.define(de.tagName,de)}var re=class extends HTMLElement{static{this.tagName="deml-sidebar-nav"}static{this.componentName="sidebar-nav"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<nav class="sidebar-nav" aria-label="Sidebar">
+    </div>`))}};function xa(){customElements.get(de.tagName)||customElements.define(de.tagName,de)}var re=class extends HTMLElement{static{this.tagName="deml-sidebar-nav"}static{this.componentName="sidebar-nav"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<nav class="sidebar-nav" aria-label="Sidebar">
       <div class="sidebar-nav__header">
         <p class="sidebar-nav__title">Table of contents</p>
       </div>
@@ -640,7 +697,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
           </li>
         </ul>
       </div>
-    </nav>`))}};function Pa(){customElements.get(re.tagName)||customElements.define(re.tagName,re)}var ce=class extends HTMLElement{static{this.tagName="deml-site-footer"}static{this.componentName="site-footer"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<footer class="site-footer">
+    </nav>`))}};function wa(){customElements.get(re.tagName)||customElements.define(re.tagName,re)}var ce=class extends HTMLElement{static{this.tagName="deml-site-footer"}static{this.componentName="site-footer"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<footer class="site-footer">
       <div class="site-footer__inner">
         <nav class="site-footer__directory" aria-label="Footer">
           <div class="site-footer__group">
@@ -672,7 +729,7 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
           </p>
         </div>
       </div>
-    </footer>`))}};function xa(){customElements.get(ce.tagName)||customElements.define(ce.tagName,ce)}var oe=class extends HTMLElement{static{this.tagName="deml-skeleton"}static{this.componentName="skeleton"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="skeleton" aria-hidden="true">
+    </footer>`))}};function Pa(){customElements.get(ce.tagName)||customElements.define(ce.tagName,ce)}var oe=class extends HTMLElement{static{this.tagName="deml-skeleton"}static{this.componentName="skeleton"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="skeleton" aria-hidden="true">
       <div class="skeleton__line skeleton__line--short"></div>
       <div class="skeleton__line skeleton__line--long"></div>
       <div class="skeleton__line skeleton__line--medium"></div>
@@ -732,10 +789,36 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
           <td colspan="2">96.5</td>
         </tr>
       </tfoot>
-    </table>`))}};function Oa(){customElements.get(ve.tagName)||customElements.define(ve.tagName,ve)}var ye=class extends HTMLElement{static{this.tagName="deml-text-field"}static{this.componentName="text-field"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML='<label class="text-field"><span class="text-field__label">Name</span><input class="text-field__control" type="text" /></label>'))}};function Ua(){customElements.get(ye.tagName)||customElements.define(ye.tagName,ye)}var Ne=class extends HTMLElement{static{this.tagName="deml-textarea"}static{this.componentName="textarea"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="textarea-field">Message</label>
-    <textarea id="textarea-field" name="message" rows="4" cols="40" placeholder="Message"></textarea>`))}};function Ya(){customElements.get(Ne.tagName)||customElements.define(Ne.tagName,Ne)}var _e=class extends HTMLElement{static{this.tagName="deml-theme-toggle"}static{this.componentName="theme-toggle"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<button type="button" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
+    </table>`))}};function Ua(){customElements.get(ve.tagName)||customElements.define(ve.tagName,ve)}var _e=class extends HTMLElement{static{this.tagName="deml-text-field"}static{this.componentName="text-field"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label class="text-field">
+      <span class="text-field__label">Name</span>
+      <input class="text-field__control" type="text" name="name" value="Ada Lovelace" autocomplete="name" />
+      <span class="text-field__hint">Shown on your public profile.</span>
+    </label>
+    <label class="text-field">
+      <span class="text-field__label">Email</span>
+      <input class="text-field__control" type="email" name="email" placeholder="you@example.com" />
+    </label>
+    <label class="text-field" data-invalid="true">
+      <span class="text-field__label">Slug</span>
+      <input
+        class="text-field__control"
+        type="text"
+        name="slug"
+        id="demo-slug"
+        value="Bad Slug"
+        aria-invalid="true"
+        aria-describedby="demo-slug-error demo-slug-hint"
+      />
+      <span class="text-field__hint" id="demo-slug-hint">Lowercase letters and hyphens.</span>
+      <span class="text-field__error" id="demo-slug-error" role="alert">Use lowercase letters and hyphens.</span>
+    </label>
+    <label class="text-field">
+      <span class="text-field__label">Locked</span>
+      <input class="text-field__control" type="text" value="Read only" disabled />
+    </label>`))}};function Ya(){customElements.get(_e.tagName)||customElements.define(_e.tagName,_e)}var ye=class extends HTMLElement{static{this.tagName="deml-textarea"}static{this.componentName="textarea"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<label for="textarea-field">Message</label>
+    <textarea id="textarea-field" name="message" rows="4" cols="40" placeholder="Message"></textarea>`))}};function Oa(){customElements.get(ye.tagName)||customElements.define(ye.tagName,ye)}var Ne=class extends HTMLElement{static{this.tagName="deml-theme-toggle"}static{this.componentName="theme-toggle"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<button type="button" class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
       Theme
-    </button>`))}};function qa(){customElements.get(_e.tagName)||customElements.define(_e.tagName,_e)}var He=class extends HTMLElement{static{this.tagName="deml-tile-board"}static{this.componentName="tile-board"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="tile-board">
+    </button>`))}};function qa(){customElements.get(Ne.tagName)||customElements.define(Ne.tagName,Ne)}var He=class extends HTMLElement{static{this.tagName="deml-tile-board"}static{this.componentName="tile-board"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="tile-board">
       <div class="dashboard-grid">
         <article class="tile-board__cell" data-size="sm">Stat</article>
         <article class="tile-board__cell" data-size="md">Chart</article>
@@ -763,6 +846,6 @@ var DemlUi=(function(e){Object.defineProperty(e,Symbol.toStringTag,{value:"Modul
     </nav>`))}};function Va(){customElements.get(Ee.tagName)||customElements.define(Ee.tagName,Ee)}var Ce=class extends HTMLElement{static{this.tagName="deml-toggle"}static{this.componentName="toggle"}connectedCallback(){this.dataset.demlHydrated!=="true"&&(this.dataset.demlHydrated="true",this.hasChildNodes()||(this.innerHTML=`<div class="toggle-group" role="group" aria-label="View">
       <button type="button" class="toggle" aria-pressed="true">List</button>
       <button type="button" class="toggle" aria-pressed="false">Grid</button>
-    </div>`))}};function ja(){customElements.get(Ce.tagName)||customElements.define(Ce.tagName,Ce)}function Ja(){Te(),ke(),Le(),De(),Me(),Se(),we(),Pe(),xe(),Be(),Fe(),Ae(),Ie(),Ge(),Re(),We(),ze(),Oe(),Ue(),Ye(),qe(),Ke(),Ve(),je(),Je(),Qe(),Xe(),Ze(),$e(),ea(),aa(),ta(),sa(),ia(),na(),la(),da(),ra(),ca(),oa(),ma(),ha(),ua(),pa(),fa(),ga(),ba(),va(),ya(),Na(),_a(),Ha(),Ea(),Ca(),Ta(),ka(),La(),Da(),Ma(),Sa(),wa(),Pa(),xa(),Ba(),Fa(),Aa(),Ia(),Ga(),Ra(),Wa(),za(),Oa(),Ua(),Ya(),qa(),Ka(),Va(),ja()}var Qa=["app-layout","area-chart","article","badge","banner","bar-chart","box","brand","button","button-group","callout","card","card-grid","chart","chart-card","chart-empty-state","chart-panel","checkbox","checkbox-field","cluster","confirm-dialog","container","content-layout","dashboard-grid","dialog","dropdown","empty-state","error-state","explore-card","field","form-grid","form-panel","form-section","grid","icon","input-date","input-email","input-number","input-password","input-range","input-search","input-text","input-time","label","navbar","page-back-link","page-header","page-section","page-shell","page-template","pagination","panel-grid","progress","radio-group","scroll-area","section","section-header","section-template","select","separator","sheet","sidebar-nav","site-footer","skeleton","skip-link","spinner","stack","stat-card","status-badge","status-pill","switch","table","text-field","textarea","theme-toggle","tile-board","toc","toggle"];return Ja(),e.DemlAppLayout=a,e.DemlAreaChart=t,e.DemlArticle=s,e.DemlBadge=i,e.DemlBanner=n,e.DemlBarChart=l,e.DemlBox=d,e.DemlBrand=r,e.DemlButton=c,e.DemlButtonGroup=o,e.DemlCallout=m,e.DemlCard=h,e.DemlCardGrid=u,e.DemlChart=p,e.DemlChartCard=f,e.DemlChartEmptyState=g,e.DemlChartPanel=b,e.DemlCheckbox=v,e.DemlCheckboxField=y,e.DemlCluster=N,e.DemlConfirmDialog=_,e.DemlContainer=H,e.DemlContentLayout=E,e.DemlDashboardGrid=C,e.DemlDialog=T,e.DemlDropdown=k,e.DemlEmptyState=L,e.DemlErrorState=D,e.DemlExploreCard=M,e.DemlField=S,e.DemlFormGrid=w,e.DemlFormPanel=P,e.DemlFormSection=x,e.DemlGrid=B,e.DemlIcon=F,e.DemlInputDate=A,e.DemlInputEmail=I,e.DemlInputNumber=G,e.DemlInputPassword=R,e.DemlInputRange=W,e.DemlInputSearch=z,e.DemlInputText=O,e.DemlInputTime=U,e.DemlLabel=Y,e.DemlNavbar=q,e.DemlPageBackLink=K,e.DemlPageHeader=V,e.DemlPageSection=j,e.DemlPageShell=J,e.DemlPageTemplate=Q,e.DemlPagination=X,e.DemlPanelGrid=Z,e.DemlProgress=$,e.DemlRadioGroup=ee,e.DemlScrollArea=ae,e.DemlSection=te,e.DemlSectionHeader=se,e.DemlSectionTemplate=ie,e.DemlSelect=ne,e.DemlSeparator=le,e.DemlSheet=de,e.DemlSidebarNav=re,e.DemlSiteFooter=ce,e.DemlSkeleton=oe,e.DemlSkipLink=me,e.DemlSpinner=he,e.DemlStack=ue,e.DemlStatCard=pe,e.DemlStatusBadge=fe,e.DemlStatusPill=ge,e.DemlSwitch=be,e.DemlTable=ve,e.DemlTextField=ye,e.DemlTextarea=Ne,e.DemlThemeToggle=_e,e.DemlTileBoard=He,e.DemlToc=Ee,e.DemlToggle=Ce,e.componentNames=Qa,e.defineAll=Ja,e.defineAppLayout=Te,e.defineAreaChart=ke,e.defineArticle=Le,e.defineBadge=De,e.defineBanner=Me,e.defineBarChart=Se,e.defineBox=we,e.defineBrand=Pe,e.defineButton=xe,e.defineButtonGroup=Be,e.defineCallout=Fe,e.defineCard=Ae,e.defineCardGrid=Ie,e.defineChart=Ge,e.defineChartCard=Re,e.defineChartEmptyState=We,e.defineChartPanel=ze,e.defineCheckbox=Oe,e.defineCheckboxField=Ue,e.defineCluster=Ye,e.defineConfirmDialog=qe,e.defineContainer=Ke,e.defineContentLayout=Ve,e.defineDashboardGrid=je,e.defineDialog=Je,e.defineDropdown=Qe,e.defineEmptyState=Xe,e.defineErrorState=Ze,e.defineExploreCard=$e,e.defineField=ea,e.defineFormGrid=aa,e.defineFormPanel=ta,e.defineFormSection=sa,e.defineGrid=ia,e.defineIcon=na,e.defineInputDate=la,e.defineInputEmail=da,e.defineInputNumber=ra,e.defineInputPassword=ca,e.defineInputRange=oa,e.defineInputSearch=ma,e.defineInputText=ha,e.defineInputTime=ua,e.defineLabel=pa,e.defineNavbar=fa,e.definePageBackLink=ga,e.definePageHeader=ba,e.definePageSection=va,e.definePageShell=ya,e.definePageTemplate=Na,e.definePagination=_a,e.definePanelGrid=Ha,e.defineProgress=Ea,e.defineRadioGroup=Ca,e.defineScrollArea=Ta,e.defineSection=ka,e.defineSectionHeader=La,e.defineSectionTemplate=Da,e.defineSelect=Ma,e.defineSeparator=Sa,e.defineSheet=wa,e.defineSidebarNav=Pa,e.defineSiteFooter=xa,e.defineSkeleton=Ba,e.defineSkipLink=Fa,e.defineSpinner=Aa,e.defineStack=Ia,e.defineStatCard=Ga,e.defineStatusBadge=Ra,e.defineStatusPill=Wa,e.defineSwitch=za,e.defineTable=Oa,e.defineTextField=Ua,e.defineTextarea=Ya,e.defineThemeToggle=qa,e.defineTileBoard=Ka,e.defineToc=Va,e.defineToggle=ja,e})({});
+    </div>`))}};function ja(){customElements.get(Ce.tagName)||customElements.define(Ce.tagName,Ce)}function Ja(){Te(),ke(),Le(),De(),Me(),Se(),xe(),we(),Pe(),Be(),Fe(),Ae(),Ie(),Ge(),Re(),We(),ze(),Ue(),Ye(),Oe(),qe(),Ke(),Ve(),je(),Je(),Qe(),Xe(),Ze(),$e(),ea(),aa(),ta(),sa(),ia(),la(),na(),da(),ra(),ca(),oa(),ma(),ha(),ua(),pa(),fa(),ga(),ba(),va(),_a(),ya(),Na(),Ha(),Ea(),Ca(),Ta(),ka(),La(),Da(),Ma(),Sa(),xa(),wa(),Pa(),Ba(),Fa(),Aa(),Ia(),Ga(),Ra(),Wa(),za(),Ua(),Ya(),Oa(),qa(),Ka(),Va(),ja()}var Qa=["app-layout","area-chart","article","badge","banner","bar-chart","box","brand","button","button-group","callout","card","card-grid","chart","chart-card","chart-empty-state","chart-panel","checkbox","checkbox-field","cluster","confirm-dialog","container","content-layout","dashboard-grid","dialog","dropdown","empty-state","error-state","explore-card","field","form-grid","form-panel","form-section","grid","icon","input-date","input-email","input-number","input-password","input-range","input-search","input-text","input-time","label","navbar","page-back-link","page-header","page-section","page-shell","page-template","pagination","panel-grid","progress","radio-group","scroll-area","section","section-header","section-template","select","separator","sheet","sidebar-nav","site-footer","skeleton","skip-link","spinner","stack","stat-card","status-badge","status-pill","switch","table","text-field","textarea","theme-toggle","tile-board","toc","toggle"];return Ja(),e.DemlAppLayout=a,e.DemlAreaChart=t,e.DemlArticle=s,e.DemlBadge=i,e.DemlBanner=l,e.DemlBarChart=n,e.DemlBox=d,e.DemlBrand=r,e.DemlButton=c,e.DemlButtonGroup=o,e.DemlCallout=m,e.DemlCard=h,e.DemlCardGrid=u,e.DemlChart=p,e.DemlChartCard=f,e.DemlChartEmptyState=g,e.DemlChartPanel=b,e.DemlCheckbox=v,e.DemlCheckboxField=_,e.DemlCluster=y,e.DemlConfirmDialog=N,e.DemlContainer=H,e.DemlContentLayout=E,e.DemlDashboardGrid=C,e.DemlDialog=T,e.DemlDropdown=k,e.DemlEmptyState=L,e.DemlErrorState=D,e.DemlExploreCard=M,e.DemlField=S,e.DemlFormGrid=x,e.DemlFormPanel=w,e.DemlFormSection=P,e.DemlGrid=B,e.DemlIcon=F,e.DemlInputDate=A,e.DemlInputEmail=I,e.DemlInputNumber=G,e.DemlInputPassword=R,e.DemlInputRange=W,e.DemlInputSearch=z,e.DemlInputText=U,e.DemlInputTime=Y,e.DemlLabel=O,e.DemlNavbar=q,e.DemlPageBackLink=K,e.DemlPageHeader=V,e.DemlPageSection=j,e.DemlPageShell=J,e.DemlPageTemplate=Q,e.DemlPagination=X,e.DemlPanelGrid=Z,e.DemlProgress=$,e.DemlRadioGroup=ee,e.DemlScrollArea=ae,e.DemlSection=te,e.DemlSectionHeader=se,e.DemlSectionTemplate=ie,e.DemlSelect=le,e.DemlSeparator=ne,e.DemlSheet=de,e.DemlSidebarNav=re,e.DemlSiteFooter=ce,e.DemlSkeleton=oe,e.DemlSkipLink=me,e.DemlSpinner=he,e.DemlStack=ue,e.DemlStatCard=pe,e.DemlStatusBadge=fe,e.DemlStatusPill=ge,e.DemlSwitch=be,e.DemlTable=ve,e.DemlTextField=_e,e.DemlTextarea=ye,e.DemlThemeToggle=Ne,e.DemlTileBoard=He,e.DemlToc=Ee,e.DemlToggle=Ce,e.componentNames=Qa,e.defineAll=Ja,e.defineAppLayout=Te,e.defineAreaChart=ke,e.defineArticle=Le,e.defineBadge=De,e.defineBanner=Me,e.defineBarChart=Se,e.defineBox=xe,e.defineBrand=we,e.defineButton=Pe,e.defineButtonGroup=Be,e.defineCallout=Fe,e.defineCard=Ae,e.defineCardGrid=Ie,e.defineChart=Ge,e.defineChartCard=Re,e.defineChartEmptyState=We,e.defineChartPanel=ze,e.defineCheckbox=Ue,e.defineCheckboxField=Ye,e.defineCluster=Oe,e.defineConfirmDialog=qe,e.defineContainer=Ke,e.defineContentLayout=Ve,e.defineDashboardGrid=je,e.defineDialog=Je,e.defineDropdown=Qe,e.defineEmptyState=Xe,e.defineErrorState=Ze,e.defineExploreCard=$e,e.defineField=ea,e.defineFormGrid=aa,e.defineFormPanel=ta,e.defineFormSection=sa,e.defineGrid=ia,e.defineIcon=la,e.defineInputDate=na,e.defineInputEmail=da,e.defineInputNumber=ra,e.defineInputPassword=ca,e.defineInputRange=oa,e.defineInputSearch=ma,e.defineInputText=ha,e.defineInputTime=ua,e.defineLabel=pa,e.defineNavbar=fa,e.definePageBackLink=ga,e.definePageHeader=ba,e.definePageSection=va,e.definePageShell=_a,e.definePageTemplate=ya,e.definePagination=Na,e.definePanelGrid=Ha,e.defineProgress=Ea,e.defineRadioGroup=Ca,e.defineScrollArea=Ta,e.defineSection=ka,e.defineSectionHeader=La,e.defineSectionTemplate=Da,e.defineSelect=Ma,e.defineSeparator=Sa,e.defineSheet=xa,e.defineSidebarNav=wa,e.defineSiteFooter=Pa,e.defineSkeleton=Ba,e.defineSkipLink=Fa,e.defineSpinner=Aa,e.defineStack=Ia,e.defineStatCard=Ga,e.defineStatusBadge=Ra,e.defineStatusPill=Wa,e.defineSwitch=za,e.defineTable=Ua,e.defineTextField=Ya,e.defineTextarea=Oa,e.defineThemeToggle=qa,e.defineTileBoard=Ka,e.defineToc=Va,e.defineToggle=ja,e})({});
 
 //# sourceMappingURL=deml-ui.iife.js.map

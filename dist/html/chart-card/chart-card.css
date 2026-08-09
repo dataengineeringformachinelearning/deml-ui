@@ -1,5 +1,5 @@
 /* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
-/* Component: chart-card — cream module + value/trend header; hosts 140/280 plots */
+/* Component: chart-card — cream module + value/trend header; hosts 144/280 plots */
 
 .component--chart-card .demo {
   max-height: 100%;
@@ -149,7 +149,7 @@ app-chart-card[data-accent='primary'],
 
 /*
  * Plot band — hosts fill the card content width; line charts use fixed
- * --chart-height-panel (280px) / --chart-height-spark (140px).
+ * --chart-height-panel (280px) / --chart-height-spark (144px).
  */
 .chart-card-body {
   display: flex;
@@ -201,7 +201,7 @@ deml-chart-card .chart-card-body .bar-chart {
 app-chart-card[data-size='hero'] .chart-card-heading,
 app-chart-card[data-size='lg'] .chart-card-heading,
 app-chart-card[data-size='wide'] .chart-card-heading {
-  font-size: clamp(1.25rem, 2.5vw, var(--font-size-md));
+  font-size: clamp(var(--space-2), 2.5vw, var(--font-size-md));
   letter-spacing: var(--tracking-display);
 }
 

@@ -11,7 +11,6 @@
  */
 app-stat-card,
 deml-stat-card,
-deml-metric-card,
 :host {
   display: block;
   box-sizing: border-box;
@@ -27,21 +26,18 @@ deml-metric-card,
 
 app-stat-card[data-accent='gold'],
 deml-stat-card[data-accent='gold'],
-deml-metric-card[data-accent='gold'],
 :host([data-accent='gold']) {
   --stat-accent: var(--color-accent-gold);
 }
 
 app-stat-card[data-accent='red'],
 deml-stat-card[data-accent='red'],
-deml-metric-card[data-accent='red'],
 :host([data-accent='red']) {
   --stat-accent: var(--color-accent-red);
 }
 
 app-stat-card[data-accent='primary'],
 deml-stat-card[data-accent='primary'],
-deml-metric-card[data-accent='primary'],
 :host([data-accent='primary']) {
   --stat-accent: var(--color-primary);
 }
@@ -122,7 +118,7 @@ deml-stat-card[data-trend='down'] .stat-card-delta,
   margin: 0;
   flex: 0 0 auto;
   font-family: var(--font-display);
-  font-size: clamp(var(--font-size-lg), 4vw, calc(var(--grid) * 5.5));
+  font-size: clamp(var(--font-size-lg), 4vw, var(--space-5));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: 0.95;
@@ -140,6 +136,7 @@ deml-stat-card[data-trend='down'] .stat-card-delta,
 }
 
 /* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
+/* Slot only — chart frame owns the 144px band (no double-count with padding) */
 .stat-card-spark {
   display: flex;
   flex: 0 0 auto;
@@ -147,20 +144,23 @@ deml-stat-card[data-trend='down'] .stat-card-delta,
   align-items: stretch;
   justify-content: flex-end;
   width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  margin-top: auto;
+  padding-top: var(--space-3);
+  box-sizing: border-box;
+}
+
+/* Spark: fixed --chart-height-spark; never stretch to fill leftover tile height */
+.stat-card-spark > :first-child,
+.stat-card-spark .area-chart-frame,
+.stat-card-spark .chart-empty-state {
+  width: 100%;
   height: var(--chart-height-spark);
   min-height: var(--chart-height-spark);
   max-height: var(--chart-height-spark);
-  /* Pin spark to tile bottom; never grow into leftover row height */
-  margin-top: auto;
-  padding-top: var(--space-3);
-}
-
-/* Spark: fixed 140px; never stretch to fill leftover tile height */
-.stat-card-spark > :first-child {
-  width: 100%;
-  height: var(--chart-height-spark);
-  max-height: var(--chart-height-spark);
-  flex: 0 0 auto;
+  flex: 0 0 var(--chart-height-spark);
   align-self: stretch;
 }
 
@@ -182,7 +182,7 @@ deml-stat-card[data-size='hero'] .stat-card-value,
 :host([data-size='wide']) .stat-card-value,
 :host([data-size='lg']) .stat-card-value,
 :host([data-size='hero']) .stat-card-value {
-  font-size: clamp(calc(var(--grid) * 4.5), 5vw, calc(var(--grid) * 6.5));
+  font-size: clamp(var(--space-4), 5vw, var(--space-6));
 }
 
 @media screen and (min-width: 800px) {

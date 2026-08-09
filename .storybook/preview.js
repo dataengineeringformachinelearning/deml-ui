@@ -2,7 +2,11 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from "storybook/viewport";
 import "@fontsource-variable/geist/wght.css";
 import "../styles.css";
+import "../styles/base.css";
 import "../components/components.css";
+import { defaultChromaticModes } from "./modes.js";
+
+const enforceA11y = Boolean(process.env.CI || process.env.CHROMATIC);
 
 /** Canvas backgrounds — new-from-the-start warm ash only */
 const demlBackgrounds = {
@@ -20,7 +24,6 @@ const preview = {
   tags: ["autodocs"],
 
   parameters: {
-    // Essentials: layout / docs / controls / actions / viewport / backgrounds / a11y
     layout: "fullscreen",
 
     controls: {
@@ -33,7 +36,6 @@ const preview = {
     },
 
     actions: {
-      // Log common interactive events from demos
       handles: ["click", "submit", "change", "input", "toggle", "close"],
     },
 
@@ -88,8 +90,8 @@ const preview = {
     },
 
     a11y: {
-      // Surface violations in the A11y panel; CI can tighten to "error" later
-      test: "todo",
+      // CI / Chromatic: fail on violations. Local: surface in panel.
+      test: enforceA11y ? "error" : "todo",
       options: {
         runOnly: {
           type: "tag",
@@ -98,14 +100,19 @@ const preview = {
       },
     },
 
-    // Measure & outline are toolbar tools; highlight helps a11y/focus inspection
+    chromatic: {
+      modes: defaultChromaticModes,
+      pauseAnimationAtEnd: true,
+      // Prefer CSS-driven motion freeze for skeletons/spinners
+      prefersReducedMotion: "reduce",
+    },
+
     highlight: {
       disable: false,
     },
   },
 
   globalTypes: {
-    // Layout density quick toggle (complements backgrounds/viewport)
     density: {
       description: "Canvas padding density",
       defaultValue: "comfortable",
@@ -141,12 +148,12 @@ const preview = {
             ? "var(--space-8)"
             : "var(--space-4)";
 
-      // Keep .dark in sync with themes addon (tokens accept data-theme or .dark)
       const root = document.documentElement;
       const isDark =
         root.getAttribute("data-theme") === "dark" ||
         context.globals.theme === "dark";
       root.classList.toggle("dark", isDark);
+      root.classList.toggle("light", !isDark);
 
       const el = story();
       if (el instanceof HTMLElement) {
@@ -160,6 +167,7 @@ const preview = {
   initialGlobals: {
     viewport: { value: "responsive", isRotated: false },
     backgrounds: { value: "warm-ash" },
+    theme: "dark",
   },
 };
 

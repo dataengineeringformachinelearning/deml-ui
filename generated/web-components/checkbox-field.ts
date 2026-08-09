@@ -7,7 +7,11 @@ export class DemlCheckboxField extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<label class="checkbox-field"><input type="checkbox" /><span>Remember me</span></label>`;
+      this.innerHTML = `<label class="checkbox-field">
+      <input class="checkbox-field__input" type="checkbox" name="remember" />
+      <span class="checkbox-field__box" aria-hidden="true"></span>
+      <span class="checkbox-field__label">Remember me</span>
+    </label>`;
     }
   }
 }

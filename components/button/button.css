@@ -42,6 +42,14 @@
   outline-offset: var(--focus-ring-offset);
 }
 
+.module .button:focus-visible,
+.card .button:focus-visible,
+.form-panel .button:focus-visible,
+.sheet .button:focus-visible,
+.explore-card .button:focus-visible {
+  outline-color: var(--color-focus-on-card);
+}
+
 .button:active:not(:disabled):not(.is-disabled):not(.is-busy) {
   transform: scale(var(--press-scale));
 }
@@ -69,7 +77,7 @@
   opacity: var(--opacity-disabled);
 }
 
-/* Busy — calm progress; label yields to spinner */
+/* Busy — calm progress; label yields to spinner (set aria-busy + aria-disabled in markup) */
 .button.is-busy,
 .button[aria-busy='true'] {
   cursor: progress;
@@ -141,6 +149,19 @@
   opacity: 0.92;
 }
 
+/* Cream modules — card ink so secondary clears AA (page muted fails on cream) */
+.module .button--secondary,
+.card .button--secondary,
+.form-panel .button--secondary,
+.sheet .button--secondary,
+.explore-card .button--secondary,
+.empty-state .button--secondary,
+.error-state .button--secondary {
+  color: var(--color-card-text);
+  border-color: var(--color-card-border);
+  opacity: 1;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .button--secondary:hover:not(:disabled):not(.is-disabled) {
     color: var(--color-text);
@@ -149,11 +170,30 @@
     box-shadow: none;
     opacity: 1;
   }
+
+  .module .button--secondary:hover:not(:disabled):not(.is-disabled),
+  .card .button--secondary:hover:not(:disabled):not(.is-disabled),
+  .form-panel .button--secondary:hover:not(:disabled):not(.is-disabled),
+  .sheet .button--secondary:hover:not(:disabled):not(.is-disabled),
+  .explore-card .button--secondary:hover:not(:disabled):not(.is-disabled),
+  .empty-state .button--secondary:hover:not(:disabled):not(.is-disabled),
+  .error-state .button--secondary:hover:not(:disabled):not(.is-disabled) {
+    color: var(--color-card-text);
+    background-color: color-mix(in srgb, var(--color-card-text) 8%, transparent);
+    border-color: color-mix(in srgb, var(--color-card-text) 40%, var(--color-card-border));
+  }
 }
 
 .button--secondary:active:not(:disabled):not(.is-disabled):not(.is-busy) {
   background-color: color-mix(in srgb, var(--color-text) 10%, transparent);
   opacity: 1;
+}
+
+.module .button--secondary:active:not(:disabled):not(.is-disabled):not(.is-busy),
+.card .button--secondary:active:not(:disabled):not(.is-disabled):not(.is-busy),
+.form-panel .button--secondary:active:not(:disabled):not(.is-disabled):not(.is-busy),
+.sheet .button--secondary:active:not(:disabled):not(.is-disabled):not(.is-busy) {
+  background-color: color-mix(in srgb, var(--color-card-text) 12%, transparent);
 }
 
 /* Accent — destructive only; no theatrical gradients */

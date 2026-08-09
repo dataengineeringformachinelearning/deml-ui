@@ -51,10 +51,17 @@ app-bar-chart[data-accent='primary'],
 
 .bar-chart-frame.area-chart-frame {
   height: var(--chart-height-panel);
+  min-height: var(--chart-height-panel);
+  max-height: var(--chart-height-panel);
+  flex: 0 0 var(--chart-height-panel);
 }
 
 .bar-chart-frame.area-chart-frame[data-variant='spark'] {
   height: var(--chart-height-spark);
+  min-height: var(--chart-height-spark);
+  max-height: var(--chart-height-spark);
+  flex: 0 0 var(--chart-height-spark);
+  padding: var(--chart-inset-spark);
 }
 
 .bar-chart-col {
@@ -66,9 +73,10 @@ app-bar-chart[data-accent='primary'],
   opacity: 1;
 }
 
+/* List bars — locked to panel band; scroll inside, never grow with data */
 .bar-chart:not([data-chart]):not(.bar-chart-svg) {
   display: flex;
-  flex: 0 0 auto;
+  flex: 0 0 var(--chart-height-panel);
   flex-direction: column;
   justify-content: flex-start;
   align-self: stretch;
@@ -76,11 +84,13 @@ app-bar-chart[data-accent='primary'],
   box-sizing: border-box;
   width: 100%;
   max-width: var(--chart-stage-max-inline);
-  min-height: var(--chart-min-block);
-  height: auto;
+  height: var(--chart-height-panel);
+  min-height: var(--chart-height-panel);
+  max-height: var(--chart-height-panel);
   margin: 0;
   padding: var(--chart-inset);
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: auto;
   list-style: none;
   background-color: var(--color-surface);
   border: var(--border-width) solid var(--color-plot-border);

@@ -30,13 +30,15 @@
   width: 100%;
   max-width: none;
   height: var(--chart-height-panel);
+  min-height: var(--chart-height-panel);
+  max-height: var(--chart-height-panel);
   aspect-ratio: auto;
-  max-height: none;
   margin-inline: 0;
   padding: var(--chart-inset);
   background-color: var(--chart-stage-ink);
   border: var(--border-width) solid var(--color-plot-border);
   color: var(--color-plot-ink);
+  flex: 0 0 var(--chart-height-panel);
 }
 
 .chart {

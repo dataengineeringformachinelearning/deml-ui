@@ -1,14 +1,15 @@
 /**
  * Native SVG chart mounts for deml-ui (premium interaction, NFTS tokens).
  * Shared Y per [data-chart-board]; min 0 when series are non-negative.
- * CHART RULES LOCKED: height fixed via CSS 140/280; width 100%.
+ * CHART RULES LOCKED: CSS owns size (spark 144 / panel 280); width 100%.
+ * viewBox is coordinate space only — never drives rendered height.
  */
 
 let chartSeq = 0;
 
-// --- Geometry ---
-const VIEW = { w: 360, h: 150, padL: 32, padR: 12, padT: 14, padB: 26 };
-const SPARK = { w: 560, h: 140, padL: 4, padR: 4, padT: 8, padB: 8 };
+// --- Geometry (coordinate space; CSS --chart-height-* is the rendered size) ---
+const VIEW = { w: 560, h: 280, padL: 32, padR: 12, padT: 14, padB: 26 };
+const SPARK = { w: 560, h: 144, padL: 8, padR: 8, padT: 8, padB: 8 };
 
 function parseJson(el, name, fallback) {
   const raw = el.getAttribute(name);

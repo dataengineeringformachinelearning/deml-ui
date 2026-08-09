@@ -2,14 +2,19 @@
   Component: Checkbox
   Path: components/checkbox/checkbox.html
   Styles: components/checkbox/checkbox.css
-  Source: deml-ui structural shell
 -->
 <section id="checkbox" class="component component--checkbox form-field">
   <h2>Checkbox</h2>
   <div class="demo">
-    <label class="checkbox">
-      <input type="checkbox" name="checkbox-demo" />
-      <span class="checkbox__label">Checkbox option</span>
+    <label class="checkbox-field">
+      <input class="checkbox-field__input" type="checkbox" name="checkbox-demo" />
+      <span class="checkbox-field__box" aria-hidden="true"></span>
+      <span class="checkbox-field__label">Checkbox option</span>
+    </label>
+    <label class="checkbox-field">
+      <input class="checkbox-field__input" type="checkbox" name="checkbox-demo-disabled" disabled />
+      <span class="checkbox-field__box" aria-hidden="true"></span>
+      <span class="checkbox-field__label">Disabled option</span>
     </label>
   </div>
 </section>

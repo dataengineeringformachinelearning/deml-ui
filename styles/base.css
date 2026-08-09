@@ -70,6 +70,7 @@ main,
   border: 0;
 }
 
+/* Small headers — open tracking, measured caps */
 .type-mark,
 .type-eyebrow,
 .preheader {
@@ -80,26 +81,26 @@ main,
   letter-spacing: var(--tracking-mark);
   line-height: var(--leading-ui);
   text-transform: uppercase;
-  /* Neutrals only — accent reserved for actions */
   color: var(--color-text-secondary);
 }
 
-/* Large bold display — tight tracking, 8px-linked clamp */
+/* Primary headings — large, bold, mobile-first clamp */
 .type-display {
   margin: 0;
+  max-width: var(--display-measure);
   font-family: var(--font-display);
-  font-size: clamp(calc(var(--grid) * 4), 5.5vw, var(--font-size-display));
+  font-size: clamp(var(--font-size-display-min), 8vw, var(--font-size-display));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
   color: var(--color-text);
 }
 
-/* Open-tracked intro — readable secondary ink */
+/* Introductory text — open tracking, secondary ink, short measure */
 .type-intro,
 .lede {
   margin: 0;
-  max-width: 40ch;
+  max-width: var(--intro-width);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
@@ -110,6 +111,7 @@ main,
 
 .type-body {
   margin: 0;
+  max-width: var(--reading-width);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
@@ -118,7 +120,7 @@ main,
   color: var(--color-text);
 }
 
-/* Section / module titles — between body and display */
+/* Section titles — between body and display */
 .type-title {
   margin: 0;
   font-family: var(--font-display);
@@ -173,10 +175,10 @@ main,
   padding-inline-end: max(var(--space-3), var(--safe-right));
   flex: 1 1 auto;
   background-color: var(--color-bg);
-  /* Quiet vertical depth — neutrals only */
+  /* Calm vertical depth — neutrals only */
   background-image: linear-gradient(
     180deg,
-    color-mix(in srgb, var(--color-surface) 36%, var(--color-bg)) 0%,
+    color-mix(in srgb, var(--color-surface) 28%, var(--color-bg)) 0%,
     var(--color-bg) var(--space-12)
   );
 }
@@ -444,7 +446,7 @@ main,
 
 ::selection {
   background: var(--color-selection);
-  color: var(--color-text-primary);
+  color: var(--color-text);
 }
 
 /* Shared interactive focus — WCAG 2.0 AA; components may refine, not omit */
@@ -462,6 +464,20 @@ textarea:focus-visible,
 [tabindex]:not([tabindex="-1"]):focus-visible {
   outline: var(--focus-ring-width) solid var(--color-focus);
   outline-offset: var(--focus-ring-offset);
+}
+
+/* Cream modules — primary focus ring (cream-on-cream is invisible) */
+.module :focus-visible,
+.card :focus-visible,
+.form-panel :focus-visible,
+.sheet :focus-visible,
+.explore-card :focus-visible,
+.stat-card :focus-visible,
+.chart-card :focus-visible,
+.empty-state :focus-visible,
+.error-state :focus-visible,
+.callout :focus-visible {
+  outline-color: var(--color-focus-on-card);
 }
 
 a {

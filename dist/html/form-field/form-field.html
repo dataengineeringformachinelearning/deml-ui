@@ -1,0 +1,38 @@
+<!--
+  Component: form-field
+  Path: components/form-field/form-field.html
+  Styles: components/form-field/form-field.css
+  Note: Shared CSS baseline — not packaged as a custom element.
+-->
+<section id="form-field" class="component component--form-field">
+  <h2>Form Field</h2>
+  <div class="demo">
+    <div class="form-field">
+      <label>
+        Email
+        <input type="email" name="email" placeholder="you@example.com" autocomplete="email" />
+      </label>
+    </div>
+    <div class="form-field">
+      <label>
+        Role
+        <select name="role">
+          <option>Member</option>
+          <option>Admin</option>
+        </select>
+      </label>
+    </div>
+    <div class="form-field">
+      <label>
+        Notes
+        <textarea name="notes" rows="3" placeholder="Optional context"></textarea>
+      </label>
+    </div>
+    <div class="form-field">
+      <label>
+        Locked
+        <input type="text" value="Read only" disabled />
+      </label>
+    </div>
+  </div>
+</section>

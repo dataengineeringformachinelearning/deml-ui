@@ -164,7 +164,7 @@ deml-site-footer,
   }
 
   .site-footer__directory {
-    grid-template-columns: repeat(2, minmax(0, 12rem));
+    grid-template-columns: repeat(2, minmax(0, var(--space-28)));
     justify-content: start;
     gap: var(--space-4) var(--space-10);
   }

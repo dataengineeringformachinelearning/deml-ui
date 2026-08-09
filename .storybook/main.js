@@ -47,6 +47,7 @@ const config = {
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
     "@storybook/addon-themes",
+    "storybook-addon-pseudo-states",
   ],
   framework: {
     name: "@storybook/html-vite",

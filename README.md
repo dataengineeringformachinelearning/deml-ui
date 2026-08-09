@@ -26,17 +26,22 @@ npm run sync          # CSS barrel, CE/Angular wrappers, stories
 npm run storybook     # → http://localhost:6006
 ```
 
-Adding/removing a component folder: edit `components/`, update `scripts/lib/components.mjs` → `CATEGORIES`, then `npm run sync`.
+Adding/removing a component folder: edit `components/`, update `scripts/lib/components.mjs` → `CATEGORIES` and (when needed) `scripts/lib/story-kits.mjs`, then `npm run sync`.
+
+Storybook ships controls, actions, docs, a11y, themes (light/dark), viewport, backgrounds, measure, and outline. Every component gets a generated CSF matrix (Default + Gallery/Variants/States/Playground as applicable) with Chromatic light/dark modes.
 
 ## Check
 
 ```bash
-npm run check:nfts    # mandatory warm-ash gate — must pass
+npm run check:nfts      # mandatory warm-ash gate — must pass
+npm run check:stories   # story coverage + Chromatic/a11y meta — must pass
 npm run sync
-npm run build         # styles + WC + Angular → dist/
+npm run build-storybook
+npm run chromatic       # visual regression (set CHROMATIC_PROJECT_TOKEN)
+npm run build           # styles + WC + Angular → dist/
 ```
 
-CI runs `check:nfts` before sync/build. **No escape hatches.**
+CI runs `check:nfts` + `check:stories` before sync/build; Chromatic publishes on `main`/PRs via `.github/workflows/chromatic.yml`. **No escape hatches.**
 
 ## Deploy
 
@@ -58,16 +63,30 @@ generated/             AUTO — re-run sync
 dist/                  committed build for github: consumers
 ```
 
-## Consume
+## Consume (product path)
+
+Primary consumers (deml Angular + Django chrome) use **CSS class contracts** + thin
+behavioral wrappers — not the generated Angular markup dumps.
 
 ```js
-import "deml-ui/styles.css";
-import "deml-ui"; // defineAll()
+import "deml-ui/styles.css";           // required
+import { initSvgCharts } from "deml-ui/charts"; // charts only
 ```
 
-```ts
-import { DemlButton } from "deml-ui/angular";
+```js
+import "deml-ui"; // optional Custom Elements (Django splash / demos)
 ```
+
+| Export | Use |
+|--------|-----|
+| `deml-ui/styles.css` | **Required** — tokens + components |
+| `deml-ui/charts` | SVG mount + shared Y domain |
+| `deml-ui` (WC) | Optional CE `defineAll()` |
+| `deml-ui/angular` | Headless primitives + Storybook/CE dump wrappers (not deml product SoT) |
+| `deml-ui/package.css` | Alias of `styles.css` (prefer `styles.css`) |
+
+Light/dark: set `data-theme="light"|"dark"` (or `.light` / `.dark`) on `<html>` —
+tokens flip; never invent page-local palettes.
 
 Peer deps: `@angular/core` / `@angular/common` ≥ 19 (optional for WC-only).
 
@@ -76,6 +95,9 @@ Peer deps: `@angular/core` / `@angular/common` ≥ 19 (optional for WC-only).
 | Doc | When |
 |-----|------|
 | [`AGENTS.md`](AGENTS.md) · [`.cursorrules`](.cursorrules) | Laws + agent briefing |
+| [`docs/SYSTEM.md`](docs/SYSTEM.md) | Final cohesive checklist (8 criteria) |
+| [`docs/CHARTS.md`](docs/CHARTS.md) | Absolute chart sizing law |
+| [`docs/ACCESSIBILITY.md`](docs/ACCESSIBILITY.md) | WCAG 2.0 AA / §508 |
 | [`src/angular/headless/USAGE.md`](src/angular/headless/USAGE.md) | Headless primitives |
 | [`src/angular/headless/CONVENTIONS.md`](src/angular/headless/CONVENTIONS.md) | Headless conventions |
 | deml [`THEME.md`](https://github.com/dataengineeringformachinelearning/deml/blob/main/THEME.md) | Consumer visual contract |

@@ -29,24 +29,40 @@ deml-chart-empty-state,
   width: 100%;
   max-width: none;
   height: var(--chart-height-spark);
+  min-height: var(--chart-height-spark);
+  max-height: var(--chart-height-spark);
   aspect-ratio: auto;
-  max-height: none;
   margin: 0;
-  padding: var(--chart-inset);
+  padding: var(--chart-inset-spark);
   text-align: center;
   color: var(--color-plot-muted);
   background-color: var(--chart-stage-ink);
   border: var(--border-width) dashed var(--color-plot-border);
   border-radius: var(--radius-md);
+  flex: 0 0 var(--chart-height-spark);
 }
 
 .chart-empty-state[data-layout='fill'] {
   height: var(--chart-height-spark);
+  min-height: var(--chart-height-spark);
+  max-height: var(--chart-height-spark);
 }
 
 .chart-empty-state[data-layout='inline'] {
   height: var(--chart-height-spark);
+  min-height: var(--chart-height-spark);
+  max-height: var(--chart-height-spark);
   background-color: var(--color-surface);
+}
+
+/* Panel empty — same locked panel band as area/bar panel charts */
+.chart-empty-state[data-variant='panel'],
+.chart-empty-state[data-size='panel'] {
+  height: var(--chart-height-panel);
+  min-height: var(--chart-height-panel);
+  max-height: var(--chart-height-panel);
+  padding: var(--chart-inset);
+  flex: 0 0 var(--chart-height-panel);
 }
 
 .chart-empty-state[data-layout='loading'] {
@@ -58,11 +74,11 @@ deml-chart-empty-state,
   height: var(--space-3);
   border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--color-primary) 55%, var(--color-plot-muted));
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  box-shadow: 0 0 0 var(--space-1) color-mix(in srgb, var(--color-primary) 18%, transparent);
 }
 
 .chart-empty-state__skeleton {
-  width: min(100%, 10rem);
+  width: min(100%, var(--content-width-sm));
   height: var(--space-2);
   border-radius: var(--radius-pill);
   background: linear-gradient(
@@ -72,7 +88,7 @@ deml-chart-empty-state,
     color-mix(in srgb, var(--color-plot-muted) 18%, transparent) 100%
   );
   background-size: 200% 100%;
-  animation: chart-empty-shimmer 1.2s ease-in-out infinite;
+  animation: chart-empty-shimmer var(--duration-skeleton) var(--ease-out) infinite;
 }
 
 .chart-empty-state__title {

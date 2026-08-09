@@ -11,20 +11,27 @@ Do not invent parallel palettes, type stacks, or chart contracts.
 
 - Warm ash grounds (`#35312D` / `#1C1916`), cream modules (`#F3F0EA`), primary `#2F5F8F`,
   accents `#3F6B54` / `#9E3D47`; light ground `#D4CEC5`; muted `#C6C0B7` / `#4A453F`
-- **Geist only** for all type roles (display, marks, intro, body) — do not add Syne/Fraunces
-- 8px grid, dual `data-theme`, equal `--tile-gap`, fluid dash-rows (`minmax(--tile-row-unit, auto)`)
-- Charts **LOCKED**: `--chart-height-spark: 140px` / `--chart-height-panel: 280px`,
-  width `100%`, equal `--chart-inset`, `--chart-stage-ink` for panel stages —
-  never data-driven height, aspect-driven line charts, or theme-invert plots
+- **Geist only** — mark 0.28em / intro 0.1em / display 800 + mobile-first clamp;
+  body leading 1.62 + 60ch measure. No Syne/Fraunces. No brand or place names in code.
+- Strict 8px grid (no half-steps), dual `data-theme`, equal `--tile-gap`, fluid
+  dash-rows (`minmax(--tile-row-unit, auto|1fr)` — never ragged `min-content` rows)
+- Equal outer `--module-pad` on every card / panel / box side
+- Charts **LOCKED (absolute)**: `--chart-height-spark: 144px` / `--chart-height-panel: 280px`,
+  width `100%`, equal `--chart-inset` / `--chart-inset-spark`, `--chart-stage-ink` —
+  never squash/stretch/oversize/undersize, data-driven height, aspect-driven plots,
+  or theme-invert series. See `docs/CHARTS.md`.
 - Sharp modules (`--radius-*: 0`) unless a control needs the pill radius
 - Solid opaque navbar; no page horizontal overflow from scaffolding
+- Tokens only — no invented px/rem for spacing, color, type, elevation, or motion
 
 ## Do
 
 - Change visuals in `components/<name>/` and `styles/tokens.css` / `styles/base.css`
 - Expand from this warm-ash NFTS system only
-- Run `npm run sync` after adding/removing component folders; `npm run build` before release
+- Expand Storybook kits in `scripts/lib/story-kits.mjs` when adding components
+- Run `npm run sync` after adding/removing component folders; `npm run check:stories`; `npm run build` before release
 - Prefer WCAG 2.0 AA patterns already used in base + headless primitives
+- No component ships without CSF stories + a11y meta + Chromatic light/dark modes
 
 ## Do not (forbidden)
 
@@ -40,8 +47,10 @@ Do not invent parallel palettes, type stacks, or chart contracts.
 ## Automated enforcement (no escape hatches)
 
 `scripts/check_nfts_style.mjs` (`npm run check:nfts`) **fails** on missing NFTS
-palette / `--chart-height-spark: 140px` / `--chart-height-panel: 280px` / Geist,
-Viking or `#2176ff` chrome, fixed-only `grid-auto-rows`, and aspect-driven line
-chart stages. CI runs this before build. Reject any change that does not pass.
+palette / `--chart-height-spark: 144px` / `--chart-height-panel: 280px` / Geist,
+`--space-half`, hairline-as-gap, non-8px spacing px, ragged `min-content` rows,
+fixed-only `grid-auto-rows`, Viking / `#2176ff`, and aspect-driven line charts.
+`npm run check:stories` **fails** if any HTML component lacks a multi-story CSF
+file with Chromatic + a11y meta. CI + Chromatic enforce both. **No escape hatches.**
 
 Consumer guidance: deml `THEME.md` / `AGENTS.md`.

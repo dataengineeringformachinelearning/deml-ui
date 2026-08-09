@@ -1,5 +1,5 @@
 /* CHART RULES LOCKED: height fixed, width 100%, shared global scale – DO NOT CHANGE */
-/* Component: area-chart — premium SVG; spark 140 / panel 280; NFTS tokens */
+/* Component: area-chart — premium SVG; spark 144 / panel 280; NFTS tokens */
 
 .component--area-chart .demo {
   max-height: 100%;
@@ -68,12 +68,15 @@ deml-area-chart[data-accent='primary'],
   width: 100%;
   max-width: none;
   height: var(--chart-height-panel);
+  min-height: var(--chart-height-panel);
+  max-height: var(--chart-height-panel);
   margin: 0;
   padding: var(--chart-inset);
   background-color: var(--chart-stage-ink);
   border: var(--border-width) solid var(--color-plot-border);
   border-radius: var(--radius-md);
   overflow: hidden;
+  flex: 0 0 var(--chart-height-panel);
 }
 
 app-area-chart:not([data-variant='spark']) .area-chart-frame,
@@ -85,10 +88,12 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   width: 100%;
   max-width: none;
   height: var(--chart-height-panel);
+  min-height: var(--chart-height-panel);
+  max-height: var(--chart-height-panel);
   aspect-ratio: auto;
-  max-height: none;
   margin-inline: 0;
   background-color: var(--chart-stage-ink);
+  flex: 0 0 var(--chart-height-panel);
 }
 
 .area-chart-mount,
@@ -188,7 +193,7 @@ deml-area-chart:not([data-variant='spark']) .area-chart-frame,
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: var(--hairline);
+  gap: var(--space-1);
   min-width: var(--space-8);
   padding: var(--space-1) var(--space-2);
   pointer-events: none;
@@ -223,12 +228,15 @@ deml-area-chart[data-variant='spark'] .area-chart-frame,
   width: 100%;
   max-width: none;
   height: var(--chart-height-spark);
+  min-height: var(--chart-height-spark);
+  max-height: var(--chart-height-spark);
   aspect-ratio: auto;
-  max-height: none;
   margin-inline: 0;
-  padding: var(--space-1) var(--space-2);
+  /* Equal inset — never uneven x/y (canonical spark weight) */
+  padding: var(--chart-inset-spark);
   border: var(--border-width) solid var(--color-plot-border);
   background-color: var(--color-surface);
+  flex: 0 0 var(--chart-height-spark);
 }
 
 app-area-chart[data-variant='spark'] .area-chart-line,

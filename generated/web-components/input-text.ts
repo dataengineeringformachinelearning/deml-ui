@@ -7,8 +7,17 @@ export class DemlInputText extends HTMLElement {
     if (this.dataset.demlHydrated === "true") return;
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
-      this.innerHTML = `<label for="input-text-field">Name</label>
-    <input id="input-text-field" name="name" type="text" placeholder="Name" autocomplete="name" required>`;
+      this.innerHTML = `<label class="text-field" for="input-text-field">
+      <span class="text-field__label">Name</span>
+      <input
+        id="input-text-field"
+        class="text-field__control"
+        name="name"
+        type="text"
+        placeholder="Your name"
+        autocomplete="name"
+      />
+    </label>`;
     }
   }
 }

@@ -14,13 +14,18 @@ Style first in Storybook. Ship via `npm run build`. Geist only; dual `data-theme
 |--------|--------|
 | **Canvas** | Live component preview |
 | **Docs** | Autodocs + packaged HTML source (`.demo` fragment) |
+| **Controls** | Panel — every Playground / args-driven story |
 | **Theme** | Toolbar — light / dark (`data-theme`) |
 | **Viewport** | Toolbar — phone, tablet, desktop, deml widths |
 | **Backgrounds** | Toolbar — warm ash / deep surface / cream / light ground |
 | **Measure / Outline** | Toolbar — spacing & box inspection |
 | **Density** | Toolbar — compact / comfortable / spacious |
-| **A11y** | Panel — axe (WCAG 2 A/AA + best practices) |
+| **Pseudo states** | Toolbar — hover / focus / active (where supported) |
+| **A11y** | Panel — axe (WCAG 2 A/AA + best practices); CI enforces |
 | **Actions** | Panel — click / submit / change / input |
+| **Chromatic** | Light/dark (+ mobile for layout) visual snapshots on PRs |
+
+Each component ships multiple named stories (Default, Gallery/Variants, States, Playground, edge cases). Explore the sidebar — you should not need to open source to see the range.
 
 ## Source of truth
 
@@ -28,9 +33,10 @@ Style first in Storybook. Ship via `npm run build`. Geist only; dual `data-theme
 
 - `<name>.html` — Storybook chrome + reusable markup in `.demo`
 - `<name>.css` — structure under BEM roots (`.card`, `.button`, …)
-- Tokens own palette, type, tile rhythm, and `--chart-aspect: 2.4`
+- `scripts/lib/story-kits.mjs` — CSF matrix (variants, states, controls)
+- Tokens own palette, type, tile rhythm, and chart height locks
 
-Edit → hot reload. Add/remove a folder → `npm run sync` regenerates stories + wrappers.
+Edit → hot reload. Add/remove a folder → update `CATEGORIES` + story kit → `npm run sync`.
 
 ## Laws
 
@@ -56,8 +62,10 @@ Each group has a docs landing page (e.g. `?path=/docs/shell--docs`):
 
 ```bash
 npm run storybook        # this UI
-npm run build            # styles + web components + Angular → dist/
+npm run check:stories    # coverage gate
 npm run build-storybook  # static site
+npm run chromatic        # visual regression (CHROMATIC_PROJECT_TOKEN)
+npm run build            # styles + web components + Angular → dist/
 ```
 
 Custom elements use the `deml-*` tag prefix (e.g. `<deml-button>`).

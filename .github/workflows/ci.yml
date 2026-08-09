@@ -32,6 +32,9 @@ jobs:
       - name: NFTS style gate (warm ash)
         run: npm run check:nfts
 
+      - name: Story coverage gate
+        run: npm run check:stories
+
       - name: Sync generators
         run: npm run sync
 
@@ -40,6 +43,8 @@ jobs:
 
       - name: Build Storybook
         run: npm run build-storybook
+        env:
+          CI: "true"
 
       - name: Upload Storybook artifact
         uses: actions/upload-artifact@v4

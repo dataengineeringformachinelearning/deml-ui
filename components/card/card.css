@@ -102,7 +102,7 @@ deml-card[data-visual='none'],
 .card-heading {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(calc(var(--grid) * 3.5), 4vw, var(--font-size-lg));
+  font-size: clamp(var(--space-3), 4vw, var(--font-size-lg));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
@@ -157,7 +157,7 @@ deml-card[data-visual='none'],
 .card-media.has-visual:empty,
 .card-media.has-visual {
   min-height: var(--space-22);
-  background-color: var(--color-olive);
+  background-color: var(--color-surface);
   background-image:
     radial-gradient(
       85% 75% at 50% 110%,
@@ -171,8 +171,8 @@ deml-card[data-visual='none'],
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--color-olive) 70%, var(--card-visual, var(--color-primary))) 0%,
-      var(--color-olive) 100%
+      color-mix(in srgb, var(--color-surface) 70%, var(--card-visual, var(--color-primary))) 0%,
+      var(--color-surface) 100%
     );
 }
 
@@ -267,8 +267,8 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
 @media screen and (min-width: 800px) {
   .card {
     min-height: 100%;
-    /* Keep media flush to the card floor; media margin clears the actions */
-    padding: var(--space-8) var(--space-5) 0;
+    /* Equal outer inset on every side — never asymmetric pad */
+    padding: var(--module-pad-lg);
   }
 
   .card-media {
@@ -277,7 +277,7 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
 
   .card-media.has-visual:empty,
   .card-media.has-visual {
-    min-height: var(--space-26);
+    min-height: var(--space-28);
   }
 
   /* Angular teaser — horizontal media band */
@@ -288,16 +288,16 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
     align-items: stretch;
     gap: 0;
     min-height: var(--space-28);
-    padding: 0;
+    padding: var(--module-pad);
     border-top-width: var(--border-width);
-    border-left: calc(var(--border-width) * 4) solid var(--card-visual, var(--color-primary));
+    border-left: var(--module-accent-width) solid var(--card-visual, var(--color-primary));
   }
 
   app-card[data-layout='teaser'] .card-copy,
   deml-card[data-layout='teaser'] .card-copy,
   :host([data-layout='teaser']) .card-copy {
     justify-content: center;
-    padding: var(--space-6) var(--space-6);
+    padding: var(--module-pad);
     background-color: var(--color-card);
   }
 
@@ -306,9 +306,10 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
   .card-grid[data-density='compact'] .card[data-layout='teaser'] {
     flex-direction: column;
     align-items: stretch;
-    min-height: 0;
-    padding: var(--space-5) var(--space-4);
-    border-top-width: calc(var(--border-width) * 4);
+    min-height: 100%;
+    height: 100%;
+    padding: var(--module-pad);
+    border-top-width: var(--module-accent-width);
     border-left: var(--border-width) solid var(--color-card-border);
   }
 
@@ -322,7 +323,7 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
   app-card[data-layout='teaser'] .card-media,
   deml-card[data-layout='teaser'] .card-media,
   :host([data-layout='teaser']) .card-media {
-    flex: 0 0 min(40%, calc(var(--grid) * 44));
+    flex: 0 0 min(40%, calc(var(--grid) * 40));
     width: auto;
     min-height: 100%;
     margin-block-start: 0;
@@ -336,7 +337,7 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
   :host([data-layout='teaser']) .card-media.has-visual {
     min-height: 100%;
     margin-top: 0;
-    background-color: var(--color-olive);
+    background-color: var(--color-surface);
     background-image:
       radial-gradient(
         90% 80% at 70% 50%,
@@ -345,8 +346,8 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
       ),
       linear-gradient(
         135deg,
-        color-mix(in srgb, var(--card-visual, var(--color-primary)) 40%, var(--color-olive)) 0%,
-        var(--color-olive) 100%
+        color-mix(in srgb, var(--card-visual, var(--color-primary)) 40%, var(--color-surface)) 0%,
+        var(--color-surface) 100%
       );
   }
 }
@@ -355,6 +356,6 @@ deml-card[data-layout='teaser'] .card-media.has-visual,
   app-card[data-layout='teaser'] .card-copy,
   deml-card[data-layout='teaser'] .card-copy,
   :host([data-layout='teaser']) .card-copy {
-    padding: var(--space-8) var(--space-8);
+    padding: var(--module-pad-lg);
   }
 }

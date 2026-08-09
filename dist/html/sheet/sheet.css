@@ -82,11 +82,20 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.sheet__handle:focus {
+  outline: none;
+}
+
+.sheet__handle:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus-on-card);
+  outline-offset: var(--focus-ring-offset);
+}
+
 .sheet__handle::before {
   content: '';
   display: block;
   width: var(--space-6);
-  height: var(--space-half);
+  height: var(--space-1);
   border-radius: var(--radius-pill);
   background-color: color-mix(in srgb, var(--color-card-text-secondary) 45%, transparent);
 }
@@ -250,7 +259,7 @@
     }
     to {
       opacity: 0;
-      transform: translateY(calc(var(--enter-distance) * 0.5));
+      transform: translateY(var(--enter-distance));
     }
   }
 }

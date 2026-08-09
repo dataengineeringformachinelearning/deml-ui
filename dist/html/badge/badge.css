@@ -14,7 +14,7 @@
   box-sizing: border-box;
   gap: var(--space-1);
   min-height: var(--space-4);
-  padding: var(--space-half) var(--space-2);
+  padding: var(--space-1) var(--space-2);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-pill);
   font-family: var(--font-mark);
@@ -53,9 +53,9 @@
 
 .badge[data-tone='info'],
 .badge[data-tone='primary'] {
-  color: var(--color-primary-hover);
+  color: var(--color-primary-ink);
   border-color: color-mix(in srgb, var(--color-primary) 42%, transparent);
-  background-color: color-mix(in srgb, var(--color-primary) 16%, transparent);
+  background-color: color-mix(in srgb, var(--color-primary) 22%, transparent);
 }
 
 .badge[data-tone='success'] {

@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<label class=\"checkbox\">\n      <input type=\"checkbox\" name=\"checkbox-demo\" />\n      <span class=\"checkbox__label\">Checkbox option</span>\n    </label>";
+const DEML_TEMPLATE = "<label class=\"checkbox-field\">\n      <input class=\"checkbox-field__input\" type=\"checkbox\" name=\"checkbox-demo\" />\n      <span class=\"checkbox-field__box\" aria-hidden=\"true\"></span>\n      <span class=\"checkbox-field__label\">Checkbox option</span>\n    </label>\n    <label class=\"checkbox-field\">\n      <input class=\"checkbox-field__input\" type=\"checkbox\" name=\"checkbox-demo-disabled\" disabled />\n      <span class=\"checkbox-field__box\" aria-hidden=\"true\"></span>\n      <span class=\"checkbox-field__label\">Disabled option</span>\n    </label>";
 
 @Component({
   selector: "deml-checkbox",

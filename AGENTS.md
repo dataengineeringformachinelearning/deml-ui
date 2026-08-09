@@ -27,20 +27,22 @@ Consumer app: [`deml`](https://github.com/dataengineeringformachinelearning/deml
 2. **Warm ash NFTS only (mandatory)** — grounds `#35312D`/`#1C1916`, cards `#F3F0EA`,
    primary `#2F5F8F`, accents `#3F6B54`/`#9E3D47`; light theme `#D4CEC5` ground.
    Muted `#C6C0B7`/`#4A453F`. **No** cold seven-color swap that fights this system.
-3. **Geist only** — display weight 800 + tight tracking; marks at 0.24em caps; intro
-   at 0.08em. Do not ship Syne/Fraunces mixes.
-4. **8px grid** — core space scale half→8 + layout steps; equal `--module-pad` /
-   `--module-pad-lg`. Prefer `--space-1`…`--space-4` for UI rhythm. No invented px/rem.
+3. **Geist only** — display weight 800 + confident scale; marks at 0.28em caps; intro
+   at 0.1em; body leading 1.62 / measure 60ch. Do not ship Syne/Fraunces mixes.
+4. **Strict 8px grid** — spacing / padding / margin / gap / radius are only N×8px
+   (`--space-1`…`--space-8` + layout steps). **No half-steps** (`--space-half` retired).
+   Strokes (`--border-width`) are not spacing. Equal `--module-pad` on every module side.
 5. **Fluid equal cells** — `grid-auto-rows: minmax(var(--tile-row-*), auto|1fr)` so peer
-   tiles stretch with no ragged gaps; never squash with fixed-only rows.
-6. **Charts (LOCKED)** — `--chart-height-spark: 140px` /
-   `--chart-height-panel: 280px`; width always `100%`; shared global y-scale in the
-   consumer; equal `--chart-inset`; panel stages use `--chart-stage-ink` (`#121212`);
-   never aspect-driven taller-when-wider for line charts, data-driven height, or
-   theme-inverted plot series. Do not change these constants unless explicitly asked.
+   tiles stretch with no ragged gaps; never squash with fixed-only or `min-content` rows.
+6. **Charts (LOCKED — absolute)** — `--chart-height-spark: 144px` /
+   `--chart-height-panel: 280px`; width always `100%`; shared global y-scale;
+   equal `--chart-inset` / `--chart-inset-spark`; panel stages use
+   `--chart-stage-ink` (`#121212`). Never squash, stretch, oversize, undersize,
+   aspect-drive, or data-drive height. Contract: [`docs/CHARTS.md`](docs/CHARTS.md).
 7. **Light + dark** — `[data-theme="light"|"dark"]` (and `.light` / `.dark`).
 8. **Shell** — solid opaque navbar; page scaffolding must not introduce horizontal overflow.
 9. **A11y** — WCAG 2.0 Level AA / §508: focus-visible, contrast, ≥44px hits, reduced motion, skip link.
+   Contract + exceptions: [`docs/ACCESSIBILITY.md`](docs/ACCESSIBILITY.md).
 10. **No Viking-UI** — do not reintroduce `viking-*`, `--viking-*`, or void-black /
     electric `#2176ff` suite chrome.
 11. **Ship dist** — `npm run build` updates committed `dist/` for `github:` consumers.
@@ -48,13 +50,21 @@ Consumer app: [`deml`](https://github.com/dataengineeringformachinelearning/deml
 ## Commands
 
 ```bash
-npm run check:nfts   # mandatory warm-ash gate — must pass
+npm run check:nfts      # mandatory warm-ash gate — must pass
+npm run check:stories   # every component has ≥2 CSF stories + Chromatic/a11y meta
 npm run sync
-npm run storybook
+npm run storybook       # → :6006 — controls, a11y, themes, viewport, measure, outline
+npm run build-storybook
+npm run chromatic       # visual regression (needs CHROMATIC_PROJECT_TOKEN)
 npm run build
 ```
 
-CI (`.github/workflows/ci.yml`) runs `check:nfts` before sync/build. **No escape hatches.**
+Final cohesive checklist: [`docs/SYSTEM.md`](docs/SYSTEM.md) · a11y [`docs/ACCESSIBILITY.md`](docs/ACCESSIBILITY.md) · charts [`docs/CHARTS.md`](docs/CHARTS.md).
+
+Story kits live in `scripts/lib/story-kits.mjs` (generated CSF is gitignored).
+Chromatic modes: `.storybook/modes.js` (light/dark + mobile). CI: `ci.yml` + `chromatic.yml`.
+
+CI runs `check:nfts` + `check:stories` before sync/build. **No escape hatches.**
 
 ## Token roles (use these names)
 
@@ -62,7 +72,7 @@ CI (`.github/workflows/ci.yml`) runs `check:nfts` before sync/build. **No escape
 |------|--------|
 | Color | `--color-bg/surface/card/text/primary/success/error` (+ card-* / *-hover / *-ink) |
 | Type | `--font-size-mark/body/title/display` · weights · `--tracking-mark/intro/display` |
-| Space | `--grid` · `--space-half`…`--space-8` · layout `--space-12/16/28/36` |
+| Space | `--grid` · `--space-1`…`--space-8` · layout `--space-12/16/28/36` (no half-steps) |
 | Radius | `--radius-none` · `--radius-pill` |
 | Elevation | `--elevation-0/1/2` |
 | Motion | `--duration-fast/normal/slow` · `--ease-out/exit` · `--press-scale` |

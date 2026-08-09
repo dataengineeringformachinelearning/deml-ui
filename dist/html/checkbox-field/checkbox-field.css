@@ -62,7 +62,7 @@
 .checkbox-field__input:checked + .checkbox-field__box {
   border-color: var(--color-primary);
   background-color: var(--color-primary);
-  box-shadow: inset 0 0 0 calc(var(--grid) * 0.375) var(--color-card);
+  box-shadow: inset 0 0 0 var(--border-width) var(--color-card);
 }
 
 .checkbox-field__input:disabled + .checkbox-field__box,

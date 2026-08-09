@@ -8,6 +8,8 @@ export class DemlBadge extends HTMLElement {
     this.dataset.demlHydrated = "true";
     if (!this.hasChildNodes()) {
       this.innerHTML = `<span class="badge">Badge</span>
+    <span class="badge" data-tone="neutral">Neutral</span>
+    <span class="badge" data-tone="info">Info</span>
     <span class="badge" data-tone="success">Success</span>
     <span class="badge" data-tone="warning">Warning</span>
     <span class="badge" data-tone="danger">Danger</span>`;

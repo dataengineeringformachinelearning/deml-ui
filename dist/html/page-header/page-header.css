@@ -27,10 +27,10 @@
 .page-header__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(var(--font-size-lg), 4vw, var(--font-size-xl));
+  font-size: clamp(var(--font-size-title), 4vw, var(--font-size-display-min));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
-  line-height: 1.05;
+  line-height: var(--leading-display);
   color: var(--color-text);
 }
 
@@ -38,10 +38,11 @@
 .page-header__lede,
 .page-header__subtitle {
   margin: 0;
-  max-width: var(--reading-width);
+  max-width: var(--intro-width);
   font-family: var(--font-body);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-body);
   letter-spacing: var(--tracking-intro);
+  line-height: var(--leading-body);
   color: var(--color-text-secondary);
 }
 

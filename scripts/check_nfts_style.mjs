@@ -79,11 +79,29 @@ function read(p) {
         fail(`styles/tokens.css missing required NFTS hex #${hex}`);
       }
     }
-    if (!/--chart-height-spark\s*:\s*140px\s*;/.test(tokens)) {
-      fail('styles/tokens.css must set --chart-height-spark: 140px');
+    if (!/--chart-height-spark\s*:\s*144px\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --chart-height-spark: 144px (8px grid)');
     }
     if (!/--chart-height-panel\s*:\s*280px\s*;/.test(tokens)) {
       fail('styles/tokens.css must set --chart-height-panel: 280px');
+    }
+    if (/--space-half\s*:/.test(tokens)) {
+      fail('styles/tokens.css must not define --space-half (strict 8px grid — no half-steps)');
+    }
+    if (!/--tile-gap\s*:\s*var\(--space-2\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --tile-gap: var(--space-2) (equal board gutters)');
+    }
+    if (!/--elevation-2\s*:\s*0 16px 32px/.test(tokens)) {
+      fail('styles/tokens.css --elevation-2 Y/blur must be 16px/32px (8px grid)');
+    }
+    if (!/--module-accent-width\s*:\s*var\(--space-1\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --module-accent-width: var(--space-1)');
+    }
+    if (!/--enter-distance\s*:\s*var\(--space-1\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --enter-distance: var(--space-1)');
+    }
+    if (!/--uptime-seg-min\s*:\s*var\(--space-1\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --uptime-seg-min: var(--space-1)');
     }
     if (!/--chart-stage-ink\s*:\s*var\(--color-plot-stage\)\s*;/.test(tokens)) {
       fail('styles/tokens.css must set --chart-stage-ink: var(--color-plot-stage)');
@@ -95,13 +113,28 @@ function read(p) {
       fail('styles/tokens.css must use Geist font family');
     }
     if (!/--font-weight-display\s*:\s*800\s*;/.test(tokens)) {
-      fail('styles/tokens.css must set --font-weight-display: 800 (dense display)');
+      fail('styles/tokens.css must set --font-weight-display: 800 (display presence)');
     }
-    if (!/--tracking-mark\s*:\s*0\.24em\s*;/.test(tokens)) {
-      fail('styles/tokens.css must set --tracking-mark: 0.24em (wide mark caps)');
+    if (!/--tracking-mark\s*:\s*0\.28em\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --tracking-mark: 0.28em (measured mark caps)');
     }
-    if (!/--tracking-intro\s*:\s*0\.08em\s*;/.test(tokens)) {
-      fail('styles/tokens.css must set --tracking-intro: 0.08em');
+    if (!/--tracking-intro\s*:\s*0\.1em\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --tracking-intro: 0.1em');
+    }
+    if (!/--font-size-display-min\s*:\s*var\(--space-5\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --font-size-display-min: var(--space-5)');
+    }
+    if (!/--font-size-display\s*:\s*var\(--space-8\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --font-size-display: var(--space-8)');
+    }
+    if (!/--reading-width\s*:\s*60ch\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --reading-width: 60ch');
+    }
+    if (!/--intro-width\s*:\s*38ch\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --intro-width: 38ch');
+    }
+    if (!/--leading-body\s*:\s*1\.62\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --leading-body: 1.62');
     }
     if (!/--module-pad\s*:\s*var\(--space-3\)\s*;/.test(tokens)) {
       fail('styles/tokens.css must set --module-pad: var(--space-3) (equal module inset)');
@@ -200,7 +233,7 @@ function read(p) {
   }
 }
 
-// --- 3) Fixed-only grid-auto-rows (squash) ---
+// --- 3) Fixed-only grid-auto-rows (squash) + ragged min-content rows ---
 {
   for (const p of walk(join(ROOT, 'components'))) {
     if (extname(p) !== '.css') continue;
@@ -212,16 +245,129 @@ function read(p) {
           `Fixed-only grid-auto-rows (use minmax(..., auto)): ${rel(p)}:${i + 1}`,
         );
       }
+      if (/grid-auto-rows\s*:\s*minmax\s*\(\s*min-content/.test(line)) {
+        fail(
+          `Ragged min-content rows forbidden (use minmax(var(--tile-row-*), …)): ${rel(p)}:${i + 1}`,
+        );
+      }
     });
   }
 }
 
-// --- 4) Line chart stages must use fixed heights (not aspect-driven) ---
+// --- 3b) Strict 8px spacing — no half-steps / hairline-as-gap / invented px pads ---
 {
+  const padProps =
+    /(?:padding|margin|gap|row-gap|column-gap|inset|(?<![a-z-])(?:top|right|bottom|left))\s*:/;
+  for (const p of walk(join(ROOT, 'components'))) {
+    if (extname(p) !== '.css') continue;
+    const r = rel(p);
+    const text = read(p);
+    if (/--space-half|var\(--space-half\)/.test(text)) {
+      fail(`Forbidden --space-half (use --space-1+): ${r}`);
+    }
+    if (/gap\s*:\s*var\(--hairline\)/.test(text)) {
+      fail(`Forbidden gap: var(--hairline) — strokes are not spacing: ${r}`);
+    }
+    if (/color-olive|--gutter\b|--text-primary\b|--bg-primary\b/.test(text)) {
+      fail(`Undefined / non-token chrome var in ${r}`);
+    }
+    const lines = text.split('\n');
+    lines.forEach((line, i) => {
+      // Skip stroke / focus / sr-only clip offsets (not layout spacing)
+      if (
+        /outline-offset|border(?:-width)?\s*:|box-shadow\s*:|stroke-width|clip\s*:|visually-hidden/.test(
+          line,
+        )
+      ) {
+        return;
+      }
+      if (!padProps.test(line)) return;
+      // sr-only pattern: width/height 1px + margin -1px
+      if (/^\s*(?:width|height)\s*:\s*1px\s*;?\s*$/.test(line)) return;
+      if (/^\s*margin\s*:\s*-1px\s*;?\s*$/.test(line)) return;
+      // Bare px in spacing props — allow 0 only (8px multiples otherwise)
+      const px = [...line.matchAll(/(-?\d+(?:\.\d+)?)px/g)].map((m) => Number(m[1]));
+      for (const n of px) {
+        if (n === 0) continue;
+        if (n % 8 !== 0) {
+          fail(`Spacing value ${n}px not on 8px grid: ${r}:${i + 1}`);
+        }
+      }
+      // Fractional grid multipliers (e.g. * 0.5, * 3.5) in spacing
+      if (/var\(--grid\)\s*\*\s*(0\.|1\.5|2\.5|3\.5|4\.5|5\.5|6\.5)/.test(line)) {
+        fail(`Fractional --grid multiplier in spacing: ${r}:${i + 1}`);
+      }
+    });
+  }
+  // styles shell + tokens already checked; also scan styles/*.css spacing
+  for (const p of walk(join(ROOT, 'styles'))) {
+    if (extname(p) !== '.css') continue;
+    const r = rel(p);
+    const text = read(p);
+    if (r.endsWith('tokens.css')) continue;
+    if (/--space-half|var\(--space-half\)/.test(text)) {
+      fail(`Forbidden --space-half in ${r}`);
+    }
+  }
+}
+
+// --- 3c) Equal-height board contracts ---
+{
+  const required = [
+    ['components/form-grid/form-grid.css', /grid-auto-rows\s*:\s*minmax\s*\(\s*var\(--tile-row/],
+    ['components/explore-card/explore-card.css', /\.explore-directory[\s\S]*grid-auto-rows\s*:\s*minmax/],
+    ['components/card-grid/card-grid.css', /data-density='compact'[\s\S]*minmax\s*\(\s*var\(--tile-row/],
+    ['components/dashboard-grid/dashboard-grid.css', /grid-auto-rows\s*:\s*minmax\s*\(\s*var\(--dash-row/],
+  ];
+  for (const [relPath, re] of required) {
+    const p = join(ROOT, relPath);
+    if (!existsSync(p)) {
+      fail(`Missing board CSS: ${relPath}`);
+      continue;
+    }
+    if (!re.test(read(p))) {
+      fail(`Equal-height board contract missing in ${relPath}`);
+    }
+  }
+}
+
+// --- 4) Chart stages — absolute fixed heights (never squash / stretch / aspect) ---
+{
+  const chartCssFiles = [
+    'components/area-chart/area-chart.css',
+    'components/bar-chart/bar-chart.css',
+    'components/chart/chart.css',
+    'components/chart-card/chart-card.css',
+    'components/chart-panel/chart-panel.css',
+    'components/chart-empty-state/chart-empty-state.css',
+    'components/stat-card/stat-card.css',
+  ];
+
+  for (const relPath of chartCssFiles) {
+    const p = join(ROOT, relPath);
+    if (!existsSync(p)) {
+      fail(`Missing required chart CSS: ${relPath}`);
+      continue;
+    }
+    const text = read(p);
+    if (!/CHART RULES LOCKED/.test(text)) {
+      fail(`${relPath} must include CHART RULES LOCKED comment`);
+    }
+    if (/aspect-ratio\s*:\s*var\(--chart-(?:spark-)?aspect\)/.test(text)) {
+      fail(`${relPath} must not size via --chart-aspect (fixed heights only)`);
+    }
+    // Uneven frame padding breaks equal-inset law (tooltips may use compact pad)
+    if (
+      /\.area-chart-frame[\s\S]{0,200}?padding\s*:\s*var\(--space-1\)\s+var\(--space-2\)/.test(
+        text,
+      )
+    ) {
+      fail(`${relPath} frame must not use uneven padding — use equal --chart-inset(-spark)`);
+    }
+  }
+
   const areaCss = join(ROOT, 'components/area-chart/area-chart.css');
-  if (!existsSync(areaCss)) {
-    fail('Missing required chart component CSS: components/area-chart/area-chart.css');
-  } else {
+  if (existsSync(areaCss)) {
     const text = read(areaCss);
     if (!/var\(--chart-height-spark\)/.test(text)) {
       fail('components/area-chart/area-chart.css must use var(--chart-height-spark)');
@@ -229,13 +375,30 @@ function read(p) {
     if (!/var\(--chart-height-panel\)/.test(text)) {
       fail('components/area-chart/area-chart.css must use var(--chart-height-panel)');
     }
-    if (/aspect-ratio\s*:\s*var\(--chart-aspect\)/.test(text)) {
-      fail(
-        'components/area-chart/area-chart.css must not size via --chart-aspect (fixed heights only)',
-      );
+    if (!/var\(--chart-inset-spark\)/.test(text)) {
+      fail('components/area-chart/area-chart.css must use equal var(--chart-inset-spark)');
     }
-    if (!/CHART RULES LOCKED/.test(text)) {
-      fail('components/area-chart/area-chart.css must include CHART RULES LOCKED comment');
+    if (!/min-height\s*:\s*var\(--chart-height-spark\)/.test(text)) {
+      fail('components/area-chart/area-chart.css must lock min-height to spark token');
+    }
+    if (!/max-height\s*:\s*var\(--chart-height-spark\)/.test(text)) {
+      fail('components/area-chart/area-chart.css must lock max-height to spark token');
+    }
+  }
+
+  const barCss = join(ROOT, 'components/bar-chart/bar-chart.css');
+  if (existsSync(barCss)) {
+    const text = read(barCss);
+    if (!/var\(--chart-height-panel\)/.test(text) || !/var\(--chart-height-spark\)/.test(text)) {
+      fail('components/bar-chart/bar-chart.css must lock spark + panel heights');
+    }
+    // List mode must not grow with data
+    if (
+      /\.bar-chart:not\(\[data-chart\]\)[\s\S]{0,400}?height\s*:\s*auto/.test(text)
+    ) {
+      fail(
+        'components/bar-chart/bar-chart.css list mode must not use height:auto (data-driven height forbidden)',
+      );
     }
   }
 
@@ -254,22 +417,43 @@ function read(p) {
       fail('components/chart/chart.css must use var(--chart-height-panel)');
     }
   }
-}
 
-// --- 5) Chart card documents fixed-height contract ---
-{
   const chartCard = join(ROOT, 'components/chart-card/chart-card.css');
-  if (!existsSync(chartCard)) {
-    fail('Missing required chart component CSS: components/chart-card/chart-card.css');
-  } else {
+  if (existsSync(chartCard)) {
     const text = read(chartCard);
     if (!/--chart-height-panel|--chart-height-spark/.test(text)) {
       fail(
         'components/chart-card/chart-card.css must document/lock fixed --chart-height-* contract',
       );
     }
+  }
+
+  // SVG mount — coordinate space must track locked CSS heights
+  const mount = join(ROOT, 'src/charts/svg-mount.js');
+  if (!existsSync(mount)) {
+    fail('Missing src/charts/svg-mount.js');
+  } else {
+    const text = read(mount);
     if (!/CHART RULES LOCKED/.test(text)) {
-      fail('components/chart-card/chart-card.css must include CHART RULES LOCKED comment');
+      fail('src/charts/svg-mount.js must include CHART RULES LOCKED comment');
+    }
+    if (!/h:\s*144\b/.test(text)) {
+      fail('src/charts/svg-mount.js SPARK viewBox height must be 144 (match --chart-height-spark)');
+    }
+    if (!/h:\s*280\b/.test(text)) {
+      fail('src/charts/svg-mount.js VIEW viewBox height must be 280 (match --chart-height-panel)');
+    }
+    if (/\b140\b/.test(text) && /SPARK[\s\S]{0,80}140/.test(text)) {
+      fail('src/charts/svg-mount.js must not keep SPARK height 140 (use 144)');
+    }
+  }
+
+  // Tokens — equal insets declared
+  const tokensPath = join(ROOT, 'styles/tokens.css');
+  if (existsSync(tokensPath)) {
+    const tokens = read(tokensPath);
+    if (!/--chart-inset-spark\s*:\s*var\(--space-2\)\s*;/.test(tokens)) {
+      fail('styles/tokens.css must set --chart-inset-spark: var(--space-2)');
     }
   }
 }

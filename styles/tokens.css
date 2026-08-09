@@ -24,12 +24,16 @@
   --color-card: #f3f0ea;
   --color-card-text: #1c1916;
   --color-card-text-secondary: #4a453f;
-  --color-card-border: color-mix(in srgb, #8a847c 38%, #f3f0ea);
+  --color-card-border: color-mix(in srgb, #8a847c 32%, #f3f0ea);
   --color-text: #f3f0ea;
   --color-text-secondary: #c6c0b7;
   --color-border: color-mix(in srgb, #c6c0b7 30%, #35312d);
+  /* Focus: cream on ash page; primary on cream modules (AA visible ring) */
   --color-focus: #f3f0ea;
+  --color-focus-on-card: #2f5f8f;
   --color-on-primary: #ffffff;
+  /* Link / badge ink that clears 4.5:1 on ash page ground */
+  --color-primary-ink: #9bb8d4;
 
   --color-primary: #2f5f8f;
   --color-primary-hover: color-mix(in srgb, #2f5f8f 78%, #ffffff);
@@ -60,17 +64,16 @@
   --press-opacity: 0.92;
 
   /* ========== ELEVATION ==========
-     0 = flat modules · 1 = hairline · 2 = overlay lift */
+     0 = flat modules · 1 = stroke · 2 = overlay lift (Y/blur on 8px) */
   --elevation-0: none;
   --elevation-1: 0 0 0 1px color-mix(in srgb, #1c1916 22%, transparent);
-  --elevation-2: 0 12px 32px color-mix(in srgb, #1c1916 28%, transparent);
+  --elevation-2: 0 16px 32px color-mix(in srgb, #1c1916 28%, transparent);
 
-  /* ========== SPACE (8pt grid · 4pt half) ==========
-     Core: half · 1–8 · 12 · 16 · 28 · 36
-     Prefer 1–4 for UI rhythm; larger steps for layout only. */
+  /* ========== SPACE (STRICT 8px grid — no half-steps) ==========
+     Core: 1–8 · 12 · 16 · 28 · 36 (all N×8px). Prefer 1–4 for UI rhythm.
+     Strokes (--border-width / --hairline) are NOT spacing — never use as gap. */
   --grid: 8px;
-  --hairline: 2px;
-  --space-half: calc(var(--grid) * 0.5);
+  --hairline: 1px;
   --space-1: calc(var(--grid) * 1);
   --space-2: calc(var(--grid) * 2);
   --space-3: calc(var(--grid) * 3);
@@ -85,23 +88,25 @@
   --space-36: calc(var(--grid) * 36);
 
   /* ========== RADIUS ==========
-     Sharp modules; pill only for controls */
+     Sharp modules (0); pill only for controls — both 8px-law compliant */
   --radius-none: 0;
   --radius-pill: 9999px;
   --border-width: 1px;
 
-  /* ========== TYPE (Geist · mobile floor 16px) ==========
-     Roles: mark · body · title · display */
+  /* ========== TYPE (Geist · mobile-first · quiet precision) ==========
+     mark/intro = measured open tracking · display/title = confident scale
+     body = clear measure + leading. One tight scale; no parallel stacks. */
   --font-family: "Geist Variable", "Geist", system-ui, -apple-system, sans-serif;
   --font-sans: var(--font-family);
   --font-display: var(--font-sans);
   --font-mark: var(--font-sans);
   --font-body: var(--font-sans);
 
-  --font-size-mark: 0.9375rem;
+  --font-size-mark: 0.875rem;
   --font-size-body: var(--space-2);
   --font-size-title: var(--space-3);
-  --font-size-display: var(--space-7);
+  --font-size-display-min: var(--space-5);
+  --font-size-display: var(--space-8);
 
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
@@ -109,16 +114,16 @@
   --font-weight-display: 800;
   --font-weight-mark: 600;
 
-  --leading-display: 1.05;
-  --leading-tight: 1.15;
-  --leading-ui: 1.35;
-  --leading-body: 1.55;
+  --leading-display: 1.02;
+  --leading-tight: 1.12;
+  --leading-ui: 1.3;
+  --leading-body: 1.62;
 
-  --tracking-mark: 0.24em;
-  --tracking-intro: 0.08em;
-  --tracking-display: -0.04em;
-  --tracking-tight: -0.025em;
-  --tracking-body: 0.01em;
+  --tracking-mark: 0.28em;
+  --tracking-intro: 0.1em;
+  --tracking-display: -0.035em;
+  --tracking-tight: -0.02em;
+  --tracking-body: 0.012em;
 
   /* ========== MOTION ==========
      Short decelerate · no bounce · transform/opacity only */
@@ -130,7 +135,7 @@
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
   --ease-enter: var(--ease-out);
   --press-scale: 0.985;
-  --enter-distance: var(--space-half);
+  --enter-distance: var(--space-1);
   --stagger-step: 40ms;
   --motion-fade: opacity var(--duration-fast) var(--ease-out);
   --motion-transform: transform var(--duration-fast) var(--ease-out);
@@ -151,7 +156,9 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
 
-  /* ========== COMPOSITION (built from core only) ========== */
+  /* ========== COMPOSITION (built from core only) ==========
+     Equal outer rhythm: every module uses --module-pad on all sides;
+     peer boards share --tile-gap and minmax(--tile-row-*, auto|1fr). */
   --page-pad-inline: max(var(--space-3), var(--safe-left), var(--safe-right));
   --page-pad-block: var(--space-4);
   --page-pad-block-end: max(var(--space-8), calc(var(--space-6) + var(--safe-bottom)));
@@ -168,28 +175,31 @@
   --content-width-sm: 600px;
   --content-width-md: 800px;
   --content-width-lg: 1200px;
-  --reading-width: 65ch;
+  --reading-width: 60ch;
+  --intro-width: 38ch;
+  --display-measure: 14ch;
   --bp-md: 800px;
   --bp-lg: 1200px;
-  --uptime-seg-min: var(--space-half);
+  --uptime-seg-min: var(--space-1);
 
+  /* Calm module surfaces — quiet wash, restrained accent edge */
   --module-bg: var(--color-card);
   --module-fg: var(--color-card-text);
   --module-fg-muted: var(--color-card-text-secondary);
   --module-border: var(--color-card-border);
   --module-accent: var(--color-primary);
-  --module-accent-width: calc(var(--border-width) * 3);
-  --module-wash: 5%;
-  --module-wash-hover: 8%;
-  --module-wash-stop: 36%;
+  --module-accent-width: var(--space-1);
+  --module-wash: 4%;
+  --module-wash-hover: 7%;
+  --module-wash-stop: 42%;
   --module-elevation: var(--elevation-0);
   --module-elevation-hover: var(--elevation-1);
   --module-radius: var(--radius-none);
-  --tint-subtle: 5%;
-  --control-fill: color-mix(in srgb, var(--color-card) 90%, var(--color-surface));
+  --tint-subtle: 4%;
+  --control-fill: color-mix(in srgb, var(--color-card) 92%, var(--color-surface));
   --control-hover-border: color-mix(
     in srgb,
-    var(--color-primary) 40%,
+    var(--color-primary) 32%,
     var(--color-card-border)
   );
 
@@ -197,8 +207,8 @@
   --hit-target-lg: var(--space-7);
   --icon-size: var(--space-4);
   --icon-size-sm: var(--space-3);
-  --focus-ring-width: var(--hairline);
-  --focus-ring-offset: var(--hairline);
+  --focus-ring-width: var(--border-width);
+  --focus-ring-offset: var(--border-width);
   --focus-ring: 0 0 0 var(--focus-ring-width) var(--color-focus);
 
   --navbar-inset: var(--space-2);
@@ -215,20 +225,14 @@
   --button-pad-inline: var(--space-4);
   --button-pad-inline-lg: var(--space-5);
 
-  /* Charts (LOCKED) */
-  --chart-height-spark: 140px;
+  /* Charts (LOCKED — absolute sizes; never squash / stretch / data-driven height)
+     Canonical form: fixed height band + width 100%. Visual weight never changes. */
+  --chart-height-spark: 144px;
   --chart-height-panel: 280px;
-  --chart-aspect: 2.4;
-  --chart-spark-aspect: 2.4;
-  --chart-min-block: var(--chart-height-panel);
-  --chart-max-block: var(--chart-height-panel);
   --chart-stage-max-inline: 100%;
-  --chart-spark-min-block: var(--chart-height-spark);
-  --chart-spark-max-block: var(--chart-height-spark);
-  --chart-spark-stage-max-inline: 100%;
-  --chart-panel-block: var(--chart-height-panel);
-  --chart-plot-block: var(--chart-height-panel);
+  /* Equal inset on every side (panel + spark); never uneven x/y padding */
   --chart-inset: var(--space-3);
+  --chart-inset-spark: var(--space-2);
   --chart-plot: var(--color-plot);
   --chart-stage-ink: var(--color-plot-stage);
   --chart-grid: var(--color-plot-grid);
@@ -237,17 +241,13 @@
   --chart-node: var(--color-success);
   --chart-label: var(--color-plot-muted);
   --chart-value: var(--color-plot-ink);
-  --chart-series-1: var(--color-primary);
-  --chart-series-2: var(--color-text-secondary);
-  --chart-series-3: var(--color-success);
-  --chart-series-4: var(--color-error);
 
   /* ========== ALIASES (map only → core; do not invent values) ========== */
   --font-size-xs: var(--font-size-mark);
   --font-size-sm: var(--font-size-body);
   --font-size-md: var(--font-size-title);
   --font-size-lg: var(--space-4);
-  --font-size-xl: var(--space-5);
+  --font-size-xl: var(--font-size-display-min);
   --font-size-2xl: var(--font-size-display);
   --font-weight-medium: var(--font-weight-semibold);
   --tracking-eyebrow: var(--tracking-mark);
@@ -295,7 +295,7 @@
   --color-card: #faf8f4;
   --color-card-text: #1c1916;
   --color-card-text-secondary: #4a453f;
-  --color-card-border: color-mix(in srgb, #4a453f 22%, #d4cec5);
+  --color-card-border: color-mix(in srgb, #4a453f 18%, #d4cec5);
   --color-primary: #23486d;
   --color-primary-hover: color-mix(in srgb, #23486d 78%, #1c1916);
   --color-success: #2f5540;
@@ -306,6 +306,8 @@
   --color-text-secondary: #4a453f;
   --color-border: color-mix(in srgb, #4a453f 30%, #d4cec5);
   --color-focus: #23486d;
+  --color-focus-on-card: #23486d;
+  --color-primary-ink: #23486d;
   --color-success-ink: var(--color-success);
   --color-error-ink: var(--color-error);
   --color-warning-ink: var(--color-text-secondary);
@@ -313,7 +315,12 @@
   --color-highlight: var(--color-primary);
   --color-highlight-hover: var(--color-primary-hover);
   --elevation-1: 0 0 0 1px color-mix(in srgb, #4a453f 14%, transparent);
-  --elevation-2: 0 12px 32px color-mix(in srgb, #1c1916 10%, transparent);
+  --elevation-2: 0 16px 32px color-mix(in srgb, #1c1916 10%, transparent);
   --navbar-accent: var(--color-primary);
   --navbar-accent-hover: var(--color-primary-hover);
+  /* Plot stage stays ink-black in both themes (activity graphs only) */
+  --color-plot: #1c1916;
+  --color-plot-stage: #121212;
+  --color-plot-ink: #f3f0ea;
+  --color-plot-muted: #c6c0b7;
 }

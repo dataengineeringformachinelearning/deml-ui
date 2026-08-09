@@ -56,8 +56,9 @@
 
 .text-field__control::placeholder,
 .text-field__input::placeholder {
+  /* Solid muted ink — opacity on secondary fails AA (~3.7:1) */
   color: var(--color-card-text-secondary);
-  opacity: var(--opacity-disabled);
+  opacity: 1;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -92,12 +93,16 @@
 }
 
 :host([data-invalid='true']) .text-field__control,
-:host([data-invalid='true']) .text-field__input {
+:host([data-invalid='true']) .text-field__input,
+.text-field[data-invalid='true'] .text-field__control,
+.text-field[data-invalid='true'] .text-field__input {
   border-color: var(--color-error);
 }
 
 :host([data-invalid='true']) .text-field__control:focus-visible,
-:host([data-invalid='true']) .text-field__input:focus-visible {
+:host([data-invalid='true']) .text-field__input:focus-visible,
+.text-field[data-invalid='true'] .text-field__control:focus-visible,
+.text-field[data-invalid='true'] .text-field__input:focus-visible {
   outline-color: var(--color-error);
 }
 

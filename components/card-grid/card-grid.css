@@ -48,22 +48,22 @@ deml-card-grid > *,
 }
 
 /*
- * Compact — text / link boards (marketing platforms, resource lists).
- * Content-sized rows; do not force --tile-row-card destination height.
+ * Compact — denser equal-height board (still stretch peers; never ragged).
+ * Uses --tile-row-unit floor so rows stay even without destination-card height.
  */
 app-card-grid[data-density='compact'],
 deml-card-grid[data-density='compact'],
 .card-grid[data-density='compact'],
 :host([data-density='compact']) {
-  grid-auto-rows: minmax(min-content, auto);
+  grid-auto-rows: minmax(var(--tile-row-unit), auto);
 }
 
 app-card-grid[data-density='compact'] > *,
 deml-card-grid[data-density='compact'] > *,
 .card-grid[data-density='compact'] > *,
 :host([data-density='compact']) > * {
-  height: auto;
-  align-self: start;
+  height: 100%;
+  align-self: stretch;
 }
 
 @media screen and (min-width: 800px) {
@@ -71,7 +71,7 @@ deml-card-grid[data-density='compact'] > *,
   deml-card-grid[data-density='compact'],
   .card-grid[data-density='compact'],
   :host([data-density='compact']) {
-    grid-auto-rows: minmax(min-content, auto);
+    grid-auto-rows: minmax(var(--tile-row-unit), 1fr);
   }
 }
 

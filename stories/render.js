@@ -162,13 +162,87 @@ function initStoryDemos(root) {
   }
 }
 
-export function renderComponent(name) {
+function mountRoot(name, html) {
   const root = document.createElement("div");
   root.className = "story-root";
   root.dataset.component = name;
-  root.innerHTML = getHtml(name);
+  root.innerHTML = html;
   queueMicrotask(() => initStoryDemos(root));
   return root;
+}
+
+export function renderComponent(name) {
+  return mountRoot(name, getHtml(name));
+}
+
+/** Render a kit markup fragment (variants / states / edge cases). */
+export function renderMarkup(name, markup) {
+  return mountRoot(name, markup);
+}
+
+/** Escape text for HTML attribute / body insertion in builders. */
+function esc(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/** Args → HTML builders for Playground stories. */
+const builders = {
+  button(args) {
+    const variant = args.variant || "primary";
+    const shape = args.shape === "pill" ? " button--pill" : "";
+    const busy = args.busy ? " is-busy" : "";
+    const disabled = args.disabled ? " disabled" : "";
+    const label = esc(args.label || "Button");
+    const inner = args.busy
+      ? `<span class="button__label">${label}</span><span class="button__spinner" aria-hidden="true"></span>`
+      : label;
+    return `<div class="demo"><button type="button" class="button button--${esc(variant)}${shape}${busy}"${disabled}${args.busy ? ' aria-busy="true"' : ""}>${inner}</button></div>`;
+  },
+  badge(args) {
+    const tone = args.tone ? ` data-tone="${esc(args.tone)}"` : "";
+    return `<div class="demo"><span class="badge"${tone}>${esc(args.label || "Badge")}</span></div>`;
+  },
+  callout(args) {
+    return `<div class="demo"><aside class="callout" role="status" data-tone="${esc(args.tone || "info")}"><div class="callout__body"><p class="callout__heading">${esc(args.heading || "Heading")}</p><p class="callout__text">${esc(args.text || "")}</p></div></aside></div>`;
+  },
+  emptyState(args) {
+    const eyebrow = args.eyebrow
+      ? `<p class="empty-state__eyebrow">${esc(args.eyebrow)}</p>`
+      : "";
+    return `<div class="demo"><div class="empty-state" role="status">${eyebrow}<p class="empty-state__title">${esc(args.title || "Empty")}</p><p class="empty-state__description">${esc(args.description || "")}</p></div></div>`;
+  },
+  errorState(args) {
+    return `<div class="demo"><div class="error-state" role="alert"><p class="error-state__title">${esc(args.title || "Error")}</p><p class="error-state__description">${esc(args.description || "")}</p></div></div>`;
+  },
+  textField(args) {
+    const invalid = args.invalid || args.error;
+    const err = args.error
+      ? `<span class="text-field__error">${esc(args.error)}</span>`
+      : "";
+    const hint =
+      !args.error && args.hint
+        ? `<span class="text-field__hint">${esc(args.hint)}</span>`
+        : "";
+    return `<div class="demo"><label class="text-field"${invalid ? ' data-invalid="true"' : ""}><span class="text-field__label">${esc(args.label || "Label")}${args.required ? " *" : ""}</span><input class="text-field__control" type="text" value="${esc(args.value || "")}"${args.disabled ? " disabled" : ""}${invalid ? ' aria-invalid="true"' : ""} />${err}${hint}</label></div>`;
+  },
+  banner(args) {
+    const pre = args.preheader
+      ? `<p class="banner__preheader">${esc(args.preheader)}</p>`
+      : "";
+    return `<div class="demo"><header class="banner">${pre}<h1 class="banner__heading">${esc(args.heading || "Heading")}</h1><p class="banner__lede">${esc(args.lede || "")}</p></header></div>`;
+  },
+};
+
+export function renderBuilder(builderName, args = {}) {
+  const fn = builders[builderName];
+  if (!fn) {
+    throw new Error(`Unknown story builder: ${builderName}`);
+  }
+  return mountRoot(builderName, fn(args));
 }
 
 /**

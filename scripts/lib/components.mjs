@@ -198,7 +198,7 @@ export function categorize(names) {
   }
 
   const orphans = names
-    .filter((n) => !assigned.has(n) && n !== "form-field")
+    .filter((n) => !assigned.has(n))
     .sort((a, b) => a.localeCompare(b));
   if (orphans.length) groups.Components = orphans;
 

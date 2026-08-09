@@ -135,10 +135,16 @@ deml-chart-panel,
 .chart-panel__body .area-chart-frame {
   width: 100%;
   height: var(--chart-height-spark);
+  min-height: var(--chart-height-spark);
+  max-height: var(--chart-height-spark);
+  flex: 0 0 var(--chart-height-spark);
 }
 
 .chart-panel__body .area-chart-frame:not([data-variant='spark']) {
   height: var(--chart-height-panel);
+  min-height: var(--chart-height-panel);
+  max-height: var(--chart-height-panel);
+  flex: 0 0 var(--chart-height-panel);
   background-color: var(--chart-stage-ink);
 }
 

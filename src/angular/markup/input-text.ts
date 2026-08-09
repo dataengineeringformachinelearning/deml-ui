@@ -6,7 +6,7 @@ import {
   ViewEncapsulation,
 } from "@angular/core";
 
-const DEML_TEMPLATE = "<label for=\"input-text-field\">Name</label>\n    <input id=\"input-text-field\" name=\"name\" type=\"text\" placeholder=\"Name\" autocomplete=\"name\" required>";
+const DEML_TEMPLATE = "<label class=\"text-field\" for=\"input-text-field\">\n      <span class=\"text-field__label\">Name</span>\n      <input\n        id=\"input-text-field\"\n        class=\"text-field__control\"\n        name=\"name\"\n        type=\"text\"\n        placeholder=\"Your name\"\n        autocomplete=\"name\"\n      />\n    </label>";
 
 @Component({
   selector: "deml-input-text",

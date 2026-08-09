@@ -21,9 +21,10 @@
 .page-template__title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(var(--font-size-lg), 4vw, var(--font-size-xl));
+  font-size: clamp(var(--font-size-title), 4vw, var(--font-size-display-min));
   font-weight: var(--font-weight-display);
   letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
 }
 
 .page-template__content {
