@@ -115,3 +115,22 @@
   min-width: 0;
   overflow-wrap: anywhere;
 }
+
+/* Book rail: denser rows so fewer titles force a nested scroller */
+.app-layout--book .sidebar-nav {
+  gap: var(--space-3);
+}
+
+.app-layout--book .sidebar-nav__group {
+  gap: var(--space-1);
+}
+
+.app-layout--book .sidebar-nav__link {
+  min-height: var(--space-5);
+  padding: var(--space-1) var(--space-2);
+  align-items: center;
+}
+
+.app-layout--book .sidebar-nav__link--numbered {
+  align-items: center;
+}

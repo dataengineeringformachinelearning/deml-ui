@@ -1076,27 +1076,34 @@ summary {
   box-sizing: border-box;
 }
 
-/* Book chapters: ash chapter rail + staged reading column */
+/* Book chapters: one page scroll, sticky TOC rail, open reading column */
+.app-layout--book .app-layout__body {
+  align-items: start;
+}
+
 .app-layout--book .app-layout__nav {
   display: grid;
   gap: var(--space-3);
   align-content: start;
+  background: transparent;
+  border: 0;
+  padding: 0;
 }
 
 .app-layout--book .app-layout__main {
-  background: var(--color-surface);
-  border: var(--border-width) solid var(--color-border);
-  overflow: auto;
+  background: transparent;
+  border: 0;
+  overflow: visible;
 }
 
 .app-layout--book .app-layout__content {
   display: grid;
   gap: var(--space-6);
-  justify-items: center;
-  width: 100%;
-  max-width: none;
+  justify-items: stretch;
+  width: min(100%, calc(var(--reading-width) + (var(--module-pad-lg) * 2)));
+  max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
   margin-inline: 0;
-  padding: var(--space-5) var(--space-4) var(--space-8);
+  padding: var(--space-2) 0 var(--space-8);
 }
 
 .app-layout--book .app-layout__content > .page-header,
@@ -1104,7 +1111,9 @@ summary {
 .app-layout--book .app-layout__content > .card,
 .app-layout--book .app-layout__content > .pagination {
   width: 100%;
-  max-width: calc(var(--reading-width) + (var(--module-pad-lg) * 2));
+  max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .app-layout--book .app-layout__content > .page-header {
@@ -1114,6 +1123,15 @@ summary {
 
 .app-layout--book .app-layout__content > .card {
   min-height: calc(var(--space-36) + var(--space-16));
+}
+
+.app-layout--book .app-layout__content > .pagination {
+  padding-top: var(--space-4);
+}
+
+/* Long TOC may scroll inside the sticky rail — main never becomes a second scroller */
+.app-layout--book.app-layout--embedded .app-layout__nav {
+  scrollbar-width: thin;
 }
 
 /* Collapsible chapter TOC on phone — details/summary */
@@ -1182,10 +1200,13 @@ summary {
     padding-bottom: max(var(--space-4), var(--safe-bottom));
   }
 
-  /* Book needs a wider chapter rail so titles do not wrap into a scrunched stack */
+  /* Book: wider chapter rail + open gutters; page scroll owns the chapter */
   .app-layout--book .app-layout__body {
     grid-template-columns: minmax(var(--space-36), var(--space-52)) minmax(0, 1fr);
-    gap: var(--space-5);
+    gap: var(--space-8);
+    padding: var(--space-5) var(--space-6) var(--space-8);
+    padding-left: max(var(--space-6), var(--safe-left));
+    padding-right: max(var(--space-6), var(--safe-right));
   }
 
   .app-layout--embedded .app-layout__nav {
@@ -1209,13 +1230,17 @@ summary {
     padding: var(--space-4);
   }
 
+  .app-layout--book .app-layout__nav {
+    padding: var(--space-1) var(--space-4) var(--space-4) 0;
+  }
+
   .app-layout__content {
     padding: var(--space-5) var(--space-5) var(--space-8);
   }
 
   .app-layout--book .app-layout__content {
-    gap: var(--space-8);
-    padding: var(--space-8) var(--space-6) var(--space-12);
+    gap: var(--space-6);
+    padding: var(--space-2) 0 var(--space-12);
   }
 
   /* Force TOC open on larger screens; hide the summary chrome */
@@ -1788,6 +1813,23 @@ deml-navbar {
 .page-header__progress progress {
   width: 100%;
   margin: 0;
+}
+
+/* Cream reading modules — keep title chrome on card ink */
+.article.module .page-header {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--border-width) solid var(--color-card-border);
+}
+
+.article.module .page-header__eyebrow,
+.article.module .page-header__progress-label {
+  color: var(--color-card-text-secondary);
+}
+
+.article.module .page-header h1,
+.article.module .page-header__title {
+  color: var(--color-card-text);
 }
 
 /* inlined: components/page-template/page-template.css */
@@ -2450,6 +2492,25 @@ deml-site-footer,
 .sidebar-nav__label {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+/* Book rail: denser rows so fewer titles force a nested scroller */
+.app-layout--book .sidebar-nav {
+  gap: var(--space-3);
+}
+
+.app-layout--book .sidebar-nav__group {
+  gap: var(--space-1);
+}
+
+.app-layout--book .sidebar-nav__link {
+  min-height: var(--space-5);
+  padding: var(--space-1) var(--space-2);
+  align-items: center;
+}
+
+.app-layout--book .sidebar-nav__link--numbered {
+  align-items: center;
 }
 
 
